@@ -1,0 +1,495 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow
+ * @version $Id: view.showcase.css 16754 2012-10-08 04:50:18Z giangnd $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/* ============================== SHOWCASE SOURCE ============================== */
+.jsn-showcase-theme-select {
+	padding: 50px 10px;
+}
+
+.jsn-showcase-theme-select .jsn-section-header {
+	text-align: center;
+	border: none;
+	margin: 0 0 20px;
+}
+
+.jsn-master.jsn-showcase-details .jsn-bootstrap .jsn-section-header button i
+	{
+	margin-right: 0;
+}
+
+#jsn-showcase-detail-arrow i {
+	margin-right: 0;
+}
+/* ========== SHOWCASE SOURCE - SOURCE SLIDESHOW ========== */
+.jsn-showcase-theme-slide,.jsn-showcase-theme-slide .sliding-content {
+	position: relative;
+	width: 100%;
+}
+
+.jsn-showcase-theme-slide .jsn-item {
+	float: left;
+	display:inline;
+}
+
+.jsn-showcase-theme-slide .jsn-item-container:hover {
+	background-color: #EFEFEF;
+}
+
+.jsn-showcase-theme-slide .jsn-item-inner {
+	width: 237px;
+	height: 153px;
+	padding: 10px;
+	display: block;
+	margin: 12px auto;
+	position: relative;
+	border: 1px solid #EEE;
+	background-color: #FFF;
+	box-shadow: 0 0 11px #888;
+	-moz-box-shadow: 0 0 11px #888;
+	-webkit-box-shadow: 0 0 11px #888;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+}
+
+.jsn-showcase-theme-slide .jsn-item-inner a:hover {
+	text-decoration: none;
+}
+
+.jsn-showcase-theme-slide .jsn-item-inner .jsn-imagesource-install-thumb
+	{
+	width: 235px;
+	height: 150px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	background: url(../images/icons-32/ajax-loader-big.gif) center center no-repeat;
+}
+
+.jsn-showcase-theme-slide .jsn-item-inner .jsn-showcase-imagesource-miss-component .jsn-imagesource-install-thumb
+	{
+	background: transparent;
+}
+
+.jsn-showcase-theme-slide .jsn-item .jsn-source-name {
+	font-size: 16px;
+	margin-top: 20px;
+	text-align: center;
+	position: relative;
+}
+
+.jsn-showcase-theme-slide div.navigation-button {
+	right: 0;
+	top: -60px;
+	width: 80px;
+	position: absolute;
+}
+
+.jsn-showcase-theme-slide .jsn-showcase-theme-slide-arrow {
+	margin: 0;
+	width: 36px;
+	height: 36px;
+	z-index: 9999;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.jsn-showcase-theme-slide .slide-arrow-pre,.jsn-showcase-theme-slide .slide-arrow-pre.disabled:hover
+	{
+	float: left;
+	background: url(../images/nav.png) -1px -2px no-repeat;
+}
+
+.jsn-showcase-theme-slide .slide-arrow-pre:hover {
+	background-position: -120px -2px;
+}
+
+.jsn-showcase-theme-slide .slide-arrow-next,.jsn-showcase-theme-slide .slide-arrow-next.disabled:hover
+	{
+	float: right;
+	background: url(../images/nav.png) -39px -2px no-repeat;
+}
+
+.jsn-showcase-theme-slide .slide-arrow-next:hover {
+	background-position: -79px -2px;
+}
+
+.jsn-showcase-theme-slide .jsn-showcase-theme-slide-arrow.disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+
+table.adminlist a.saveorder {
+	float: none;
+	margin: 0 0 0 8px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+table.adminlist td.list-order p {
+	width: 90px;
+	margin: 5px 0;
+}
+
+table.adminlist td.list-order p input {
+	padding: 2px 0;
+}
+
+table.adminlist td.list-order p span {
+	float: left;
+	width: 20px;
+	background-repeat: no-repeat;
+}
+
+#jsn-no-showcase {
+	height: 1%;
+	margin: 15px 0px 10px 0px;
+}
+
+table.admintable .showcase-input {
+	width: 70%;
+	float: left;
+}
+
+table.admintable .button2-left {
+	margin: 0 0 0 5px;
+}
+
+#wrap-aut-article,#wrap-btt-module,#wrap-btt-article,#wrap-btt-image,#wrap-seo-article,#wrap-seo-module
+	{
+	margin-top: 7px;
+}
+
+.jsn-master #jsn-is-tmp-sbox-window {
+	z-index: 1001;
+	display: none;
+}
+
+.jsn-master #jsn-is-tmp-sbox-window #jsn-is-img-box-loading {
+	position: relative;
+}
+
+.jsn-master #jsn-is-tmp-sbox-window #jsn-is-img-box-loading img {
+	position: relative;
+	left: 12px;
+	top: 12px;
+}
+/* ============================== INSTALL SHOWCASE THEME ============================== */
+@
+keyframes imageShowcaseThemeOverlayInstall {from { opacity:0.1;
+	filter: alpha(opacity = 10);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+}
+@
+-moz-keyframes imageShowcaseThemeOverlayInstall /*Firefox*/ {from {
+	opacity:0.1;
+	filter: alpha(opacity = 10);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+}
+@
+-webkit-keyframes imageShowcaseThemeOverlayInstall /*Safari and Chrome*/
+	{from { opacity:0.1;
+	filter: alpha(opacity = 10);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+}
+@
+keyframes hideThumbnailShowcaseTheme {from { opacity:1;
+	filter: alpha(opacity = 100);
+}
+
+to {
+	opacity: 0.1;
+	filter: alpha(opacity = 10);
+}
+
+}
+@
+-moz-keyframes hideThumbnailShowcaseTheme /*Firefox*/ {from { opacity:1;
+	filter: alpha(opacity = 100);
+}
+
+to {
+	opacity: 0.1;
+	filter: alpha(opacity = 10);
+}
+
+}
+@
+-webkit-keyframes hideThumbnailShowcaseTheme /*Safari and Chrome*/ {from
+	{ opacity:1;
+	filter: alpha(opacity = 100);
+}
+
+to {
+	opacity: 0.1;
+	filter: alpha(opacity = 10);
+}
+
+}
+@
+keyframes showThumbnailShowcaseTheme {from { opacity:0.1;
+	filter: alpha(opacity = 10);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+}
+@
+-moz-keyframes showThumbnailShowcaseTheme /*Firefox*/ {from { opacity:0.1;
+	filter: alpha(opacity = 10);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+}
+@
+-webkit-keyframes showThumbnailShowcaseTheme /*Safari and Chrome*/ {from
+	{ opacity:0.1;
+	filter: alpha(opacity = 10);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+}
+a.jsn-showcase-theme-install img {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+	animation: showThumbnailShowcaseTheme 0.5s infinite;
+	-moz-animation: showThumbnailShowcaseTheme 0.5s infinite; /*Firefox*/
+	-webkit-animation: showThumbnailShowcaseTheme 0.5s infinite;
+	/*Safari and Chrome*/
+	animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1;
+}
+
+a.jsn-showcase-theme-update img,a.jsn-showcase-theme-miss-component img
+	{
+	opacity: 0.1;
+	filter: alpha(opacity = 10);
+	animation: hideThumbnailShowcaseTheme 0.5s infinite;
+	-moz-animation: hideThumbnailShowcaseTheme 0.5s infinite; /*Firefox*/
+	-webkit-animation: hideThumbnailShowcaseTheme 0.5s infinite;
+	/*Safari and Chrome*/
+	animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1;
+}
+
+a.jsn-showcase-theme-update div.jsn-showcasetheme-update-overlay-download,a.jsn-showcase-theme-update:hover div.jsn-showcasetheme-install-overlay-install
+	{
+	display: block;
+	animation: imageShowcaseThemeOverlayInstall 1s infinite;
+	-moz-animation: imageShowcaseThemeOverlayInstall 1s infinite;
+	/*Firefox*/
+	-webkit-animation: imageShowcaseThemeOverlayInstall 1s infinite;
+	/*Safari and Chrome*/
+	animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1;
+}
+
+.jsn-showcasetheme-install-overlay {
+	top: 0;
+	width: 236px;
+	height: 173px;
+	display: none;
+	position: absolute;
+}
+
+.jsn-showcasetheme-install-overlay-text {
+	top: 94px;
+	width: 100%;
+	color: #999999;
+	font-size: 22px;
+	font-weight: bold;
+	position: absolute;
+	text-align: center;
+}
+
+div.jsn-showcasetheme-install-overlay-install {
+	background: url(../images/install-icon.png) center 33px no-repeat;
+}
+
+div.jsn-showcasetheme-install-overlay-download {
+	background: url(../images/download.png) center 33px no-repeat;
+}
+
+.jsn-showcasetheme-install-update-theme {
+	top: 45px;
+	width: 100%;
+	padding: 10px 0;
+	color: #999999;
+	cursor: pointer;
+	font-size: 22px;
+	line-height: 27px;
+	position: absolute;
+	text-align: center;
+	font-weight: bold;
+	margin: 0;
+}
+.jsn-showcasetheme-install-update-theme span.span-jsn-link-action { 
+	margin-left: 0;
+}
+.jsn-showcasetheme-downloading .jsn-showcasetheme-install-update-theme,.jsn-showcasetheme-installing .jsn-showcasetheme-install-update-theme
+	{
+	display: none;
+}
+
+.jsn-showcasetheme-install-download,.jsn-showcasetheme-install-installing
+	{
+	display: none;
+}
+
+a.jsn-showcasetheme-installing .jsn-showcasetheme-install-overlay,a.jsn-showcasetheme-installing .jsn-showcasetheme-install-installing,a.jsn-showcasetheme-downloading .jsn-showcasetheme-install-overlay,a.jsn-showcasetheme-downloading .jsn-showcasetheme-install-download
+	{
+	display: block;
+}
+
+a.jsn-showcasetheme-installing img,a.jsn-showcasetheme-downloading img {
+	opacity: 0.1;
+	filter: alpha(opacity = 10);
+}
+
+a.jsn-showcasetheme-installing .jsn-showcasetheme-install-showcasetheme,a.jsn-showcasetheme-downloading .jsn-showcasetheme-install-showcasetheme
+	{
+	display: none;
+}
+
+a.jsn-showcasetheme-installing .jsn-showcasetheme-install-overlay,a.jsn-showcasetheme-downloading .jsn-showcasetheme-install-overlay
+	{
+	background: url(../images/download.png) center 33px no-repeat;
+}
+
+a.jsn-showcasetheme-installing span.jsn-showcasetheme-install-loading,a.jsn-showcasetheme-downloading span.jsn-showcasetheme-install-loading
+	{
+	display: block;
+	margin: 48px 106px;
+}
+
+.jsn-showcasetheme-install-loading {
+	display: none;
+}
+
+.jsn-showcase-install-themes,.jsn-showcase-select-themes {
+	padding: 50px 10px;
+}
+
+.jsn-showcase-selecttheme-wrapper hr {
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.jsn-showcasetheme-install-loading #jsn-install-theme-ajax-loader-lite,.jsn-showcasetheme-install-loading #jsn-list-theme-ajax-loader-lite
+	{
+	border: 0;
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+.jsn-showcasetheme-install-download span {
+	display: none;
+	font-size: 16px;
+}
+
+.jsn-showcase-install-themes .jsn-item-inner img.jsn-showcasetheme-install-thumb,.jsn-showcase-select-themes .jsn-item-inner img.jsn-showcasetheme-install-thumb
+	{
+	width: 235px;
+	height: 150px;
+	display: inline-block;
+	background: url(../images/icons-32/ajax-loader-big.gif) center center no-repeat;
+}
+
+a.jsn-showcase-theme-update {
+	display: block;
+	border: 1px solid #CCCCCC;
+	background-color: #fff !important;
+}
+
+.jsn-item-inner a.jsn-showcase-theme-update>img {
+	border: none;
+}
+
+.jsn-manual-install-form h1 {
+	margin: 0;
+	color: #000000;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+span.jsn-errorcode {
+	color: #CC0000;
+	font-weight: bold;
+}
+
+.jsn-accordion-radio {
+	margin: 0px 3px 0 0px;
+	position: relative;
+	top: 2px;
+}
+
+#jsn-showcase-manual-install {
+	display: none;
+}
+
+#jsn-showcase-settings .jsn-section-header {
+	text-transform: none;
+	text-shadow: none;
+}
+
+#jsn-showcase-settings .jsn-section-header .btn {
+	float: right;
+	font-size: 13px;
+}
+/* ============================== SHOWCASE ============================== */
+#jsn-no-showcase {
+	height: 1%;
+	margin: 15px 0px 10px 0px;
+}
+/* =============== SHOWCASE - GENERAL TABS =============== */
+#general_background_color,td.showcase-input-field a {
+	display: inline-block;
+}
+
+#general_background_color:hover,td.showcase-input-field a:hover {
+	text-decoration: none;
+}
+
+span.color-selection:hover {
+	text-decoration: underline;
+}

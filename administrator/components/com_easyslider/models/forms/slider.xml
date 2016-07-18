@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldpath="/plugins/system/jsnframework/libraries/joomlashine/form/fields">
+	<fieldset name="general" label="JSN_EASYSLIDER_SLIDER_GENERAL">
+		<field
+			name="slider_id" type="recordid" hide-label="0" hide-field="0"
+			label="ID" description="ID"
+		/>
+
+		<field
+			name="slider_title" type="jsntext" required="true" class="jsn-input-xlarge-fluid"
+			label="JSN_EASYSLIDER_SLIDER_TITLE" description="JSN_EASYSLIDER_SLIDER_TITLE"
+		/>
+
+		<field
+			name="published" type="list" default="0" filter="int" size="1" class="form-field-select"
+			label="JSN_EASYSLIDER_PUBLISHED" description=" "
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+
+		<field
+			name="ordering" type="SliderOrdering" class="inputbox"
+			label="JSN_EASYSLIDER_ORDERING" description=" "
+		/>
+
+		<field
+			name="access" type="accesslevel" size="1" class="form-field-select"
+			label="JSN_EASYSLIDER_ACCESS_LEVEL" description=" "
+		/>
+		<field name="slider_data" type="hidden" default="" class="jsn-easyslider-slider-data"/>
+	</fieldset>
+	<fieldset skipRender="1">
+		<field name="item_images" type="text" class="jsn-input-large-fluid" />
+	</fieldset>
+</form>

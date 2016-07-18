@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="form-design">
+        <field name="profile_id" type="hidden" />
+        <field name="profile_title" class="jsn-input-xlarge-fluid" type="text" required="true"  label="JSN_MOBILIZE_PROFILE_TITLE" />
+        <field name="profile_description" class="jsn-input-xlarge-fluid" type="textarea" rows="5" label="JSN_MOBILIZE_PROFILE_DESC" />
+        <field name="profile_layout" type="hidden" />
+        <field
+                name="profile_minify" type="list" default=""
+                label="JSN_MOBILIZE_MINIFY_ASSETS_LABEL" description="JSN_MOBILIZE_MINIFY_ASSETS_DESC"
+                >
+            <option value="">JSN_MOBILIZE_NO_MINIFICATION</option>
+            <option value="css">JSN_MOBILIZE_MINIFY_CSS</option>
+            <option value="js">JSN_MOBILIZE_MINIFY_JS</option>
+            <option value="both">JSN_MOBILIZE_MINIFY_BOTH</option>
+        </field>
+        <field
+                name="profile_optimize_images" type="list"
+                label="JSN_MOBILIZE_OPTIMIZE_IMAGE_LABEL" description="JSN_MOBILIZE_OPTIMIZE_IMAGE_DESC"
+                >
+            <option value="">JSN_MOBILIZE_NO_OPTIMIZATION</option>
+            <option value="320">JSN_MOBILIZE_PREFER_PERFORMANCE</option>
+            <option value="540">JSN_MOBILIZE_PREFER_QUALITY</option>
+        </field>
+        <field name="profile_device" type="list" class="form-field-select" label="JLAYOUT"  size="1" default="1">
+            <option value="jsn_mobile" id="jsn_mobile">JSN_MOBILIZE_TITLE_SMARTPHONE</option>
+            <option value="jsn_tablet" id="jsn_tablet">JSN_MOBILIZE_TITLE_TABLET</option>
+        </field>
+        <field name="profile_state" type="list" class="form-field-select" label="JSTATUS"  size="1" default="1">
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+    </fieldset>
+</form>

@@ -1,0 +1,195 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow
+ * @version $Id: imageshow.css 13748 2012-07-03 12:13:32Z thangbh $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/* ============================== CONFIGURATION & MAINTENANCE ============================== */
+/* =============== CONFIGURATION - MESSAGES =============== */
+#jsn-imageshow-configuration-maintenance .jsn-page-list {
+	margin: 0;
+}
+/* ----- DATA MAINTENANCE ----- */
+#jsn-sampledata-warnings,#jsn-installing-sampledata,#jsn-installing-sampledata-successfully,#jsn-install-sample-data-package-title,#jsn-installing-sampledata-unsuccessfully
+	{
+	display: none;
+}
+
+#jsn-span-unsuccessful-installing-sampledata-message,#jsn-span-unsuccessful-downloading-sampledata-message
+	{
+	display: none;
+}
+
+#jsn-creating-thumbnail,#jsn-creat-thumbnail-successful,#jsn-creat-thumbnail-unsuccessful
+	{
+	display: none;
+}
+/* =============== MAINTENANCE - DATA BACKUP / RESTORE =============== */
+/* =============== SAMPLE DATA - RESTORE =============== */
+#jsn-restore-install-required-warning {
+	color: red;
+	padding-top: 10px;
+}
+
+#jsn-restore-install-required-warning #jsn-restore-list-required-install
+	{
+	padding: 0;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.jsn-restore-icon-process {
+	display: none;
+	height: 16px;
+	left: 8px;
+	position: relative;
+	top: -2px;
+	width: 16px;
+}
+
+.jsn-restore-install-required {
+	display: none;
+}
+
+.jsn-restore-installing #jsn-restore-data,.jsn-restore-installing .jsn-restore-install-required,.jsn-restore-installing-source #jsn-restore-required-sources .jsn-restore-icon-process,.jsn-restore-installing-theme #jsn-restore-required-themes .jsn-restore-icon-process
+	{
+	display: inline-block;
+}
+
+.jsn-restore-installing-source #jsn-restore-required-sources .jsn-icon,.jsn-restore-installing-theme #jsn-restore-required-themes .jsn-icon
+	{
+	display: none;
+}
+
+.jsn-restore-installing-failure>span.jsn-restore-icon-failure {
+	display: inline-block;
+}
+
+.jsn-restore-installing-failure>.jsn-restore-warning,.jsn-restore-installing-failure #jsn-restore-data
+	{
+	display: none;
+}
+
+.jsn-restore-installing #jsn-restore-install-required-warning {
+	display: none;
+}
+
+.jsn-restore-change-text {
+	color: #5ACE02;
+	padding-left: 15px;
+}
+
+.jsn-restore-icon-success,.jsn-restore-icon-failure,.jsn-restore-installing-success .jsn-restore-icon-failure
+	{
+	display: inline-block;
+}
+
+.jsn-restore-installing .jsn-restore-icon-failure {
+	display: none;
+}
+
+.jsn-restore-installing-success #jsn-restore-button-cancel {
+	display: none;
+}
+
+.jsn-restore-installing-success #jsn-restore-finish-button {
+	display: inline-block;
+}
+
+#jsn-restore-finish-button {
+	display: none;
+}
+
+#jsn-restore-extract-failure {
+	color: red;
+	padding-left: 16px;
+}
+
+#jsn-restore-database-success,.jsn-restore-databse-failure .jsn-restore-warning,.jsn-restore-installing-success .jsn-restore-warning
+	{
+	display: none;
+}
+
+.jsn-restore-installing-source-success #jsn-restore-required-sources #jsn-restore-source-change-text,.jsn-restore-installing-source-success #jsn-restore-required-sources .jsn-restore-icon-process,.jsn-restore-installing-theme-success #jsn-restore-required-themes #jsn-restore-theme-change-text,.jsn-restore-installing-theme-success #jsn-restore-required-themes .jsn-restore-icon-process
+	{
+	display: none;
+}
+
+.jsn-restore-installing #jsn-restore-required-sources .jsn-icon-ok,.jsn-restore-installing #jsn-restore-required-themes .jsn-icon-ok
+	{
+	display: none;
+}
+
+.jsn-restore-installing-source-success #jsn-restore-required-sources .jsn-icon-ok,.jsn-restore-installing-theme-success #jsn-restore-required-themes .jsn-icon-ok
+	{
+	display: inline-block;
+}
+
+/* ============================== SAMPLE DATA ============================== */
+#jsn-sample-data .jsn-sampledata-warnings-text #jsn-sampledata-ul-warnings li
+	{
+	margin: 10px 0;
+}
+
+#jsn-sample-data .jsn-install-processing .jsn-sampledata-install-status
+	{
+	display: none;
+}
+
+#jsn-sample-data .jsn-sampledata-installation-processing img {
+	margin-left: 5px;
+	vertical-align: top;
+}
+
+#jsn-sample-data .jsn-sampledata-installation-processing .jsn-sampledata-install-status-text
+	{
+	color: #5ACE02;
+	display: inline;
+	padding-left: 5px;
+}
+
+#jsn-sample-data .jsn-sampledata-installation-processing {
+	display: inline;
+}
+
+#jsn-sample-data div.jsn-sampledata-installation-wait img,#jsn-sample-data div.jsn-sampledata-installation-wait .jsn-sampledata-install-status,#jsn-sample-data div.jsn-sampledata-installation-wait .jsn-sampledata-install-status-text,#jsn-sample-data div.jsn-sampledata-installation-processing .jsn-sampledata-install-status,#jsn-sample-data div.jsn-sampledata-installation-success img,#jsn-sample-data div.jsn-sampledata-installation-success .jsn-sampledata-install-status-text,#jsn-sample-data div.jsn-sampledata-installation-failure img,#jsn-sample-data div.jsn-sampledata-installation-failure .jsn-sampledata-install-status-text
+	{
+	display: none;
+}
+
+#jsn-sample-data div.jsn-sampledata-installation-success .jsn-sampledata-install-status,#jsn-sample-data div.jsn-sampledata-installation-failure .jsn-sampledata-install-status
+	{
+	display: inline-block;
+}
+
+#jsn-sample-data div.jsn-sampledata-installation-failure .jsn-sampledata-install-status
+	{
+	background-position: left -860px;
+}
+
+#jsn-sample-data div.jsn-sampledata-installation-wait span.jsn-sampledata-installation-requried-elements,#jsn-sample-data div.jsn-sampledata-installation-failure span.jsn-sampledata-installation-requried-elements
+	{
+	color: #CC0000;
+}
+
+#jsn-sample-data span.jsn-install-process-missing-element {
+	color: #CC0000;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+#jsn-sample-data .jsn-install-process-missing-wapper ul {
+	margin: 0;
+	padding: 0 0 0 8px;
+}
+
+#jsn-sample-data .jsn-install-process-missing-wapper ul li {
+	margin: 0;
+}
+
+#jsn-sample-data .jsn-install-process-missing-wapper {
+	padding-left: 12px;
+}

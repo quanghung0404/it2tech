@@ -1,0 +1,294 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow
+ * @version $Id: imageshow.css 11062 2012-02-07 08:03:34Z trungnq $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+#jsn_is_list_container {
+	display: block;
+	width: 95%;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container {
+	border: 1px solid #fff;
+	padding: 15px;
+	margin: 10px;
+	float: left;
+	width: 100%;
+	background-color: #FFF;
+	transition: color 0.3s linear, background 0.3s ease-out;
+	-moz-transition: color 0.3s linear, background 0.3s ease-out;
+	-webkit-transition: color 0.3s linear, background 0.3s ease-out;
+	-ms-transition: color 0.3s linear, background 0.3s ease-out;
+	-o-transition: color 0.3s linear, background 0.3s ease-out;
+	font-size: 1em;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container:hover {
+	border: 1px solid #ccc;
+	background-color: #EFEFEF;
+	transition: color 0.3s linear, background 0.3s ease-out;
+	-moz-transition: color 0.3s linear, background 0.3s ease-out;
+	-webkit-transition: color 0.3s linear, background 0.3s ease-out;
+	-ms-transition: color 0.3s linear, background 0.3s ease-out;
+	-o-transition: color 0.3s linear, background 0.3s ease-out;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item_thumb_wrapper {
+	-moz-box-shadow: 2px 2px 3px #CCC;
+	-webkit-box-shadow: 2px 2px 3px #CCC;
+	box-shadow: 2px 2px 3px #CCC;
+	border: 1px solid #CCC;
+	background: url(../images/ajax-loader-lite.gif) center center no-repeat
+		#FFFFFF;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item_thumb_wrapper .item_thumb
+	{
+	margin: auto;
+	width: 148px;
+	height: 115px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	font-size: 24px;
+	text-align: center;
+	color: #CCC;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item_thumb_wrapper .item_thumb span
+	{
+	font-size: 24px;
+	text-align: center;
+	color: #CCC;
+	margin-top: 20px;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 35px;
+	background-color: #FFF;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item_content {
+	float: left;
+	margin: 23px 0 0 15px;
+	width: 68%;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item_content .title h3
+	{
+	font-size: 14px;
+	margin: 0;
+	color: #000;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item_content .description
+	{
+	padding: 10px 0;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item-thumb-bg {
+	background: url(../images/backgrounds/thumbnails-bg.png) center center
+		no-repeat transparent;
+	padding: 26px 24px;
+	width: 150px;
+	float: left;
+}
+
+#jsn_is_list_wapper .jsn_is_list_item_container .item-thumb-bg-empty {
+	background: none center center no-repeat transparent;
+	padding: 26px 24px;
+	width: 150px;
+	float: left;
+}
+
+.clearbreak {
+	clear: both;
+}
+
+#jsn_is_list_wapper .jsn-is-list-thumbnail {
+	margin: 10px 20px;
+	display: inline-block;
+	vertical-align: top;
+	background-color: #FFF;
+	transition: color 0.3s linear, background 0.3s ease-out;
+	-moz-transition: color 0.3s linear, background 0.3s ease-out;
+	-webkit-transition: color 0.3s linear, background 0.3s ease-out;	
+	-ms-transition: color 0.3s linear, background 0.3s ease-out;	
+	-o-transition: color 0.3s linear, background 0.3s ease-out;	
+	font-size: 1em;
+	width: 250px;
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail h3 {
+	text-align: center;
+	margin: 5px;
+	color: #000;
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .item-thumb-loading-container {
+	display: inline-block;
+	/*-moz-box-shadow: 0 0 5px #CCC;
+	-webkit-box-shadow: 0 0 5px #CCC;
+	box-shadow: 0 0 5px #CCC;
+	border: 1px solid #CCC;	*/
+	background: url(../images/ajax-loader-lite.gif) center center no-repeat #FFFFFF;	
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .item-thumb-loading-container .item-thumb-img {
+	margin: auto; 
+	width: 250px; 
+	height: 150px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-position: center center;		
+	font-size: 24px;
+	text-align: center;
+	color: #CCC;
+	display: inline-block;
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .item-thumb-loading-container .item-thumb-img span {	
+	font-size: 24px;
+	text-align: center;
+	color: #CCC;
+	margin-top: 55px;
+	display: inline-block;
+	font-weight: bold;
+	background-color: #FFF;	
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .item-thumb-bg {
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .item-thumb-bg-empty {
+	background: #FFFFFF;	
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .item-thumb-bg-empty .item-thumb-loading-container {
+	background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 2px 2px 3px #CCCCCC;
+    -moz-box-shadow: 2px 2px 3px #CCC;
+	-webkit-box-shadow: 2px 2px 3px #CCC;
+    margin: auto 0;
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .jsn-is-gallery-text {
+	margin-top: 5px;
+}
+
+#jsn_is_list_wapper .jsn-is-list-thumbnail .jsn-is-gallery-text > h2{
+	font-size: 14px;
+	font-family:"Arial",Georgia,Serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #555555;
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail .jsn-is-gallery-text > p {
+	color: #DDD;
+	color: #555555;
+}
+#jsn_is_list_wapper .jsn-is-list-thumbnail a.view_gallery:hover {
+	text-decoration: none;
+	background: none;
+}
+
+#jsn_is_list_wapper .jsn-is-list-thumbnail a.view_gallery {
+	display: block;
+}
+@media only screen and (max-width: 960px), (max-device-width: 960px) {
+	#jsn_is_list_wapper .jsn-is-list-thumbnail .item-thumb-loading-container {
+	display: inline-block;
+	background: none;	
+}
+}
+/*============================================== JSN PLUGIN EDITOR ============================================================*/
+.jsn-imageshow-plg-editor-container {
+	width: 500px;
+}
+.jsn-imageshow-plg-editor-wrapper {
+	width: 100%;
+}
+.jsn-imageshow-plg-editor-wrapper input {
+	float: left;
+	margin: 0 5px 0 0;
+}
+.jsn-imageshow-plg-editor-wrapper select {
+	float: left !important;
+	margin: 0 5px 0 0;
+}
+.jsn-imageshow-plg-editor-wrapper select.dimension {
+	width: 50px;
+	padding: 1px;
+}
+.jsn-imageshow-plg-editor-wrapper ul {
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none;
+	width: 100%;
+	padding-top: 10px
+}
+.jsn-imageshow-plg-editor-wrapper ul li {
+	clear: left;
+	float: left;
+	width: 100%;
+	margin: 5px 0 !important;
+	list-style: none !important;
+}
+.jsn-imageshow-plg-editor-wrapper label {
+	display: block;
+	float: left;
+	max-width: 100px;
+	min-width: 80px;
+	padding: 0 5px 0 0;
+	margin: 5px 0;
+}
+.jsn-imageshow-plg-editor-wrapper .setting,
+.jsn-imageshow-plg-editor-wrapper .parameter {
+	clear: both;
+	float: left;
+	width: 100%;
+	padding-bottom: 10px;
+}
+.jsn-imageshow-plg-editor-wrapper .parameter span.head,
+.jsn-imageshow-plg-editor-wrapper .setting span.head {
+	font-weight: bold;
+	background-color: #F6F6F6;
+	padding: 5px 0 5px 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+.jsn-imageshow-plg-editor-wrapper .jsn-tooltip-wrap {
+	display: none;
+}
+.jsn-imageshow-plg-editor-wrapper .jsn-tooltip-title {
+	font-weight: bold;
+	margin: 0px 0px 5px 0px;
+}
+
+.jsn-imageshow-plg-editor-wrapper input#height,
+.jsn-imageshow-plg-editor-wrapper input#width {
+	width: 50px;
+}
+.jsn-imageshow-plg-editor-wrapper hr.jsn-horizontal-line {
+	margin: 0;
+}
+
+.jsn-imageshow-plg-editor-wrapper .form-actions {
+	background: none !important;
+	border: none !important;
+	text-align: center;
+}
+
+.jsn-imageshow-plg-editor-wrapper .jsn-section-header {
+    border-bottom: 1px solid #E5E5E5;
+    color: #333333;
+    font-weight: normal !important;
+    font-size: 16px !important;
+    line-height: 32px;
+    margin: 0 0 15px !important;
+    padding: 0 0 5px;
+    position: relative;
+    text-shadow: 1px 1px 1px #CCCCCC;
+    text-transform: uppercase;
+}
+
+#main {
+	min-height: 350px !important;
+}

@@ -1,0 +1,29 @@
+.jsn-disable {
+    display: none !important;
+}
+.jsn-menu-alert-message {
+	float:left;
+	font-size: 12px;
+}
+.jsn-master.tmpl-bluestork fieldset label, .jsn-master.tmpl-bluestork fieldset input, .jsn-master.tmpl-bluestork fieldset textarea, .jsn-master.tmpl-bluestork fieldset select, .jsn-master.tmpl-bluestork fieldset button {
+    float: left;
+}
+#jsn-showcase-container > span,
+#jsn-showcase-container > a,
+#jsn-showlist-container > span,
+#jsn-showlist-container > a {
+    display: inline-block;
+    margin: 5px 7px;
+}
+#jsn-showcase-container > a, 
+#jsn-showlist-container > a {
+ position: absolute;
+ right: 0;
+ top: 0;
+}
+#jsn-showcase-container,
+#jsn-showlist-container {
+	float: left;
+	padding-right: 30px;
+    position: relative;
+}

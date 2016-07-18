@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="jsnimageshow"
+	method="upgrade">
+	<name>Source Picasa</name>
+	<version>1.1.8</version>
+	<creationDate>03/23/2016</creationDate>
+	<copyright>Copyright (c) 2008 - 2013 - JoomlaShine.com</copyright>
+	<license>GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<author>JoomlaShine.com</author>
+	<authorEmail>admin@joomlashine.com</authorEmail>
+	<authorUrl>http://www.joomlashine.com</authorUrl>
+	<description>JSN IMAGESHOW IMAGE SOURCE PICASA</description>
+	<files>
+		<filename plugin="sourcepicasa">sourcepicasa.php</filename>
+		<filename>define.php</filename>
+		<folder>assets</folder>
+		<folder>classes</folder>
+		<folder>sources</folder>
+		<folder>install</folder>
+		<folder>languages</folder>
+		<folder>tables</folder>
+		<folder>views</folder>
+	</files>
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install/install.mysql.sql</file>
+			<file charset="utf8" driver="sqlsrv">install/install.sqlsrv.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">install/uninstall.mysql.sql</file>
+			<file charset="utf8" driver="sqlsrv">install/uninstall.sqlsrv.sql</file>
+		</sql>
+	</uninstall>
+	<languages>
+		<language tag="da-DK">languages/da-DK.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="de-DE">languages/de-DE.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="en-GB">languages/en-GB.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="fr-FR">languages/fr-FR.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="it-IT">languages/it-IT.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="ja-JP">languages/ja-JP.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="nl-NL">languages/nl-NL.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="pl-PL">languages/pl-PL.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="pt-BR">languages/pt-BR.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="pt-PT">languages/pt-PT.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="ru-RU">languages/ru-RU.plg_jsnimageshow_sourcepicasa.ini</language>
+		<language tag="tr-TR">languages/tr-TR.plg_jsnimageshow_sourcepicasa.ini</language>
+	</languages>
+</extension>

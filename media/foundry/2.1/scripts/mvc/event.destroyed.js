@@ -1,0 +1,1 @@
+(function(){var e=function(e){var t=this,n=function(){var t=e.cleanData;e.cleanData=function(n){for(var r=0,i;(i=n[r])!==undefined;r++)e(i).triggerHandler("destroyed");t(n)}};n(),t.resolveWith(n)};dispatch("mvc/event.destroyed").containing(e).to("Foundry/2.1 Modules")})();

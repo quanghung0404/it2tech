@@ -1,0 +1,50 @@
+#jsnpa-pagebuilder-form-container {
+	background-color: #fff;	
+}
+
+#jsnpa-pagebuilder-form-container .jsn-iconbar {
+	display: none;
+}
+
+#jsnpa-pagebuilder-form-container .jsn-element .element-drag {
+	cursor: auto;
+}
+
+#jsnpa-pagebuilder-form-container .ui-state-default:hover, 
+#jsnpa-pagebuilder-form-container .jsn-handle-drag {
+	cursor: auto;
+}
+
+#jsnpa-pagebuilder-form-container .thumbnail  {
+	width:100%;
+}
+
+#jsnpa-pagebuilder-form-container .pb-more-element {
+	display: none !important;
+}
+
+#jsnpa-pagebuilder-form-container .ui-sortable .ui-state-default:hover {
+	background:none;
+	border-color: #fff;
+}
+
+#jsnpa-pagebuilder-form-container .pb-plg-element {
+	font-weight: bold;
+}
+
+#jsnpa-pagebuilder-form-container .pb-plg-element span {
+	font-weight: normal;
+}
+
+#jsnpa-pagebuilder-form-container .jsn-element .element-drag {
+	width: 26px;
+	height: 37px;
+	position: relative;
+	top: -11px;
+	margin-right: 5px;
+	display: block;
+	float: left;
+	background: url(../images/icons-16/icon-drag-anchor-mini.png) no-repeat scroll 8px center rgba(0, 0, 0, 0);
+	cursor: move;
+	text-decoration: none;
+}

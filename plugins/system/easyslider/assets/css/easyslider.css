@@ -1,0 +1,436 @@
+
+
+.jsn-es-hidden {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	display: none !important;
+}
+.jsn-es-draggable {
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+}
+.jsn-es-draggable:active,
+.jsn-es-draggable-dragging {
+	cursor: -webkit-grabbing;
+	cursor: -moz-grabbing;
+}
+.jsn-es-background {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
+	z-index: 1;
+}
+.jsn-es-background {
+
+	pointer-events: all !important;
+}
+.jsn-es-background .jsn-es-loading {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	width: 30px;
+	height: 30px;
+	background: rgba(255, 255, 255, 0.7);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	border: 1px solid #2e6da4;
+	border-radius: 50%;
+	z-index: 2;
+}
+.jsn-es-background .jsn-es-loading:before,
+.jsn-es-background .jsn-es-loading:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 22px;
+	height: 22px;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	border-radius: 50%;
+	border: 3px solid #2e6da4;
+	box-sizing: border-box;
+}
+.jsn-es-background .jsn-es-loading:before {
+	border-top-color: transparent;
+}
+.jsn-es-background .jsn-es-loading:after {
+	width: 10px;
+	height: 10px;
+	z-index: 4;
+	border-width: 2px;
+}
+.jsn-es-background iframe {
+	max-width: 1000% !important;
+}
+.jsn-es-background.slide-background iframe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.jsn-es-video {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.jsn-es-slider,
+.jsn-es-slider * {
+	box-sizing: border-box;
+
+	/* Prevent user selection for native like experience */
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	-webkit-tap-highlight-color: transparent;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.jsn-es-slider * {
+	pointer-events: none;
+    z-index: 0;
+}
+.jsn-es-slider {
+	display: block;
+	position: relative;
+	box-sizing: content-box;
+	max-width: 100%;
+}
+.jsn-es-slide-progress {
+	background: rgba(100,100,100,0.1);
+	display: none;
+	position: relative;
+	/*z-index: 999;*/
+}
+.jsn-es-slide-progress-bar {
+	background: #768dc2;
+	height: 4px;
+	width: 0%;
+}
+.jsn-es-viewport {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	box-sizing: content-box;
+
+	overflow: hidden;
+}
+.jsn-es-viewport {
+	-webkit-transform-style: flat;
+	transform-style: flat;
+}
+.jsn-es-viewport * {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.jsn-es-stage {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	overflow: visible;
+	z-index: 2;
+}
+
+.jsn-es-global .jsn-es-items {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+.jsn-es-slides,
+.jsn-es-slide,
+.jsn-es-swiper {
+	display: block;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	list-style: none;
+}
+.jsn-es-slide,
+.jsn-es-slide * {
+	/*visibility: hidden;*/
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	/*pointer-events: none !important;*/
+}
+.jsn-es-slide {
+	pointer-events: none !important;
+}
+
+.jsn-es-global {
+	z-index: 2;
+}
+.jsn-es-slides {
+	z-index: 1;
+}
+
+.jsn-es-items {
+	display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    list-style: none;
+    pointer-events: none !important;
+    padding: 0;
+    margin: 0;
+
+	z-index: 2;
+}
+.jsn-es-item {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	width: 0;
+	height: 0;
+
+	padding: 0;
+	margin: 0;
+}
+.jsn-es-item,
+.jsn-es-item * {
+	-webkit-transform-style: flat;
+	transform-style: flat;
+	pointer-events: all !important;
+}
+.jsn-es-item a,
+.jsn-es-item a:hover,
+.jsn-es-item a:active {
+	cursor: pointer;
+	text-decoration: none;
+}
+.jsn-es-item .item-offset {
+	display: block;
+	position: absolute;
+	transform: translate3d(0px,0px,0px);
+	-webkit-transform: translateX(0px) translateY(0px) translateZ(0px);
+}
+.jsn-es-item .item-animation,
+.jsn-es-item .item-container {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	border: 1px solid transparent;
+
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	/*overflow: hidden;*/
+}
+.jsn-es-item .item-content {
+	position: relative;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	-webkit-justify-content: center;
+
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	width: 100%;
+	height: 100%;
+	filter: none !important;
+
+	padding: 0;
+	margin: 0;
+
+	z-index: 2;
+}
+
+.jsn-es-nav svg {
+	max-width: 10000px;
+}
+.jsn-es-nav {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 3;
+}
+.jsn-es-nav-buttons {
+	font-size: 16.5px;
+	line-height: 1.25;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+.jsn-es-nav-pagination {
+	top: auto;
+	margin-bottom: 15px;
+	text-align: center;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Lato', Arial, sans-serif;
+}
+.jsn-es-nav .jsn-es-next,
+.jsn-es-nav .jsn-es-next *,
+.jsn-es-nav .jsn-es-prev,
+.jsn-es-nav .jsn-es-prev *
+.jsn-es-nav .jsn-es-pagination,
+.jsn-es-nav .jsn-es-pagination * {
+	pointer-events: all !important;
+	cursor: pointer;
+}
+/*.jsn-es-nav-pagination {*/
+	/*list-style: none;*/
+	/*white-space: nowrap;*/
+	/*top: auto;*/
+	/*left: 0;*/
+	/*right: 0;*/
+	/*bottom: 0;*/
+	/*padding: 0;*/
+	/*margin: 5px;*/
+	/*text-align: center;*/
+/*}*/
+/*.jsn-es-pagination > * {*/
+	/*display: inline-block;*/
+	/*position: relative;*/
+	/*margin: 1px;*/
+	/*font-size: 0;*/
+	/*width: 10px;*/
+	/*height: 10px;*/
+	/*box-sizing: content-box;*/
+	/*border: 5px solid rgba(0,0,0,0);*/
+	/*border-radius: 50%;*/
+	/*background-clip: content-box;*/
+/*}*/
+
+/*.jsn-es-pagination > * {*/
+	/*cursor: pointer;*/
+	/*color: rgba(0,0,0,0.7);*/
+	/*pointer-events: all !important;*/
+	/*background-color: rgba(255,255,255,0.5);*/
+	/*transition: all 300ms ease;*/
+/*}*/
+/*.jsn-es-pagination > *:hover {*/
+	/*background-color: rgba(255,255,255,0.9);*/
+/*}*/
+/*.jsn-es-pagination > *:active,*/
+/*.jsn-es-pagination > *.jsn-es-active {*/
+	/*transition: none 0ms;*/
+	/*background-color: rgba(0,0,0,0.5);*/
+	/*color: rgba(255,255,255,0.8)*/
+/*}*/
+
+.jsn-es-cube {
+	display: block;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+}
+.jsn-es-cuboid,
+.jsn-es-cuboid * {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.jsn-es-cuboid {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.jsn-es-cuboid-face {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ddd;
+	box-sizing: border-box;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.jsn-es-cuboid-front {
+	background-color: black;
+}
+.jsn-es-cuboid-left,
+.jsn-es-cuboid-right {
+	left: 50%;
+	/*background-color: rgba(50,50,50,0.3);*/
+}
+.jsn-es-cuboid-back {
+	/*background-color: rgba(0,0,0,0.3);*/
+}
+.jsn-es-cuboid-top,
+.jsn-es-cuboid-bottom {
+	top: 50%;
+	/*background-color: rgba(50,50,50,0.3);*/
+}
+
+/* SVG wrap */
+.svg-wrap {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+
+.jsn-es-flat-slider .jsn-es-items {
+	-webkit-transform-style: flat !important;
+	transform-style: flat !important;
+}
+.bg-parallax {
+	width: 100%;
+	height: 100%;
+}
+.none-bg {
+    background: none !important;
+}
+.slide-background-effect {
+	width: 100%;
+	height: 100%;
+}
+.jsn-es-background.slide-background {
+	border: none;
+	padding: 0;
+	margin: 0 0;
+}
+.jsn-es-slider ul,
+.jsn-es-slides {
+	margin: 0px !important;
+    padding: 0;
+}

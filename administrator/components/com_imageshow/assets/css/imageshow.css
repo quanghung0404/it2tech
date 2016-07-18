@@ -1,0 +1,570 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow
+ * @version $Id: imageshow.css 17065 2012-10-16 04:06:37Z giangnd $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+/* ============================== GENERAL ================================= */
+/* Ordering */
+.jsn-bootstrap .input-prepend {
+	margin: 0 auto;
+	width: 125px;
+}
+
+.jsn-bootstrap .table span.state.downarrow {
+	background-image: url("../images/glyphicons-halflings.png");
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 14px;
+	line-height: 14px;
+	vertical-align: text-top;
+	width: 14px;
+	background-position: -312px -96px;
+}
+
+.jsn-bootstrap .table span.state.uparrow {
+	background-image: url("../images/glyphicons-halflings.png");
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 14px;
+	line-height: 14px;
+	vertical-align: text-top;
+	width: 14px;
+	background-position: -289px -96px;
+}
+
+.jsn-master .jsn-page-list .input-prepend input.jsn-input-ordering {
+	margin-left: 0px;
+	text-align: center;
+}
+
+.jsn-bootstrap .saveorder {
+	display: inline-block;
+	float: none;
+}
+/* End ordering*/
+/* ============================== TYPOGRAPHY ============================== */
+/* =============== TYPOGRAPHY - GENERAL TYPOGRAPHY =============== */
+/* ----- TEXT ----- */
+.content-center {
+	text-align: center;
+}
+
+/* ----- TABLE STYLES ----- */
+table.admintable {
+	width: 100%;
+}
+
+table.admintable td {
+	padding: 3px;
+	font-size: 12px;
+}
+
+table.admintable td.key,table.admintable td.paramlist_key {
+	width: 150px;
+}
+
+table.admintable input,table.admintable select {
+	margin: 0;
+	float: none;
+}
+
+table.admintable select {
+	margin-bottom: 9px;
+}
+
+table.admintable input.inputbox {
+	float: none;
+	margin: 5px 5px 0 5px;
+}
+
+table.admintable label {
+	float: none;
+	margin: 0;
+	display: inline;
+}
+
+table.admintable .readonly {
+	background-color: #FFF;
+}
+
+/* ============================== HEADER ICON ============================== */
+div.pagetitle.icon-48-launchpad {
+	background-image: url(../images/icons-48/icon-off.png);
+}
+
+div.pagetitle.icon-48-showlist,div.pagetitle.icon-48-showlist-settings {
+	background-image: url(../images/icons-48/icon-file.png);
+}
+
+div.pagetitle.icon-48-showcase,div.pagetitle.icon-48-showcase-settings {
+	background-image: url(../images/icons-48/icon-monitor.png);
+}
+
+div.pagetitle.icon-48-help {
+	background-image: url(../images/icons-48/icon-help.png);
+}
+
+div.pagetitle.icon-48-about {
+	background-image: url(../images/icons-48/icon-star.png);
+}
+
+div.pagetitle.icon-48-maintenance {
+	background-image: url(../images/icons-48/icon-cog.png);
+}
+
+.jsn-element-heading-title {
+	display: none;
+}
+/* =============== MAINTENANCE - IMAGE SOURCE PROFILE =============== */
+.jsn-image-source-close-profile {
+	display: none;
+}
+
+.jsn-image-source-title-close span.jsn-image-source-close-profile {
+	display: inline;
+}
+
+.jsn-image-source-title-close span.jsn-image-source-open-profile {
+	display: none;
+}
+
+#jsn-image-source-profiles .jsn-image-source-table-td-profiles {
+	padding: 0;
+	border: none;
+}
+
+#jsn-image-source-profiles .jsn-image-source-table-profiles {
+	border: none;
+}
+
+.jsn-image-source-profile-close {
+	display: none;
+}
+
+.jsn-image-source-seperator {
+	color: #ccc;
+	padding: 0 3px;
+}
+/* =============== MAINTENANCE - THEMES MANAGER =============== */
+#system-message dd.notice ul {
+	background-position: 4px center;
+}
+
+#jsn-theme-details {
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#jsn-theme-details #jsn-showcase-theme-params {
+	height: 300px;
+	overflow: auto;
+}
+
+#jsn-theme-details select,#jsn-theme-details input {
+	width: 98%;
+}
+
+/* ============================== CHECK THUMB FOLDER ============================== */
+#jsn-checkthumb {
+	top: 0;
+	width: 250px;
+	height: 42px;
+	padding: 10px;
+	margin: 23% 40% 40%;
+	position: absolute;
+	background: #e4e4e4;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 5px 7px #999;
+	-moz-box-shadow: 0 5px 7px #999;
+	-webkit-box-shadow: 0 5px 7px #999;
+}
+
+#jsn-checkthumb-label {
+	margin: 5px 0 10px;
+}
+
+#jsn-checkthumb-count {
+	height: 3px;
+	border: 1px solid #999;
+}
+
+#jsn-checkthumb-progress-bar {
+	width: 0;
+	height: 100%;
+	background: #ffce3f;
+}
+/* ============================== MANUAL INSTALLATION ============================== */
+#jsn-install-manual-stage-1 {
+	margin: 5px 0 0 12px
+}
+
+#jsn-install-manual-stage-1 ul {
+	margin: 0;
+	padding: 0;
+}
+
+#jsn-install-manual-stage-1 ul li {
+	margin: 3px 0 0 8px;
+}
+
+#jsn-install-manual-stage-2-default div,#jsn-install-manual-stage-2 div
+	{
+	margin: 5px 0 0 24px;
+}
+
+#jsn-install-manual-stage-2 a,#jsn-install-download-backup-file .jsn-install-download-backup-link
+	{
+	color: #0099ca;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#jsn-install-manual-stage-2 button,#jsn-install-manual-stage-2-default button
+	{
+	margin: 0 auto;
+	display: inline-block;
+}
+
+#jsn-install-manual-stage-2 input,#jsn-install-manual-stage-2-default input
+	{
+	background: #ebebe4;
+}
+
+#jsn-install-manual-stage-2-default div {
+	margin: 5px 0 0 0;
+}
+
+.jsn-manual-install-form div {
+	margin: 5px 0 0;
+}
+
+.jsn-manual-install-form p {
+	margin: 14px 0 12px;
+}
+
+div.jsn-manual-install-form a {
+	text-decoration: underline;
+	font-weight: bold;
+}
+/* ============================== THEME/PROFILE - HINT ============================== */
+.jsn-preview-hint-text {
+	float: right;
+}
+
+.jsn-preview-hint-caption {
+	font-size: 12px;
+	font-weight: bold;
+	list-style-type: none;
+}
+
+.jsn-preview-hint-text span {
+	width: 24px;
+	height: 24px;
+	display: block;
+	cursor: pointer;
+}
+
+.jsn-preview-hint-text .hint-active {
+	display: block;
+	max-width: 350px;
+}
+
+.jsn-preview-hint-text-content {
+	left: 0;
+	z-index: 99;
+	display: none;
+	font-size: 11px;
+	position: absolute;
+	font-weight: normal;
+	padding: 8px 30px 8px 10px;
+	background-color: #FFFFCC;
+	border: 1px solid #D4D5AA;
+}
+
+.jsn-preview-hint-text-content ul {
+	margin-left: 20px;
+}
+
+.jsn-preview-hint-close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+/* ============================== ICON =========================================== */
+.jsn-source-icon-loading {
+	width: 16px;
+	height: 16px;
+	display: none;
+	margin: 0 auto;
+	vertical-align: middle;
+	background: url(../images/icons-16/icon-16-loading-circle.gif) left center no-repeat;
+}
+
+.jsn-source-icon-loading.show-loading {
+	display: inline-block;
+}
+/* ==================================== MANUAL INSTALLATION=================================== */
+.jsn-manual-installation ul li {
+	padding: 5px 5px 5px 0px;
+	list-style: none;
+}
+
+.jsn-manual-installation a.link-button {
+	padding: 5px 12px;
+	text-decoration: none !important;
+	color: #000 !important;
+}
+/*============================================== JSN PLUGIN EDITOR ============================================================*/
+.jsn-imageshow-plg-editor-container {
+	width: 500px;
+}
+
+.jsn-imageshow-plg-editor-wrapper {
+	width: 100%;
+}
+
+.jsn-imageshow-plg-editor-wrapper input {
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+.jsn-imageshow-plg-editor-wrapper select {
+	float: left !important;
+	margin: 0 5px 0 0;
+}
+.jsn-imageshow-plg-editor-wrapper select.jsn-select-value
+{
+	width: 250px !important;
+}
+.jsn-imageshow-plg-editor-wrapper select.dimension {
+	width: 50px;
+	padding: 1px;
+}
+
+.jsn-imageshow-plg-editor-wrapper ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	padding-top: 10px
+}
+
+.jsn-imageshow-plg-editor-wrapper ul li {
+	clear: left;
+	float: left;
+	width: 100%;
+}
+
+.jsn-imageshow-plg-editor-wrapper label {
+	display: block;
+	float: left;
+	max-width: 100px;
+	min-width: 80px;
+	padding: 0 5px 0 0;
+	margin: 5px 0;
+}
+
+.jsn-imageshow-plg-editor-wrapper .setting,.jsn-imageshow-plg-editor-wrapper .parameter
+	{
+	clear: both;
+	float: left;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+.jsn-imageshow-plg-editor-wrapper .parameter span.head,.jsn-imageshow-plg-editor-wrapper .setting span.head
+	{
+	font-weight: bold;
+	background-color: #F6F6F6;
+	padding: 5px 0 5px 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+.jsn-imageshow-plg-editor-wrapper #jsn-showlist-icon-warning,.jsn-imageshow-plg-editor-wrapper #jsn-showcase-icon-warning
+	{
+	position: relative;
+	float: left;
+	height: 1%;
+	margin-top: 4px;
+}
+
+.jsn-imageshow-plg-editor-wrapper .jsn-tooltip-wrap {
+	display: none;
+}
+
+.jsn-imageshow-plg-editor-wrapper .jsn-tooltip-title {
+	font-weight: bold;
+	margin: 0px 0px 5px 0px;
+}
+
+.jsn-imageshow-plg-editor-wrapper .jsn-icon-warning:hover .jsn-tooltip-wrap
+	{
+	position: absolute;
+	background: #FFFFCC;
+	border: 1px solid #D7D7AC;
+	display: block;
+	right: 20px;
+	padding: 5px;
+	top: 25px;
+	width: 200px;
+	z-index: 9999;
+}
+
+.jsn-imageshow-plg-editor-wrapper .jsn-tooltip-anchor {
+	background: url(../images/icons-16/selector-arrow.png) 13px 9px
+		no-repeat;
+	display: block;
+	height: 48px;
+	right: -15px;
+	position: absolute;
+	top: -19px;
+	width: 45px;
+	z-index: 6666;
+}
+
+.jsn-imageshow-plg-editor-wrapper .jsn-menu-alert-message {
+	float: left;
+	font-size: 12px;
+}
+
+.jsn-imageshow-plg-editor-wrapper input#height,.jsn-imageshow-plg-editor-wrapper input#width
+	{
+	width: 50px;
+}
+
+.jsn-imageshow-plg-editor-wrapper hr.jsn-horizontal-line {
+	margin: 0;
+}
+/*============================================== POPUP ============================================================*/
+.jsn-item-details .button-container {
+	text-align: center;
+	padding: 5px;
+	margin-top: 5px;
+}
+/*================================================ BOOTSTRAP =======================================================*/
+/*=============== TABLE ===============*/
+.jsn-bootstrap .table th.center,.jsn-bootstrap .table td.center {
+	text-align: center;
+}
+
+.jsn-bootstrap .input-prepend {
+	width: 125px;
+	margin: 0 auto;
+}
+
+.jsn-bootstrap .table td.jsn-list-order span.state {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-image: url("../images/glyphicons-halflings.png");
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+}
+
+.jsn-bootstrap .table td.jsn-list-order span.state.downarrow {
+	background-position: -312px -96px;
+}
+
+.jsn-bootstrap .table td.jsn-list-order span.state.uparrow {
+	background-position: -289px -96px;
+}
+
+#jsn-data .jsn-bootstrap .tab-content {
+	padding: 0 10px;
+}
+
+#jsn-main-content .jsn-bootstrap .container {
+	width: 100%;
+}
+
+span.button-wrapper,#jsn-showcases-container fieldset span.button-wrapper,#jsn-showlists-container fieldset span.button-wrapper
+	{
+	display: inline-block;
+	float: left;
+	padding-right: 5px;
+}
+
+.jsn-bootstrap .saveorder {
+	float: none;
+	display: inline-block;
+}
+
+table#jsn-showcase-detail-slide td,table#jsn-showlist-detail-slide td {
+	font-size: 12px;
+}
+
+.disabled {
+	font-weight: normal !important;
+}
+
+table.admintable input.inputbox {
+	vertical-align: baseline;
+}
+
+.admintable .overall-width-dimension {
+	width: 50px;
+}
+
+#jsn-imageshow-help .container-fluid {
+	padding: 0;
+}
+
+.fltlft {
+	float: left;
+}
+
+.fltrt {
+	float: right;
+}
+
+.jsn-showlist-source-slide .jsn-item .jsn-showcasetheme-install-update-theme .span-link-action
+	{
+	float: none;
+	margin-left: 0;
+}
+
+div.jsn-bootstrap .jsn-pagination .container {
+	width: auto;
+}
+
+div.jsn-tabs .ui-tabs-panel {
+	padding: 0;
+}
+
+.loading {
+	background: url(../images/icons-32/ajax-loader-big.gif) center 250px no-repeat;
+	position: absolute;
+}
+
+.jsn-item-details .img-box>img {
+	max-height: 120px;
+}
+
+.jsn-is-confirmbox-message {
+	margin: 15px;
+}
+
+#jsn-upgrade-editions,#jsn-upgrade-message {
+	display: none;
+}
+#edit-item-details-multiple .input-append {
+	margin-top: 10px;
+}
+.jsn-imageshow-img-tab {
+	margin-right:5px;
+}
+#edit-item-details .input-append {
+	width: 100%;
+}

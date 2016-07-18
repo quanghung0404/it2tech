@@ -1,0 +1,14 @@
+#jform_params_slider_id,
+#jsn-slider-icon-warning a {
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+#jform_params_slider_id {
+    width: 250px;
+}
+
+#jsn-slider-icon-warning a {
+	padding-top: 5px;
+	font-size: 14px;
+}

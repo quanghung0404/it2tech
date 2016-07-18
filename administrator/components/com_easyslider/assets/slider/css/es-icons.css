@@ -1,0 +1,94 @@
+@font-face {
+	font-family: 'es-icons';
+	src:url('../fonts/es-icons.eot?e2qm7q');
+	src:url('../fonts/es-icons.eot?e2qm7q#iefix') format('embedded-opentype'),
+	url('../fonts/es-icons.ttf?e2qm7q') format('truetype'),
+	url('../fonts/es-icons.woff?e2qm7q') format('woff'),
+	url('../fonts/es-icons.svg?e2qm7q#es-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*='es-icon-'] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'es-icons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.es-icon-icon-autowidth:before {
+	content: "\e901";
+}
+.es-icon-icon-carousel-slider:before {
+	content: "\e902";
+}
+.es-icon-icon-fullscreen:before {
+	content: "\e903";
+}
+.es-icon-icon-fullwidth:before {
+	content: "\e906";
+}
+.es-icon-icon-standard-slider:before {
+	content: "\e90a";
+}
+.es-icon-icon-timeline2 .path1:before {
+	content: "\e90b";
+	color: rgb(0, 0, 0);
+}
+.es-icon-icon-timeline2 .path2:before {
+	content: "\e90c";
+	margin-left: -1.556640625em;
+	color: rgb(0, 0, 0);
+}
+.es-icon-icon-timeline2 .path3:before {
+	content: "\e90d";
+	margin-left: -1.556640625em;
+	color: rgb(43, 182, 115);
+}
+.es-icon-icon-timeline2 .path4:before {
+	content: "\e90e";
+	margin-left: -1.556640625em;
+	color: rgb(0, 0, 0);
+}
+.es-icon-icon-timeline2 .path5:before {
+	content: "\e90f";
+	margin-left: -1.556640625em;
+	color: rgb(43, 182, 115);
+}
+.es-icon-icon-timeline2 .path6:before {
+	content: "\e910";
+	margin-left: -1.556640625em;
+	color: rgb(0, 0, 0);
+}
+.es-icon-icon-timeline2 .path7:before {
+	content: "\e911";
+	margin-left: -1.556640625em;
+	color: rgb(43, 182, 115);
+}
+.es-icon-icon-box:before {
+	content: "\e900";
+}
+.es-icon-icon-image:before {
+	content: "\e904";
+}
+.es-icon-icon-settings:before {
+	content: "\e905";
+}
+.es-icon-icon-text:before {
+	content: "\e907";
+}
+.es-icon-icon-timeline:before {
+	content: "\e908";
+}
+.es-icon-icon-video:before {
+	content: "\e909";
+}
+

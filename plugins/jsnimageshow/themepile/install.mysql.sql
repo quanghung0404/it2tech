@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `#__imageshow_theme_pile` (
+  `theme_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `image_source` varchar(150) NOT NULL DEFAULT 'thumbnail',
+  `image_width` varchar(11) DEFAULT '130',
+  `image_height` varchar(11) DEFAULT '130',
+  `thumbnail_overlap` varchar(11) DEFAULT '50',
+  `thumbnail_rotation` varchar(11) DEFAULT '45',
+  `thumbnail_border_width` varchar(11) DEFAULT '2',
+  `thumbnail_border_color` varchar(150) DEFAULT '',
+  `thumbnail_border_hover` varchar(150) DEFAULT '',
+  `show_shadow` varchar(11) DEFAULT '1',
+  `thumbnail_shadow_color` varchar(150) DEFAULT '',
+  `image_click_action` varchar(150) DEFAULT 'show_original_image',
+  `open_link_in` varchar(150) DEFAULT 'current_browser',
+  `fade_duration` varchar(11) DEFAULT '200',
+  `pickup_duration` varchar(11) DEFAULT '500',
+  `show_title` varchar(11) DEFAULT '0',
+  `title_css` varchar(250) DEFAULT 'font-family: Verdana;\nfont-size: 12px;\nfont-weight: bold;\ntext-align: left;',
+  `show_description` varchar(11) DEFAULT '0',
+  `description_css` varchar(250) DEFAULT 'font-family: Arial;\nfont-size: 11px;\nfont-weight: normal;\ntext-align: left;',
+  PRIMARY KEY (`theme_id`)
+) DEFAULT CHARSET=utf8;

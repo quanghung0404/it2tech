@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="administrator" method="upgrade"
+	version="3.0">
+	<name>JSN ImageShow Quick Icons</name>
+	<author>JoomlaShine.com</author>
+	<creationDate>11/02/2013</creationDate>
+	<copyright>Copyright (c) 2008 - 2013 - JoomlaShine.com</copyright>
+	<license>GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<authorEmail>admin@joomlashine.com</authorEmail>
+	<authorUrl>www.joomlashine.com</authorUrl>
+	<version>4.8.1</version>
+	<description>Quick access icon to reach JSN ImageShow Launch Pad</description>
+	<files>
+		<filename module="mod_imageshow_quickicon">mod_imageshow_quickicon.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset addfieldpath="/administrator/components/com_imageshow/elements"
+				name="basic">
+				<field name="cache" type="list" default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

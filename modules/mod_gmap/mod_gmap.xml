@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade" client="site">
+	<name>GMap</name>
+	<author>2GLux.com</author>
+	<creationDate>May 2008</creationDate>
+	<copyright>Copyright (C) 2008 - 2013 2GLux.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+	 <authorEmail>info@2glux.com</authorEmail>
+	<authorUrl>http://2glux.com</authorUrl>
+	<version>3.0.1</version>
+	<description>Google Maps</description>
+	<files>
+		<filename module="mod_gmap">mod_gmap.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+	</files>
+		<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="api_key" type="text" default="ABQIAAAARiXnQpONm0tObWWjCAo2hxRkbdGlYmNOYio6lIyibVzoO-fg5xSD5t4M4X7wpN6eG6VcWHUtqnbFYw" label="Api Key" description="Google Maps Api Key. http://code.google.com/apis/maps/signup.html" />
+				<field name="width" type="text" default="500" label="Width" description="Map width in pixels" />
+				<field name="height" type="text" default="300" label="Height" description="Map height in pixels" />
+				<field name="zoom" type="text" default="7" label="Zoom" description="Map zoom" />
+				<field name="centerPoint" type="text" default="40.169997:44.52" label="Center Point" description="Map Center Point (latitude:longitude)" />
+				<field name="point1" type="text" default="40.169997:44.52:Yerevan, Armenia" label="Point 1" description="First Marker, for more markers contact me" />
+				<field name="point2" type="text" default="38.895111:-77.036667:Washington D.C." label="Point 2" description="Second Marker, for more markers contact me" />
+				<field name="point3" type="text" default="40.716667:-74:New York City" label="Point 3" description="Third Marker, for more markers contact me" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,28 @@
+<product name="Theme Pile" type="plugin">
+	<version number="1.0.0">
+		<release_date>17/6/2015</release_date>
+		<tables>
+			<table id="1" status="ADDED" name="#__imageshow_theme_pile">
+				<field id="1" status="ADDED" name="theme_id" type="int(11) unsigned" primary_key="yes"/>
+				<field id="2" status="ADDED" name="image_source" type="varchar(150)"/>
+				<field id="3" status="ADDED" name="image_width" type="varchar(11)"/>
+				<field id="4" status="ADDED" name="image_height" type="varchar(11)"/>
+				<field id="5" status="ADDED" name="thumbnail_overlap" type="varchar(11)"/>
+				<field id="6" status="ADDED" name="thumbnail_rotation" type="varchar(11)"/>
+				<field id="7" status="ADDED" name="thumbnail_border_width" type="varchar(11)"/>
+				<field id="8" status="ADDED" name="thumbnail_border_color" type="varchar(150)"/>
+				<field id="9" status="ADDED" name="thumbnail_border_hover" type="varchar(150)"/>
+				<field id="10" status="ADDED" name="show_shadow" type="varchar(11)"/>
+				<field id="11" status="ADDED" name="thumbnail_shadow_color" type="varchar(150)"/>
+				<field id="12" status="ADDED" name="image_click_action" type="varchar(150)"/>
+				<field id="13" status="ADDED" name="open_link_in" type="varchar(150)"/>
+				<field id="14" status="ADDED" name="fade_duration" type="varchar(11)"/>
+				<field id="15" status="ADDED" name="pickup_duration" type="varchar(11)"/>
+				<field id="16" status="ADDED" name="show_title" type="varchar(11)"/>
+				<field id="17" status="ADDED" name="title_css" type="varchar(250)"/>
+				<field id="18" status="ADDED" name="show_description" type="varchar(150)"/>
+				<field id="19" status="ADDED" name="description_css" type="varchar(250)"/>
+			</table>
+		</tables>
+	</version>
+</product>

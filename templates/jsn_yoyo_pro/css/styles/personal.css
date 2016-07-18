@@ -1,0 +1,44 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(https://fonts.googleapis.com/css?family=Offside);
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 80%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#jsn-gotoplink,
+.page-header,
+.subheading-category,
+.componentheading,
+.contentheading,
+#jsn-menu span,
+#jsn-menu a,
+#jsn-gotoplink,
+.link-button {
+	font-family: 'Offside', sans-serif;
+}
+body.jsn-textstyle-personal .jsn-moduletitle {
+	font-size: 1.6em;
+	text-transform: none;
+}
+body.jsn-textstyle-personal ul.menu-mainmenu > li > a {
+	font-size: 1.3em;
+	text-transform: none;
+}
+body.jsn-textstyle-personal ul.menu-mainmenu ul li a {
+	font-size: 1.2em;
+}
+body.jsn-textstyle-personal .contentheading,
+body.jsn-textstyle-personal .componentheading,
+body.jsn-textstyle-personal .subheading {
+	text-transform: none;
+}

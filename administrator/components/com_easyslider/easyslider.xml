@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>EasySlider</name>
+    <version>2.1.3</version>
+    <creationDate>05/27/2016</creationDate>
+    <author>JoomlaShine.com</author>
+    <authorEmail>support@joomlashine.com</authorEmail>
+    <authorUrl>http://www.joomlashine.com</authorUrl>
+    <copyright>Copyright (C) 2015 JoomlaShine.com. All Rights Reserved.</copyright>
+    <license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <description>JSN EasySlider Component</description>
+    <install>
+	<sql>
+	    <file charset="utf8" driver="mysql">database/mysql/install.mysql.sql</file>			
+	</sql>
+    </install>
+    <scriptfile>subinstall.php</scriptfile>
+    <subinstall>
+		<extension type="plugin" folder="system" name="easyslider" dir="plugins/system/easyslider" client="site" publish="1" lock="1">
+			JSN EasySlider System Plugin
+		</extension>
+		<extension type="plugin" folder="system" name="jsnframework" identified_name="ext_framework" client="site" publish="1" lock="1">
+			JSN Extension Framework System Plugin
+		</extension>
+
+        <extension type="module" folder="site" dir="site/modules/mod_easyslider" name="mod_easyslider" client="site" publish="1" lock="1" />
+        <extension type="plugin" folder="editors-xtd" client="site" dir="plugins/editors-xtd/jsneasyslider" name="jsneasyslider" publish="1" lock="1" />
+        <extension type="plugin" folder="content" client="site" dir="plugins/content/jsneasyslider" name="jsneasyslider" publish="1" lock="1" />
+    </subinstall>
+    <uninstall>
+	<sql>
+	    <file charset="utf8" driver="mysql">database/mysql/uninstall.mysql.sql</file>			
+	</sql>
+    </uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">database/mysql/updates</schemapath>
+		</schemas>
+	</update>
+	<languages folder="admin">
+	    <language tag="en-GB">language/site/en-GB/en-GB.com_easyslider.ini</language>
+	    <language tag="en-GB">language/site/en-GB/en-GB.mod_easyslider.ini</language>
+	    <language tag="en-GB">language/site/en-GB/en-GB.mod_easyslider.sys.ini</language>
+	</languages>			    
+    <administration>		
+	<menu link="option=com_easyslider" option="com_easyslider" img="components/com_easyslider/assets/images/icon-easyslider.png" alt="JSN_EASYSLIDER_MENU_TEXT">JSN_EASYSLIDER_MENU_TEXT</menu>
+	<submenu>			
+		<menu link="option=com_easyslider&amp;view=sliders" view="sliders" img="components/com_easyslider/assets/images/icons-16/icon-items.png" alt="JSN_EASYSLIDER_MENU_SLIDERS_TEXT">JSN_EASYSLIDER_MENU_SLIDERS_TEXT</menu>
+	    <menu link="option=com_easyslider&amp;view=configuration" view="configuration" img="components/com_easyslider/assets/images/icons-16/icon-configuration.png" alt="JSN_EASYSLIDER_MENU_CONFIGURARTION_TEXT">JSN_EASYSLIDER_MENU_CONFIGURARTION_TEXT</menu>
+	    <menu link="option=com_easyslider&amp;view=about" view="about" img="components/com_easyslider/assets/images/icons-16/icon-about.png" alt="JSN_EASYSLIDER_MENU_ABOUT_TEXT">JSN_EASYSLIDER_MENU_ABOUT_TEXT</menu>
+	</submenu>
+	<files folder="admin">
+	    <folder>assets</folder>
+		<folder>classes</folder>
+	    <folder>controllers</folder>
+	    <folder>database</folder>
+	    <folder>elements</folder>
+	    <folder>helpers</folder>
+	    <folder>language</folder>
+	    <folder>libraries</folder>
+	    <folder>models</folder>			
+	    <folder>tables</folder>
+	    <folder>views</folder>
+	    <filename>access.xml</filename>
+	    <filename>bootstrap.php</filename>
+	    <filename>config.xml</filename>
+	    <filename>controller.php</filename>
+	    <filename>dependency.php</filename>
+	    <filename>jsninstaller.php</filename>
+	    <filename>easyslider.php</filename>
+	    <filename>easyslider.defines.php</filename>
+	</files>
+	<languages folder="admin">
+	    <language tag="en-GB">language/admin/en-GB/en-GB.com_easyslider.ini</language>
+	    <language tag="en-GB">language/admin/en-GB/en-GB.com_easyslider.sys.ini</language>
+	    <language tag="en-GB">language/admin/en-GB/en-GB.plg_content_jsneasyslider.ini</language>
+	    <language tag="en-GB">language/admin/en-GB/en-GB.plg_content_jsneasyslider.sys.ini</language>
+		<language tag="en-GB">language/admin/en-GB/en-GB.plg_editors-xtd_jsneasyslider.ini</language>
+		<language tag="en-GB">language/admin/en-GB/en-GB.plg_editors-xtd_jsneasyslider.sys.ini</language>
+		<language tag="en-GB">language/admin/en-GB/en-GB.plg_system_jsneasyslider.ini</language>
+		<language tag="en-GB">language/admin/en-GB/en-GB.plg_system_jsneasyslider.sys.ini</language>
+	</languages>	
+    </administration>
+</extension>

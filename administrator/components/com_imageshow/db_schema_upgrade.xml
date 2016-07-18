@@ -1,0 +1,255 @@
+<product iname="JSN Imageshow" type="extension">
+	<version number="3.0.0">
+		<release_date>06/04/2011</release_date>
+		<tables>
+			<table id="1" status="ADDED" name="#__imageshow_configuration">
+				<field id="1" status="ADDED" name="configuration_id" type="int(11) unsigned"
+					primary_key="yes" />
+				<field id="2" status="ADDED" name="configuration_title" type="varchar(150)" />
+				<field id="3" status="ADDED" name="flickr_api_key" type="char(150)" />
+				<field id="4" status="ADDED" name="flickr_secret_key" type="char(150)" />
+				<field id="5" status="ADDED" name="flickr_username" type="char(50)" />
+				<field id="6" status="ADDED" name="flickr_caching" type="tinyint(1)" />
+				<field id="7" status="ADDED" name="flickr_cache_expiration"
+					type="char(30)" />
+				<field id="8" status="ADDED" name="flickr_image_size" type="tinyint(2)" />
+				<field id="9" status="ADDED" name="root_image_folder" type="char(255)" />
+				<field id="10" status="ADDED" name="picasa_user_name" type="char(100)" />
+				<field id="11" status="ADDED" name="source_type" type="tinyint(2)" />
+				<field id="12" status="ADDED" name="published" type="tinyint(1)" />
+			</table>
+			<table id="2" status="ADDED" name="#__imageshow_images">
+				<field id="13" status="ADDED" name="image_id" type="int(11)"
+					primary_key="yes" />
+				<field id="14" status="ADDED" name="showlist_id" type="int(11)" />
+				<field id="15" status="ADDED" name="image_extid" type="varchar(255)" />
+				<field id="16" status="ADDED" name="album_extid" type="varchar(255)" />
+				<field id="17" status="ADDED" name="image_small" type="varchar(255)" />
+				<field id="18" status="ADDED" name="image_medium" type="varchar(255)" />
+				<field id="19" status="ADDED" name="image_big" type="text" />
+				<field id="20" status="ADDED" name="image_title" type="varchar(255)" />
+				<field id="21" status="ADDED" name="image_description" type="text" />
+				<field id="22" status="ADDED" name="image_link" type="varchar(255)" />
+				<field id="23" status="ADDED" name="ordering" type="int(11)" />
+				<field id="24" status="ADDED" name="custom_data" type="tinyint(1)" />
+				<field id="25" status="ADDED" name="sync" type="tinyint(1)" />
+				<field id="26" status="ADDED" name="image_size" type="varchar(25)" />
+			</table>
+			<table id="3" status="ADDED" name="#__imageshow_log">
+				<field id="27" status="ADDED" name="log_id" type="int(11) unsigned"
+					primary_key="yes" />
+				<field id="28" status="ADDED" name="user_id" type="int(11)" />
+				<field id="29" status="ADDED" name="url" type="varchar(255)" />
+				<field id="30" status="ADDED" name="result" type="varchar(255)" />
+				<field id="31" status="ADDED" name="screen" type="varchar(100)" />
+				<field id="32" status="ADDED" name="action" type="varchar(50)" />
+				<field id="33" status="ADDED" name="time_created" type="datetime" />
+			</table>
+			<table id="4" status="ADDED" name="#__imageshow_showcase">
+				<field id="34" status="ADDED" name="showcase_id" type="int(11) unsigned"
+					primary_key="yes" />
+				<field id="35" status="ADDED" name="showcase_title" type="varchar(255)" />
+				<field id="36" status="ADDED" name="published" type="tinyint(1)" />
+				<field id="37" status="ADDED" name="ordering" type="int(11)" />
+				<field id="38" status="ADDED" name="background_color" type="char(30)" />
+				<field id="39" status="ADDED" name="general_overall_width"
+					type="char(30)" />
+				<field id="40" status="ADDED" name="general_overall_height"
+					type="char(30)" />
+				<field id="41" status="ADDED" name="general_round_corner_radius"
+					type="char(30)" />
+				<field id="42" status="ADDED" name="general_border_stroke"
+					type="char(30)" />
+				<field id="43" status="ADDED" name="general_border_color"
+					type="char(30)" />
+				<field id="44" status="ADDED" name="general_number_images_preload"
+					type="char(30)" />
+				<field id="45" status="ADDED" name="general_open_link_in"
+					type="char(30)" />
+				<field id="46" status="ADDED" name="general_link_source" type="char(30)" />
+				<field id="47" status="ADDED" name="general_title_source"
+					type="char(30)" />
+				<field id="48" status="ADDED" name="general_des_source" type="char(30)" />
+				<field id="49" status="ADDED" name="general_images_order"
+					type="char(30)" />
+				<field id="50" status="ADDED" name="theme_name" type="varchar(255)" />
+				<field id="51" status="ADDED" name="theme_id" type="int(11)" />
+				<field id="52" status="ADDED" name="date_created" type="datetime" />
+				<field id="53" status="ADDED" name="date_modified" type="datetime" />
+			</table>
+			<table id="5" status="ADDED" name="#__imageshow_showlist">
+				<field id="54" status="ADDED" name="showlist_id" type="int(11) unsigned"
+					primary_key="yes" />
+				<field id="55" status="ADDED" name="showlist_title" type="varchar(255)" />
+				<field id="56" status="ADDED" name="published" type="tinyint(1)" />
+				<field id="57" status="ADDED" name="ordering" type="int(11)" />
+				<field id="58" status="ADDED" name="access" type="tinyint(3)" />
+				<field id="59" status="ADDED" name="hits" type="int(11)" />
+				<field id="60" status="ADDED" name="description" type="text" />
+				<field id="61" status="ADDED" name="showlist_link" type="text" />
+				<field id="62" status="ADDED" name="alter_autid" type="int(11)" />
+				<field id="63" status="ADDED" name="alter_id" type="int(11)" />
+				<field id="64" status="ADDED" name="alter_image_path" type="varchar(255)" />
+				<field id="65" status="ADDED" name="alter_module_id" type="int(11)" />
+				<field id="66" status="ADDED" name="seo_module_id" type="int(11)" />
+				<field id="67" status="ADDED" name="seo_article_id" type="int(11)" />
+				<field id="68" status="ADDED" name="date_create" type="datetime" />
+				<field id="69" status="ADDED" name="showlist_source" type="tinyint(2)" />
+				<field id="70" status="ADDED" name="configuration_id" type="int(11)" />
+				<field id="71" status="ADDED" name="authorization_status"
+					type="tinyint(1)" />
+				<field id="72" status="ADDED" name="alternative_status" type="tinyint(2)" />
+				<field id="73" status="ADDED" name="seo_status" type="tinyint(2)" />
+				<field id="74" status="ADDED" name="date_modified" type="datetime" />
+			</table>
+			<table id="6" status="ADDED" name="#__imageshow_parameters">
+				<field id="75" status="ADDED" name="id" type="int(11) unsigned"
+					primary_key="yes" />
+				<field id="76" status="ADDED" name="general_swf_library" type="tinyint(1)" />
+				<field id="77" status="ADDED" name="root_url" type="tinyint(1)" />
+			</table>
+			<table id="7" status="ADDED" name="#__imageshow_messages">
+				<field id="78" status="ADDED" name="msg_id" type="int(11) unsigned" />
+				<field id="79" status="ADDED" name="msg_screen" type="varchar(150)" />
+				<field id="80" status="ADDED" name="published" type="tinyint(1)" />
+				<field id="81" status="ADDED" name="ordering" type="int(11)" />
+			</table>
+		</tables>
+	</version>
+	<version number="3.1.0">
+		<release_date>22/06/2011</release_date>
+		<tables>
+			<table id="4" status="CHANGED" name="#__imageshow_showcase">
+				<field id="45" status="REMOVED" name="general_open_link_in" />
+				<field id="46" status="REMOVED" name="general_link_source" />
+				<field id="47" status="REMOVED" name="general_title_source" />
+				<field id="48" status="REMOVED" name="general_des_source" />
+			</table>
+			<table id="5" status="CHANGED" name="#__imageshow_showlist">
+				<field id="82" status="ADDED" name="override_title" type="tinyint(1)"
+					not_null="yes" default_value="0" />
+				<field id="83" status="ADDED" name="override_description"
+					type="tinyint(1)" not_null="yes" default_value="0" />
+				<field id="84" status="ADDED" name="override_link" type="tinyint(1)"
+					not_null="yes" default_value="0" />
+			</table>
+		</tables>
+	</version>
+	<version number="4.0.0">
+		<release_date>03/10/2011</release_date>
+		<tables>
+			<table id="4" status="CHANGED" name="#__imageshow_showcase">
+				<field id="51" status="REMOVED" name="theme_id" />
+				<field id="50" status="REMOVED" name="theme_name" />
+				<field id="38" status="REMOVED" name="background_color" />
+				<field id="41" status="REMOVED" name="general_round_corner_radius" />
+				<field id="42" status="REMOVED" name="general_border_stroke" />
+				<field id="43" status="REMOVED" name="general_border_color" />
+				<field id="44" status="REMOVED" name="general_number_images_preload" />
+				<field id="49" status="REMOVED" name="general_images_order" />
+			</table>
+			<table id="8" status="ADDED" name="#__imageshow_theme_profile">
+				<field id="85" status="ADDED" name="theme_id" type="tinyint(11)"
+					not_null="yes" default_value="0" primary_key="yes" />
+				<field id="86" status="ADDED" name="showcase_id" type="tinyint(11)"
+					not_null="yes" default_value="0" />
+				<field id="87" status="ADDED" name="theme_name" type="varchar(255)"
+					not_null="yes" default_value="" />
+			</table>
+			<table id="5" status="CHANGED" name="#__imageshow_showlist">
+				<field id="63" status="REMOVED" name="alter_id" />
+				<field id="64" status="REMOVED" name="alter_image_path" />
+				<field id="65" status="REMOVED" name="alter_module_id" />
+				<field id="66" status="REMOVED" name="seo_module_id" />
+				<field id="67" status="REMOVED" name="seo_article_id" />
+				<field id="73" status="REMOVED" name="seo_status" />
+				<field id="72" status="REMOVED" name="alternative_status" />
+				<field id="69" status="REMOVED" name="showlist_source" />
+				<field id="70" status="REMOVED" name="configuration_id" />
+				<field id="88" status="ADDED" name="image_loading_order" type="char(30)"
+					not_null="yes" default_value="" />
+				<field id="89" status="ADDED" name="image_source_type" type="char(45)"
+					not_null="yes" default_value="" />
+				<field id="90" status="ADDED" name="image_source_name" type="char(45)"
+					not_null="yes" default_value="" />
+				<field id="91" status="ADDED" name="image_source_profile_id"
+					type="char(11)" not_null="yes" default_value="0" />
+				<field id="92" status="ADDED" name="show_exif_data" type="char(100)"
+					not_null="yes" default_value="" />
+			</table>
+			<table id="6" status="CHANGED" name="#__imageshow_parameters">
+				<field id="76" status="REMOVED" name="general_swf_library" />
+				<field id="77" status="REMOVED" name="root_url" />
+				<field id="93" status="ADDED" name="show_quick_icons" type="tinyint(1)"
+					not_null="yes" default_value="1" />
+			</table>
+			<table id="1" status="REMOVED" name="#__imageshow_configuration">
+				<field id="1" status="REMOVED" name="configuration_id" />
+				<field id="2" status="REMOVED" name="configuration_title" />
+				<field id="3" status="REMOVED" name="flickr_api_key" />
+				<field id="4" status="REMOVED" name="flickr_secret_key" />
+				<field id="5" status="REMOVED" name="flickr_username" />
+				<field id="6" status="REMOVED" name="flickr_caching" />
+				<field id="7" status="REMOVED" name="flickr_cache_expiration" />
+				<field id="8" status="REMOVED" name="flickr_image_size" />
+				<field id="9" status="REMOVED" name="root_image_folder" />
+				<field id="10" status="REMOVED" name="picasa_user_name" />
+				<field id="11" status="REMOVED" name="source_type" />
+				<field id="12" status="REMOVED" name="published" />
+			</table>
+			<table id="9" status="ADDED" name="#__imageshow_source_profile">
+				<field id="94" status="ADDED" name="external_source_profile_id"
+					type="tinyint(11)" not_null="yes" default_value="0" primary_key="yes" />
+				<field id="95" status="ADDED" name="external_source_id" type="tinyint(11)"
+					not_null="yes" default_value="0" />
+			</table>
+			<table id="2" status="CHANGED" name="#__imageshow_images">
+				<field id="96" status="ADDED" name="exif_data" type="text"
+					not_null="yes" default_value="" />
+			</table>
+		</tables>
+	</version>
+	<version number="4.2.0">
+		<release_date>03/10/2011</release_date>
+		<tables>
+			<table id="6" status="CHANGED" name="#__imageshow_parameters">
+				<field id="97" status="ADDED" name="enable_update_checking"
+					type="tinyint(1)" not_null="yes" default_value="1" />
+				<field id="98" status="ADDED" name="number_of_images_on_loading"
+					type="varchar(50)" not_null="yes" default_value="30" />
+			</table>
+		</tables>
+	</version>
+	<version number="4.4.0">
+		<release_date>18/09/2012</release_date>
+		<tables>
+			<table id="8" status="CHANGED" name="#__imageshow_theme_profile">
+				<field id="99" status="ADDED" name="theme_style_name" type="varchar(255)"
+					not_null="yes" default_value="" />
+			</table>
+		</tables>
+	</version>
+	<version number="4.5.0">
+		<release_date>18/09/2012</release_date>
+		<tables>
+			<table id="10" status="ADDED" name="#__jsn_imageshow_messages">
+				<field id="100" status="ADDED" name="msg_id" type="int(11) unsigned"
+					not_null="yes" default_value="0" primary_key="yes" />
+				<field id="101" status="ADDED" name="msg_screen" type="varchar(150)"
+					not_null="yes" default_value="" />
+				<field id="102" status="ADDED" name="published" type="tinyint(1)"
+					not_null="yes" default_value="0" />
+				<field id="103" status="ADDED" name="ordering" type="int(11)"
+					not_null="yes" default_value="0" />
+			</table>
+			<table id="11" status="ADDED" name="#__jsn_imageshow_config">
+				<field id="104" status="ADDED" name="name" type="varchar(255)"
+					not_null="yes" default_value="" />
+				<field id="105" status="ADDED" name="value" type="longtext"
+					not_null="yes" default_value="" />
+			</table>
+			<table id="7" status="REMOVED" name="#__imageshow_messages"></table>
+			<table id="6" status="REMOVED" name="#__imageshow_parameters"></table>
+		</tables>
+	</version>
+</product>

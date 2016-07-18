@@ -1,0 +1,29 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:700,400);
+@import url(http://fonts.googleapis.com/css?family=Strait);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+body {
+	font-family: 'Source Sans Pro',Arial, Helvetica, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-header,
+.subheading-category,
+.componentheading,
+.contentheading {
+	font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+}
+#jsn-menu span,
+#jsn-menu a,
+#jsn-gotoplink,
+.link-button {
+	font-family: 'Strait', Arial, Helvetica, sans-serif;
+}

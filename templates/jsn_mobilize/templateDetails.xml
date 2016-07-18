@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="template" client="site" method="upgrade">
+	<name>jsn_mobilize</name>
+    <edition>FREE</edition>
+	<creationDate>August 29, 2012</creationDate>
+	<author>JoomlaShine.com</author>
+	<authorEmail>admin@joomlashine.com</authorEmail>
+	<authorUrl>www.joomlashine.com</authorUrl>
+	<copyright>Copyright (c) 2012 - JoomlaShine.com</copyright>
+	<license>GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<version>1.2.0</version>
+	<description>TPL_MOBILIZE_XML_DESCRIPTION</description>
+	<files>
+		<folder>css</folder>
+        <folder>ext</folder>
+		<folder>helpers</folder>
+		<folder>html</folder>
+
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>images</folder>
+
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_jsn_mobilize.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_jsn_mobilize.sys.ini</language>
+	</languages>
+</extension>

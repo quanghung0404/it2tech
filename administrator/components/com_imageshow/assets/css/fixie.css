@@ -1,0 +1,85 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow
+ * @version $Id: fixie8.css 13217 2012-06-11 11:42:18Z sonlm $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+table.configuration-flickr input,table.configuration-folder input,table.configuration-picasa input
+	{
+	width: 97%;
+}
+
+body {
+	height: 90%;
+}
+
+div.current dd>table {
+	position: relative;
+	left: -40px;
+}
+
+#mytabs {
+	padding-bottom: 5px;
+}
+
+.clearafter {
+	height: 1%;
+}
+
+#panel-center .source-media-header {
+	height: 45px;
+}
+
+#panel-center .source-media-panel-container .panel-left {
+	width: 100%;
+}
+
+div.loaded a.item_link {
+	display: inline;
+}
+
+.showlist .item-info,.showlist .media-item-is-selected .item-info {
+	padding-left: 0 !important;
+}
+
+.showlist .image-item-mutiple-select.media-item .item-info {
+	padding-left: 0 !important;
+}
+
+.showlist .media-item-is-selected .item-info {
+	padding-left: 0 !important;
+}
+
+.showlist .media-item.multiselectable-previous.media-item-multiple-select .item-info
+	{
+	padding-left: 0 !important;
+}
+
+.showlist .media-item-is-selected .item-thumbnail,.showlist .media-item .item-thumbnail
+	{
+	margin-right: 10px;
+}
+
+.edit-image-description #item-description,.edit-image-description #item-title
+	{
+	width: 420px !important;
+}
+
+.edit-image-description .edit-image-link {
+	height: 20px;
+}
+
+.edit-image-container div {
+	width: 94px;
+	height: 94px;
+}
+
+.edit-image-container div img {
+	max-width: 90px;
+}
+/* JSN Toolbar */
+#toolbar #jsn-menu li {
+	margin-top: -22px;
+}

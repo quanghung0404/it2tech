@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="MENU_IMAGESHOW_LISTING_LAYOUT" option="MENU_IMAGESHOW_LISTING_LAYOUT">
+		<help key = "MENU_IMAGESHOW_LISTING_LAYOUT" />
+		<message>
+			<![CDATA[MENU_IMAGESHOW_LISTING_LAYOUT_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="params">
+		<fieldset name="basic" addfieldpath="/administrator/components/com_imageshow/elements">
+			<field name="showlist_id" type="jsnmultipleshowlist" section="com_imageshow" default="0" label="MENU_SHOWLISTS_LABEL" description="MENU_SHOWLISTS_DESC" multiple="true" />	
+			<field name="showcase_id" type="jsnmultipleshowcase" section="com_imageshow" default="0" label="MENU_SHOWCASES_LABEL" description="MENU_SHOWCASES_DESC" />
+			<!-- <field name="layout" type="jsnlayout" section="com_imageshow" default="thumbnails" label="MENU_LAYOUT_LABEL" description="MENU_LAYOUT_DESC" />	 -->
+			<!-- <field name="view_type" type="jsnviewtype" section="com_imageshow" default="" label="MENU_VIEW_TYPE_LABEL" description="MENU_VIEW_TYPE_DESC" /> -->
+			<field name="show_title" type="radio" default="1" filter="int" label="MENU_SHOW_TITLE_LABEL" description="MENU_SHOW_TITLE_DESC" class="btn-group">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>			
+			<field name="show_description" type="jsnisshowdescription" section="com_imageshow" default="1" label="MENU_SHOW_DESCRIPTION_LABEL" description="MENU_SHOW_DESCRIPTION_DESC" class="btn-group">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>	
+			<field name="description_word_limitation" type="jsnisdescriptionlimitation" filter="int" section="com_imageshow" default="15" size="5" label="MENU_DESCRIPTION_LIMITATION_LABEL" description="MENU_DESCRIPTION_LIMITATION_DESC" />						
+			<field name="thumb_dimension" type="jsnisdimensionthumb" section="com_imageshow" default="" label="MENU_OVERALL_THUMB_DIMENSION_LABEL" description="MENU_OVERALL_THUMB_DIMENSION_DESC" />
+			<field name="show_view_gallery_link" type="radio" default="1" filter="int" label="MENU_SHOW_VIEW_GALLERY_LINK_LABEL" description="MENU_SHOW_VIEW_GALLERY_LINK_DESC" class="btn-group">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>			
+		</fieldset>
+	</fields>
+</metadata>

@@ -1,0 +1,135 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow
+ * @version $Id: popup-imagemanager.css 14289 2012-07-23 12:23:32Z haonv $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+html {
+	overflow: auto !important;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
+
+body fieldset input,body fieldset textarea,body fieldset select,body fieldset img,body fieldset button
+	{
+	float: none;
+	margin: 0;
+}
+
+body input,body select {
+	font-size: 10px;
+}
+
+body fieldset label,body fieldset span.faux-label {
+	margin: 0;
+	font-size: 12px;
+}
+
+p,pre,blockquote,form,dl,ul,ol,fieldset,address {
+	padding: 0;
+	margin: 0.35em 0 0.8em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0.8em 0 0.3em;
+}
+
+button {
+	*width: auto;
+	*margin: 0 2px;
+	*padding: 0 5px;
+	*font-size: 12px;
+	*overflow: visible;
+}
+
+.manager {
+	float: left;
+	margin-bottom: 10px;
+}
+
+.jsn-predefine-bg-selection .jsn-image-folder-list {
+	border: solid silver;
+	border-width: 2px 1px;
+}
+
+.jsn-predefine-bg-selection #imageframe {
+	width: 100%;
+	height: 200px;
+	border: none;
+}
+
+.jsn-predefine-bg-selection .jsn-image-url,.jsn-predefine-bg-selection .jsn-url-properties
+	{
+	padding: 8px;
+	font-size: 12px;
+	background-color: #F4F4F4;
+}
+
+.jsn-predefine-bg-selection .jsn-url-properties {
+	margin: 8px 0 0 0;
+}
+
+#file-upload-submit {
+	*font-size: 10px;
+}
+
+input#f_url {
+	width: 100%;
+	background-color: #ECE9D8;
+}
+
+label {
+	font-weight: bold;
+}
+
+div.manager .item {
+	float: left;
+	margin: 3px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+
+div.manager .jsn-graphic-selected {
+	border-color: #FF0000;
+}
+
+div.manager .item a {
+	color: #000;
+	width: 80px;
+	height: 90px;
+	display: block;
+	text-decoration: none;
+}
+
+div.manager .item img {
+	top: 10px;
+	position: relative;
+}
+
+div.manager .item span {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 2px 0;
+	display: block;
+	max-width: 80px;
+	line-height: 100%;
+	position: absolute;
+	background-color: #eee;
+}
+
+div.manager .jsn-graphic-selected span {
+	background-color: #FFCC66;
+}
+
+.jsn-predefine-bg-selection .button {
+	text-align: center;
+}

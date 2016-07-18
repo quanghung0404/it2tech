@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>Mobilize</name>
+    <version>1.2.0</version>
+    <creationDate>03/15/2016</creationDate>
+    <author>JoomlaShine.com</author>
+    <authorEmail>support@joomlashine.com</authorEmail>
+    <authorUrl>http://www.joomlashine.com</authorUrl>
+    <copyright>Copyright (c) 2012 - JoomlaShine.com</copyright>
+    <license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <description>JSN Mobilize</description>
+    
+    <subinstall>
+        <extension type="template" dir="templates/jsn_mobilize" name="jsn_mobilize" client="site" publish="0" lock="1"/>
+        <extension type="plugin" folder="system" name="jsnframework" identified_name="ext_framework" title="JSN Extension Framework System Plugin"  client="site" publish="1" lock="1"/>
+        <extension type="plugin" folder="system" dir="plugins/system/jsnmobilize" name="jsnmobilize" publish="1"  client="site"  lock="1"/>
+    </subinstall>
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">database/mysql/install.mysql.sql</file>
+        </sql>
+    </install>
+	<scriptfile>subinstall.php</scriptfile>
+	<update> 
+		<schemas>
+				<schemapath type="mysql">database/mysql/update</schemapath>
+		</schemas>
+	</update>
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">database/mysql/uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+    <administration>
+        <menu link="option=com_mobilize" option="com_mobilize" img="components/com_mobilize/assets/images/icon-mobilize.png" alt="JSN_MOBILIZE_MENU_TEXT">JSN_MOBILIZE_MENU_TEXT</menu>
+        <submenu>
+            <menu link="option=com_mobilize&amp;view=profiles" view="edit" img="components/com_mobilize/assets/images/icons-16/icon-mobilize.png" alt="JSN_MOBILIZE_SUB_MENU_MOBILIZATION_TEXT">JSN_MOBILIZE_SUB_MENU_MOBILIZATION_TEXT</menu>
+            <menu link="option=com_mobilize&amp;view=configuration" view="configuration" img="components/com_mobilize/assets/images/icons-16/icon-cog.png" alt="JSN_MOBILIZE_SUB_MENU_CONFIGURARTION_TEXT">JSN_MOBILIZE_SUB_MENU_CONFIGURARTION_TEXT</menu>
+            <menu link="option=com_mobilize&amp;view=about" view="about" img="components/com_mobilize/assets/images/icons-16/icon-about.png" alt="JSN_MOBILIZE_SUB_MENU_ABOUT_TEXT">JSN_MOBILIZE_SUB_MENU_ABOUT_TEXT</menu>
+        </submenu>
+        <files folder="admin">
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>database</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>libraries</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>access.xml</filename>
+            <filename>bootstrap.php</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>dependency.php</filename>
+            <filename>index.html</filename>
+            <filename>jsninstaller.php</filename>
+            <filename>mobilize.defines.php</filename>
+            <filename>mobilize.php</filename>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/admin/en-GB/en-GB.com_mobilize.ini</language>
+            <language tag="en-GB">language/admin/en-GB/en-GB.com_mobilize.sys.ini</language>
+        </languages>
+    </administration>
+</extension>

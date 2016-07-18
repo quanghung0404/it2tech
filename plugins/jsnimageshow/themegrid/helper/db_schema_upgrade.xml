@@ -1,0 +1,49 @@
+<product name="Theme Grid" type="plugin">
+	<version number="1.0.0">
+		<release_date>5/6/2012</release_date>
+		<tables>
+			<table id="1" status="ADDED" name="#__imageshow_theme_grid">
+				<field id="1" status="ADDED" name="theme_id" type="int(11) unsigned" primary_key="yes"/>
+				<field id="2" status="ADDED" name="img_layout" type="char(5)"/>
+				<field id="3" status="ADDED" name="thumbnail_width" type="int(11)"/>
+				<field id="4" status="ADDED" name="thumbnail_height" type="int(11)"/>
+				<field id="5" status="ADDED" name="thumbnail_space" type="int(11)"/>
+				<field id="6" status="ADDED" name="thumbnail_border" type="int(11)"/>
+				<field id="7" status="ADDED" name="thumbnail_rounded_corner" type="int(11)"/>
+				<field id="8" status="ADDED" name="thumbnail_border_color" type="char(30)"/>
+				<field id="9" status="ADDED" name="thumbnail_shadow" type="char(1)"/>
+				<field id="10" status="ADDED" name="background_color" type="char(30)"/>
+			</table>
+		</tables>
+	</version>
+	<version number="1.0.7">
+		<release_date>5/6/2012</release_date>
+		<tables>
+				<table id="1" status="CHANGED" name="#__imageshow_theme_grid">
+					<field id="11" status="ADDED" name="image_source" type="char(150)" not_null="yes" default_value="thumbnail"/>
+					<field id="12" status="ADDED" name="show_caption" type="char(150)" not_null="yes" default_value="yes"/>
+					<field id="13" status="ADDED" name="caption_show_description" type="char(150)" not_null="yes" default_value="yes"/>
+					<field id="14" status="ADDED" name="show_close" type="char(150)" not_null="yes" default_value="yes"/>
+					<field id="15" status="ADDED" name="show_thumbs" type="char(150)" not_null="yes" default_value="yes"/>
+					<field id="16" status="ADDED" name="click_action" type="char(150)" not_null="yes" default_value="show_original_image"/>
+					<field id="17" status="ADDED" name="open_link_in" type="char(150)" not_null="yes" default_value="current_browser"/>
+				</table>
+		</tables>
+	</version>	
+	<version number="1.1.1">
+		<release_date>5/6/2012</release_date>
+		<tables>
+				<table id="1" status="CHANGED" name="#__imageshow_theme_grid">
+					<field id="18" status="ADDED" name="container_height_type" type="char(150)" not_null="yes" default_value="inherited"/>
+				</table>
+		</tables>
+	</version>	
+	<version number="1.1.3">
+		<release_date>5/6/2012</release_date>
+		<tables>
+				<table id="1" status="CHANGED" name="#__imageshow_theme_grid">
+					<field id="19" status="ADDED" name="container_transparent_background" type="char(150)" not_null="yes" default_value="no"/>
+				</table>
+		</tables>
+	</version>	
+</product>

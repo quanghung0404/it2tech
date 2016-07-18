@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.x" type="component" method="upgrade">
+<name>ImageShow</name>
+<version>4.8.1</version>
+<edition>PRO UNLIMITED</edition>
+<creationDate>11/02/2013</creationDate>
+<copyright>Copyright (c) 2008 - 2013 - JoomlaShine.com</copyright>
+<license>GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html</license>
+<author>JoomlaShine.com</author>
+<authorEmail>admin@joomlashine.com</authorEmail>
+<authorUrl>http://www.joomlashine.com</authorUrl>
+<description>JSN IMAGESHOW PRO UNLIMITED</description>
+<install>
+<sql>
+<file charset="utf8" driver="mysql">install.mysql.sql</file>
+<file driver="mysql">install.mysql.sql</file>
+<file charset="utf8" driver="sqlsrv">install.sqlsrv.sql</file>
+</sql>
+</install>
+<uninstall>
+<sql>
+<file charset="utf8" driver="mysql">uninstall.mysql.sql</file>
+<file driver="mysql">uninstall.mysql.sql</file>
+<file charset="utf8" driver="sqlsrv">uninstall.sqlsrv.sql</file>
+</sql>
+</uninstall>
+<update>
+<schemas>
+<schemapath type="mysql">sql/updates/mysql</schemapath>
+<schemapath type="sqlsrv">sql/updates/sqlsrv</schemapath>
+</schemas>
+</update>
+<!-- Custom installer -->
+<scriptfile>subinstall.php</scriptfile>
+<subinstall>
+<extension type="plugin" client="site" folder="system" name="jsnframework" identified_name="ext_framework" publish="1" lock="1">
+JSN Extension Framework System Plugin
+</extension>
+<extension type="plugin" client="site" folder="content" dir="plugins/content_plugin" name="imageshow" publish="1" lock="1">
+JSN imageshow Plugin
+</extension>
+<extension type="plugin" client="site" folder="system" dir="plugins/system_plugin/imageshow" name="imageshow" publish="1" lock="1">
+JSN imageshow System Plugin
+</extension>
+<extension type="plugin" client="site" folder="editors-xtd" dir="plugins/editors_xtd_plugin" name="imageshow" publish="1" lock="1">
+JSN imageshow Editors Plugin
+</extension>
+<extension type="module" client="site" dir="module" name="mod_imageshow" publish="1" lock="1">
+JSN imageshow Module
+</extension>
+<extension type="module" client="admin" dir="admin_module/mod_imageshow_quickicon" name="mod_imageshow_quickicon" publish="1" position="icon" lock="1">
+JSN imageshow Quick Icons
+</extension>
+<extension type="plugin" client="site" folder="jsnimageshow" name="sourcepicasa" identified_name="picasa" publish="1" lock="1">
+JSN ImageShow Default Source
+</extension>
+<extension type="plugin" client="site" folder="jsnimageshow" name="themeclassic" identified_name="themeclassic" publish="1" lock="1">
+JSN ImageShow Default Theme
+</extension>
+</subinstall>
+<!-- Frontend files -->
+<files folder="site">
+
+<filename>controller.php</filename>
+<filename>imageshow.php</filename>
+<filename>index.html</filename>
+<filename>router.php</filename>
+<folder>assets</folder>
+<folder>views</folder>
+
+</files>
+<languages folder="admin/language/site">
+<language tag="da-DK">da-DK/da-DK.com_imageshow.ini</language>
+<language tag="da-DK">da-DK/da-DK.plg_content_imageshow.ini</language>
+<language tag="da-DK">da-DK/da-DK.mod_imageshow.ini</language>
+<language tag="da-DK">da-DK/da-DK.mod_imageshow.sys.ini</language>
+<language tag="de-DE">de-DE/de-DE.com_imageshow.ini</language>
+<language tag="de-DE">de-DE/de-DE.plg_content_imageshow.ini</language>
+<language tag="de-DE">de-DE/de-DE.mod_imageshow.ini</language>
+<language tag="de-DE">de-DE/de-DE.mod_imageshow.sys.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_imageshow.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_content_imageshow.ini</language>
+<language tag="en-GB">en-GB/en-GB.mod_imageshow.ini</language>
+<language tag="en-GB">en-GB/en-GB.mod_imageshow.sys.ini</language>
+<language tag="es-ES">es-ES/es-ES.com_imageshow.ini</language>
+<language tag="es-ES">es-ES/es-ES.plg_content_imageshow.ini</language>
+<language tag="es-ES">es-ES/es-ES.mod_imageshow.ini</language>
+<language tag="es-ES">es-ES/es-ES.mod_imageshow.sys.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.com_imageshow.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.plg_content_imageshow.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.mod_imageshow.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.mod_imageshow.sys.ini</language>
+<language tag="it-IT">it-IT/it-IT.com_imageshow.ini</language>
+<language tag="it-IT">it-IT/it-IT.plg_content_imageshow.ini</language>
+<language tag="it-IT">it-IT/it-IT.mod_imageshow.ini</language>
+<language tag="it-IT">it-IT/it-IT.mod_imageshow.sys.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.com_imageshow.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.plg_content_imageshow.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.mod_imageshow.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.mod_imageshow.sys.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.com_imageshow.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.plg_content_imageshow.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.mod_imageshow.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.mod_imageshow.sys.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.com_imageshow.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.plg_content_imageshow.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.mod_imageshow.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.mod_imageshow.sys.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.com_imageshow.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.plg_content_imageshow.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.mod_imageshow.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.mod_imageshow.sys.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.com_imageshow.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.plg_content_imageshow.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.mod_imageshow.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.mod_imageshow.sys.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.com_imageshow.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.plg_content_imageshow.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.mod_imageshow.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.mod_imageshow.sys.ini</language>
+</languages>
+<administration>
+<menu img="components/com_imageshow/assets/images/icons-16/icon-picture.png" link="option=com_imageshow">COM_IMAGESHOW</menu>
+<submenu>
+<menu link="option=com_imageshow" img="components/com_imageshow/assets/images/icons-16/icon-off.png">LAUNCH_PAD</menu>
+<menu link="option=com_imageshow&amp;controller=showlist" img="components/com_imageshow/assets/images/icons-16/icon-file.png">SHOWLISTS</menu>
+<menu link="option=com_imageshow&amp;controller=showcase" img="components/com_imageshow/assets/images/icons-16/icon-monitor.png">SHOWCASES</menu>
+<menu link="option=com_imageshow&amp;controller=maintenance&amp;type=configs" img="components/com_imageshow/assets/images/icons-16/icon-cog.png">CONFIGURATION_AND_MAINTENANCE</menu>
+<menu link="option=com_imageshow&amp;controller=about" img="components/com_imageshow/assets/images/icons-16/icon-star.png">ABOUT</menu>
+</submenu>
+<!-- Backend files -->
+<files folder="admin">
+<filename>access.xml</filename>
+<filename>bootstrap.php</filename>
+<filename>config.xml</filename>
+<filename>contextmenu.php</filename>
+<filename>controller.php</filename>
+<filename>db_schema_upgrade.xml</filename>
+<filename>dependency.php</filename>
+<filename>gpl-2.0.txt</filename>
+<filename>imageshow.defines.php</filename>
+<filename>imageshow.php</filename>
+<filename>index.html</filename>
+<filename>install.mysql.sql</filename>
+<filename>install.sqlsrv.sql</filename>
+<filename>jsn_imageshow_pro_unlimited_4.8.1.checksum</filename>
+<filename>jsninstaller.php</filename>
+<filename>uninstall.mysql.sql</filename>
+<filename>uninstall.sqlsrv.sql</filename>
+<folder>assets</folder>
+<folder>classes</folder>
+<folder>controllers</folder>
+<folder>elements</folder>
+<folder>helpers</folder>
+<folder>imagesources</folder>
+<folder>language</folder>
+<folder>libraries</folder>
+<folder>models</folder>
+<folder>sql</folder>
+<folder>subinstall</folder>
+<folder>tables</folder>
+<folder>views</folder>
+
+</files>
+<languages folder="admin/language/admin">
+<language tag="da-DK">da-DK/da-DK.com_imageshow.ini</language>
+<language tag="da-DK">da-DK/da-DK.plg_content_imageshow.ini</language>
+<language tag="da-DK">da-DK/da-DK.com_imageshow.sys.ini</language>
+<language tag="da-DK">da-DK/da-DK.mod_imageshow_quickicon.ini</language>
+<language tag="da-DK">da-DK/da-DK.plg_system_imageshow.ini</language>
+<language tag="da-DK">da-DK/da-DK.plg_editors-xtd_imageshow.ini</language>
+<language tag="da-DK">da-DK/da-DK.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="de-DE">de-DE/de-DE.com_imageshow.ini</language>
+<language tag="de-DE">de-DE/de-DE.plg_content_imageshow.ini</language>
+<language tag="de-DE">de-DE/de-DE.com_imageshow.sys.ini</language>
+<language tag="de-DE">de-DE/de-DE.mod_imageshow_quickicon.ini</language>
+<language tag="de-DE">de-DE/de-DE.plg_system_imageshow.ini</language>
+<language tag="de-DE">de-DE/de-DE.plg_editors-xtd_imageshow.ini</language>
+<language tag="de-DE">de-DE/de-DE.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_imageshow.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_content_imageshow.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_imageshow.sys.ini</language>
+<language tag="en-GB">en-GB/en-GB.mod_imageshow_quickicon.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_system_imageshow.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_editors-xtd_imageshow.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="es-ES">es-ES/es-ES.com_imageshow.ini</language>
+<language tag="es-ES">es-ES/es-ES.plg_content_imageshow.ini</language>
+<language tag="es-ES">es-ES/es-ES.com_imageshow.sys.ini</language>
+<language tag="es-ES">es-ES/es-ES.mod_imageshow_quickicon.ini</language>
+<language tag="es-ES">es-ES/es-ES.plg_system_imageshow.ini</language>
+<language tag="es-ES">es-ES/es-ES.plg_editors-xtd_imageshow.ini</language>
+<language tag="es-ES">es-ES/es-ES.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.com_imageshow.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.plg_content_imageshow.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.com_imageshow.sys.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.mod_imageshow_quickicon.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.plg_system_imageshow.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.plg_editors-xtd_imageshow.ini</language>
+<language tag="fr-FR">fr-FR/fr-FR.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="it-IT">it-IT/it-IT.com_imageshow.ini</language>
+<language tag="it-IT">it-IT/it-IT.plg_content_imageshow.ini</language>
+<language tag="it-IT">it-IT/it-IT.com_imageshow.sys.ini</language>
+<language tag="it-IT">it-IT/it-IT.mod_imageshow_quickicon.ini</language>
+<language tag="it-IT">it-IT/it-IT.plg_system_imageshow.ini</language>
+<language tag="it-IT">it-IT/it-IT.plg_editors-xtd_imageshow.ini</language>
+<language tag="it-IT">it-IT/it-IT.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.com_imageshow.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.plg_content_imageshow.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.com_imageshow.sys.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.mod_imageshow_quickicon.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.plg_system_imageshow.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.plg_editors-xtd_imageshow.ini</language>
+<language tag="ja-JP">ja-JP/ja-JP.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.com_imageshow.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.plg_content_imageshow.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.com_imageshow.sys.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.mod_imageshow_quickicon.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.plg_system_imageshow.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.plg_editors-xtd_imageshow.ini</language>
+<language tag="nl-NL">nl-NL/nl-NL.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.com_imageshow.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.plg_content_imageshow.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.com_imageshow.sys.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.mod_imageshow_quickicon.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.plg_system_imageshow.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.plg_editors-xtd_imageshow.ini</language>
+<language tag="pl-PL">pl-PL/pl-PL.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.com_imageshow.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.plg_content_imageshow.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.com_imageshow.sys.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.mod_imageshow_quickicon.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.plg_system_imageshow.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.plg_editors-xtd_imageshow.ini</language>
+<language tag="pt-BR">pt-BR/pt-BR.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.com_imageshow.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.plg_content_imageshow.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.com_imageshow.sys.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.mod_imageshow_quickicon.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.plg_system_imageshow.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.plg_editors-xtd_imageshow.ini</language>
+<language tag="pt-PT">pt-PT/pt-PT.plg_editors-xtd_imageshow.sys.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.com_imageshow.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.plg_content_imageshow.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.com_imageshow.sys.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.mod_imageshow_quickicon.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.plg_system_imageshow.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.plg_editors-xtd_imageshow.ini</language>
+<language tag="ru-RU">ru-RU/ru-RU.plg_editors-xtd_imageshow.sys.ini</language>
+</languages>
+</administration>
+</extension>
+

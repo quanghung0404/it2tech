@@ -1,0 +1,96 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow
+ * @version $Id: cpanel.css 17049 2012-10-15 11:43:54Z giangnd $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/* ============================== LAUNCH PAD ============================== */
+#jsn-is-cpanel-confirmbox-container {
+	padding: 10px;
+}
+
+#jsn-is-cpanel-confirmbox-container a {
+	margin-left: 155px;
+	margin-top: 25px;
+}
+
+#jsn-is-cpanel-confirmbox-container a:hover {
+	text-decoration: none;
+}
+
+#jsn-launchpad {
+	width: 500px;
+	margin: 50px auto;
+}
+
+#jsn-launchpad .jsn-section .jsn-badge-large {
+	left: -110px;
+	position: absolute;
+	top: 30px;
+}
+
+#jsn-launchpad .jsn-section {
+	position: relative;
+}
+
+#jsn-launchpad .jsn-section .control-group  .jsn-iconbar a:hover {
+	text-decoration: none;
+}
+
+#jsn-launchpad #jsn-go-link-modal {
+	display: none;
+}
+
+#jsn-launchpad .jsn-menutype-selection {
+	display: none;
+}
+/* ============================== BOX STYLES ============================== */
+/* ========== PLUGIN SYNTAX DETAILS ========== */
+.jsn-plugin-details ul {
+	margin: 0 0 0 5px;
+	list-style-position: inside;
+}
+
+.jsn-plugin-details ul li .syntax-highlight {
+	color: #009900;
+	font-weight: bold;
+}
+
+.jsn-plugin-details #additional-syntax {
+	margin-top: 10px;
+	padding-top: 15px;
+	border-top: 1px solid #CCC;
+}
+
+.jsn-plugin-details #additional-syntax .tips {
+	margin: 0;
+	padding-bottom: 5px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.jsn-clipboard-input {
+	position: relative;
+}
+
+.jsn-clipboard-checkicon {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-webkit-transition: opacity 1s
+}
+
+.jsn-clipboard-coppied {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+#jsn-launchpad .jsn-section select {
+	width: 340px !important;
+}

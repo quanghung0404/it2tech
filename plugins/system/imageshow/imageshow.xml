@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>System - JSN ImageShow</name>
+	<version>4.8.1</version>
+	<creationDate>11/02/2013</creationDate>
+	<copyright>Copyright (c) 2008 - 2013 - JoomlaShine.com</copyright>
+	<license>GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<author>JoomlaShine.com</author>
+	<authorEmail>admin@joomlashine.com</authorEmail>
+	<authorUrl>http://www.joomlashine.com</authorUrl>
+	<description>JSN_IMAGESHOW_SYSTEM_PLUGIN</description>
+	<scriptfile>subinstall.php</scriptfile>
+	<files>
+		<filename plugin="imageshow">imageshow.php</filename>
+		<filename plugin="imageshow">subinstall.php</filename>
+	</files>
+</extension>

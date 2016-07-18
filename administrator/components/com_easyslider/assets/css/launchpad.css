@@ -1,0 +1,32 @@
+#edit-slider, .edit-slider i {
+    cursor: pointer !important;
+}
+.jsn-modal {
+    top: 5% !important;
+    left: 50% !important;
+    width: 96% !important;
+    margin-left: -48% !important;
+    bottom: 5% !important;
+}
+.modal-dialog,
+.modal-content {
+    height: 100% !important;
+}
+.modal-body {
+    height: calc(100% - 110px);
+    max-height: 10000px !important;
+}
+#edit-slider,
+#new-slider {
+    padding: 0 5px;
+    float: left;
+}
+#jsn-slider-icon-warning{
+    position: relative;
+    float: left;
+    height: 1%;
+    margin-top: 4px;
+}
+#jsn-slider-icon-warning >div {
+    float: left;
+}

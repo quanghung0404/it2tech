@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>JSN ImageShow</name>
+	<version>4.8.1</version>
+	<creationDate>11/02/2013</creationDate>
+	<copyright>Copyright (c) 2008 - 2013 - JoomlaShine.com</copyright>
+	<license>GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<author>JoomlaShine.com</author>
+	<authorEmail>admin@joomlashine.com</authorEmail>
+	<authorUrl>http://www.joomlashine.com</authorUrl>
+	<description>JSN_MODULE_JSN_IMAGESHOW_MODULE</description>
+	<files>
+		<filename module="mod_imageshow">mod_imageshow.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset addfieldpath="/administrator/components/com_imageshow/elements"
+				name="basic">
+				<field name="moduleclass_sfx" type="text" default=""
+					label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+				<field name="@sp1" type="spacer" label="Gallery Settings (required)"
+					description="" />
+				<field name="showlist_id" type="jsnshowlist" section="com_imageshow"
+					default="0" label="JSN_MODULE_SHOWLIST" description="JSN_MODULE_SHOWLIST_DESC" />
+				<field name="showcase_id" type="jsnshowcase" section="com_imageshow"
+					default="0" label="JSN_MODULE_SHOWCASE" description="JSN_MODULE_SHOWCASE_DESC" />
+				<field name="@sp2" type="spacer" label="Parameters Override (optional)"
+					description="" />
+				<field name="width" type="jsnoverallwidth" default=""
+					label="JSN_MODULE_OVERALL_WIDTH" description="JSN_MODULE_OVERALL_WIDTH_DESC" />
+				<field name="height" type="jsnoverallheight" default=""
+					label="JSN_MODULE_OVERALL_HEIGHT" description="JSN_MODULE_OVERALL_HEIGHT_DESC"
+					postfix="px" />
+				<field name="@sp3" type="spacer" label="Misc" description="" />
+				<field name="pretext" type="textarea" filter="safehtml" cols="30"
+					rows="5" label="JSN_MODULE_FIELD_PRE_TEXT_LABEL" description="JSN_MODULE_FIELD_PRE_TEXT_DESC" />
+				<field name="posttext" type="textarea" filter="safehtml" cols="30"
+					rows="5" label="JSN_MODULE_FIELD_POST_TEXT_LABEL" description="JSN_MODULE_FIELD_POST_TEXT_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

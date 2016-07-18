@@ -1,0 +1,47 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	font-family: 'Open Sans', "Times New Roman", Times, serif;
+	font-size: 85%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#jsn-gotoplink,
+.page-header,
+.subheading-category,
+.componentheading,
+.contentheading,
+#jsn-menu span,
+#jsn-menu a,
+#jsn-gotoplink,
+.link-button {
+	font-family: 'Bree Serif', "Palatino Linotype", Palatino, serif;
+}
+body.jsn-textstyle-news ul.menu-mainmenu > li > a {
+	font-size: 0.9em;
+}
+body.jsn-textstyle-news ul.menu-mainmenu ul li a {
+	font-size: 0.9em;
+}
+body.jsn-textstyle-news h3.jsn-moduletitle {
+	font-size: 1.25em;
+}
+body.jsn-textstyle-news ul.menu-mainmenu > li > a {
+	font-size: 1em;
+}
+body.jsn-textstyle-news ul.menu-mainmenu ul li a {
+	font-size: 1em;
+}
+body.jsn-textstyle-news .jsn-moduletitle {
+	font-size: 1.5em;
+}

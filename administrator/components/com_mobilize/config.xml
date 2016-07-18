@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <section name="configuration" label="JSN_EXTFW_CONFIG_CONFIGURATION">
+        <group name="configs" label="JSN_EXTFW_CONFIG_GLOBAL_PARAMETERS" icon="cog">
+            <fieldset name="optimize">
+                <!--
+                              <field
+                                      name="minify_assets" type="jsnselectbox" default=""
+                                      label="JSN_MOBILIZE_MINIFY_ASSETS_LABEL" description="JSN_MOBILIZE_MINIFY_ASSETS_DESC"
+                                      >
+                                  <option value="">JSN_MOBILIZE_NO_MINIFICATION</option>
+                                  <option value="css">JSN_MOBILIZE_MINIFY_CSS</option>
+                                  <option value="js">JSN_MOBILIZE_MINIFY_JS</option>
+                                  <option value="both">JSN_MOBILIZE_MINIFY_BOTH</option>
+                              </field>
+                              <field
+                                      name="optimize_image" type="jsnselectbox" default="320"
+                                      label="JSN_MOBILIZE_OPTIMIZE_IMAGE_LABEL" description="JSN_MOBILIZE_OPTIMIZE_IMAGE_DESC"
+                                      >
+                                  <option value="">JSN_MOBILIZE_NO_OPTIMIZATION</option>
+                                  <option value="320">JSN_MOBILIZE_PREFER_PERFORMANCE</option>
+                                  <option value="540">JSN_MOBILIZE_PREFER_QUALITY</option>
+                              </field>
+                  -->
+            </fieldset>
+            <!--
+                     <fieldset name="action">
+                         <action label="JAPPLY" task="configuration.save" track="1" ajax="1"/>
+                     </fieldset>
+          -->
+        </group>
+        <group name="msgs" label="JSN_EXTFW_CONFIG_MESSAGES" icon="comment">
+            <fieldset name="messagelist">
+                <field name="messagelist" type="messagelist">
+                    <option value="EDIT">JSN_MOBILIZE_SUB_MENU_MOBILIZATION_TEXT</option>
+                    <option value="CONFIG">JSN_EXTFW_CONFIG_CONFIGURATION_SCREEN</option>
+                    <option value="ABOUT">JSN_EXTFW_CONFIG_ABOUT_SCREEN</option>
+                </field>
+
+                <action label="JAPPLY" task="configuration.save" track="1" ajax="1"/>
+            </fieldset>
+        </group>
+        <group name="langs" label="JSN_EXTFW_CONFIG_LANGUAGES" icon="globe">
+            <fieldset name="languagemanager">
+                <field name="languagemanager" type="languagemanager"/>
+
+                <action label="JAPPLY" task="configuration.save" track="1" ajax="1"/>
+            </fieldset>
+        </group>
+    </section>
+    <section name="maintenance" label="JSN_EXTFW_CONFIG_MAINTENANCE">
+        <group name="data" label="JSN_EXTFW_CONFIG_DATA" icon="database">
+
+            <tab name="data-back-restore" label="JSN_EXTFW_CONFIG_DATA_BACKUP_RESTORE">
+                <fieldset name="databackup">
+                    <field name="databackup" type="databackup" task="data.backup">
+                        <option label="JSN_EXTFW_CONFIG_CONFIGURATION" type="tables">
+                            <table>#__jsn_mobilize_config</table>
+                            <table>#__jsn_mobilize_messages</table>
+                        </option>
+                        <option label="JSN_MOBILIZE_DATABASE" type="tables">
+                            <table>#__jsn_mobilize_design</table>
+                            <table>#__jsn_mobilize_os</table>
+                            <table>#__jsn_mobilize_os_support</table>
+                            <table>#__jsn_mobilize_profiles</table>
+                        </option>
+                    </field>
+                </fieldset>
+
+                <fieldset name="datarestore">
+                    <field name="datarestore" type="datarestore" task="data.restore" />
+                </fieldset>
+            </tab>
+        </group>
+        <group name="permissions" label="JSN_EXTFW_CONFIG_PERMISSIONS" icon="lock">
+            <fieldset name="permissions">
+                <field
+                        name="permissions" type="permissions" class="inputbox"
+                        component="com_mobilize" section="component"
+                        />
+                <action label="JAPPLY" task="configuration.save"/>
+            </fieldset>
+        </group>
+    </section>
+</config>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<section name="configuration" label="JSN_EXTFW_CONFIG_CONFIGURATION">
+		<group name="configs" label="JSN_EXTFW_CONFIG_GLOBAL_PARAMETERS"
+			icon="cog">
+			<tab name="global-parameter-general" label="JSN_EXTFW_CONFIG_GENERAL">
+				<fieldset name="general">
+					<field
+						name="review_popup" type="jsnradio" default="1" filter="int"
+						label="JSN_EXTFW_CONFIG_REVIEW_POPUP_LABEL" description="JSN_EXTFW_CONFIG_REVIEW_POPUP_DESC"
+					>
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>				
+					<field name="show_quick_icons" type="jsnradio" default="1"
+						filter="int" label="MAINTENANCE_SHOW_QUICK_ICONS" description="MAINTENANCE_SHOW_QUICK_ICONS_DES">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="enable_update_checking" type="jsnradio" default="1"
+						filter="int" label="MAINTENANCE_ENABLE_UPDATE_CHECKING"
+						description="MAINTENANCE_ENABLE_UPDATE_CHECKING_DES">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="number_of_images_on_loading" type="jsntext"
+						default="30" filter="int" class="jsn-input-mini-fluid"
+						label="MAINTENANCE_NUMBER_OF_IMAGES_ON_LOADING" description="MAINTENANCE_NUMBER_OF_IMAGES_ON_LOADING_DES">
+					</field>
+					<action label="JAPPLY" task="maintenance.saveparam" track="1"
+						ajax="1" />
+
+				</fieldset>
+			</tab>
+		</group>
+
+		<group name="msgs" label="JSN_EXTFW_CONFIG_MESSAGES" icon="comment">
+			<fieldset name="messagelist">
+				<field name="messagelist" type="messagelist">
+					<option value="LAUNCH_PAD">LAUNCH_PAD</option>
+					<option value="SHOWLISTS">SHOWLISTS</option>
+					<option value="SHOWCASES">SHOWCASES</option>
+					<option value="CONFIGURATION_AND_MAINTENANCE">CONFIGURATION_AND_MAINTENANCE</option>
+					<option value="HELP_AND_SUPPORT">HELP_AND_SUPPORT</option>
+					<option value="ABOUT">ABOUT</option>
+				</field>
+
+				<action label="JAPPLY" task="maintenance.savemessage" track="1"
+					ajax="1" />
+			</fieldset>
+		</group>
+
+		<group name="langs" label="JSN_EXTFW_CONFIG_LANGUAGES" icon="globe">
+			<fieldset name="languagemanager">
+				<field name="languagemanager" type="languagemanager" />
+
+				<action label="JAPPLY" task="maintenance.installlang" />
+			</fieldset>
+		</group>
+	</section>
+
+	<section name="maintenance" label="JSN_EXTFW_CONFIG_MAINTENANCE">
+		<group name="permissions" label="JSN_EXTFW_CONFIG_PERMISSIONS" icon="lock">
+			<fieldset name="permissions">
+				<field
+					name="permissions" type="permissions" class="inputbox" validate="rules" component="com_imageshow" section="component"
+				/>
+
+				<action label="JAPPLY" task="configuration.save" />
+			</fieldset>
+		</group>	
+		<group name="data" label="JSN_EXTFW_CONFIG_DATA" icon="database">
+			<tab name="data-sample-installation" label="JSN_EXTFW_CONFIG_SAMPLE_DATA_INSTALLATION">
+				<fieldset name="installsample"
+					addfieldpath="/administrator/components/com_imageshow/models/fields">
+					<field name="installsample" type="installsample"
+						download-url="http://www.joomlashine.com/joomla-extensions/jsn-imageshow-sample-data-j35.zip" />
+				</fieldset>
+			</tab>
+			<tab name="data-back-restore" label="JSN_EXTFW_CONFIG_DATA_BACKUP_RESTORE">
+				<fieldset name="databackup">
+					<field name="databackup" type="databackup" task="data.backup">
+						<option label="MAINTENANCE_BACKUP_SHOWLISTS" type="tables">
+							<table>#__imageshow_showlist</table>
+						</option>
+
+						<option label="MAINTENANCE_BACKUP_SHOWCASES" type="tables">
+							<table>#__imageshow_showcase</table>
+						</option>
+
+					</field>
+				</fieldset>
+
+				<fieldset name="datarestore"
+					addfieldpath="/administrator/components/com_imageshow/models/fields">
+					<field name="datarestore" type="datarestore" task="data.restore" />
+				</fieldset>
+			</tab>
+			<tab name="data-maintenance" label="MAINTENANCE_DATA_MAINTENANCE">
+				<fieldset name="datamaintenance"
+					addfieldpath="/administrator/components/com_imageshow/models/fields">
+					<field name="datamaintenance" type="datamaintenance" />
+				</fieldset>
+			</tab>
+		</group>
+		<group name="sources" label="MAINTENANCE_IMAGE_SOURCE_PROFILES"
+			icon="folder">
+			<fieldset name="sourcemanager"
+				addfieldpath="/administrator/components/com_imageshow/models/fields">
+				<field name="sourcemanager" type="sourcemanager" />
+			</fieldset>
+		</group>
+		<group name="themes" label="MAINTENANCE_THEMES_MANAGER" icon="picture">
+			<fieldset name="thememanager"
+				addfieldpath="/administrator/components/com_imageshow/models/fields">
+				<field name="thememanager" type="thememanager" />
+			</fieldset>
+		</group>
+	</section>
+</config>

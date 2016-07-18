@@ -1,0 +1,117 @@
+/*#settings-panel{
+	display: block !important;
+	left: 100px;
+	top: 100px;
+}
+*/
+
+
+#size-config {
+	margin-right: 20px;
+}
+#size-config .es-layout {
+	border-bottom: 1px solid #bbb;
+}
+#size-config .es-layout-item {
+	padding: 0 20px;
+	text-align: center;
+}
+#size-config .es-layout-item>a {
+	display: inline-block;
+}
+#size-config .es-layout-item>a.active {
+	border: 3px solid #444;
+}
+#size-config .es-layout-item p {
+	font-weight: bold;
+	margin-top: 10px;
+}
+#size-config .es-panel-footer {
+	margin-top: 20px;
+}
+#size-config .es-panel-footer .pull-left [class*="setting"] {
+	float: left;
+	width: 50%;
+}
+#size-config .es-panel-footer .pull-left [class*="setting"] input {
+	margin-right: 20px;
+	text-align: left;
+}
+#size-config .es-panel-footer .pull-right .btn {
+	margin-top: 15px;
+}
+#grid-config .input-group input[type="checkbox"] {
+	margin-top: -6px;
+}
+#grid-config .input-group input:focus {
+	outline: none;
+	box-shadow: none;
+}
+#settings-panel .tab-pane .es-tab-item {
+	text-align: center;
+	float: left;
+	width: 50%;
+	border: 1px solid #bbb;
+	padding: 20px;
+}
+#settings-panel .tab-pane .es-icon {
+	display: block;
+	font-size: 8em;
+}
+#settings-panel .tab-pane input {
+	text-align: center;
+}
+#settings-panel .tab-pane .es-tab-item:first-child {
+	border-width: 0 1px 1px 0;
+}
+#settings-panel .tab-pane .es-tab-item:nth-child(2) {
+	border-width: 0 0 1px 0;
+}
+#settings-panel .tab-pane .es-tab-item:nth-child(3) {
+	border-width: 0 1px 0 0;
+}
+#settings-panel .tab-pane .es-tab-item:last-child {
+	border-width: 0;
+}
+
+#item-inspector .tab-content [class*="group"] {
+	height: auto;
+	margin: 0px 5px 0 5px;
+}
+#item-inspector input[type="text"],
+#item-inspector input[type="color"],
+#item-inspector input[type="number"] {
+	height: 24px;
+}
+#box-shadow-panel .box-shadow-item [class*="group"] label,
+#item-inspector .tab-content [class*="group"] label {
+	display: block!important;
+	font-size: 11px;
+	line-height: 8px;
+	margin-left: 3px;
+}
+.es-app input[type="radio"][checked="checked"],
+.es-app input[type="radio"] {
+	width: 15px !important;
+	height: 15px !important;
+	border: none !important;
+	background: none !important;
+	box-shadow: none !important;
+}
+.es-app input[type="radio"]:focus {
+	border: none !important;
+	background: none !important;
+	box-shadow: none !important;
+}
+.input-transparent:focus,
+.input-transparent {
+	border: none !important;
+	background: none !important;
+	box-shadow: none!important;
+	outline: none !important;
+	height: 17px !important;
+	padding: 0 !important;
+}
+.input-160 {
+	width: 160px;
+}

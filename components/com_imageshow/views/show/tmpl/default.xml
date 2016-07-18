@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="MENU_IMAGESHOW_LAYOUT" option="MENU_IMAGESHOW_LAYOUT">
+		<help key="MENU_IMAGESHOW_LAYOUT" />
+		<message>
+			<![CDATA[MENU_IMAGESHOW_LAYOUT_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_imageshow/elements">
+			<field name="@sp1" type="spacer" label="Gallery Settings (required)"
+				description="" />
+			<field name="showlist_id" type="jsnshowlist" section="com_imageshow"
+				default="0" label="MENU_SHOWLIST_LABEL" description="MENU_SHOWLIST_DESC" />
+			<field name="showcase_id" type="jsnshowcase" section="com_imageshow"
+				default="0" label="MENU_SHOWCASE_LABEL" description="MENU_SHOWCASE_DESC" />
+			<field name="@sp2" type="spacer" label="Parameters Override (optional)"
+				description="" />
+			<field name="w" type="jsnoverallwidth" default=""
+				label="JSN_MENU_OVERALL_WIDTH" description="JSN_MENU_OVERALL_WIDTH_DESC" />
+			<field name="h" type="jsnoverallheight" default=""
+				label="JSN_MENU_OVERALL_HEIGHT" description="JSN_MENU_OVERALL_HEIGHT_DESC"
+				postfix="px" />
+			<field name="jsnisid" type="jsnisid" label="" description="" />
+		</fieldset>
+	</fields>
+</metadata>
