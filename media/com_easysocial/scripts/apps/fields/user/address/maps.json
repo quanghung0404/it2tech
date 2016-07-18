@@ -1,0 +1,16 @@
+[
+    {
+        "library": [
+            "gmaps",
+            "placeholder",
+            "image"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_LOCATION_PERMISSION_ERROR",
+            "COM_EASYSOCIAL_LOCATION_TIMEOUT_ERROR",
+            "COM_EASYSOCIAL_LOCATION_UNAVAILABLE_ERROR",
+            "COM_EASYSOCIAL_STREAM_AT"
+        ],
+        "adapter": "EasySocial"
+    }
+]

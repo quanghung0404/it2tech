@@ -1,0 +1,12 @@
+[
+    {
+        "view": [
+            "site/loading/small"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_ACTIVITY_APPS_UNHIDE_SUCCESSFULLY",
+            "COM_EASYSOCIAL_ACTIVITY_USERS_UNHIDE_SUCCESSFULLY"
+        ],
+        "adapter": "EasySocial"
+    }
+]

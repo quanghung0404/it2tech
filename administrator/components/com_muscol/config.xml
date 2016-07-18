@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <fieldset
+  name="global"
+               
+                label="General"
+                description="Music Collection global settings"
+				
+				>
+    <field name="keywords" type="textarea" rows="3" cols="70" default="" label="Meta Keywords for MC" description="Keywords to include in the head section of every MC page" />
+    <field name="description" type="textarea" rows="3" cols="70" default="" label="Meta description for MC" description="Description to include in the head section of every MC page" />
+    <field name="currency" type="text" default="€" label="Currency" description="The currency used in the price the albums" />
+    <field name="itemid" type="text" default="" label="Default ItemId" description="ItemId to link to the ALL the links inside MC component (very usefull to mantain navigation and modules displayed while we are navigating throug MC" />
+    <field class="btn-group" name="showletternavigation" type="radio" default="1" label="Show letter navigation" description="Show ltter navigation bar at the top of each page inside Music Collection component" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="letterbartype" type="list" default="new" label="Letter bar type" description="Letter bar type">
+      <option value="new">New (recommended) (it uses a TABLE element)</option>
+      <option value="old">Old (it uses a UL element)</option>
+    </field>
+    <field name="alphabet" type="list" default="english" label="Alphabet to use on the lettebar" description="Alphabet to use on the lettebar">
+      <option value="english">English</option>
+      <option value="greek">Greek</option>
+      <option value="russian">Russian (cyrillic)</option>
+      <option value="arabicrtl">Arabic (Right to Left)</option>
+      <option value="arabicltr">Arabic (Left to Right)</option>
+      <option value="hebrewrtl">Hebrew (Right to Left)</option>
+      <option value="hebrewltr">Hebrew (Left to Right)</option>
+      <option value="custom">Custom (edit file /components/helpers/alphabets.php)</option>
+    </field>
+    <field class="btn-group" name="loadimagesplayer" type="radio" default="1" label="Load images on the player" description="Not recommended for slow servers (it can slow down the page load time)">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showhits" type="radio" default="1" label="Show Hits" description="To show the number of hits on albums, songs and artists">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="songsserver" type="text" default="" label="Songs server" description="The server where the songs are located. LEAVE EMPTY AS DEFAULT OPTION for use the current site. To get the songs from an external server/site, write the complete URL to that server. DO THIS ONLY IF YOU KNOW WHAT YOU ARE DOING. Example: 'http://www.example.com/songsfolder'" />
+    <field name="songspath" type="text" default="/songs" label="Songs folder" description="The folder were the songs mp3 files will be, starting at your Joomla root. Must START with a SLASH. Example: '/songs'. Example: '/firstfolder/secondfolder/finalfolder'. Write only a slash for base directory. If empty, '/songs' folder will be used" />
+    
+	<field class="btn-group" name="curl" type="radio" default="0" label="Use CURL for Discogs requests (BETA)" description="NOT RECOMMENDED">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showtwitter" type="radio" default="1" label="Show 'tweet this' button" description="Shows Twitter button">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showfacebook" type="radio" default="1" label="Show Facebook 'I like it' button" description="Shows Facebook button">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+	<field class="btn-group" name="id3" type="radio" default="0" label="Use ID3 tag reading if possible" description="Use ID3 tag reading if possible">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+  name="thumbnails"
+               
+                label="Thumbnails"
+                description="Thumbnails"
+				
+				>
+    <field name="thumbs_mode" type="radio" default="1" label="Thumbnails" description="How to create thumbnails: staticly or dynamicly. If you choose STATIC, all following Small thumbnail paramaters must be setted to 40, and all Big thumbnail parameters must be setted to 115">
+      <option value="0">STATIC</option>
+      <option value="1">DYNAMIC</option>
+    </field>
+	<field class="btn-group" name="cache" type="radio" default="1" label="Use cache for Dynamic thumbnail mode" description="Use cache for Dynamic thumbnail mode">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="thumb_size_artists_1" type="text" default="40" size="4" label="Small thumbnail size for artists detailed view" description="The WIDTH of the thumbnail album image used on the artists (not artist) DETAILED view" />
+    <field name="thumb_size_album_1" type="text" default="40" size="4" label="Small thumbnail size for album chronology bar" description="The WIDTH of the thumbnail album image used on the album chronology bar" />
+    <field name="thumb_size_song_1" type="text" default="115" size="4" label="Small thumbnail size for album image on song view" description="The WIDTH of the thumbnail album image used on the song view" />
+    <field name="thumb_size_artist_1" type="text" default="40" size="4" label="Small thumbnail size for artist view" description="The WIDTH of the thumbnail album image used on the artist DEFAULT view" />
+    <field name="thumb_size_artist_2" type="text" default="115" size="4" label="Big thumbnail size for artist view" description="The WIDTH of the thumbnail album image used on the artist DETAILED view" />
+    <field name="thumb_size_artist_profile" type="text" default="200" size="4" label="Artist picture width on artist profile" description="The WIDTH Artist picture size on artist profile" />
+  </fieldset>
+  <fieldset
+  name="artists"
+               
+                label="Main page"
+                description="Main page (artists view)"
+				
+				>
+    <field name="albums_view" type="list" default="detailed" label="Default view for albums list" description="The default layout in the albums list view. You can add you own templates here... (only those familiar to Joomla! views and templates! Use at own risk)">
+      <option value="default">Default view</option>
+      <option value="grid">Grid View</option>
+      <option value="detailed">Detailed View</option>
+    </field>
+    <field class="btn-group" name="showchangetemplate" type="radio" default="1" label="Allow users to switch between album list templates" description="Allow users to change the template of the albums list view. If set to NO, template selected as default in the previous field will be shown">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="artists_view" type="list" default="detailed" label="View for artists list" description="The  layout in the artist view. You can add you own templates here... (only those familiar to Joomla! views and templates! Use at own risk)">
+      <option value="default">Default view</option>
+      <option value="detailed">Detailed View</option>
+    </field>
+    <field class="btn-group" name="showartistshome" type="radio" default="0" label="Show artists on MC home" description="If set to YES, artists from ALL letters will be shown on the home of MC component. BE CAREFUL!!: if this option is enabled and 'Usepagination in artists view' is disabled, ALL ARTISTS on your collection will be displayed!! (not a good idea if you have many artists...)" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="usepaginationartists" type="radio" default="0" label="Use pagination in artists view" description="If set to YES, a pagination object will be displayed on the artists view." >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="introtext" type="textarea" rows="10" cols="70" default="" label="Introduction text" description="Text to show in the frontend when entering the Music Collection Component, BEFORE the search bars" filter="raw" />
+    <field name="introtext2" type="textarea" rows="10" cols="70" default="" label="Introduction text 2" description="Text to show in the frontend when entering the Music Collection Component, AFTER the search bars" filter="raw" />
+    <field class="btn-group" name="processcontentplugins" type="radio" default="1" label="Process content plugins" description="If set to YES, content plugins will be processed on 'Introduction text' and 'Introduction text 2' fields" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+  name="search"
+               
+                label="Search bars"
+                description="Search bars"
+				
+				>
+    <field class="btn-group" name="showalbumsearch" type="radio" default="1" label="Show album search form" description="Show album search form in the frontend when entering the Music Collection Component" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showsearchwordalbumsearch" type="radio" default="1" label="Show searchword field on album search form" description="Show searchword field on album search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showgenrealbumsearch" type="radio" default="1" label="Show genre filter on album search form" description="Show genre filter on album search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showformatalbumsearch" type="radio" default="1" label="Show format filter on album search form" description="Show format filter on album search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showtypealbumsearch" type="radio" default="1" label="Show type filter on album search form" description="Show type filter on album search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showtagalbumsearch" type="radio" default="1" label="Show tag filter on album search form" description="Show tag filter on album search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="orderby_search" type="list" default="date_desc" label="Default album order" description="To sort albums on serch results as..." >
+      <option value="year_asc">Year/Month Ascendant</option>
+      <option value="year_desc">Year/Month Descendant</option>
+      <option value="name_asc">Name Ascendant</option>
+      <option value="name_desc">Name Descendant</option>
+      <option value="date_asc">Date added Ascendant</option>
+      <option value="date_desc">Date added Descendant</option>
+    </field>
+    <field class="btn-group" name="showorderbyalbumsearch" type="radio" default="1" label="Show orderby sorting options on album search form" description="Show orderby sorting options on album search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="submitchange_albumsearch" type="radio" default="1" label="Submit album search form on change ORDERBY option" description="Submit album search form on change ORDERBY option" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@spacer" type="spacer" default="" label="" description="" />
+    <field class="btn-group" name="showsongsearch" type="radio" default="1" label="Show song search form" description="Show song search form in the frontend when entering the Music Collection Component">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showsearchwordsongsearch" type="radio" default="1" label="Show searchword field on song search form" description="Show searchword field on song search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showgenresongsearch" type="radio" default="1" label="Show genre filter on song search form" description="Show genre filter on song search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showartistsongsearch" type="radio" default="1" label="Show artist filter on song search form" description="Show artist filter on song search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showtagsongsearch" type="radio" default="1" label="Show tag filter on song search form" description="Show tag filter on song search form in the frontend when entering the Music Collection Component and search view" >
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+  name="album"
+               
+                label="Album page"
+                description="Individual album view settings"
+				
+				>
+    <field class="btn-group" name="showalbumdetails" type="radio" default="1" label="Show album details" description="If set to YES, albums details (such as release date, genre, price, edition details...) are shown in the frontend album view">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showalbum_release" type="radio" default="1" label="Show release date on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_format" type="radio" default="1" label="Show format on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_types" type="radio" default="1" label="Show types on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_added" type="radio" default="1" label="Show addition date on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_genre" type="radio" default="1" label="Show genre on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_price" type="radio" default="1" label="Show price on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_length" type="radio" default="1" label="Show length on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_ndisc" type="radio" default="1" label="Show number of discs on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_editiondate" type="radio" default="1" label="Show edition date on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_editioncountry" type="radio" default="1" label="Show edition country on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_label" type="radio" default="1" label="Show label on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_catalog" type="radio" default="1" label="Show catalog number on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_editiondetails" type="radio" default="1" label="Show edition details on album details" description="To show or hide this field">
+      <option value="0">Hide always</option>
+      <option value="1">Show always</option>
+      <option value="2">Show only if not empty</option>
+    </field>
+    <field class="btn-group" name="showalbum_tags" type="radio" default="1" label="Show tags on album" description="Show tags on album">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showalbum_adminrating" type="radio" default="1" label="Show admin rating on album details" description="To show or hide the stars">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showalbum_userrating" type="radio" default="1" label="Show users rating on album details" description="To show or hide the stars">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showalbumchrono" type="radio" default="1" label="Show albums chronology" description="If set to YES, 'PREV' and 'NEXT' albums (if available) are shown on the album view">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="allowalbumbuy" type="radio" default="1" label="Show BUY button on albums" description="To show the buy button on albums, if the buy link is not empty">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+
+    <field class="btn-group" name="showzip" type="radio" default="0" label="Show Download full album (zip) button" description="Show Download full album (zip) button">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+  name="artist"
+               
+                label="Artist page"
+                description="Individual artist view settings"
+				
+				>
+    <field class="btn-group" name="showartistcountry" type="radio" default="1" label="Show artist country" description="To show or not the country of the artist on the artist page">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showpdficon" type="radio" default="1" label="Show PDF icon" description="Displays the PDF icon at the top of artists view and artist view">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+  name="song"
+               
+                label="Song page"
+                description="Individual song view settings"
+				
+				>
+    <field class="btn-group" name="allowsongbuy" type="radio" default="1" label="Show BUY button on songs" description="To show the buy button on songs, if the buy link is not empty">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showsong_tags" type="radio" default="1" label="Show tags on song" description="Show tags on song">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="youtube_width" type="text" default="425" size="4" label="Youtube video embed WIDTH" description="The WIDTH of the Youtube video embedded on the SONG page" />
+    <field name="youtube_height" type="text" default="344" size="4" label="Youtube video embed HEIGHT" description="The HEIGHT of the Youtube video embedded on the SONG page" />
+  </fieldset>
+  <fieldset
+  name="comments"
+               
+                label="Comments"
+                description="Comments"
+				
+				>
+    <field class="btn-group" name="showalbumcomments" type="radio" default="1" label="Show/allow album comments" description="Shows album comments and allows registered users to post comments on albums">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showsongcomments" type="radio" default="1" label="Show/allow songs comments" description="Shows song comments and allows registered users to post comments on songs">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showartistcomments" type="radio" default="1" label="Show/allow artist comments" description="Shows artist comments and allows registered users to post comments on artists">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showplaylistcomments" type="radio" default="1" label="Show/allow playlists comments" description="Shows playlist comments and allows registered users to post comments on playlists">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    
+  </fieldset>
+  <fieldset
+  name="ratings"
+               
+                label="Ratings"
+                description="Ratings"
+				
+				>
+    <field class="btn-group" name="showalbumratings" type="radio" default="1" label="Allow album ratings" description="Allows users to rate albums">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showsongratings" type="radio" default="1" label="Allow song ratings" description="Allows users to rate songs">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+  name="bookmarks"
+               
+                label="Bookmarks"
+                description="Bookmarks"
+				
+				>
+    <field class="btn-group" name="bookmarksystem" type="radio" default="default" label="Bookmark system" description="Select wich bookmarking system you want to use">
+      <option value="default">Music Collection Default</option>
+      <option value="addthis">Add This bookmark system</option>
+    </field>
+    <field class="btn-group" name="showalbumbookmarks" type="radio" default="1" label="Show Bookmarks on album page" description="To show Bookmarks on album page">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showsongbookmarks" type="radio" default="1" label="Show Bookmarks on song page" description="To show Bookmarks on song page">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="showartistbookmarks" type="radio" default="1" label="Show Bookmarks on artist page" description="To show Bookmarks on artist page">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+  name="permissions_muscol"
+               
+                label="Permissions"
+                description="Permissions"
+				
+				>
+    <field class="btn-group" name="displayplayer" type="radio" default="2" label="Show online player for registered users" description="Specify who can listen to songs online">
+      <option value="0">Nobody</option>
+      <option value="1">Registered users only</option>
+      <option value="2">Everybody</option>
+    </field>
+    <field class="btn-group" name="allowsongdownload" type="radio" default="2" label="Allow song downloads" description="Specify who can download the audio files to their computers">
+      <option value="0">Nobody</option>
+      <option value="1">Registered users only</option>
+      <option value="2">Everybody</option>
+    </field>
+    <field class="btn-group" name="allowcreateplaylists" type="radio" default="1" label="Allow playlist storage" description="Allow registered users to save their playlists on the database">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="users_add_artists" type="radio" default="1" label="Frontend users can add artists" description="BE CAREFUL: if set to NO, then next parameter 'Frontend users can only add albums by artists they created' has to be set to NO.">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="add_albums_own_artists" type="radio" default="0" label="Frontend users can only add albums by artists they created" description="If set to yes, Frontend users can only add albums by artists they created. Elsewhere, they can add albums on every artist on the collection.">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  
+  <fieldset
+  name="statistics"
+               
+                label="Statistics"
+                description="Statistics"
+				
+				>
+    <field class="btn-group" name="registeralbumviews" type="radio" default="1" label="Register Album Views" description="Register Album Views on the Database. You must set to YES if you want to track statistics">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="registerartistviews" type="radio" default="1" label="Register Artist Views" description="Register Artist Views on the Database. You must set to YES if you want to track statistics">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="registersongviews" type="radio" default="1" label="Register Song Views" description="Register Song Views on the Database. You must set to YES if you want to track statistics">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="registersongplays" type="radio" default="1" label="Register Song Plays" description="Register Song Plays on the Database. You must set to YES if you want to track statistics">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="registersongdownloads" type="radio" default="1" label="Register Song Downloads" description="Register Song Downloads on the Database. You must set to YES if you want to track statistics">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="registerplaylistviews" type="radio" default="1" label="Register Playlist Views" description="Register Playlist Views on the Database. You must set to YES if you want to track statistics">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field class="btn-group" name="registerratings" type="radio" default="1" label="Register Album and Song ratings" description="Register Album and Song ratings on the Database. You must set to YES if you want to track statistics">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset
+        name="Discogs"
+       label="Discogs"
+        description="Discogs"
+        
+        >
+
+  <field name="oauth_token" type="text" default="" label="OAuth token" description="OAuth token" />
+  <field name="access_token_secret" type="text" default="" label="OAuth access token secret" description="OAuth access token secret" />
+
+  </fieldset>
+</config>

@@ -1,0 +1,271 @@
+/*------------------------------------*\
+  tabs.less
+\*------------------------------------*/
+
+// =tab-box
+.tab-content {
+	overflow: visible;
+}
+.nav-tabs {
+	> li {
+		a {
+			font-size: 12px;
+		}
+	}
+}
+.tab-box { //wrap tabbable for background color
+	background: none repeat scroll 0 0 @white;
+	border: 1px solid #ddd;
+	border-radius: 3px 3px 3px 3px;
+	margin-bottom: 20px;
+	font-size: 12px;
+	label {
+		font-size: 12px;
+	}
+	.nav-tabs {
+		padding-top:0px;
+		margin:0px;
+		// #gradient > .vertical(@discussTabBoxBackground, @discussTabBoxBackgroundHighlight);
+		> li {
+			margin: 5px 0 -1px 5px;
+			a {
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+		}
+	}
+	.tab-content {
+		padding:10px 18px 20px;
+		border: none;
+	}
+
+	.tabs-left { //if tabs on left side
+		overflow: hidden;
+		.nav-tabs {
+			height: 2500px;
+			margin-bottom: -9999px;
+			border-right: 1px solid darken(@grayLighter, 13.5%) ;
+			> li {
+				margin-top: 15px;
+				a {
+					border-color: darken(@grayLighter, 13.5%) transparent darken(@grayLighter, 13.5%) darken(@grayLighter, 13.5%);
+					&:hover {
+						// border-color: @eb-border @grayLighter @eb-border @eb-border;
+						border-color: darken(@grayLighter, 13.5%) darken(@grayLighter, 6.5%) darken(@grayLighter, 13.5%) darken(@grayLighter, 13.5%) ;
+					}
+				}
+				&.active {
+					a {
+						&:hover {
+							border-color: @eb-border @white @eb-border @eb-border;
+						}
+					}
+				}
+			}
+		}
+		.tab-content {
+			min-height: 380px;
+		}
+	}
+
+	&.tab-box-alt { //alt style
+		background: #f5f5f5;
+		.tab-content {
+			margin: 0px auto 1px;
+			padding-top: 20px;
+			background: white;
+		}
+
+		//default top nav tabs
+		.nav-tabs {
+			padding: 0;
+			> li {
+				margin: -1px 0 -1px -3px;
+				&:first-child {
+					a {
+						&:before {
+							display: block;
+							position: absolute;
+							left: -1px;
+							bottom: -1px;
+							content: '';
+							background: #ddd;
+							width: 1px;
+							height: 1px;
+						}
+					}
+				}
+				a {
+					padding: 8px 8px 3px;
+					border: 1px solid #DDD;
+					border-top: 3px solid transparent;
+					border-bottom: 1px solid transparent;
+					position: relative;
+					border-radius: 0;
+					[class^="icon-jar"],
+					[class*=" icon-jar"] {
+						margin-top: 12px;
+					}
+
+					&:hover {
+						border-radius: 4px 4px 0 0;
+						border: 1px solid #DDD;
+						border-top: 3px solid #ddd;
+						background: white;
+					}
+				}
+				&:first-child {
+					margin-left: -1px;
+				}
+				&.active {
+					// border-bottom: 1px solid transparent;
+					a {
+						border-top: 3px solid #7cc110;
+						border-radius: 4px 4px 0 0;
+						&:hover {
+							// border-color: @eb-border @white @eb-border @eb-border;
+							border-bottom: 1px solid transparent;
+						}
+					}
+				}
+			}//li
+		}
+
+		//side nav tabs
+		&.tab-box-sidenav {
+			> .nav-tabs,
+			> .tabbable > .nav-tabs {
+				display: table-cell;
+				border: none;
+				border-right: 1px solid #ddd;
+				vertical-align: top;
+				padding-top: 10px;
+				> li {
+					float: none;
+					margin: 0 -3px 0 0;
+					border-top: 1px solid #ddd;
+					min-width: 180px;
+					&:last-child {
+						border-bottom: 1px solid #ddd;
+						margin-bottom: 10px;
+					}
+					a {
+						border: none;
+						border-right: 1px solid #ddd;
+						padding: 10px 0 10px 20px;
+						text-align: left;
+						border-radius: 0;
+					}
+					&.active {
+						a {
+							border: none;
+							border-left: 3px solid #7CC110;
+						}
+					}
+					&.error {
+						a {
+							border-left: 3px solid #BE1F23;
+							background: #ffe5e6;
+						}
+					}
+				}
+			}
+			> .tab-content,
+			> .tabbable > .tab-content {
+				display: table-cell;
+				width: 100%;
+				vertical-align: top;
+				padding-top: 10px;
+				position: relative;
+			}
+		}//side
+	}//alt
+
+
+	&.tab-box-dark {
+		overflow: hidden;
+		background: #343c3f;
+		border-radius: 1px;
+		.tab-header {
+			background: #f5f5f5;
+			padding: 7px 10px;
+			border-bottom: 1px solid #ccc;
+			.clearfix();
+			select {
+				width: auto;
+			}
+			.btn {
+				font-size: 12px;
+				height: 28px;
+				i{
+					font-size: 11px;
+					line-height: 18px;
+					margin-right: 3px;
+				}
+			}
+			.tab-pane {
+				display: none;
+			}
+		}
+		.tab-content {
+			background: white;
+
+			&.vertical-line {
+				&:before {
+					left: 25%;
+				}
+			}
+		}
+		.nav-tabs {
+			border-bottom: 1px solid #f5f5f5;
+			> li {
+				margin: 8px 0 0px 6px;
+				a {
+					#gradient > .vertical(#575b5e, #3d444a );
+					color: white;
+					// background: #3d444a;
+					padding: 5px 14px;
+					.box-shadow(inset 0px 1px 1px rgba(255, 255, 255, 0.3));
+					&:hover {
+						border: 1px solid transparent;
+					}
+				}
+				&.active {
+					a {
+						padding: 5px 14px;
+						color: #333;
+						background: #f5f5f5;
+					}
+				}
+			}//li
+		}
+	}//dark
+}
+
+
+// Pills tabs
+.tab-pills
+{
+	> li
+	{
+		a
+		{
+			outline: none;
+			font-size: 11px;
+			min-width: 40px;
+			text-align: center;
+			border-radius: 10px;
+			padding: 3px 8px;
+
+			&.active
+			{
+				outline: none;
+				border: 1px solid #ddd;
+			}
+		}
+		+ li {
+			border-left: 1px dotted #ddd;
+			padding-left: 4px;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Playlists layout" >
+		<message>
+			Displays the playlists
+		</message>
+	</layout>
+	<state>
+		<name>Playlists layout</name>
+		<description>Playlists layout</description>
+		
+		<params>
+		</params>
+	</state>
+</metadata>

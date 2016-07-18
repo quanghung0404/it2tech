@@ -140,6 +140,7 @@ div.clr.vspacer {
 h1.page-title {
 	background: url("../images/jmap-32x32.png") no-repeat;
 	padding-left: 36px;
+    background-position: 0 2px;
 }
 
 h1.page-title span.icon-jmap {
@@ -596,6 +597,12 @@ div.tab-pane div.control-group {
 
 div.control-group.spacer div.control-label {
 	float: none;
+}
+
+div.tab-pane div.control-group div.sitemap_template {
+	display: inline-block;
+	width: 252px;
+	height: 181px;
 }
 
 span.label.spacer label {

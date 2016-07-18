@@ -1,0 +1,11 @@
+[
+    {
+        "script": [
+            "albums/uploader"
+        ],
+        "view": [
+            "site/albums/upload.item"
+        ],
+        "adapter": "EasySocial"
+    }
+]

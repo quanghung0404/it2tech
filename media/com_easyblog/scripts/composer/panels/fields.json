@@ -1,0 +1,8 @@
+[
+    {
+        "view": [
+            "site/composer/primary.category.item"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

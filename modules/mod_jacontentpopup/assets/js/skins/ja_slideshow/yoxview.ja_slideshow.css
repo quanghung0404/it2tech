@@ -1,0 +1,141 @@
+.yoxview_ja_slideshow{
+  font-family: Arial, Sans-Serif;
+  font-size: 10pt;
+}
+
+/*
+.yoxview_ja_slideshow img.yoxview_fadeImg{ cursor: -moz-zoom-in }
+.yoxview_ja_slideshow img.yoxview_zoom{ cursor: -moz-zoom-out }
+*/
+
+.yoxview_ja_slideshow #yoxview_infoPanel {
+  background: #eee;
+  border-top: 1px solid #ddd;
+  height: 40px !important;
+  top: auto;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.yoxview_ja_slideshow #yoxview_infoPanel span#yoxview_count {
+  background: #fff;
+  color: #999;
+  display: block;
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 3px 5px;
+  line-height: 1;
+  width: auto;
+}
+
+.yoxview_ja_slideshow #yoxview_infoPanel #yoxview_infoText {
+  display: none;
+}
+
+.yoxview_ja_slideshow #yoxview_infoPanel a.yoxviewInfoLink {
+  background: #333;
+  color: #fff;
+  font-weight: bold;
+  font-size: 11px;
+	margin: 8px 10px 0 0;
+  padding: 6px 10px;
+  line-height: 1;
+	opacity: 1;
+	outline: none;
+  border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px;
+	transition: all 0.5s ease-out 0.1s;
+	-moz-transition: all 0.5s ease-out 0.1s;
+	-webkit-transition: all 0.5s ease-out 0.1s;
+}
+
+.yoxview_ja_slideshow #yoxview_infoPanel a.yoxviewInfoLink:hover {
+  background: red;
+  color: #fff;
+  text-decoration: none;
+}
+
+.yoxview_ja_slideshow a.yoxview_ctlButton {
+  display: block;
+  width: 58px;
+  height: 42px;
+  position: fixed;
+  opacity: 0.5;
+  background-image: url(sprites.png);
+  background-repeat: no-repeat;
+  top: 50%;
+  margin-top: -22px;
+  outline: none;
+  z-index: 3;
+}
+
+.yoxview_ja_slideshow a.yoxview_ctlButton:hover {
+  opacity: 0.8;
+}
+
+.yoxview_ja_slideshow a.yoxview_nextBtn {
+	background-position: right top;
+	right : 0;
+}
+
+.yoxview_ja_slideshow a.yoxview_prevBtn {
+	background-position: left top;
+	left : 0;
+}
+
+.yoxview_ja_slideshow #yoxview #yoxview_menuPanel {
+	background:#000;
+	border-radius:0;
+	padding:0;
+}
+
+.yoxview_ja_slideshow #yoxview #yoxview_menuPanel a {
+	top:0 !important;
+	padding:0;
+	height:45px;
+}
+
+.yoxview_ja_slideshow #yoxview .yoxview_top {
+  background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  height: 35px;
+  position: absolute;
+  width: 100%;
+}
+
+.yoxview_ja_slideshow #yoxview .yoxview_top a {
+  background: url(btn-close.png) no-repeat center center #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  display: block;
+  float: right;
+  height: 12px;
+  padding: 3px;
+  margin-right: 10px;
+  margin-top: 8px;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 12px;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.yoxview_ja_slideshow #yoxview .yoxview_top a:hover,
+.yoxview_ja_slideshow #yoxview .yoxview_top a:focus,
+.yoxview_ja_slideshow #yoxview .yoxview_top a:active {
+  border-color: #ccc;
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+}
+
+.yoxview_ja_slideshow #yoxview {
+	background: #FFFFFF;
+}
+.yoxview_ja_slideshow #yoxview .yoxview_mediaPanel{
+  top: 35px;
+  bottom: 41px;
+  height: auto;
+  max-width: 100%;
+  overflow: hidden !important;
+}

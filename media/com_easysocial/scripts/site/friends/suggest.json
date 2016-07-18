@@ -1,0 +1,14 @@
+[
+    {
+        "view": [
+            "site/friends/suggest.item"
+        ],
+        "library": [
+            "textboxlist"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_FRIENDS_REQUEST_SENT"
+        ],
+        "adapter": "EasySocial"
+    }
+]

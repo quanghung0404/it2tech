@@ -1,0 +1,22 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+[% var pluginSelector = 'data-story-plugin-name="' + attachment.plugin.name + '"'; %]
+
+<div
+	class="es-story-attachment-item"
+	data-story-attachment-item
+	[%== pluginSelector %]
+	>
+		<div class="es-story-attachment-toolbar" data-story-attachment-toolbar [%== pluginSelector %]>
+			<div class="es-story-attachment-drag-handle" data-story-attachment-drag-handle [%== pluginSelector %]><i class="icon-es-drag"></i></div>
+			<div class="es-story-attachment-remove-button" data-story-attachment-remove-button [%== pluginSelector %]><i class="fa fa-remove"></i></div>
+		</div>
+		<div class="es-story-attachment-content" data-story-attachment-content [%== pluginSelector %]></div>
+	</div>

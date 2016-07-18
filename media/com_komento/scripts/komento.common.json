@@ -1,0 +1,20 @@
+[
+    {
+        "library": [
+            "ui/effect",
+            "scrollTo",
+            "dialog"
+        ],
+        "script": [
+            "komento.language",
+            "syntaxhighlighter"
+        ],
+        "stylesheet": [
+            "dialog/default"
+        ],
+        "view": [
+            "dialogs/error"
+        ],
+        "adapter": "Komento"
+    }
+]

@@ -1,0 +1,170 @@
+/**
+ * =============================================================
+ * RAXO All-mode K2 J3.x - Interface CSS
+ * -------------------------------------------------------------
+ * @package		RAXO All-mode K2
+ * @copyright	Copyright (C) 2009-2014 RAXO Group
+ * @license		RAXO Commercial License
+ * 				This file is forbidden for redistribution
+ * @link		http://www.raxo.org
+ * =============================================================
+ */
+
+
+/* ----- RESET Styles ----- */
+:focus {outline: 0 !important;}
+.hide-field {display: none;}
+
+
+/* ----- DETAILS Styles ----- */
+#details blockquote p {
+	font-size: 13px;
+}
+#details blockquote h3 {
+	margin-bottom: 6px;
+	font-size: 14px;
+	color: #1e4678;
+}
+
+
+/* ----- HEADERS Styles ----- */
+#module-form .accordion-heading {
+	margin: -1px -3px 0 -5px;
+	/*height: 23px;*/
+	border: 1px solid #a5b6c7;
+	border-radius: 4px;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACgAAAAAmCAMAAAA/DzKPAAAA/1BMVEX////8/f7x9Pjv9Pvv9Pzu8/vt8/rs8vnr8fnq8Pjp8Pjo7/fn7vbm7fXl7PTk6/Tk6/Pi6vPh6fLh6PHg6PHg5/De5vDe5u/d5e/c5O7a4+3Z4uzZ4erX4evW4OrX4OjU3unS3OjP2ubP2uXP2uTN2OTL1uPI1eHI1ODG0+DE0d7Cz93Azty+zNu9y9q7ytm3x9q2x9q2x9m1x9yvxNuvw9utwtqswdqswdmrwNiswNeqv9eqv9ipvtenvdanvNWmvNWmu9Wlu9Sku9SjudOhuNKht9GfttGets+dtc+cs86ass2Yscyescaltseltsq2w9C4xNHH1eSWpbeNnbDRCsU0AAABjklEQVR4Xu3dMWobURCA4TeTTbYxqEjhC4QQ0jknMATjtD5zLpDObgKpbBPUCFXBEgqWi/XyVLuY/b7qLe8CP7PMbrZFAQAgh0UBACAPiwIAQC4MAACxKAAAZLwFAAAEIAAAAhAAAAEIAIAABABAAAIA8H1ZAQgAQJuOw9X1j7nrq6FuAAIACMDL3cOfuYfdZd0ABAAQgIfHp5h7ejxMD1kBAABtOq6jt85J1AIAYAK4i96u7gQQAMAEME7JsgAABOBwSi4WAIAJYNQCAGALuB3d/Xxx145qfgYGAEAATj5ne5afqv8JBABAAObR+4torcXFmEfF1kEAAGjdxeqmtXazyk4UAABAi87mvJ1vopNVAQDYAv768UvVLWAAAFr0hm8fopdRDgCAJZDeq+t3BQAA0KZjnvLqOmoBADAB3EdvX/cVMACAAPwbvXXdLWAAAFvA2/t9zO3vN3W3gAEATADH7e2vudvtaAu4GACA3zEZz1ZzZ2MsNgABAMgoAgAAAQgAgAAEACD/LQoAAP8BAM3XiOjLxRQAAAAASUVORK5CYII=") no-repeat 100% 0;
+	/*background: url("bkg-header.png") no-repeat 100% 0;*/
+}
+#module-form .accordion-heading a {
+	padding: 13px 0 7px 43px;
+	font-size: 12px; line-height: 18px; word-spacing: 4px;
+	text-transform: uppercase; text-decoration: none;
+	color: #e9eef3;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAATBAMAAACNac7UAAAAMFBMVEUPS5EPS5EPS5EMPHQMPHQMPHQMPHQPS5EPS5EPS5EPS5EPS5EPS5HX4OnX4OnX4OnXozhRAAAAD3RSTlP/7u3t7v+RkZCJiAYAQK+uFFk8AAAAP0lEQVR42mPYZho6gCAkm6GBYUABF4PCwDqAiWEUjIJRMApGwSgY8MpogKtjTobtAgNpP2M1w9n3/wcQ/LsDAJWArIukcUCJAAAAAElFTkSuQmCC") no-repeat 19px 12px;
+	/*background: url("bkg-header-name.png") no-repeat 19px 12px;*/
+}
+
+
+/* ----- FIELDS Styles ----- */
+#description img {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+#description h1 {
+	margin: 10px 0 16px 0; padding: 0;
+	font-size: 28px; font-weight: normal;
+	color: #133a77;
+}
+#description h1 span {
+	font-size: 18px;
+	white-space: nowrap;
+	color: #666666;
+}
+#description h1 a {
+	font-size: 13px;
+}
+#description .long-description {
+	 margin: 6px 0 8px; padding-bottom: 16px;
+	 font-size: 16px; line-height: 24px;
+	 /*border-bottom: 1px solid #eeeeee;*/
+}
+#description .description-links {
+	line-height: 20px;
+}
+
+
+/* ----- FIELDS Styles ----- */
+#module-form .control-group {
+	margin-bottom: 8px; padding-bottom: 7px;
+	border-bottom: 1px solid #f5f5fa;
+}
+#module-form .control-label label {
+	font-weight: bold;
+	color: #3b434d;
+}
+	/* ----- Captions ----- */
+	#module-form h3.caption {
+		margin: 12px 0 0; padding: 4px 16px 2px 24px;
+		min-width: 360px;
+		font-size: 12px;
+		border-radius: 3px;
+		background-color: #eef2f5;
+	}
+	#module-form .caption span {
+		padding: 1px 16px 0;
+		font-weight: normal; line-height: 14px; word-spacing: 3px;
+		color: #1e4678; background-color: #ffffff;
+		border-radius: 2px;
+	}
+
+	/* ----- Radio Buttons ----- */
+	#module-form .controls > .radio:first-child {
+		padding-top: 2px;
+	}
+
+	/* ----- CheckBoxes ----- */
+	#module-form label.checkbox {
+		padding: 5px 14px 3px 26px;
+		min-width: 63px;
+		text-align: left;
+		color: #9DA0A4;
+	}
+	#module-form :checked + span {
+		color: #1e4678;
+	}
+	#module-form .checkbox input[type="checkbox"] {
+		margin-top: 2px;
+	}
+
+	/* ----- InputBoxes ----- */
+	#module-form .inputboxes {
+		margin-left: -10px;
+	}
+	#module-form .inputboxes input {
+		margin-left: 10px;
+		width: 36px;
+	}
+	#module-form .inputboxes .add-on {
+		color: #9DA0A4;
+		border-radius: 0 3px 3px 0;
+	}
+
+	/* ----- Input Text ----- */
+	#module-form input[type="text"] {
+		line-height: 18px;
+	}
+	#module-form .inputshort {
+		width: 48px;
+	}
+	#module-form .inputmedium input {
+		width: 91px;
+		border-radius: 3px;
+	}
+	#module-form div.input-append input {
+		width: 167px;
+	}
+	#module-form .input-append button.btn {
+		padding-top: 5px; padding-bottom: 3px;
+		font-size: 13px; vertical-align: middle;
+	}
+
+	/* ----- Selects ----- */
+	#module-form .chzn-container-single {
+		display: block;
+	}
+	#module-form .chzn-single {
+		height: 26px; line-height: 26px;
+		box-shadow: none;
+	}
+	#module-form .chzn-container-multi .chzn-choices {
+		background-image: none;
+		border-radius: 3px;
+	}
+	#jform_params_source_cat {
+		display: block !important;
+		/*width: 234px;*/
+	}
+	#jform_params_source_cat_chzn {
+		display: none;
+	}

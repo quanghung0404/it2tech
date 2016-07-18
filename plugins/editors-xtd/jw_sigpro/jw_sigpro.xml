@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="editors-xtd" method="upgrade">
+	<name>Button - Simple Image Gallery Pro</name>
+	<author>JoomlaWorks</author>
+	<authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
+	<authorUrl>www.joomlaworks.net</authorUrl>
+	<creationDate>April 5th, 2016</creationDate>
+	<copyright>Copyright (c) 2006 - 2016 JoomlaWorks Ltd.</copyright>
+	<version>3.1.0</version>
+	<license>http://www.joomlaworks.net/license</license>
+	<description></description>
+	<files>
+		<filename plugin="jw_sigpro">jw_sigpro.php</filename>
+	</files>
+	<params></params>
+</extension>

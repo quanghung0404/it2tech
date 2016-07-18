@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Form Song Layout" hidden="false" >
+		<message>
+			Displays the form to add new Song
+		</message>
+	</layout>
+	<state>
+		<name>Form Song Layout</name>
+		<description>Form Song Layout</description>
+		
+		<params>
+		</params>
+	</state>
+</metadata>

@@ -1,0 +1,18 @@
+[
+    {
+        "library": [
+            "popbox",
+            "gmaps"
+        ],
+        "script": [
+            "site/events/guestState"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_EVENTS_DETECTING_LOCATION"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

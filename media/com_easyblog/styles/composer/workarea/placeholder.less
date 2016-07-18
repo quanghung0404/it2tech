@@ -1,0 +1,244 @@
+.eb-composer-placeholder {
+    background: #fafafa;
+    // border-radius: 4px;
+    padding: 30px;
+    margin-bottom: 15px;
+    line-height: 1.35;
+    position: relative !important;
+
+    > [data-plupload-drop-element] {
+        position: static !important;
+    }
+}
+
+.ebd-block.is-nested > .ebd-block-viewport > .ebd-block-content {
+
+    > .eb-composer-placeholder {
+        margin-bottom: 0;
+    }
+}
+
+.eb-composer-placeholder-icon {
+    color: #999;
+    font-size: 42px;
+    display: inline-block;
+    margin: 0 0 10px;
+}
+
+.eb-composer-placeholder-title {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+
+.eb-composer-placeholder-brief {
+    font-size: 11px;
+    color: #777;
+    margin: 0 0 15px;
+}
+
+.eb-composer-upload-progress {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: 10;
+
+    .progress {
+        background: #ddd;
+        height: 5px;
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        border-radius: 0;
+        .box-shadow(none);
+    }
+
+    .progress-bar {
+        .box-shadow(none);
+    }
+
+    .progress-value {
+        color: #888;
+        font-size: 9px;
+        font-family: Tahoma, Arial, sans-serif;
+        width: 25px;
+        text-align: right;
+    }
+
+    .col-cell {
+        display: block;
+
+        + .col-cell {
+            display: none;
+        }
+    }
+}
+
+.state-queued,
+.state-uploading,
+.state-failed {
+    .eb-composer-upload-progress {
+        visibility: visible;
+    }
+}
+
+.eb-composer-placeholder-fail {
+    background: #ddd;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    display: none;
+    text-align: center;
+    z-index: -1;
+
+    .row-table {
+        height: 100%;
+    }
+
+    p {
+        margin-bottom: 1.3em
+    }
+}
+
+.state-failed .eb-composer-placeholder-fail {
+    display: block;
+    z-index: 2;
+}
+
+.eb-composer-placeholder-carousel {
+    padding-bottom: 20px;
+
+    .carousel-indicators {
+        bottom: 0;
+        font-size: 0;
+        text-align: center;
+
+        > li {
+            border-color: #ddd;
+            float: none;
+            display: inline-block;
+            width: 12px !important;
+            height: 12px !important;
+            margin: 0 2px;
+
+            &.active {
+                background: #ddd;
+            }
+        }
+    }
+}
+
+.eb-composer-placeholder-carousel-control {
+    background: #ddd;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none !important;
+
+
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-top: -35px;
+
+    &.left {
+        left: 10px;
+    }
+
+    &.right {
+        right: 10px;
+    }
+}
+
+.eb-plupload-btn {
+    position: relative;
+    display: inline-block;
+}
+@media(max-width: 1000px) {
+    .eb-composer-place-options {
+        .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+
+    .eb-composer-place-url {
+        .col-cell {
+            display: block;
+            + .col-cell {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+.eb-composer-place-url {
+    display: none;
+}
+
+#use-url {
+    display: none;
+    
+    &:checked + .eb-composer-place-options {
+        display: none;
+
+        + .eb-composer-place-url {
+            display: table;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

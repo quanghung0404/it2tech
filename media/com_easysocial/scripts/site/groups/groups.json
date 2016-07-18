@@ -1,0 +1,12 @@
+[
+    {
+        "view": [
+            "site/loading/small"
+        ],
+        "script": [
+            "validate",
+            "field"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,223 @@
+//
+// Icon sprites
+// --------------------------------------------------
+// mixins
+// ----------------
+// =Icon -add in custom icon (@element)
+@sprite-emo-px: 20px; //icon grid
+.spriteEmoGrid(@x, @y) {
+	background-position: -((@x*@sprite-emo-px)-@sprite-emo-px) -((@y*@sprite-emo-px)-@sprite-emo-px);
+}
+.spriteSize(@size) {
+	width: @size;
+	height: @size;
+	line-height:@size;
+}
+
+
+.es-emoticon,
+.es-emoticon img {
+	.spriteSize(20px);
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url("@{media_uri}/images/icons/icons-emo.png") !important;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), not all, not all, (min-resolution: 144dpi) {
+	.es-emoticon {
+		background-image: url("@{media_uri}/images/icons/icons-emo@2x.png") !important;
+		background-size: 200px 120px;
+	}
+}
+
+.es-emoticon-happy {
+	.spriteEmoGrid(1, 1);
+}
+.es-emoticon-great {
+	.spriteEmoGrid(2, 1);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(3, 1);
+// }
+// .es-emoticon-tongue {
+// 	.spriteEmoGrid(4, 1);
+// }
+// .es-emoticon-tongue-2 {
+// 	.spriteEmoGrid(5, 1);
+// }
+// .es-emoticon-tongue-3 {
+// 	.spriteEmoGrid(6, 1);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(7, 1);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(8, 1);
+// }
+.es-emoticon-sad {
+	.spriteEmoGrid(9, 1);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(10, 1);
+// }
+
+// row 2
+.es-emoticon-bored {
+	.spriteEmoGrid(1, 2);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(2, 2);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(3, 2);
+// }
+.es-emoticon-irritated {
+	.spriteEmoGrid(4, 2);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(5, 2);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(6, 2);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(7, 2);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(8, 2);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(9, 2);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(10, 2);
+// }
+
+// row 3
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(1, 3);
+// }
+.es-emoticon-sweat {
+	.spriteEmoGrid(2, 3);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(3, 3);
+// }
+.es-emoticon-pretty {
+	.spriteEmoGrid(4, 3);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(5, 3);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(6, 3);
+// }
+.es-emoticon-shocked {
+	.spriteEmoGrid(7, 3);
+}
+.es-emoticon-annoyed {
+	.spriteEmoGrid(8, 3);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(9, 3);
+// }
+.es-emoticon-angry {
+	.spriteEmoGrid(10, 3);
+}
+
+// row 4
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(1, 4);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(2, 4);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(3, 4);
+// }
+.es-emoticon-sick {
+	.spriteEmoGrid(4, 4);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(5, 4);
+// }
+.es-emoticon-special {
+	.spriteEmoGrid(6, 4);
+}
+.es-emoticon-tired {
+	.spriteEmoGrid(7, 4);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(8, 4);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(9, 4);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(10, 4);
+// }
+
+// row 5
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(1, 5);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(2, 5);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(3, 5);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(4, 5);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(5, 5);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(6, 5);
+// }
+.es-emoticon-speechless {
+	.spriteEmoGrid(7, 5);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(8, 5);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(9, 5);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(10, 5);
+// }
+
+// row 6
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(1, 6);
+// }
+.es-emoticon-blessed {
+	.spriteEmoGrid(2, 6);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(3, 6);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(4, 6);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(5, 6);
+// }
+.es-emoticon-loved {
+	.spriteEmoGrid(6, 6);
+}
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(7, 6);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(8, 6);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(9, 6);
+// }
+// .es-emoticon-xxx {
+// 	.spriteEmoGrid(10, 6);
+// }
+

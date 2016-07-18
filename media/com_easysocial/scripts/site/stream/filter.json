@@ -1,0 +1,12 @@
+[
+    {
+        "script": [
+            "site/stream/sidebar"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_STREAM_FILTER_WARNING_TITLE_EMPTY",
+            "COM_EASYSOCIAL_STREAM_FILTER_WARNING_HASHTAG_EMPTY"
+        ],
+        "adapter": "EasySocial"
+    }
+]

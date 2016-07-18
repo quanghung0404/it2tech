@@ -1,0 +1,11 @@
+{
+    "extends": "fields/user/textbox",
+    "privacy": false,
+    "title": {
+        "default": "FIELDS_EVENT_GUESTLIMIT_DEFAULT_TITLE"
+    },
+
+    "description": {
+        "default": "FIELDS_EVENT_GUESTLIMIT_DEFAULT_DESCRIPTION"
+    }
+}

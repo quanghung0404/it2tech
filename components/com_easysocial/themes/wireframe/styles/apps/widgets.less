@@ -1,0 +1,50 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	stream.less
+\*------------------------------------*/
+// Contains stream related styling for apps
+
+// Generic stream styling
+.es-profile {
+	.es-widget {
+		&.widget-groups,
+		&.widget-events {
+			.widget-list {
+				
+				li {
+					margin-right: 10px;
+					margin-bottom: 3px;
+
+					+li {
+						padding-top: 8px;
+						border-top: 1px solid @esBorder;
+						margin-top: 5px;
+					}
+
+					.event-meta,
+					.group-meta {
+						>a {
+							color: @esColor;
+							font-size: @fontSizeSmall;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.widget-video-preview {
+	width: 80px;
+}
+.widget-video-title {
+	.text-overflow();
+}
+.widget-video-time {
+	color: @esColor;
+}

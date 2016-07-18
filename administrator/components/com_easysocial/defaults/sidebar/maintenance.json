@@ -1,0 +1,29 @@
+{
+    "title" : "COM_EASYSOCIAL_MENU_GROUP_MAINTENANCE",
+    "link"  : "index.php?option=com_easysocial&view=maintenance",
+    "class" : "fa-medkit",
+    "access": "easysocial.access.maintenance",
+    "view"  : "maintenance",
+    "active": "layout",
+    "childs":
+    [
+        {
+            "title": "COM_EASYSOCIAL_MENU_ITEM_MAINTENANCE_SCRIPTS",
+            "class": "",
+            "url": {
+                "view": "maintenance",
+                "layout": ""
+            },
+            "childs": []
+        },
+        {
+            "title": "COM_EASYSOCIAL_MENU_ITEM_MAINTENANCE_DATABASE",
+            "class": "",
+            "url": {
+                "view": "maintenance",
+                "layout": "database"
+            },
+            "childs": []
+        }
+    ]
+}

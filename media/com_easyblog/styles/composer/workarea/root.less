@@ -1,0 +1,31 @@
+.ebd-workarea {
+
+    // When document is being edited, blocks will occupy
+    // surrounding gutter to provide additional space for
+    // easier block drag & drop operations.
+    .ebd {
+        // Ensure overflowing element does not appear clipped.
+        overflow: visible;
+        z-index: @ebd-workarea-root-zindex;
+
+        [contenteditable] {
+
+            // Content editable elements should have no properties that will
+            // trigger hasLayout on IE because this will introduce border
+            // and resize handle around it. All resets should go here.
+            width: auto;
+            height: auto;
+            min-width: auto;
+            min-height: auto;
+            zoom: normal;
+            float: none;
+            position: static;
+
+            // Ensure there is no focus outline when
+            // block is being clicked on.
+            &:focus {
+                .no-focus-outline();
+            }
+        }
+    }
+}

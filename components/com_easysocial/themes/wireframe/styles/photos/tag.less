@@ -1,0 +1,316 @@
+.es-photo-item {
+
+	&.tagging {
+
+		// When tagging, don't let existing tags show.
+		// It hinders the draw tag experience.
+		.es-photo-tag-item {
+			display: none;
+
+			// Except for tag being focused
+			&.focus {
+				display: block;
+			}
+		}
+
+		.es-photo-content {
+			background-color: @esPhotoTagBackground;
+			margin-top: 10px + 36px + 10px;
+		}
+
+		.es-photo-tag-viewport {
+			cursor: crosshair;
+		}
+
+		.es-photo-nav-button {
+			display: none !important;
+		}
+
+		.es-photo-hint.tag-hint {
+			opacity: 1;
+		}
+	}
+
+	.es-photo-content.loading {
+
+		.es-photo-tag-item {
+			display: none;
+		}
+	}
+}
+
+.es-photo-tag-viewport {
+	// photos.tagger controller
+	// will readjust this after
+	// looking at the image's width & height.
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.es-photo-tag-item {
+
+	position: absolute;
+	min-width: 15px;
+	min-height: 15px;
+	border: 1px solid @esPhotoTagBorder;
+	.box-shadow(@esPhotoTagBoxShadow);
+	opacity: 0;
+
+	&:hover,
+	&.active,
+	&.focus {
+		opacity: 1;
+	}
+
+	.es-photo-tag-form {
+		width: 200px;
+		height: 0px;
+		overflow: visible;
+		position: absolute;
+		bottom: -12px;
+		left: 50%;
+		margin-left: -100px;
+		display: none;
+
+		> i {
+			.arrow(7px, @esPhotoTagFormBackground, top, 50%, auto, 0, rgba(0, 0, 0, 0.07));
+			&:before {
+				top: -7px;
+			}
+			&:after {
+				top: -6px;
+			}
+		}
+
+		> div {
+			background: @esPhotoTagFormBackground;
+			padding: 4px;
+			border-radius: 3px;
+			border: 1px solid @esPhotoTagFormBorder;
+
+			@shadow: 0 0 5px rgba(0, 0, 0, .35);
+			.box-shadow(@shadow);
+
+			//reset arrow position
+			&:before {
+				bottom: 0;
+			}
+			&:after {
+				bottom: -1px;
+			}
+		}
+
+		fieldset {
+			position: relative;
+			padding-right: 22px; // For remove button
+		}
+	}
+
+	.es-photo-tag-title {
+		width: 100%;
+		bottom: -26px;
+		position: absolute;
+		text-align: center;
+
+		label {
+
+			// Shape of the title
+			display: inline-block;
+			border-radius: 20px;
+			// padding: 7px;
+			padding: 7px 26px 7px 7px;
+			background: rgba(0,0,0,0.6);
+
+			// Apperance of the title
+			text-shadow: 1px 1px 0 #000000;
+			font-size: 12px;
+			line-height: 12px;
+			color: #fff;
+
+			// Gives a gap between the tag border
+			// and the tag caption
+			position: relative;
+			top: 10px;
+			font-weight: normal;
+
+			// Makes tag title center even when it
+			// exceeds the boundary of the tag
+			left: 50%;
+			margin-left: -100%;
+		}
+
+
+		b {
+			background: rgba(255,255,255,0.2);
+			border-radius: 10px;
+			position: absolute;
+			float: right;
+			top: 4px;
+			right: 4px;
+			padding: 3px 6px;
+			font-size: 7px;
+			text-shadow: none;
+
+			&:hover {
+				background: rgba(255,255,255,0.3);
+			}
+		}
+	}
+
+	.es-photo-tag-remove-button {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		margin-right: -4px; // cosmetic
+		width: 26px;
+		height: 26px;
+		line-height: 26px;
+		text-align: center;
+		cursor: pointer;
+		display: block;
+		font-size: @fontSizeSmall;
+	}
+
+	.es-photo-tag-input {
+		width: 100%;
+		margin: 0;
+        border-color: @esBorder;
+	}
+
+	.es-photo-tag-menu-item {
+		margin-top: 5px;
+		cursor: pointer;
+		color: @esPhotoTagMenuColor;
+
+		+.es-photo-tag-menu-item {
+			border-top: 1px solid @esPhotoTagMenuBorder;
+			margin-top: 0px;
+			padding-top: 0px;
+		}
+
+		.es-photo-tag-menu-name {
+			font-size: @baseFontSize;
+			padding: 2px 0;
+			line-height: 20px;
+			//avatar
+			img {
+				display: inline-block;
+				margin-right: 4px;
+				width: 20px;
+			}
+		}
+
+		// Do not use :hover for keyboard navigation
+		// to work.
+		&.active {
+			background: @esPhotoTagMenuActiveBackground;
+		}
+	}
+
+	&.new {
+		// Add an !important flag so it is resilient from
+		// existing tags that shouldn't show while tagging.
+		display: block !important;
+		opacity: 1;
+
+		.es-photo-tag-form {
+			display: block;
+		}
+
+		.es-photo-tag-title {
+			display: none;
+		}
+	}
+
+	&.es-photo-tag-person {
+		.es-photo-tag-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+.es-photo-tag-list {
+
+	> label {
+		font-weight: bold;
+		border-bottom: 1px solid @esPhotoTagListBorder;
+	}
+
+	.es-photo-tag-button {
+		width: 100%;
+		text-align: left;
+
+		> a {
+			font-size: @fontSizeSmall;
+		}
+	}
+}
+
+.es-photo-tag-list-item {
+
+	padding: 3px;
+	margin-bottom: 2px;
+	position: relative;
+	cursor: pointer;
+	border-radius: 3px;
+	border: 1px solid transparent;
+
+	&.active {
+		background: @esPhotoTagListActiveBackground;
+		border: 1px solid @esPhotoTagListActiveBorder;
+		padding-left: 24px;
+		.transition(all .3s ease);
+
+		> i {
+			opacity: 1;
+			.transition(all .3s ease);
+		}
+
+		> b {
+			display: block;
+		}
+	}
+
+	&:hover {
+
+		border: 1px solid @esPhotoTagListActiveBorder;
+
+		> b {
+			display: block;
+		}
+	}
+
+	// Visibility icon
+	> i {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0;
+		padding: 5px 6px;
+	}
+
+	// Remove tag button
+	> b {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		padding: 5px;
+		font-size: 8px;
+		display: none;
+		line-height: 13px;
+		cursor: pointer;
+
+		> i {
+			font-size: 8px !important;
+		}
+
+		> span {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "library": [
+            "uniform",
+            "chosen",
+            "flot"
+        ],
+        "adapter": "EasySocial"
+    }
+]

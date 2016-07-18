@@ -1,0 +1,9 @@
+[
+    {
+        "language": [
+            "PLG_FIELDS_EMAIL_VALIDATION_REQUIRED",
+            "PLG_FIELDS_EMAIL_VALIDATION_INVALID_FORMAT"
+        ],
+        "adapter": "EasySocial"
+    }
+]

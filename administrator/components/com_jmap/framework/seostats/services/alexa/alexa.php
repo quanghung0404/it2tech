@@ -330,6 +330,23 @@ class JMapSeostatsServicesAlexa extends JMapSeostats {
 	}
 	
 	/**
+	 * Get bounce rate
+	 *
+	 * @access public
+	 * @static
+	 * @return int
+	 */
+	public static function getBounceRate($url = false) {
+		$xpath = self::_getXPath ( $url );
+	
+		$queryList = array (
+				"//*[@id='engagement-content']/span/span/span/div/strong"
+		);
+	
+		return static::parseDomByXpathsWithoutTags ( $xpath, $queryList );
+	}
+	
+	/**
 	 * Get page load time
 	 *
 	 * @access public

@@ -1,0 +1,110 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+.es-stream-list {
+    .stream-context-discussions {
+        // Discussion stream styles
+        .es-stream-content {
+            hr {
+                margin: 10px 2px;
+            }
+
+            .media-body {
+                .discussion-title {
+                    a {
+                        font-size: 18px !important;
+                    }
+                }
+
+                .discussion-meta {
+                    margin-top: 10px;
+                }
+            }
+            .media-object {
+                margin: 0;
+                ul {
+                    li {
+                        background: @esBackground;
+                        font-size: @baseFontSize;
+                        text-align: center;
+                        padding: 2px 4px;
+                        min-width: 60px;
+                        // max-width: 60px; // #2918
+                        overflow: hidden;
+                        display: inline-block;
+                        border: 1px solid @esBorder;
+                        border-radius: 3px;
+                        color: @esColor;
+
+                        span {
+                            font-size: 14px;
+                            display: block;
+                            margin-bottom: 3px;
+                            font-weight: 700;
+                        }
+
+                        +li {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .milestone-stream {
+            .meta {
+                >span {
+                    margin-right: 5px;
+
+                    + span {
+                        margin-right: 0;
+                        padding-left: 10px;
+                        border-left: 1px dotted @esBorder;
+                    }
+                }
+            }
+        }
+        .tasks-stream {
+            .milestone-tasks {
+                .checkbox {
+                    margin: 0;
+                }
+                li {
+                    padding: 4px;
+                    margin-bottom: 5px;
+                    +li {
+                        padding-top: 5px;
+                    }
+
+                    &.completed {
+                        color: @esColor;
+                        background: #fffccc;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }
+    }
+}
+&.w480 {
+    .es-stream-discuss-item {
+        .media-object {
+            float: none !important;
+            margin-bottom: 10px !important;
+        }
+    }
+}
+
+&.w480 {
+    .es-stream-content {
+        .media-stats {
+            float: none !important;
+            margin-bottom: 10px !important;
+        }
+    }
+}
+
+

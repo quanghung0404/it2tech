@@ -1,0 +1,303 @@
+/*------------------------------------*\
+	$Variables.less
+\*------------------------------------*/
+
+// Wrapper
+@Foundry: ~"div#fd";
+@EasySocial: ~"div#fd.es";
+
+//
+// Variables
+// --------------------------------------------------
+
+// Global values
+// --------------------------------------------------
+// Main Color
+@esBackground: 			#fff; // main bg color fff
+@esColor: 				#666; // main text color 666
+@esBorder:			#d7d7d7; // main border color d7d7d7
+@esUnreadBackground: #f6fbff;
+@esSelectedBackground: #ffc; // light yellow
+
+@borderRadius: 			3px;
+@input-border-radius: 	@borderRadius;
+
+// BS 2 variables
+@black: #000;
+@white: #fff;
+@grayDarker: @gray-darker;            // #222
+@grayDark: @gray-dark;              // #333
+@grayLight: @gray-light;             // #999
+@grayLighter: @gray-lighter;           // #eee
+
+@btnBorder: #bbb;
+
+// Navbar (BS2)
+// -------------------------
+@navbarCollapseWidth:             979px;
+@navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
+
+@navbarHeight:                    40px;
+@navbarBackgroundHighlight:       #ffffff;
+@navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
+@navbarBorder:                    darken(@navbarBackground, 12%);
+
+@navbarText:                      #777;
+@navbarLinkColor:                 #777;
+@navbarLinkColorHover:            @grayDark;
+@navbarLinkColorActive:           @gray;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      darken(@navbarBackground, 5%);
+
+// Accent colors (BS2)
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Buttons (BS2)
+// -------------------------
+@btnBackground:                     @esBackground;
+
+@btnBackground:                     @white;
+@btnBackgroundHighlight:            darken(@white, 10%);
+@btnBorder:                         #bbb;
+
+@btnPrimaryBackground:              @linkColor;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+
+@btnInfoBackground:                 #5bc0de;
+@btnInfoBackgroundHighlight:        #2f96b4;
+
+@btnSuccessBackground:              #62c462;
+@btnSuccessBackgroundHighlight:     #51a351;
+
+@btnWarningBackground:              lighten(@orange, 15%);
+@btnWarningBackgroundHighlight:     @orange;
+
+@btnDangerBackground:               #ee5f5b;
+@btnDangerBackgroundHighlight:      #bd362f;
+
+@btnInverseBackground:              #444;
+@btnInverseBackgroundHighlight:     @grayDarker;
+
+@btnTextShadow: 0 1px 1px rgba(0,0,0,.5);
+
+// Typography
+// -------------------------
+//http://css-tricks.com/sans-serif/
+@sansFontFamily:        'Lucida Grande', 'Gisha', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Arial, Verdana, sans-serif;
+@serifFontFamily:       serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          12px; // bs2
+// @font-size-base:          12px; // bs3 default 14px
+
+@baseLineHeight:        16px; // bs2
+
+
+@baseFontFamily:        @sansFontFamily;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+@esTextShadow: 0 1px 1px rgba(0,0,0,.55); // default 0
+@esTextShadowAlt: 0 1px 1px rgba(255,255,255,.55); // default 255
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+@fontSizeLarge:         16px; // ~18px
+@fontSizeSmall:         11px; // ~12px
+@fontSizeMini:          11px; // ~11px
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           0 6px;   // 22px
+
+@baseBorderRadius:      3px;
+@borderRadiusLarge:     4px;
+@borderRadiusSmall:     2px;
+
+// HR
+@hrBorder: darken(@esBorder, -10%);
+@hrBorderBottom: darken(@hrBorder, -8%);
+
+// Pagination
+// -------------------------
+@paginationBackground:                #fff;
+@paginationBorder:                    #ddd;
+@paginationActiveBackground:          #f5f5f5;
+@paginationColor: inherit;
+
+// TB-Buttons
+// ----------------
+@btnTextShadow: 0 1px 1px rgba(0,0,0,.1);
+@btnTextShadowAlt: 0 1px 1px rgba(255,255,255,.1);
+@btnTextShadowNone: 0 0px 0px rgba(255,255,255,.1);
+// ES-Buttons
+// -------------------------
+@btnEsTextShadow: 0 1px 1px rgba(0,0,0,.1);
+
+@btnEsPrimaryBackgroundHighlight: #3E85C3;
+@btnEsPrimaryBackground: #4E7FA8;
+@btnEsPrimaryBorder: #507BA3;
+
+@btnEsWarningBackgroundHighlight: #FF8323;
+@btnEsWarningBackground: #FF7103;
+@btnEsWarningBorder: #DE7220;
+
+@btnEsSuccessBackgroundHighlight: #52BC57;
+@btnEsSuccessBackground: #4CB150;
+@btnEsSuccessBorder: #4FA753;
+
+@btnEsDangerBackgroundHighlight: #F14F4C;
+@btnEsDangerBackground: #E83C38;
+@btnEsDangerBorder: #C8503B;
+
+@btnEsInfoBackgroundHighlight: #28B6F6;
+@btnEsInfoBackground: #028AD4;
+@btnEsInfoBorder: #018AD1;
+
+@btnEsInverseBackgroundHighlight: #78909C;
+@btnEsInverseBackground: darken(#78909C, 2%);
+@btnEsInverseBorder: #78909C;
+
+
+// Alert
+// ----------------
+
+@warningEsText:            	#fff;
+@warningEsBackground: 		@btnEsWarningBackground;
+@warningEsBorder:           darken(spin(@warningEsBackground, -1), 12%);
+
+@successEsText:             #fff;
+@successEsBackground: 		@btnEsSuccessBackground;
+@successEsBorder:           darken(spin(@successEsBackground, -10), 5%);
+
+@errorEsText:               #fff;
+@errorEsBackground: 		@btnEsDangerBackground;
+@errorEsBorder:             darken(spin(@errorEsBackground, -10), 3%);
+
+@infoEsText:                #fff;
+@infoEsBackground: 			@btnEsInfoBackground;
+@infoEsBorder:              darken(spin(@infoEsBackground, -10), 7%);
+
+// Forms
+// -------------------------
+@inputBackground:               @white;
+@inputBorder:                   #ccc;
+@inputBorderRadius:             3px;
+@inputDisabledBackground:       @grayLighter;
+@formActionsBackground:         #f5f5f5;
+@inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+@legendBorder: @esBorder;
+@legengColor: @esColor;
+
+// Dropdowns
+// -------------------------
+@dropdownCaret: @black;
+@dropdownBackground:            @white;
+@dropdownBorder:                rgba(0,0,0,.2);
+@dropdownDividerBackground:            #e5e5e5;
+
+@dropdownlinkColor:             @grayDark;
+@dropdownlinkColorHover:        @grayDark;
+@dropdownlinkColorActive:       @grayDark;
+
+@dropdownLinkBackgroundActive:  #E7EDF3;
+@dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
+
+// Wells
+// -------------------------
+@wellBackground:                  #F5F5F5;
+
+// Priority
+// -------------------------
+@priority1: 				#2aacd2;
+@priority2: 				#51a351;
+@priority3: 				#FBB450;
+@priority4: 				#EE5F5B;
+
+
+// Privacy
+@esPrivacyBackground: @btnBackground;
+@esPrivacyBackgroundHighlight: @btnBackgroundHighlight;
+@esPrivacyActiveBackground: darken(@white, 9.5%); //e0e8f0
+@esPrivacyColor: #858585; //858585
+@esPrivacyBorder: #e1e1e1;
+@esPrivacyTextshadow: @btnEsTextShadow;
+@esPrivacyMenuActiveColor: darken(@white, 80%); //black
+
+
+// btn-group-yesno
+@esYesnoBackground: #e5e5e5;
+@esYesnoColor: #626262;
+@esYesnoBtnBackground: #c5c5c5;
+@esYesnoBtnActiveBackground: #fff;
+@esYesnoBtnBackgroundHighlight: #f2f2f2;
+@esYesnoBtnColor: #333;
+@esYesnoBtnBorder: #c5c5c5;
+@esYesnoBtnBorderBottom: #a7a7a7;
+@esYesnoActiveColor: #626262;
+@esYesnoTextShadow: 0 1px 1px rgba(255,255,255,.1);
+
+@esArrowBackground: #fff;
+
+
+// Modals
+@esModalColor: #666;
+@esModalBackground: #fff;
+@esModalBackdropBackground: #000;
+@esModalBorder: #c0c0c0;
+@esModalHeaderBackgroundHighlight: #f8f8f8;
+@esModalHeaderBackground: #ebebeb;
+@esModalFooterBackground: #f5f5f5;
+
+// Dialog
+@esDialogColor: #595959;
+@esDialogTitleColor: #333;
+@esDialogCloseColor: #bbb;
+
+// Datepicker
+@esDatePickerBackground: #fff;
+@esDatePickerColor: #636363;
+@esDatePickerBorder: #ccc;
+@esDatePickerHeaderBackgroundHighlight: #ececec;
+@esDatePickerHeaderBackground: #f8f8f8;
+@esDatePickerTdBorder: #aaa;
+
+// Avatar
+@esAvatarBackground: @esBackground;
+@esAvatarBorder: @esAvatarBackground;
+
+// Explorer
+@esExplorerBorder: #ccc;
+@esExplorerBackground: #EFEFEF;
+@esExplorerHeaderBtnColor: #555;
+@esExplorerHeaderIconColor: #B4B8C0;
+@esExplorerSideColor: #888;
+@esExplorerSideBackground: #fcfcfc;
+@esExplorerBrowserBackground: lighten(@blue, 60%);
+@esExplorerFileSelectededBackground: #3875D7;
+@esExplorerFileCheckedBackground: fadeout(@esExplorerFileSelectededBackground, 80%);
+@esExplorerFolderBackground: #3F4552;
+@esExplorerFolderColor: @white;
+@esExplorerFolderTextShadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+// Location
+@esLocationBackground: @esBackground;
+@esLocationColor: @esColor;
+@esLocationBorder: @esBorder;
+@esLocationSuggestionsBorder: darken(@esBackground, 20%); //ccc
+@esLocationSuggestionsActiveBackground: #E7EDF3;
+@esLocationTextboxBorder: @esLocationSuggestionsBorder;
+@esLocationImagePath: '@{media_uri}/images/map-bg.png';
+

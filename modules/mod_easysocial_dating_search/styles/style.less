@@ -1,0 +1,88 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+	// EasySocial Dating Search Modules
+	&.mod-es-dating-search {
+
+		// override list.less
+		.es-item-grid > li {
+			margin-bottom: 1%;
+			width: 60px;
+		}
+
+        .es-location-autocomplete {
+            z-index: 25;
+        }
+	}
+
+    // able to put in wireframe if generally use
+    .es-dating-search-form {
+        .form-control {
+            width: 100%;
+        }
+        .radio-inline {
+            + .radio-inline {
+                margin-left: 0; // unpredictable items causing it have spacing in narrow layout
+            }
+        }
+        .es-control-input {
+            .control-label {
+                text-align: left;
+                width: auto;
+                margin-right: 10px;
+            }
+            input {
+                width: 80px;
+            }
+            .input-col {
+                width: 86px;
+                display: inline-block;
+            }
+
+        }
+
+        &.w480 {
+
+            .control-label {
+                width: 100%;
+                text-align: left;
+                + div { // .col-xx
+                    width: 100%;
+                    clear: both;
+                }
+            }
+            .es-control-input {
+                input {
+                    width: 100%;
+                }
+            }
+            .mod-search-distance {
+                &__location-label-input-group {
+                    // width: 100%;
+                    input {
+                        // border-radius: 3px;
+                    }
+                }
+                &__location-label-input-group-btn {
+                    // display: block;
+
+                    // width: 100%;
+                    // margin-top: 15px;
+                    .btn {
+                        // border-radius: 3px;
+                    }
+                }
+                &__location-detect-text {
+                    display: none;
+                }
+            }
+        } //w480
+    }
+}
+

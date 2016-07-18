@@ -1,0 +1,14 @@
+[
+    {
+        "script": [
+            "photos/tags",
+            "photos/editor",
+            "photos/tagger",
+            "photos/navigation"
+        ],
+        "library": [
+            "image"
+        ],
+        "adapter": "EasySocial"
+    }
+]

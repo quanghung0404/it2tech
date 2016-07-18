@@ -1,0 +1,9 @@
+[
+    {
+        "library": [
+            "history",
+            "masonry"
+        ],
+        "adapter": "EasySocial"
+    }
+]

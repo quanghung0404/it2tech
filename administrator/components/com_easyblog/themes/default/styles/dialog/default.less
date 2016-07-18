@@ -1,0 +1,276 @@
+/*! ------------------------------------*\
+	Light version of EasySocial's dialog manually compiled from dialog.less. It's specific for J2.5 menu creation issue #1150.
+\*------------------------------------*/
+&.eb-dialog {
+    font-family:'Lucida Grande', 'Gisha', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Arial, Verdana, sans-serif;
+    font-size:12px;
+    color:#595959;
+    font-size-adjust:none;
+    border:0;
+    overflow:hidden;
+    -webkit-box-shadow:0 5px 10px -5px #000;
+    -moz-box-shadow:0 5px 10px -5px #000;
+    box-shadow:0 5px 10px -5px #000;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+    z-index:10010;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+&.eb-dialog:before, &.eb-dialog:after {
+    content:"";
+    display:table;
+    line-height:0
+}
+&.eb-dialog:after {
+    clear:both
+}
+&.eb-dialog * {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+&.eb-dialog.modal {
+    border:0!important
+}
+&.eb-dialog .dialog-wrap {
+    overflow:hidden;
+    min-height:100%;
+    height:100%;
+    background:#fff;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px
+}
+&.eb-dialog .modal-backdrop {
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:1040;
+    background-color:#000
+}
+&.eb-dialog .modal-backdrop.fade {
+    opacity:0
+}
+&.eb-dialog .modal-backdrop, &.eb-dialog .modal-backdrop.fade.in {
+    opacity:.8;
+    filter:alpha(opacity=80)
+}
+&.eb-dialog .modal-header {
+    padding:6px 8px;
+    border:1px solid #c0c0c0;
+    border-bottom:0;
+    min-height:34px;
+    background-color:#f3f3f3;
+    background-image:-moz-linear-gradient(top, #f8f8f8, #ebebeb);
+    background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f8f8f8), to(#ebebeb));
+    background-image:-webkit-linear-gradient(top, #f8f8f8, #ebebeb);
+    background-image:-o-linear-gradient(top, #f8f8f8, #ebebeb);
+    background-image:linear-gradient(to bottom, #f8f8f8, #ebebeb);
+    background-repeat:repeat-x;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffebebeb', GradientType=0);
+    -webkit-border-radius:6px 6px 0 0;
+    -moz-border-radius:6px 6px 0 0;
+    border-radius:6px 6px 0 0
+}
+&.eb-dialog .modal-header .close {
+    margin:0;
+    vertical-align:middle;
+    font-family:'Lucida Grande', 'Gisha', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Arial, Verdana, sans-serif;
+    color:#000;
+    float:right;
+    font-size:20px;
+    font-weight:bold;
+    line-height:16px;
+    opacity:.2;
+    text-shadow:0 1px 0 #fff;
+    background:none repeat scroll 0 0 transparent;
+    border:0 none;
+    cursor:pointer;
+    padding:0;
+    margin-top:0!important;
+    font-size:18px!important
+    cursor:pointer;
+}
+&.eb-dialog .modal-header h3 {
+    margin:0!important;
+    font-size:12px!important;
+    line-height:20px!important;
+    text-align:center
+}
+&.eb-dialog .modal-body {
+    padding:15px;
+    border:1px solid #c0c0c0;
+    text-align:left;
+    position:relative
+}
+&.eb-dialog .modal-body label, &.eb-dialog .modal-body label>span, &.eb-dialog .modal-body div, &.eb-dialog .modal-body p {
+    font-size:11px
+}
+&.eb-dialog .modal-body .footnote {
+    margin-top:50px
+}
+&.eb-dialog .modal-body textarea, &.eb-dialog .modal-body input {
+    font-size:11px
+}
+&.eb-dialog .modal-body.type-iframe {
+    padding:0;
+    overflow:hidden!important;
+}
+&.eb-dialog .modal-body .modal-disclaimer {
+    margin-top:65px
+}
+&.eb-dialog .modal-form {
+    margin-bottom:0
+}
+&.eb-dialog .modal-footer {
+    padding:10px 15px 11px;
+    margin-bottom:0;
+    text-align:right;
+    background-color:#f5f5f5;
+    border:1px solid #c0c0c0;
+    border-top:0;
+    -webkit-border-radius:0 0 6px 6px;
+    -moz-border-radius:0 0 6px 6px;
+    border-radius:0 0 6px 6px;
+    -webkit-box-shadow:inset 0 1px 0 #fff;
+    -moz-box-shadow:inset 0 1px 0 #fff;
+    box-shadow:inset 0 1px 0 #fff;
+    *zoom:1
+}
+&.eb-dialog .modal-footer:before, &.eb-dialog .modal-footer:after {
+    display:table;
+    content:"";
+    line-height:0
+}
+&.eb-dialog .modal-footer:after {
+    clear:both
+}
+&.eb-dialog .modal-footer .btn+.btn {
+    margin-left:5px;
+    margin-bottom:0
+}
+&.eb-dialog .modal-footer .btn-group .btn+.btn {
+    margin-left:-1px
+}
+&.eb-dialog .modal-footer .btn-block+.btn-block {
+    margin-left:0
+}
+&.eb-dialog.modal-login {
+    width:780px!important;
+    max-width:780px!important
+}
+&.eb-dialog.modal-login .modal-body {
+    max-height:440px!important;
+    padding:0 10px
+}
+&.eb-dialog.modal-login .eb-login-box {
+    border:0
+}
+&.eb-dialog legend {
+    margin-bottom:12px
+}
+&.eb-dialog hr {
+    margin:10px 0
+}
+&.eb-dialog .modal-padding {
+    padding:0 20px
+}
+&.eb-dialog .dialog-loader {
+    position:absolute
+}
+&.eb-dialog .loader-img {
+    background:url('../../../../../../media/com_easysocial/styles/../images/loading.gif') no-repeat center;
+    width:32px;
+    height:32px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-16px 0 0 -16px
+}
+&.eb-dialog .eb-comment {
+    list-style:none
+}
+&.eb-dialog .eb-comment-actions {
+    display:none
+}
+&.eb-dialog .dialog-footer {
+    position:relative
+}
+&.eb-dialog .dialog-footer .dialog-loading {
+    display:none;
+    position:absolute;
+    top:10px;
+    left:15px;
+    height:26px;
+    line-height:26px;
+    padding-left:28px;
+    background:url('../../../../../../media/com_easysocial/styles/../images/loading.gif') no-repeat left center
+}
+&.eb-dialog.loading .dialog-loading {
+    display:block
+}
+&.eb-dialog .btn {
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    padding:4px 12px;
+    margin-bottom:0;
+    font-size:12px;
+    line-height:16px;
+    text-align:center;
+    vertical-align:middle;
+    cursor:pointer;
+    color:#333;
+    text-shadow:0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color:#f5f5f5;
+    background-image:-moz-linear-gradient(top, #fff, #e6e6e6);
+    background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e6e6e6));
+    background-image:-webkit-linear-gradient(top, #fff, #e6e6e6);
+    background-image:-o-linear-gradient(top, #fff, #e6e6e6);
+    background-image:linear-gradient(to bottom, #fff, #e6e6e6);
+    background-repeat:repeat-x;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe5e5e5', GradientType=0);
+    border-color:#e6e6e6 #e6e6e6 #bfbfbf;
+    border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color:#e6e6e6;
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    border:1px solid #bbb;
+    *border:0;
+    border-bottom-color:#a2a2a2;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    *margin-left:.3em;
+    -webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+}
+&.eb-dialog .btn.btn-es {
+    color:#333;
+    text-shadow:0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color:#f5f5f5;
+    background-image:-moz-linear-gradient(top, #fff, #e6e6e6);
+    background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e6e6e6));
+    background-image:-webkit-linear-gradient(top, #fff, #e6e6e6);
+    background-image:-o-linear-gradient(top, #fff, #e6e6e6);
+    background-image:linear-gradient(to bottom, #fff, #e6e6e6);
+    background-repeat:repeat-x;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe5e5e5', GradientType=0);
+    border-color:#e6e6e6 #e6e6e6 #bfbfbf;
+    border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color:#e6e6e6;
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false)
+}
+&.eb-dialog .btn.btn-es:hover, &.eb-dialog .btn.btn-es:active, &.eb-dialog .btn.btn-es.active, &.eb-dialog .btn.btn-es.disabled, &.eb-dialog .btn.btn-es[disabled] {
+    color:#333;
+    background-color:#e6e6e6;
+    *background-color:#d9d9d9
+}
+&.eb-dialog .btn.btn-es:active, &.eb-dialog .btn.btn-es.active {
+    background-color:#ccc \9
+}

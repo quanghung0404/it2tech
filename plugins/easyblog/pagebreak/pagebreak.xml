@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="easyblog" method="upgrade">
+	<name>EasyBlog - Pagebreak</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>September 2010</creationDate>
+	<copyright>Copyright 2009 - 2010 StackIdeas. All rights reserved.</copyright>
+	<license>GPL License</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://www.stackideas.com</authorUrl>
+	<version>5.0.1</version>
+	<description>DESCCONTENTPAGEBREAK</description>
+	<languages>
+		<language tag="en-GB">en-GB.plg_easyblog_pagebreak.ini</language>
+		<language tag="en-GB">en-GB.plg_easyblog_pagebreak.sys.ini</language>
+	</languages>
+	<files>
+		<filename plugin="pagebreak">pagebreak.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="enabled"
+					type="list"
+					default="1"
+					label="Enable Plugin"
+					description="PARAMENABLED" >
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+
+				<field
+					name="title"
+					type="list"
+					default="1"
+					label="Site Title"
+					description="PARAMSITETITLE" >
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+
+				<field
+					name="multipage_toc"
+					type="list"
+					default="1"
+					label="Table of Contents"
+					description="PARAMSITETOC" >
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+
+				<field
+					name="showall"
+					type="list"
+					default="1"
+					label="Show All"
+					description="PARAMSITESHOWALL" >
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+
+				<field
+					name="show_top_pagination"
+					type="list"
+					default="1"
+					label="Show top pagination"
+					description="Show pagebreak pagination on top" >
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+
+				<field
+					name="show_bot_pagination"
+					type="list"
+					default="1"
+					label="Show bottom pagination"
+					description="Show pagebreak pagination on bottom" >
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,239 @@
+div#fd.es .es-cover-title {
+  margin: 5px 0;
+  word-break: break-all;
+}
+div#fd.es .es-title-font {
+  font-family: inherit;
+}
+div#fd.es .es-user-info {
+  font-size: 12px;
+}
+div#fd.es .es-user-name {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+div#fd.es .es-count-no {
+  line-height: 16px;
+  font-size: 9px;
+  background: #444;
+  border: 1px solid #444;
+  border-radius: 2px 2px 2px 2px;
+  color: #eee;
+  padding: 2px 4px;
+}
+div#fd.es .es-muted {
+  color: #888;
+}
+div#fd.es .fa-rss-square {
+  color: #E37126;
+}
+div#fd.es .btn-rss {
+  line-height: 30px;
+}
+div#fd.es .es-divider-top {
+  border-top: 1px solid #444;
+}
+div#fd.es .es-divider-bottom {
+  border-bottom: 1px solid #444;
+}
+div#fd.es .app-icon-small {
+  width: 16px;
+  height: 16px;
+}
+div#fd.es .view-heading {
+  margin: 35px 0 0;
+  padding-bottom: 35px;
+  text-align: center;
+  border-bottom: 1px solid #181818;
+}
+div#fd.es .label-notification {
+  background: #e16273;
+  color: #fff !important;
+  border: 0;
+  border-radius: 8px;
+  font-size: 9px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding: 0 3px;
+  line-height: 12px;
+  display: none;
+  min-width: 16px;
+  width: auto;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+}
+div#fd.es .has-notice .label-notification {
+  display: block;
+}
+div#fd.es i.loading-indicator.small {
+  text-indent: -9999px;
+  display: block;
+  padding: 25px;
+  background: url("../../../../../media/com_easysocial/images/loading.gif") center no-repeat;
+}
+div#fd.es i.loading-indicator.large {
+  text-indent: -9999px;
+  display: block;
+  padding: 25px;
+  background: url("../../../../../media/com_easysocial/images/loading-large.gif") center no-repeat;
+}
+div#fd.es .es-loader {
+  background: url('../../../../../media/com_easysocial/images/loading.gif') no-repeat center;
+  min-height: 30px;
+}
+div#fd.es .es-loader * {
+  display: none;
+}
+div#fd.es .search-highlight {
+  background: #ff9;
+  color: #333;
+  padding: 1px 3px;
+}
+div#fd.es i {
+  width: auto;
+  height: auto;
+}
+div#fd.es .stream-meta:before,
+div#fd.es .stream-meta:after,
+div#fd.es .stream-content:before,
+div#fd.es .stream-content:after,
+div#fd.es .widget-box:before,
+div#fd.es .widget-box:after,
+div#fd.es .widget-body:before,
+div#fd.es .widget-body:after,
+div#fd.es .blog-description:before,
+div#fd.es .blog-description:after,
+div#fd.es .article-item-meta:before,
+div#fd.es .article-item-meta:after,
+div#fd.es .article-item-actions:before,
+div#fd.es .article-item-actions:after,
+div#fd.es .es-modules-wrap:before,
+div#fd.es .es-modules-wrap:after {
+  content: " ";
+  display: table;
+}
+div#fd.es .stream-meta:after,
+div#fd.es .stream-content:after,
+div#fd.es .widget-box:after,
+div#fd.es .widget-body:after,
+div#fd.es .blog-description:after,
+div#fd.es .article-item-meta:after,
+div#fd.es .article-item-actions:after,
+div#fd.es .es-modules-wrap:after {
+  clear: both;
+}
+div#fd.es .step-content {
+  display: none;
+}
+div#fd.es .step-content.active {
+  display: block;
+}
+div#fd.es .profile-data-table tbody > tr > td {
+  border-top: none;
+}
+div#fd.es .fd-reset-list,
+div#fd.es .fd-reset-list > li {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  clear: none;
+  float: none;
+  list-style: none;
+  list-style-image: none;
+  overflow: visible;
+}
+div#fd.es .fd-reset-list:before,
+div#fd.es .fd-reset-list:after,
+div#fd.es .fd-reset-list > li:before,
+div#fd.es .fd-reset-list > li:after {
+  display: none;
+}
+div#fd.es .btn-sm,
+div#fd.es .btn-xs {
+  font-size: 12px;
+}
+div#fd.es .btn-group > .btn-dropdown:first-child,
+div#fd.es .btn-dropdown {
+  height: 16px;
+  padding: 2px 3px;
+  width: 16px;
+  border-radius: 2px;
+  outline: none;
+  color: #444 !important !important;
+  background-color: #222 !important !important;
+  border-color: #444 !important !important;
+}
+div#fd.es .btn-group > .btn-dropdown:first-child:hover,
+div#fd.es .btn-group > .btn-dropdown:first-child:focus,
+div#fd.es .btn-group > .btn-dropdown:first-child:active,
+div#fd.es .btn-group > .btn-dropdown:first-child.active,
+.open .dropdown-toggle_div#fd.es .btn-group > .btn-dropdown:first-child,
+div#fd.es .btn-dropdown:hover,
+div#fd.es .btn-dropdown:focus,
+div#fd.es .btn-dropdown:active,
+div#fd.es .btn-dropdown.active,
+.open .dropdown-toggle_div#fd.es .btn-dropdown {
+  color: #444 !important;
+  background-color: #0e0e0e !important;
+  border-color: #252525 !important;
+}
+div#fd.es .btn-group > .btn-dropdown:first-child:active,
+div#fd.es .btn-group > .btn-dropdown:first-child.active,
+.open .dropdown-toggle_div#fd.es .btn-group > .btn-dropdown:first-child,
+div#fd.es .btn-dropdown:active,
+div#fd.es .btn-dropdown.active,
+.open .dropdown-toggle_div#fd.es .btn-dropdown {
+  background-image: none;
+}
+div#fd.es .btn-group > .btn-dropdown:first-child.disabled,
+div#fd.es .btn-group > .btn-dropdown:first-child.disabled:hover,
+div#fd.es .btn-group > .btn-dropdown:first-child.disabled:focus,
+div#fd.es .btn-group > .btn-dropdown:first-child.disabled:active,
+div#fd.es .btn-group > .btn-dropdown:first-child.disabled.active,
+div#fd.es .btn-group > .btn-dropdown:first-child[disabled],
+div#fd.es .btn-group > .btn-dropdown:first-child[disabled]:hover,
+div#fd.es .btn-group > .btn-dropdown:first-child[disabled]:focus,
+div#fd.es .btn-group > .btn-dropdown:first-child[disabled]:active,
+div#fd.es .btn-group > .btn-dropdown:first-child[disabled].active,
+fieldset[disabled] div#fd.es .btn-group > .btn-dropdown:first-child,
+fieldset[disabled] div#fd.es .btn-group > .btn-dropdown:first-child:hover,
+fieldset[disabled] div#fd.es .btn-group > .btn-dropdown:first-child:focus,
+fieldset[disabled] div#fd.es .btn-group > .btn-dropdown:first-child:active,
+fieldset[disabled] div#fd.es .btn-group > .btn-dropdown:first-child.active,
+div#fd.es .btn-dropdown.disabled,
+div#fd.es .btn-dropdown.disabled:hover,
+div#fd.es .btn-dropdown.disabled:focus,
+div#fd.es .btn-dropdown.disabled:active,
+div#fd.es .btn-dropdown.disabled.active,
+div#fd.es .btn-dropdown[disabled],
+div#fd.es .btn-dropdown[disabled]:hover,
+div#fd.es .btn-dropdown[disabled]:focus,
+div#fd.es .btn-dropdown[disabled]:active,
+div#fd.es .btn-dropdown[disabled].active,
+fieldset[disabled] div#fd.es .btn-dropdown,
+fieldset[disabled] div#fd.es .btn-dropdown:hover,
+fieldset[disabled] div#fd.es .btn-dropdown:focus,
+fieldset[disabled] div#fd.es .btn-dropdown:active,
+fieldset[disabled] div#fd.es .btn-dropdown.active {
+  background-color: #222 !important;
+  border-color: #444 !important;
+}
+div#fd.es .btn-group > .btn-dropdown:first-child .badge,
+div#fd.es .btn-dropdown .badge {
+  color: #222;
+  background-color: #fff;
+}
+div#fd.es .btn-group > .btn-dropdown:first-child > i,
+div#fd.es .btn-dropdown > i {
+  position: relative;
+  top: 2px;
+  margin-top: 0;
+}
+div#fd.es .btn-group > .dropdown-menu {
+  font-size: 12px;
+}

@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.editalbum div.current {
+	border:1px solid #CCCCCC;
+	clear:both;
+	padding:10px;
+}
+.editalbum div.current dd{
+	margin:0px;
+}
+
+
+.editalbum table.adminlist tbody tr.row0:hover td,.editalbum table.adminlist tbody tr.row1:hover td {
+background-color:#FFFFDD;
+}
+
+.editalbum table.adminlist tbody tr.row1 td {
+
+background:#F9F9F9 none repeat scroll 0 0;
+border-top:1px solid #FFFFFF;
+}
+.editalbum table.adminlist thead th {
+
+background:#F0F0F0 none repeat scroll 0 0;
+border-bottom:1px solid #999999;
+border-left:1px solid #FFFFFF;
+color:#666666;
+text-align:center;
+font-size:10px;
+}
+
+.editalbum table.adminlist td,.editalbum  table.adminlist th {
+padding:4px;
+}
+
+table.admintable td.key,.editalbum  table.admintable td.paramlist_key {
+background-color:#F6F6F6;
+border-bottom:1px solid #E9E9E9;
+border-right:1px solid #E9E9E9;
+color:#666666;
+font-weight:bold;
+text-align:right;
+width:140px;
+}
+
+table.admintable td {
+padding:3px;
+}
+
+table.muscolform, table.muscolform input[type=text], table.muscolform select, table.muscolform textarea, table.muscolform th{
+	font: 13px "Lucida Grande",Arial,Sans-serif;
+}
+
+fieldset.muscolfieldset{
+	padding:0px;
+	border:none;
+	border-top:1px solid #ccc;
+}
+
+fieldset.muscolfieldset{
+	background-color:#fafafa;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+fieldset.muscolfieldset legend{
+	font: 16px "Lucida Grande",Arial,Sans-serif;
+}
+
+td.muscolkey{
+	width:150px;
+	padding-right:15px;
+	vertical-align:middle;
+}
+table.muscolform td{
+	padding-bottom:5px;
+}
+
+table.muscolform input.text_area{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    border: 1px solid #DDDDDD;
+    margin: 0;
+    padding: 5px;
+    width: 300px;	
+}
+table.muscolform input.song_text_area{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    border: 1px solid #DDDDDD;
+    margin: 0;
+    padding: 5px;
+    width: 50px;	
+}
+
+table.muscolform input#hours, table.muscolform input#minuts, table.muscolform input#seconds{
+    width: 20px;	
+}
+table.muscolform input#year, table.muscolform input#edition_year{
+    width: 50px;	
+}
+table.muscolform input#ndisc{
+    width: 50px;	
+}
+table.muscolform input#price{
+    width: 100px;	
+}
+table.muscolform select#part_of_set{
+    width: 300px;	
+}
+table.muscolform input.hours, table.muscolform input.minuts, table.muscolform input.seconds, table.muscolform input.position, table.muscolform input.song_num, table.muscolform input.disc_num{
+    width: 20px;	
+}
+table.muscolform input.song_name{
+    width: 200px;	
+}
+table.muscolform input#image, table.muscolform input#name2, table.muscolform input#artist2, table.muscolform input#picture{
+    width: 150px;	
+}
+
+table.muscolform select{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    border: 1px solid #DDDDDD;
+    margin: 0;
+    padding: 5px;
+   
+}
+
+table.muscolform input[type=file]{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    border: 1px solid #DDDDDD;
+    margin: 0;
+  
+    width: 100px;	
+}
+
+table.muscolform input[type=text]:hover, table.muscolform select:hover, table.muscolform textarea:hover{
+	border:1px solid #999999;	
+}
+
+
+table.muscolform input.text_area:focus, table.muscolform select:focus, table.muscolform textarea:focus, table.muscolform input.song_text_area:focus{
+	border-color:#000;
+	background-color:#FAFAFA;
+	-moz-box-shadow:0 0 8px rgba(23,136,235,0.5);
+	border-color:rgba(23,136,235,0.75);
+}
+
+table.muscolform textarea{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    border: 1px solid #DDDDDD;
+    margin: 0;
+    padding: 5px;
+    width: 300px;
+}
+
+table.muscolform input.invalid{
+	border-color:#FF0000;
+}
+
+img.artistpictureform{
+	width:300px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    border: 1px solid #DDDDDD;
+	padding:5px;
+	background-color:#fff;
+}
+
+table.muscolform td.explanationfield{
+	font-size:11px;
+	color:#777777;
+	padding-bottom:10px;
+}
+
+div.advice{
+	font-size:11px;
+	color:#777777;
+	padding:10px;
+}
+
+table.muscolform input[type=submit], .muscolfieldset input.button {
+	background-color:#fafafa;
+	border:1px solid #dddddd;
+	padding:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	cursor:pointer;
+}
+table.muscolform input[type=submit]:hover, .muscolfieldset input.button:hover {
+	background-color:#eeeeee;
+	border:1px solid #CCCCCC;
+	
+}
+
+table.submitbutton td{
+	padding-top:10px;
+}
+
+.showsaving{
+	background:url(images/spinner.gif) no-repeat;
+	padding-left:20px;
+	margin-left:10px;
+}
+
+table.muscolform input#disc_num{
+    width: 50px;	
+}
+table.muscolform input#num{
+    width: 50px;	
+}
+table.muscolform input#position{
+    width: 50px;	
+}
+
+input.hours,  input.minuts,  input.seconds,  input.position,  input.song_num,  input.disc_num{
+    width: 20px !important;	
+}
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "ui/autocomplete"
+        ],
+        "script": [
+            "ratings"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

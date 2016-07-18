@@ -1,0 +1,139 @@
+.eb-composer-document {
+
+    // Composer document is always visible
+    display: block !important;
+    opacity: 1 !important;
+
+    .eb-composer-viewport {
+        .transform_(scale(1));
+        opacity: 1;
+    }
+
+    // Let toolbar overlay artboard instead
+    .eb-composer-viewport-content {
+        padding-top: 0;
+    }
+}
+
+&.eb-composer-frame {
+
+    // When not on document view,
+    // hide toolbar
+    &:not(.view-document) {
+        .eb-composer-document {
+            .eb-composer-toolbar {
+                display: none;
+            }
+        }
+    }
+}
+
+.eb-composer-manager {
+
+    &.has-messages {
+
+        .eb-composer-toolbar-set:not([data-name=messages]) {
+            display: none !important;
+        }
+
+        .eb-composer-toolbar-set {
+            &[data-name=messages] {
+                display: table !important;
+            }
+        }
+    }
+
+    &.is-editing-block {
+
+        .eb-composer-toolbar-set {
+
+            &[data-name=document] {
+                display: none;
+            }
+
+            &[data-name=block-actions] {
+                display: table;
+            }
+        }
+    }
+
+    &.is-dropping-block {
+
+        .eb-composer-toolbar-set {
+
+            &[data-name=document] {
+                display: none;
+            }
+
+            &[data-name=block-drop] {
+                display: table;
+            }
+        }
+    }
+
+    &.is-moving-block {
+
+        .eb-composer-toolbar-set {
+
+            &[data-name=document] {
+                display: none;
+            }
+
+            &[data-name=block-actions] {
+                display: none;
+            }
+
+            &[data-name=block-move] {
+                display: table;
+            }
+        }
+    }
+}
+
+.eb-document-add-cover-button {
+    &.has-cover {
+        .fa:before {
+            content: @fa-var-check;
+            color: @brand-success;
+        }
+
+        span {
+            display: none;
+
+            + span {
+                display: inline-block !important;
+            }
+        }
+    }
+
+    &.active {
+        // background: #eee !important;
+        background: fadeout(#1b386a, 50%) !important;
+        .box-shadow(inset 0 2px 4px rgba(0,0,0,.15));
+    }
+}
+
+.eb-document-add-location-button {
+    &.has-location {
+        .fa:before {
+            content: @fa-var-check;
+            color: @brand-success;
+        }
+
+        span {
+            display: none;
+
+            + span {
+                display: inline-block !important;
+            }
+        }
+    }
+
+    &.active {
+        // background: #eee !important;
+        background: fadeout(#1b386a, 50%) !important;
+        .box-shadow(inset 0 2px 4px rgba(0,0,0,.15));
+    }
+}
+
+@import "composer/document/artboard";

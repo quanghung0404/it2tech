@@ -1,0 +1,268 @@
+//
+// UI
+// --------------------------------------------------
+.close {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* Tooltip */ // reset for J2.5
+&.tooltip.tooltip-es {
+	background: none;
+	border: none;
+	float: none;
+	margin: 0;
+	width: auto;
+	position: absolute;
+	z-index: 20002; // es-dialog 10001
+	display: block;
+	&.topleft .tooltip-arrow {
+		bottom: 0;
+		left: 15%;
+		margin-left: -@tooltip-arrow-width;
+		border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
+		border-top-color: @tooltip-arrow-color;
+	}
+	&.topright .tooltip-arrow {
+		bottom: 0;
+		right: 10%;
+		margin-left: -@tooltip-arrow-width;
+		border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
+		border-top-color: @tooltip-arrow-color;
+	}
+	&.bottomleft .tooltip-arrow {
+		top: 0;
+		left: 15%;
+		margin-left: -@tooltip-arrow-width;
+		border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
+		border-bottom-color: @tooltip-arrow-color;
+	}
+	&.bottomright .tooltip-arrow {
+		top: 0;
+		right: 10%;
+		margin-left: -@tooltip-arrow-width;
+		border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
+		border-bottom-color: @tooltip-arrow-color;
+	}
+
+	// rare cases #1448
+	&.top {
+		margin: -3px 0 0;
+		height: auto;
+	}
+}
+
+
+
+// dropdown @ extend
+// ----------------
+.dropdown-menu-large {
+	width: 300px;
+	min-width: 300px;
+}
+.dropdown-menu-medium {
+	width: 250px;
+	min-width: 250px;
+}
+
+/*Backend icons state*/
+// index.php?option=com_easysocial&view=styleguide&layout=render&file=ui
+[class^="es-state-"],
+[class*=" es-state-"] {
+	display: inline-block;
+	text-align: center;
+	width: 26px;
+	height: 16px;
+	line-height: 15px;
+	border-radius: 3px;
+	&:before {
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		display: inline-block;
+		text-decoration: inherit;
+		color: white;
+		font-size: 11px;
+	}
+}
+.es-state-publish,
+.es-state-going {
+	background: #7CC110;
+	&:before {
+		content: "\f00c";
+	}
+}
+.es-state-unpublish,
+.es-state-notgoing {
+	background: #B94A48;
+	&:before {
+		content: "\f00d";
+	}
+}
+.es-state-trash {
+	background: #B94A48;
+	&:before {
+		content: "\f1f8";
+	}
+}
+.es-state-locked {
+	background: #aaa;
+	&:before {
+		content: "\f023";
+	}
+}
+.es-state-unactivated {
+	background: #D88B1E;
+	&:before {
+		content: "\f084";
+	}
+}
+.es-state-pending {
+	background: #D88B1E;
+	&:before {
+		content: "\f017";
+	}
+}
+.es-state-maybe {
+	background: #5BC0DE;
+	&:before {
+		content: "\f02e";
+	}
+}
+.es-state-invited {
+	background: #D88B1E;
+	&:before {
+		content: "\f058";
+	}
+}
+.es-state-default {
+	background: #aaa;
+	.square(16px) !important;
+	border-radius: 50%;
+	&:before {
+		content: "\f005";
+		font-size: 10px;
+	}
+}
+.es-state-featured {
+	background: #F5A922;
+	.square(16px) !important;
+	border-radius: 50%;
+	&:before {
+		content: "\f005";
+		font-size: 10px;
+	}
+}
+.es-state-plus {
+    background: #7CC110;
+    .square(16px) !important;
+    border-radius: 50%;
+    &:before {
+        content: "\f067";
+        font-size: 8px;
+        line-height: 16px;
+
+    }
+}
+.es-state-minus {
+    background: #be1f23;
+    .square(16px) !important;
+    border-radius: 50%;
+    &:before {
+        content: "\f068";
+        font-size: 8px;
+        line-height: 16px;
+    }
+}
+
+
+//pagination
+//Added wrapper for place the pagination to the bottom of the es-content
+.pagination-wrapper {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+    clear: both;
+	.es-pagination,
+	.pagination {
+		// border-top: 1px solid #DDDDDD;
+	}
+}
+
+
+//loader for outside wrapper
+.popover-profile-loader {
+	// width: 50px !important;
+	// height: 50px !important;
+	// border: 1px solid @esBorder !important;
+	// background: white !important;
+	display: block !important;
+	// border-radius: 3px !important;
+
+	width: 420px !important;
+	max-width: 420px !important;
+	min-width: 420px !important;
+	height: 200px !important;
+	background-color: white !important;
+	border-radius: 1px !important;
+	padding: 0 !important;
+	border: 1px solid #ccc !important;
+	border: 1px solid rgba(0,0,0,.2) !important;
+	.box-shadow(0 5px 10px rgba(0,0,0,.2)) !important;
+
+	&.top .arrow {
+		border-top-color: #fff !important;
+		left: 40px !important;
+	}
+	i.es-loading-indicator {
+		position: relative;
+		top: 70px;
+	}
+}
+i.es-loading-indicator{  // suffix es- prevent collision with other templates
+	&.fd-small{
+		text-indent: -9999px !important;
+		display: block !important;
+		padding: 25px !important;
+		background: url("@{media_uri}/images/loading.gif") center no-repeat !important;
+	}
+
+	&.large{
+		text-indent: -9999px !important;
+		display: block !important;
+		padding: 25px !important;
+		background: url("@{media_uri}/images/loading-large.gif") center no-repeat !important;
+	}
+}
+
+
+
+// Disable auto zoom in safari3+, chrome1+ on iPhone
+@media (max-width:479px) and (-webkit-min-device-pixel-ratio:0) {
+
+	select:focus, textarea:focus, input:focus {
+		font-size: 16px !important;
+	}
+
+}
+
+// Responsive control for append elements
+@media (max-width: 767px) {
+	&.es-dialog {
+		width: 300px !important;
+		.dialog-body {
+			width: 300px !important;
+		}
+	}
+}
+
+// Responsive for popbox notification
+@media (max-width: 680px) {
+	&.es.popbox-notifications {
+		left: 52% !important;
+		margin-left: -50% !important;
+		width: 96% !important;
+		.arrow {
+			display: none !important;
+		}
+	}
+}

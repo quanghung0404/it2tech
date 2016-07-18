@@ -1,0 +1,375 @@
+/*------------------------------------*\
+     $Photo - photo.less
+\*------------------------------------*/
+
+.es-photo {
+     position: relative;
+     float: left;
+     width: 100%;
+
+     &.ar-1x1 {
+          > a {
+               padding-top: (1/1) * 100%;
+          }
+     }
+
+     &.ar-4x3 {
+          > a {
+               padding-top: (3/4) * 100%;
+          }
+     }
+
+     &.ar-16x9 {
+          > a {
+               padding-top: (9/16) * 100%;
+          }
+     }
+
+     // This is dev-only. Only the test the image fill algorithm on tall containers.
+     &.ar-9x16 {
+          > a {
+               padding-top: (16/9) * 100%;
+          }
+     }
+
+     > a {
+          width: auto;
+          height: auto;
+          display: block;
+          position: relative;
+          overflow: hidden;
+
+          // This makes wide image fill the container for cover layout.
+          &.fit-height {
+
+               b {
+                    width: 200%;
+                    height: 100%;
+                    text-align: left;
+               }
+
+               img {
+                    position: absolute; // This fixes Chrome
+                    top: 0;
+                    opacity: 1;
+                    height: 100%;
+               }
+          }
+
+          // This makes tall image fill the container for cover layout.
+          &.fit-width {
+
+               b {
+                    width: 100%;
+                    height: 400%;
+                    text-align: left;
+               }
+
+               img {
+                    position: absolute; // This fixes Chrome
+                    opacity: 1;
+                    width: 100%;
+               }
+          }
+
+          &.fit-both {
+
+               img {
+                    opacity: 1;
+
+                    // Fixes dissappearing images in Android WebView
+                    margin: -10%;
+               }
+          }
+
+          &.fit-small {
+               img {
+                    opacity: 1;
+               }
+
+               em {
+                    display: none;
+               }
+          }
+     }
+
+     // This provides image gutter
+     u {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+     }
+
+     b {
+          // This provides a container for images
+          // after its parent (a tag) provide
+          // the aspect ratio for it.
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+          font-size: 0; // Prevents line-height pushing down images
+          z-index: 1;
+
+          // This make child image horizontally centered
+          text-align: center;
+
+          // This makes child image vertically centered
+          &:before {
+               content: ' ';
+               display: inline-block;
+               height: 100%;
+               vertical-align: middle;
+               margin-right: -0.25em;
+          }
+     }
+
+     // This is the default setting - fit-both
+     img {
+          // This makes image fit the container for contain
+          position: relative;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 100%;
+          display: inline-block;
+          vertical-align: middle;
+          opacity: 0;
+     }
+
+     em {
+
+          // This converts em into block because <div> within <a> is invalid.
+          display: block;
+
+          // This ensure the em fills the container
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+
+          // This ensure thumbnails always show on the very top left.
+          top: 0;
+          left: 0;
+          opacity: 0;
+
+          // This determines how thumbnails are displayed
+          // Default is .layout-cover
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+
+          &.layout-contain {
+               background-size: contain;
+               background-position: center center;
+          }
+     }
+
+     &.css-resizing {
+
+          > a {
+               &.fit-height,
+               &.fit-width,
+               &.fit-both {
+
+                    b {
+                         display: none;
+                    }
+
+                    em {
+                         opacity: 1;
+                    }
+               }
+          }
+     }
+}
+
+.fluid-thumbnail() {
+     width: 100%;
+}
+
+.first-thumbnail() {
+     clear: left;
+}
+
+.has-gutter() {
+     u {
+          margin-left: 2px;
+     }
+}
+
+.layout-primary-with-thumbnails() {
+
+     &:first-child {
+          .first-thumbnail();
+          .fluid-thumbnail();
+          margin-bottom: 2px; // 2px bottom gutter
+     }
+
+     // This is for photo 2
+     &:nth-child(2) {
+          .first-thumbnail();
+     }
+}
+
+.es-photos {
+     position: relative;
+     .clearfix();
+
+     &.pattern-tile {
+
+          &.photos-1 {
+               .es-photo {
+                    .fluid-thumbnail();
+                    .first-thumbnail();
+
+                    // Special handling for single photo.
+                    a {
+                         &.fit-small,
+                         &.fit-width,
+                         &.fit-height,
+                         &.fit-both {
+                              padding: 0;
+                              margin: 0; // This removes gutter
+
+                              u {
+                                   position: relative;
+                              }
+
+                              b {
+                                   text-align: left;
+                                   position: relative;
+                                   width: auto;
+                                   height: auto;
+                              }
+
+                              img {
+                                   position: relative;
+                                   width: auto;
+                                   height: auto;
+                                   max-width: 100%;
+                                   max-height: 320px;
+                              }
+                         }
+                    }
+               }
+          }
+
+          &.photos-2 {
+               .es-photo {
+                    width: 50%;
+
+                    &:nth-child(2) {
+                         .has-gutter();
+                    }
+               }
+          }
+
+          &.photos-3 {
+               .es-photo {
+                    width: 50%; // This is for photo 2, 3
+                    .layout-primary-with-thumbnails();
+
+                    &:nth-child(3) {
+                         .has-gutter();
+                    }
+               }
+          }
+
+          &.photos-4 {
+               .es-photo {
+                    width: 100 / 3%; // This is for photo 2, 3, 4
+                    .layout-primary-with-thumbnails();
+
+                    &:nth-child(3) {
+                         .has-gutter();
+                    }
+
+                    &:nth-child(4) {
+                         .has-gutter();
+                    }
+               }
+          }
+
+          &.photos-5 {
+               .es-photo {
+                    width: 100 / 3%; // This is for photo 3, 4, 5
+
+                    &:nth-child(1) {
+                         .first-thumbnail();
+                         width: 50%;
+                         margin-bottom: 2px; // 2px bottom-gutter
+                    }
+
+                    &:nth-child(2) {
+                         width: 50%;
+                         margin-bottom: 2px; // 2px bottom-gutter
+                         .has-gutter();
+                    }
+
+                    &:nth-child(3) {
+                         .first-thumbnail();
+                    }
+
+                    &:nth-child(4) {
+                         .has-gutter();
+                    }
+
+                    &:nth-child(5) {
+                         .has-gutter();
+                    }
+               }
+          }
+     }
+
+     &.pattern-flow {
+
+          @es-photo-flow-height: 96px;
+
+          .es-photo {
+               width: auto;
+               height: @es-photo-flow-height;
+               margin: 1px;
+
+               > a {
+                    display: inline-block;
+                    padding-top: 0;
+                    width: auto;
+                    height: auto;
+
+                    &.fit-small {
+                         b {
+                              min-width: @es-photo-flow-height;
+                         }
+                    }
+               }
+
+               u {
+                    display: inline-block;
+                    position: relative;
+                    width: auto;
+                    height: auto;
+               }
+
+               b {
+                    display: inline-block;
+                    position: relative;
+                    width: auto;
+                    height: auto;
+                    min-height: @es-photo-flow-height;
+
+                    &:before {
+                         height: @es-photo-flow-height;
+                    }
+               }
+
+               img {
+                    height: @es-photo-flow-height;
+               }
+          }
+     }
+}

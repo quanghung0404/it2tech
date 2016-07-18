@@ -1,0 +1,9 @@
+{
+	"group": "embeddables",
+	"element": "yahoo",
+	"title": "Yahoo Screen",
+	"description": "Allows you to embed videos from Yahoo Screen",
+	"keywords": "video, videos, yahoo, yahoo screen, media, streaming",
+	"published": 1,
+    "ordering": 42
+}

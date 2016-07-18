@@ -1,0 +1,30 @@
+[
+    {
+        "language": [
+            "COM_EASYSOCIAL_LOCATION_PERMISSION_ERROR",
+            "COM_EASYSOCIAL_STREAM_META_JOINER",
+            "COM_EASYSOCIAL_STORY_SUBMIT_ERROR",
+            "COM_EASYSOCIAL_STORY_CONTENT_EMPTY",
+            "COM_EASYSOCIAL_STORY_NOT_ON_STREAM_FILTER"
+        ],
+        "view": [
+            "apps/user/links/story/attachment.item",
+            "site/location/story.suggestion",
+            "site/albums/upload.item",
+            "site/friends/suggest.item",
+            "site/friends/suggest.hint.search",
+            "site/friends/suggest.hint.empty",
+            "site/hashtags/suggest.item",
+            "site/hashtags/suggest.hint.search",
+            "site/hashtags/suggest.hint.empty"
+        ],
+        "script": [
+            "site/stream/item"
+        ],
+        "library": [
+            "mentions",
+            "placeholder"
+        ],
+        "adapter": "EasySocial"
+    }
+]

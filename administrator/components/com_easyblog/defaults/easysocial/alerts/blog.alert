@@ -1,0 +1,32 @@
+[
+	{
+		"extension"	: "com_easyblog",
+		"element"	: "blog",
+		"rule"		: "create",
+		"value" :
+		{
+			"email"		: false,
+			"system"	: true
+		}
+	},
+	{
+		"extension"	: "com_easyblog",
+		"element"	: "blog",
+		"rule"		: "likes",
+		"value" :
+		{
+			"email"		: false,
+			"system"	: true
+		}
+	},
+	{
+		"extension"	: "com_easyblog",
+		"element"	: "blog",
+		"rule"		: "comment",
+		"value"		:
+		{
+			"email"	: false,
+			"system": true
+		}
+	}
+]

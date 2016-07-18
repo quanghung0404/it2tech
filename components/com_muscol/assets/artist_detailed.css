@@ -1,0 +1,398 @@
+@charset "utf-8";
+/* CSS Document */
+
+/** 
+ * @version		1.5.0
+ * @package		muscol
+ * @copyright	2009 JoomlaMusicSolutions.com
+ * @license		GPLv2
+ */
+tr.tr_list_albums td.data{
+border-bottom:1px solid #eeeeee;
+padding-left:5px;
+padding-right:5px;
+border-left:none;
+}
+tr.tr_list_albums:hover{
+background-color:#fffeee;
+}
+a.image{
+display:block;
+padding-top:4px;
+padding-bottom:4px;
+padding-left:0px;
+padding-right:5px;
+}
+a.image img{
+	border:1px solid #CCCCCC;
+}
+a.image:hover img{
+	border:1px solid #000;
+}
+div.album_name{
+	padding-top:4px;
+	font-weight:bold;
+}
+div.artist_name{
+	font-weight:bold;
+}
+div.rating{
+	padding-bottom:2px;
+}
+div.rating img{
+	vertical-align:bottom;
+	padding-bottom:2px;
+}
+table.details{
+	border-bottom:1px solid #eeeeee;
+	border-right:1px solid #eeeeee;
+	font-size:12px;
+}
+table.details table td{
+	border-top:1px solid #eeeeee;
+}
+td.label_detailed_album{
+	background-color:#eeeeee;
+	padding-left:1px;
+}
+.value_detailed_album{
+	width:50%;
+	padding-left:1px;
+}
+.related{
+
+	-moz-border-radius:4px;
+	text-align:left;
+	margin-bottom:10px;
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+	background-color:#ffffe0;
+	border:1px solid #e6db55;
+}
+.review{
+	text-align:justify;
+	
+}
+.icons{
+	padding-top:10px;
+}
+
+/******************* NOU ****************************/
+
+div.data{
+	-moz-border-radius:4px;
+	background-color:#eeeeee;
+	margin-bottom:5px;
+	padding-left:4px;
+	padding-right:4px;
+}
+
+.format_title{
+	background-color:#999;
+	-moz-border-radius:4px;
+	font-weight:bold;
+	color:#FFF;
+	margin-bottom:5px;
+	padding:4px;
+	font-size:16px;
+}
+div.format_title span{
+	vertical-align:middle;
+	padding-bottom:20px;
+}
+.view_songs{
+	padding-bottom:5px;
+}
+.player{
+	padding-bottom:10px;
+}
+
+/******************** BLOC **************************/
+
+div.bloc div.border_top{
+	background:url(images/pest_lateral_top_long.gif) no-repeat;
+	height:4px;
+}
+div.bloc div.border_bottom{
+	background:url(images/pest_lateral_bottom_long.gif) no-repeat;
+	border-top:1px solid #858585;
+	height:4px;
+}
+div.bloc div.content{
+	border-left:1px solid #858585;
+	border-right:1px solid #858585;
+}
+div.bloc div.title{
+	background:url(images/bg_pest_title.gif);
+	border-left:1px solid #858585;
+	border-right:1px solid #858585;
+	border-bottom:1px solid #858585;
+	height:35px;
+	padding-left:5px;
+	padding-right:5px;
+	font-weight:bold;
+	color:#ffffff;
+	font-size:16px;
+}
+div.bloc div.title span{
+	vertical-align:middle;
+	padding-bottom:20px;
+}
+div.bloc div.title img{
+border:none;
+vertical-align:bottom;
+padding-bottom:3px;
+}
+a.llista_artista img.image_40_llista, a img.image_40_llista{
+border:1px solid #cccccc;
+vertical-align:middle;
+padding:0px;
+
+}
+a.llista_artista img.image_115_llista{
+border:1px solid #cccccc;
+vertical-align:middle;
+padding:0px;
+width:115px;
+}
+a.llista_artista:hover img.image_115_llista{
+border:1px solid #000000;
+padding:0px;
+}
+a.llista_artista:hover img.image_40_llista, a:hover img.image_40_llista{
+border:1px solid #000000;
+padding:0px;
+}
+.year_llista{
+color:#999999;
+font-size:10px;
+}
+.subalbums{
+	padding-top:5px;
+}
+
+h1.nom_artista{
+font-weight:normal;
+padding:0px;
+font-size:24px;
+}
+
+.artist_first_col{
+padding-right:15px;
+}
+.artist_second_col{
+	width:432px;
+	
+}
+
+.artist_picture{
+	border:1px solid #CCCCCC;
+	width:300px;
+	margin-left:15px;
+	float:left;
+
+}
+.artist_content{
+	float:left;
+	width:428px;
+}
+.view_songs{
+	clear:both;
+}
+
+dl.tabs{
+	float:left;
+	margin:10px 0 -1px;
+	z-index:50;
+}
+
+dl.tabs dt {
+	background-color:#F0F0F0;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-top:1px solid #CCCCCC;
+	color:#666666;
+	float:left;
+	margin-left:3px;
+	padding:4px 10px;
+}
+
+dl.tabs dt.open {
+	background-color:#F9F9F9;
+	border-bottom:1px solid #F9F9F9;
+	color:#000000;
+	z-index:100;
+}
+.artist_main_content{
+	border-top:1px solid #CCC;
+	clear:both;
+	padding-top:5px;
+}
+
+dl.tabs dt.tab_albums{
+	background-image:url(images/cdr.png);
+	background-repeat:no-repeat;
+	background-position:3px 3px;
+	padding-left:25px;
+}
+dl.tabs dt.tab_songs{
+	background-image:url(images/music.png);
+	background-repeat:no-repeat;
+	background-position:3px 3px;
+	padding-left:25px;
+}
+
+
+/******************** grid view *********************/
+
+ul.albums_grid,ul.albums_grid li {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	padding-left:0px;
+	padding-right:0px;
+	margin-left:0px;
+}
+
+ul.albums_grid {
+	display:inline-block;
+}
+
+ul.albums_grid li {
+float:left;
+width:117px;
+margin:5px;
+background:none;
+}
+
+ul.albums_grid img{
+border:1px solid #CCCCCC;
+
+}
+ul.albums_grid li div{
+	height:117px;
+	display:table-cell;
+	vertical-align:bottom;
+}
+ul.albums_grid li a, ul.albums_grid li a:visited {
+	display:block;
+	width:117px;
+}
+
+ul.albums_grid li a:hover img{ border:1px solid #000; }
+ul.albums_grid li a:hover span{ color:#000;}
+
+ul.albums_grid .name {
+	display:block;
+	padding-top:5px;
+	color:#666666;
+}
+ul.albums_grid span {
+	font-size:12px;
+	line-height:16px;
+	text-align:left;
+}
+
+ul.albums_grid .year{
+	color:#999999;
+	font-size:10px;
+}
+ul.albums_grid .year img{
+	border:none;
+	vertical-align:middle;
+	padding-bottom:4px;
+}
+ul.albums_grid a:hover .year img{
+	border:none;
+}
+
+
+ul.albums_grid div.grid_album{
+	text-align:center;
+}
+ul.albums_grid div.grid_album a{
+	text-decoration:none;
+}
+ul.albums_grid div.grid_album span{
+
+	display:block;
+	text-align:center;
+	font-size:12px;
+	line-height:16px;
+	padding:0px;
+	margin:0px;
+}
+ul.albums_grid li.grid_album{
+	padding:0px;
+	float:left;
+	margin:5px 11px;
+	text-align:center;
+}
+
+ul.albums_grid li div {
+	display:table-cell;
+	height:117px;
+	vertical-align:bottom;
+}
+ul.albums_grid li div.cd {
+	height:117px;
+}
+ul.albums_grid li div.dvd {
+	height:164px;
+}
+ul.albums_grid li a.cd{
+	height:205px;
+}
+ul.albums_grid li a.dvd{
+	height:250px;
+}
+
+input#keyword_search_input{
+	width:120px;
+}
+.orderby_search{
+	text-align:right;
+	margin-bottom:5px;
+}
+
+
+/*** NEW FOR 2.1 ***/
+
+.first_col_artist{
+	width:223px;
+	padding:0px;
+}
+.second_col_artist{
+	padding-left:15px;	
+}
+
+.artist_data{
+	background:url(images/back_artist_data.png) no-repeat;
+	padding:5px;
+	padding-right:15px;
+	margin-bottom:0px;
+}
+.artist_data_bottom{
+	background:url(images/back_artist_data_bottom.png) no-repeat;
+	height:4px;
+	margin-bottom:5px;
+}
+
+.mosaic_image img{
+	padding-right:7px;
+	padding-bottom:7px;
+}
+
+.last_in_row img{
+	padding-right:0px;
+}
+
+.artist_picture_profile{
+	border:1px solid #CCCCCC;
+	margin-bottom:10px;
+}
+
+	
+
+

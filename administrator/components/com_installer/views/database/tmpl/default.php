@@ -40,9 +40,14 @@ defined('_JEXEC') or die;
 						<?php if (!$this->filterParams) : ?>
 							<li><?php echo JText::_('COM_INSTALLER_MSG_DATABASE_FILTER_ERROR'); ?>
 						<?php endif; ?>
-
-						<?php if (version_compare($this->schemaVersion, JVERSION) != 0) : ?>
-							<li><?php echo JText::sprintf('COM_INSTALLER_MSG_DATABASE_SCHEMA_ERROR', $this->schemaVersion, JVERSION); ?></li>
+						<!-- HungNQ start https://github.com/joomla/joomla-cms/pull/3249/files -->
+						<?php //if (version_compare($this->schemaVersion, JVERSION) != 0) : ?>
+						<?php if ($this->schemaVersion != $this->changeSet->getSchema()) : ?>
+							<li>
+							<?php //echo JText::sprintf('COM_INSTALLER_MSG_DATABASE_SCHEMA_ERROR', $this->schemaVersion, JVERSION); ?>
+							<?php echo JText::sprintf('COM_INSTALLER_MSG_DATABASE_SCHEMA_ERROR', $this->schemaVersion, $this->changeSet->getSchema()); ?>
+							</li>
+						<!-- end https://github.com/joomla/joomla-cms/pull/3249/files -->
 						<?php endif; ?>
 
 						<?php if (version_compare($this->updateVersion, JVERSION) != 0) : ?>

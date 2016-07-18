@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>com_easysocial</name>
+	<creationDate>10th May 2016</creationDate>
+	<author>Stack Ideas Sdn Bhd</author>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<copyright>Copyright 2009 - 2013 Stack Ideas Sdn Bhd. All Rights Reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.4.9</version>
+	<description><![CDATA[]]></description>
+	<scriptfile>script.php</scriptfile>
+	<administration>
+		<menu link="option=com_easysocial" img="components/com_easysocial/themes/default/images/icons/16/easysocial.png">COM_EASYSOCIAL</menu>
+		<submenu>
+			<menu view="settings" img="components/com_easysocial/themes/default/images/icons/16/easysocial-settings.png">COM_EASYSOCIAL_MENU_SETTINGS</menu>
+			<menu view="users" img="components/com_easysocial/themes/default/images/icons/16/easysocial-users.png">COM_EASYSOCIAL_MENU_USERS</menu>
+			<menu view="themes" img="components/com_easysocial/themes/default/images/icons/16/easysocial-themes.png">COM_EASYSOCIAL_MENU_THEMES</menu>
+			<menu view="languages" img="components/com_easysocial/themes/default/images/icons/16/easysocial-languages.png">COM_EASYSOCIAL_MENU_LANGUAGES</menu>
+			<menu view="profiles" img="components/com_easysocial/themes/default/images/icons/16/easysocial-profiles.png">COM_EASYSOCIAL_MENU_PROFILES</menu>
+			<menu view="groups" img="components/com_easysocial/themes/default/images/icons/16/easysocial-groups.png">COM_EASYSOCIAL_MENU_GROUPS</menu>
+			<menu view="events" img="components/com_easysocial/themes/default/images/icons/16/easysocial-events.png">COM_EASYSOCIAL_MENU_EVENTS</menu>
+			<menu view="albums" img="components/com_easysocial/themes/default/images/icons/16/easysocial-albums.png">COM_EASYSOCIAL_MENU_ALBUMS</menu>
+			<menu view="videos" img="components/com_easysocial/themes/default/images/icons/16/easysocial-videos.png">COM_EASYSOCIAL_MENU_VIDEOS</menu>
+			<menu view="privacy" img="components/com_easysocial/themes/default/images/icons/16/easysocial-privacy.png">COM_EASYSOCIAL_MENU_PRIVACY</menu>
+			<menu view="points" img="components/com_easysocial/themes/default/images/icons/16/easysocial-points.png">COM_EASYSOCIAL_MENU_POINTS</menu>
+			<menu view="alerts" img="components/com_easysocial/themes/default/images/icons/16/easysocial-alerts.png">COM_EASYSOCIAL_MENU_ALERTS</menu>
+			<menu view="badges" img="components/com_easysocial/themes/default/images/icons/16/easysocial-badges.png">COM_EASYSOCIAL_MENU_BADGES</menu>
+			<menu view="apps" img="components/com_easysocial/themes/default/images/icons/16/easysocial-apps.png">COM_EASYSOCIAL_MENU_APPS</menu>
+			<menu view="reports" img="components/com_easysocial/themes/default/images/icons/16/easysocial-reports.png">COM_EASYSOCIAL_MENU_REPORTS</menu>
+			<menu view="mailer" img="components/com_easysocial/themes/default/images/icons/16/easysocial-emails.png">COM_EASYSOCIAL_MENU_EMAIL_ACTIVITIES</menu>
+			<menu view="migrators" img="components/com_easysocial/themes/default/images/icons/16/easysocial-migrators.png">COM_EASYSOCIAL_MENU_MIGRATORS</menu>
+			<menu view="access" img="components/com_easysocial/themes/default/images/icons/16/easysocial-access.png">COM_EASYSOCIAL_MENU_ACCESS</menu>
+		</submenu>
+		<files folder="admin">
+			<folder>setup</folder>
+			<file>easysocial.php</file>
+			<file>foundry.php</file>
+			<file>script.php</file>
+			<file>config.xml</file>
+			<file>easysocial.xml</file>
+			<file>access.xml</file>
+		</files>
+		<languages>
+			<language tag="en-GB">languages/admin/en-GB.com_easysocial.ini</language>
+			<language tag="en-GB">languages/admin/en-GB.com_easysocial.sys.ini</language>
+		</languages>
+	</administration>
+	<languages>
+		<language tag="en-GB">languages/site/en-GB.com_easysocial.ini</language>
+	</languages>
+</extension>

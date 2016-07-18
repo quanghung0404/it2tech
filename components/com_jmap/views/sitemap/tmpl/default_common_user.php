@@ -61,7 +61,7 @@ $supportedRouterHelperAdaptersPaths = array('com_eventbooking'=>'helper',
 											'com_edocman'=>'helper',
 											'com_dms'=>'helper');
 $supportedRouterHelperAdaptersFiles = array('com_easyblog'=>'router', 'com_easydiscuss'=>'router');
-$supportedRouterHelperAdaptersDependencies = array('com_easyblog'=>'constants.php');
+$supportedRouterHelperAdaptersDependencies = array('com_easyblog'=>'constants.php', 'com_easydiscuss'=>'constants.php');
 $missingDependencies = false;
 
 // Adapter for com_eshop
@@ -91,6 +91,15 @@ if(array_key_exists($targetOption, $supportedRouterHelperAdapters)) {
 	if(	$targetOption == 'com_easyblog' &&
 		file_exists(JPATH_ADMINISTRATOR . '/components/'.$targetOption.'/includes/'.$filePath.'.php')) { // Not the frontend router as a standard but a proprietary admin router
 		include_once JPATH_ADMINISTRATOR . '/components/'.$targetOption.'/includes/easyblog.php'; // Include base class
+		include_once JPATH_ADMINISTRATOR . '/components/'.$targetOption.'/includes/'.$filePath.'.php'; // Finally include the router helper
+		$supportedRouterHelperAdapters[$targetOption] = true;
+		$liveSite = $this->liveSite;
+	}
+	
+	// Exception for Easydiscuss 4
+	if(	$targetOption == 'com_easydiscuss' &&
+		file_exists(JPATH_ADMINISTRATOR . '/components/'.$targetOption.'/includes/'.$filePath.'.php')) { // Not the frontend router as a standard but a proprietary admin router
+		include_once JPATH_ADMINISTRATOR . '/components/'.$targetOption.'/includes/easydiscuss.php'; // Include base class
 		include_once JPATH_ADMINISTRATOR . '/components/'.$targetOption.'/includes/'.$filePath.'.php'; // Finally include the router helper
 		$supportedRouterHelperAdapters[$targetOption] = true;
 		$liveSite = $this->liveSite;

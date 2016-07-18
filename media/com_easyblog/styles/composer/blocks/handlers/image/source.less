@@ -1,0 +1,315 @@
+@eb-image-source-thumbnail-size: 48px;
+
+.eb-image-source-fieldset {
+
+    .eb-hint {
+        display: none;
+    }
+
+    &.is-loading,
+    &.is-failed {
+
+        .eb-image-source-field {
+            height: 160px;
+        }
+
+        .eb-image-source-header,
+        .eb-image-variation-field {
+            display: none;
+        }
+    }
+
+    &.is-loading {
+
+        .hint-loading {
+            display: table;
+        }
+    }
+
+    &.is-failed {
+
+        .hint-failed {
+            display: table;
+        }
+    }
+}
+
+.eb-image-source-failed-action {
+    display: block;
+    margin-top: @eb-composer-gutter / 6;
+}
+
+.eb-image-source-field {
+    position: relative;
+    padding: 0 !important;
+}
+
+.eb-image-source-header {
+    position: relative;
+    border: @eb-composer-gutter / 3 solid transparent;
+    background: @eb-composer-lightgray-accent-color;
+    padding-left: @eb-image-source-thumbnail-size;
+    border-radius: 2px 2px 0 0;
+
+    .col-cell {
+        vertical-align: top;
+    }
+}
+
+.eb-image-source-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: @eb-image-source-thumbnail-size;
+    float: left;
+
+    img {
+        .box-shadow(0 0 2px @eb-composer-shadow-color);
+        width: 100%;
+    }
+}
+
+.eb-image-source-info {
+    padding: 0 (@eb-composer-gutter / 3);
+}
+
+.eb-image-source-title {
+    font-weight: bold;
+    .text-overflow();
+    padding-right: @eb-composer-gutter / 3;
+}
+
+.eb-image-source-size {
+    text-transform: uppercase;
+}
+
+.eb-image-source-url {
+    color: @eb-composer-text-light-color;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.eb-image-variation-action {
+    button {
+        display: none;
+    }
+}
+
+.eb-image-variation-field {
+
+    position: relative;
+    margin: 0 !important;
+
+    &.can-create {
+
+        .eb-image-variation-new-button {
+            display: inline-block
+        }
+
+        .eb-image-variation-action {
+            display: block;
+        }
+    }
+
+    &.can-delete {
+
+        .eb-image-variation-delete-button {
+            display: inline-block;
+        }
+
+        .eb-image-variation-action {
+            display: block;
+        }
+    }
+
+    &.is-missing {
+
+        .eb-image-variation-rebuild-button {
+            display: inline-block;
+        }
+
+        .eb-image-variation-delete-button {
+            display: none;
+        }
+
+        .eb-image-variation-action {
+            display: block;
+        }
+    }
+
+    &.show-create-form {
+
+        .eb-image-variation-list-container {
+            display: none;
+        }
+
+        .eb-image-variation-create-container {
+            display: block;
+        }
+
+        .eb-image-variation-new-button,
+        .eb-image-variation-delete-button,
+        .eb-image-variation-rebuild-button {
+            display: none;
+        }
+
+        .eb-image-variation-create-button,
+        .eb-image-variation-cancel-button {
+            display: inline-block;
+        }
+    }
+
+    &.is-creating,
+    &.is-failed {
+
+        border-top: 1px solid @eb-composer-border-color;
+        height: 150px;
+
+        .eb-image-variation-action {
+            display: none;
+        }
+
+        .eb-image-variation-create-container {
+            display: none;
+        }
+    }
+
+    &.is-creating {
+
+        .hint-creating-variation {
+            display: table;
+        }
+    }
+
+    &.is-failed {
+
+        .hint-failed-variation {
+            display: table;
+        }
+    }
+}
+
+.eb-image-variation-list-container {
+    border-top: 1px solid @eb-composer-border-color;
+    border-bottom: 1px solid @eb-composer-border-color;
+}
+
+.eb-image-variation-create-container {
+    padding: @eb-composer-gutter / 2;
+    border: 1px solid @eb-composer-border-color;
+    border-left: 0;
+    border-right: 0;
+    display: none;
+
+    .eb-composer-fieldrow-label {
+        width: 50px;
+    }
+}
+
+.eb-image-variation-rebuild-button,
+.eb-image-variation-delete-button,
+.eb-image-variation-cancel-button {
+    float: left;
+}
+
+.eb-image-variation-new-button,
+.eb-image-variation-create-button {
+    float: right;
+}
+
+.eb-image-variation-action {
+    .clearfix();
+    padding: @eb-composer-gutter / 3;
+    display: none;
+}
+
+.eb-image-source-variations {
+
+    border: 1px solid @eb-composer-border-light-color;
+    border-left: none;
+    border-right: none;
+    margin: 0 !important; // There's a margin-top: 5px inherited from .eb-composer-field + .eb-composer-field
+
+    .eb-mm-variation-group {
+    }
+}
+
+@variation-ratio-size: 46px;
+
+.eb-image-variation-size-field {
+    // To accomodate variation ratio field
+    padding-right: @variation-ratio-size;
+    position: relative;
+    width: 56%;
+}
+
+.eb-image-variation-width,
+.eb-image-variation-height {
+    text-align: right;
+}
+
+.eb-image-variation-ratio-lock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100% !important;
+    width: @variation-ratio-size !important;
+    border: @eb-composer-gutter / 4 solid transparent;
+    border-left: none;
+    border-right: none;
+
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid @eb-composer-border-color;
+        border-left: none;
+        width: 50%;
+        height: 100%;
+        border-radius: 0 @eb-composer-border-radius @eb-composer-border-radius 0;
+    }
+
+    &.checkbox {
+
+        label {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: 10px solid transparent;
+
+            &:before {
+                width: 100%;
+                height: 100%;
+                border-radius: @eb-composer-border-radius;
+                top: 0;
+                left: 0;
+            }
+
+            &:after {
+                font-family: 'FontAwesome';
+                content: @fa-var-unlock-alt;
+                position: absolute;
+                margin-left: -8px;
+                margin-top: -8px;
+                top: 50%;
+                left: 50%;
+            }
+        }
+
+        input[type="checkbox"] {
+            &:checked + label {
+                &:after{
+                    content: @fa-var-lock;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+/*------------------------------------*\
+	$Flyout - flyout.less
+\*------------------------------------*/
+//**
+// * Flyouts are pieces of content that fly out of a parent when said parent is
+// * hovered. They typically appear bottom-left of the parent.
+// * E.g.:
+//   <div class="es-flyout">
+//       Foo
+//       <div class="es-flyout-content">
+//           <h1>Lorem</h1>
+//           <p>Ipsum</p>
+//       </div>
+//   </div>
+// *
+// * Extend these objects in your theme stylesheet.
+// */
+
+.es-flyout {
+	position: relative;
+	.es-flyout-content {
+		position: absolute;
+		.opacity(0);
+	}
+	&:hover {
+
+		.es-flyout-content {
+			.opacity(1);
+		}
+	}
+
+	&.show-all {
+		.es-flyout-content {
+			.opacity(1)
+		}
+	}
+
+	.es-flyout-button {
+
+		> i {
+			// font-size: 8px;
+			margin-right: 4px;
+		}
+
+		&:hover {
+			text-decoration: underline;
+
+			// Icons
+			> i {
+				text-decoration: none;
+			}			
+		}
+	}
+}//es-flyout

@@ -1,0 +1,183 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	registration.less
+\*------------------------------------*/
+&.view-registration {
+
+	.control-label{
+		font-size: @baseFontSize;
+	}
+
+	&.layout-activation,
+	&.layout-completeOauth,
+	&.layout-completed
+	{
+		.es-complete-wrap
+		{
+			text-align: center;
+			// width: 360px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 45px;
+
+			.h4
+			{
+				font-size: 20px;
+				margin: 20px 0;
+			}
+
+			.es-avatar {
+				margin: 0 auto;
+			}
+			.es-login-form {
+				width: 360px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 35px;
+				border: 1px solid @esRegistrationBorder;
+				padding: 20px 15px;
+				border-radius: 3px;
+				text-align: left;
+
+				input[type="text"],
+				input[type="password"] {
+					height: 40px;
+				}
+				.btn-login {
+					// height: 40px;
+				}
+			}
+		}//loginbox
+
+	}
+
+	.profile-selected{
+		padding: 10px;
+		border: 1px solid @esRegistrationBorder;
+		color: @esRegistrationColor;
+		background: @esRegistrationBackground;
+		margin-bottom: 15px;
+	}
+
+	//profile selection
+	.list-profiles {
+		// width: 660px;
+		margin: 0 auto;
+		> li {
+			margin-bottom: 15px;
+		}
+		.list-profile {
+			display: block;
+			border: 1px solid @esListProfileBorder;
+			color: #595959;
+			border-radius: 3px;
+			.clearfix();
+
+			.media-object {
+				margin-right: 20px;
+			}
+
+			.modal-footer {
+				padding: 8px 15px 10px;
+				border-top: 1px solid @esRegistrationBorder;
+				border-left: none;
+				border-right: none;
+				border-bottom: none;
+			}
+		}
+
+		.profile-members{
+			margin-top: 30px;
+		}
+		.list-profile-description{
+			font-size: @baseFontSize;
+		}
+
+		.list-profile-title {
+			margin-top: 0;
+		}
+
+		.btn-list-profile {
+			clear: both;
+		}
+	}
+
+	.form-horizontal {
+		.controls {
+			margin-right: 40px;
+		}
+		.form-actions {
+			padding-left: 20px;
+			clear: both;
+		}
+	}
+
+
+}//view-registration
+
+.es-complete-action {
+	[class^="ies-"],
+	[class*=" ies-"] {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		&:before {
+			font-size: 40px;
+		}
+
+	}
+}
+
+.es-complete-link {
+	border: 1px solid @esRegistrationBorder;
+	color: @grayLight;
+	display: block;
+	padding: 20px;
+	border-radius: 3px;
+	.transition(all .15s linear);
+	&:hover {
+		color: @white;
+		background: @gray;
+		.transition(all .15s linear);
+	}
+}
+
+.es-terms-field {
+	height: 200px;
+	border: 1px solid @esRegistrationBorder !important; // enforce color #3136
+	color: @esRegistrationColor !important;
+	background: @esRegistrationBackground !important;
+	padding: 5px;
+	overflow: auto;
+	margin-bottom: 5px;
+}
+
+.es-field-header{
+	// font-size: @baseFontSize;
+}
+
+// Responsive
+&.w480 #registrationForm {
+	.control-label {
+		width: 100%;
+		text-align: left;
+		font-weight: bold;
+	}
+	.controls {
+		width: 100%;
+		margin: 0;
+		clear: both;
+	}
+
+	[data-registration-fields-item] {
+		padding-top: 10px;
+		+ [data-registration-fields-item] {
+			// border-top: 1px solid @esRegistrationBorder;
+		}
+	}
+}

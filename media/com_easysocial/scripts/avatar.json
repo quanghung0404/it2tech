@@ -1,0 +1,8 @@
+[
+    {
+        "script": [
+            "utilities/webcam"
+        ],
+        "adapter": "EasySocial"
+    }
+]

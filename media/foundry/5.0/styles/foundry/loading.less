@@ -1,0 +1,53 @@
+.fd-loading {
+	// The position of the loading indicator is always top left
+	background: url("@{global_uri}/images/loading.gif") left center no-repeat;
+
+	// Uses padding instead of width/height so that text within it appears right next to it.
+	min-height: 16px;
+	min-width: 16px;
+
+	// If .fd-loading is an empty inline-block element,
+	// it will vertically align to the baseline of the parent element,
+	// which will introduce additional height to the loading indicator
+	// depending on the parent element's line height.
+	// To prevent that, it should vertically align to the bottom of the element.
+	vertical-align: bottom;
+
+	// This configuration allows optional loading text to appear next to it
+	// with an exact 6px indentation from the loading indicator.
+	display: inline-block;
+	padding: 0 0 0 16px;
+	text-indent: 8px;
+}
+
+i.fd-loading {
+	display: inline;
+}
+
+div.fd-loading {
+	// Reset fd-loading styling
+	background: none;
+	min-width: none;
+	min-height: none;
+	display: block;
+	padding: 0;
+
+	// Horizontally center loading image & text
+	text-align: center;
+
+	// When showing loading image without text,
+	// it should be accurately centered.
+	text-indent: -8px;
+
+	// Exact replica of .fd-loading
+	span {
+		background: url("@{global_uri}/images/loading.gif") left center no-repeat;
+		min-height: 16px;
+		min-width: 16px;
+		margin-left: -16px;
+		vertical-align: bottom;
+		display: inline-block;
+		padding: 0 0 0 16px;
+		text-indent: 8px;
+	}
+}

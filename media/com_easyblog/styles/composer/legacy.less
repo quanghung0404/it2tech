@@ -1,0 +1,112 @@
+&.eb-composer-frame {
+	&.is-legacy {
+
+		// #2613 Make it scrollable to reach the bottom buttons.
+		.eb-composer-page {
+			> div {
+				height: auto;
+			}
+		}
+		.eb-composer-page-header {
+			padding-bottom: @eb-composer-gutter;
+		}
+
+		.eb-composer-page-body {
+			.clearfix();
+		}
+	}
+}
+
+// Joomla 2.5, creates height.
+#editor-xtd-button, .toggle-editor {
+	float: left;
+}
+
+#editor-xtd-buttons,
+#editor-xtd-buttons + div {
+	.btn {
+		color: #555 !important;
+		border-radius: 3px !important;
+		font-weight: bold !important;
+		border-color: #ccc !important;
+		background: #fff !important;
+
+		&:hover {
+			background: #f5f5f5 !important;
+			border-color: #bbb !important;
+		}
+
+		[class^="icon-"],
+		[class*=" icon-"] {
+			.opacity(.5) !important;
+			margin-right: 3px;
+		}
+	}
+}
+
+
+
+// JOOMLA 2.5 TINY MCE BUTTONS STYLING
+
+#editor-xtd-buttons {
+	display: inline-block;
+	float: left;
+	margin: 10px 0 0;
+	padding: 0;
+	border: 0;
+	background: none;
+
+	+ .toggle-editor {
+		float: right;
+		margin: 10px 0 0;
+		padding: 0;
+		border: 0;
+		background: none;
+
+		.button2-left > div > a {
+			margin: 5px 0 5px 5px;
+		}
+	}
+}
+
+.button2-left {
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	
+
+	> div {
+		background: none;
+		border: 0;
+		padding: 0;
+		margin: 0;
+
+		> a {
+			display: block;
+			line-height: 30px;
+			height: 30px;
+			background: #fff;
+			border: 1px solid #ccc;
+			border-bottom-color: #cacaca;
+			border-radius: 3px;
+			color: #555;
+			font-size: 12px;
+			font-weight: bold;
+			font-family: 'Helvetica Neue', Arial, sans-serif;
+			padding: 0 10px;
+			margin: 5px 5px 5px 0;
+
+			&:hover {
+				background: #eee;
+			}
+		}
+	}
+}
+
+.editor {
+	clear: both;
+}

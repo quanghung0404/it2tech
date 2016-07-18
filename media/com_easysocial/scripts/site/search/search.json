@@ -1,0 +1,15 @@
+[
+    {
+        "library": [
+            "history"
+        ],
+        "script": [
+            "site/search/sidebar",
+            "site/profile/friends"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

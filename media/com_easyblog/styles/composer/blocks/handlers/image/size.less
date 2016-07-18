@@ -1,0 +1,55 @@
+.eb-image-size-fieldset {
+
+    &.is-loading,
+    &.is-failed {
+
+        .eb-image-size-simple-field {
+            position: relative;
+            height: 160px;
+        }
+
+        .eb-composer-fieldgroup {
+            display: none;
+        }
+
+        // Simple field must show when loading image size
+        // or when failed to load image size
+        &.hide-simple-field {
+            .eb-image-size-simple-field {
+                display: block;
+            }
+        }
+    }
+
+    &.hide-simple-field {
+        .eb-image-size-simple-field {
+            display: none;
+        }
+
+        // If we're on simple preset, hide the entire fieldset altogether.
+        &.preset-simple {
+            display: none;
+        }
+    }
+
+    // Hints
+    .eb-hint {
+        display: none;
+    }
+
+    &.is-loading {
+        .hint-loading {
+            display: table;
+        }
+    }
+
+    &.is-failed {
+        .hint-failed {
+            display: table;
+        }
+    }
+}
+
+@import "composer/blocks/handlers/image/size/dimension";
+@import "composer/blocks/handlers/image/size/ratio";
+@import "composer/blocks/handlers/image/size/advanced";

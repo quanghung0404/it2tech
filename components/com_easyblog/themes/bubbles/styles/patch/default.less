@@ -1,0 +1,72 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+@patch-spacing : 15px;
+@eb-box-border-dark : darken(@eb-box-border, 10%);
+
+// POST LISTING
+.eb-posts {
+	.eb-post {
+		border: 1px solid @eb-box-border;
+		border-bottom-color: @eb-box-border-dark;
+		border-radius: @eb-box-radius;
+		padding: @patch-spacing;
+
+		+ .eb-post {
+			margin-top: 30px;
+		}
+	}
+}
+
+.eb-post-foot {
+	background: @eb-box-shade;
+	border-radius: 0 0 (@eb-box-radius - 1) (@eb-box-radius - 1);
+	border-top: 1px solid @eb-box-border;
+	padding: @patch-spacing;
+	margin: @patch-spacing -@patch-spacing -@patch-spacing;
+}
+
+.eb-post-side {
+	+ .eb-post-content {
+		// margin: 0 0 0 55px;
+
+		.eb-post-foot {
+			margin-left: -85px;
+		}
+	}
+}
+
+
+// PAGINATION
+
+.eb-pager {
+	border-bottom-color: @eb-box-border-dark;
+}
+
+
+// ENTRY
+
+.eb-entry-head {
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius @eb-box-radius 0 0;
+	padding: @patch-spacing;
+}
+
+.eb-entry-meta {
+	margin: 10px 0 0;
+}
+
+.eb-entry-body {
+	border: 1px solid @eb-box-border;
+	border-top: 0;
+	border-radius: 0 0 @eb-box-radius @eb-box-radius;
+	padding: @patch-spacing;
+}
+
+.eb-entry-nav {
+	margin: @eb-gutter 0 0;
+}

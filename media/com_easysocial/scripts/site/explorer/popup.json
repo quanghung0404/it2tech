@@ -1,0 +1,8 @@
+[
+    {
+        "view": [
+            "site/explorer/popup"
+        ],
+        "adapter": "EasySocial"
+    }
+]

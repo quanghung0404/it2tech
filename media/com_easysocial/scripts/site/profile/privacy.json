@@ -1,0 +1,15 @@
+[
+    {
+        "script": [
+            "site/profile/header"
+        ],
+        "library": [
+            "history",
+            "textboxlist"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

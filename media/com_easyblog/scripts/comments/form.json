@@ -1,0 +1,12 @@
+[
+    {
+        "script": [
+            "comments/captcha",
+            "comments/list"
+        ],
+        "library": [
+            "markitup"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

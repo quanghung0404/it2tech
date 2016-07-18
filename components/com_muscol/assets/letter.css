@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+
+/** 
+ * @version		1.0.1
+ * @package		muscol
+ * @copyright	2009 JoomlaMusicSolutions.com
+ * @license		GPLv2
+ */
+
+ul.inicials, ul.inicials li {
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+padding-left:0px;
+padding-right:0px;
+margin-left:0px;
+}
+
+ul.inicials{
+display:inline-block;
+margin:0px;
+font-weight:bold;
+width:100%;
+/*border-bottom:1px solid #CCCCCC;*/
+padding-bottom:10px;
+background:url(images/bg_lletres.gif) repeat-x;
+width:745px;
+font-family:"Trebuchet MS",Verdana,serif;
+font-size:14px;
+}
+ul.inicials li{
+float:left;
+width:27px;
+text-align:center;
+}
+ul.inicials li a{
+	text-decoration:none;
+}
+
+ul.inicials li a,ul.inicials li a:visited{
+border-right:1px solid #424141;
+width:26px;
+display:block;
+height:18px;
+padding-top:3px;
+color:#313131;
+}
+ul.inicials li.right a,ul.inicials li.right a:visited,ul.inicials li.right a:hover{
+border-right:none;
+width:41px;
+}
+ul.inicials li a:hover{
+color:#FFFFFF;
+width:26px;
+display:block;
+}
+ul.inicials li.selected, ul.inicials li:hover{
+background:url(images/bg_lletre_over.gif) top left no-repeat;
+}
+ul.inicials li.selected a{
+color:#FFFFFF;
+}
+ul.inicials li.left{
+float:left;
+width:23px;
+padding-left:3px;
+background:url(images/left_inicials.gif) top left no-repeat;
+}
+ul.inicials li.left a,ul.inicials li.left a:visited{
+border-right:1px solid #424141;
+width:23px;
+display:block;
+height:18px;
+padding-top:3px;
+}
+ul.inicials li.left_selected, ul.inicials li.left:hover{
+float:left;
+width:23px;
+padding-left:3px;
+background:url(images/bg_left_selected.gif) top left no-repeat;
+}
+ul.inicials li.right_selected, ul.inicials li.right:hover{
+float:right;
+width:41px;
+padding-right:3px;
+background:url(images/bg_right_selected.gif) top right no-repeat;
+}
+ul.inicials li.right{
+float:left;
+padding-right:3px;
+width:41px;
+background:url(images/right_inicials.gif) top right no-repeat;
+}
+ul.inicials li.left_selected a,ul.inicials li.left_selected a:visited{
+
+color:#FFFFFF;
+float:left;
+width:23px;
+display:block;
+}
+ul.inicials li.right_selected a,ul.inicials li.right_selected a:visited{
+color:#FFFFFF;
+float:left;
+width:41px;
+display:block;
+}
+
+.searchalbums{
+	background: url(images/cdr.png) #eeeeee 5px 8px no-repeat;
+	border:1px solid #ddd;
+	padding:5px;
+	padding-left:28px;
+	margin-bottom:10px;
+}
+
+.searchsongs{
+	background: url(images/music.png) #eeeeee 5px 8px no-repeat;
+	border:1px solid #ddd;
+	padding:5px;
+	padding-left:28px;
+	margin-bottom:10px;
+}
+.pagination{
+	margin-bottom:10px;
+	text-align:right;
+}
+
+/****** NEW LETTERBAR ******/
+
+.table_letterbar td{
+	text-align:center;
+	background:#aaa9a8 url(images/back_letters_new.png) repeat-x ;
+	font-family:"Trebuchet MS",Verdana,serif;
+	font-size:14px;
+	border-right:1px solid #424141;	
+	border-top:1px solid #424141;	
+	border-bottom:1px solid #424141;	
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+.table_letterbar td a{
+	display:block;
+}
+.table_letterbar td a, .table_letterbar td a:link, .table_letterbar td a:visited{
+	color:inherit;
+	text-decoration:none;
+}
+
+.table_letterbar td.active, .table_letterbar td:hover{
+	background:#727171 url(images/back_letters_active_new.png) repeat-x  ;
+	color:#FFF;
+	cursor:pointer;
+}
+
+.table_letterbar{
+	margin-bottom:10px;
+	-moz-border-radius:4px;
+}
+
+.table_letterbar td.first{
+	border-left:1px solid #424141;	
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-topleft:4px;
+}
+.table_letterbar td.last{
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topright:4px;
+}

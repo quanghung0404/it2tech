@@ -1,0 +1,12 @@
+[
+    {
+        "element"   : "profile",
+        "rule"      : "followed",
+        "core"      : true
+    },
+    {
+        "element"   : "profile",
+        "rule"      : "story",
+        "core"      : true
+    }
+]

@@ -1,0 +1,53 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$online-status - onlinestatus.less
+\*------------------------------------*/
+// Blocks aka modules in html apply rely on few classes
+
+//online state
+.es-online-status {
+	display: inline-block;
+	position: absolute;
+	z-index: 10;
+	top: -3px;
+	right: -3px;
+	font-size: 0;
+	.es-status-on,
+	.es-status-off {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 22px;
+		height: 22px;
+		display: inline-block;
+		border:3px solid @esOnlineStatusBorder;
+		border-radius: 50%;
+	}
+	.es-status-on {
+		background-color: @esOnlineStatusOnBackground;
+	}
+	.es-status-off {
+		background-color: @esOnlineStatusOffBackground;
+	}
+	&.es-online-status-small {
+		.es-status-on,
+		.es-status-off {
+			width: 14px;
+			height: 14px;
+			border: 2px solid @esOnlineStatusBorder;
+		}
+	}
+	&.es-online-status-mini {
+		.es-status-on,
+		.es-status-off {
+			width: 8px;
+			height: 8px;
+			border: 1px solid @esOnlineStatusBorder;
+		}
+	}
+}

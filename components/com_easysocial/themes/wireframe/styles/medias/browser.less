@@ -1,0 +1,167 @@
+.es-media-browser {
+
+	@sidebarWidth: 160px;
+
+	&.layout-dialog
+	{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		.es-widget-body {
+			padding-top: 0;
+		}
+
+		.es-content {
+			padding: 15px;
+		}
+	}
+
+	&.layout-photo {
+
+		> .es-sidebar {
+			display: none;
+		}
+
+		> .es-content {
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+	}
+
+	> i.loading-indicator {
+		display: none;
+	}
+
+	&.loading {
+
+		.es-sidebar {
+			display: none;
+		}
+
+		.es-content {
+			display: none;
+		}
+
+		> i.loading-indicator {
+			margin: 10px 0;
+			background-color: @esBrowserLoadingBackground;
+			display: block;
+		}
+	}
+	.es-content-hint {
+		margin-top: -7px;
+		position: relative;
+		text-align: center;
+		top: 50%;
+		color: @esBrowserHintColor;
+		font-size: 14px !important;
+	}
+
+
+	.btn-media { // updated from .btn to .btn-media to prevent override generic .btn styles
+		padding: 0;
+
+		> a {
+			display: block;
+			padding: 6px 10px;
+			color: @esBrowserBtnColor;
+			text-shadow: 0px 1px 0px @esBrowserBtnTextShadow;
+			outline: 0;
+		}
+	}
+
+	.btn-es-primary {
+
+		> a {
+			color: @esBrowserBtnPrimaryColor !important;
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		}
+	}
+	
+}
+
+// Responsive
+
+&.w480 {
+	.es-sidebar {
+		float: none;
+		width: 100%;
+		// width: 95%;
+		// position: absolute;
+		// left: -900px;
+
+		.es-widget-head .btn-media {
+			margin: 0 !important;
+		}
+
+		.es-widget-head {
+			border-bottom: none;
+			padding: 15px 15px 0;
+		}
+		.es-widget-body {
+			padding: 15px;
+		}
+	}
+
+	.es-media-browser {
+		//global media header
+		.es-media-header {
+			> .media {
+				height: auto;
+				.clearfix();
+				padding-bottom: 15px;
+				.media-body {
+					overflow: visible;
+				}
+				.es-media-item-menu {
+					position: relative;
+					clear: both;
+					.btn-group {
+                        margin-bottom: 10px;
+						+ .btn-group {
+							float: left;
+
+						}
+					}
+				}
+			}
+			.es-media-info {
+				clear: both;
+			}
+		}
+
+		//photo header
+		.es-photo-header {
+			> .media {
+				padding-bottom: 25px;
+				.es-media-item-menu {
+					top: 10px;
+				}
+			}
+		}
+
+		// Album's toggle sidebar should not show
+		&.layout-photo {
+			> .btn-sidebar-toggle {
+				display: none;
+			}
+			> .es-sidebar {
+				display: none;
+			}
+		}
+	}//es-media-browser
+
+	// Responsive
+	.es-album-interaction.row,
+	.es-photo-interaction.row {
+		> .col-md-8,
+		> .col-md-8 + .col-md-4 {
+			width: 100%;
+		}
+	}
+}
+

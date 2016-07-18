@@ -1,0 +1,270 @@
+[
+	{
+		"title"		: "General",
+		"fields"	:
+		[
+			{
+				"label"		: "Public Key",
+				"tooltip"	: "Set the public key that you obtained from http://recaptcha.net",
+				"name"		: "public",
+				"type"		: "text",
+				"default"	: ""
+			},
+			{
+				"label"		: "Private Key",
+				"tooltip"	: "Set the private key that you obtained from http://recaptcha.net",
+				"name"		: "private",
+				"type"		: "text",
+				"default" 	: ""
+			},
+			{
+				"label"		: "Recaptcha Theme",
+				"tooltip"	: "Set the recaptcha theme that you would like to use",
+				"name"		: "theme",
+				"type"		: "select",
+				"options"	:
+				[
+					{
+						"title"	: "White",
+						"value" : "white"
+					},
+					{
+						"title"	: "Dark",
+						"value" : "dark"
+					}
+				],
+				"default"	: "red"
+			},
+			{
+				"label"		: "APP_RECAPTCHA_SETTINGS_LANGUAGE",
+				"tooltip"	: "APP_RECAPTCHA_SETTINGS_LANGUAGE_DESC",
+				"name"		: "language",
+				"type"		: "select",
+				"options"	:
+				[
+					{
+						"title": "Arabic",
+						"value": "ar"
+					},	
+					{
+						"title": "Bengali",
+						"value": "bn"
+					},
+					{
+						"title": "Bulgarian",
+						"value": "bg"
+					},
+					{
+						"title": "Catalan",
+						"value": "ca"
+					},
+					{
+						"title": "Chinese (Simplified)",
+						"value": "zh-CN"
+					},
+					{
+						"title": "Chinese (Traditional)",
+						"value": "zh-TW"
+					},
+					{
+						"title": "Croatian",
+						"value": "hr"
+					},
+					{
+						"title": "Czech",
+						"value": "cs"
+					},
+					{
+						"title": "Danish",
+						"value": "da"
+					},
+					{
+						"title"	: "Dutch",
+						"value" : "nl"
+					},
+					{
+						"title"	: "English (UK)",
+						"value" : "en-GB"
+					},
+					{
+						"title"	: "English (US)",
+						"value" : "en"
+					},
+					{
+						"title"	: "Estonian",
+						"value" : "et"
+					},
+					{
+						"title"	: "Filipino",
+						"value" : "fil"
+					},
+					{
+						"title"	: "Finnish",
+						"value" : "fi"
+					},
+					{
+						"title"	: "French",
+						"value" : "fr"
+					},
+					{
+						"title"	: "French (Canadian)",
+						"value" : "fr-CA"
+					},
+					{
+						"title"	: "German",
+						"value" : "de"
+					},
+					{
+						"title"	: "German (Austria)",
+						"value" : "de-AT"
+					},
+					{
+						"title"	: "German (Switzerland)",
+						"value" : "de-CH"
+					},
+					{
+						"title"	: "Gujarati",
+						"value" : "gu"
+					},
+					{
+						"title"	: "Greek",
+						"value" : "el"
+					},
+					{
+						"title"	: "Hebrew",
+						"value" : "il"
+					},
+					{
+						"title"	: "Hindi",
+						"value" : "hi"
+					},
+					{
+						"title"	: "Hungarian",
+						"value" : "hu"
+					},
+					{
+						"title"	: "Indonesian",
+						"value" : "id"
+					},
+					{
+						"title"	: "Italian",
+						"value" : "it"
+					},
+					{
+						"title"	: "Japanese",
+						"value" : "jp"
+					},
+					{
+						"title"	: "Kannada",
+						"value" : "kn"
+					},
+					{
+						"title"	: "Korean",
+						"value" : "ko"
+					},
+					{
+						"title"	: "Latvian",
+						"value" : "lv"
+					},
+					{
+						"title"	: "Malay",
+						"value" : "ms"
+					},
+					{
+						"title"	: "Malayalam",
+						"value" : "ml"
+					},
+					{
+						"title"	: "Marathi",
+						"value" : "mr"
+					},
+					{
+						"title"	: "Norwegian",
+						"value" : "no"
+					},
+					{
+						"title"	: "Persian",
+						"value" : "fa"
+					},
+					{
+						"title"	: "Polish",
+						"value" : "pl"
+					},
+					{
+						"title"	: "Portuguese",
+						"value" : "pt"
+					},
+					{
+						"title"	: "Portuguese (Brazil)",
+						"value" : "pt-BR"
+					},
+					{
+						"title"	: "Portuguese (Portugal)",
+						"value" : "pt-PT"
+					},
+					{
+						"title"	: "Romanian",
+						"value" : "ro"
+					},
+					{
+						"title"	: "Russian",
+						"value" : "ru"
+					},
+					{
+						"title"	: "Serbian",
+						"value" : "sr"
+					},
+					{
+						"title"	: "Slovak",
+						"value" : "sk"
+					},
+					{
+						"title"	: "Slovenian",
+						"value" : "sl"
+					},
+					{
+						"title"	: "Spanish",
+						"value" : "es"
+					},
+					{
+						"title"	: "Spanish (Latin America)",
+						"value" : "es-419"
+					},
+					{
+						"title"	: "Swedish",
+						"value" : "sv"
+					},
+					{
+						"title"	: "Tamil",
+						"value" : "ta"
+					},
+					{
+						"title"	: "Telugu",
+						"value" : "te"
+					},
+					{
+						"title"	: "Thai",
+						"value" : "th"
+					},
+					{
+						"title"	: "Turkish",
+						"value" : "tr"
+					},
+					{
+						"title"	: "Ukrainian",
+						"value" : "uk"
+					},
+					{
+						"title"	: "Urdu",
+						"value" : "ur"
+					},
+					{
+						"title"	: "Vietnamese",
+						"value" : "vi"
+					}
+				],
+				"default"	: "en"
+			}
+		]
+	}
+]

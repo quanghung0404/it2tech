@@ -11,8 +11,12 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-// Adapter for Easyblog posts route helper
-$helperRouteClass= 'DiscussRouter';
+// Adapter for Easydiscuss posts route helper
+if(class_exists('EDR')) { // EasyDiscuss 4+
+	$helperRouteClass= 'EDR';
+} else {
+	$helperRouteClass= 'DiscussRouter'; // EasyDiscuss < 4
+}
 
 // Use the component routing handler if it exists
 $path = JPATH_SITE . '/components/com_easydiscuss/router.php';
@@ -70,7 +74,8 @@ switch ($targetViewName) {
 				$db	= DiscussHelper::getDBO();
 				$jDb = JFactory::getDbo();
 				$query	= 'SELECT ' . $jDb->quoteName('id') . ' FROM ' . $jDb->quoteName( '#__menu' ) . ' '
-						. 'WHERE (' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=categories&layout=listings&category_id='.$elm->jsitemap_category_id) . ') '
+						. 'WHERE (' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=categories&layout=listings&category_id='.$elm->jsitemap_category_id) 
+						. ' OR ' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=forums&category_id='.$elm->jsitemap_category_id) . ') '
 						. 'AND ' . $jDb->quoteName( 'published' ) . '=' . $db->Quote( '1' )
 						. $helperRouteClass::getLanguageQuery()
 						. ' LIMIT 1';
@@ -84,7 +89,8 @@ switch ($targetViewName) {
 				jmapRecurseEDCategories($elm->jsitemap_category_id, $parentCategories);
 				foreach ($parentCategories as $parentCat) {
 					$query	= 'SELECT ' . $jDb->quoteName('id') . ' FROM ' . $jDb->quoteName( '#__menu' ) . ' '
-							. 'WHERE (' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=categories&layout=listings&category_id='.$parentCat) . ') '
+							. 'WHERE (' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=categories&layout=listings&category_id='.$parentCat) 
+							. ' OR ' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=forums&category_id='.$parentCat) . ') '
 							. 'AND ' . $jDb->quoteName( 'published' ) . '=' . $db->Quote( '1' )
 							. $helperRouteClass::getLanguageQuery()
 							. ' LIMIT 1';
@@ -106,8 +112,22 @@ switch ($targetViewName) {
 		
 	case 'categories':
 		if(strpos($additionalQueryStringParams, 'layout=listings')) {
+			$db	= DiscussHelper::getDBO();
+			$jDb = JFactory::getDbo();
+			$isED4 = $helperRouteClass == 'EDR' ? true : false;
 			$classMethod = 'getItemIdByCategories';
 			$itemId = $helperRouteClass::$classMethod($elm->category_id);
+			
+			// Fallback to the forums view route if ED4+
+			if(!$itemId && $isED4) {
+				$query	= 'SELECT ' . $jDb->quoteName('id') . ' FROM ' . $jDb->quoteName( '#__menu' ) . ' '
+						. 'WHERE (' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=forums&category_id='.$elm->category_id) . ') '
+						. 'AND ' . $jDb->quoteName( 'published' ) . '=' . $db->Quote( '1' )
+						. $helperRouteClass::getLanguageQuery()
+						. ' LIMIT 1';
+				$db->setQuery( $query );
+				$itemId = $db->loadResult();
+			}
 			
 			// Category linked directly to a menu item
 			if($itemId) {
@@ -119,6 +139,17 @@ switch ($targetViewName) {
 				jmapRecurseEDCategories($elm->category_id, $parentCategories);
 				foreach ($parentCategories as $parentCat) {
 					$itemId = $helperRouteClass::$classMethod($parentCat);
+					// Fallback to the forums view route if ED4+
+					if(!$itemId && $isED4) {
+						$query	= 'SELECT ' . $jDb->quoteName('id') . ' FROM ' . $jDb->quoteName( '#__menu' ) . ' '
+								. 'WHERE (' . $jDb->quoteName( 'link' ) . '=' . $db->Quote( 'index.php?option=com_easydiscuss&view=forums&category_id='.$parentCat) . ') '
+								. 'AND ' . $jDb->quoteName( 'published' ) . '=' . $db->Quote( '1' )
+								. $helperRouteClass::getLanguageQuery()
+								. ' LIMIT 1';
+						$db->setQuery( $query );
+						$itemId = $db->loadResult();
+					}
+					
 					// Parent category linked directly to a menu item
 					if($itemId) {
 						$itemId = '&Itemid=' . $itemId;
@@ -126,7 +157,10 @@ switch ($targetViewName) {
 					}
 				}
 				
-				$seflink = JRoute::_ ('index.php?option=com_easydiscuss&view=categories&layout=listings&category_id=' . $elm->category_id . $itemId);
+				$categoryView = $isED4 ? 'forums' : 'categories';
+				$layout = $isED4 ? '' : '&layout=listings';
+				
+				$seflink = JRoute::_ ('index.php?option=com_easydiscuss&view=' . $categoryView . $layout . '&category_id=' . $elm->category_id . $itemId);
 			}
 			
 		}

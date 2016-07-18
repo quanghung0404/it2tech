@@ -1,0 +1,8 @@
+[
+    {
+        "script": [
+            "mediamanager"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

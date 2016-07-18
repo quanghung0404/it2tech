@@ -1,0 +1,228 @@
+@import "popbox/variables";
+
+.popbox() {
+
+	// Position
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10020;
+	width: auto;
+
+	// Appearance
+	background: @popboxBackground;
+	.getContrast(@popboxBackground); //contrast font color base on background color
+	border: 1px solid @popboxBorder;
+	border-radius: 6px;
+	.box-shadow(@popboxBoxShadow);
+
+
+	// Text formatting
+	white-space: normal;
+	text-align: left !important;
+	line-height: 18px;
+
+	&.loading {
+		background-image: url("@{global_uri}/images/loading.gif");
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	// Arrows
+	.arrow,
+	.arrow:after {
+		position: absolute;
+		display: inline-block;
+		border-color: transparent;
+		border-style: solid;
+	}
+
+	.arrow:after {
+		content: "";
+		z-index: -1;
+	}
+
+	.top-arrow() {
+		// margin-top: -10px;
+		.arrow {
+			bottom: -@popboxArrowWidth;
+			left: 50%;
+			margin-left: -@popboxArrowWidth;
+			border-width: @popboxArrowWidth @popboxArrowWidth 0;
+			border-top-color: @popboxArrowBackground;
+			&:after {
+				border-width: @popboxArrowOuterWidth @popboxArrowOuterWidth 0;
+				border-top-color: @popboxArrowOuterColor;
+				bottom: -1px;
+				left: -@popboxArrowOuterWidth;
+				margin: 0;
+			}
+		}
+	}
+
+	.right-arrow() {
+		// margin-left: 10px;
+		.arrow {
+			top: 50%;
+			left: -@popboxArrowWidth;
+			margin-top: -@popboxArrowWidth;
+			border-width: @popboxArrowWidth @popboxArrowWidth @popboxArrowWidth 0;
+			border-right-color: @popboxArrowBackground;
+			&:after {
+				border-width: @popboxArrowOuterWidth @popboxArrowOuterWidth @popboxArrowOuterWidth 0;
+				border-right-color: @popboxArrowOuterColor;
+				bottom: -@popboxArrowOuterWidth;
+				left: -1px;
+			}
+		}
+	}
+
+	.bottom-arrow() {
+		// margin-top: 10px;
+		.arrow {
+			top: -@popboxArrowWidth;
+			left: 50%;
+			margin-left: -@popboxArrowWidth;
+			border-width: 0 @popboxArrowWidth @popboxArrowWidth;
+			border-bottom-color: @popboxArrowBackground;
+			&:after {
+				border-width: 0 @popboxArrowOuterWidth @popboxArrowOuterWidth;
+				border-bottom-color: @popboxArrowOuterColor;
+				top: -1px;
+				left: -@popboxArrowOuterWidth;
+				margin: 0;
+			}
+		}
+	}
+
+	.left-arrow() {
+		// margin-left: -10px;
+		.arrow {
+			top: 50%;
+			right: -@popboxArrowWidth;
+			margin-top: -@popboxArrowWidth;
+			border-width: @popboxArrowWidth 0 @popboxArrowWidth @popboxArrowWidth;
+			border-left-color: @popboxArrowBackground;
+			&:after {
+				border-width: @popboxArrowOuterWidth 0 @popboxArrowOuterWidth @popboxArrowOuterWidth;
+				border-left-color: @popboxArrowOuterColor;
+				bottom: -@popboxArrowOuterWidth;
+				right: -1px;
+			}
+		}
+	}
+
+	&.top {
+		.top-arrow();
+	}
+
+	&.top-left {
+		.top-arrow();
+		.arrow {
+			left: 0px;
+			right: auto;
+			margin-left: @popboxArrowWidth;
+			margin-right: auto;
+		}
+	}
+
+	&.top-right {
+		.top-arrow();
+		.arrow {
+			left: auto;
+			right: 0px;
+			margin-left: auto;
+			margin-right: @popboxArrowWidth;
+		}
+	}
+
+	&.bottom {
+		.bottom-arrow();
+	}
+
+	&.bottom-left {
+		.bottom-arrow();
+		.arrow {
+			left: 0px;
+			right: auto;
+			margin-left: @popboxArrowWidth;
+			margin-right: auto;
+		}
+	}
+
+	&.bottom-right {
+		.bottom-arrow();
+		.arrow {
+			left: auto;
+			right: 0px;
+			margin-left: auto;
+			margin-right: @popboxArrowWidth;
+		}
+	}
+
+	&.left {
+		.left-arrow();
+	}
+
+	&.left-top {
+		.left-arrow();
+		.arrow {
+			top: 0px;
+			margin-top: @popboxArrowWidth;
+			margin-bottom: auto;
+		}
+	}
+
+	&.left-bottom {
+		.left-arrow();
+		.arrow {
+			top: auto;
+			bottom: 0px;
+			margin-top: auto;
+			margin-bottom: @popboxArrowWidth;
+		}
+	}
+
+	&.right {
+		.right-arrow();
+	}
+
+	&.right-top {
+		.right-arrow();
+		.arrow {
+			top: 0px;
+			margin-top: @popboxArrowWidth;
+			margin-bottom: auto;
+		}
+	}
+
+	&.right-bottom {
+		.right-arrow();
+		.arrow {
+			top: auto;
+			bottom: 0px;
+			margin-top: auto;
+			margin-bottom: @popboxArrowWidth;
+		}
+	}
+
+	.popbox-header {
+
+		border-bottom: 1px solid @popboxFooterBackground;
+		padding: 5px 15px;
+		font-size: 11px;
+		.clearfix();
+
+		.es-title {
+			font-weight: bold;
+			float: left;
+		}
+		.es-action {
+			float: right;
+		}
+	}
+
+	.popbox-body {
+		padding: 5px 10px;
+	}
+}

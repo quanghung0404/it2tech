@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+/** 
+ * @version		1.0.1
+ * @package		muscol
+ * @copyright	2009 JoomlaMusicSolutions.com
+ * @license		GPLv2
+ */
+
+/********************************/
+.comments_title, .post_comment_title{
+	border-bottom:1px solid #D3D3D3;
+	color:#466A02;
+	font-size:16px;
+	font-weight:normal;
+	margin:0 0 5px;
+	padding:0;
+}
+
+
+.rate_title{
+	padding-top:15px;
+	font-weight:bold;
+	font-size:18px;
+	background:url(images/star_48.png) no-repeat;
+	padding-left:55px;
+	height:35px;
+	margin-top:10px;
+}
+
+.comments{
+	
+}
+
+.comment{
+	padding:20px;
+	margin-top:5px;
+	margin-bottom:5px;
+	background-color:#EEEEEE;
+	-moz-border-radius:4px;
+}
+.comment_1{
+	background-color:#eeefff;
+}
+
+.comment_name{
+	font-weight:bold;
+	background:url(images/user.png) no-repeat;
+	padding-left:20px;
+}
+
+.date{
+	color:#999;
+	font-size:10px;
+	background:url(images/time.png) no-repeat;
+	padding-left:20px;
+}
+
+.comment_text{
+	padding-top:5px;
+	padding-left:20px;
+}
+
+.post_comment_title{
+	
+}
+
+.comment_form{
+	background:#ececec;
+	padding:10px;
+	-moz-border-radius:4px;
+}
+
+.textarea_comment{
+	width:280px;
+	height:100px;
+	margin-bottom:10px;
+}

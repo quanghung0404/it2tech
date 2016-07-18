@@ -1,0 +1,26 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+	// EasySocial Albums Modules
+	&.mod-es-recent-albums {
+
+		.mod-es-album-cover {
+			display: block;
+			padding: 70% 2px 0;
+			width: 100%;
+			background-size: cover !important;
+		}
+		// override list.less
+		.es-item-grid > li {
+			margin-bottom: 1%;
+			width: 60px;
+		}
+
+	}
+}

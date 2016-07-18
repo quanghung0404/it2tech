@@ -1,0 +1,11 @@
+[
+    {
+        "script": [
+            "site/friends/suggest"
+        ],
+        "library": [
+            "mentions"
+        ],
+        "adapter": "EasySocial"
+    }
+]

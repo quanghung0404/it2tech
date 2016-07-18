@@ -1,0 +1,766 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+/* = ELEMEENTS
+--------------------------------------------------------------- */
+
+ol,ul
+{
+	margin-left: 20px;
+}
+
+.list-unstyled,
+.fd-nav
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.eb-tree {
+	.tree-title {
+		> span,
+		> b {
+			display: table-cell;
+			vertical-align: middle;
+			line-height: 16px;
+		}
+
+		> span {
+			border-left: 1px solid #ccc;
+			width: 18px;
+			position: relative;
+			padding: 0 2px 0 0;
+
+			&:after {
+				content: '';
+				height: 1px;
+				background: #ddd;
+				width: 10px;
+				display: block;
+				position: absolute;
+				top: 50%;
+			}
+		}
+	}
+}
+
+
+.input-group .form-control {
+	min-width: 70px;
+}
+
+
+/* = SOCIAL BUTTONS
+--------------------------------------------------------------- */
+
+.btn-social {
+	color: #333;
+	text-shadow: none;
+	box-shadow: none !important;
+
+	background-color: #fff; 
+  	border-color: #ccc;
+
+  	&.is-sent {
+  		color: #fff;
+  	}
+}
+
+.btn-facebook {
+	&:hover {
+		color: #3b5998;
+	}
+	&.is-sent {
+		background: #3b5998;
+		border-color: #3b5998;
+	}
+}
+
+.btn-twitter {
+	&:hover {
+		color: #2aa4e9;
+	}
+	&.is-sent {
+		background: #2aa4e9;
+		border-color: #2aa4e9;
+	}
+}
+
+.btn-linkedin {
+	&:hover {
+		color: #007bb6;
+	}
+	&.is-sent {
+		background: #007bb6;
+		border-color: #007bb6;
+	}
+}
+
+
+
+/* = SMALL
+--------------------------------------------------------------- */
+
+.small
+{
+	font-size: 11px;
+}
+
+/* = FORM GROUP
+--------------------------------------------------------------- */
+
+.admin.com_easyblog .form-group
+{
+	overflow: visible;
+	margin-top: 15px;
+
+	&:before,
+	&:after
+	{
+		content: " ";
+		display: table;
+	}
+
+	&:after
+	{
+		clear: both;
+	}
+
+	>label
+	{
+		padding: 6px;
+		text-align: right;
+
+		.icon-es-help.pull-right
+		{
+			margin-left: 5px;
+		}
+	}
+}
+
+.form-inline
+{
+	.form-group
+	{
+		margin-top: 0;
+	}
+}
+
+
+
+/* = FORM CONTROL
+--------------------------------------------------------------- */
+
+.form-control
+{
+	margin-bottom: 0;
+
+	&.input-short,
+	&.input-mini
+	{
+		width: 50px;
+		display: inline-block;
+
+		+strong
+		{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 30px;
+			margin: 0 0 0 5px;
+		}
+	}
+
+	&.input-medium
+	{
+		width: 200px;
+		min-width: 50%;
+	}
+}
+
+
+
+
+
+/* = POPBOX
+--------------------------------------------------------------- */
+
+.popbox-content
+{
+	padding: 15px;
+}
+
+
+
+/* = JOOMLA 2.5: DASHBOARD HOME
+--------------------------------------------------------------- */
+
+.eb-stat .eb-stat-items .eb-stat-item > a span i
+{
+	line-height: 52px;
+}
+
+
+/* = BOOTSTRAP DATEPICKER
+--------------------------------------------------------------- */
+&.bootstrap-datetimepicker-widget
+{
+	width: 250px;
+	padding: 4px;
+}
+&.bootstrap-datetimepicker-widget table
+{
+	width: 100%;
+	margin: 0;
+}
+
+&.bootstrap-datetimepicker-widget td,
+&.bootstrap-datetimepicker-widget th
+{
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	position: relative;
+}
+
+&.bootstrap-datetimepicker-widget td.old,
+&.bootstrap-datetimepicker-widget td.new
+{
+	color: #999;
+}
+
+&.bootstrap-datetimepicker-widget td.active,
+&.bootstrap-datetimepicker-widget td.active:hover
+{
+	background-color: #428bca;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+&.bootstrap-datetimepicker-widget td.today:before
+{
+	content: '';
+	display: inline-block;
+	border-left: 7px solid transparent;
+	border-bottom: 7px solid #428bca;
+	border-top-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	bottom: 4px;
+	right: 4px;
+}
+
+&.bootstrap-datetimepicker-widget td.active.today:before
+{
+	border-bottom-color: #fff;
+}
+
+
+
+/* = TEAM BLOGS
+--------------------------------------------------------------- */
+
+.teamblog-member-list {
+	background: #fff;
+
+	> li {
+		padding: 12px 15px;
+		border: 1px solid #ddd;
+
+		* { line-height: 20px; display: inline-block; vertical-align: middle; }
+
+		+ li {
+			border-top: 0;
+		}
+
+		&:first-child {
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
+
+		&:last-child {
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+
+		&:nth-child(even) {
+			background: #fafafa;
+		}
+
+		&:hover {
+			background: #ffe;
+
+			.set_admin {
+				display: inline-block !important;
+			}
+		}
+	}
+
+	.set_admin,
+	.remove_admin {
+		font-size: 11px;
+		margin: 0 0 0 5px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.remove_item {
+		color: #c00;
+		margin-right: 5px;
+	}
+
+	.set_admin {
+		color: #51a351;
+		display: none !important;
+	}
+
+	.remove_admin {
+		color: #999;
+	}
+}
+
+
+
+/* = THEMES
+--------------------------------------------------------------- */
+
+.table-eb-themes {
+	tbody {
+		> tr:hover {
+			> td {
+				background: #ffd;
+			}
+		}
+
+		> tr > td {
+			font-size: 12px;
+
+			h4 {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+
+/* = CHECKBOXES
+--------------------------------------------------------------- */
+
+// .checkbox > input,
+// .radio > input {
+// 	display: inline-block;
+// 	margin-top: 2px;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* = DASHBOARD
+--------------------------------------------------------------- */
+
+.dash-sidebar {
+	background: #fff;
+	border: 1px solid @app-border-color;
+	border-radius: 3px;
+
+	> div {
+		padding: 15px;
+
+		+ div {
+			border-top: 1px solid lighten(@app-border-color, 10%);
+		}
+
+		> strong {
+			color: #999;
+			display: block;
+			text-transform: uppercase;
+			font-weight: normal;
+			margin: 0 0 20px;
+		}
+	}
+}
+
+.dash-user {
+	padding: 15px;
+
+	> div {
+		display: table-cell;
+		vertical-align: middle;
+
+		+ div {
+			padding-left: 15px;
+		}
+
+		b {
+			font-size: 14px;
+		}
+	}
+
+	.latest {
+		color: #5cae50;
+	}
+	.requires-updating {
+		color: #cf3510;
+	}
+
+	.versions-meta {
+		display: none;
+	}
+
+	.checking-updates {
+		.checking {
+			display: block;
+		}
+
+		.latest,
+		.requires-updating {
+			display: none;
+		}
+	}
+
+	.latest-updates {
+		.latest {
+			display: block;
+		}
+
+		.versions-meta {
+			display: block;
+		}
+		.checking,
+		.requires-updating {
+			display: none;
+		}
+	}
+
+	.require-updates {
+		.requires-updating {
+			display: block;
+		}
+
+		.versions-meta {
+			display: block;
+		}
+
+		.checking,
+		.latest {
+			display: none;
+		}
+	}
+}
+
+.dash-recent {
+}
+
+.dash-recent-title {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.35;
+	margin: 0 0 5px;
+
+	a {
+		color: #555;
+	}
+}
+
+.dash-recent-meta {
+	color: #999;
+	margin: 5px 0 0;
+}
+
+.dash-summary {
+
+	> div {
+		overflow: hidden;
+
+		+ div {
+			border-top: 1px solid lighten(@app-border-color, 10%);
+			padding-top: 15px;
+			margin-top: 15px;
+		}
+
+		* {
+			line-height: 16px;
+		}
+
+		i {
+			color: lighten( @app-border-color, 2%);
+			font-size: 14px;
+			float: left;
+			width: 18px;
+			text-align: center;
+		}
+
+		span {
+			display: block;
+			font-weight: bold;
+			overflow: hidden;
+			padding: 0 10px;
+		}
+
+		b {
+			color: #999;
+			float: right;
+			font-weight: normal;
+		}
+	}
+}
+
+
+
+.dash-activity {
+	background: #fff;
+	border: 1px solid @app-border-color;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.dash-activity-head {
+	background: lighten( @app-border-color, 17%);
+	border-bottom: 1px solid @app-border-color;
+	padding: 10px 15px;
+}
+
+.dash-activity-filter {
+	background: lighten( @app-border-color, 19%);
+	border-bottom: 1px solid lighten( @app-border-color, 10%);
+	padding: 10px 15px;
+	overflow: hidden;
+
+	+ div {
+		padding: 0;
+		margin: 0;
+	}
+
+	> li {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	a, b {
+		display: block;
+	}
+
+	a {
+		background: lighten( @app-border-color, 15%);
+		padding: 2px 9px;
+		border-radius: 15px;
+		margin-right: 3px;
+
+		&:hover {
+			background: lighten( @app-border-color, 10%);
+		}
+	}
+
+	b {
+		padding-right: 10px;
+	}
+
+	.active {
+		a {
+			background: lighten( @app-border-color, 0%);
+			color: #fff;
+		}
+	}
+}
+
+
+
+.dash-stream {
+	padding: 15px;
+	line-height: 16px;
+
+	+ .dash-stream {
+		border-top: 1px solid lighten( @app-border-color, 10%);
+	}
+
+	&.empty {
+		text-align: center;
+		padding: 100px 15px;
+	}
+}
+
+.dash-stream-graph {
+	background: lighten( @app-border-color, 19%);
+
+	.legend {
+		table {
+			width: auto;
+			max-width: none
+		}
+
+		.legendColorBox {
+			padding-right: 10px;
+		}
+	}
+}
+
+.dash-stream-avatar {
+	margin-right: 15px;
+}
+
+.dash-stream-icon {
+	color: lighten( @app-border-color, 3%);
+	width: 20px;
+	text-align: center;
+	line-height: 16px;
+	height: 16px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.dash-stream-content {
+	overflow: hidden;
+}
+
+
+.dash-stream-clip {
+	background: lighten( @app-border-color, 17%);
+	border-left: 3px solid lighten( @app-border-color, 5%);
+	padding: 10px 10px 10px 40px;
+	margin: 7px 0;
+	position: relative;
+}
+
+.dash-stream-time {
+	color: #999;
+}
+
+
+
+.dash-stream-post-title {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.dash-stream-post-content {
+	margin: 5px 0;
+}
+
+.dash-stream-actions {
+	margin-top: 5px;
+}
+
+.dash-stats-grid {
+	margin: 0;
+
+	> div {
+		+ div {
+			border-left: 1px solid @app-border-color;
+		}
+
+		&:nth-child(3n + 1) {
+			border-left: 0;
+		}
+
+		&:nth-child(1n + 4) {
+			border-top: 1px solid @app-border-color;
+		}
+	}
+}
+
+.dash-stat-stamp {
+	color: inherit;
+	display: block;
+	margin: 10px 0;
+	position: relative;
+
+	* {
+		display: block;
+	}
+
+	i {
+		font-size: 48px;
+		padding: 5px 0;
+	}
+
+	em {
+		background: @brand-danger;
+		border-radius: 10px;
+		color: #fff;
+		line-height: 1;
+		font-style: normal;
+		padding: 5px 10px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	b {
+		font-weight: normal;
+		color: #999;
+	}
+}
+
+.eb-progress-wrap {
+	margin-right: 50px;
+
+	.progress {
+		position: relative;
+		overflow: visible;
+
+		.bar {
+			border-radius: 3px;
+		}
+	}
+
+	.progress-result {
+		position: absolute;
+		right: -50px;
+		width: 50px;
+		text-align: right;
+		font-weight: bold;
+	}
+}
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EASYSOCIAL_LOGIN_LAYOUT_LOGOUT">
+		<message>
+			<![CDATA[COM_EASYSOCIAL_LOGIN_LAYOUT_LOGOUT_DESC]]>
+		</message>
+		<view>login</view>
+	</layout>
+
+</metadata>

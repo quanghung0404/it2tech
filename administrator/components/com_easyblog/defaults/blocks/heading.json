@@ -1,0 +1,9 @@
+{
+	"group": "layout",
+	"element": "heading",
+	"title": "Heading Block",
+	"description": "Heading block allows the author to insert heading tags in the blog post.",
+	"keywords": "heading, header, title",
+	"published": 1,
+    "ordering": 1
+}

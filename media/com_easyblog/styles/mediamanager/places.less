@@ -1,0 +1,73 @@
+.eb-mm-places {
+	.fill-area();
+	position: relative;
+}
+
+.eb-mm-place-list {
+    background: #fff;
+    border: 1px solid @eb-composer-border-color;
+    border-radius: @eb-composer-border-radius;
+}
+
+.eb-mm-place {
+	padding: 15px;
+	overflow: hidden;
+	border-bottom: 1px solid #e5e5e5;
+	cursor: pointer;
+
+	> i,
+	> label,
+	> b {
+		display: block;
+		overflow: hidden;
+		line-height: 20px;
+	}
+
+	i {
+		color: #888;
+		font-size: 16px;
+		width: 28px;
+		text-align: center;
+		float: left;
+	}
+
+	label {
+		padding: 0 10px;
+		margin: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-size: 12px;
+	}
+
+	b {
+		font-size: 12px;
+		float: right;
+		width: 10px;
+		text-align: right;
+		color: #bbb;
+	}
+
+	&:hover {
+		b {
+			color: #888;
+		}
+	}
+}
+
+.eb-mm {
+	&.show-local {
+		// hide all
+		.eb-mm-place {
+			display: none;
+		}
+
+		//show only those relevant ones
+		.eb-mm-place[data-id=post],
+		.eb-mm-place[data-id=posts],
+		.eb-mm-place[data-id^=user],
+		.eb-mm-place[data-id=shared] {
+			display:block;
+		}
+	}
+}

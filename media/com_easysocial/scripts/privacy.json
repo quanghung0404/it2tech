@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "dialog"
+        ],
+        "view": [
+            "admin/profiles/form.privacy.custom.item"
+        ],
+        "adapter": "EasySocial"
+    }
+]

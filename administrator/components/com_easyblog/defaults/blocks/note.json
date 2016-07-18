@@ -1,0 +1,9 @@
+{
+	"group": "elements",
+	"element": "note",
+	"title": "Note Block",
+	"description": "Allows you to insert an emphasis into the editor.",
+	"keywords": "note, emphasis, alert, info, panel, message, highlight, important",
+	"published": 1,
+    "ordering": 7
+}

@@ -1,0 +1,96 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+&.eb-dialog.modal {
+    background: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    .box-shadow(0 1px 6px rgba(0,0,0,0.23));
+
+    * { font-size: 12px; }
+
+    .dialog-head,
+    // .dialog-body,
+    .dialog-footer {
+        padding: 10px;
+    }
+
+    .dialog-loader {
+        left: 10px !important;
+        position: absolute !important;
+        top: 10px !important;
+        text-align: left !important;
+        width: 100% !important;
+    }
+
+    .dialog-head {
+        background: #fafafa;
+        border-bottom: 1px solid #ddd;
+        display: table;
+        width: 100%;
+    }
+
+    .dialog-title {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .dialog-body {
+        iframe {
+            height: 99% !important;
+        }
+    }
+
+    .dialog-close,
+    .dialog-close .fa {
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1;
+        color: #bbb;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .dialog-footer {
+        border-top: 1px solid #ddd;
+        text-align: right;
+    }
+
+    .checkbox, .radio {
+        margin: 0;
+    }
+
+    .control-label {
+        width: 125px;
+        text-align: right;
+        padding: 0 5px;
+    }
+
+    .form-control {
+        margin: 0;
+    }
+
+    .form-group {
+        display: table;
+        width: 100%;
+        margin: 0;
+
+        + .form-group {
+            margin-top: 10px;
+        }
+
+        label {
+            &:after {
+                color: #999;
+                content: ':';
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+}

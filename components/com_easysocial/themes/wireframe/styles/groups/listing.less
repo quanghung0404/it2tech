@@ -1,0 +1,49 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.list-media-group {
+
+    li {
+
+        &.is-owner {
+            .es-profile-header-footer {
+                display: none;
+            }
+        }
+
+        &.is-loading {
+            a.btn-loading {
+                display: block;
+            }
+        }
+
+        &.is-member {
+            a.btn-leave-group {
+                display: block;
+            }
+        }
+
+        &.is-invited {
+            a.btn-respond-invitation {
+                display: block;
+            }
+        }
+
+        &.is-guest {
+            a.btn-join-group {
+                display: block;
+            }
+        }
+    }
+
+    // Hide all buttons by default
+    .es-profile-header-footer {
+        a {
+            display: none;
+        }
+    }
+}

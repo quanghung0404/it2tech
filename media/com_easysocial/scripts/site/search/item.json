@@ -1,0 +1,11 @@
+[
+    {
+        "view": [
+            "site/loading/small"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_FRIENDS_REQUEST_SENT_NOTICE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

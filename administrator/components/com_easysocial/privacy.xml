@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<easysocial>
+	<privacy>
+		<type>profiles</type>
+		<rule>search</rule>
+		<options>
+			<option>public</option>
+			<option selected="1">member</option>
+			<option>friends_of_friend</option>
+			<option>friend</option>
+		</options>
+	</privacy>
+	<privacy>
+		<type>profiles</type>
+		<rule>view</rule>
+		<options>
+			<option>public</option>
+			<option selected="1">member</option>
+			<option>friend</option>
+			<option>custom</option>
+		</options>
+	</privacy>
+	<privacy>
+		<type>profiles</type>
+		<rule>send_message</rule>
+		<options>
+			<option>public</option>
+			<option selected="1">member</option>
+			<option>friend</option>
+		</options>
+	</privacy>
+	<privacy>
+		<type>profiles</type>
+		<rule>post_status</rule>
+		<options>
+			<option>public</option>
+			<option selected="1">member</option>
+			<option>friend</option>
+			<option>only_me</option>
+		</options>
+	</privacy>
+	<privacy>
+		<type>friends</type>
+		<rule>friend_request</rule>
+		<options>
+			<option>public</option>
+			<option selected="1">member</option>
+			<option>friends_of_friend</option>
+		</options>
+	</privacy>
+	<privacy>
+		<type>friends</type>
+		<rule>view_friends</rule>
+		<options>
+			<option>public</option>
+			<option selected="1">member</option>
+			<option>friends_of_friend</option>
+			<option>friend</option>
+			<option>only_me</option>
+			<option>custom</option>
+		</options>
+	</privacy>
+	<privacy>
+		<type>photos</type>
+		<rule>view</rule>
+		<options>
+			<option>public</option>
+			<option selected="1">member</option>
+			<option>friend</option>
+			<option>only_me</option>
+			<option>custom</option>
+		</options>
+	</privacy>
+</easysocial>

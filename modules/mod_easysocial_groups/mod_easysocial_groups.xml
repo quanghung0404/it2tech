@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="site" method="upgrade">
+	<name>EasySocial Groups</name>
+	<author>StackIdeas</author>
+	<creationDate>10th May 2016</creationDate>
+	<copyright>Copyright (C) 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.4.9</version>
+	<description><![CDATA[MOD_EASYSOCIAL_GROUPS_DESC]]></description>
+	<files>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_easysocial_groups">mod_easysocial_groups.php</filename>
+		<filename>mod_easysocial_groups.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easysocial_groups.ini</language>
+		<language tag="en-GB">en-GB.mod_easysocial_groups.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_easysocial/models/fields">
+			<fieldset name="basic">
+				<field name="filter" type="list" class="input-xxlarge" default="0" label="MOD_EASYSOCIAL_GROUPS_FILTER_TYPE" description="MOD_EASYSOCIAL_GROUPS_FILTER_TYPE_DESC">
+					<option value="0">MOD_EASYSOCIAL_GROUPS_NO_FILTERING</option>
+					<option value="1">MOD_EASYSOCIAL_GROUPS_FILTER_CATEGORY</option>
+					<option value="2">MOD_EASYSOCIAL_GROUPS_FILTER_FEATURED</option>
+					<option value="3">MOD_EASYSOCIAL_GROUPS_FILTER_LOGGED_IN_USER</option>
+				</field>
+				<field name="category" type="easysocial_groupcategory" default="" label="MOD_EASYSOCIAL_GROUPS_CATEGORY_FILTER" description="MOD_EASYSOCIAL_GROUPS_CATEGORY_FILTER_DESC" />
+				<field name="ordering" type="list" default="latest" label="MOD_EASYSOCIAL_GROUPS_ORDERING" description="MOD_EASYSOCIAL_GROUPS_ORDERING_DESC">
+					<option value="latest">MOD_EASYSOCIAL_GROUPS_ORDERING_LATEST</option>
+					<option value="popular">MOD_EASYSOCIAL_GROUPS_ORDERING_POPULAR</option>
+					<option value="members">MOD_EASYSOCIAL_GROUPS_ORDERING_MOST_MEMBERS</option>
+					<option value="random">MOD_EASYSOCIAL_GROUPS_ORDERING_RANDOM</option>
+				</field>
+				<field name="display_member_counter" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_GROUPS_DISPLAY_MEMBER_COUNTER" description="MOD_EASYSOCIAL_GROUPS_DISPLAY_MEMBER_COUNTER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_category" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_GROUPS_DISPLAY_CATEGORY" description="MOD_EASYSOCIAL_GROUPS_DISPLAY_CATEGORY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_actions" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_GROUPS_DISPLAY_ACTIONS" description="MOD_EASYSOCIAL_GROUPS_DISPLAY_ACTIONS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_limit" type="text" default="5" class="input-mini text-center" label="MOD_EASYSOCIAL_GROUPS_DISPLAY_LIMIT" description="MOD_EASYSOCIAL_GROUPS_DISPLAY_LIMIT_DESC" />
+				<field name="group_inclusion" type="text" default="" label="MOD_EASYSOCIAL_GROUPS_INCLUSION" description="MOD_EASYSOCIAL_GROUPS_INCLUSION_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

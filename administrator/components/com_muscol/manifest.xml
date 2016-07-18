@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>MusCol</name>
+	<license>GPLv2. Private software</license>
+	<author>JoomlaThat!</author>
+	<authorEmail>support@joomlathat.com</authorEmail>
+	<authorUrl>http://www.joomlathat.com</authorUrl>
+	<creationDate>April 2015</creationDate>
+	<copyright>2009 - 2015, JoomlaThat.com</copyright>
+	<version>2.4.8</version>
+	<description>
+		Music Management System for Joomla!
+	</description>
+	<scriptfile>admin/install/install.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install/install.mysql.utf8.sql</file>
+			<file driver="mysql">install/install.mysql.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+	</uninstall>
+
+    <files folder="site">
+		<folder>helpers</folder>
+		<folder>assets</folder>
+		<folder>models</folder>
+		<folder>libraries</folder>
+		<folder>views</folder>
+		<folder>elements</folder>
+		<filename>muscol.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<filename>index.html</filename>
+		<filename>cd.png</filename>
+		<filename>komento_plugin.php</filename>
+    </files>
+	
+	<languages folder="site">
+		<language tag="en-GB">en-GB.com_muscol.ini</language>
+   	</languages>
+
+	<administration>
+	
+		<!-- Administration Menu Section -->
+		<menu img="components/com_muscol/assets/images/vinyl.png" link="option=com_muscol">MUSCOL</menu>
+		<submenu>
+		  <menu img="components/com_muscol/assets/images/vinyl.png"  link="option=com_muscol">Albums</menu>
+		  <menu img="components/com_muscol/assets/images/user_gray.png"  link="option=com_muscol&amp;controller=artists">Artists</menu>
+		  <menu img="components/com_muscol/assets/images/music.png"  link="option=com_muscol&amp;controller=songs">Songs</menu>
+		  <menu img="components/com_muscol/assets/images/cdr.png"  link="option=com_muscol&amp;controller=formats">Formats</menu>
+		  <menu img="components/com_muscol/assets/images/sitemap.png"  link="option=com_muscol&amp;controller=genres">Genres</menu>
+		  <menu img="components/com_muscol/assets/images/music.png"  link="option=com_muscol&amp;controller=types">Types</menu>
+		  <menu img="components/com_muscol/assets/images/tag_blue.png"  link="option=com_muscol&amp;controller=tags">Tags</menu>
+		  <menu img="components/com_muscol/assets/images/comment.png"  link="option=com_muscol&amp;controller=comments">Comments</menu>
+		  <menu img="components/com_muscol/assets/images/star.png"  link="option=com_muscol&amp;controller=ratings">Ratings</menu>
+		</submenu>
+
+	    <files folder="admin">
+		    <folder>assets</folder>
+		    <folder>helpers</folder>
+		    <folder>controllers</folder>
+		    <folder>install</folder>
+		    <folder>models</folder>
+		    <folder>tables</folder>
+		    <folder>views</folder>
+									
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>muscol.php</filename>
+	    </files>
+		
+		<languages folder="admin">
+			<language tag="en-GB">en-GB.com_muscol.sys.ini</language>
+	   	</languages>
+
+ 	</administration>
+
+</extension>

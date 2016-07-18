@@ -136,3 +136,53 @@ option.haspriority {
 	font-weight: bold;
 	color: #333;
 }
+
+table.admintable.rawlinks_table {
+	width: 100%;
+}
+
+table.admintable.rawlinks_table ul.errorlist {
+	padding: 0;
+}
+
+table.admintable.rawlinks_table td.left_title {
+	width: 15% !important;
+}
+
+table.admintable.rawlinks_table td.right_details {
+	width: 85% !important;
+}
+
+table.admintable input.sitemap_rawtitle {
+	width: 25% !important;
+}
+
+table.admintable input.sitemap_rawlink {
+	width: 55% !important;
+}
+
+div#rawlink_controls_grouper {
+	float: right;
+}
+
+table.admintable.rawlinks_table {
+	clear: both;
+}
+
+table.admintable.rawlinks_table td input[type=checkbox] {
+	min-width: 0 !important;
+	margin: 0 10px 0 0;
+}
+
+table.admintable.rawlinks_table td label.title_label {
+	margin: 0 10px 0 0;
+}
+
+table.admintable.rawlinks_table td ul.errorlist {
+	float: none;
+	display: inline-block;
+}
+
+#language_flag_image {
+    margin-top: 8px;
+}

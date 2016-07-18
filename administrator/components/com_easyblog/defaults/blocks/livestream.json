@@ -1,0 +1,9 @@
+{
+	"group": "embeddables",
+	"element": "livestream",
+	"title": "Live Stream",
+	"description": "Allows you to embed videos from Live Stream",
+	"keywords": "video, videos, live videos, live video, media, streaming",
+	"published": 1,
+    "ordering": 39
+}

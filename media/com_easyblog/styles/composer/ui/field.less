@@ -1,0 +1,228 @@
+.eb-composer-field {
+    + .eb-composer-field {
+        margin-top: 5px;
+    }
+}
+.eb-composer-field-label {
+    color: @eb-composer-field-label-color;
+    font-weight: normal;
+    font-size: @eb-composer-field-label-font-size;
+    text-align: left;
+    line-height: @eb-composer-field-line-height;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    .user-select(none);
+
+    .fa-question-circle {
+        font-size: 12px;
+        position: absolute;
+        right: 2px;
+        top: 50%;
+        line-height: 20px;
+        margin-top: -9px;
+    }
+}
+
+.eb-composer-field-label-alt {
+    font-weight: bold;
+    font-size: 11px;
+    color: #555;
+    padding-right: 8px;
+}
+
+.eb-composer-field-content {
+    line-height: @eb-composer-field-line-height;
+    padding-left: @eb-composer-gutter / 4;
+}
+
+.eb-composer-field {
+
+    &.style-bordered {
+        background: #fff;
+        border: 1px solid @eb-composer-border-color;
+        border-radius: @eb-composer-border-radius;
+        padding: @eb-composer-gutter / 2;
+        .box-shadow(0 2px 0 0 @eb-composer-shadow-light-color);
+    }
+
+    &.style-bordered-outline {
+        background: #fff;
+        border: 1px solid @eb-composer-border-color;
+        border-radius: @eb-composer-border-radius;
+        .box-shadow(0 2px 0 0 @eb-composer-shadow-light-color);
+    }
+}
+
+.eb-composer-fieldgroup {
+
+    border: @eb-composer-gutter / 2 solid transparent;
+    border-left: none;
+    border-right: none;
+    position: relative;
+
+    + .eb-composer-fieldgroup {
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: @eb-composer-gutter / -2;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            z-index: 1;
+            border-top: 1px solid @eb-composer-border-color;
+        }
+    }
+
+    &:first-child {
+        border-top: none;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.eb-composer-fieldgroup-label {
+    margin-bottom: @eb-composer-gutter / 2;
+    position: relative;
+
+    strong {
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 11px;
+        font-weight: bold;
+        color: @eb-composer-text-color;
+    }
+}
+
+.eb-composer-fieldgroup-content {
+    position: relative;
+}
+
+.eb-composer-fieldgroup-dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    color: @eb-composer-text-light-color;
+    cursor: pointer;
+
+    .dropdown-toggle_ {
+
+        &:hover {
+            color: @eb-composer-text-color;
+        }
+
+        .caret {
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    .dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 0;
+        padding: 0;
+    }
+}
+
+.eb-composer-fieldrow-group {
+
+    + .eb-composer-fieldrow-group {
+        margin-top: @eb-composer-gutter / 6;
+    }
+}
+
+.eb-composer-fieldrow {
+
+    + .eb-composer-fieldrow {
+        margin-top: @eb-composer-gutter / 6;
+    }
+}
+
+.eb-composer-fieldrow-label {
+    font-weight: bold;
+    font-size: 11px;
+    color: @eb-composer-text-color;
+    padding-right: 8px;
+}
+
+// .eb-composer-fieldrow-select {
+//     &.form-control {
+//         width: 100%;
+//         height: 22px;
+//     }
+// }
+
+.eb-composer-fieldrow-content {
+    width: 100%;
+}
+
+.composer-autopost {
+    margin-top: 5px;
+
+    input:checked + label {
+        .fa-facebook-square { color: #3b5998; }
+        .fa-twitter-square { color: #55acee; }
+        .fa-linkedin-square { color: #069; }
+    }
+}
+
+
+// LANGUAGE
+.eb-composer-associate-lang {
+    position: relative;
+
+    + .eb-composer-associate-lang {
+        margin-top: 5px;
+    }
+
+    &.active {
+        .hide {
+            display: block !important;
+        }
+    }
+
+
+    .input-group {
+        > .form-control {
+            padding-left: 35px;
+        }
+
+        > .input-group-btn {
+            > .btn {
+                border-radius: 0;
+            }
+
+            &:last-child {
+                > .btn {
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
+            }
+        }
+    }
+
+    .input-flag {
+        height: 12px;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin-top: -6px;
+        z-index: 2;
+
+        img {
+            display: inline-block;
+            vertical-align: top;
+            width: 18px;
+            height: 12px;
+        }
+    }
+}

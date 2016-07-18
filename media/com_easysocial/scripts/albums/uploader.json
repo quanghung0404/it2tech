@@ -1,0 +1,14 @@
+[
+    {
+        "library": [
+            "plupload"
+        ],
+        "script": [
+            "albums/uploader.item"
+        ],
+        "view": [
+            "site/albums/upload.item"
+        ],
+        "adapter": "EasySocial"
+    }
+]

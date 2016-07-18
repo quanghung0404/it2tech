@@ -1,0 +1,31 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+.eb-header {
+	background: url(../images/blog-header.png) 0 0 #0C54A1 no-repeat;
+	padding: 15px 15px 0;
+	border-radius: @eb-box-radius;
+	color: #fff;
+	margin: 0 0 @eb-gutter;
+	box-shadow: 0 1px 0 rgba(0,0,0,.05);
+}
+
+.eb-navbar {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-radius: @eb-box-radius @eb-box-radius 0 0;
+	margin: 0 0 0; 
+
+	.navbar-left li:first-child > a {
+		border-radius: @eb-box-radius 0 0 0;
+	}
+
+	.navbar-right li:last-child > a {
+		border-radius: 0 @eb-box-radius 0 0;
+	}
+}

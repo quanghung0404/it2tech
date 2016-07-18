@@ -1,0 +1,8 @@
+{
+    "title" : "COM_EASYSOCIAL_MENU_GROUP_STREAM",
+    "link"  : "index.php?option=com_easysocial&view=stream",
+    "class" : "fa-database",
+    "access": "easysocial.access.stream",
+    "view"  : "stream",
+    "active": "layout"
+}

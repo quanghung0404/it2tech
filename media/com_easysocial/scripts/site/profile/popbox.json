@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "popbox"
+        ],
+        "script": [
+            "site/conversations/composer"
+        ],
+        "adapter": "EasySocial"
+    }
+]

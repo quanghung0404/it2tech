@@ -1,0 +1,48 @@
+/*------------------------------------*\
+	$Badges - badges.less
+\*------------------------------------*/
+.es-user-badges {
+	margin:0;
+	list-style: none;
+	> li {
+		display: inline-block;
+		margin: 0 0 15px;
+		padding: 10px;
+		width: 120px;
+		height: 130px;
+		border: 1px solid #F5F5F5;
+		vertical-align: top;
+		text-align: center;
+		position: relative;
+		.btn-delete {
+			color: #fff;
+			background: #CC4456;
+			border: 1px solid #BE1F23;
+			border-radius: 3px 3px 3px 3px;
+			display: block;
+			font-size: 14px;
+			width: 16px;
+			height: 16px;
+			line-height: 9px;
+			padding: 1px 2px;
+			position: absolute;
+
+			text-align: center;
+			top: 4px;
+			right: 4px;
+
+		}
+		.small {
+			line-height: 13px;
+			margin-top: 5px;
+		}
+
+	}
+}
+.btn-assign-badges {
+	[class^="ies-"] {
+		&:before {
+			font-size: 7px;
+		}
+	}
+}

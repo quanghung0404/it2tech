@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+    <name>com_widgetkit</name>
+    <version>2.7.4</version>
+    <description>A widget toolkit by YOOtheme.</description>
+    <creationDate>June 2016</creationDate>
+    <copyright>Copyright (C) YOOtheme GmbH</copyright>
+    <license>GNU General Public License v2 or later</license>
+    <author>YOOtheme</author>
+    <authorEmail>info@yootheme.com</authorEmail>
+    <authorUrl>http://yootheme.com</authorUrl>
+    <updateUrl>http://www.yootheme.com/updates</updateUrl>
+    <files folder="site">
+        <filename>widgetkit.php</filename>
+    </files>
+    <media destination="widgetkit" folder="admin/vendor/assets/uikit">
+        <folder>fonts</folder>
+    </media>
+    <administration>
+        <menu img="class:widgetkit">COM_WIDGETKIT</menu>
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>bower.json</filename>
+            <filename>CHANGELOG.md</filename>
+            <filename>composer.json</filename>
+            <filename>config.php</filename>
+            <filename>config.xml</filename>
+            <filename>README.md</filename>
+            <filename>widgetkit-app.php</filename>
+            <filename>widgetkit.php</filename>
+            <folder>assets</folder>
+            <folder>languages</folder>
+            <folder>plugins</folder>
+            <folder>updates</folder>
+            <folder>src</folder>
+            <folder>vendor</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/en-GB.com_widgetkit.sys.ini</language>
+        </languages>
+    </administration>
+    <scriptfile>script.php</scriptfile>
+</extension>

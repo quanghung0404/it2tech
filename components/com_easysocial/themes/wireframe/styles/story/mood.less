@@ -1,0 +1,151 @@
+.es-story-mood {
+
+    &.is-empty {
+        .es-story-mood-remove-button {
+            display: none;
+        }
+    }
+
+    &.using-preset {
+        .es-story-mood-presets {
+            max-height: 0px !important;
+        }
+    }
+
+    &.hide-preset {
+        .es-story-mood-presets {
+            max-height: 0px !important;
+        }
+    }
+}
+
+.es-story-mood-presets {
+    .transition(all 0.3s ease);
+
+    max-height: 140px;
+    position: relative;
+    overflow: hidden;
+
+    > ul {
+        padding: 5px;
+        padding-top: 0;
+        margin: 0;
+        .clearfix();
+    }
+}
+
+.es-story-mood-preset {
+    width: 25%;
+    float: left;
+    height: 30px;
+    padding: 4px;
+    border-radius: 3px;
+    .text-overflow();
+
+    cursor: pointer;
+
+    &.is-disabled {
+        display: none;
+    }
+
+    &:hover {
+        background: @esStoryMoodHoverBackground;
+        opacity: 1 !important;
+    }
+}
+
+.es-story-mood-verb {
+    float: left;
+    white-space: nowrap;
+
+    > span {
+        background: #E7F3FE;
+        border: 1px solid #C6D5E6;
+        padding: 1px 4px;
+        color: #729BCD;
+        margin-right: 4px;
+        display: none;
+        border-radius: 5px;
+
+        &.active {
+            display: inline-block;
+        }
+    }
+}
+
+.es-story-mood-form {
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+
+    padding: 6px 0;
+    padding-left: 6px; // 6px padding
+    padding-right: 34px; // 34px detect button + 5px gutter between button and input (gutter removed)
+
+    position: relative; // So detect location button will this parent its anchor
+}
+
+.es-story-mood-textbox {
+    display: block;
+    padding: 0;
+    width: 100%;
+
+    tr, td {
+        padding: 0;
+        margin: 0;
+    }
+
+    input {
+        width: 100%;
+        padding: 0;
+        height: 22px !important;
+        line-height: 22px !important;
+        border: none !important;
+        background: none !important;
+        .box-shadow(~"none");
+        margin-bottom: 0 !important;
+    }
+}
+
+.es-story-mood-buttons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+
+    > * {
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        cursor: pointer;
+        float: right;
+        color: #666;
+        position: relative;
+
+        &:hover {
+            color: #5580BE;
+        }
+    }
+}
+
+
+.es-story-mood-remove-button {
+
+    i {
+        font-size: 8px;
+        position: relative;
+        top: -1px;
+    }
+}
+
+.es-story.w320 {
+
+    .es-story-mood-presets {
+        max-height: 185px;
+    }
+
+    .es-story-mood-preset {
+        width: 100 / 3%;
+    }
+}

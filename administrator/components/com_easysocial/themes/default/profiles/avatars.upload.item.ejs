@@ -1,0 +1,20 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<li class="queue itemQueue" id="[%= file.id %]">
+	<span>[%= file.name %] ([%= file.size %] <?php echo JText::_( 'COM_EASYSOCIAL_UNIT_KILOBYTES' ); ?>)</span>
+	<div class="upload-action pull-right">
+		<a href="javascript:void(0);" type="button" class="btn btn-mini btn-es-danger btn-notext removeFile">
+			<i class="fa fa-times-circle"></i>
+		</a>
+	</div>
+	<div class="progress progress-striped progressBar" style="display:none;">
+		<div class="bar" style="width: 0%;"></div>
+	</div>
+</li>

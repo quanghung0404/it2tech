@@ -1,0 +1,130 @@
+[
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_CREATE_EVENT",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_CREATE_EVENT_TOOLTIP",
+        "group"         : "user",
+        "name"          : "events.create"
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_CREATE_EVENT_TOTAL",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_CREATE_EVENT_TOTAL_TOOLTIP",
+        "name"          : "events.limit",
+        "type"          : "limitinterval",
+        "group"         : "user",
+        "default"       : {
+            "value": 0,
+            "interval": 0
+        }
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_ALLOW_ATTEND_EVENT",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_ALLOW_ATTEND_EVENT_TOOLTIP",
+        "name"          : "events.allow.join",
+        "group"         : "user"
+    },    
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_JOIN_EVENT_TOTAL",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_JOIN_EVENT_TOTAL_TOOLTIP",
+        "name"          : "events.join",
+        "type"          : "limit",
+        "group"         : "user",
+        "default"       : 0
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_CREATE_EVENT_MODERATION",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_CREATE_EVENT_MODERATION_TOOLTIP",
+        "group"         : "user",
+        "name"          : "events.moderate"
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_ENABLED",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_ENABLED_TOOLTIP",
+        "group"         : "event",
+        "name"          : "photos.enabled"
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_TOTAL_PHOTOS_ALLOWED",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_TOTAL_PHOTOS_ALLOWED_TOOLTIP",
+        "group"         : "event",
+        "name"          : "photos.max",
+        "type"          : "limit",
+        "suffix"        : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_TOTAL_PHOTOS_SUFFIX",
+        "default"       : 0
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_TOTAL_PHOTOS_DAILY_ALLOWED",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_TOTAL_PHOTOS_DAILY_ALLOWED_TOOLTIP",
+        "group"         : "event",
+        "name"          : "photos.maxdaily",
+        "type"          : "limit",
+        "suffix"        : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_TOTAL_PHOTOS_SUFFIX",
+        "default"       : 0
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_PHOTO_MAXSIZE_ALLOWED",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_PHOTOS_PHOTO_MAXSIZE_ALLOWED_TOOLTIP",
+        "group"         : "event",
+        "name"          : "photos.maxsize",
+        "type"          : "text",
+        "class"         : "form-control input-sm input-short text-center",
+        "suffix"        : "MB",
+        "default"       : "8"
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_FILES_ALLOWED",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_FILES_ALLOWED_TOOLTIP",
+        "group"         : "event",
+        "name"          : "files.enabled",
+        "type"          : "boolean",
+        "default"       : true
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_FILES_TOTAL_FILES_ALLOWED",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_FILES_TOTAL_FILES_ALLOWED_TOOLTIP",
+        "group"         : "event",
+        "name"          : "files.max",
+        "type"          : "limit",
+        "suffix"        : "COM_EASYSOCIAL_ACCESS_EVENTS_FILES_TOTAL_FILES_SUFFIX",
+        "default"       : 0
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_FILES_MAXSIZE_ALLOWED",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_FILES_MAXSIZE_ALLOWED_TOOLTIP",
+        "group"         : "event",
+        "name"          : "files.maxsize",
+        "type"          : "text",
+        "class"         : "form-control input-sm input-short text-center",
+        "suffix"        : "MB",
+        "default"       : "8"
+    },
+    {
+        "title": "COM_EASYSOCIAL_ACCESS_EVENTS_VIDEOS_ENABLED",
+        "group": "event",
+        "name": "videos.create",
+        "type": "boolean",
+        "default": 1
+    },
+    {
+        "title": "COM_EASYSOCIAL_ACCESS_EVENTS_VIDEOS_TOTAL_VIDEOS_ALLOWED",
+        "group": "event",
+        "name": "videos.total",
+        "type": "limit",
+        "default": 0
+    },
+    {
+        "title": "COM_EASYSOCIAL_ACCESS_VIDEOS_MAX_SIZE",
+        "group": "event",
+        "name": "videos.maxsize",
+        "type": "limit",
+        "suffix": "MB",
+        "default": 0
+    },
+    {
+        "title"         : "COM_EASYSOCIAL_ACCESS_EVENTS_ALLOW_GROUP_EVENT",
+        "description"   : "COM_EASYSOCIAL_ACCESS_EVENTS_ALLOW_GROUP_EVENT_TOOLTIP",
+        "group"         : "group",
+        "name"          : "events.groupevent",
+        "type"          : "boolean",
+        "default"       : true
+    }
+]

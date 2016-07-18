@@ -1,0 +1,138 @@
+.es-theme-compiler {
+
+	li.tab-divider {
+		font-weight: bold;
+		text-align: left !important;
+		padding: 5px 10px !important;
+		background-color: #DFE6EC !important;
+		background-image: linear-gradient(to bottom, #E4EAF0, #D8DFE7) !important;
+		background-repeat: repeat-x !important;
+		box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset;
+		color: #333333;
+		border-top: none;
+	}
+
+	.tab-box.tab-box-alt.tab-box-sidenav .nav-tabs .tab-item a {
+		padding: 5px 10px !important;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.es-theme-compiler-status {
+
+	td {
+		vertical-align: top;
+	}
+
+	// Path
+	small {
+		position: relative;
+		top: -2px;
+	}
+
+	time {
+		font-size: 90%;
+	}
+
+	// Filesize
+	strong {
+		font-size: 90%;
+	}
+
+	.label {
+		text-transform: uppercase;
+		display: inline-block;
+		width: 60px;
+	}
+
+	.is-ready {
+		.label {
+			.label-variant(@label-success-bg);
+		}
+	}
+
+	.is-missing {
+		.label {
+			.label-variant(@label-danger-bg);
+		}
+	}
+
+	.is-modified {
+		.label {
+			.label-variant(@label-warning-bg);
+		}
+	}
+
+	.is-new {
+		.label {
+			.label-variant(@label-info-bg);
+		}
+	}
+
+	.is-unknown {
+		.label {
+			.label-variant(@label-default-bg);
+		}
+	}
+}
+
+.es-theme-compiler-form {
+
+	header .label {
+		text-transform: uppercase;
+	}
+
+	.progress {
+		height: 16px;
+	}
+
+	.es-theme-compiler-progress {
+		display: none;
+		// Cosmetics
+		margin-top: -2px;
+		margin-bottom: 2px;
+	}
+
+	&.is-busy > header {
+
+		.es-theme-compiler-actions {
+			display: none;
+		}
+
+		.es-theme-compiler-progress {
+			display: block;
+		}
+	}
+}
+
+.es-theme-compiler-log {
+	border: 1px solid #DDDDDD;
+	border-collapse: separate !important;
+
+	td {
+		border: none !important;
+		border-radius: none !important;
+	}
+
+	tbody {
+		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: auto;
+		min-height: 48px;
+		max-height: 160px;
+		width: 100%;
+		display: block;
+		background: #eee;
+
+		td {
+			border-right: 1px solid #fff !important;
+			border-bottom: 1px solid #fff !important;
+		}
+
+		td + td {
+			border-right: none !important;
+			width: 100%;
+		}
+	}
+}

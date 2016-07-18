@@ -17,6 +17,7 @@ $includeExternalLinks =  $this->sourceparams->get ( 'include_external_links', 1 
 $fakeImages = $this->cparams->get ( 'fake_images_processor', 0 );
 $lazyloadImages = $this->cparams->get ( 'lazyload_images_processor', 0 );
 $includeDescriptionOnly = $this->cparams->get ( 'include_description_only', 0 );
+$cdnProtocol = $this->cparams->get ('cdnprotocol', '');
 
 // Init exclusion
 $imgFilterInclude = array();
@@ -110,6 +111,7 @@ if (count ( $this->source->data )) {
 		}
 		// Else store to prevent duplication
 		$this->outputtedLinksBuffer[$link] = true;
+		$this->imagesOutputtedLinksBuffer = array();
 		
 		// HTTP Request to remote URL '$seolink' to get images
 		$headers = array('Accept'=>'text/html', 'User-Agent'=>'Googlebot-Image/1.0');
@@ -143,6 +145,10 @@ $bufferImages = null;
 if(!empty($imagesLinks)):
 ob_start();
 foreach ($imagesLinks as $index=>$imageLink):
+// Skip outputting
+if(array_key_exists($imageLink, $this->imagesOutputtedLinksBuffer)) {
+	continue;
+}
 $validImage = true;
 $found = false;
 $optionalImageTitle = false;
@@ -188,9 +194,10 @@ if(stristr($imagesTags[$index], 'title=') || stristr($imagesTags[$index], 'alt='
 if(!$optionalImageTitle && $includeDescriptionOnly) {
 	continue;
 }
+$this->imagesOutputtedLinksBuffer[$imageLink] = true;
 ?>
 <image:image>
-<image:loc><?php echo htmlspecialchars(preg_match('/^http|^\/\//i', $imageLink) ? $imageLink : $this->liveSite . '/' . ltrim($imageLink, '/'), null, 'UTF-8', false);?></image:loc>
+<image:loc><?php echo htmlspecialchars(preg_match('/^http|^\/\//i', $imageLink) ? ($cdnProtocol && strpos($imageLink, 'http') === false ? $cdnProtocol . $imageLink : $imageLink) : $this->liveSite . '/' . ltrim($imageLink, '/'), null, 'UTF-8', false);?></image:loc>
 <?php echo $optionalImageTitle;?>
 </image:image>
 <?php 

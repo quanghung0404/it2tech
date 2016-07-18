@@ -1,0 +1,44 @@
+.eb-composer-block-fieldgroup[data-type=image] {
+
+    &.is-standalone {
+
+        .eb-image-alignment-field {
+            display: none;
+        }
+
+        .eb-image-dimension-field {
+            border-bottom: 0px;
+        }
+    }
+}
+
+.eb-image-size-fieldset {
+
+    // There's only fluid image on advanced image mode for now.
+    &.preset-advanced {
+        [data-eb-numslider-unit][data-unit=px] {
+            display: none;
+        }
+    }
+}
+
+.eb-image-dimension-field {
+
+    .eb-numslider-label-caption {
+        display: inline-block;
+        width: 35px;
+    }
+}
+
+.eb-image-size-sliders {
+    .eb-composer-fieldgroup-label {
+        margin-bottom: @eb-composer-gutter / 3; // cosmetic
+    }
+}
+
+.eb-image-alignment-field {
+
+    &.eb-composer-fieldgroup {
+        border-bottom: none;
+    }
+}

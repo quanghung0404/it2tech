@@ -1,0 +1,11 @@
+[
+    {
+        "script": [
+            "field"
+        ],
+        "library": [
+            "history"
+        ],
+        "adapter": "EasySocial"
+    }
+]

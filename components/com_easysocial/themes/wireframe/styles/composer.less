@@ -1,0 +1,164 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@composerInputPadding	=	6px;
+@composerSpacing		=	@composerInputPadding + (@composerInputPadding / 2);
+
+.composerInputShape()
+{
+	padding: @composerInputPadding;
+	margin: 0 !important;
+	width: 100%;
+	resize: none;
+}
+.composerInputWrap()
+{
+	margin-right: @composerInputPadding * 2 + 2;
+}
+
+
+
+.composer
+{
+	margin-bottom: @composerSpacing;
+
+		.input-wrap
+		{
+			.composerInputWrap();
+		}
+		.input-shape
+		{
+			.composerInputShape();
+
+				&.shadow
+				{
+					padding: 0;
+				}
+		}
+}
+
+
+.composer-attach
+{
+	margin-top:10px;
+
+		> div + div
+		{
+			border-top: 1px solid #eaeaea;
+			padding-top:10px;
+			margin-top:10px;
+		}
+}
+
+
+.composer-participant
+{
+	margin-bottom:10px;
+
+	.input.fake
+	{
+		label
+		{
+			display: block;
+			padding: 1px 6px;
+
+				input
+				{
+					height: 20px;
+					line-height: 20px;
+					padding: 6px 0;
+				}
+		}
+	}
+
+	.user-picked
+	{
+		border:1px solid #d0d0d0;
+		border-bottom-color: #ccc;
+		color: #666;
+		font-weight: normal;
+		line-height: 22px;
+		height: 22px;
+		margin: 4px 4px 0 0;
+		padding: 0 5px;
+
+		.gradient-vertical( #ffffff, #f0f0f0 );
+		border-radius: 2px;
+
+			.remove-item
+			{
+				background: none !important;
+				opacity: 0.5;
+
+					&:hover
+					{
+						opacity: 0.9;
+					}
+			}
+	}
+
+}
+
+
+.form-uploader
+{
+	.upload-submit
+	{
+		clear: both;
+		padding: 10px;
+		border: 2px dashed @esBorder;
+		.clearfix();
+	}
+
+	.upload-queue
+	{
+		.queue-item
+		{
+			background: #fff;
+			border: 1px solid #ddd;
+			border-bottom: 1px solid #dadada;
+			display: inline-block;
+			line-height: 17px;
+			padding: 8px 0;
+			margin: 0 0 10px;
+			width: 100%;
+			.box-shadow( #ddd );
+			border-radius: 2px;
+			.gradient-vertical(#ffffff, #f5f5f5);
+
+				> a
+				{
+					padding:2px;
+					margin:0 0 0 8px;
+				}
+				> i
+				{
+					color: #888;
+					float: right;
+					font-size: @baseFontSize;
+					font-style: normal;
+					line-height: 20px;
+					margin: 0 10px;
+				}
+				> b
+				{
+					color: #666;
+					display: block;
+					margin: 0 80px 0 40px;
+					line-height: 20px;
+					.ellipsis()
+				}
+				+ .queue-item
+				{
+					margin-top: -5px;
+				}
+				&:hover
+				{
+					background: #ffc;
+				}
+		}
+	}
+}

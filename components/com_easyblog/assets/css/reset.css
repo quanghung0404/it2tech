@@ -1,0 +1,5 @@
+/**
+ * This allows caller to reset any contents within iframe
+ */
+
+body{background: #fff !important;padding:0;margin:0;}

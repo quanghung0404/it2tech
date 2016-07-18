@@ -1,0 +1,33 @@
+
+[
+	{
+		"title" 		: "Publisher",
+		"alias"			: "publisher",
+		"description"	: "Loves contributing articles.",
+		"howto" 		: "To unlock this badge, you need to create up to 50 new articles.",
+		"command"		: "create.article",
+		"extension"		: "com_content",
+		"avatar"		: "media/com_easysocial/apps/user/article/assets/badges/publisher.png",
+		"frequency"		: 50
+	},
+	{
+		"title" 		: "Proof Reading",
+		"alias"			: "proof-reading",
+		"description"	: "Great proof reading skills",
+		"howto" 		: "To unlock this badge, you need to update 50 existing articles.",
+		"command"		: "update.article",
+		"extension"		: "com_content",
+		"avatar"		: "media/com_easysocial/apps/user/article/assets/badges/proof-reading.png",
+		"frequency"		: 50
+	},
+	{
+		"title" 		: "Great Reader",
+		"alias"			: "great-reader",
+		"description"	: "Loves reading through articles.",
+		"howto" 		: "To unlock this badge, you need to read up to 100 articles.",
+		"command"		: "read.article",
+		"extension"		: "com_content",
+		"avatar"		: "media/com_easysocial/apps/user/article/assets/badges/great-reader.png",
+		"frequency"		: 100
+	}
+]

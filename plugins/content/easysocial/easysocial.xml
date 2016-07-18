@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_EASYSOCIAL</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>27th March 2014</creationDate>
+	<copyright>Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.0.5</version>
+	<description>PLG_CONTENT_EASYSOCIAL_XML_DESCRIPTION</description>
+	<files>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename plugin="easysocial">easysocial.php</filename>
+		<filename>easysocial.xml</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_content_easysocial.ini</language>
+		<language tag="en-GB">en-GB.plg_content_easysocial.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="modify_contact_link" type="radio" class="btn-group" default="1" label="PLG_CONTENT_EASYSOCIAL_MODIFY_CONTACT_LINK" description="PLG_CONTENT_EASYSOCIAL_MODIFY_CONTACT_LINK_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="display_info" type="radio" class="btn-group" default="1" label="PLG_CONTENT_EASYSOCIAL_DISPLAY_INFO" description="PLG_CONTENT_EASYSOCIAL_DISPLAY_INFO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="load_comments" type="radio" class="btn-group" default="0" label="PLG_CONTENT_EASYSOCIAL_LOAD_COMMENTS" description="PLG_CONTENT_EASYSOCIAL_LOAD_COMMENTS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="guest_viewcomments" type="radio" class="btn-group" default="1" label="PLG_CONTENT_EASYSOCIAL_GUEST_VIEWCOMMENTS" description="PLG_CONTENT_EASYSOCIAL_GUEST_VIEWCOMMENTS">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="placement" type="list" default="1" label="PLG_CONTENT_EASYSOCIAL_METADATA_PLACEMENT" description="PLG_CONTENT_EASYSOCIAL_METADATA_PLACEMENT_DESC">
+					<option value="1">PLG_CONTENT_EASYSOCIAL_METADATA_DEFAULT</option>
+					<option value="2">PLG_CONTENT_EASYSOCIAL_METADATA_AFTER_TITLE</option>
+					<option value="3">PLG_CONTENT_EASYSOCIAL_METADATA_BEFORE_DISPLAY_CONTENT</option>
+					<option value="4">PLG_CONTENT_EASYSOCIAL_METADATA_BEFORE_AFTER_CONTENT</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

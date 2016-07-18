@@ -36,6 +36,13 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 		</tr>
 	</table>
 
+	<input type="hidden" name="section" value="view" />
+	<input type="hidden" name="option" value="<?php echo $this->option;?>" />
+	<input type="hidden" name="task" value="metainfo.display" />
+	<input type="hidden" name="boxchecked" value="1" />
+	<input type="hidden" name="filter_order" value="<?php echo @$this->orders['order'];?>" />
+	<input type="hidden" name="filter_order_Dir" value="<?php echo @$this->orders['order_Dir'];?>" />
+	
 	<table class="adminlist table table-striped table-hover">
 	<thead>
 		<tr>
@@ -171,11 +178,4 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 	?>
 	</tbody>
 	</table>
-
-	<input type="hidden" name="section" value="view" />
-	<input type="hidden" name="option" value="<?php echo $this->option;?>" />
-	<input type="hidden" name="task" value="metainfo.display" />
-	<input type="hidden" name="boxchecked" value="1" />
-	<input type="hidden" name="filter_order" value="<?php echo @$this->orders['order'];?>" />
-	<input type="hidden" name="filter_order_Dir" value="<?php echo @$this->orders['order_Dir'];?>" />
 </form>

@@ -1,0 +1,12 @@
+[
+    {
+        "script": [
+            "quickpost/standard",
+            "quickpost/quote",
+            "quickpost/link",
+            "quickpost/photo",
+            "quickpost/video"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

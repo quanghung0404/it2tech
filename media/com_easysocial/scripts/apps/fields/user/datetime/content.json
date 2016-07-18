@@ -1,0 +1,9 @@
+[
+    {
+        "language": [
+            "PLG_FIELDS_DATETIME_VALIDATION_INVALID_DATETIME_FORMAT",
+            "PLG_FIELDS_DATETIME_VALIDATION_PLEASE_SELECT_DATETIME"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    $avatar.less
+\*------------------------------------*/
+
+/* =Avatar Styles (apply to img which wrap with <a> or <span>)
+================================================== */
+.es-avatar {
+	line-height: 0;		/* remove line-height */
+	display: inline-block;	/* circle wraps image */
+	border: 2px solid white;/* border width   */
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+	img {
+		display: block;
+	}
+}
+
+.es-avatar-circle { // rounded apply with es-avatar
+	border-radius: 50%;	/* relative value */
+	img {
+		border-radius: 50%;	/* relative value for adjustable image size */
+	}
+}
+a.es-avatar {
+	color: transparent; /* IE fix: removes blue border */
+}
+.es-avatar-large {
+	width: 120px;
+	height: 120px;
+}
+.es-avatar-medium {
+	width: 58px;
+	height: 58px;
+}
+.es-avatar-small {
+	width: 32px;
+	height: 32px;
+}

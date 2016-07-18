@@ -1,0 +1,72 @@
+/*------------------------------------*\
+    $buttons.less
+\*------------------------------------*/
+
+// .btn {
+// 	padding: 4px 14px;
+// }
+
+.btn-es {
+	// padding:2px 14px;
+	// border-radius: 14px;
+	&:hover {
+		// .transition(none);
+		background-position:0 0px;
+		border:1px solid #BBB;
+	}
+}
+
+//social button
+.btn-es-social {
+	border-radius: 10px;
+	font-size: 11px;
+	position: relative;
+	padding-left: 22px;
+	&:before {
+		content: "";
+		display: block;
+		width: 16px;
+		height: 16px;
+		background-image: url('@{media_uri}/images/icons/icons-btn-social.png');
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		// background: red;
+
+	}
+}
+.btn-es-facebook {
+	.button-variant(#fff; #5692ce; #2b6cb3);
+	// .buttonBackground(#5692ce, #2b6cb3, #fff, @btnEsTextShadow);
+	&:before {
+		background-position: 0 0;
+	}
+}
+.btn-es-twitter {
+	.button-variant(#fff; #61cef4; #05b3f4);
+	// .buttonBackground(#61cef4, #05b3f4, #fff, @btnEsTextShadow);
+	&:before {
+		background-position: -16px 0;
+	}
+
+}
+.btn-es-linkedin {
+	.button-variant(#fff; #6cb3d3; #4b97c3);
+	// .buttonBackground(#6cb3d3, #4b97c3, #fff, @btnEsTextShadow);
+	&:before {
+		background-position: -32px 0;
+	}
+}
+
+
+.btn-toolbar .btn-group {
+display: inline-block;
+}
+
+
+.btn-micro {
+    font-size: 10px;
+    line-height: 8px;
+    padding: 1px 4px;
+}

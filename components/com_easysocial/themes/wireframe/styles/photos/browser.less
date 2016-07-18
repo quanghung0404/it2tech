@@ -1,0 +1,89 @@
+.es-photo-browser {
+
+	//right side navigation with thumbnail styles
+	.fd-nav-thumbs { //@extend .fd-nav.es-stacked
+
+		margin-right: 0;
+
+		.clearfix();
+
+		// Grid layout
+		li.es-thumb {
+			width: 25%;
+			margin: 0;
+			float: left;
+			z-index: 2;
+
+			> a {
+				padding: 0;
+				padding-top: 100%;
+				border-bottom: 0px;
+
+				> i {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border-radius: 0;
+					background-size: cover;
+					background-repeat: no-repeat;
+					border: 1px solid transparent;
+					background-color: transparent;
+				}
+			}
+
+			// For SEO
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				opacity: 0;
+			}
+
+			// For SEO
+			span {
+				display: none;
+			}
+
+			&.featured {
+				width: 50%;
+			}
+
+			&.loading {
+				> a {
+					background-position: center center;
+
+					> i {
+						opacity: 0.5;
+						background-color: #000;
+					}
+				}
+			}
+
+			&.active {
+				&:before,
+				&:after {
+					display: none; // remove arrow
+				}
+			}
+
+			// Used by masonry to determine grid
+			&.grid-sizer {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+	}
+
+	.es-media-new-button {
+		margin-left: 0;
+	}
+}

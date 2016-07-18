@@ -1,0 +1,276 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+/*
+Main structure to control profile header
+
+.es-header-mini
+    .es-header-mini-cover
+    .es-header-mini-avatar
+    .es-header-mini-body
+    .es-header-mini-footer
+
+Styleguide: /index.php?option=com_easysocial&view=styleguide&layout=render&file=header
+*/
+
+
+// Layout
+// ----------------
+//mini
+.es-header-mini {
+    font-size: @baseFontSize;
+    position: relative;
+    background: @esHeaderMiniBackground;
+    border: 1px solid @esHeaderBorder;
+
+    .es-header-mini-cover {
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 110px;
+        top: 0;
+        b {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            .box-shadow(200px -30px 100px @esHeaderBoxShadow inset);
+            #gradient > .vertical(@esHeaderMiniCoverBackground, @esHeaderMiniCoverHighlight);
+
+            + b {
+                right: 0;
+                .box-shadow(-100px -50px 50px @esHeaderBoxShadow inset);
+                display: none;
+            }
+        }
+    }
+
+    .es-header-mini-meta {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+
+        .es-cover-title {
+            // http://stackideas.com/forums/template-issue-in-grous
+            // unpredictable width
+            width: 170px;
+            .text-overflow();
+        }
+        // Issues with J2.5
+        > ul.list-unstyled {
+            margin-bottom: 0;
+            h2 {
+                margin-bottom: 0 !important;
+            }
+        }
+        > div.small {
+            margin: 0;
+        }
+    }
+
+    .es-header-mini-avatar {
+        float: left;
+        top: 35px;
+        left: 15px;
+        position: absolute;
+    }
+
+    .es-header-mini-body {
+        margin-left: 100px;
+        min-height: 110px;
+        position: relative;
+
+        .btn-clean,
+        .btn{
+            background: @esHeaderContentBtnBackground;
+        }
+    }
+
+    .es-header-mini-footer {
+        background: @esHeaderFooterBackground;
+        position: relative;
+        .clearfix();
+
+        padding: 10px 0;
+        border-top: 1px solid @esHeaderFooterBorder;
+
+        .pull-right{
+            .action {
+                margin-right: 10px;
+            }
+        }
+
+        span {
+
+            &.action {
+                font-size: @baseFontSize;
+                position: relative;
+                display: inline-block;
+            }
+        }
+
+        > div {
+            padding-left: 20px; //http://screencast.com/t/h9vQzn61o67b
+        }
+    }
+
+    .es-header-mini-apps-action {
+        width: 385px;
+        height: 50px;
+        margin-right: 24px;
+        overflow: hidden;
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+    .btn-scroll {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        z-index: 2;
+        opacity: 0.4;
+        .btn {
+            display: block;
+            width: 18px;
+            height: 20px;
+            padding: 2px;
+            .box-shadow(none);
+            position: relative;
+            background: @esHeaderBtnScrollBackground;
+            border: 1px solid rgba(0,0,0,.1);
+            border-right: none;
+            line-height: 0;
+            [class^="ies-"],
+            [class*=" ies-"] {
+                line-height: 12px;
+                width: 12px;
+                height: 12px;
+                color: @esHeaderBtnScrollColor;
+                &:before {
+                    position: relative;
+                    left: -2px;
+                    top: 1px;
+                }
+            }
+        }
+        .btn-left {
+            border-radius :2px 0 0 0;
+        }
+        .btn-right {
+            top: -1px;
+            border-radius :0 0 0 2px;
+        }
+    }
+
+    .es-nav-apps { // @extend .fd-nav
+        position: relative;
+        float: right;
+        height: 55px;
+        overflow: hidden;
+
+        .btn {
+            width: 64px;
+            height: 50px;
+            padding: 5px 10px;
+            font-size: @baseFontSize;
+            text-align: center;
+            > span {
+                display: block;
+                height: 14px;
+                overflow: hidden;
+                margin-bottom: 2px;
+                .text-overflow();
+                // background: @grayLighter;
+            }
+        }
+        .es-nav-apps-icons {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+
+}//mini
+
+
+// Responsive
+&.w480 {
+    .es-header-mini {
+        .es-header-mini-body {
+            margin-top: 110px;
+            margin-left: 0;
+            text-align: center;
+        }
+
+        .es-header-mini-apps-action {
+            position: relative;
+            width: auto;
+            top: 0;
+            .fd-nav {
+                > li {
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+                > li > .btn {
+                    width: 80px;
+                }
+            }
+        }
+
+        .es-header-mini-cover {
+            height: 100px;
+        }
+        .es-header-mini-avatar {
+            top: 15px;
+            left: 50%;
+            margin-left: -36px;
+        }
+
+        .es-header-mini-meta {
+            position: relative;
+            .es-cover-title {
+                width: 100%;
+            }
+        }
+
+        .es-header-mini-footer {
+            > div {
+                padding-left: 10px;
+            }
+            .pull-left {
+                float: none;
+                margin-bottom: 10px;
+            }
+            // message
+            .pull-right {
+                float: none;
+                margin-top: 10px;
+            }
+        }
+        .fd-nav-apps {
+            height: auto;
+            margin: 10px 15px;
+        }
+        .btn-scroll {
+            display: none;
+        }
+    }
+}
+
+
+// Override on specific view
+&.view-dashboard {
+    .es-header-mini {
+        // border-left: 0; // Temporary removed for issues #4424
+        margin-left: -20px;
+
+        .media-meta { // hide event action in dashboard
+            display: none;
+        }
+    }
+}

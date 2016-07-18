@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="user" method="upgrade">
+	<name>User - EasySocial</name>
+	<author>Mark Lee</author>
+	<creationDate>30/03/2013</creationDate>
+	<copyright>Copyright (C) 2009 - 2013 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>stackideas.com</authorUrl>
+	<version>1.0</version>
+	<description>
+		<![CDATA[
+			User plugin for EasySocial.
+		]]>
+	</description>
+	<files>
+		<filename plugin="easysocial">easysocial.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_user_easysocial.ini</language>
+	</languages>
+</extension>

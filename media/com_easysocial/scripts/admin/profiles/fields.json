@@ -1,0 +1,39 @@
+[
+    {
+        "library": [
+            "ui/draggable",
+            "ui/sortable",
+            "ui/droppable"
+        ],
+        "script": [
+            "field"
+        ],
+        "view": [
+            "admin/profiles/fields/editor.item",
+            "admin/profiles/fields/step.item",
+            "admin/profiles/fields/editor.page",
+            "admin/profiles/fields/config",
+            "admin/profiles/fields/dialog.move"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_ITEM_CONFIG_LOADING",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_PAGE_DIALOG_TITLE",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_PAGE_DIALOG_CONFIRMATION",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_PAGE_DIALOG_CONFIRM",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_PAGE_DIALOG_CANCEL",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_PAGE_DIALOG_DELETING",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_ITEM_DIALOG_TITLE",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_ITEM_DIALOG_CONFIRMATION",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_ITEM_DIALOG_CONFIRM",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_ITEM_DIALOG_CANCEL",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_ITEM_DIALOG_DELETING",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_PARAMS_CORE_UNIQUE_KEY_SAVE_FIRST",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_CONFIGURE_PAGE",
+            "COM_EASYSOCIAL_PROFILES_FORM_FIELDS_CONFIGURE_FIELD",
+            "COM_EASYSOCIAL_FIELDS_REQUIRE_MANDATORY_FIELDS",
+            "COM_EASYSOCIAL_FIELDS_UNSAVED_CHANGES",
+            "COM_EASYSOCIAL_FIELDS_INVALID_VALUES"
+        ],
+        "adapter": "EasySocial"
+    }
+]

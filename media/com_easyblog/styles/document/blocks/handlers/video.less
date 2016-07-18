@@ -1,0 +1,42 @@
+@import "videojs/default";
+
+.ebd {
+    .ebd-block {
+        &[data-type=video] {
+            // Remove whitespace surrounding video container
+            // becuase .eb-video is an inline-block element.
+            line-height: 0;
+        }
+    }
+}
+
+.eb-video {
+    position: relative;
+    display: inline-block;
+    width: 100%; // Default to 100%, readjust on element.
+
+    &.is-responsive {
+
+        .eb-video-viewport {
+            height: auto;
+
+            // Default to 16/9, readjust on element.
+            padding-top: 1 / (16 / 9) * 100%;
+        }
+    }
+}
+
+.eb-video-viewport {
+    position: relative;
+    height: 100%;
+    // Clips overflowing video controls and play button.
+    overflow: hidden;
+
+    > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

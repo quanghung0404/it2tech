@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Standard Album Layout">
+		<message>
+			Displays an album
+		</message>
+	</layout>
+	<state>
+		<name>Standard Album Layout</name>
+		<description>Standard Album Layout</description>
+		<url addpath="/components/com_muscol/elements">
+			<param name="id" type="albumselect" default="0" label="Album" description="Select an album" />
+		</url>
+		<params>
+		</params>
+	</state>
+	
+	<fields
+                name="request"
+                addfieldpath="/components/com_muscol/elements"
+        >
+                <fieldset name="request">
+                        <field
+                                name="id"
+                                type="albumselect"
+                                label="Album"
+                                description="Select an album"
+								required="true"
+                        />
+                </fieldset>
+        </fields>
+</metadata>

@@ -1,0 +1,14 @@
+[
+    {
+        "library": [
+            "dialog"
+        ],
+        "script": [
+            "site/dashboard/dashboard.guest.login"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

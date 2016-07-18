@@ -1,0 +1,15 @@
+{
+	"style": [
+		"foundry",
+		"component",
+
+		"elements",
+		"layout",
+		"blocks",
+		"patch",
+		"themes",
+		"custom",
+		"responsive",
+		"migrators"
+	]
+}

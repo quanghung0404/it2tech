@@ -1,0 +1,260 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-story-link-item {
+
+	background: @esStoryLinkBackground;
+	border-radius: 3px;
+	position: relative;
+	padding: 10px;
+
+	// For link remove button
+	padding-right: 30px;
+	min-height: 96px;
+
+	.clearfix();
+
+	&.has-images {
+		// padding-left: 120px;
+
+		.es-story-link-nav {
+			display: block;
+		}
+
+		.es-story-link-col {
+			margin-left: 120px;
+		}
+	}
+
+	&.editing-title {
+		.es-story-link-title {
+			display: none;
+		}
+		.es-story-link-title-textbox {
+			display: block;
+		}
+	}
+
+	&.editing-description {
+		.es-story-link-description {
+			display: none;
+		}
+		.es-story-link-description-textbox {
+			display: block;
+		}
+	}
+}
+
+.es-story-link-title-textbox {
+	display: none;
+}
+
+.es-story-link-title-textfield {
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 6px !important;
+}
+
+.es-story-link-description-textbox {
+	// border: 1px solid @esStoryLinkTextboxBorder;
+	// border-radius: 3px;
+	display: none;
+	margin: 4px 0 8px;
+
+	.textareaClone {
+		min-height: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.es-story-link-description-textfield {
+	font-size: @baseFontSize;
+	padding: 6px !important;
+}
+
+.es-story-link-title {
+	white-space: nowrap;
+	.text-overflow();
+	margin: 0;
+	text-transform: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	color: @esStoryLinkTitleColor;
+
+	&:hover {
+		background: @esStoryLinkHoverBackground;
+		border: 1px dashed @esStoryLinkHoverBorder;
+	}
+}
+
+.es-story-link-description {
+	border: 1px solid transparent;
+	cursor: pointer;
+	overflow: hidden;
+	font-size: @baseFontSize;
+	line-height: 16px;
+	margin: 4px 0 8px;
+
+	&.no-description {
+		opacity: 0.6;
+	}
+
+	&:hover {
+		background: @esStoryLinkHoverBackground;
+		border: 1px dashed @esStoryLinkHoverBorder;
+		opacity: 1;
+	}
+}
+
+.es-story-link-url {
+
+	border: 1px solid transparent;
+	.text-overflow();
+	display: block;
+
+	a {
+		color: @esStoryLinkUrlColor;
+
+		&:hover {
+			background: transparent;
+			color: @esStoryLinkUrlHoverColor;
+		}
+	}
+}
+
+.es-story-link-image-wrapper {
+	&.active {
+		display: block;
+	}
+
+	display: none;
+}
+
+.es-story-link-images {
+	width: 102px;
+	top: 10px;
+	left: 10px;
+	float: left;
+	overflow: hidden;
+	margin-right: 10px;
+
+    background: @esBackground;
+    border: 1px solid @esBorder;
+    padding: 2px;
+
+    .es-story-image-dimension {
+    	font-size: @baseFontSize;
+    	text-align: center;
+    }
+
+	img.es-story-link-image {
+		width: 96px;
+		max-width: 96px !important;
+		border: 1px solid @esBorder;
+		background: @esBackground;
+	}
+}
+
+.es-story-link-form {
+	position: relative;
+
+	&.busy {
+		.es-story-link-input {
+			padding-right: 100px;
+			color: @esStoryLinkFormBusyColor;
+		}
+
+		.es-story-link-buttons {
+			.loading-indicator {
+				display: block;
+			}
+		}
+	}
+}
+
+.es-story-link-textbox {
+	.clearfix();
+	padding: 0;
+	height: 32px;
+	width: 100%;
+	border: 1px solid @esStoryLinkTextboxBorder;
+	background: @esStoryLinkTextboxBackground;
+	border-radius: 3px;
+	display: block;
+}
+
+.es-story-link-input {
+	width: 100%;
+	height: 30px !important;
+
+	border: none !important;
+	background: none !important;
+    padding: 4px 73px 4px 4px !important;
+	margin-bottom: 0px !important;
+}
+
+.es-story-link-buttons {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	// width: 16px;
+	display: inline-block;
+	z-index: 2;
+
+	.btn {
+		height: 32px;
+		font-size: @baseFontSize;
+		line-height: 20px;
+		border-radius: 0 3px 3px 0;
+	}
+
+	.loading-indicator {
+		height: 16px;
+		left: -26px;
+		margin: 5px 0 0;
+		margin-top: 5px;
+		padding: 0;
+		position: absolute;
+		top: 4px;
+		width: 16px;
+		display: none;
+	}
+}
+
+.es-story-link-nav {
+	display: none;
+
+	.btn {
+		padding: 2px 4px;
+	}
+}
+
+.es-story-link-image-count {
+	position: relative;
+	top: 1px;
+	left: 2px;
+}
+
+.es-story-link-remove-image {
+	display: inline-block;
+	margin-right: 2px;
+	margin-top: -4px;
+}
+
+.es-story-link-remove-button {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+
+	i {
+		font-size: baseFontSize;
+	}
+}

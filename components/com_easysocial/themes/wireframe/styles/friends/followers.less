@@ -1,0 +1,115 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	friends.less
+\*------------------------------------*/
+// Blocks aka modules in html apply rely on few classes
+&.view-followers {
+
+	.es-content {
+		.es-item-list,
+		.es-item-grid {
+			.empty{
+				margin-top: 40px;
+				width: 100%;
+
+				// Default to be hidden.
+			}
+
+			.es-avatar {
+				img {
+					width: 32;
+					height: 32;
+				}
+			}
+
+			// Friend item
+			> .friendItem{
+
+				// Pending actions
+				.pending-action{
+					margin: 10px 0 5px;
+				}
+			}
+		}
+	}
+
+	.listActions{
+		.dropdown-menu-lists {
+			hr {
+				margin: 5px 0;
+			}
+		}
+	}
+	.es-item {
+		.es-item-title {
+			margin-bottom: 6px;
+		}
+		.es-item-body {
+
+			.dropdown-menu
+			{
+				li > a {
+					color: @esColor;
+					font-size: @baseFontSize;
+					padding: 3px 10px;
+				}
+			}
+		}
+		.es-friends-links {
+			font-size: @baseFontSize;
+			> li {
+				margin-bottom: 4px;
+                + li {
+                    margin-left: 5px;
+                }
+			}
+			.muted {
+				color: @esFriendsMutedColor;
+				&:hover {
+					color: @esFriendsMutedHoverColor;
+				}
+			}
+			[class^="icon-es-"],
+			[class*=" icon-es-"] {
+				vertical-align: bottom;
+			}
+		}
+	}
+
+}
+
+.es-sidebar{
+
+	>.es-filter {
+		>.list-unstyled {
+			>li.follower-filter{
+				padding: 5px 0 5px 0;
+				clear: both;
+				line-height: 22px;
+
+				.es-count-no{
+					float: right;
+				}
+			}
+
+			>li:hover{
+				cursor: pointer;
+			}
+
+		}
+	}
+
+	h5 {
+		font-size: 12px;
+		a {
+			font-size: @baseFontSize;
+			font-weight: normal;
+			margin-right: 5px;
+		}
+	}
+}

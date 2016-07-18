@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>COM_SIGPRO</name>
+	<creationDate>April 5th, 2016</creationDate>
+	<author>JoomlaWorks</author>
+	<authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
+	<authorUrl>www.joomlaworks.net</authorUrl>
+	<copyright>Copyright (c) 2006 - 2016 JoomlaWorks Ltd.</copyright>
+	<license>http://www.joomlaworks.net/license</license>
+	<version>3.1.0</version>
+	<description></description>
+	<installfile>install.sigpro.php</installfile>
+	<uninstallfile>uninstall.sigpro.php</uninstallfile>
+	<scriptfile>script.sigpro.php</scriptfile>
+	<files folder="components/com_sigpro">
+		<filename>sigpro.php</filename>
+	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="Simple Image Gallery Pro">http://cdn.joomlaworks.org/updates/sigpro.xml</server>
+	</updateservers>
+	<administration>
+		<menu img="components/com_sigpro/images/sigpro-icon.png">COM_SIGPRO</menu>
+		<files folder="administrator/components/com_sigpro">
+			<folder>controllers</folder>
+			<folder>css</folder>
+			<folder>elements</folder>
+			<folder>fonts</folder>
+			<folder>images</folder>
+			<folder>js</folder>
+			<folder>layouts</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>sigpro.php</filename>
+			<filename>config.xml</filename>
+			<filename>helper.php</filename>
+		</files>
+		<languages folder="administrator/language/en-GB">
+			<language tag="en-GB">en-GB.com_sigpro.ini</language>
+			<language tag="en-GB">en-GB.com_sigpro.menu.ini</language>
+			<language tag="en-GB">en-GB.com_sigpro.sys.ini</language>
+			<language tag="en-GB">en-GB.plg_content_jw_sigpro.ini</language>
+			<language tag="en-GB">en-GB.plg_content_jw_sigpro.sys.ini</language>
+			<language tag="en-GB">en-GB.plg_editors-xtd_jw_sigpro.ini</language>
+			<language tag="en-GB">en-GB.plg_editors-xtd_jw_sigpro.sys.ini</language>
+			<language tag="en-GB">en-GB.plg_k2_jw_sigpro.ini</language>
+			<language tag="en-GB">en-GB.plg_k2_jw_sigpro.sys.ini</language>
+		</languages>
+	</administration>
+	<plugins>
+		<plugin plugin="jw_sigpro" group="content" />
+		<plugin plugin="jw_sigpro" group="editors-xtd" />
+		<plugin plugin="jw_sigpro" group="k2" />
+	</plugins>
+</extension>

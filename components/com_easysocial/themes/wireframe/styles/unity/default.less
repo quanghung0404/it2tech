@@ -1,0 +1,353 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	unity.less
+\*------------------------------------*/
+
+.es-unity {
+	.hero-unit {
+		padding: 10px;
+		background: @esUnityBackground;
+		margin: 0 0 2px;
+		border: 1px solid transparent;
+		border-bottom: 1px solid @esBorder;
+		border-radius: 0;
+		.hero-title {
+			text-align: center;
+			font-size: 24px;
+			line-height: 22px;
+			// color: white;
+			font-weight: bold;
+			margin: 6px 0 16px;
+			padding: 0;
+		}
+		.hero-unit-message {
+			color: #555;
+			text-align: center;
+			padding: 20px;
+			p {
+				text-align: center;
+				font-size: 14px;
+				line-height: 18px;
+			}
+		}
+		img {
+			margin-bottom: 10px;
+		}
+	}
+	// .form-horizontal {
+	// 	.control-label {
+	// 		width: 60px;
+	// 	}
+	// 	.controls {
+	// 		margin-left: 70px;
+	// 	}
+
+	// }
+
+	// reset top padding to zero in unity page
+	.es-streams {
+		padding: 0;
+	}
+	.es-unity-content {
+		margin: 20px 0;
+		display: table;
+		width: 100%;
+		position: relative;
+	}
+	// .es-table-row {
+	// 	display: table-row;
+	// }
+	.es-spotlignt-col {
+		display: table-cell;
+		vertical-align: top;
+		empty-cells: show;
+		height: 100%;
+		background: red;
+		&.col-left {
+			width: 60%;
+			// .col-wrap {
+			// 	display: table;
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	padding-right: 20px;
+			// 	empty-cells: show;
+			// }
+		}
+	}
+	.es-stats-wrap,
+	.es-form-wrap,
+	.es-unity-divider {
+		// background: #ccc;
+		display: table-cell;
+		vertical-align: top;
+	}
+	.es-unity-divider {
+		// background: red;
+		width: 20px;
+	}
+	.es-stats-wrap {
+		width: 60%;
+		height: 100%;
+		border: 1px solid @esBorder;
+		border-radius: 5px;
+	}
+	.es-stats {
+		// height: 280px;
+		position: relative;
+		// width: 65%;
+		background: #fff;
+		// margin-right: 20px;
+		// display: table-cell;
+		width: 100%;
+		height: 100%;
+		border-radius: 5px;
+
+		// .clearfix();
+
+		.es-stat-hd,
+		.es-stat-bd,
+		.xes-stat-ft {
+			.clearfix();
+		}
+		.es-stat-result {
+			position: relative;
+			.es-stat-no {
+				font-size: 18px;
+			}
+			.es-stat-desp {
+				color: #999;
+			}
+		}
+		.es-stat-hd {
+			text-align: center;
+			padding: 20px 10px;
+			margin: 20px auto;
+			.es-stat-result {
+				.es-stat-no {
+					font-size: 32px;
+					line-height: 30px;
+					margin-bottom: 10px;
+				}
+			}
+		}//hd
+		.es-stat-bd {
+			text-align: center;
+			position: relative;
+			// &:before { //timeline
+			// 	display: block;
+			// 	content: '';
+			// 	width: 1px;
+			// 	position: absolute;
+			// 	background-color: rgba(0, 0, 0, 0.08);
+			// 	left: 50%;
+			// 	top: 0px;
+			// 	bottom: 0;
+			// 	// margin-left: -2px;
+			// 	// min-height: 320px;
+			// }
+			.es-stat-result {
+				text-align: center;
+				display: inline-block;
+
+				&:first-child {
+					margin-right: 15px;
+
+
+				}
+				+ .es-stat-result {
+					margin-left: 15px;
+					.es-stat-no {
+						color: #79BA0E;
+					}
+				}
+			}
+		}//bd
+
+	}//stats
+
+	.es-stat-register {
+		border-top: 1px solid @esBorder;
+		text-align: center;
+		padding: 20px;
+		margin-top: 40px;
+		width: 60%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		.btn {
+			padding: 8px 20px;
+		}
+	}
+
+	.es-form-wrap {
+		border: 1px solid @esBorder;
+		background: #EFF0F4;
+		padding: 0 20px;
+		// height: 280px;
+		// text-align: center;
+		border-radius: 5px;
+		.es-form-title {
+			font-size: 16px;
+			font-weight: bold;
+			margin-top: 20px;
+			line-height: 18px;
+			margin-bottom: 8px;
+		}
+		.es-form-login {
+			margin-top: 16px;
+			// text-align: center
+			input[type="text"],
+			input[type="password"] {
+				height: 32px;
+			}
+			.btn-login {
+				margin-top: 14px;
+			}
+			.help-block {
+				a {
+					color: #888;
+				}
+			}
+		}
+
+		.es-signin-social {
+			p {
+				margin-top: 20px;
+
+			}
+			.line {
+				position: relative;
+				&:before {
+					content: '';
+					width: 100%;
+					position: absolute;
+					// Temporary turn off it cant achieve without background color
+					// background-color: @esUnityBorder !important;
+					left: 0;
+					right: 0;
+					top: 9px;
+					height: 1px;
+					// bottom: 0;
+				}
+				strong {
+					// background: @esUnityBackground;
+					padding: 0 6px;
+					position: relative;
+					z-index: 2;
+				}
+			}
+			.text-error,
+			.text-error a {
+				color: #B94A48;
+			}
+		}//es-signin-social
+	}//form-wrap
+
+	.es-unity-happen {
+		.es-unity-title {
+			position: relative;
+			text-align: center;
+			margin: 32px auto;
+			&:before { //timeline
+				display: block;
+				content: '';
+				width: 100%;
+				height: 1px;
+				position: absolute;
+				// Temporary turn off it cant achieve without background color
+				// background-color: @esUnityBorder;
+				// left: 50%;
+				top: 50%;
+				// bottom: 0;
+				// margin-left: -2px;
+				// min-height: 320px;
+			}
+			span {
+				padding: 0 10px;
+				// background: @esUnityBackground;
+				position: relative;
+				z-index: 2;
+				font-size: 20px;
+				font-weight: bold;
+			}
+		}
+
+		.es-modules-wrap {
+			.widget-list-grid {
+				padding: 10px;
+			}
+		}
+
+		// Add some margin for modules
+		.es-modules-wrap + .es-modules-wrap{
+			margin-top: 25px;
+		}
+
+	}//spotlight-happen
+
+	.btn-subscribe {
+		display: block;
+		padding: 30px;
+		margin-bottom: 40px;
+		background: transparent;
+		&:hover {
+			background: transparent;
+		}
+	}
+}
+
+
+
+// Responsive
+&.w480 {
+	.es-unity {
+		.es-unity-happen {
+			[class*="span"] {
+				display: block;
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+
+
+
+// QUICK PATCH FOR DASHBOARD LOGIN.
+.row-table {
+	display: table;
+	width: 100%;
+}
+.col-cell {
+	display: table-cell;
+	vertical-align: top;
+	float: none !important;
+
+	&.cell-mid {
+		vertical-align: middle;
+	}
+}
+.cell-half {
+	width: 50%;
+}
+
+.cell-tight {
+	width: 1%;
+	white-space: nowrap;
+}
+.panel-go {
+	.col-cell {
+		vertical-align: middle;
+		padding: 30px 50px;
+
+		+.col-cell {
+			border-left: 1px solid #eee;
+		}
+	}
+}

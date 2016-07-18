@@ -1,0 +1,276 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+.es-story-video-form {
+
+	&.is-uploading {
+		.video-result,
+		.video-form {
+			display: none;
+		}
+
+		.video-progress {
+			display: block;
+		}
+	}
+
+	&.is-processing {
+		.insert-button {
+			.loading-indicator {
+				display: block;
+			}
+
+			span {
+				display: none;
+			}
+		}
+
+		.video-result,
+		.video-progress {
+			display: none;
+		}
+	}
+
+	&.is-processed {
+		.video-result {
+			display: block;
+		}
+
+		.video-form,
+		.video-progress {
+			display: none;
+		}
+	}
+
+	&.is-waiting {
+		.video-form {
+			display: block;
+		}
+
+		.video-progress,
+		.video-result {
+			display: none;
+		}
+	}
+
+	&.editing-title {
+		.es-video-item-title {
+			display: none;
+		}
+		.es-video-item-title-textbox {
+			display: block;
+		}
+	}
+
+	&.editing-description {
+		.es-video-item-desp {
+			display: none;
+		}
+		.es-video-item-desp-textbox {
+			display: block;
+		}
+	}
+
+	.es-video-item-title {
+		white-space: nowrap;
+		.text-overflow();
+		margin: 0;
+		text-transform: none;
+		border: 1px solid transparent;
+		cursor: pointer;
+		color: @esStoryLinkTitleColor;
+
+		&:hover {
+			background: @esStoryLinkHoverBackground;
+			border: 1px dashed @esStoryLinkHoverBorder;
+		}
+	}
+
+	.insert-button {
+		min-width: 80px;
+	}
+
+	.es-video-item-desp-textbox,
+	.es-video-item-title-textbox {
+		display: none;
+	}
+
+	.es-video-item-desp {
+		border: 1px solid transparent;
+		cursor: pointer;
+		overflow: hidden;
+		font-size: @baseFontSize;
+		line-height: 16px;
+		margin: 4px 0 8px;
+
+		&.no-description {
+			opacity: 0.6;
+		}
+
+		&:hover {
+			background: @esStoryLinkHoverBackground;
+			border: 1px dashed @esStoryLinkHoverBorder;
+			opacity: 1;
+		}
+	}
+
+	.video-category {
+		margin-top: 10px;
+	}
+	
+	.es-video {
+		width: 100%;
+		height: 100%;
+		// position: absolute;
+		display: block;
+
+		> a {
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			display: block;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.es-video-item {
+		
+		width: 200px;
+		margin: 5px 0;
+		border-radius: 3px;
+		background: #363636;
+		overflow: hidden;
+		// float: left;
+
+		&:hover {
+			// background: @esAlbumPhotoHoverBackground;
+
+			.es-photo-remove-button {
+				bottom: 0;
+			}
+		}
+	}
+
+	.es-video-item-content {
+		margin-left: 210px;
+	}
+
+	.es-video-upload-button {
+		background: @esAlbumPhotoUploadButtonBackground;
+		height: 80px;
+		border-radius: 3px;
+
+		position: relative;
+		z-index: 0;
+		text-align: center;
+		cursor: pointer;
+
+		&:hover {
+			background: @esAlbumPhotoUploadButtonHoverBackground;
+			> span {
+				color: @esAlbumPhotoUploadButtonHoverColor;
+			}
+		}
+
+
+		// add/drop hint
+		> span {
+			position: relative;
+			line-height: 80px;
+			color: @esAlbumPhotoHintColor;
+			cursor: pointer;
+
+			b {
+				position: relative;
+				left: -5px;
+			}
+
+			i {
+				position: relative;
+				top: 2px;
+				left: -5px;
+			}
+		}
+	}
+}
+
+.es-video-form-divider {
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	margin: 5px 0;
+	span {
+		display: inline-block;
+		vertical-align: baseline;
+		zoom: 1;
+		*display: inline;
+		*vertical-align: auto;
+		position: relative;
+		padding: 0 15px;
+
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			width: 1000px;
+			position: absolute;
+			top: 0.73em;
+			border-top: 1px solid @esBorder;
+		}
+
+		&:before {
+			right: 100%;
+
+		}
+		&:after {
+			left: 100%;
+		}
+	}	
+}
+.es-video-item-wrap {
+	position: relative;
+	padding: 10px 20px;
+	background: @esStoryVideoBackground;
+	.es-video-item {
+		float: left;
+	}
+}
+.es-video-item-remove {
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	font-size: @baseFontSize;
+	color: @grayLight;
+	cursor: pointer;
+}
+
+.es-video-item-title {
+	font-weight: bold;
+	line-height: 24px;
+}
+
+.es-story-video-progress-wrap { // customize progress bar for video uploading
+	padding: 10px 20px;
+	background: @esStoryVideoBackground;
+	.es-story-video-status-text {
+		color: #888;
+		line-height: 24px;
+	}
+	.progress {
+		background: #D6D6D6;
+		box-shadow: none;
+		height: 12px;
+	}
+	.bar {
+		background: @progress-bar-success-bg;
+		height: 100%;
+	}
+}

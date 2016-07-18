@@ -1,0 +1,303 @@
+/*------------------------------------*\
+    $icons.less
+\*------------------------------------*/
+//Icon (add in custom icon)
+
+//=sprite
+@sprite-32px: 32px; //icon grid
+.spriteGrid-32(@x, @y) {
+	background-position: -((@x*@sprite-32px)-@sprite-32px) -((@y*@sprite-32px)-@sprite-32px);
+}
+.spriteGrid-16(@x, @y) {
+	background-position: -((@x*16px)-16px) -((@y*16px)-16px);
+}
+.spriteSize(@size) {
+	width: @size;
+	height: @size;
+	line-height:@size;
+}
+
+// [class^="icon-es-"],
+// [class*=" icon-es-"] {
+// 	.spriteSize(32px);
+// 	background:url(@{admin_uri}../images/icon-sprite.png) no-repeat;
+// }
+
+[class^="icon-sb-"],
+[class*=" icon-sb-"] {
+	.spriteSize(16px);
+	background:url(@{admin_uri}../images/icon-sidebar.png) no-repeat;
+	vertical-align: text-bottom;
+	display: inline-block;
+}
+
+[class^="icon-es-"]:last-child,
+[class*=" icon-es-"]:last-child,
+[class^="icon-sb-"]:last-child,
+[class*=" icon-sb-"]:last-child {
+	*margin-left:0;
+}
+// .icon-es-tri-up {
+// 	.spriteGrid-32(1, 1);
+// 	.spriteSize(12px);
+// }
+// .icon-es-tri-down {
+// 	.spriteGrid-32(2, 1);
+// 	.spriteSize(12px);
+// }
+// .icon-es-default_avatar {
+// 	.spriteGrid-32(3, 1);
+// 	width: 42px;
+// 	height: 24px;
+// }
+
+// .icon-es-acl {
+// 	.spriteGrid-32(1, 2);
+// }
+// .icon-es-horn {
+// 	.spriteGrid-32(2, 2);
+// }
+// .icon-es-bug {
+// 	.spriteGrid-32(3, 2);
+// }
+// .icon-es-calendar {
+// 	.spriteGrid-32(4, 2);
+// }
+// .icon-es-dashboard {
+// 	.spriteGrid-32(5, 2);
+// }
+// .icon-es-doc {
+// 	.spriteGrid-32(6, 2);
+// }
+// .icon-es-groups {
+// 	.spriteGrid-32(7, 2);
+// }
+// .icon-es-location {
+// 	.spriteGrid-32(8, 2);
+// }
+// .icon-es-mail {
+// 	.spriteGrid-32(9, 2);
+// }
+// .icon-es-optimize {
+// 	.spriteGrid-32(10, 2);
+// }
+// .icon-es-photos {
+// 	.spriteGrid-32(1, 3);
+// }
+// .icon-es-points {
+// 	.spriteGrid-32(2, 3);
+// }
+// .icon-es-profiles {
+// 	.spriteGrid-32(3, 3);
+// }
+// .icon-es-settings {
+// 	.spriteGrid-32(4, 3);
+// }
+// .icon-es-stats {
+// 	.spriteGrid-32(5, 3);
+// }
+// .icon-es-support {
+// 	.spriteGrid-32(6, 3);
+// }
+// .icon-es-tasks {
+// 	.spriteGrid-32(7, 3);
+// }
+// .icon-es-templates {
+// 	.spriteGrid-32(8, 3);
+// }
+// .icon-es-users {
+// 	.spriteGrid-32(9, 3);
+// }
+// .icon-es-warning {
+// 	.spriteGrid-32(10, 3);
+// }
+// .icon-es-help {
+// 	.spriteGrid-32(1, 4);
+// }
+
+
+// Sidebar Icons
+// ----------------
+.icon-sb-home {
+	.spriteGrid-16(1, 1);
+}
+.icon-sb-cog {
+	.spriteGrid-16(2, 1);
+}
+.icon-sb-user {
+	.spriteGrid-16(3, 1);
+}
+.icon-sb-briefcase {
+	.spriteGrid-16(4, 1);
+}
+.icon-sb-lock {
+	.spriteGrid-16(5, 1);
+}
+.icon-sb-folder {
+	.spriteGrid-16(6, 1);
+}
+.icon-sb-report {
+	.spriteGrid-16(7, 1);
+}
+.icon-sb-email {
+	.spriteGrid-16(8, 1);
+}
+.icon-sb-badges{
+	.spriteGrid-16( 9, 1 );
+}
+.icon-sb-help{
+	.spriteGrid-16( 10, 1 );
+}
+.icon-sb-reports{
+	.spriteGrid-16( 1 , 2 );
+}
+.icon-sb-access{
+	.spriteGrid-16( 2 , 2 );
+}
+.icon-sb-apps{
+	.spriteGrid-16( 3 , 2 );
+}
+.icon-sb-labels{
+	.spriteGrid-16( 4 , 2 );
+}
+.icon-sb-points{
+	.spriteGrid-16( 5 , 2 );
+}
+.icon-sb-indexer{
+	.spriteGrid-16( 6 , 2 );
+}
+.icon-sb-themes{
+	.spriteGrid-16( 7 , 2 );
+}
+.icon-sb-privacy{
+	.spriteGrid-16( 9 , 2 );
+}
+.icon-sb-migrators{
+	.spriteGrid-16( 10 , 2 );
+}
+.icon-sb-alerts{
+	.spriteGrid-16( 1 , 3 );
+}
+.icon-sb-albums{
+	.spriteGrid-16( 2 , 3 );
+}
+.icon-sb-languages{
+	.spriteGrid-16( 3 , 3 );
+}
+.icon-sb-group{
+	.spriteGrid-16( 4 , 3 );
+}
+//@import "icons-jar.less"; //load icons-jar.less
+//@import "icons-shelf.less"; //load icons-shelf.less
+
+
+
+//icon-field
+[class^="icon-field-"],
+[class*=" icon-field-"] {
+	// background: blue;
+	.spriteSize(16px);
+	vertical-align: text-bottom;
+	display: inline-block;
+	position: relative;
+	background: url(@{admin_uri}../images/icon-field.png) no-repeat;
+}
+.icon-field-joomla_timezone {
+	.spriteGrid-16( 1 , 1 );
+}
+.icon-field-address,
+.icon-field-country {
+	.spriteGrid-16( 2 , 1 );
+}
+.icon-field-textbox,
+.icon-field-joomla_fullname,
+.icon-field-joomla_username,
+.icon-field-joomla_password,
+.icon-field-autocomplete,
+.icon-field-html {
+	.spriteGrid-16( 3 , 1 );
+}
+.icon-field-textarea {
+	.spriteGrid-16( 4 , 1 );
+}
+.icon-field-dropdown {
+	.spriteGrid-16( 5 , 1 );
+}
+.icon-field-checkbox {
+	.spriteGrid-16( 6 , 1 );
+}
+.icon-field-gender {
+	.spriteGrid-16( 7 , 1 );
+}
+.icon-field-birthday {
+	.spriteGrid-16( 8 , 1 );
+}
+.icon-field-url,
+.icon-field-permalink {
+	.spriteGrid-16( 9 , 1 );
+}
+.icon-field-file {
+	.spriteGrid-16( 10 , 1 );
+}
+.icon-field-datetime {
+	.spriteGrid-16( 11 , 1 );
+}
+.icon-field-boolean {
+	.spriteGrid-16( 12 , 1 );
+}
+.icon-field-joomla_user_editor {
+	.spriteGrid-16( 13 , 1 );
+}
+.icon-field-currency {
+	.spriteGrid-16( 14 , 1 );
+}
+.icon-field-email,
+.icon-field-joomla_email,
+.icon-field-mailchimp,
+.icon-field-acymailing {
+	.spriteGrid-16( 15 , 1 );
+}
+.icon-field-recaptcha {
+	.spriteGrid-16( 16 , 1 );
+}
+.icon-field-terms,
+.icon-field-text {
+	.spriteGrid-16( 17 , 1 );
+}
+.icon-field-mollom {
+	.spriteGrid-16( 18 , 1 );
+}
+.icon-field-relationship {
+	.spriteGrid-16( 19 , 1 );
+}
+.icon-field-cover {
+	.spriteGrid-16( 20 , 1 );
+}
+.icon-field-header,
+.icon-field-headline {
+	.spriteGrid-16( 21 , 1 );
+}
+.icon-field-separator {
+	.spriteGrid-16( 22 , 1 );
+}
+.icon-field-easyblog {
+	.spriteGrid-16( 23 , 1 );
+}
+.icon-field-easydiscuss {
+	.spriteGrid-16( 24 , 1 );
+}
+.icon-field-multilist,
+.icon-field-multidropdown,
+.icon-field-multitextbox {
+	.spriteGrid-16( 25 , 1 );
+}
+// Row 2
+.icon-field-kunena_signature {
+	.spriteGrid-16( 1 , 2 );
+}
+.icon-field-skype {
+	.spriteGrid-16( 2 , 2 );
+}
+.icon-field-joomla_language {
+	.spriteGrid-16( 3 , 2 );	
+}

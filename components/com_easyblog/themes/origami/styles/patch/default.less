@@ -1,0 +1,68 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+
+.eb-post-calendar {
+	background: #fff;
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	text-transform: uppercase;
+	overflow: hidden;
+}
+
+.eb-post-calendar-m {
+	background: @eb-box-shade;
+	font-size: 11px;
+	border-bottom: 1px solid @eb-box-border;
+	line-height: 20px;
+}
+
+.eb-post-calendar-d {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 36px;
+}
+
+// POST
+
+.eb-post {
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	padding: @eb-gutter;
+	margin: 0 0 0 25px;
+}
+
+.eb-post-side {
+	margin: 0 0 0 (-25px - @eb-gutter);
+
+	+ .eb-post-content {
+		margin: 0 0 0 25px;
+	}
+}
+
+.eb-post-type {
+	i {
+		background: #fff;
+	}
+}
+
+.eb-post-featured i {
+	background: #fff;
+	font-size: 12px;
+	display: inline-block;
+	line-height: 22px;
+	height: 26px;
+	width: 26px;
+	border-radius: 50%;
+	border: 2px solid #ddd;
+	color: #999;
+	text-align: center;
+}
+
+.eb-avatar {
+	background: #fff;
+}

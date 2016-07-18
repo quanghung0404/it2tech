@@ -1,0 +1,316 @@
+.ebd-workarea {
+
+    .ebd {
+        // Because blocks are floats
+        .clearfix();
+
+        padding: @eb-composer-gutter 0;
+
+        // For document fading in
+        .transition(opacity 0.5s ease);
+
+        // Hide inline block data
+        textarea[data-block] {
+            display: none;
+        }
+    }
+
+    .ebd-block {
+
+        // This creates an invisible space on the sides
+        // of the element so that user can sort blocks
+        // outside of the block area.
+        border: @eb-composer-gutter solid transparent;
+        border-top-width: 0px;
+        border-bottom-width: 0px;
+        word-break: break-word;
+
+        // When user activates a block, it will create surrounding padding.
+        .ebd-block-viewport {
+            position: relative;
+            height: 100%;
+
+            // This uncollapses margin in block content
+            // &:after {
+            //     content: " ";
+            //     display: table;
+            // }
+        }
+
+        z-index: @ebd-workarea-block-zindex;
+
+        // Hovered block has a higher z-index but
+        // lower than active block.
+        &.hover {
+            z-index: @ebd-workarea-block-hover-zindex;
+        }
+
+        // Active block or block with active nested block
+        // has higher z-index than hovered block.
+        &.active,
+        &.has-active-child {
+            z-index: @ebd-workarea-block-active-zindex;
+        }
+
+        &.is-highlighting {
+            z-index: @ebd-workarea-block-highlighting-zindex;
+        }
+
+        &.active,
+        &.has-active-child,
+        &.is-receiving {
+
+            > .ebd-block-viewport {
+
+            }
+
+            // Isolated blocks has no padding
+            &.is-isolated {
+                > .ebd-block-viewport {
+                    // padding: 0;
+                }
+            }
+        }
+
+        // This creates zoom animation when block is dropped.
+        // The reason why it is done on the child element
+        // of the block is because we want the block guide
+        // to remain visible when the block is zooming in.
+        .ebd-block-content {
+            .transition(all .5s ease);
+            .transition-property(~"opacity, transform");
+            .transform_(scale(1));
+            .transform-origin(center center);
+            .backface-visibility(hidden);
+            .perspective(1000);
+        }
+
+        // When block appears as a placeholder,
+        // it should have a min-height.
+        &.is-placeholder {
+            width: 100%;
+            min-height: @eb-composer-gutter;
+            z-index: @ebd-workarea-block-hover-zindex;
+
+            // Placeholder preview
+            > div {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #eee;
+            }
+        }
+
+        // If this is a new block that has just been
+        // dropped from the blocks sidebar, keep the
+        // block invisible first so we can perform
+        // the zoom-in effect on it.
+        &.is-new {
+            .ebd-block-content {
+                opacity: 0;
+            }
+        }
+
+        // This creates the state where scripts can perform
+        // dimension related calculation on the block
+        // before entering .is-releasing state where
+        // the block is shrinked again for zoom transition.
+        &.is-dropping {
+            .ebd-block-content {
+                opacity: 0;
+            }
+        }
+
+        // This creates the initial state of the zoom transition.
+        // This classname is then removed for it to transition
+        // back to block's normal appearance.
+        &.is-releasing {
+
+            .no-transition();
+
+            .ebd-block-content {
+                .transform_(scale(0.7));
+                .no-transition();
+            }
+        }
+
+        // When an existing block is being sorted, this block element
+        // is now invisible (has a display: none added by ui/sortable)
+        // but still exist on the document tree and will have this
+        // special classname.
+        &.is-sort-item {
+        }
+
+        // When a block is being previewed.
+        &.is-preview {
+            // This is a stub, just to indicate that such class exists.
+            // Every handler handle this differently.
+        }
+
+        // When an old-fashioned pasting trick is being perform on the element
+        // IE & Opera only.
+        &.is-pasting {
+            position: absolute;
+            opacity: 0;
+            .no-transition();
+
+            .ebd-block-content {
+                .no-transition();
+            }
+        }
+
+        // When an existing block appears as a helper
+        // because it is currently being sorted,
+        // it should appear slightly smaller.
+        &.is-helper {
+
+            // .transform_(scale(0.7));
+
+            // TODO: Using JS to calculate the transform-origin
+            // from the cursor position user initially clicked
+            // on the block itself.
+            .transform-origin(left center);
+
+            // Blocks helpers should not have borders.
+            border: none;
+        }
+
+        // Block highlight
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            .box-shadow(0 0 12px @eb-composer-green-accent-color);
+            opacity: 0;
+        }
+
+        &.active {
+            &:before {
+                // Increase height for toolbar
+                // .box-sizing(content-box);
+                // margin-top: @ebd-block-toolbar-height * -1;
+                // padding-bottom: @ebd-block-toolbar-height;
+            }
+        }
+
+        > .ebd-block-viewport > .eb-hint {
+            display: none;
+
+            &.hint-loading {
+                width: 100%;
+                min-height: 120px;
+                background: @eb-composer-gray-accent-color;
+            }
+        }
+
+        &.is-loading {
+
+            > .ebd-block-viewport > .eb-hint.hint-loading {
+                display: table;
+            }
+        }
+    }
+
+    // This clears floating content
+    .ebd-block-content {
+        .clearfix();
+    }
+
+    // When blocks within document are being sorted, ensure move
+    // move cursor is consistently when cursor is moving across blocks.
+    &.is-sorting {
+        cursor: move;
+
+        * {
+            cursor: move !important;
+        }
+    }
+
+    // When blocks within document are being sorted,
+    // disable block animation so it won't slow down resizing.
+    &.is-resizing {
+
+        .ebd-block {
+            .no-transition();
+
+            .ebd-block-content {
+                .no-transition();
+            }
+        }
+    }
+
+    // When block is placed inside workarea ghost
+    &.is-ghost {
+
+        // TODO: Clean up & variabilize these.
+        .ebd-block {
+
+            .transition(all .25s ease);
+            .transition-property(~"opacity, transform");
+
+            // When a block is appears as a helper, it should have a glowing shadow.
+            // This applies to block inside document and block menu.
+            &.is-helper {
+                background: rgba(255, 255, 255, 0.9);
+                position: relative;
+                .transform_(scale(0.7) translateY(-50%));
+                .transition(all .25s ease);
+                .transition-property(~"opacity, transform");
+                .transform-origin(center -30px); // TODO: Get actual toolbar size
+                opacity: 0.9;
+
+                &:before {
+                    opacity: 1;
+                }
+            }
+
+            &.is-menu-helper {
+                opacity: 0.9;
+            }
+
+            // When block hovers over a dropzone,
+            // make block smaller.
+            &.is-sending {
+                .transform_(scale(0.5));
+                opacity: 0.5;
+            }
+        }
+    }
+
+    // Hints
+    .ebd-block-hint {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .eb-hint {
+            display: none;
+        }
+
+        .eb-hint-text {
+            color: #fff;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            background: @eb-composer-green-accent-color;
+            padding: @eb-composer-gutter / 4;
+            border-radius: @eb-composer-border-radius;
+        }
+    }
+
+    .ebd-block {
+
+        &.show-block-hint {
+
+            > .ebd-block-hint {
+                .hint-move {
+                    display: table;
+                }
+            }
+        }
+    }
+}

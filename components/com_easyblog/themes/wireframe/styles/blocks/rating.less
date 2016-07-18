@@ -1,0 +1,20 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+/* Star rating system */
+.ui-stars-star,
+.ui-stars-cancel{margin:0 !important;padding:0 !important; display: inline-block; font-size: 0;vertical-align: top;overflow: hidden; position: relative; top: 1px;}
+.ui-stars-star a,
+.ui-stars-cancel a{background:url(@{site_base_uri}/../images/ratings/stars.png) no-repeat 0 0 transparent !important;display:block;height:16px;width:16px;font-size:0;}
+.ui-stars-star a{background:url(@{site_base_uri}/../images/ratings/stars.png) no-repeat transparent 0 -32px !important;margin-top:-1px}
+.ui-stars-star-on a{background:url(@{site_base_uri}/../images/ratings/stars.png) no-repeat transparent 0 -48px !important}
+.ui-stars-star-hover a,
+.ui-stars-star-hover a:hover{background:url(@{site_base_uri}/../images/ratings/stars.png) no-repeat transparent 0 -64px !important; text-decoration:none !important}
+.ui-stars-cancel-hover a{background:url(@{site_base_uri}/../images/ratings/stars.png) no-repeat transparent 0 -16px !important}
+.ui-stars-star-disabled,
+.ui-stars-star-disabled a,
+.ui-stars-cancel-disabled a{cursor:default!important}

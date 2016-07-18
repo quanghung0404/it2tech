@@ -1,0 +1,13 @@
+[
+    {
+        "script": [
+            "site/friends/suggest"
+        ],
+        "language": [
+            "PLG_FIELDS_RELATIONSHIP_APPROVE_CONFIRM",
+            "PLG_FIELDS_RELATIONSHIP_ACTION_APPROVE",
+            "COM_EASYSOCIAL_CANCEL_BUTTON"
+        ],
+        "adapter": "EasySocial"
+    }
+]

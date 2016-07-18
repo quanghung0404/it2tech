@@ -1,0 +1,119 @@
+.eb-pills {
+    display: table;
+}
+
+.eb-pill-group {
+    display: table-cell;
+    vertical-align: middle;
+    border-right: 5px solid transparent;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        .box-shadow(0 2px 0 0 @eb-composer-shadow-light-color);
+        border-radius: @eb-composer-border-radius;
+    }
+
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.eb-pill {
+    position: relative;
+    display: table;
+
+    background: #fff;
+    border: 1px solid @eb-composer-border-color;
+    border-radius: @eb-composer-border-radius;
+}
+
+.eb-pill-item {
+    position: relative;
+    display: table-cell;
+
+    padding: 7px 10px;
+    color: @eb-composer-text-light-color;
+    font-weight: bold;
+    text-align: center;
+
+    cursor: pointer;
+
+    + .eb-pill-item {
+        border-left: 1px solid #ddd;
+    }
+
+    &:first-child {
+        border-radius: @eb-composer-border-radius 0 0 @eb-composer-border-radius;
+    }
+
+    &:last-child {
+        border-radius: 0 @eb-composer-border-radius @eb-composer-border-radius 0;
+    }
+
+    &.active {
+        background: @eb-composer-active-color;
+        color: @eb-composer-accent-color;
+    }
+}
+
+// Extends .eb-tabs with pill style menu
+.eb-tabs {
+
+    &.pill-style {
+
+        // overflow: hidden;
+        .box-shadow(0 2px 0 0 @eb-composer-shadow-light-color);
+        border-radius: @eb-composer-border-radius;
+
+        .eb-tabs-menu {
+            // Inherit from .eb-pill
+        }
+
+        .eb-tabs-menu-item {
+            // Inherit from .eb-pill-item
+        }
+
+        .eb-tabs-content {
+            // .transition(all .3s ease);
+            // .transform_(translateY(-100%));
+        }
+
+        .eb-tabs-content-item {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-top: 0px;
+            border-radius: 0px 0px @eb-composer-border-radius @eb-composer-border-radius;
+            padding: @eb-composer-gutter / 2;
+            color: @eb-composer-text-color;
+        }
+
+        &.is-open {
+
+            .eb-tabs-menu {
+                border-radius: @eb-composer-border-radius @eb-composer-border-radius 0px 0px;
+            }
+
+            .eb-tabs-menu-item {
+
+                &:first-child {
+                    border-radius: @eb-composer-border-radius 0 0 0px;
+                }
+
+                &:last-child {
+                    border-radius: 0 @eb-composer-border-radius 0px 0;
+                }
+            }
+
+            .eb-tabs-content {
+                // .transform_(translateY(0%));
+            }
+        }
+    }
+}

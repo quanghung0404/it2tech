@@ -1,0 +1,133 @@
+.eb-mm-folder {
+
+    &.is-uploading {
+
+        .eb-mm-folder-upload-panel {
+            bottom: 0%;
+        }
+
+        .eb-mm-folder-content-panel > div {
+            padding-bottom: @eb-mm-folder-snackbar-size;
+        }
+    }
+
+    &.filter-new {
+        .eb-mm-folder-title-filter {
+            .filter-new {
+                display: block;
+                line-height: 14px;
+            }
+            .filter-all {
+                display: none;
+            }
+        }
+    }
+
+    .hint-upload,
+    .hint-empty {
+        display: none;
+    }
+
+    &.is-empty {
+
+        .hint-empty {
+            display: table;
+        }
+
+        &.can-upload {
+
+            .hint-empty {
+                display: none;
+            }
+
+            .hint-upload {
+                display: table;
+            }
+        }
+
+        .eb-mm-folder-content-panel {
+            display: none;
+        }
+    }
+}
+
+.eb-mm-folder-content-panel {
+    background: #fff;
+    border: 1px solid @eb-composer-border-color;
+    border-radius: @eb-composer-border-radius;
+}
+
+.eb-mm-folder-upload-panel {
+    border-top: 1px solid @eb-mm-folder-snackbar-border;
+    background: @eb-mm-folder-snackbar-bg;
+    width: 100%;
+    height: @eb-mm-folder-snackbar-size;
+    line-height: 16px;
+    padding: (50px - 32)/2 15px;
+
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    z-index: @eb-mm-folder-upload-panel-zindex;
+    .box-shadow(@eb-mm-folder-snackbar-shadow);
+    .transition(bottom 1s ease);
+
+    // Delay 1 second to prevent animation from choking up when sliding in
+    // Delay 1 second for progress bar animation to complete when sliding out
+    .transition-delay(1s);
+}
+
+.eb-mm-folder-upload-progress {
+    background: none !important;
+    height: 6px;
+    border-radius: 0;
+    width: 100%;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    .box-shadow(none);
+
+    .progress-bar {
+        border: 1px solid rgba(0,0,0,.15)
+    }
+}
+
+.eb-mm-folder-title-filter {
+    color: @eb-mm-text-light-color;
+    color: fadeout(#fff, 50%);
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 14px;
+    display: block;
+
+    .filter-new {
+        display: none;
+    }
+}
+
+.eb-mm-folder-upload-current-file {
+    > div {
+        .text-overflow();
+    }
+}
+
+.eb-mm-folder-header {
+    cursor: pointer;
+}
+
+
+.eb-mm-folder[data-key=users] {
+
+    .eb-mm-filelist {
+        padding: 10px 0;
+    }
+
+    .eb-mm-file {
+        width: 100% !important;
+        float: none !important;
+    }
+
+}
+
+@import "mediamanager/folder/search";
+@import "mediamanager/user/search";

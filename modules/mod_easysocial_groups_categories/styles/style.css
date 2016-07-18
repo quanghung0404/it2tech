@@ -1,0 +1,48 @@
+div#fd.es.mod-es-groups-categories ul {
+  list-style: none;
+}
+div#fd.es.mod-es-groups-categories ul li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-avatar {
+  float: right;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-avatar + .es-category-object {
+  margin-right: 35px;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-object {
+  margin-bottom: 5px;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-object:before,
+div#fd.es.mod-es-groups-categories ul li .es-category-object:after {
+  content: " ";
+  display: table;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-object:after {
+  clear: both;
+}
+div#fd.es.mod-es-groups-categories ul li .category-title {
+  font-size: 14px;
+  display: inline-block;
+}
+div#fd.es.mod-es-groups-categories ul li .category-desc {
+  margin-top: 5px;
+  font-size: 11px;
+  color: #666;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-meta {
+  font-size: 10px;
+  color: #666;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-meta span {
+  margin-right: 5px;
+}
+div#fd.es.mod-es-groups-categories ul li .es-category-meta span +span {
+  border-left: 1px dotted #d7d7d7;
+  padding-left: 8px;
+}
+div#fd.es.mod-es-groups-categories ul li +li {
+  padding-top: 10px;
+  border-top: 1px dotted #d7d7d7;
+}

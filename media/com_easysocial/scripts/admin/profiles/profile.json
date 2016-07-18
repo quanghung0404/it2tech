@@ -1,0 +1,14 @@
+[
+    {
+        "script": [
+            "utilities/alias"
+        ],
+        "view": [
+            "admin/profiles/dialog.delete.profileavatar"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_PROFILES_FORM_CLEAR_AVATAR"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,217 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "@{component}/variables";
+
+/*------------------------------------*\
+    $Theme - Variables
+\*------------------------------------*/
+
+@baseFontSize:          11px;
+@fontSizeSmall:         10px;
+@baseLineHeight:        16px;
+@borderRadius:          3px;
+
+
+// Light theme value
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+// Main Color
+@esBackground:          #000; // main bg color fff
+@esColor:               #666; // main text color 666
+@esBorder:          #d7d7d7; // main border color d7d7d7
+@esUnreadBackground: #f6fbff;
+@esSelectedBackground: #ffc; // light yellow
+@esTitleFont: inherit; // alternative font for title e.g.: @font-family-serif;
+
+@esTextShadow: 0 1px 1px rgba(0,0,0,.55); // default 0
+@esTextShadowAlt: 0 1px 1px rgba(255,255,255,.55); // default 255
+
+@esGutter: 20px;
+@esGutter-md: 16px;
+@esGutter-sm: 8px;
+@esGutter-xs: 4px;
+
+
+
+// Dark theme value
+// Grays (minxin dark3n change to light3n)
+// -------------------------
+// @xblack:                 #fff;
+// @grayDarker:            #eee;
+// @grayDark:              #999;
+// @gray:                  #555;
+// @grayLight:             #333;
+// @grayLighter:           #222;
+// // @xwhite:                 #000;
+
+// // Main Color
+// @esBackground:           #222; // main bg color fff
+// @esColor:                #eee; // main text color 666
+// @esBorder:           #333; // main border color d7d7d7
+// @esUnreadBackground: #202224;
+
+// @esTextShadow: 0 1px 1px rgba(255,255,255,.55); // default 0
+// @esTextShadowAlt: 0 1px 1px rgba(0,0,0,.55); // default 255
+
+/*------------------------------------*\
+    $ components.less
+\*------------------------------------*/
+@bodyBackground: @esBackground;
+@headingsColor: @esColor;
+
+// HR
+@hrBorder: darken(@esBorder, -5%);
+@hrBorderBottom: darken(@hrBorder, -8%);
+
+// Pagination
+// -------------------------
+@paginationBackground: @esBackground;
+@paginationBorder: @esBorder;
+@paginationActiveBackground: darken(@esBackground, 4%); //f5f5f5;
+@paginationColor: @esColor;
+
+// Buttons
+// -------------------------
+@btnBackground:                     @esBackground;
+@btnBackgroundHighlight:            darken(@esBackground, 10%);
+@btnBorder:                         #bbb;
+
+@btnPrimaryBackground:              @linkColor;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+
+@btnInfoBackground:                 #5bc0de;
+@btnInfoBackgroundHighlight:        #2f96b4;
+
+@btnSuccessBackground:              #62c462;
+@btnSuccessBackgroundHighlight:     #51a351;
+
+@btnDangerBackground:               #ee5f5b;
+@btnDangerBackgroundHighlight:      #bd362f;
+
+@btnInverseBackground:              #444;
+@btnInverseBackgroundHighlight:     @grayDarker;
+
+@btnTextShadow: 0 1px 1px rgba(0,0,0,.5);
+
+// btn-group-yesno
+@esYesnoBackground: #e5e5e5;
+@esYesnoColor: #626262;
+@esYesnoBtnBackground: #c5c5c5;
+@esYesnoBtnActiveBackground: #fff;
+@esYesnoBtnBackgroundHighlight: #f2f2f2;
+@esYesnoBtnColor: #333;
+@esYesnoBtnBorder: #c5c5c5;
+@esYesnoBtnBorderBottom: #a7a7a7;
+@esYesnoActiveColor: #626262;
+@esYesnoTextShadow: 0 1px 1px rgba(255,255,255,.1);
+
+// Dropdowns
+@dropdownCaret: #000;
+@dropdownBackground: @esBackground;
+@dropdownBorder:                rgba(0, 0, 0, 0.2);
+@dropdownDividerBackground:            darken(@dropdownBorder, 9%); //e5e5e5
+
+@dropdownDividerHoverTop: @esBorder; //bed3ea
+@dropdownDividerHoverBottom: @dropdownDividerHoverTop;
+
+@dropdownLinkColor:             @grayDark;
+@dropdownLinkColorHover:        @grayDark;
+@dropdownLinkColorActive:       @grayDark;
+
+@dropdownLinkBackgroundActive: #E7EDF3;
+@dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
+
+@esArrowBackground: @esBackground;
+
+// Modals
+@esModalColor: #666;
+@esModalBackground: #fff;
+@esModalBackdropBackground: #000;
+@esModalBorder: #c0c0c0;
+@esModalHeaderBackgroundHighlight: #f8f8f8;
+@esModalHeaderBackground: #ebebeb;
+@esModalFooterBackground: #f5f5f5;
+
+// Dialog
+@esDialogColor: #595959;
+@esDialogTitleColor: #666;
+
+// Datepicker
+@esDatePickerBackground: #fff;
+@esDatePickerColor: #636363;
+@esDatePickerBorder: #ccc;
+@esDatePickerHeaderBackgroundHighlight: #ececec;
+@esDatePickerHeaderBackground: #f8f8f8;
+@esDatePickerTdBorder: #aaa;
+
+// Privacy
+// @esPrivacyBackground: @btnBackground;
+// @esPrivacyBackgroundHighlight: @btnBackgroundHighlight;
+// @esPrivacyActiveBackground: darken(@esBackground, 9.5%); //e0e8f0
+// @esPrivacyColor: darken(@esBackground, 47%); //858585
+// @esPrivacyBorder: darken(@esBorder, -4%);
+// @esPrivacyTextshadow: @btnEsTextShadow;
+// @esPrivacyMenuActiveColor: darken(@esBackground, 80%); //black
+
+// Avatar
+@esAvatarBackground: @esBackground;
+@esAvatarBorder: @esAvatarBackground;
+
+
+/*------------------------------------*\
+    $ wifreframe/styles/style.less
+\*------------------------------------*/
+// Form
+// Naming remain for back/frontend
+@inputBackground: @esBackground;
+@inputBorder: @esBorder;
+@formActionsBackground: darken(@esBackground, 4%);
+// Elements
+@esCountBackground: darken(@esBackground, 10.2%); //left side e5e5e5
+@esCountBorder:     @esBorder;
+@esCountColor:      @esColor;
+
+@esViewHeadingBorder: darken(@esBackground, 4%); //f5f5f5
+
+@esLabelNotificationBackground: #e16273; //light red
+@esLabelNotificationColor: #fff;
+@esLabelNotificationBorder: #e27a93;
+
+@esHighlightBackground: #ff9;
+@esHighlightColor: #333;
+
+
+// Activity
+@esActivityBackground: darken(@esBackground, 4%); //f5f5f5
+@esActivityHiddenBorder: darken(@esBackground, 4%); //f5f5f5
+@esActivityColor: @esColor;
+
+
+// Mentions
+@esMentionsInputBackground: #fff;
+@esMentionsTextareaBorder: #dcdcdc;
+@esMentionsAutocompleteBorder: #b2b2b2;
+@esMentionsAutocompleteBorderBottom: #eee;
+@esMentionsAutocompleteHoverBackground: #f2f2f2;
+@esMentionsAutocompleteB: #fff;
+@esMentionsAutocompleteActiveB: #E7EDF3;
+@esMentionsAutocompleteColor: #333;
+@esMentionsColor: #fff;
+@esMentionsBackground: #c2e2ff;
+
+
+
+
+

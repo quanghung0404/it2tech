@@ -1,0 +1,56 @@
+.pageslide {
+    position: relative;
+    overflow: hidden;
+
+    &.fx-prev {
+
+        .pageslide-viewport {
+            left: 100%;
+            .transition(left .5s ease);
+        }
+
+        .pageslide-page {
+            left: -100%;
+
+            + .pageslide-page {
+                left: 0%;
+            }
+        }
+    }
+
+    &.fx-next {
+        .pageslide-viewport {
+            left: -100%;
+            .transition(left .5s ease);
+        }
+
+        .pageslide-page {
+            left: 0%;
+
+            + .pageslide-page {
+                left: 100%;
+            }
+        }
+    }
+}
+
+.pageslide-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.pageslide-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+
+    &.active + .pageslide-page {
+        left: 100%;
+    }
+}

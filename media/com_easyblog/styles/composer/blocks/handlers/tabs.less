@@ -1,0 +1,109 @@
+.ebd-block {
+    &[data-type=tabs] {
+    }
+}
+
+// TAB MANAGER
+
+.eb-composer-manage-tab {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #777;
+    overflow: hidden;
+    padding: 7px 10px;
+
+    + .eb-composer-manage-tab {
+        margin-top: 3px;
+    }
+
+    > div {
+        line-height: 20px;
+    }
+
+    &.is-default {
+        .fa-star {
+            color: #fc0;
+        }
+    }
+
+    &.is-add {
+        cursor: pointer;
+
+        * { cursor: pointer; }
+
+        &:hover {
+            color: @brand-info;
+
+            .eb-composer-manage-tab-add {
+                background: lighten(@brand-info, 30%);
+                color: @brand-info;
+            }
+        }
+    }
+}
+
+.eb-composer-manage-tab-handler {
+    display: none !important; // temporary fix
+    font-size: 14px;
+    height: 20px;
+
+    .fa {
+        display: inline-block;
+        font-size: 14px;
+        vertical-align: top;
+        line-height: inherit;
+        color: #ccc;
+
+        + .fa {
+            margin: 0 0 0 5px;
+        }
+    }
+
+    .fa-bars {
+        cursor: move;
+    }
+
+    .fa-star {
+        cursor: pointer;
+
+        &:hover {
+            color: #fc0;
+        }
+    }
+}
+
+.eb-composer-manage-tab-remove,
+.eb-composer-manage-tab-add {
+    font-size: 20px;
+    width: 20px;
+    border-radius: 100%;
+    color: #ccc;
+    cursor: pointer;
+    text-align: center;
+}
+
+.eb-composer-manage-tab-remove {
+    padding-left: 10px;
+    width: 30px;
+}
+
+.eb-composer-manage-tab-remove:hover {
+    // background: lighten(@brand-danger, 35%);
+    color: @brand-danger;
+}
+
+.eb-composer-manage-tab-name {
+    cursor: default;
+    font-weight: bold;
+    padding: 0 5px 0 0;
+    .user-select(none);
+
+    select {
+        width: 130px;
+    }
+}
+
+.is-add .eb-composer-manage-tab-name {
+    padding-left: 10px;
+}

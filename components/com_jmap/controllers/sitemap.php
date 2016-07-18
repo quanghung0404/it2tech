@@ -132,6 +132,7 @@ class JMapControllerSitemap extends JMapController {
 		$jsClient = $this->app->input->get ( 'jsclient', false );
 		$metainfoJsClient = $this->app->input->get ( 'metainfojsclient', false );
 		$seospiderJsClient = $this->app->input->get ( 'seospiderjsclient', false );
+		$cronjobClient = $this->app->input->get ( 'cronjobclient', false );
 		
 		// Manage language file string naming
 		$lang = $this->app->input->get ( 'lang', null );
@@ -210,9 +211,9 @@ class JMapControllerSitemap extends JMapController {
 		ob_end_clean ();
 		
 		// Choose if split sitemap, exclude rss and videos (including CDATA parsed from XML) and every kind of js client used for analyzer and metainfo
-		if ($cParams->get ( 'split_sitemap', false ) && !$jsClient && !$metainfoJsClient && !$seospiderJsClient && $format != 'rss' && $format != 'videos') {
+		if ($cParams->get ( 'split_sitemap', false ) && !$jsClient && !$metainfoJsClient && !$seospiderJsClient && !$cronjobClient && $format != 'rss' && $format != 'videos') {
 			// Split the sitemap
-			$splitter = new JMapXmlSplitter ( $format, $langString, $datasetFilter );
+			$splitter = new JMapXmlSplitter ( $format, $langString, $datasetFilter, $ItemidFilter );
 			$splitter->chunkXMLString ( $xmlSitemap, 'url', $cParams->get ( 'split_chunks', 5 ), $precachedSitemapDirectFile );
 			// Check if chunks was generated
 			if ($xmlChunkFiles = $splitter->getChunks ()) {
@@ -257,6 +258,43 @@ class JMapControllerSitemap extends JMapController {
 			$jsAppResponse->result = $fileWritten;
 			$document->setMimeEncoding('application/json');
 			echo json_encode($jsAppResponse);
+		} elseif ($cronjobClient) {
+			$fileName = 'sitemap_' . $format . $langString . $datasetFilter . $ItemidFilter . '.xml';
+			$pathForFile = JPATH_ROOT . '/' . $fileName;
+			
+			if ($cParams->get ( 'split_sitemap', false ) && $format != 'rss' && $format != 'videos') {
+				// Split the sitemap
+				$splitter = new JMapXmlSplitter ( $format, $langString, $datasetFilter, $ItemidFilter );
+				$splitter->chunkXMLString ( $xmlSitemap, 'url', $cParams->get ( 'split_chunks', 5 ), $precachedSitemapDirectFile );
+				// Check if chunks was generated
+				if ($xmlChunkFiles = $splitter->getChunks ()) {
+					if(!empty($xmlChunkFiles)) {
+						foreach ($xmlChunkFiles as $sitemapFile) {
+							$chunkFilePath = JPATH_ROOT . '/' . $sitemapFile['name'];
+							$chunkFileData = $sitemapFile['data'];
+							$fileName = $sitemapFile['name'];
+							$pathForFile = $chunkFilePath;
+							$fileWritten = JFile::write($chunkFilePath, $chunkFileData);
+						}
+					}
+				}
+			} else {
+				// Write the current demanded sitemap to the website root
+				$fileWritten = JFile::write($pathForFile, $xmlSitemap);
+			}
+			
+			// XML Response to the client
+			$document->setMimeEncoding('application/xml');
+			if($fileWritten) {
+				echo JText::sprintf('COM_JMAP_CRONJOB_FILEWRITTEN_SUCCESS', $fileName, 
+									JPATH_ROOT,
+									JUri::root(false) . $fileName,
+									JUri::root(false) . $fileName,
+									$pathForFile);
+			} else {
+				echo JText::sprintf('COM_JMAP_CRONJOB_FILEWRITTEN_ERROR', $fileName, 
+									JPATH_ROOT);
+			}
 		} else {
 			if (! $model->exportXMLSitemap ( $xmlSitemap, $format, 'xml', $langString, $datasetFilter, $ItemidFilter, 'application/xml' )) {
 				$msg = 'COM_JMAP_ERROR_EXPORTING_SITEMAP';
@@ -325,10 +363,13 @@ class JMapControllerSitemap extends JMapController {
 
 		$cParams = JComponentHelper::getParams ( 'com_jmap' );
 		// Start XML buffer
-		ob_start ();
-			$view->display ( $format, true );
-			$xmlSitemap = ob_get_contents ();
-		ob_end_clean ();
+		$xmlSitemap = null;
+		if($this->app->input->get ( 'process_status' ) != 'end') {
+			ob_start ();
+				$view->display ( $format, true );
+				$xmlSitemap = ob_get_contents ();
+			ob_end_clean ();
+		}
 
 		// Instance and <<use>> Precacher object
 		$fileStreamWriter = new JStream();

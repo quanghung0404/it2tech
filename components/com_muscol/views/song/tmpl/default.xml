@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Default Song Layout">
+		<message>
+			Displays a song
+		</message>
+	</layout>
+	<state>
+		<name>Default Song Layout</name>
+		<description>Default Song Layout</description>
+		<url addpath="/components/com_muscol/elements">
+			<param name="id" type="songselect" default="0" label="Song" description="Select a song" />
+		</url>
+		<params>
+		</params>
+	</state>
+	
+	<fields
+                name="request"
+                addfieldpath="/components/com_muscol/elements"
+        >
+                <fieldset name="request">
+                        <field
+                                name="id"
+                                type="songselect"
+                                label="Song"
+                                description="Select a song"
+								required="true"
+                        />
+                </fieldset>
+        </fields>
+</metadata>

@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "history"
+        ],
+        "view": [
+            "site/loading/small",
+            "site/users/button.following"
+        ],
+        "adapter": "EasySocial"
+    }
+]

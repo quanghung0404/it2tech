@@ -1,0 +1,10 @@
+[
+    {
+        "library": [
+            "textboxlist",
+            "nearest",
+            "scrollTo"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

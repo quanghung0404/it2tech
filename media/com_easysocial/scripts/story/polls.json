@@ -1,0 +1,15 @@
+[
+    {
+        "library": [
+            "datetimepicker"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_STORY_EVENT_INSUFFICIENT_DATA",
+            "COM_EASYSOCIAL_STORY_EVENT_INVALID_START_END_DATETIME"
+        ],
+        "adapter": "EasySocial"
+    }
+]

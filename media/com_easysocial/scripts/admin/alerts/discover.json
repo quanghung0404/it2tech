@@ -1,0 +1,11 @@
+[
+    {
+        "script": [
+            "progress/progress"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_SCAN_COMPLETED"
+        ],
+        "adapter": "EasySocial"
+    }
+]

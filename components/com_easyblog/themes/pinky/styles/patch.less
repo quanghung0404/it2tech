@@ -1,0 +1,18 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasyBlog} {
+    &.eb-pinky {
+        background: @eb-box-shade;
+        padding: @eb-gutter;
+        border-radius: @eb-box-radius+2;
+    }
+
+    // @import "patch/default";
+    @import "@{site_base}/../../greenie/styles/patch/default";
+}

@@ -1,0 +1,140 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$points - points.less
+\*------------------------------------*/
+// Blocks aka modules in html apply rely on few classes
+
+// Badges view
+&.view-points{
+	ul.points-list {
+		> li {
+			width: 30%;
+			float: left;
+			margin: 20px 20px 0 0;
+		}
+	}
+
+	&.layout-item{
+		.empty {
+			text-align: center;
+			font-size: 16px;
+			font-weight: 700;
+			background : @esPointsEmptyBackground;
+			border: 1px solid @esPointsEmptyBoderColor;
+			padding: 70px 0;
+		}
+	}
+}
+
+//Single point block with fixed width
+.es-point-wrapper {
+	.clearfix();
+	position: relative;
+	background: @esPointsWrapperBackground;
+	padding-bottom: 30px;
+	.es-point {
+		width: 240px;
+		margin: 0 auto;
+	}
+
+}
+
+
+//Points container extend .es-widget
+//Point block
+.es-point {
+	text-align: center;
+	background: @esPointBackground;
+	border: 1px solid @esPointBorder;
+	border-radius: 3px;
+	.es-widget-head {
+
+		// Fixed height
+		height: 60px;
+		overflow: hidden;
+	}
+	.es-widget-body {
+		padding: 10px 0;
+
+		// Fixed height
+		height: 200px;
+		overflow: hidden;
+	}
+	.es-widget-foot {
+		.getContrast(@esBadgesFootBackground);
+		background: @esPointFootBackground;
+		border-radius: 0 0 3px 3px;
+		border-top: 1px solid @esPointFootBorder;
+		.box-shadow(@esPointFootBoxShadow);
+		h6 {
+			margin: 0;
+		}
+		[class*="span"] {
+			text-align: left;
+		}
+	}
+	.point-result {
+		margin: 0 auto;
+		width: 90px;
+		height: 90px;
+		background: white;
+		border: 1px solid @esPointResultBorder;
+		border-radius: 50%;
+		padding: 4px;
+		margin-bottom: 10px;
+
+		.point-result-inner {
+			display: block;
+			width: 80px;
+			height: 80px;
+			line-height: 80px;
+			font-size: 30px;
+			margin: 0 auto;
+			text-shadow: @esPointResultTextShadow;
+			border-radius: 50%;
+			#gradient > .vertical (@esPointResultBackgroundHighlight, @esPointResultBackground);
+			border: 1px solid @esPointResultBorder;
+			position: relative;
+			z-index: 2;
+			font-weight: bold;
+		}
+
+	}
+	.point-icon {
+		margin: 10px 0 20px;
+	}
+	.point-desp {
+		margin-bottom: 10px;
+		padding: 0 10px;
+	}
+
+	&.es-point-green {
+		.point-result {
+			.point-result-inner {
+				#gradient > .vertical (@esPointResultGreenBackgroundHighlight, @esPointResultGreenBackground);
+				border: 1px solid @esPointResultGreenBorder;
+			}
+		}
+	}
+	&.es-point-red {
+		.point-result {
+			.point-result-inner {
+				#gradient > .vertical (@esPointResultRedBackgroundHighlight, @esPointResultRedBackground);
+				border: 1px solid @esPointResultRedBorder;
+			}
+		}
+	}
+}//es-point
+
+
+.es-point-achievers {
+	.clearfix();
+	.es-point-achievers-title {
+		text-align: center;
+	}
+}

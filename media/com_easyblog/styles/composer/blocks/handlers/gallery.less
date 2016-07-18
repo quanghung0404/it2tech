@@ -1,0 +1,364 @@
+.ebd-block[data-type=gallery] {
+}
+
+.eb-gallery-upload-placeholder {
+    padding: 0;
+    background: none;
+}
+
+.eb-gallery {
+
+    &:not(.is-empty) {
+        .eb-composer-placeholder {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+
+            > div > * {
+                display: none;
+            }
+        }
+    }
+
+    &.is-dropping {
+
+        .eb-composer-placeholder {
+            z-index: 2;
+            display: block;
+        }
+    }
+}
+
+
+.eb-gallery-item {
+
+    &.is-placeholder {
+        background: @eb-composer-lightgray-accent-color;
+        display: table;
+        height: 101%;
+
+        .eb-composer-placeholder-content {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+
+.eb-gallery-ratio-info-field {
+
+    &.eb-composer-fieldgroup {
+        border-bottom: none;
+    }
+}
+
+.eb-gallery-size-fieldset {
+
+    .eb-gallery-ratio-field {
+        display: none;
+    }
+
+    .eb-gallery-ratio-custom-field {
+        display: none;
+    }
+
+    &.view-selectratio {
+
+        .eb-gallery-ratio-info-field {
+            display: none;
+        }
+
+        .eb-gallery-ratio-field {
+            display: block;
+            border-top: none;
+            border-bottom: none;
+        }
+    }
+
+    &.view-customratio {
+
+        .eb-gallery-ratio-info-field {
+            display: none;
+        }
+
+        .eb-gallery-ratio-custom-field {
+            display: block;
+            border-top: none;
+            border-bottom: none;
+        }
+    }
+}
+
+//
+// Thumbnails Ratio
+//
+.eb-gallery-ratio-field {
+
+    &:before {
+        display: none !important;
+    }
+
+    .eb-composer-fieldrow-label {
+        margin-bottom: @eb-composer-gutter / 3;
+    }
+}
+
+.eb-gallery-ratio-selection {
+
+    .eb-swatch-preview {
+        > div {
+            border: @eb-composer-gutter / 3 solid transparent;
+
+            > div {
+                display: table;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.eb-gallery-ratio-preview {
+    display: table-cell;
+    vertical-align: bottom;
+
+    > div {
+        .ratio-container();
+        background: @eb-composer-border-light-color;
+
+        > div {
+            .vertical-align-middle();
+            text-align: center;
+        }
+    }
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 100%;
+        padding: 0 @eb-composer-gutter / 6;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 10px;
+        margin-top: -5px;
+        .text-overflow();
+    }
+}
+
+.eb-gallery-ratio-actions {
+    margin-top: @eb-composer-gutter / 3;
+    text-align: right;
+}
+
+.eb-gallery-ratio-custom-field {
+
+    &:before {
+        display: none !important;
+    }
+
+    .eb-composer-fieldrow-label {
+        margin-bottom: @eb-composer-gutter / 3;
+    }
+}
+
+//
+// Thumbnails Strategy
+//
+
+.eb-gallery-strategy-field {
+    margin-top: 10px !important;
+
+    .eb-tabs-menu-item {
+        width: 100% / 3;
+    }
+}
+
+@eb-gallery-strategy-icon-width: 50%;
+@eb-gallery-strategy-icon-height: 50px;
+@eb-gallery-strategy-icon-border-color: #888;
+@eb-gallery-strategy-icon-bg-color: #e1e1e1;
+
+.eb-gallery-strategy-icon {
+
+    width: @eb-gallery-strategy-icon-width;
+    height: @eb-gallery-strategy-icon-height;
+    display: block;
+    margin: 5px auto;
+    position: relative;
+
+    &:before,
+    &:after {
+        position: absolute;
+        display: block;
+        content: " ";
+        width: 100%;
+        height: 100%;
+    }
+
+    &:before {
+        border: 1px solid @eb-gallery-strategy-icon-border-color;
+        z-index: 3;
+    }
+
+    b {
+        position: absolute;
+        display: block;
+        background: @eb-gallery-strategy-icon-bg-color;
+        border: 1px dotted @eb-gallery-strategy-icon-border-color;
+        z-index: 2;
+    }
+
+    &:after {
+        background: #fff;
+        z-index: 1;
+    }
+
+    &.icon-fill {
+
+        b {
+            width: 150%;
+            height: 100%;
+            left: -25%;
+        }
+    }
+
+    &.icon-fit {
+
+        b {
+            width: 100%;
+            height: 60%;
+            top: 20%;
+            left: 0%;
+        }
+    }
+
+    &.icon-custom {
+
+        b {
+            width: 50%;
+            height: 50%;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.eb-gallery-ratio-label {
+    font-size: 11px;
+}
+
+//
+// List
+//
+
+.eb-gallery-items-fieldset {
+
+    .hint-empty {
+        display: none;
+    }
+
+    &.is-empty {
+        .hint-empty {
+            display: table;
+        }
+    }
+}
+
+.eb-gallery-items-field {
+
+    &.eb-composer-field {
+        padding: 0 !important;
+    }
+}
+
+.eb-gallery-list {
+
+    position: relative;
+    min-height: 120px;
+
+    &.eb-list {
+        border: none;
+    }
+}
+
+.eb-gallery-list-item {
+
+    &.eb-list-item {
+        padding: 5px 10px;
+
+        &:last-child {
+            border-bottom: 1px solid #e1e1e1;
+        }
+    }
+
+    &.is-primary {
+        .eb-gallery-list-item-primary-label {
+            display: inline;
+        }
+    }
+}
+
+.eb-gallery-list-item-group {
+    position: relative;
+    z-index: 2;
+}
+
+.eb-gallery-list-item-icon {
+
+    height: 32px;
+    cursor: move;
+
+    img {
+        width: 32px;
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
+
+.eb-gallery-list-item-name {
+    padding-left: 8px;
+}
+
+.eb-gallery-list-item-primary-label {
+    display: none;
+    padding: 4px;
+    margin-right: 30px;
+}
+
+.eb-gallery-list-item-handle {
+
+    cursor: move;
+
+    i {
+        font-size: 14px;
+        color: #888;
+        margin-right: 8px;
+    }
+}
+
+.eb-gallery-list-actions {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+
+    .col-cell + .col-cell {
+        text-align: right;
+    }
+}
+
+.eb-gallery-hints {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    .eb-hint {
+        background: #fff !important;
+    }
+}

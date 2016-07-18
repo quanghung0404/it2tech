@@ -28,7 +28,8 @@ class JMapModelIndexing extends JMapModel {
 	public function getData() {
 		// Check if it's a search by keyword
 		$keyword = $this->getState ( 'searchword', null );
-		$serpSearch = $keyword ? $keyword : 'site:' . $this->getComponentParams ()->get ( 'seostats_custom_link', JUri::root ( false ) );
+		$siteQuery = $this->getComponentParams()->get('seostats_site_query', 1) ? 'site:' : null;
+		$serpSearch = $keyword ? $keyword : $siteQuery . $this->getComponentParams ()->get ( 'seostats_custom_link', JUri::root ( false ) );
 		$customHeaders = array('countrytld'=>$this->getState('countriestld', null), 'acceptlanguage'=>$this->getState('acceptlanguage', null));
 		try {
 			if (! function_exists ( 'curl_init' )) {

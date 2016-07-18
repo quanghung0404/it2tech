@@ -1,0 +1,216 @@
+.eb-sub-author-switch {
+    a {
+        background: darken(@eb-composer-panel-bg, 5%);
+        color: #555;
+        border-radius: 100%;
+        display: block;
+        font-size: 14px;
+        width: @eb-composer-panel-avatar-size - 10;
+        line-height: @eb-composer-panel-avatar-size - 10;
+        height: @eb-composer-panel-avatar-size - 10;
+        text-align: center;
+
+        &:hover {
+            background: lighten(@eb-composer-panel-bg, 2%);
+            color: @link-color;
+            cursor: pointer;
+        }
+
+        i {
+            line-height: inherit;
+        }
+    }
+}
+.eb-sub-author {
+    // display: table;
+    // table-layout: fixed;
+    // width: 100%;
+
+    // > div {
+    //     display: table-cell;
+    //     vertical-align: middle;
+    //     width: @eb-composer-panel-avatar-size;
+    //     position: relative;
+
+    //     + div {
+    //         padding-left: @eb-composer-gutter / 3;
+    //         width: auto;
+    //     }
+    // }
+
+    &:first-child {
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .cell-avatar {
+        width: 50px;
+        padding-right: 10px;
+        position: relative;
+    }
+
+    img {
+        width: @eb-composer-panel-avatar-size;
+        height: @eb-composer-panel-avatar-size;
+    }
+
+    img + img {
+        background: #fff;
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+        width: 20px;
+        height: auto;
+    }
+
+    &.is-opened + .eb-action-pick {
+        display: block;
+    }
+}
+
+.eb-action-pick {
+    position: relative;
+    margin-top: @eb-composer-gutter / 2;
+    border: 1px solid @eb-composer-border-color;
+    display: none;
+}
+
+ul.eb-action-pick-tabs {
+    background: @eb-composer-face-color;
+    display: table;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    > li {
+        display: table-cell;
+        width: 50% !important;
+        border-bottom: 1px solid @eb-composer-panel-border-color;
+
+        + li {
+            border-left: 1px solid @eb-composer-panel-border-color;
+        }
+
+        > a {
+            color: #999;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        &.active {
+            background: lighten(@eb-composer-face-color, 2%);
+            border-bottom-color: transparent;
+
+            > a { color: #555; }
+        }
+    }
+}
+
+.eb-composer-pick-form {
+    background: lighten(@eb-composer-face-color, 2%);
+    border-bottom: 1px solid darken(@eb-composer-panel-border-color, 3%);
+    .box-shadow(0 1px 0 rgba(0, 0, 0, 0.05));
+    padding: 10px 15px;
+    position: relative;
+    z-index: 2;
+
+    > div {
+        display: table-cell;
+        vertical-align: middle;
+
+        + div {
+            width: 1%;
+            padding-left: 10px;
+        }
+    }
+}
+
+.eb-composer-pick-list {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    min-height: 96px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: relative;
+    max-height: 300px;
+    overflow-y: scroll;
+
+    .loading-authors {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        .vertical-align-middle();
+
+        > i {
+            font-size: 32px;
+            color: #ccc;
+        }
+    }
+}
+
+.eb-composer-pick-label {
+    color: #999;
+    margin: 0;
+    padding: 15px 15px 5px;
+    text-transform: uppercase;
+}
+
+.eb-composer-pick-item {
+    border-bottom: 1px solid lighten(@eb-composer-panel-border-color, 5%);
+
+    .eb-radio {
+        margin: 0;
+        padding: 0;
+
+        label {
+            padding: 10px 10px 10px 40px;
+            font-weight: bold;
+
+            &:before,
+            &:after {
+                margin-left: 15px;
+                margin-top: 18px;
+            }
+        }
+    }
+
+    .avatar {
+        margin: 0 10px 0 0;
+    }
+}
+
+
+.eb-sub-author-details {
+    overflow: hidden;
+    margin-right: 50px;
+
+    > div {
+        font-size: 10px;
+        line-height: 1.1;
+        font-weight: normal;
+
+        + div {
+            font-weight: bold;
+            font-size: 100%;
+            margin-top: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 90%;
+
+            + div {
+                font-weight: normal;
+                margin-top: 3px;
+            }
+        }
+    }
+}

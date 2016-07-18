@@ -1,0 +1,145 @@
+//
+// es-login-box
+// --------------------------------------------------
+
+.login-box-title {
+	font-weight: normal;
+	font-size: 22px;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 34px;
+}
+
+//Login dialog
+.es-login-box {
+	border-radius: @baseBorderRadius;
+	border: 1px solid @grayLighter;
+	padding: 10px;
+	position: relative;
+	.modal-body {
+		max-height: 440px !important;
+	}
+	&:before {
+		content: '';
+		width: 2px;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.04);
+		left: 50%;
+		top: 0px;
+		bottom: 0;
+	}
+
+	&.es-login-box-dialog {
+		border: 0;
+		padding-top: 0;
+	}
+
+	legend {
+		text-align: center;
+	}
+	hr {
+		border-bottom: none;
+	}
+	.es-signin-social {
+		p {
+			margin-top: 20px;
+
+		}
+		.line {
+			position: relative;
+			&:before {
+				content: '';
+				width: 100%;
+				position: absolute;
+				// background-color: @hrBorder;
+				left: 0;
+				right: 0;
+				top: 9px;
+				height: 1px;
+				// bottom: 0;
+			}
+			strong {
+				// background: @esUnityBackground;
+				padding: 0 6px;
+				position: relative;
+				z-index: 2;
+			}
+		}
+		.text-error,
+		.text-error a {
+			color: #B94A48;
+		}
+	}//es-signin-social
+
+	.btn-register {
+		display: block;
+		width: 100%;
+	}
+	.register-field {
+		+ .btn-register {
+			display: inline-block;
+			width: auto;
+		}
+	}
+
+	.register-column {
+		&.simple-register {
+			padding-top: 80px;
+		}
+	}
+	.register-wrap {
+		&.is-empty {
+			padding-top: 90px;
+		}
+	}
+}//es-login-box
+
+// Responsive
+.w768 {
+	&.es-login-box {
+		.col-md-6 {
+			width: 50%;
+			float: left;
+		}
+		.form-control {
+			display: inline-block;
+		}
+	}
+}
+.w600 {
+	&.es-login-box {
+		.col-md-6 {
+			width: 100%;
+			margin-left: 0;
+		}
+		.modal-es-register {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		&:before {
+			display: none;
+		}
+
+		.register-wrap {
+			&.is-empty {
+				padding-top: 10px;
+			}
+		}
+
+
+	}
+}
+
+
+.w480 {
+	&.es-login-box {
+		.form-control {
+			display: block;
+			width: 100% !important; // to override inline styling data-field-joomla_fullname width: 49%
+			+ .form-control {
+				margin-top: 15px;
+			}
+		}
+	}
+}

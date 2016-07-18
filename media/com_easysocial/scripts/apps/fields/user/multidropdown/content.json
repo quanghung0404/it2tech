@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "ui/sortable"
+        ],
+        "language": [
+            "PLG_FIELDS_MULTIDROPDOWN_VALIDATION_REQUIRED_FIELD"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="fields" group="group">
+    <name>Permalink</name>
+    <element>permalink</element>
+    <author>Stack Ideas Sdn Bhd</author>
+    <url>http://stackideas.com</url>
+    <created>25th May 2011</created>
+    <version>1.0</version>
+    <copyright>Copyright (c) 2009 - 2011 EasySocial</copyright>
+    <description><![CDATA[PLG_FIELDS_GROUP_PERMALINK_INFO]]></description>
+    <core>false</core>
+    <unique>true</unique>
+    <files>
+        <folder>config</folder>
+        <folder>themes</folder>
+        <file>ajax.php</file>
+        <file>helper.php</file>
+        <file>permalink.php</file>
+        <file>permalink.xml</file>
+    </files>
+    <updates>
+        <version>http://stackideas.com/updater/easysocial/fields/version</version>
+        <patch>http://stackideas.com/updater/easysocial/fields/patch</patch>
+    </updates>
+</social>

@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "history"
+        ],
+        "view": [
+            "site/albums/browser.list.item"
+        ],
+        "adapter": "EasySocial"
+    }
+]

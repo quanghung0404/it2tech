@@ -131,6 +131,14 @@ class JMapXmlSplitter implements IJMapXmlSplitter {
 	private $dataset;
 
 	/**
+	 * Itemid chunk if any, not required
+	 *
+	 * @access private
+	 * @var string
+	 */
+	private $itemid;
+	
+	/**
 	 * XML Root Node detection
 	 *
 	 * @access private
@@ -276,7 +284,7 @@ class JMapXmlSplitter implements IJMapXmlSplitter {
 		$data .= JFilterOutput::ampReplace(trim($xmlstring, "\n"));
 		$data .= "\n</" . $this->xmlRootNode['rootNodeName'] .">";
 
-		$name = "sitemap_" . $this->format . $this->language . $this->dataset . '_' . $this->chunksCounter . '.xml';
+		$name = "sitemap_" . $this->format . $this->language . $this->dataset . $this->itemid . '_' . $this->chunksCounter . '.xml';
 
 		$file = array('data' => $data, 'name' => $name);
 
@@ -359,7 +367,7 @@ class JMapXmlSplitter implements IJMapXmlSplitter {
 		$data .= "</sitemapindex>";
 		
 		// Finally add itself as a file to chunk files array
-		$name = "sitemapindex_" . $this->format . $this->language . $this->dataset . '.xml';
+		$name = "sitemapindex_" . $this->format . $this->language . $this->dataset . $this->itemid . '.xml';
 		$file = array('data' => $data, 'name' => $name);
 		
 		// Assign chunk to container
@@ -424,13 +432,15 @@ class JMapXmlSplitter implements IJMapXmlSplitter {
 	 * @param string $format
 	 * @param string $language
 	 * @param int $dataset
+	 * @param int $itemid
 	 * @return Object&
 	 */
-	public function __construct($format, $language, $dataset) {
+	public function __construct($format, $language, $dataset, $itemid) {
 		// Init properties
 		$this->format = $format;
 		$this->language = $language;
 		$this->dataset = $dataset;
+		$this->itemid = $itemid;
 		$this->cParams = JComponentHelper::getParams('com_jmap');
 		
 		// Default root nodes
@@ -450,8 +460,7 @@ class JMapXmlSplitter implements IJMapXmlSplitter {
 		$this->ISO8601Date = $dateObj->toISO8601(true);
 		
 		// Live site for index XML file
-		$uriInstance = JURI::getInstance();
-		$this->liveSite = $uriInstance->getScheme() . '://' . $uriInstance->getHost() . '/';
+		$this->liveSite = JUri::root(false);
 		
 		// Create DOM model
 		$this->doc = new DOMDocument();

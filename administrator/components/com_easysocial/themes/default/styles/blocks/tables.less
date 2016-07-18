@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    $table.less
+\*------------------------------------*/
+
+//Extend .table
+
+.table-es { //@ apply with .table
+	background: #fff;
+	border: 1px solid @esBorder;
+	margin-bottom: 0;
+	border-collapse: separate;
+
+	thead
+	{
+		>tr
+		{
+			>th
+			{
+				border-bottom: none;
+			}
+		}
+	}
+
+	th,td {
+		line-height: 16px;
+
+		&.center{
+			text-align: center;
+		}
+	}
+	td {
+		vertical-align: middle;
+
+		&.empty{
+			padding: 35px 0;
+			color: #999;
+			font-size: 16px;
+			text-align:center;
+		}
+	}
+	.order {
+		padding: 8px 20px 2px;
+		min-width: 140px;
+		.arrow-wrapper {
+			width: 48px;
+		}
+	}
+	input[type="checkbox"] {
+		float: left;
+	}
+}
+
+
+.table-noborder {
+	th,td,tr {
+		border: none !important;
+	}
+}
+
+.panel-body > .panel-table {
+	margin: -16px;
+
+	.table {
+		border: 0;
+	}
+}
+
+.table-label {
+	td {
+		position: relative;
+		
+		> label {
+			position: absolute;
+			left: 0; right: 0; top: 0; bottom: 0;
+		}
+	}
+}

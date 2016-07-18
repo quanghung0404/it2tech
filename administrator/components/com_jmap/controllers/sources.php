@@ -92,6 +92,11 @@ class JMapControllerSources extends JMapController {
 			$record->type = 'plugin';
 		}
 		
+		// Check if model record ORM table needs a type swap based on plugin type data source
+		if ($this->app->input->get ( 'type', null ) === 'links') {
+			$record->type = 'links';
+		}
+		
 		// Check out control on record
 		if ($record->checked_out && $record->checked_out != $user->id) {
 			$this->setRedirect ( 'index.php?option=' . $option . '&task=sources.display', JText::_ ( 'COM_JMAP_CHECKEDOUT_RECORD' ), 'notice' );

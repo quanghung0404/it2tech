@@ -1,0 +1,355 @@
+.eb-table
+{
+	color: #666;
+
+	.cell-check {
+		width: 1px;
+		padding: 0 20px 0 0;
+
+		b {
+			display: block;
+			margin-top: 5px;
+		}
+
+		.checkbox {
+			width: 0;
+		}
+	}
+
+	.check-clear {
+		padding: 0 !important;
+		margin: 0 !important;
+		float: none !important;
+		display: inline-block;
+	}
+
+	.check-post-type {
+		display: inline-block;
+
+		> i
+		{
+			display: inline-block;
+			line-height: 20px;
+			vertical-align: top;
+			font-size: 14px;
+		}
+	}
+}
+
+.eb-table-head {
+	background: #f9f9f9;
+	padding: 10px 20px;
+
+	+ .eb-table-body {
+		border-top: 1px solid #ddd;
+	}
+}
+
+.eb-table-body {
+	.cell-check {
+		border-right: 1px solid #eee;
+	}
+
+	> div {
+		+ div {
+			border-top: 1px solid #e5e5e5;
+		}
+
+		> .col-cell {
+			padding: 20px;
+		}
+
+		> .cell-check {
+			width: 52px;
+		}
+
+		> .cell-avatar {
+			width: 68px;
+		}
+
+		> .cell-bio {
+			b { font-size: 14px; }
+			div { font-size: 12px; }
+		}
+
+		> .cell-action {
+			width: 1%;
+			white-space: nowrap;
+			vertical-align: top;
+
+			.btn {
+				font-weight: bold;
+			}
+		}
+
+		> .cell-thumb {
+			width: 140px;
+			padding-right: 0;
+
+			&:last-child {
+				padding-right: 20px;
+			}
+
+			img {
+				border: 1px solid #ddd;
+			}
+		}
+
+		> .cell-option {
+			width: 43px;
+			font-size: 21px;
+			color: #999;
+			padding-left: 0;
+			padding-right: 0;
+			white-space: nowrap;
+
+			.dropdown-toggle_ {
+				color: #999;
+				cursor: pointer;
+				padding: 0 20px;
+
+				&:hover {
+					color: @link-color;
+				}
+			}
+
+			.dropdown-menu {
+				right: 20px;
+				left: auto;
+				border-radius: 2px;
+
+				> li > a {
+					border: 0;
+					border-radius: 0;
+					display: block;
+					padding: 3px 20px;
+					clear: both;
+					font-weight: normal;
+					line-height: 1.428571429;
+					color: #333333;
+					white-space: nowrap;
+					text-align: inherit;
+
+					&:hover {
+						background: #f5f5f5;
+					}
+				}
+			}
+
+			.fa-bars {
+				width: 3px;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+.eb-table-title {
+	font-size: 16px;
+	font-family: Arial;
+
+	a
+	{
+		color: inherit;
+	}
+}
+
+.eb-table-preview {
+	font-size: 12px;
+}
+
+.eb-table-categories,
+.eb-table-tags
+{
+	margin: 5px 0 7px;
+
+	&.type-1
+	{
+		span
+		{
+			&:after
+			{
+				content: ", ";
+			}
+
+			&:last-child
+			{
+				&:after
+				{
+					content: "";
+				}
+			}
+		}
+	}
+
+	&.type-2
+	{
+		span
+		{
+			&:after
+			{
+				content: ", ";
+			}
+
+			&:last-child
+			{
+				&:after
+				{
+					content: "";
+				}
+			}
+		}
+
+		a
+		{
+			&:before
+			{
+				content: "#"
+			}
+		}
+	}
+
+	&.type-3
+	{
+		label
+		{
+			display: none;
+		}
+
+		a
+		{
+			background: #999;
+			border-radius: 3px;
+			color: #fff;
+			display: inline-block;
+			padding: 3px 7px;
+			text-decoration: none !important;
+
+			&:hover
+			{
+				background: #444;
+			}
+		}
+	}
+}
+
+.eb-table-meta,
+.eb-table-relations
+{
+	> span
+	{
+		display: inline-block;
+		margin: 0 8px 0 0;
+	}
+}
+
+.eb-table-content
+{
+	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+	word-wrap: break-word;
+}
+
+.eb-table-stats
+{
+	margin-top: 30px;
+	font-size: 12px;
+
+	> span
+	{
+		+ span
+		{
+			margin: 0 0 0 10px;
+		}
+	}
+}
+
+.eb-table-headlines
+{
+	> small
+	{
+		font-size: 12px;
+		color: #999;
+		margin-left: 10px
+	}
+}
+
+.eb-table-comment
+{
+	margin: 10px 0 0;
+	padding: 0 0 0 10px;
+	border-left: 2px solid #ddd;
+
+	word-wrap: break-word;
+}
+
+.eb-table-toolbar
+{
+	margin: 10px 0 0;
+
+	.btn
+	{
+		font-size: 11px;
+	}
+}
+
+.eb-table-img
+{
+	background: #000;
+	background: #fff;
+	display: inline-block;
+	padding: 4px;
+	border: 1px solid #ddd;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+
+	img
+	{
+		max-height: 120px;
+		max-width: 120px;
+	}
+}
+
+.eb-draft-reject
+{
+	border-bottom: 1px dashed #ddd;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+	.reject-note
+	{
+		line-height: 28px;
+	}
+}
+
+.dropdown-autopost {
+	a {
+		position: relative;
+		line-height: 16px !important;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+		text-transform: capitalize;
+	}
+
+	.fa-check {
+		border: 2px solid #ddd;
+		border-radius: 2px;
+		color: transparent;
+		width: 16px;
+		height: 16px;
+		text-align: center;
+		line-height: 12px;
+		font-size: 10px;
+		margin-right: 5px;
+
+		&:before {
+			display: block;
+			line-height: 12px;
+			
+		}
+	}
+
+	.active .fa-check {
+		background: #2196f3;
+		border-color: #2196f3;
+		color: #fff;
+	}
+}

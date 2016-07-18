@@ -1,0 +1,10 @@
+[
+    {
+        "script": [
+            "validate",
+            "field",
+            "oauth/facebook"
+        ],
+        "adapter": "EasySocial"
+    }
+]

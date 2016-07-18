@@ -1,0 +1,52 @@
+.ebd-block {
+    &[data-type=compare] {
+
+        .col-3 {
+
+            .clearfix();
+
+            > div {
+                width: 100% / 3;
+                padding: 5px;
+                float: left;
+                text-align: center;
+            }
+        }
+
+        b {
+            position: relative;
+            display: block;
+            margin-bottom: 8px;
+            .box-shadow(0 0 1px 1px #aaa);
+
+            > a {
+
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                display: block;
+            }
+        }
+
+        img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+        }
+
+        .ar-4x3 {
+            b {
+                padding-top: (3/4) * 100%;
+            }
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+}

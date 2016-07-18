@@ -1,0 +1,14 @@
+[
+    {
+        "view": [
+            "site/loading/small"
+        ],
+        "script": [
+            "site/search/map"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_ADVANCED_SEARCH_ADDRESS_DISTANCE_NOTICE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

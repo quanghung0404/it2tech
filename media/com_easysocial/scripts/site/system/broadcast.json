@@ -1,0 +1,8 @@
+[
+    {
+        "library": [
+            "gritter"
+        ],
+        "adapter": "EasySocial"
+    }
+]

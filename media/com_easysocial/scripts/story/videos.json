@@ -1,0 +1,16 @@
+[
+    {
+        "library": [
+            "image",
+            "plupload"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_VIDEOS_STORY_SELECT_CATEGORY",
+            "COM_EASYSOCIAL_VIDEOS_STORY_ENTER_VIDEO",
+            "COM_EASYSOCIAL_VIDEOS_STORY_PROCESSING_VIDEO",
+            "COM_EASYSOCIAL_VIDEOS_STORY_CLICK_INSERT_VIDEO",
+            "COM_EASYSOCIAL_VIDEOS_STORY_NO_VIDEO_DETECTED"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,341 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+// GLOBAL
+
+.input-group .form-control:first-child, 
+.input-group-addon:first-child, 
+.input-group-btn:first-child > .btn, 
+.input-group-btn:first-child > .dropdown-toggle_, 
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle_) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 3px;
+}
+
+.input-group .form-control:last-child, 
+.input-group-addon:last-child, 
+.input-group-btn:last-child > .btn, 
+.input-group-btn:last-child > .dropdown-toggle_, 
+.input-group-btn:first-child > .btn:not(:first-child) {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0;
+}
+
+.eb-pill-group {
+    border-left: 5px solid transparent;
+    border-right: 0;
+}
+
+.eb-pill-group:last-child {
+    border-left: 0;
+}
+
+.pl-10 {
+    padding-left: 0 !important;
+    padding-right: 10px !important;
+}
+
+.pull-left {
+    float: right !important;
+}
+
+.pull-right {
+    float: left !important;
+}
+
+@media (min-width: 1200px) {
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+        float: right;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: right;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+        float: right;
+    }
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: right;
+}
+
+
+// FONT AWESOME
+
+.fa-angle-left:before { content: "\f105"; }
+.fa-angle-right:before { content: "\f104"; }
+.fa-chevron-right:before { content: "\f053"; }
+.fa-chevron-left:before { content: "\f054"; }
+
+// FRAME
+
+.eb-composer-frame {
+    direction: rtl;
+    text-align: right;
+}
+
+
+// TEMPLATE PICKER
+
+.template {
+    float: right;
+}
+
+
+// SIDEBAR
+
+.eb-composer-panel-tab {
+    border-left: 1px solid #ccc;
+    border-right: 0;
+
+    &:last-child {
+        border-left: 0;
+    }
+
+    span {
+        margin-left: 0;
+        margin-right: 5px;
+    }
+}
+
+.eb-composer-fieldset-header > small {
+    right: auto;
+    left: 0;
+}
+
+.eb-composer-field-label {
+    text-align: right;
+}
+
+.eb-composer-field .btn-group-yesno {
+    float: right;
+}
+
+.eb-composer-fieldset-toggle {
+    left: auto;
+    right: -22px;
+}
+
+.ebd-workarea { direction: rtl; }
+
+
+// SIDEBAR : AUTHOR
+
+.eb-sub-author-details {
+    margin-left: 50px;
+    margin-right: 0;
+}
+
+.eb-sub-author .cell-avatar {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+ul.eb-action-pick-tabs > li + li {
+    border-left: 0;
+    border-right: 1px solid #ccc;
+}
+
+.eb-composer-pick-item .avatar {
+    margin: 0 0 0 10px;
+}
+
+.eb-composer-pick-item .radio {
+    padding: 0;
+    margin: 0;
+}
+
+.eb-composer-pick-item .radio label {
+    padding: 10px 40px 10px 10px;
+}
+
+.eb-composer-pick-item .radio label:before, 
+.eb-composer-pick-item .radio label:after {
+    margin-right: 15px;
+    margin-left: auto;
+}
+
+.eb-composer-pick-form > div + div {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+
+// SIDEBAR : CATEGORY PICKER
+
+.eb-composer-category-item > b {
+    left: auto;
+    right: 0;
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.eb-composer-category-item {
+    padding: 6px 40px 6px 60px
+}
+
+.eb-composer-category-item-count {
+    left: 10px;
+    right: auto;
+
+    i {
+        margin-left: 0;
+        margin-right: 5px;
+    }
+}
+
+.eb-composer-category-item-group-header i {
+    left: auto;
+    right: 0;
+}
+
+
+// SIDEBAR : CATEGORY
+
+.eb-composer-category-search-textfield {
+    padding-right: 24px;
+    padding-left: 0;
+}
+
+.eb-composer-category-search i {
+    left: auto;
+    right: 12px;    
+}
+
+
+// SIDEBAR : TAGS FORM
+
+.eb-composer-textboxlist .textboxlist-textField {
+    float: right;
+}
+
+.eb-composer-tags-toggle {
+    right: 0;
+    left: auto;
+}
+
+
+// SIDEBAR : BLOCKS
+
+.eb-list-item:before {
+    left: 15px;
+    right: auto;
+}
+
+.eb-font .eb-tabs-menu-item {
+    text-align: right;
+}
+
+.eb-pill-item + .eb-pill-item {
+    border-left: 0;
+    border-right: 1px solid #ddd;
+}
+
+.eb-composer-fieldrow-label {
+    padding-right: 0;
+    padding-left: 8px;
+}
+
+.eb-mm-variation-item {
+    i {
+        float: right;
+        margin-left: 0;
+        margin-right: -15px;
+    }
+
+    span {
+        padding-right: 0;
+        padding-left: 72px;
+        margin-left: 0;
+        margin-right: 7.5px;
+    }
+
+    small {
+        right: auto;
+        left: 0;
+    }
+}
+
+
+// TOOLBAR
+
+.eb-composer-toolbar > div,
+.eb-composer-pilot {
+    left: 45px;
+    right: 30px;
+}
+
+.eb-composer-toolbar-item i + span {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+
+.toolbar-left .eb-composer-toolbar-item.is-button {
+    border-left: 1px solid rgba(0,0,0,0.15);
+    border-right: 0;
+}
+
+.toolbar-right .eb-composer-toolbar-item.is-button {
+    border-right: 1px solid rgba(0,0,0,0.15);
+    border-left: 0;
+}
+
+
+// COMPOSER: LOCATION
+
+.eb-composer-location-form > i {
+    left: auto;
+    right: 0;
+}
+
+.eb-composer-location-textfield {
+    padding-left: 15px;
+    padding-right: 32px;
+}
+
+
+// MEDIA MANAGER 
+
+.eb-mm-place {
+    i {
+        float: right;
+    }
+
+    b {
+        float: left;
+    }
+}
+
+.eb-mm-filegroup .fa-angle-up {
+    right: auto;
+    left: 15px;
+}
+
+.eb-mm-filelist.view-tile .eb-mm-file {
+    float: right;
+}
+
+
+// WORKAREA
+.ebd-block-content {
+    direction: rtl;
+}
+
+
+
+

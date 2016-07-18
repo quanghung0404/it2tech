@@ -1,0 +1,72 @@
+[
+	{
+		"title": "COM_EASYSOCIAL_APPS_SETTINGS_STREAM",
+		"desc": "COM_EASYSOCIAL_APPS_SETTINGS_STREAM_DESC",
+		"fields":
+		[
+			{
+				"label": "APP_USER_MTREE_STREAM_CREATE",
+				"tooltip": "APP_USER_MTREE_STREAM_CREATE_DESC",
+				"name": "stream_create",
+				"type": "boolean",
+				"default": true
+			}
+		]
+	},
+	{
+		"title": "COM_EASYSOCIAL_APPS_SETTINGS_PROFILE",
+		"desc": "COM_EASYSOCIAL_APPS_SETTINGS_PROFILE_DESC",
+		"fields":
+		[
+			{
+				"label": "APP_USER_MTREE_PROFILE_LISTING_PICTURE",
+				"tooltip": "APP_USER_MTREE_PROFILE_LISTING_PICTURE_DESC",
+				"name": "listing_picture",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"label": "APP_USER_MTREE_PROFILE_LISTING_DESCRIPTION",
+				"tooltip": "APP_USER_MTREE_PROFILE_LISTING_DESCRIPTION_DESC",
+				"name": "listing_desc",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"label": "APP_USER_MTREE_PROFILE_LISTING_RATINGS",
+				"tooltip": "APP_USER_MTREE_PROFILE_LISTING_RATINGS_DESC",
+				"name": "listing_ratings",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"label": "APP_USER_MTREE_PROFILE_LISTING_CATEGORY",
+				"tooltip": "APP_USER_MTREE_PROFILE_LISTING_CATEGORY_DESC",
+				"name": "listing_category",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"label": "APP_USER_MTREE_PROFILE_LISTING_LIMIT",
+				"tooltip": "APP_USER_MTREE_PROFILE_LISTING_LIMIT_DESC",
+				"name": "listing_limit",
+				"type": "limit",
+				"default": 5
+			},
+			{
+				"label": "APP_USER_MTREE_PROFILE_FAVORITES_LIMIT",
+				"tooltip": "APP_USER_MTREE_PROFILE_FAVORITES_LIMIT_DESC",
+				"name": "favorites_limit",
+				"type": "limit",
+				"default": 5
+			},
+			{
+				"label": "APP_USER_MTREE_PROFILE_REVIEWS_LIMIT",
+				"tooltip": "APP_USER_MTREE_PROFILE_REVIEWS_LIMIT_DESC",
+				"name": "reviews_limit",
+				"type": "limit",
+				"default": 5
+			}
+		]
+	}
+]

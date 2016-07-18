@@ -1,0 +1,9 @@
+{
+	"title"	: "COM_EASYSOCIAL_MENU_GROUP_EMAIL_ACTIVITY",
+	"link"	: "index.php?option=com_easysocial&view=mailer",
+	"class"	: "fa-envelope",
+	"access": "easysocial.access.mailer",
+	"view"	: "mailer",
+	"active": "layout",
+	"childs": []
+}

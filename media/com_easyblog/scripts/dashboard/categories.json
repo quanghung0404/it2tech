@@ -1,0 +1,8 @@
+[
+    {
+        "script": [
+            "dashboard/form"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

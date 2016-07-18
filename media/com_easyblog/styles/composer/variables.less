@@ -1,0 +1,200 @@
+// Globals
+@eb-composer-baseline: 6px;
+@eb-composer-face-color: #eee;
+@eb-composer-border-color: #ccc;
+@eb-composer-border-light-color: #e1e1e1;
+@eb-composer-border-dark-color: #aaa;
+
+@eb-composer-highlight-color: #BCE8F1;
+@eb-composer-active-color: #F8FEFF; // #EDFCFF;
+@eb-composer-accent-color: #009bd4;
+@eb-composer-dark-accent-color: #252b 9;
+@eb-composer-light-accent-color: #B2B9C3;
+@eb-composer-gutter: @grid-gutter-width;
+@eb-composer-transition-duration: .5s;
+@eb-composer-transition-fast-duration: .3s;
+
+@eb-composer-blue-accent-color: #009bd4;
+@eb-composer-green-accent-color: #81C784;
+@eb-composer-green-dark-accent-color: #43A047;
+@eb-composer-red-accent-color: #E57373;
+@eb-composer-gray-accent-color: #f0f0f0;
+@eb-composer-lightgray-accent-color: #fafafa;
+@eb-composer-text-color: #555;
+@eb-composer-text-light-color: #888;
+@eb-composer-border-radius: 3px;
+@eb-composer-shadow-color: #aaa;
+@eb-composer-shadow-light-color: #ddd;
+
+// Z-Indexes
+// TODO: Remember to set base value lower than dialog
+@eb-composer-zindex: 100;
+// @eb-composer-overlay-zindex:   @eb-composer-zindex + 1;
+@eb-composer-manager-zindex: @eb-composer-zindex + 2;
+@eb-composer-views-zindex: @eb-composer-zindex + 3;
+// @eb-composer-desktop-zindex: @eb-composer-zindex + 4;
+@eb-composer-artboard-zindex: @eb-composer-zindex + 5;
+@eb-composer-page-zindex: @eb-composer-zindex + 6;
+@eb-composer-toolbar-zindex: @eb-composer-zindex + 7;
+@eb-composer-panels-zindex: @eb-composer-zindex + 8;
+@eb-composer-ghosts-zindex: @eb-composer-zindex + 9;
+
+@eb-composer-document-viewport-zindex: 1;
+@eb-composer-media-viewport-zindex: 2;
+
+// Workarea
+@ebd-workarea-overlay-zindex: 1;
+@ebd-workarea-root-zindex: 2;
+@ebd-workarea-block-zindex: 3;
+@ebd-workarea-block-hover-zindex: 4;
+@ebd-workarea-block-active-zindex: 5;
+@ebd-workarea-block-highlighting-zindex: 6;
+@ebd-workarea-overlay-hover-zindex: 7;
+@ebd-workarea-block-hint-overlay-zindex: 8;
+@ebd-workarea-block-hint-zindex: 9;
+@ebd-workarea-block-toolbar-zindex: 10;
+@ebd-workarea-block-gutter: 10px;
+
+// Document
+@ebd-guide-thickness: 1px;
+@ebd-guide-line-width: @ebd-guide-thickness;
+
+@ebd-guide-width: 4px;
+@ebd-guide-gutter: 16px;
+@ebd-guide-color: #ccc;
+@ebd-guide-hover-color: black;
+@ebd-guide-highlight-color: @eb-composer-highlight-color;
+@ebd-guide-inactive-opacity: 0.3;
+@ebd-guide-transition-duration: @eb-composer-transition-duration;
+
+@ebd-nest-bg: rgba(0,0,0,0.6);
+@ebd-nest-padding: @eb-composer-gutter / 2;
+@ebd-nest-zindex: 999; // Find out actual z-index
+@ebd-nest-color: #fff;
+@ebd-blocks-placeholder-bg: #eee;
+
+// Block guide
+@ebd-guide-border-color: @eb-composer-border-color;
+@ebd-guide-border-active-color: @eb-composer-green-accent-color;
+@ebd-guide-border-highlight-color: rgba(150,150,150,0.8);
+@ebd-guide-border-depth: 3px; // deprecate this
+@ebd-guide-border-depth-color: rgba(204,204,204,0.4); // deprecate this
+@ebd-guide-padding: 15px;
+@ebd-guide-bg-color: #fff;
+@ebd-guide-border-radius: @eb-composer-border-radius;
+@ebd-guide-shadow-size: 15px;
+@ebd-guide-shadow-color: #C8E6C9;
+
+
+// Block sort handle
+@ebd-block-toolbar-width: 100%;
+@ebd-block-toolbar-height: 30px;
+@ebd-block-toolbar-background: #eee;
+@ebd-block-toolbar-color: @ebd-guide-border-active-color;
+@ebd-block-toolbar-active-color: #fff;
+
+// Block Overlay
+@ebd-overlay-placeholder-bg: @eb-composer-face-color;
+@ebd-overlay-placeholder-border-color: @eb-composer-border-color;
+
+// Overlay
+// @eb-composer-overlay-bg: #646672;
+// @eb-composer-overlay-opacity: 0.7;
+// @eb-composer-overlay-transition-duration: @eb-composer-transition-duration;
+
+// Composite, Desktop, Instance
+@eb-composer-composite-gutter: @eb-composer-gutter/3;
+@eb-composer-composite-transition-duration: @eb-composer-transition-duration;
+@eb-composer-desktop-shadow-size: 15px;
+@eb-composer-desktop-shadow-color: #666;
+@eb-composer-instance-bg: white;
+
+// Toolbar
+@eb-composer-toolbar-size: 50px;
+@eb-composer-toolbar-bg: #fff;
+@eb-composer-toolbar-transparency: 15%;
+@eb-composer-toolbar-shadow-size: 3px;
+@eb-composer-toolbar-shadow-color: rgba(0, 0, 0, 0.2);
+
+// Manager
+@eb-composer-manager-bg: #fff;
+@eb-composer-header-bg: @eb-composer-dark-accent-color;
+@eb-composer-header-height: 48px;
+@eb-composer-body-bg: #eee;
+
+// Page
+@eb-composer-page-bg: #fff;
+@eb-composer-page-shadow-size: 3px;
+@eb-composer-page-shadow-color: rgba(0, 0, 0, 0.2);
+@eb-composer-page-shadow-ratio: 1/5;
+
+// Actions
+@eb-composer-navigation-size: 32px;
+@eb-composer-actions-size: 88px;
+@eb-composer-actions-gutter: @eb-composer-gutter / 2;
+
+// Panel
+@eb-composer-panel-size: 420px;
+@eb-composer-panel-avatar-size: 40px;
+@eb-composer-panel-bg: @eb-composer-face-color;
+@eb-composer-panel-active-color: @eb-composer-dark-accent-color;
+@eb-composer-panel-tab-size: 50px;
+@eb-composer-panel-tab-icon-size: 14px;
+@eb-composer-panel-tab-icon-color: #555;
+@eb-composer-panel-tab-transition-duration: @eb-composer-transition-duration / 2;
+@eb-composer-panel-tab-bg: @eb-composer-lightgray-accent-color;
+@eb-composer-panel-tab-active-bg: @eb-composer-panel-bg;
+@eb-composer-panel-tab-error-bg: #EF5350;
+@eb-composer-panel-padding: 15px;
+@eb-composer-panel-border-color: @eb-composer-border-color;
+@eb-composer-panel-header-font-size: 14px;
+@eb-composer-panel-header-color: @eb-composer-dark-accent-color;
+@eb-composer-panel-header-size: 60px;
+@eb-composer-panel-body-transition: @eb-composer-transition-duration;
+@eb-composer-panel-spacer-top: 71px;
+@eb-composer-panel-spacer-bottom: 127px;
+
+// Form, fieldset, field
+@eb-composer-fieldset-padding: @eb-composer-gutter / 2 @eb-composer-gutter;
+@eb-composer-fieldset-border-color: lighten(@eb-composer-border-color, 5%);
+@eb-composer-fieldset-label-color: @eb-composer-text-color;
+@eb-composer-fieldset-label-font-size: 12px;
+
+@eb-composer-field-label-color: #666;
+@eb-composer-field-label-font-size: 12px;
+@eb-composer-field-line-height: 30px;
+
+// Posts
+@eb-composer-posts-header-bg: #eaebef;
+
+// Category
+@eb-composer-category-viewport-height: 160px;
+@eb-composer-category-tree-transition-duration: @eb-composer-transition-duration;
+@eb-composer-category-item-group-height: @eb-composer-gutter;
+@eb-composer-category-item-size: 16px;
+@eb-composer-category-item-padding-vertical: @eb-composer-gutter / 5;
+@eb-composer-category-item-padding-horizontal: @eb-composer-gutter;
+@eb-composer-category-item-alt-bg: #fafafa;
+@eb-composer-category-item-active-bg: fade(@eb-composer-highlight-color, 25%);
+@eb-composer-category-item-checkbox-bg: #fff;
+@eb-composer-category-item-checkbox-border-color: @eb-composer-border-color;
+@eb-composer-category-item-checkbox-border-hover-color: darken(@eb-composer-category-item-checkbox-border-color, 10%);
+
+// Blip
+@eb-drag-blip-size: 22px;
+@eb-drag-blip-color: @eb-composer-accent-color;
+
+// History
+@eb-composer-history-viewer-heading-size: 48px;
+@eb-composer-history-viewer-width: 80%;
+@eb-composer-history-viewer-height: 80%;
+
+// Pills
+@eb-composer-pill-border-color: @eb-composer-border-color;
+@eb-composer-pill-bg: #fff;
+@eb-composer-pill-color: fadeout(black, 50%);
+@eb-composer-pill-active-color: black;
+@eb-composer-pill-hover-color: black;
+@eb-composer-pill-transition-duration: @eb-composer-transition-duration / 2;
+
+

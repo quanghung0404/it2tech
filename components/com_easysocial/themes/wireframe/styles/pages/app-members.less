@@ -1,0 +1,85 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+.app-members {
+    font-size: @baseFontSize;
+
+    .member-item {
+        width: 100%;
+        // height: 100%;
+        display: inline-block;
+        padding: 10px;
+        margin: 10px 10px 0 0;
+
+        border: 1px solid @esBorder;
+        border-radius: 4px;
+        //height: 130px; // have to fixed height prevent http://screencast.com/t/f0sgtzk5sC
+
+        &.is-pending-invitation {
+            span.label-pending-invitation {
+                display:inline;
+            }
+        }
+
+        &.is-pending {
+            span.label-pending {
+                display:inline;
+            }
+        }
+        &.is-owner {
+            span.label-owner {
+                display: inline;
+            }
+        }
+        &.is-admin {
+            span.label-admin {
+                display: inline;
+            }
+        }
+        &.is-member {
+            span.label-member {
+                display: inline;
+            }
+        }
+        &.is-going {
+            span.label-going {
+                display: inline;
+            }
+        }
+        &.is-not-going {
+            span.label-not-going {
+                display: inline;
+            }
+        }
+        &.is-maybe {
+            span.label-maybe {
+                display: inline;
+            }
+        }
+        &.is-pending {
+            span.label-pending {
+                display: inline;
+            }
+        }
+
+        h5 {
+            margin: 0 0 5px 50px;
+
+            span.label {
+                display: none;
+                vertical-align: top;
+                font-size: @fontSizeSmall;
+                padding: 2px 4px;
+            }
+        }
+
+        .desc {
+            margin: 5px 0 0 50px;
+            color: @esColor;
+            font-size: @fontSizeSmall;
+        }
+    }
+}

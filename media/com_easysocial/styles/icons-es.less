@@ -1,0 +1,766 @@
+@font-face {
+	font-family: 'easysocial';
+	src:url('@{media_uri}/fonts/easysocial.eot?v=14');
+	src: url('@{media_uri}/fonts/easysocial.eot?#iefix&v=14') format('embedded-opentype'),
+	url('@{media_uri}/fonts/easysocial.woff?v=14') format('woff'),
+	url('@{media_uri}/fonts/easysocial.ttf?v=14') format('truetype'),
+	url('@{media_uri}/fonts/easysocial.svg?v=14#easysocial') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="ies-"]:before,
+[class*=" ies-"]:before {
+	// font-family: 'easysocial';
+	// font-style: normal;
+	// speak: none;
+	// font-weight: normal;
+	// line-height: 1;
+	// -webkit-font-smoothing: antialiased;
+	// font-size: 16px;
+	// width: 16px;
+	// height: 16px;
+	// display: block;
+	// vertical-align: text-bottom;
+}
+/* From Bootstrap */
+[class^="ies-"],
+[class*=" ies-"] {
+	display: inline-block;
+	line-height: 1;
+	// width: 16px;
+	// height: 16px;
+	// .ie7-restore-right-whitespace();
+	// line-height: 16px;
+	// font-size: 16px;
+}
+/*  From Font Awesome */
+[class^="ies-"]:before,
+[class*=" ies-"]:before {
+  font-family: easysocial;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  // -webkit-font-smoothing: antialiased;
+  // font-size: 16px;
+}
+
+a [class^="ies-"],
+a [class*=" ies-"] {
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+
+// color
+.ies-white {
+	color: #fff;
+}
+.ies-black {
+	color: #000;
+}
+
+/* makes the font 33% larger relative to the icon container */
+
+.ies-large {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	// font-size: 20px;
+	&:before {
+		vertical-align: middle;
+		font-size: 20px;
+
+	}
+}
+.ies-small {
+	width: 11px;
+	height: 11px;
+	line-height: 11px;
+	// font-size: 11px;
+	&:before {
+		vertical-align: middle;
+		font-size: 11px;
+	}
+}
+
+.btn.btn-small {
+  [class^="ies-"],
+  [class*=" ies-"] {
+    // line-height: 5px;
+  }
+}
+.btn.btn-mini {
+  [class^="ies-"],
+  [class*=" ies-"] {
+    // line-height: 5px;
+  }
+}
+
+li {
+  > [class^="ies-"],
+  > [class*=" ies-"] {
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+    &:before {
+    	top: 2px;
+    	position: relative;
+    }
+  }
+  .ies-large:before,
+  .ies-large:before {
+    /* 1.5 increased font size for ies-large * 1.25 width */
+    width: 20px;
+  }
+}
+
+ul.icons {
+  list-style-type: none;
+  margin-left: 2em;
+  text-indent: -.8em;
+
+  li {
+    [class^="ies-"],
+    [class*=" ies-"] {
+      width: .8em;
+    }
+    .ies-large:before,
+    .ies-large:before {
+      /* 1.5 increased font size for icon-large * 1.25 width */
+      vertical-align: initial;
+//      width: 1.5*1.25em;
+    }
+  }
+}
+
+
+.ies-home:before {
+	content: "\e001";
+}
+.ies-comments:before {
+	content: "\e000";
+}
+.ies-comments-2:before {
+	content: "\e002";
+}
+.ies-wrench:before {
+	content: "\e003";
+}
+.ies-wrench-2:before {
+	content: "\e004";
+}
+.ies-pencil:before {
+	content: "\e005";
+}
+.ies-pencil-2:before {
+	content: "\e006";
+}
+.ies-cog:before {
+	content: "\e007";
+}
+.ies-cog-2:before {
+	content: "\e008";
+}
+.ies-earth:before {
+	content: "\e009";
+}
+.ies-search:before {
+	content: "\e00a";
+}
+.ies-menu:before {
+	content: "\e00b";
+}
+.ies-menu-2:before {
+	content: "\e00c";
+}
+.ies-link:before {
+	content: "\e00d";
+}
+.ies-thumbs-up:before {
+	content: "\e00e";
+}
+.ies-heart:before {
+	content: "\e00f";
+}
+.ies-star:before {
+	content: "\e010";
+}
+.ies-file-download:before {
+	content: "\e011";
+}
+.ies-user:before {
+	content: "\e012";
+}
+.ies-user-add:before {
+	content: "\e013";
+}
+.ies-user-remove:before {
+	content: "\e014";
+}
+.ies-users:before {
+	content: "\e015";
+}
+.ies-users-2:before {
+	content: "\e016";
+}
+.ies-locked:before {
+	content: "\e017";
+}
+.ies-locked-2:before {
+	content: "\e018";
+}
+.ies-aid:before {
+	content: "\e019";
+}
+.ies-puzzle:before {
+	content: "\e01a";
+}
+.ies-list:before {
+	content: "\e01b";
+}
+.ies-grid-view:before {
+	content: "\e01c";
+}
+.ies-grid-view-2:before {
+	content: "\e01d";
+}
+.ies-upload:before {
+	content: "\e01e";
+}
+.ies-download:before {
+	content: "\e01f";
+}
+.ies-download-2:before {
+	content: "\e020";
+}
+.ies-upload-2:before {
+	content: "\e021";
+}
+.ies-upload-3:before {
+	content: "\e022";
+}
+.ies-cloud:before {
+	content: "\e023";
+}
+.ies-upload-4:before {
+	content: "\e024";
+}
+.ies-cloud-2:before {
+	content: "\e025";
+}
+.ies-flag:before {
+	content: "\e026";
+}
+.ies-bookmark:before {
+	content: "\e027";
+}
+.ies-eye:before {
+	content: "\e028";
+}
+.ies-blocked:before {
+	content: "\e029";
+}
+.ies-cancel:before {
+	content: "\e02a";
+}
+.ies-checkmark:before {
+	content: "\e02b";
+}
+.ies-cancel-2:before {
+	content: "\e02c";
+}
+.ies-plus:before {
+	content: "\e02d";
+}
+.ies-minus:before {
+	content: "\e02e";
+}
+.ies-enter:before {
+	content: "\e02f";
+}
+.ies-exit:before {
+	content: "\e030";
+}
+.ies-arrow-up:before {
+	content: "\e031";
+}
+.ies-arrow-right:before {
+	content: "\e032";
+}
+.ies-arrow-down:before {
+	content: "\e033";
+}
+.ies-arrow-left:before {
+	content: "\e034";
+}
+.ies-arrow-left-2:before {
+	content: "\e035";
+}
+.ies-arrow-down-2:before {
+	content: "\e036";
+}
+.ies-arrow-right-2:before {
+	content: "\e037";
+}
+.ies-arrow-up-2:before {
+	content: "\e038";
+}
+.ies-mail:before {
+	content: "\e03b";
+}
+.ies-feed:before {
+	content: "\e03c";
+}
+.ies-file-xml:before {
+	content: "\e03d";
+}
+.ies-stack:before {
+	content: "\e03e";
+}
+.ies-new:before {
+	content: "\e03f";
+}
+.ies-list-2:before {
+	content: "\e040";
+}
+.ies-profile:before {
+	content: "\e041";
+}
+.ies-pictures:before {
+	content: "\e042";
+}
+.ies-pictures-2:before {
+	content: "\e043";
+}
+.ies-picture:before {
+	content: "\e044";
+}
+.ies-picture-2:before {
+	content: "\e045";
+}
+.ies-pictures-3:before {
+	content: "\e046";
+}
+.ies-pictures-4:before {
+	content: "\e047";
+}
+.ies-movie:before {
+	content: "\e048";
+}
+.ies-movie-2:before {
+	content: "\e049";
+}
+.ies-camera:before {
+	content: "\e04a";
+}
+.ies-droplet:before {
+	content: "\e04b";
+}
+.ies-newspaper:before {
+	content: "\e04c";
+}
+.ies-camera-2:before {
+	content: "\e04d";
+}
+.ies-broadcast:before {
+	content: "\e04f";
+}
+.ies-podcast:before {
+	content: "\e050";
+}
+.ies-broadcast-2:before {
+	content: "\e051";
+}
+.ies-book:before {
+	content: "\e052";
+}
+.ies-file:before {
+	content: "\e053";
+}
+.ies-folder-upload:before {
+	content: "\e054";
+}
+.ies-folder-remove:before {
+	content: "\e055";
+}
+.ies-folder-add:before {
+	content: "\e056";
+}
+.ies-folder-remove-2:before {
+	content: "\e057";
+}
+.ies-folder-add-2:before {
+	content: "\e058";
+}
+.ies-folder:before {
+	content: "\e059";
+}
+.ies-folder-2:before {
+	content: "\e05a";
+}
+.ies-folder-3:before {
+	content: "\e05b";
+}
+.ies-copy:before {
+	content: "\e05c";
+}
+.ies-tag:before {
+	content: "\e05d";
+}
+.ies-tag-2:before {
+	content: "\e05e";
+}
+.ies-basket:before {
+	content: "\e05f";
+}
+.ies-calculate:before {
+	content: "\e060";
+}
+.ies-support:before {
+	content: "\e061";
+}
+.ies-address:before {
+	content: "\e062";
+}
+.ies-notebook:before {
+	content: "\e063";
+}
+.ies-mail-2:before {
+	content: "\e064";
+}
+.ies-mail-3:before {
+	content: "\e065";
+}
+.ies-location:before {
+	content: "\e066";
+}
+.ies-location-2:before {
+	content: "\e067";
+}
+.ies-map:before {
+	content: "\e068";
+}
+.ies-map-2:before {
+	content: "\e069";
+}
+.ies-alarm:before {
+	content: "\e06a";
+}
+.ies-clock:before {
+	content: "\e06b";
+}
+.ies-calendar:before {
+	content: "\e06c";
+}
+.ies-calendar-2:before {
+	content: "\e06d";
+}
+.ies-calendar-3:before {
+	content: "\e06e";
+}
+.ies-calendar-4:before {
+	content: "\e06f";
+}
+.ies-storage:before {
+	content: "\e071";
+}
+.ies-box-remove:before {
+	content: "\e072";
+}
+.ies-box-add:before {
+	content: "\e073";
+}
+.ies-cabinet:before {
+	content: "\e074";
+}
+.ies-database:before {
+	content: "\e075";
+}
+.ies-comments-3:before {
+	content: "\e076";
+}
+.ies-comments-4:before {
+	content: "\e077";
+}
+.ies-comments-5:before {
+	content: "\e078";
+}
+.ies-comments-6:before {
+	content: "\e079";
+}
+.ies-vcard:before {
+	content: "\e07a";
+}
+.ies-zoom-in:before {
+	content: "\e07b";
+}
+.ies-search-2:before {
+	content: "\e07c";
+}
+.ies-refresh:before {
+	content: "\e07d";
+}
+.ies-wrench-3:before {
+	content: "\e07e";
+}
+.ies-equalizer:before {
+	content: "\e07f";
+}
+.ies-cog-3:before {
+	content: "\e080";
+}
+.ies-cake:before {
+	content: "\e081";
+}
+.ies-bars:before {
+	content: "\e082";
+}
+.ies-pie:before {
+	content: "\e083";
+}
+.ies-cone:before {
+	content: "\e084";
+}
+.ies-diamond:before {
+	content: "\e085";
+}
+.ies-podium:before {
+	content: "\e086";
+}
+.ies-medal:before {
+	content: "\e087";
+}
+.ies-remove:before {
+	content: "\e089";
+}
+.ies-remove-2:before {
+	content: "\e08a";
+}
+.ies-briefcase:before {
+	content: "\e08b";
+}
+.ies-briefcase-2:before {
+	content: "\e08c";
+}
+.ies-fire:before {
+	content: "\e08d";
+}
+.ies-flower:before {
+	content: "\e08e";
+}
+.ies-cube:before {
+	content: "\e08f";
+}
+.ies-power:before {
+	content: "\e090";
+}
+.ies-clipboard:before {
+	content: "\e091";
+}
+.ies-signup:before {
+	content: "\e092";
+}
+.ies-grid:before {
+	content: "\e093";
+}
+.ies-tree-view:before {
+	content: "\e094";
+}
+.ies-bookmarks:before {
+	content: "\e095";
+}
+.ies-eye-2:before {
+	content: "\e096";
+}
+.ies-thumbs-down:before {
+	content: "\e097";
+}
+.ies-heart-2:before {
+	content: "\e098";
+}
+.ies-info:before {
+	content: "\e099";
+}
+.ies-help:before {
+	content: "\e09a";
+}
+.ies-minus-2:before {
+	content: "\e09b";
+}
+.ies-plus-2:before {
+	content: "\e09c";
+}
+.ies-notification:before {
+	content: "\e09d";
+}
+.ies-notification-2:before {
+	content: "\e09e";
+}
+.ies-warning:before {
+	content: "\e09f";
+}
+.ies-warning-2:before {
+	content: "\e0a0";
+}
+.ies-loop:before {
+	content: "\e0a1";
+}
+.ies-checkbox:before {
+	content: "\e0a2";
+}
+.ies-checkbox-checked:before {
+	content: "\e0a4";
+}
+.ies-mail-4:before {
+	content: "\e0a5";
+}
+.ies-share:before {
+	content: "\e0a6";
+}
+.ies-play:before {
+	content: "\e0a8";
+}
+.ies-film:before {
+	content: "\e0a9";
+}
+.ies-mic:before {
+	content: "\e0ab";
+}
+.ies-mail-5:before {
+	content: "\e0ad";
+}
+.ies-clock-2:before {
+	content: "\e0ae";
+}
+.ies-disk:before {
+	content: "\e0af";
+}
+.ies-upload-5:before {
+	content: "\e0b0";
+}
+.ies-download-3:before {
+	content: "\e0b1";
+}
+.ies-user-2:before {
+	content: "\e0b2";
+}
+.ies-key:before {
+	content: "\e0b3";
+}
+.ies-key-2:before {
+	content: "\e0b4";
+}
+.ies-wand:before {
+	content: "\e0b5";
+}
+.ies-health:before {
+	content: "\e0b6";
+}
+.ies-bars-2:before {
+	content: "\e0b7";
+}
+.ies-graph:before {
+	content: "\e0b8";
+}
+.ies-bars-3:before {
+	content: "\e0b9";
+}
+.ies-crown:before {
+	content: "\e0ba";
+}
+.ies-cars:before {
+	content: "\e0bb";
+}
+.ies-golf:before {
+	content: "\e0bc";
+}
+.ies-remove-3:before {
+	content: "\e0be";
+}
+.ies-puzzle-2:before {
+	content: "\e0bf";
+}
+.ies-link-2:before {
+	content: "\e0c0";
+}
+.ies-share-2:before {
+	content: "\e0c2";
+}
+.ies-new-tab:before {
+	content: "\e0c3";
+}
+.ies-feed-2:before {
+	content: "\e0c4";
+}
+.ies-mobile:before {
+	content: "\e0c5";
+}
+.ies-compass:before {
+	content: "\e0c6";
+}
+.ies-home-2:before {
+	content: "\e0c7";
+}
+.ies-music:before {
+	content: "\e0c9";
+}
+.ies-coffee:before {
+	content: "\e0ca";
+}
+.ies-lab:before {
+	content: "\e0cb";
+}
+.ies-lamp:before {
+	content: "\e0cc";
+}
+.ies-attachment:before {
+	content: "\e0cd";
+}
+.ies-female:before {
+	content: "\e0d0";
+}
+.ies-male:before {
+	content: "\e0d1";
+}
+.ies-graduation:before {
+	content: "\e0aa";
+}
+.ies-switch:before {
+	content: "\e0d2";
+}
+.ies-rotate:before {
+	content: "\e0d3";
+}
+.ies-rotate-2:before {
+	content: "\e0d4";
+}
+.ies-facebook:before {
+	content: "\e0d5";
+}
+.ies-facebook-2:before {
+	content: "\e0d6";
+}
+.ies-twitter:before {
+	content: "\e0d7";
+}
+.ies-twitter-2:before {
+	content: "\e0d8";
+}
+.ies-linkedin:before {
+	content: "\e0d9";
+}
+.ies-happy:before {
+	content: "\e039";
+}
+.ies-happy-2:before {
+	content: "\e03a";
+}
+.ies-smiley:before {
+	content: "\e0da";
+}
+.ies-smiley-2:before {
+	content: "\e04e";
+}

@@ -115,6 +115,46 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 									<li class="es-stat-title"><?php echo JText::_('COM_JMAP_ALEXA_GRAPH');?></li>
 								</ul>
 							</div>
+
+							<div class="single_stat_rowseparator"></div>
+								
+							<!-- SEMRush row -->
+							<div class="single_stat_container">
+								<div class="statcircle">
+									<span class="glyphicon glyphicon-equalizer glyphicon-large"></span>
+								</div>
+								<ul class="subdescription_stats">
+									<li data-bind="{semrush_rank}" class="es-stat-no"></li>
+									<li class="es-stat-title"><?php echo JText::_('COM_JMAP_SEMRUSH_RANK');?></li>
+								</ul>
+							</div>
+							
+							<div class="single_stat_container">
+								<div class="statcircle">
+									<span class="glyphicon glyphicon-tag glyphicon-large"></span>
+								</div>
+								<ul class="subdescription_stats semrush_popovers">
+									<li></li>
+									<li data-bind="{semrush_keywords}" class="es-stat-no hasClickPopover"><?php echo JText::_('COM_JMAP_SEMRUSH_KEYWORDS');?></li>
+								</ul>
+							</div>
+							
+							<div class="single_stat_container">
+								<div class="statcircle">
+									<span class="glyphicon glyphicon-globe glyphicon-large"></span>
+								</div>
+								<ul class="subdescription_stats semrush_popovers">
+									<li></li>
+									<li data-bind="{semrush_competitors}" class="es-stat-no hasClickPopover"><?php echo JText::_('COM_JMAP_SEMRUSH_COMPETITORS');?></li>
+								</ul>
+							</div>
+							
+							<div class="single_stat_container alexachart">
+								<ul class="subdescription_stats alexachart">
+									<li data-bind="{semrush_graph}" class="es-stat-no fancybox-image"></li>
+									<li class="es-stat-title"><?php echo JText::_('COM_JMAP_SEMRUSH_GRAPH');?></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

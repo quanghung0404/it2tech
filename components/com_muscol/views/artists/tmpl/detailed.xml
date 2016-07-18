@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Detailed Layout (MUSIC COLLECTION HOMPEAGE - MANDATORY!)">
+		<message>
+			Displays the Music Collection homepage, with a list of artists optionally. Artist list appears in detailed layout format. This should be your Music Collection starting page. Make sure you make a menu item of this type!
+		</message>
+	</layout>
+	<state>
+		<name>Detailed Artists Layout</name>
+		<description>Detailed Artists Layout</description>
+		<params>
+		</params>
+	</state>
+</metadata>

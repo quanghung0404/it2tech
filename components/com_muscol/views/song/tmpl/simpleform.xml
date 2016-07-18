@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Simple form layout (only upload field)" hidden="false" >
+		<message>
+			Simple form layout (only upload field)
+		</message>
+	</layout>
+	<state>
+		<name>Simple form layout (only upload field)</name>
+		<description>Simple form layout (only upload field)</description>
+		
+		<params>
+		</params>
+	</state>
+</metadata>

@@ -1,0 +1,61 @@
+.eb-composer-panel-blocks {
+
+    .hint-empty {
+        display: none;
+        background: @eb-composer-face-color;
+    }
+
+    &.show-block-subpanel {
+        .eb-composer-panel-content {
+            left: 0%;
+        }
+    }
+
+    &.show-removal {
+        .eb-composer-panel-content {
+            left: -100%;
+        }
+    }
+
+    &.is-empty {
+
+        .eb-composer-blocks-subpanel-buttons {
+            display: none;
+        }
+
+        .hint-empty {
+            display: table;
+        }
+    }
+}
+
+.eb-composer-blocks-props-menu-item {
+
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-weight: bold;
+    padding: @eb-composer-gutter / 2 @eb-composer-gutter;
+
+    + .eb-composer-blocks-props-menu-item {
+        border-left: 1px solid #ccc;
+    }
+
+    &.active {
+        background: transparent;
+        border-bottom: none;
+    }
+}
+
+.eb-composer-blocks-props-content-item {
+
+}
+
+.eb-composer-blocks-block-subpanel {
+
+    &.has-text-selection {
+        .eb-composer-fieldset[data-name="font"] {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+div#fd.es.mod-es-recent-photos .mod-es-photo-cover {
+  display: block;
+  padding: 70% 2px 0;
+  width: 100%;
+  background-size: cover !important;
+}
+div#fd.es.mod-es-recent-photos .es-item-grid > li {
+  margin-bottom: 1%;
+  width: 60px;
+}

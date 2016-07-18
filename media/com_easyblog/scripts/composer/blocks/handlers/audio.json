@@ -1,0 +1,9 @@
+[
+    {
+        "library": [
+            "plupload2",
+            "audiojs"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

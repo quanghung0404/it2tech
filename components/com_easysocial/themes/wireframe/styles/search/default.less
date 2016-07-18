@@ -1,0 +1,183 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	search-result.less
+\*------------------------------------*/
+
+.search-input-wrap {
+	display: table;
+	width: 100%;
+	.search-input-left,
+	.search-input-right {
+		display: table-cell;
+		vertical-align: top;
+	}
+	.input-search {
+		margin: 0;
+		width: 100%;
+		border-radius: 3px 0 0 3px;
+	}
+}
+
+.es-search-result {
+	.es-item-grid {
+		.es-item {
+			border: none;
+			border-bottom: 1px solid @hrBorder;
+			border-radius: 0;
+			margin-left: 10px;
+		}
+	}
+	.item-meta{
+		margin-top: 3px;
+		color: #aaa;
+		font-size: @baseFontSize;
+	}
+	.search-result-group + .search-result-group {
+		margin-top: 30px;
+	}
+}
+
+
+.search-blk {
+	.search-blk-hd {
+		font-weight: bold;
+		padding: 10px 16px;
+		border-bottom: 1px solid @esSearchItemBorder;
+	}
+	.search-blk-bd {
+		.es-avatar {
+			margin: 0 5px 0 0;
+			display: block;
+			overflow: hidden;
+			padding: 0;
+			float: left;
+			.square(16px);
+			img {
+				width: 16px;
+				height: 16px;
+				line-height: 16px;
+			}
+		}
+
+	}
+	.search-result-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		a {
+			.clearfix();
+			padding: 6px 15px 6px 20px;
+			display: block;
+		}
+		li + li {
+			border-top: 1px solid @esSearchItemBorder;
+		}
+	}
+	+ .search-blk {
+		border-top: 1px solid @esSearchItemBorder;
+	}
+}//search-blk
+.search-footer {
+	border-top: 1px solid @esSearchItemBorder;
+	padding: 14px 10px;
+	background: @esSearchFooterBackground;
+}
+.search-empty {
+	padding: 20px;
+	text-align: center;
+	color: #888;
+}
+
+
+
+
+.es-search-master {
+	margin-bottom: 5px;
+}
+
+.es-search-advance {
+	float: right;
+	margin: 0 0 0 15px;
+
+	a {
+		display: inline-block;
+		vertical-align: top;
+		line-height: 28px;
+	}
+}
+
+.es-search-filter {
+	overflow: hidden;
+	margin: 0 0 0 -1px;
+}
+
+.es-search-filter-item {
+	display: inline-block;
+	float: left;
+	margin: 2px 1px;
+	position: relative;
+
+	input {
+		display: none;
+
+		&:checked + label {
+			background: #f5f5f5;
+			border-color: #ddd;
+
+			&:after {
+				.opacity(1);
+			}
+		}
+	}
+
+	label,
+	label:before,
+	label:after {
+		.transition(ease .5s);
+	}
+
+	label {
+		background: transparent;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		line-height: 26px;
+		padding: 0 10px 0 30px;
+		position: relative;
+
+		&:before,
+		&:after {
+			background: #fff;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+			content: '';
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			position: absolute;
+			left: 7px;
+			top: 50%;
+			margin-top: -8px;
+
+			text-align: center;
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			font-size: @fontSizeSmall;
+			display: inline-block;
+			text-decoration: inherit;
+		}
+
+		&:after {
+			background: @brand-primary;
+			border-color: darken(@brand-primary, 10%);
+			color: #fff;
+			content: "\f00c";
+			.opacity(0);
+		}
+	}
+}

@@ -1,0 +1,133 @@
+.ebd-workarea {
+
+    .ebd-block-toolbar {
+
+        position: absolute;
+        z-index: @ebd-workarea-block-toolbar-zindex;
+        cursor: move;
+
+        // Dimension
+        .box-sizing(content-box);
+        width: 100%;
+        height: @ebd-block-toolbar-height;
+
+        top: (@ebd-block-toolbar-height * -1) + 1; // 1px border from block guide
+        left: 1px; // 1px border from block guide
+        padding: 0 @ebd-guide-padding;
+        margin-left: @ebd-guide-padding * -1;
+
+        display: none;
+
+        &:before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 2px 2px 0 0;
+            opacity: 0;
+            .transition(opacity .2s ease);
+        }
+
+        &:hover {
+
+            &:before {
+                opacity: 1;
+            }
+
+            .ebd-block-toolbar-button {
+
+                > i {
+                    .transform_(rotate(0deg));
+                }
+            }
+
+            .ebd-block-remove-button {
+                opacity: 1;
+            }
+        }
+    }
+
+    .ebd-block-sort-handle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .ebd-block-toolbar-button {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        width: @ebd-block-toolbar-height;
+        height: @ebd-block-toolbar-height;
+        text-align: center;
+        cursor: pointer;
+
+        > i {
+            position: relative;
+            font-size: 12px;
+            line-height: @ebd-block-toolbar-height;
+            color: @ebd-block-toolbar-color;
+
+            .transition(transform @eb-composer-transition-fast-duration ease);
+            .transform_(rotate(-180deg));
+        }
+
+        &:before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 5px;
+            left: 5px;
+            background: @ebd-block-toolbar-color;
+            opacity: 0;
+            border-radius: 100%;
+        }
+
+        &:hover {
+
+            > i {
+                color: #fff;
+            }
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    .ebd-block {
+
+        // TODO: Delay transition
+        &.active {
+            > .ebd-block-toolbar {
+                display: block;
+            }
+        }
+
+        &.is-helper {
+
+            .transition(opacity @eb-composer-transition-fast-duration ease);
+
+            // When block helper hovers over a dropzone,
+            // fade out block slowly so user can see the dropzone.
+            &.is-sending {
+                opacity: 0.3;
+            }
+        }
+
+        // Do not display toolbar on isolated blocks
+        &.is-isolated {
+            > .ebd-block-toolbar {
+                display: none;
+            }
+        }
+    }
+}

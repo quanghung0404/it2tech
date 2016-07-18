@@ -1,0 +1,114 @@
+.es-story-meta {
+    color: lighten(@esColor, 8%);
+    text-decoration: none;
+    position: relative;
+    z-index: 3;
+
+    a {
+        .no-focus-outline();
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.es-story-meta-buttons {
+	float: left;
+	height: @esStoryFooterButtonHeight;
+    color: @esStoryMetaButtonColor;
+}
+
+.es-story-meta-button {
+	float: left;
+	width: @esStoryFooterButtonWidth;
+	height: @esStoryFooterButtonHeight;
+	cursor: pointer;
+
+	// Provides an relative anchor
+	// for :after border-top
+	position: relative;
+
+	// To center icons
+    line-height: 38px;
+    text-align: center;
+
+    border-right: 1px solid @esBorder;
+
+    i {
+        line-height: 38px; // for non html5 doctype
+    }
+    &.active {
+    	background: @esBackground;
+        color: @esStoryMetaButtonHoverColor;
+        // color: @esStoryMetaButtonActiveColor;
+
+        &:hover {
+            color: @esStoryMetaButtonHoverColor;
+            // color: @esStoryMetaButtonActiveColor;
+        }
+
+    	&:after {
+			border-top: 1px solid @esBackground;
+			width: 100%;
+			height: 1px;
+			content: "";
+			display: block;
+			position: absolute;
+			top: -1px;
+    	}
+    }
+
+    &.has-content {
+        color: @esStoryMetaButtonActiveColor;
+
+        &:hover {
+            color: @esStoryMetaButtonActiveColor;
+        }
+    }
+
+    &:first-child {
+    	border-radius: 0 0 0 3px;
+    }
+
+    &:hover {
+        color: @esStoryMetaButtonHoverColor;
+    }
+}
+
+.es-story-meta-contents {
+	background: @esBackground;
+	border-top: 1px dashed @esBorder;
+	border-bottom: 1px solid @esBorder;
+	display: none;
+}
+
+.es-story-meta-content {
+
+	position: relative;
+    overflow: hidden;
+
+	.transition(all .3s ease);
+	max-height: 0;
+	opacity: 0;
+
+	&.active {
+		max-height: 500px;
+		opacity: 1;
+        overflow: visible;
+	}
+}
+
+.es-story {
+
+	&.has-meta {
+
+		.es-story-meta-contents {
+			display: block;
+		}
+
+		.es-story-footer {
+			border-top: none;
+		}
+	}
+}

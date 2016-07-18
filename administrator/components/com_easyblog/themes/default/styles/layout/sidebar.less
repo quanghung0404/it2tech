@@ -1,0 +1,124 @@
+@import "config";
+
+@sidebar-icon-width: 30px;
+
+.app-sidebar-nav {
+	overflow: hidden;
+
+	> li {
+		position: relative;
+		clear: both;
+		display: block; // some links have .dropdown class, and .dropdown elements normally displayed inline-block
+		
+		a,
+		a:focus,
+		a:hover {
+			outline: 0 !important;
+			border: 0 !important;
+			background: none !important;
+		}
+
+		+ li {
+			padding-top: 1px;
+
+			&:before {
+				background: lighten(@app-border-color, 10%);
+				content: "";
+				display: block;
+				height: 1px;
+				width: 100%;
+
+				position: absolute;
+				top: -.5px;
+				left: @sidebar-icon-width;
+			}
+		}
+
+		> a {
+			color: #555;
+			display: block;
+			line-height: 20px;
+			overflow: hidden;
+			padding: 7px 0;
+			text-decoration: none !important;
+			outline: 0;
+
+			&:hover {
+				.fa {
+					color: inherit;
+				}
+			}
+		}
+
+		&.active {
+			> a {
+				font-weight: bold;
+
+				.fa {
+					color: @brand-danger;
+				}
+			}
+		}
+
+		&.active,
+		&.open {
+			> .dropdown-menu {
+				display: block !important;
+			}
+		}
+
+		> .dropdown-menu {
+			display: none !important;
+			background: none;
+			border: 0;
+			list-style: none;
+			padding: 0 0 10px @sidebar-icon-width;
+			margin: 0;
+			position: static;
+			.box-shadow(none);
+			min-width: 0;
+
+			> li {
+				> a {
+					color: #888;
+					font-size: 12px;
+					display: inline-block;
+					line-height: 20px;
+					padding: 0;
+
+					&:hover {
+						background: none;
+						color: @link-color;
+						text-decoration: none;
+					}
+
+					> i {
+						display: none;
+					}
+				}
+
+				&.active {
+					> a {
+						background: none;
+						color: #555;
+						font-weight: bold;
+
+						.fa {
+							color: @brand-danger;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.fa {
+		color: #aaa;
+		line-height: inherit;
+		margin: 0 10px 0 0;
+		text-align: center;
+		width: @sidebar-icon-width - 10;
+		font-size: 14px;
+		float: left;
+	}
+}

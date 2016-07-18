@@ -1,0 +1,208 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+@theme-spacing : 15px;
+
+.eb-posts {
+	.eb-post {
+		border: 1px solid @eb-box-border;
+		border-radius: @eb-box-radius;
+		position: relative;
+		padding: @theme-spacing;
+	}
+}
+
+.eb-post-side {
+	position: absolute;
+	left: @theme-spacing;
+	top: @theme-spacing;
+	text-align: center;
+	width: 26px;
+
+
+	+ .eb-post-content {
+		margin: 0;
+	}
+}
+
+.eb-entry {
+	position: relative;
+}
+
+.eb-post-admin {
+	position: absolute;
+	right: @theme-spacing;
+	top: @theme-spacing;
+}
+
+.eb-post-head {
+	text-align: center;
+	padding: 0 0 @theme-spacing;
+}
+
+.eb-post-date {
+	text-transform: uppercase;
+	margin: 5px 0 0;
+	font-size: 12px;
+}
+&.w320 {
+	.eb-post-date {
+		margin: 35px 0 0; 
+	}
+}
+
+.eb-post-title {
+	margin: 10px 0;
+	font-size: 24px;
+	a {
+		font-family: serif;
+	}
+}
+
+// Use own class try not to inherit from wireframe
+.eb-vintage-post-cover { 
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+
+	.eb-post-image {
+		border: none;
+		padding: 0;
+		margin: 0;
+		float: none;
+		width: auto;
+		display: block;
+
+		> img {
+			max-width:100%;
+			display: inline-block;
+		}
+	}
+
+	.eb-post-image-cover {
+		width: 100%;
+		height: 300px;
+		border: 0;
+		.box-shadow(none)
+	}
+}
+
+.eb-post-author-avatar {
+	border-radius: 50%;
+	border: 1px solid #e9e9e9;
+  	padding: 2px;
+  	display: inline-block;
+  	
+}
+.eb-avatar {
+	img {
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+	}
+}
+.eb-horizonline {
+	position: relative;
+	margin: 0 auto;
+	width: 75%;
+	&:before {
+		background: @eb-box-border;
+		content: "";
+		display: block;
+		height: 1px;
+		width: 100%;
+		
+		position: absolute;
+		top: 50%;
+		margin: 0 auto;
+		z-index: 1;
+	}
+}
+.eb-horizonline-inner {
+	background: #fff;
+	display: inline;
+  	padding: 0 20px;
+  	position: relative;
+  	z-index: 2;
+}
+.eb-post-author {
+	text-transform: uppercase;
+	width: auto;
+	margin: 0 auto;
+	display: inline;
+
+	> div {
+		display: table;
+		margin: 0 auto;
+		position: relative;
+
+		> div {
+			background: #fff;
+			display: table-cell;
+			vertical-align: middle;
+			padding: 0 10px;
+			white-space: nowrap;
+
+			+ div {
+				padding-left: 0;
+			}
+		}
+	}
+
+	img {
+		width: 24px;
+		height: auto;
+	}
+}
+
+.eb-post-more {
+	margin-top: 20px;
+}
+
+.eb-rating {
+	margin: 0;
+}
+.eb-post-foot {
+	background: @eb-box-shade;
+	border-radius: 0 0 (@eb-box-radius - 1) (@eb-box-radius - 1);
+	margin: @theme-spacing -@theme-spacing -@theme-spacing;
+	padding: @theme-spacing;
+	border-top: 1px solid @eb-box-border;
+}
+&.w320 {
+	.eb-post-foot {
+		> div {
+			display: block;
+			padding: 0;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.eb-placeholder-quote,
+.eb-placeholder-link {
+	border-left: 0;
+	padding: 0;
+}
+
+
+// ENTRY VIEW
+
+.eb-entry {
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	padding: @theme-spacing;
+}
+
+.eb-entry-author {
+	border: 0;
+	border-radius: 0 0 (@eb-box-radius - 1) (@eb-box-radius - 1);
+	border-top: 1px solid @eb-box-border;
+}
+
+

@@ -1,0 +1,8 @@
+[
+    {
+        "library": [
+            "ace"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

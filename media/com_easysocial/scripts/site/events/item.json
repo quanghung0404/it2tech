@@ -1,0 +1,15 @@
+[
+    {
+        "script": [
+            "site/friends/suggest",
+            "site/events/guestState"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "library": [
+            "history"
+        ],
+        "adapter": "EasySocial"
+    }
+]

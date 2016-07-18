@@ -1,0 +1,212 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$elements - elements.less
+\*------------------------------------*/
+// Individual/single classes can apply to everywhere
+.es-cover-title {
+	margin: 5px 0;
+	word-break: break-all;
+	// font-size: 18px;
+}
+.es-title-font {
+    font-family: @esTitleFont;
+}
+.es-user-info {
+	font-size: 12px;
+}
+.es-user-name {
+	word-break: break-all;
+	.text-overflow();
+}
+.es-count-no {
+	line-height: 16px;
+	font-size: 9px;
+	background: @esCountBackground;
+	border: 1px solid @esCountBorder;
+	border-radius: 2px 2px 2px 2px;
+	color: @esCountColor;
+	padding: 2px 4px;
+}
+
+.es-muted {
+    color: #888;
+}
+.fa-rss-square {
+    color: #E37126;
+}
+.btn-rss {
+    line-height: 30px;
+}
+
+.es-divider-top {
+    border-top: 1px solid @esBorder;
+}
+.es-divider-bottom {
+    border-bottom: 1px solid @esBorder;
+}
+
+.app-icon-small {
+	width: 16px;
+	height: 16px;
+}
+/**
+ * Heading item for views.
+ */
+.view-heading {
+	margin: 35px 0 0;
+	padding-bottom: 35px;
+	text-align: center;
+	border-bottom: 1px solid @esViewHeadingBorder;
+}
+
+//extend .label
+//modifier for notification
+.label-notification {
+	background: @esLabelNotificationBackground;
+	color: #fff !important;
+	border: 0;
+	border-radius: 8px;
+	font-size: 9px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+	padding: 0 3px;
+	line-height: 12px;
+	display: none;
+    min-width: 16px;
+    width: auto;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.has-notice {
+	.label-notification {
+		display: block;
+	}
+}
+
+i.loading-indicator {
+	&.small {
+		text-indent: -9999px;
+		display: block;
+		padding: 25px;
+		background: url("@{media_uri}/images/loading.gif") center no-repeat;
+	}
+
+	&.large {
+		text-indent: -9999px;
+		display: block;
+		padding: 25px;
+		background: url("@{media_uri}/images/loading-large.gif") center no-repeat;
+	}
+}
+
+//Loader
+//apply to the content container
+.es-loader {
+	background: url('@{media_uri}/images/loading.gif') no-repeat center;
+	min-height: 30px;
+	* {
+		display: none;
+	}
+}
+
+// Search highlight
+.search-highlight {
+	background: @esHighlightBackground;
+    color: @esHighlightColor;
+    padding: 1px 3px;
+}
+
+i {
+	width: auto;
+	height: auto;
+}
+
+
+// row-fluid removed or elements which need clearfix
+.stream-meta,
+.stream-content,
+.widget-box,
+.widget-body,
+.blog-description,
+.article-item-meta,
+.article-item-actions,
+.es-modules-wrap {
+	.clearfix();
+}
+
+
+.step-content{
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+
+
+// profile data table #3529
+.profile-data-table {
+    tbody > tr > td {
+        border-top: none;
+    }
+}
+
+
+// TEMPORARY FIXED FOR 1.2
+// Apply for <ul> <ol> ONLY
+// reset some template add in value to :before :after
+// e.g.: <li> with bullet
+.fd-reset-list,
+.fd-reset-list > li {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    clear: none;
+    float: none;
+    list-style: none;
+    list-style-image: none;
+    overflow: visible;
+    &:before,
+    &:after {
+        display: none;
+    }
+}
+
+
+// Override BS3
+// Buttons Font size #3560
+.btn-sm,
+.btn-xs {
+    font-size: @baseFontSize;
+}
+
+
+// btn group for friends listed page
+.btn-group > .btn-dropdown:first-child,
+.btn-dropdown {
+    height: 16px;
+    padding: 2px 3px;
+    width: 16px;
+    border-radius: @borderRadiusSmall;
+    outline: none;
+    .button-variant(@esBorder; @esBackground; @esBorder) !important;
+    > i {
+        position: relative;
+        top: 2px;
+        margin-top: 0;
+    }
+}
+
+.btn-group {
+    > .dropdown-menu {
+        font-size: @baseFontSize;
+    }
+}

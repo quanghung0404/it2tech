@@ -1,0 +1,8 @@
+[
+    {
+        "library": [
+            "textboxlist"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

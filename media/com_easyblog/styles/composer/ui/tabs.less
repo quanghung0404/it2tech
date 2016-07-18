@@ -1,0 +1,32 @@
+.eb-tabs {
+    position: relative;
+}
+
+.eb-tabs-menu {
+    position: relative;
+    z-index: 2;
+
+    display: table;
+    width: 100%;
+}
+
+.eb-tabs-menu-item {
+    position: relative;
+    display: table-cell;
+    cursor: pointer;
+    .user-select(none);
+}
+
+.eb-tabs-content {
+    position: relative;
+    z-index: 1;
+}
+
+.eb-tabs-content-item {
+
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

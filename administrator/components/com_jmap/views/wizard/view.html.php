@@ -74,7 +74,35 @@ HTML;
 HTML;
 		return $iconSnippet;
 	}
-		
+
+	/**
+	 * Render links data source type icon for cpanel
+	 *
+	 * @param $link string
+	 * @param $image string
+	 * @access private
+	 * @return string
+	 */
+	private function renderLinksDatasourceIcon() {
+		$lang =  JFactory::getLanguage ();
+		$langDirection = $lang->isRTL() ? 'right' : 'left';
+		$dataContent = JText::_('COM_JMAP_CREATE_LINKS_DATASOURCE_DESC');
+		$text = JText::_('COM_JMAP_CREATE_LINKS_DATASOURCE');
+		$link = JFilterOutput::ampReplace('index.php?option=com_jmap&task=sources.editentity&type=links');
+		$imageAlt = JText::_('COM_JMAP_CREATE_LINKS_DATASOURCE');
+		$iconSnippet = <<<HTML
+			<div style="float: $langDirection;">
+				<div class="icon hasPopover" data-content="$dataContent">
+					<a href="$link">
+						<img src="components/com_jmap/images/wizard/links.png" alt="$imageAlt"/>
+						<span>$text</span>
+					</a>
+				</div>
+			</div>
+HTML;
+		return $iconSnippet;
+	}
+
 	/**
 	 * Render iconset for cpanel
 	 *
@@ -156,6 +184,7 @@ HTML;
 		$this->icons = $contents;
 		$this->customIcon = $this->renderCustomDatasourceIcon();
 		$this->pluginIcon = $this->renderPluginDatasourceIcon();
+		$this->linksIcon = $this->renderLinksDatasourceIcon();
 		
 		// Aggiunta toolbar
 		$this->addDisplayToolbar();

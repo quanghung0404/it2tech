@@ -1,0 +1,11 @@
+/**
+ * @version		1.0.1
+ * @package		SimpleBox
+ * @author		Fotis Evangelou - http://fotis.co/projects/simplebox
+ * @copyright	Copyright (c) 2008-2014 Fotis Evangelou. All rights reserved.
+ * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ */
+
+/* SimpleBox */
+* html { overflow:hidden; }
+#jwIVcontainer,#jwIVcontent { position:absolute; }

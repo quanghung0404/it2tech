@@ -1,0 +1,151 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+//
+&.es-widget-calendar {
+    display: block;
+    width: auto;
+    border: medium none;
+    box-shadow: none;
+    font-size:11px;
+    position:relative;
+    padding: 0;
+
+    * {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+    }
+    thead > tr > th,
+    tbody > tr > td {
+        padding: 3px;
+        border-radius: 3px;
+    }
+
+    thead tr:first-child th {
+        cursor: pointer;
+    }
+    th.next,
+    th.prev {
+        font-size: 20px;
+    }
+    td.day:hover,
+    td.hour:hover,
+    td.minute:hover,
+    td.second:hover {
+        background: none repeat scroll 0 0 @esWidgetDatetimepickerActiveBackground;
+        cursor: pointer;
+    }
+
+    .day {
+        a {
+            min-width: 20px;
+            display: block;
+            border-radius: 3px;
+            .no-focus-outline();
+            cursor: default;
+        }
+        &.old:hover {
+            background: none;
+        }
+
+        &.has-events {
+            font-weight: bold;
+            background: @esWidgetDatetimepickerActiveBackground !important;
+            color: @esColor;
+
+            * { cursor: pointer; }
+
+            a {
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    display: block;
+                    right: 0;
+                    bottom: 0;
+
+                    border-style: solid;
+                    border-width: 0 0 6px 6px;
+                    border-color: transparent transparent #3FB576 transparent;
+
+                }
+            }
+        }
+        &.is-today {
+            background-color: #E9EFF7;
+        }
+    }
+    .event-details { // popbox
+        display: none;
+    }
+}
+
+
+.es-sidebar .es-widget-calendar {
+    
+}
+
+&.mod-easyblogcalendar .es-widget-calendar {
+    a {
+            color: inherit;
+        }
+}
+
+
+
+
+&.popbox.popbox-events-calendar-filter {
+    min-width: 160px;
+    max-width: 210px;
+
+    * {
+        // font-size: @baseFontSize;
+    }
+    .event-details-title {
+        background: #f5f5f5;
+        color: #777;
+        font-size: @baseFontSize;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 3px 3px 0 0;
+    }
+    .list-media { // override
+        padding-bottom: 5px;
+        > li {
+            padding-left: 5px;
+            padding-top: 5px;
+            + li {
+                margin-top: 5px;
+                // padding-top: 5px;
+            }
+        }
+        .media-object {
+            margin: 3px 10px 0 0;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .media-body {
+            line-height: 16px;
+        }
+    }
+    .media-title * {
+        font-size: @baseFontSize;
+        font-weight: bold;
+    }
+    .media-time {
+        font-size: @fontSizeSmall;
+        padding-right: 5px;
+    }
+}

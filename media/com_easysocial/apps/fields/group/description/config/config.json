@@ -1,0 +1,13 @@
+{
+    "extends": "fields/user/textbox",
+
+    "title":
+    {
+        "default": "PLG_FIELDS_GROUP_DESCRIPTION_DEFAULT_TITLE"
+    },
+
+    "description":
+    {
+        "default": "PLG_FIELDS_GROUP_DESCRIPTION_DEFAULT_DESCRIPTION"
+    }
+}

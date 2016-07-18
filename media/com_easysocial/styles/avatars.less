@@ -1,0 +1,140 @@
+/*------------------------------------*\
+    $Avatars - avatars.less
+\*------------------------------------*/
+
+// avatar
+// ----------------
+/*
+
+DOM:
+
+<div class="es-avatar es-avatar-[size] es-avatar-border-[size]">
+    <img src="avatar/default.jpg"/>
+</div>
+
+<a class="es-avatar es-avatar-[size] es-avatar-border-[size]">
+    <img src="avatar/default.jpg"/>
+</a>
+
+Available classes:
+
+.es-avatar
+default: 40x40
+
+Avatar size (Optional):
+.es-avatar-[xs/sm/md/lg]
+xs: 24x24
+sm: 32x32
+md: 64x64
+lg: 180x180
+
+Avatar shape (Optional):
+.es-avatar-rounded
+
+
+Avatar border size (Optional): // Expeimental will remove if not necessary
+.es-avatar-border-[sm/md/lg]
+
+If border color applied need to define border size as well.
+Wrong: "es-avatar es-avatar-primary"
+Correct: "es-avatar es-avatar-primary es-avatar-border-sm"
+
+*/
+
+.es-avatar-wrap {
+    position: relative;
+}
+
+.es-avatar {
+    display: block;
+    line-height: @baseLineHeight;
+    border-radius: 2px;
+    .transition(all .2s ease-in-out);
+
+    overflow: hidden;
+    background-color: @esAvatarBackground;
+    -webkit-border-radius: 2px;
+    padding:0;
+    margin: 0px;
+
+    // Avatar default size
+    height: 40px;
+    width: 40px;
+
+    img {
+        display: block;
+        max-width: none;
+        width: 100%;
+        height: 100%;
+        background: @esAvatarBackground;
+        image-rendering: optimizeQuality;
+        border-radius: 2px;
+    }
+
+    &.es-avatar-lg { // large
+        height: 180px;
+        width: 180px;
+    }
+    &.es-avatar-md { // medium
+        height: 64px;
+        width: 64px;
+    }
+    &.es-avatar-sm { // small
+        height: 32px;
+        width: 32px;
+    }
+    &.es-avatar-xs { // mini
+        height: 24px;
+        width: 24px;
+    }
+
+    // Avatar shape
+    &.es-avatar-rounded {
+        border-radius: 50%;
+        img {
+            border-radius: 50%;
+        }
+    }
+
+
+    &.es-avatar-list-unstyled {
+        border: 0;
+        margin: 0;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &.es-inset {
+        border: 0;
+        margin: 0;
+        img {
+            .box-shadow(inset 0px 1px 2px rgba(0,0,0,0.3));
+            border-radius: 3px;
+        }
+    }
+
+}
+
+
+// Avatar border size
+// If using border size might affect <img> size http://screencast.com/t/ObeZ2vIi
+[class^="es-avatar-border"],
+[class*=" es-avatar-border"] {
+    background-color: @esBorder;
+    &:hover {
+        background-color: darken(@esBorder, 10%);
+    }
+}
+.es-avatar {
+    // Border size
+    &.es-avatar-border-sm { // border-thin
+        padding: 1px;
+    }
+    &.es-avatar-border-md {
+        padding: 2px;
+    }
+    &.es-avatar-border-lg {
+        padding: 4px;
+    }
+}

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>RAXO All-mode K2</name>
+	<author>RAXO Group</author>
+	<copyright>Copyright (C) 2009-2014 RAXO Group. All rights reserved.</copyright>
+	<authorEmail>support@raxo.org</authorEmail>
+	<authorUrl>http://www.raxo.org</authorUrl>
+	<license>
+		GNU General Public License v2.0 for PHP files.
+		If not otherwise stated, all other files (CSS, JS, images, icons, etc) are NOT GPL, these files are under RAXO Commercial License.
+	</license>
+	<version>1.2</version>
+	<creationDate>September 2014</creationDate>
+	<description>MOD_RAXO_ALLMODE_K2_XML_DESCRIPTION</description>
+
+
+	<files>
+		<filename module="mod_raxo_allmode_k2">mod_raxo_allmode_k2.php</filename>
+		<filename>mod_raxo_allmode_k2.png</filename>
+		<filename>mod_raxo_allmode_k2.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>admin</folder>
+		<folder>tmpl</folder>
+		<folder>tools</folder>
+	</files>
+
+
+	<languages>
+		<language tag="de-DE">language/de-DE/de-DE.mod_raxo_allmode_k2.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.mod_raxo_allmode_k2.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_raxo_allmode_k2.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_raxo_allmode_k2.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_raxo_allmode_k2.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_raxo_allmode_k2.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_raxo_allmode_k2.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_raxo_allmode_k2.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.mod_raxo_allmode_k2.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.mod_raxo_allmode_k2.sys.ini</language>
+	</languages>
+
+
+	<config>
+	<fields name="params" addfieldpath="/modules/mod_raxo_allmode_k2/admin/elements">
+		<fieldset name="module" label="MOD_RAXO_ALLMODE_K2_FIELD_GROUP_BASIC">
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_SOURCE" />
+			<field name="source_selection" type="radio" default="cat" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_SOURCE_SELECTION" description="MOD_RAXO_ALLMODE_K2_SOURCE_SELECTION_DESC">
+				<option value="cat">MOD_RAXO_ALLMODE_K2_SOURCE_SELECTION_CAT</option>
+				<option value="itm">MOD_RAXO_ALLMODE_K2_SOURCE_SELECTION_ITM</option>
+			</field>
+			<field name="source_cat" type="categories" multiple="true" label="MOD_RAXO_ALLMODE_K2_SOURCE_CAT" description="MOD_RAXO_ALLMODE_K2_SOURCE_CAT_DESC" />
+			<field name="source_itm" type="text" default="" label="MOD_RAXO_ALLMODE_K2_SOURCE_ITM" description="MOD_RAXO_ALLMODE_K2_SOURCE_ITM_DESC" />
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_FILTERS" />
+			<field name="count_top" type="text" default="2" maxlength="3" class="inputshort" label="MOD_RAXO_ALLMODE_K2_COUNT_TOP" description="MOD_RAXO_ALLMODE_K2_COUNT_TOP_DESC" />
+			<field name="count_regular" type="text" default="4" maxlength="3" class="inputshort" label="MOD_RAXO_ALLMODE_K2_COUNT_REGULAR" description="MOD_RAXO_ALLMODE_K2_COUNT_REGULAR_DESC" />
+			<field name="tags" type="tags" multiple="true" label="MOD_RAXO_ALLMODE_K2_TAGS" description="MOD_RAXO_ALLMODE_K2_TAGS_DESC" />
+			<field name="date_filtering" type="list" default="disable" class="select-line" label="MOD_RAXO_ALLMODE_K2_DATE_FILTERING" description="MOD_RAXO_ALLMODE_K2_DATE_FILTERING_DESC">
+				<option value="disabled">MOD_RAXO_ALLMODE_K2_DATE_FILTERING_DISABLED</option>
+				<option value="today">MOD_RAXO_ALLMODE_K2_DATE_FILTERING_TODAY</option>
+				<option value="this_week">MOD_RAXO_ALLMODE_K2_DATE_FILTERING_THISWEEK</option>
+				<option value="this_month">MOD_RAXO_ALLMODE_K2_DATE_FILTERING_THISMONTH</option>
+				<option value="this_year">MOD_RAXO_ALLMODE_K2_DATE_FILTERING_THISYEAR</option>
+				<option value="range">MOD_RAXO_ALLMODE_K2_DATE_FILTERING_RANGE</option>
+				<option value="relative">MOD_RAXO_ALLMODE_K2_DATE_FILTERING_RELATIVE</option>
+			</field>
+			<field name="date_range_start" type="calendar" format="%Y-%m-%d 00:00" size="22" filter="user_utc" label="MOD_RAXO_ALLMODE_K2_DATE_RANGE_START" description="MOD_RAXO_ALLMODE_K2_DATE_RANGE_START_DESC" />
+			<field name="date_range_end" type="calendar" format="%Y-%m-%d 00:00" size="22" filter="user_utc" label="MOD_RAXO_ALLMODE_K2_DATE_RANGE_END" description="MOD_RAXO_ALLMODE_K2_DATE_RANGE_END_DESC" />
+			<field name="date_range_from" type="inputboxes" label="MOD_RAXO_ALLMODE_K2_DATE_RANGE_FROM" description="MOD_RAXO_ALLMODE_K2_DATE_RANGE_FROM_DESC">
+				<option value="" dimension="MOD_RAXO_ALLMODE_K2_DATE_RANGE_UNIT">MOD_RAXO_ALLMODE_K2_DATE_RANGE_FROM</option>
+			</field>
+			<field name="date_range_to" type="inputboxes" label="MOD_RAXO_ALLMODE_K2_DATE_RANGE_TO" description="MOD_RAXO_ALLMODE_K2_DATE_RANGE_TO_DESC">
+				<option value="" dimension="MOD_RAXO_ALLMODE_K2_DATE_RANGE_UNIT">MOD_RAXO_ALLMODE_K2_DATE_RANGE_TO</option>
+			</field>
+			<field name="authors" type="list" default="all" label="MOD_RAXO_ALLMODE_K2_AUTHORS" description="MOD_RAXO_ALLMODE_K2_AUTHORS_DESC">
+				<option value="all">MOD_RAXO_ALLMODE_K2_AUTHORS_ALL</option>
+				<option value="by_me">MOD_RAXO_ALLMODE_K2_AUTHORS_BYME</option>
+				<option value="not_me">MOD_RAXO_ALLMODE_K2_AUTHORS_NOTME</option>
+			</field>
+			<field name="show_featured" type="list" default="show" class="select-line" label="MOD_RAXO_ALLMODE_K2_FEATURED_ITEMS" description="MOD_RAXO_ALLMODE_K2_FEATURED_ITEMS_DESC">
+				<option value="show">MOD_RAXO_ALLMODE_K2_FEATURED_ITEMS_SHOW</option>
+				<option value="only">MOD_RAXO_ALLMODE_K2_FEATURED_ITEMS_ONLY</option>
+				<option value="hide">MOD_RAXO_ALLMODE_K2_FEATURED_ITEMS_HIDE</option>
+			</field>
+			<field name="ordering" type="list" default="created_dsc" class="select-line" label="MOD_RAXO_ALLMODE_K2_ORDERING" description="MOD_RAXO_ALLMODE_K2_ORDERING_DESC">
+				<option value="created_dsc">MOD_RAXO_ALLMODE_K2_ORDER_DATE_DSC</option>
+				<option value="created_asc">MOD_RAXO_ALLMODE_K2_ORDER_DATE_ASC</option>
+				<option value="title_az">MOD_RAXO_ALLMODE_K2_ORDER_TITLE_AZ</option>
+				<option value="title_za">MOD_RAXO_ALLMODE_K2_ORDER_TITLE_ZA</option>
+				<option value="popular_first">MOD_RAXO_ALLMODE_K2_ORDER_POPULAR_FIRST</option>
+				<option value="popular_last">MOD_RAXO_ALLMODE_K2_ORDER_POPULAR_LAST</option>
+				<option value="rated_most">MOD_RAXO_ALLMODE_K2_ORDER_MOST_RATED</option>
+				<option value="rated_least">MOD_RAXO_ALLMODE_K2_ORDER_LEAST_RATED</option>
+				<option value="commented_most">MOD_RAXO_ALLMODE_K2_ORDER_COMMENTED_MOST</option>
+				<option value="commented_latest">MOD_RAXO_ALLMODE_K2_ORDER_COMMENTED_LATEST</option>
+				<option value="ordering_fwd">MOD_RAXO_ALLMODE_K2_ORDER_MANAGER_FWD</option>
+				<option value="ordering_rev">MOD_RAXO_ALLMODE_K2_ORDER_MANAGER_REV</option>
+				<option value="id_asc">MOD_RAXO_ALLMODE_K2_ORDER_ID_ASC</option>
+				<option value="id_dsc">MOD_RAXO_ALLMODE_K2_ORDER_ID_DSC</option>
+				<option value="exact">MOD_RAXO_ALLMODE_K2_ORDER_EXACT</option>
+				<option value="random">MOD_RAXO_ALLMODE_K2_ORDER_RANDOM</option>
+			</field>
+		</fieldset>
+
+
+		<fieldset name="template" label="MOD_RAXO_ALLMODE_K2_FIELD_GROUP_TEMPLATE">
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_TEMPLATE" />
+			<field name="layout" type="modulelayout" label="MOD_RAXO_ALLMODE_K2_TEMPLATE" description="MOD_RAXO_ALLMODE_K2_TEMPLATE_DESC" />
+			<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_TEXT" />
+			<field name="show_title" type="checkboxes" default="top,reg" label="MOD_RAXO_ALLMODE_K2_SHOW_TITLE" description="MOD_RAXO_ALLMODE_K2_SHOW_TITLE_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="limit_title" type="inputboxes" label="MOD_RAXO_ALLMODE_K2_LIMIT_TITLE" description="MOD_RAXO_ALLMODE_K2_LIMIT_TITLE_DESC">
+				<option value="" dimension="MOD_RAXO_ALLMODE_K2_LIMIT_UNIT">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="" dimension="MOD_RAXO_ALLMODE_K2_LIMIT_UNIT">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="show_text" type="checkboxes" default="top,reg" label="MOD_RAXO_ALLMODE_K2_SHOW_TEXT" description="MOD_RAXO_ALLMODE_K2_SHOW_TEXT_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="limit_text" type="inputboxes" label="MOD_RAXO_ALLMODE_K2_LIMIT_TEXT" description="MOD_RAXO_ALLMODE_K2_LIMIT_TEXT_DESC">
+				<option value="260" dimension="MOD_RAXO_ALLMODE_K2_LIMIT_UNIT">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="90" dimension="MOD_RAXO_ALLMODE_K2_LIMIT_UNIT">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="read_more" type="inputboxes" class="inputmedium" label="MOD_RAXO_ALLMODE_K2_READ_MORE" description="MOD_RAXO_ALLMODE_K2_READ_MORE_DESC">
+				<option value="">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_FIELDS" />
+			<field name="show_date" type="checkboxes" default="top,reg" label="MOD_RAXO_ALLMODE_K2_SHOW_DATE" description="MOD_RAXO_ALLMODE_K2_SHOW_DATE_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="show_category" type="checkboxes" default="top" label="MOD_RAXO_ALLMODE_K2_SHOW_CATEGORY" description="MOD_RAXO_ALLMODE_K2_SHOW_CATEGORY_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="show_author" type="checkboxes" default="top" label="MOD_RAXO_ALLMODE_K2_SHOW_AUTHOR" description="MOD_RAXO_ALLMODE_K2_SHOW_AUTHOR_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="show_rating" type="checkboxes" default="" label="MOD_RAXO_ALLMODE_K2_SHOW_RATING" description="MOD_RAXO_ALLMODE_K2_SHOW_RATING_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="show_hits" type="checkboxes" default="reg" label="MOD_RAXO_ALLMODE_K2_SHOW_HITS" description="MOD_RAXO_ALLMODE_K2_SHOW_HITS_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="show_comments" type="checkboxes" default="" label="MOD_RAXO_ALLMODE_K2_SHOW_COMMENTS" description="MOD_RAXO_ALLMODE_K2_SHOW_COMMENTS_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_IMAGES" />
+			<field name="show_image" type="checkboxes" default="top,reg" label="MOD_RAXO_ALLMODE_K2_SHOW_IMAGE" description="MOD_RAXO_ALLMODE_K2_SHOW_IMAGE_DESC">
+				<option value="top">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="reg">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="image_width" type="inputboxes" label="MOD_RAXO_ALLMODE_K2_IMAGE_WIDTH" description="MOD_RAXO_ALLMODE_K2_IMAGE_WIDTH_DESC">
+				<option value="246" dimension="MOD_RAXO_ALLMODE_K2_IMAGE_UNIT">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="90" dimension="MOD_RAXO_ALLMODE_K2_IMAGE_UNIT">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="image_height" type="inputboxes" label="MOD_RAXO_ALLMODE_K2_IMAGE_HEIGHT" description="MOD_RAXO_ALLMODE_K2_IMAGE_HEIGHT_DESC">
+				<option value="150" dimension="MOD_RAXO_ALLMODE_K2_IMAGE_UNIT">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="64" dimension="MOD_RAXO_ALLMODE_K2_IMAGE_UNIT">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="image_crop" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_IMAGE_CROP" description="MOD_RAXO_ALLMODE_K2_IMAGE_CROP_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+		</fieldset>
+
+
+		<fieldset name="advanced" label="MOD_RAXO_ALLMODE_K2_FIELD_GROUP_ADVANCED">
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_DETAILS" />
+			<field name="name_text" type="text" label="MOD_RAXO_ALLMODE_K2_NAME" description="MOD_RAXO_ALLMODE_K2_NAME_DESC" />
+			<field name="name_link" type="text" label="MOD_RAXO_ALLMODE_K2_NAME_LINK" description="MOD_RAXO_ALLMODE_K2_NAME_LINK_DESC" />
+			<field name="showall_text" type="text" label="MOD_RAXO_ALLMODE_K2_SHOWALL" description="MOD_RAXO_ALLMODE_K2_SHOWALL_DESC" />
+			<field name="showall_link" type="text" label="MOD_RAXO_ALLMODE_K2_SHOWALL_LINK" description="MOD_RAXO_ALLMODE_K2_SHOWALL_LINK_DESC" />
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_ADVANCED" />
+			<field name="count_skip" type="text" default="0" maxlength="3" class="inputshort" label="MOD_RAXO_ALLMODE_K2_COUNT_SKIP" description="MOD_RAXO_ALLMODE_K2_COUNT_SKIP_DESC" />
+			<field name="exclude_itm" type="text" default="" label="MOD_RAXO_ALLMODE_K2_EXCLUDE_ITM" description="MOD_RAXO_ALLMODE_K2_EXCLUDE_ITM_DESC" />
+			<field name="not_public" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_NOT_PUBLIC" description="MOD_RAXO_ALLMODE_K2_NOT_PUBLIC_DESC">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="hide_option" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_HIDE_OPTION" description="MOD_RAXO_ALLMODE_K2_HIDE_OPTION_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="intro_clean" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_CLEAN_XHTML" description="MOD_RAXO_ALLMODE_K2_CLEAN_XHTML_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="allowable_tags" type="text" default="" label="MOD_RAXO_ALLMODE_K2_ALLOWABLE_TAGS" description="MOD_RAXO_ALLMODE_K2_ALLOWABLE_TAGS_DESC" />
+			<field name="plugins_support" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_PLUGINS_SUPPORT" description="MOD_RAXO_ALLMODE_K2_PLUGINS_SUPPORT_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_ADVANCED_FIELDS" />
+			<field name="category_link" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_CATEGORY_LINK" description="MOD_RAXO_ALLMODE_K2_CATEGORY_LINK_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="author_link" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_AUTHOR_LINK" description="MOD_RAXO_ALLMODE_K2_AUTHOR_LINK_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="date_type" type="list" default="created" class="select-line" label="MOD_RAXO_ALLMODE_K2_DATE_TYPE" description="MOD_RAXO_ALLMODE_K2_DATE_TYPE_DESC">
+				<option value="created">MOD_RAXO_ALLMODE_K2_DATE_TYPE_CREATED</option>
+				<option value="modified">MOD_RAXO_ALLMODE_K2_DATE_TYPE_MODIFIED</option>
+				<option value="publish_up">MOD_RAXO_ALLMODE_K2_DATE_TYPE_PUBLISH</option>
+			</field>
+			<field name="date_format" type="inputboxes" class="inputmedium" label="MOD_RAXO_ALLMODE_K2_DATE_FORMAT" description="MOD_RAXO_ALLMODE_K2_DATE_FORMAT_DESC">
+				<option value="F d, Y">MOD_RAXO_ALLMODE_K2_TOP</option>
+				<option value="M d, Y">MOD_RAXO_ALLMODE_K2_REG</option>
+			</field>
+			<field name="comment_system" type="list" default="k2comments" label="MOD_RAXO_ALLMODE_K2_COMMENT_SYSTEM" description="MOD_RAXO_ALLMODE_K2_COMMENT_SYSTEM_DESC">
+				<option value="k2comments">K2 Comments</option>
+				<option value="jcomments">JComments</option>
+				<option value="jacomment">JA Comment</option>
+				<option value="komento">Komento</option>
+				<option value="compojoom">CComment</option>
+			</field>
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_ADVANCED_IMAGES" />
+			<field name="image_source" type="list" default="automatic" class="select-line" label="MOD_RAXO_ALLMODE_K2_IMAGE_SOURCE" description="MOD_RAXO_ALLMODE_K2_IMAGE_SOURCE_DESC">
+				<option value="image">MOD_RAXO_ALLMODE_K2_IMAGE_SOURCE_IMAGE</option>
+				<option value="text">MOD_RAXO_ALLMODE_K2_IMAGE_SOURCE_TEXT</option>
+				<option value="automatic">MOD_RAXO_ALLMODE_K2_IMAGE_SOURCE_AUTOMATIC</option>
+			</field>
+			<field name="image_link" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_IMAGE_LINK" description="MOD_RAXO_ALLMODE_K2_IMAGE_LINK_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="image_title" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_RAXO_ALLMODE_K2_IMAGE_TITLE" description="MOD_RAXO_ALLMODE_K2_IMAGE_TITLE_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="image_default" type="filelist" default="noimage-medium.png" directory="/modules/mod_raxo_allmode_k2/tools" filter="\.png$|\.gif$|\.jpg$" stripext="0" hide_none="0" hide_default="1" label="MOD_RAXO_ALLMODE_K2_NOIMAGE" description="MOD_RAXO_ALLMODE_K2_NOIMAGE_DESC" />
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_CACHE" />
+			<field name="owncache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+				<option value="1">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+			</field>
+			<field name="cache_time" type="text" default="1800" class="inputshort" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+			<field type="caption" label="MOD_RAXO_ALLMODE_K2_SPACER_ADVANCED_BLOCK" />
+			<field type="interface" path="modules/mod_raxo_allmode_k2/admin/interface/" />
+		</fieldset>
+
+	</fields>
+	</config>
+</extension>

@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    $states.less
+\*------------------------------------*/
+//is-active, is-modifier
+
+/* =hover-panel ( apply hover trigger )
+================================================== */
+.hover-panel {
+	position: relative;
+	.hover-panel-show {
+		position: absolute;
+		z-index: 3;
+		visibility: hidden;
+		.opacity(0);
+		.transition(all 0.2s);
+		display: block;
+
+	}
+	&:hover {
+		.hover-panel-show {
+			visibility: visible;
+			.opacity(1);
+		}
+	}
+}
+
+
+/* =labels and =badges
+================================================== */
+.label-pending {
+	background: none;
+	color:#fd5b08;
+	text-shadow:none;
+}
+.label-approved {
+	background: none;
+	color:#76af7c;
+	text-shadow:none;
+}

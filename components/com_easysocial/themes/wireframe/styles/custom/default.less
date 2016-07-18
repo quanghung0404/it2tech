@@ -1,0 +1,110 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+// Custom hack for 3rd party
+
+// Joomlashine JSN
+#jsn-header {
+	z-index: 601;
+	position: relative;
+}
+
+// JFBConnect
+
+.jfbconnect-wrapper {
+	text-align: center;
+	.social-login { // jfb gerenated wrap with social buttons
+
+		.pull-left{
+			float: none !important; // Enforce float none for align center
+			margin: 0 !important;
+
+			a {
+				display: inline-block !important;
+
+				img {
+					max-width: 90px !important;
+				}
+			}
+		}
+
+		>div {
+			display: inline-block !important;
+		}
+	}
+}
+
+// Safe to remove if Yootheme remove !important for html tag
+// ----------------
+[class^="tm-"] { // Specific for Yootheme ONLY!
+    div#fd { // Specific for our components only so it wont mess up with Yootheme styles
+        button, input, textarea {
+            .box-sizing(border-box) !important; // useless !important here
+        }
+    }
+
+}
+
+// Fixes google authenticator custom fields. It looks like crap
+.method-totp {
+	.well {
+		display: none;
+	}
+
+	fieldset {
+		legend {
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+
+			li {
+				list-style: none;
+			}
+		}
+
+		.span6 {
+			width: 100%;
+		}
+
+		.alert-info {
+			background: none;
+			border: none;
+		}
+
+		.control-group {
+			label {
+				&.control-label {
+					width: 20%;
+				}
+			}
+			.controls {
+				margin-left: 0;
+
+				#totpsecuritycode {
+					font-size: 12px;
+					padding: 5px 10px;
+					line-height: 1.5;
+					border-radius: 3px;
+					height: 30px;
+					width: 160px;
+				}
+			}
+		}
+
+	}
+}
+
+// Fixed for rokpad editor #4315
+div#fd .rokpad-editor-wrapper i {
+    height: 16px;
+    width: 16px;
+}

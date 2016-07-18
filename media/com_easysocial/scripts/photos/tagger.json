@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "scrollTo"
+        ],
+        "view": [
+            "site/photos/tags.item",
+            "site/photos/tags.menu.item"
+        ],
+        "adapter": "EasySocial"
+    }
+]

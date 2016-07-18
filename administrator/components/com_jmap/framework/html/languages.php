@@ -24,9 +24,10 @@ class JMapHtmlLanguages extends JObject {
 	 * Build the multiple select list for Menu Links/Pages
 	 * 
 	 * @access public
+	 * @param boolean $allLanguages
 	 * @return array
 	 */
-	public static function getAvailableLanguageOptions() {
+	public static function getAvailableLanguageOptions($allLanguages = false) {
 		$knownLangs = JLanguageHelper::getLanguages();
 		$defaultLanguageSef = null;
 		 
@@ -42,7 +43,11 @@ class JMapHtmlLanguages extends JObject {
 			}
 		}
 		
-		$langs[] = JHTML::_('select.option',  $defaultLanguageSef, '- '. JText::_('COM_JMAP_DEFAULT_SITE_LANG' ) .' -' );
+		if($allLanguages) {
+			$langs[] = JHTML::_('select.option',  '*', JText::_('COM_JMAP_DATASOURCE_LANGUAGES_ALL' ) );
+		} else {
+			$langs[] = JHTML::_('select.option',  $defaultLanguageSef, '- '. JText::_('COM_JMAP_DEFAULT_SITE_LANG' ) .' -' );
+		}
 		
 		// Create found languages options
 		foreach ($knownLangs as $langObject) {

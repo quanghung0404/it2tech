@@ -1,0 +1,57 @@
+&.eb-composer-frame {
+    &.is-legacy {
+        .eb-composer-add-block-button {
+            display: none;
+        }
+
+        .eb-composer-panel-tab[data-id=blocks] {
+            display: none;
+        }
+
+        // Always show fields tab just to make it not look weird
+        .eb-composer-panel-tab[data-id=fields] {
+            &.hide {
+                display: table-cell !important;
+            }
+        }
+
+        .eb-blocks-tree-toggle-button {
+            display: none;
+        }
+
+        .eb-block-stat {
+            display: none;
+        }
+    }
+
+    &.layout-media {
+
+        .eb-composer-panel[data-id=post-options] {
+            display: none;
+        }
+
+        .eb-composer-panel-tabs {
+            display: none;
+        }
+
+        .eb-composer-panel-group {
+            border: 0;
+        }
+
+        .eb-composer-blocks-subpanel-buttons {
+            display: none;
+        }
+
+        .eb-composer-fieldset[data-name="font"] {
+            display: none;
+        }
+
+        .eb-composer-fieldset[data-name="text"] {
+            display: none;
+        }
+
+        .eb-composer-fieldset[data-name="links"] {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+[
+    {
+        "language": [
+            "COM_EASYSOCIAL_INDEXER_REINDEX_PROCESSING",
+            "COM_EASYSOCIAL_INDEXER_REINDEX_FINISHED",
+            "COM_EASYSOCIAL_INDEXER_REINDEX_RESTART"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

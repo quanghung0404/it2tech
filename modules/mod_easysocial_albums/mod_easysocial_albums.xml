@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="site" method="upgrade">
+	<name>EasySocial Albums</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>10th May 2016</creationDate>
+	<copyright>Copyright (C) 2009 - 2013 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.4.9</version>
+	<description><![CDATA[MOD_EASYSOCIAL_ALBUMS_DESC]]></description>
+	<files>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename module="mod_easysocial_albums">mod_easysocial_albums.php</filename>
+		<filename>mod_easysocial_albums.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easysocial_albums.ini</language>
+		<language tag="en-GB">en-GB.mod_easysocial_albums.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easysocial/models/fields">
+				<field name="userid" type="easysocial_user" label="MOD_EASYSOCIAL_ALBUMS_SELECT_USER" description="MOD_EASYSOCIAL_ALBUMS_SELECT_USER_DESC" />
+				<field name="albumid" type="easysocial_album" label="MOD_EASYSOCIAL_ALBUMS_SELECT_ALBUM" description="MOD_EASYSOCIAL_ALBUMS_SELECT_ALBUM_DESC" />
+				<field name="total" type="text" class="input-mini text-center" default="6" label="MOD_EASYSOCIAL_ALBUMS_TOTAL" description="MOD_EASYSOCIAL_ALBUMS_TOTAL_DESC" />
+				<field name="withCover" type="list" class="input-mini text-center" default="0" label="MOD_EASYSOCIAL_ALBUMS_WITH_COVER" description="MOD_EASYSOCIAL_ALBUMS_WITH_COVER_DESC">
+					<option value="1">MOD_EASYSOCIAL_ALBUM_WITH_COVER_YES</option>
+					<option value="0">MOD_EASYSOCIAL_ALBUM_WITH_COVER_NO</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

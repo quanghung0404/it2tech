@@ -1,0 +1,22 @@
+[
+	{
+		"title"		: "Mollom Configuration",
+		"fields"	:
+		[
+			{
+				"label"		: "Public Key",
+				"tooltip"	: "Set the public key that you obtained from http://mollom.com",
+				"name"		: "public",
+				"type"		: "text",
+				"default"	: ""
+			},
+			{
+				"label"		: "Private Key",
+				"tooltip"	: "Set the private key that you obtained from http://mollom.com",
+				"name"		: "private",
+				"type"		: "text",
+				"default" 	: ""
+			}
+		]
+	}
+]

@@ -1,0 +1,45 @@
+[
+	{
+		"title"		: "COM_EASYSOCIAL_APPS_SETTINGS_STREAM",
+		"desc"		: "COM_EASYSOCIAL_APPS_SETTINGS_STREAM_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "COM_EASYSOCIAL_APPS_SETTINGS_DISPLAY_STREAM_FILTER",
+				"tooltip"		: "COM_EASYSOCIAL_APPS_SETTINGS_DISPLAY_STREAM_FILTER_DESC",
+				"name"		: "stream_filter",
+				"type" 		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_USER_NOTES_SETTINGS_STREAM_CREATE",
+				"tooltip"	: "APP_USER_NOTES_SETTINGS_STREAM_CREATE_DESC",
+				"name"		: "stream_create",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_USER_NOTES_SETTINGS_STREAM_UPDATE",
+				"tooltip"	: "APP_USER_NOTES_SETTINGS_STREAM_UPDATE_DESC",
+				"name"		: "stream_update",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_USER_NOTES_SETTINGS_STREAM_TRUNCATE_CONTENT",
+				"tooltip"	: "APP_USER_NOTES_SETTINGS_STREAM_TRUNCATE_CONTENT_DESC",
+				"name"		: "stream_truncate",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_USER_NOTES_SETTINGS_STREAM_TRUNCATE_CONTENT_LENGTH",
+				"tooltip"	: "APP_USER_NOTES_SETTINGS_STREAM_TRUNCATE_CONTENT_LENGTH_DESC",
+				"name"		: "stream_truncate_length",
+				"type"		: "text",
+				"class"		: "input-mini center",
+				"default"	: 250
+			}
+		]
+	}
+]

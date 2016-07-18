@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "imgareaselect"
+        ],
+        "stylesheet": [
+            "imgareaselect/default"
+        ],
+        "adapter": "EasySocial"
+    }
+]

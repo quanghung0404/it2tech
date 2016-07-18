@@ -1,0 +1,43 @@
+.eb-composer-field-title {
+
+    position: relative;
+    margin-bottom: @eb-composer-gutter / 6;
+
+   // Fixes jerky border when expanding textarea
+   // is set up on the element, because textarea
+   // is absolutely positioned, we need a min-height
+   // to define a dimension on this parent container.
+    min-height: @eb-composer-baseline + 24px + @eb-composer-baseline + 10;
+
+    textarea {
+        display: block;
+        width: 100%;
+        height: @eb-composer-baseline + 24px + @eb-composer-baseline + 10;
+
+        border: none;
+        border-bottom: 1px solid @eb-composer-border-color;
+        border-radius: 0px;
+        .box-shadow(none);
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        font-size: 24px;
+        line-height: @eb-composer-baseline + 24px + @eb-composer-baseline;
+
+        // Fixes jerky border when expanding textarea
+        // is set up on the element, by simulating
+        // absolute position right from the beginning.
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        // Disable resize handle and overflow
+        resize: none;
+        overflow: hidden;
+
+        &:focus {
+            border-bottom-color: @eb-composer-green-accent-color;
+        }
+    }
+}

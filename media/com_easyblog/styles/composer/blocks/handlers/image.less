@@ -1,0 +1,52 @@
+.ebd-block[data-type=image] {
+
+    // This prevents image popup from happening when
+    // block is not activated.
+    .eb-image {
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 2;
+        }
+    }
+
+    &.active {
+        .eb-image {
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.eb-composer-block-fieldgroup[data-type=image] {
+    &.is-new {
+        display: none;
+    }
+}
+
+.eb-image-hint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    .transition(opacity 1.5s ease);
+
+    &.is-new {
+        opacity: 1;
+    }
+}
+
+@import "composer/blocks/handlers/image/source";
+@import "composer/blocks/handlers/image/size";
+@import "composer/blocks/handlers/image/style";
+@import "composer/blocks/handlers/image/caption";
+@import "composer/blocks/handlers/image/link";
+@import "composer/blocks/handlers/image/popup";

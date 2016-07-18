@@ -1,0 +1,62 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<div data-fields-config-form>
+	<div data-fields-config-params>
+		[% $.each(params, function(name, field) { %]
+			<div class="form-group" data-es-provide="tooltip" data-original-title="[%= field.tooltip %]">
+				<div><label>[%= field.label %]:</label></div>
+				<div class="form-inline">
+					[% if(field.type == 'input' || field.type == 'text') { %]
+						<input name="field_[%= name %]"
+							data-fields-config-param
+							data-fields-config-param-field-[%= name %]
+							type="text"
+							class="input-xlarge"
+							value="[%= values[name] || '' %]"
+							placeholder="[%= values[name] || '' %]"
+							data-name="[%= name %]" />
+					[% } %]
+
+					[% if(field.type == 'textarea') { %]
+						<textarea name="field_[%= name %]" data-fields-config-param data-fields-config-param-field-[%= name %] class="input-xlarge" id="field_[%= name %]" data-name="[%= name %]">[%= values[name] %]</textarea>
+					[% } %]
+
+					[% if(field.type == 'boolean') { %]
+						[% var check = values[name] !== undefined ? (values[name] == '1' ? true : false) : field.default || false; %]
+						<div class="btn-group-yesno"
+							data-bs-toggle="buttons-radio"
+							rel="es-popover">
+							<button type="button"
+								class="btn btn-yes[%= check == true ? ' active' : '' %]"
+								data-bs-toggle-value="1">
+								<?php echo JText::_( 'COM_EASYSOCIAL_GRID_YES' );?>
+							</button>
+							<button type="button"
+								class="btn btn-no[%= check == false ? ' active' : '' %]"
+								data-bs-toggle-value="0">
+								<?php echo JText::_( 'COM_EASYSOCIAL_GRID_NO' );?>
+							</button>
+							<input type="hidden"
+								name="field_[%= name %]"
+								data-fields-config-param
+								data-fields-config-param-field-[%= name %]
+								id="field_[%= name %]"
+								value="[%= values[name] || field.default %]"
+								data-name="[%= name %]" />
+						</div>
+					[% } %]
+				</div>
+			</div>
+		[% }); %]
+	</div>
+	<div class="editor-item-actions" data-fields-config-actions>
+		<a href="javascript:void(0);" class="btn btn-es-success btn-large" data-fields-config-done><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_PARAMS_DONE' ); ?></a>
+	</div>
+</div>

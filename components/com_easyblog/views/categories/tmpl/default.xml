@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EASYBLOG_MENU_CATEGORIES_LAYOUT">
+		<message>
+			<![CDATA[COM_EASYBLOG_MENU_CATEGORIES_LAYOUT_DESC]]>
+		</message>
+		<view>categories</view>
+	</layout>
+	
+	<fields name="params">
+
+		<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+
+			<field name="category_avatar" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_CATEGORY_PICTURE" description="COM_EASYBLOG_SHOW_CATEGORY_PICTURE_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="category_title" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_CATEGORY_TITLE" description="COM_EASYBLOG_SHOW_CATEGORY_TITLE_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="category_description" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_CATEGORY_DESCRIPTION" description="COM_EASYBLOG_SHOW_CATEGORY_DESCRIPTION_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="category_rss" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_CATEGORY_RSS" description="COM_EASYBLOG_SHOW_CATEGORY_RSS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="subcategories" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_SUBCATEGORIES" description="COM_EASYBLOG_SHOW_SUBCATEGORIES_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="category_posts" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_RECENT_POSTS" description="COM_EASYBLOG_SHOW_RECENT_POSTS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="category_authors" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHORS" description="COM_EASYBLOG_SHOW_AUTHORS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+		</fieldset>
+
+		<fieldset name="advanced" addfieldpath="/administrator/components/com_easyblog/elements">
+			<field name="inclusion" type="multicategories" default="" label="COM_EASYBLOG_MENU_FILTER_SELECT_CATEGORIES" description="COM_EASYBLOG_MENU_FILTER_SELECT_CATEGORIES_DESC" />
+
+			<field type="pagination" name="limit" default="-2" label="COM_EASYBLOG_ITEMS_PER_PAGE" description="COM_EASYBLOG_ITEMS_PER_PAGE_DESC" />
+		</fieldset>
+	</fields>
+	
+</metadata>

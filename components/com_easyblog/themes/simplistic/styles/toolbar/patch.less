@@ -1,0 +1,91 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+@eb-box-shade-dark: darken(@eb-box-shade, 3%);
+
+.eb-navbar {
+	border-radius: 0;
+	border-bottom: 1px solid #ccc;
+	height: 42px;
+	&.w480 {
+		height: auto;
+
+		.eb-navbar-nav {
+			border-bottom: 0;
+			> li {
+				+ li {
+					margin-left: 0;
+				}
+				> a {
+					border-radius: 0;
+				}
+			}
+		}
+	}
+}
+
+.eb-navbar-nav {
+	> li {
+		border: 1px solid #ccc;
+		border-bottom: 0;
+		border-radius: 3px 3px 0 0;
+
+		+ li {
+			margin-left: 2px;
+		}
+
+		> a {
+			background: #eee;
+			border-radius: 2px 2px 0 0 !important;
+			position: relative;
+		}
+	}
+
+	> li.active > a {
+		background: #fff;
+		color: #444;
+		
+		&:after {
+			background: #fff;
+			content: '';
+			display: block;
+			height: 1px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}
+
+.eb-navbar-search {
+	border-left: 0;
+	border-right: 0;
+	position: relative;
+
+	&:before {
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\f002";
+		
+		width: 20px;
+		line-height: 20px;
+		height: 20px;
+		margin-top: -10px;
+
+		position: absolute;
+		top: 50%;
+		left: 10px;
+	}
+
+	.form-control {
+		padding-left: 30px;
+	}
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "view": [
+            "site/loading/small"
+        ],
+        "library": [
+            "history"
+        ],
+        "script": [
+            "site/friends/suggest"
+        ],
+        "adapter": "EasySocial"
+    }
+]

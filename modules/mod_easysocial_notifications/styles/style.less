@@ -1,0 +1,95 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+
+	@moduleBorder : rgba(0,0,0,.05);
+
+	// EasySocial Menu Modules
+	&.mod-es-notifications {
+
+		//elements
+
+		.badge{
+			height: auto !important;
+			right: 0 !important;
+			top: 0 !important;
+			width: auto !important;
+		}
+
+		.has-notice {
+
+			.badge-notification {
+				display: inline-block;
+			}
+		}
+
+		//extend .badge
+		//modifier for notification
+		.badge-notification {
+			color: #fff !important;
+			background: #e16273 !important;
+			border: 1px solid #e27a93 !important;
+			border-radius: 30px !important;
+			font-size: 8px !important;
+			padding: 0 3px !important;
+			line-height: 12px !important;
+			// display: none !important;
+			position: absolute !important;
+
+			// Hidden by default
+			display: none;
+		}
+
+
+		// Since there is configurable, apply spacing will mess up the styling #1466
+		.es-notification {
+			position: relative !important;
+
+			&:before,
+			&:after {
+				display: block !important;
+				position: absolute !important;
+				background: @moduleBorder !important;
+				content: '' !important;
+				width: 1px !important;
+				height: 100% !important;
+				top: 0 !important;
+			}
+			&:before {
+				left: 32% !important;
+			}
+			&:after {
+				left: 65% !important;
+			}
+			.es-menu-items {
+				.clearfix();
+			}
+			.es-menu-item {
+				width: 33% !important;
+				display: block !important;
+				float: left !important;
+				> a {
+					display: block !important;
+					padding: 4px 8px !important;
+					width: 52px !important;
+					font-size: 16px !important;
+					margin: 0 auto !important;
+					position: relative !important;
+					text-align: center !important;
+					color: inherit;
+					outline: none !important;
+					.badge {
+						position: absolute !important;
+					}
+				}
+			}
+		}//es-notification
+
+	}
+}

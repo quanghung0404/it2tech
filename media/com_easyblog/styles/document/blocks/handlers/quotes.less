@@ -1,0 +1,37 @@
+@ebd-quote-color: #888;
+@ebd-quote-border: #ddd;
+@ebd-quote-gutter: 20px;
+
+blockquote.eb-quote {
+
+    color: @ebd-quote-color;
+    padding: @ebd-quote-gutter/2 @ebd-quote-gutter;
+    margin: 0 0 @ebd-quote-gutter;
+
+    // TODO: This is a deritative of bootstrap,
+    // what happens if the template has a different
+    // blockquote template, this has to be more
+    // unique than this.
+
+    p {
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.25;
+        margin-bottom: 1em;
+    }
+
+    p + cite {
+        display: block;
+        margin-top: -8px;
+    }
+
+    &.style-minimallight {
+        border-left: 1px solid @ebd-quote-border;
+    }
+
+    &.style-minimalbox {
+        border-top: 1px solid @ebd-quote-border;
+        border-bottom: 1px solid @ebd-quote-border;
+        border-right: 1px solid @ebd-quote-border;
+    }
+}

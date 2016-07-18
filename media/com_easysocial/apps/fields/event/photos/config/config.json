@@ -1,0 +1,16 @@
+{
+	"extends": "fields/user/textbox",
+	"privacy": false,
+	"title": {
+		"default": "FIELDS_EVENT_PHOTOS_DEFAULT_TITLE"
+	},
+
+	"description": {
+		"default": "FIELDS_EVENT_PHOTOS_DEFAULT_DESCRIPTION"
+	},
+
+	"default": {
+		"type": "boolean",
+		"default": true
+	}
+}

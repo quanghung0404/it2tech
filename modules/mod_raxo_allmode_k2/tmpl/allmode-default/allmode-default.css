@@ -1,0 +1,319 @@
+/**
+ * =============================================================
+ * RAXO All-mode K2 J3.x - Template CSS
+ * -------------------------------------------------------------
+ * @package		RAXO All-mode K2
+ * @subpackage	All-mode Default Template
+ * @copyright	Copyright (C) 2009-2014 RAXO Group
+ * @license		RAXO Commercial License
+ * 				This file is forbidden for redistribution
+ * @link		http://www.raxo.org
+ * =============================================================
+ */
+
+
+/* ----- RESET Styles ----- */
+.allmode-default [class^="allmode-"],
+.allmode-default img,
+.allmode-default a {
+	margin: 0; padding: 0;
+	background: transparent none;
+	border: 0 none;
+		-moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.allmode-default a {															/* Item LINKS */
+	text-decoration: none;
+}
+	.allmode-default a:hover {
+		color: #333333 !important;
+		background: transparent none;
+		border-bottom: 1px solid #333333;
+	}
+
+
+
+/* ----- MODULE BLOCK Styles ----- */
+.allmode-default {																/* Module BLOCK */
+	margin: 20px 0;
+}
+.allmode-default .allmode-name {												/* BLOCK NAME Text */
+	margin: 0 8px; padding: 5px 4px;
+	font-size: 16px; font-weight: normal !important;
+	color: #373737;
+	border-top: 2px solid #dddddd;
+}
+.allmode-default .allmode-showall {												/* SHOW ALL Text */
+	margin: 0 8px; padding: 3px 4px 0;
+	text-align: right !important;
+	border-top: 1px solid #dddddd;
+}
+
+
+
+/* ----- TOP ITEMS Styles ----- */
+.allmode-default .allmode-topbox {												/* Top Items DIV */
+	margin: 0 8px;
+}
+.allmode-default .allmode-topitem {												/* Top Item DIV */
+	padding: 14px 0 10px;
+	overflow: hidden; clear: left;
+	border-top: 1px dashed #dddddd;
+}
+.allmode-default .allmode-topitem .allmode-title {								/* Top Item TITLE */
+	margin: 0 0 3px 0 !important;
+	font: bold 15px/21px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+}
+.allmode-default .allmode-topitem .allmode-text {								/* Top Item TEXT */
+	font: normal 13px/20px "Trebuchet MS",Arial,sans-serif;
+	color: #373737;
+}
+.allmode-default .allmode-topitem .allmode-readmore {							/* Top Item READ MORE */
+	float: right;
+	margin-right: 4px;
+	font: normal 11px/20px Helvetica,Arial,sans-serif;
+	text-align: right;
+}
+
+
+/* ----- TOP ITEMS Fields ----- */
+.allmode-default .allmode-topitem .allmode-details {							/* Top Item DETAILS */
+	margin-bottom: 3px;
+	font-size: 12px; line-height: 14px;
+	color: #525252;
+}
+.allmode-default .allmode-topitem .allmode-info {								/* Top Item INFO */
+	margin-top: -4px; padding-bottom: 2px;
+	font-size: 11px; line-height: 17px;
+	font-style: italic;
+	color: #b4b4b4;
+}
+
+
+
+/* ----- ITEMS Styles ----- */
+.allmode-default .allmode-itemsbox {											/* Items DIV */
+	margin: 0 8px;
+}
+.allmode-default .allmode-item {												/* Item DIV */
+	padding: 12px 0 6px;
+	overflow: hidden; clear: left;
+	border-top: 1px dashed #dddddd;
+}
+.allmode-default .allmode-item .allmode-title {									/* Item TITLE */
+	margin: 0 0 3px 0 !important;
+	font: bold 13px/17px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+}
+.allmode-default .allmode-item .allmode-text {									/* Item TEXT */
+	font: normal 12px/17px Helvetica,Arial,sans-serif;
+	color: #373737;
+}
+.allmode-default .allmode-item .allmode-readmore {								/* Item READ MORE */
+	float: right;
+	margin-right: 4px;
+	font-size: 11px;
+	text-align: right;
+}
+
+
+/* ----- ITEMS Fields ----- */
+.allmode-default .allmode-item .allmode-details {								/* Item DETAILS */
+	margin-bottom: 2px;
+	font-size: 11px; line-height: 13px;
+	color: #525252;
+}
+.allmode-default .allmode-item .allmode-details > span {
+	padding-top: 1px;
+}
+.allmode-default .allmode-item .allmode-info {									/* Item INFO */
+	margin-top: -4px; padding-bottom: 2px;
+	font-size: 10px; line-height: 16px;
+	font-style: italic;
+	color: #b4b4b4;
+}
+
+
+
+/* ----- COMMON Fields Styles ----- */
+.allmode-default .allmode-img img {												/* Item IMAGE */
+	float: left;
+	display: block;
+	margin: 0 16px 8px 0; padding: 3px;
+	max-width: 100%; height: auto;
+	background-color: #f6f5f5;
+	border: 1px solid #8e8c8c; border-radius: 2px;
+	transition: border 0.4s ease;
+}
+.allmode-default .allmode-title a {
+	font-weight: bold;
+}
+.allmode-default .allmode-date,													/* Content ELEMENTS */
+.allmode-default .allmode-hits,
+.allmode-default .allmode-comments {
+	padding: 0 10px 0 15px;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAASwCAYAAADCLNu9AAAFNElEQVR4Xu2YAWhVVRzGz3nuas7lpakj3sttiZNYNhhsMJ5jm3ZHI7gUUniBgMYGVQk9CzC0dcNACQohgpzUyApJKCD2CrKodJkzJJjxylWQKAXLosAZe5vz9v3hCvetXe+Bl/CI7wcf57D/93Y2wP/kp/5z9OmGhlmcFnIC+RjZgwg+sgXpRuZSb69bZ31TW7sDgwIyhPSGeRY5JzPpKNd1A6RTxSAz6aQWfHH42imJzlD8N6Ojo4/ImViU7yblxYpL5JBh9IzOND79K87jyOtqcQaR7qrw8gayLab4CzKgbgyEEB2zAGwcXyHNyFXk3Sq1OHeFpb7w/mJKxSMbQ/blOJKqwjOHw3/8KeQ7JKsWIRWWdobPNMtTcUXJePiMMCZJWnsH8QEtkbuK8uTmzcHB1tYclr4z1NmZlzN6l5l0In8VrsucukEQQrBS6pGjSBEJFqQYzuqrwv943IZ4yCVVys3IXuSQCj/lXudF4YqslKXIn+EXX5Yzeg9nSxK/46dNTR62ybxG5xMMMsiu7ZOTalWxOB3p1YQ/45Ss5oHwFzqC0tJFds4xZFAtBM/YiI8EygQUP1JmEEIIIYToMz37zLzZSHXBOm1NxXozmaFTgd6M3owQejN6s9y9DwUjvbkclr7j9w3k5YzeZSYdjUGZ3owQQm92bMvz3kTPvlJvtuNyq1p9dXmyN0PJ3JthadmIj5h5MxRNvRkhhBBCiJ5068y82bC6wzql6mK9mczQqUBvRm9GCL0ZvdlTblfwlrsxh6Xv7HE78nJG7zKTjsagTG9GCKE3O+mu9c66daXebKeaUGvUTLI3Q8ncm2Fp2YiPmHkzFE29GSGEEEKIvjimzLzZS0c6rONn6mO9mczQqTxvRm9GCL0ZvVmqueGierhvog1L39m08UJGzuhdZtLRGJTpzQgh9Gbf56u938ZUqTfbO/iZurX2crI3Q8ncm2Fp2YiPmHkzFE29GSGEEEKIdoc3mHkzNb7WUuftWG8mM3Qqz5vRmxFCb0Zvptz+uwN3d3sOS99xH+/Kyxm9y0w6GoMyvRkhhN7M3X+nh21S6s3U5p+VWjGb7M1QMvdmeMZGfMTMm6Fo6s0IIYQQQnRmdMTMmzV9eMJaffZcrDeTGTqV583ozQihN6M3S13K1KnzXa1tWPrOHxvqM3JG7zKTjsagTG9GCKE3u/3wqx62Sak3K2zrVUW7JtmboWTuzfCMjfiImTdD0dSbEUIIIYTo6gc/N/NmrbPvWen5b2O9mczQqTxvRm9GCL0ZvZnadN8Twfqtr+Sw9J22+5/Jyxm9y0w6GoMyvRkhhN6s9oEPPGyTUm92clm/+lvfkuzNUDL3ZnjGRnzEzJuhaOrNCCGEEEJ0+4GfzLxZ7anXrOUXxmO9mczQqUBvRm9GCL0Zvdk9/U8HXbvfyWHpO85jL+TljN5lJh2NQZnejBBCb9ax/2uv/cCPpd7s955d6sqKNcneDCVzb4alZSM+YubNUDT1ZoQQQgghenv2fTNvNrXyqDW97IdYbyYzdCrPm9GbEUJvRm+WumkurVZNZ9uw9J2a4vqMnNG7zKSjMSjTmxFC6M0e7TzkYZuUerP0X1uVNb8y2ZuhZO7N8IyN+IiZN0PR2JsRQgghhKTT6VkkQL5EhuQe5jnki/A+q7q7u4OWlpYcBsPhhxxJeH9TZtKpOG9Gb0YIvRm9WXSHO9lsNi9n9H5th2sMyvRmhBB6s8bGRg/bpNSbFQoFNTMzk+zNUDL3ZnjGRnzEzJuh+H/1ZoQQQgj5B783rlwJ6bRoAAAAAElFTkSuQmCC");
+	/*background-image: url("icons.png");*/
+	background-repeat: no-repeat;
+	background-size: 10px 1200px;
+}
+.allmode-default .allmode-rating {												/* Item RATING */
+	white-space: nowrap;
+}
+	.allmode-default .allmode-rating span {
+		display: inline-block;
+		width: 10px; height: 10px;
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAG4CAYAAAB8R3Z3AAABm0lEQVR42u2VYUQDYRzGrwzqe9GKoSmgKqVEtM/rOJICIlgIoajvUQAIFQIEibG+FxEUGKRMDC2qz33uGXdcS3vh1Z/8fjzudu/jOTf4ZYIWyuVylNymn2daSn26nMU/B5XX5KyzZXBL6Yqz/W1RK6u6Lih5ZTR1tqkUlJpy2Xz1njIQ/KRDGYsz03x1UXkOfqd5VuyMoqiqm5U2xWWlmnzMeJviRPqrw9TBR5wgfZb8jw/KtHKiHMTPdpRSfAYA8E/ItD64z+XcnlHJg2e0YuWZyXodzwAAmHimOr/v9oxKHjyjFSvPjFzv4hkAABPPPIa9bs+o5MEzWrHyzHDlDc8AAJh45v0mcHtGJQ+e0YqVZ3rmAjwDAGDimfB4yO0ZlTx4RitWnqmUnvAMAICJZ/orp27PqOTBM1qx8sxLuIZnAABMPNO9dOX2jEoePKMVK898nhfwDACAiWemjmpuz6jkwTNasfLM3XoezwAAmHhmY/bC7RmVPHhGK1aeObxdxDMAACaeyWazbs+o5MEzWrHyTKPRwDMAAH/BF4g4Fgjsmfc3AAAAAElFTkSuQmCC") no-repeat 0 0;
+		/*background: url("rating.png") no-repeat 0 0;*/
+		background-size: 10px 440px;
+	}
+	.allmode-default .allmode-star {
+		margin: 0 1px;
+	}
+	.allmode-default .allmode-star span {
+		display: block;
+	}
+.allmode-default .allmode-category,
+.allmode-default .allmode-author {												/* Item CATEGORY, AUTHOR */
+	padding-right: 5px;
+	font-style: normal;
+	color: #808080;
+}
+.allmode-default .allmode-details span:last-child,
+.allmode-default .allmode-info span:last-child {
+	padding-right: 0;
+}
+
+
+
+/* ----- RESPONSIVE Breakpoints ----- */
+@media (max-width: 480px) {
+	.allmode-default .allmode-topitem img {
+		width: 100%
+	}
+	.allmode-default .allmode-item img {
+		width: 50%
+	}
+}
+
+
+
+/* ----- HIGH RESOLUTION Media Queries ----- */
+@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+	only screen and (min-device-pixel-ratio: 1.3),
+	only screen and (min-resolution: 120dpi) 
+{
+	.allmode-default .allmode-date,
+	.allmode-default .allmode-hits,
+	.allmode-default .allmode-comments {
+		background-image: url(icons@3x.png);
+	}
+	.allmode-default .allmode-rating span {
+		background-image: url(rating@3x.png);
+	}
+}
+
+
+
+/* ----- COLOR Schemes ----- */
+
+/* --- Red Color (default) --- */
+.allmode-default a {color: #cc1f1f !important;}
+.allmode-default .allmode-name,
+.allmode-default .allmode-showall,
+.allmode-default a:hover img {border-color: #cc1f1f;}
+.allmode-default .allmode-date {background-position: 0 0;}
+.allmode-default .allmode-hits {background-position: 0 -30px;}
+.allmode-default .allmode-comments {background-position: 0 -60px;}
+.allmode-default .allmode-star span {background-position: 0 -40px;}
+
+/* --- Pink Color --- */
+.default-pink a {color: #d24087 !important;}
+.default-pink .allmode-name,
+.default-pink .allmode-showall,
+.default-pink a:hover img {border-color: #d24087;}
+.default-pink .allmode-date {background-position: 0 -120px;}
+.default-pink .allmode-hits {background-position: 0 -150px;}
+.default-pink .allmode-comments {background-position: 0 -180px;}
+.default-pink .allmode-star span {background-position: 0 -80px;}
+
+/* --- Orange Color --- */
+.default-orange a {color: #d94d16 !important;}
+.default-orange .allmode-name,
+.default-orange .allmode-showall,
+.default-orange a:hover img {border-color: #d94d16;}
+.default-orange .allmode-date {background-position: 0 -240px;}
+.default-orange .allmode-hits {background-position: 0 -270px;}
+.default-orange .allmode-comments {background-position: 0 -300px;}
+.default-orange .allmode-star span {background-position: 0 -120px;}
+
+/* --- Yellow Color --- */
+.default-yellow a {color: #ebc300 !important;}
+.default-yellow .allmode-name,
+.default-yellow .allmode-showall,
+.default-yellow a:hover img {border-color: #ebc300;}
+.default-yellow .allmode-date {background-position: 0 -360px;}
+.default-yellow .allmode-hits {background-position: 0 -390px;}
+.default-yellow .allmode-comments {background-position: 0 -420px;}
+.default-yellow .allmode-star span {background-position: 0 -160px;}
+
+/* --- Green Color --- */
+.default-green a {color: #4d9926 !important;}
+.default-green .allmode-name,
+.default-green .allmode-showall,
+.default-green a:hover img {border-color: #4d9926;}
+.default-green .allmode-date {background-position: 0 -480px;}
+.default-green .allmode-hits {background-position: 0 -510px;}
+.default-green .allmode-comments {background-position: 0 -540px;}
+.default-green .allmode-star span {background-position: 0 -200px;}
+
+/* --- Turquoise Color --- */
+.default-turquoise a {color: #1bb39e !important;}
+.default-turquoise .allmode-name,
+.default-turquoise .allmode-showall,
+.default-turquoise a:hover img {border-color: #1bb39e;}
+.default-turquoise .allmode-date {background-position: 0 -600px;}
+.default-turquoise .allmode-hits {background-position: 0 -630px;}
+.default-turquoise .allmode-comments {background-position: 0 -660px;}
+.default-turquoise .allmode-star span {background-position: 0 -240px;}
+
+/* --- Blue Color --- */
+.default-blue a {color: #0a55bf !important;}
+.default-blue .allmode-name,
+.default-blue .allmode-showall,
+.default-blue a:hover img {border-color: #0a55bf;}
+.default-blue .allmode-date {background-position: 0 -720px;}
+.default-blue .allmode-hits {background-position: 0 -750px;}
+.default-blue .allmode-comments {background-position: 0 -780px;}
+.default-blue .allmode-star span {background-position: 0 -280px;}
+
+/* --- Light Blue Color --- */
+.default-lightblue a {color: #3598dc !important;}
+.default-lightblue .allmode-name,
+.default-lightblue .allmode-showall,
+.default-lightblue a:hover img {border-color: #3598dc;}
+.default-lightblue .allmode-date {background-position: 0 -840px;}
+.default-lightblue .allmode-hits {background-position: 0 -870px;}
+.default-lightblue .allmode-comments {background-position: 0 -900px;}
+.default-lightblue .allmode-star span {background-position: 0 -320px;}
+
+/* --- Violet Color --- */
+.default-violet a {color: #6c3aad !important;}
+.default-violet .allmode-name,
+.default-violet .allmode-showall,
+.default-violet a:hover img {border-color: #6c3aad;}
+.default-violet .allmode-date {background-position: 0 -960px;}
+.default-violet .allmode-hits {background-position: 0 -990px;}
+.default-violet .allmode-comments {background-position: 0 -1020px;}
+.default-violet .allmode-star span {background-position: 0 -360px;}
+
+/* --- Black Color --- */
+.default-gray a {color: #1a1a1a !important;}
+.default-gray .allmode-name,
+.default-gray .allmode-showall,
+.default-gray a:hover img {border-color: #1a1a1a;}
+.default-gray .allmode-date {background-position: 0 -1080px;}
+.default-gray .allmode-hits {background-position: 0 -1110px;}
+.default-gray .allmode-comments {background-position: 0 -1140px;}
+.default-gray .allmode-star span {background-position: 0 -400px;}
+

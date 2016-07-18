@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+.cb_myablums{
+	margin-bottom:5px;
+	padding:5px;
+	background-color:#eee;
+	border:1px solid #CCC;
+	-moz-border-radius:4px;
+}
+.cb_myablums select{
+	width:107px;
+	margin-right:5px;
+}
+.cb_myablums input[type="text"]{
+	width:100px;
+	margin-right:5px;
+}
+.cb_pagination{
+	margin-bottom:5px;
+}
+.add_new_album{
+	text-align:right;
+	margin-bottom:10px;
+}
+.add_album_button{
+	padding:5px;
+	padding-left:24px;
+	background:#eee url(images/cdr.png) 3px 3px no-repeat;
+	border:1px solid #CCC;
+	-moz-border-radius:4px;
+}
+.add_artist_button{
+	padding:5px;
+	padding-left:24px;
+	background:#eee url(images/user.png) 3px 3px no-repeat;
+	border:1px solid #CCC;
+	-moz-border-radius:4px;
+}

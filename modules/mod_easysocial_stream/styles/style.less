@@ -1,0 +1,193 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+	// EasySocial Stream Modules
+	&.mod-es-stream {
+
+		// Override stream styling from wireframe
+		.es-stream-list {
+			min-height: 150px; // reduce min-height for module
+		}
+		.es-streams {
+			padding: 0;
+		}
+
+		// Customize for stream modules
+		.dropdown-menu {
+			li {
+				> a {
+					&:hover,
+					&:focus {
+						#gradient > .vertical(#E7EDF3, #D6E0EB) !important;
+						border-bottom: 1px solid #BED3EA !important;
+						border-top: 1px solid #BED3EA !important;
+						color: #333333 !important;
+						text-decoration: none !important;
+					}
+				}
+			}
+		}
+
+		// Active state
+		// ------------
+		.dropdown-menu .active > a,
+		.dropdown-menu .active > a:hover {
+		  color: #000;
+		  text-decoration: none;
+		  outline: 0;
+		  #gradient > .vertical(#E7EDF3, #D6E0EB) !important;
+		}
+
+		// es-stream
+		.es-stream-item-photo-cover {
+			.es-photo-image {
+				background-size: cover;
+			}
+		}
+
+		// es-photo-row
+		//stream photo container
+		.es-stream-photo-row {
+			// background: red;
+			position: relative;
+			.clearfix();
+
+			// Profile covers
+			&.es-stream-item-photo-cover{
+				margin: -10px;
+				padding-bottom: 10px;
+			}
+
+			.es-stream-item-photo {
+				display: inline-block;
+				font-size: 0;
+				width: 100%;
+			}
+
+			&.es-stream-photos-2 {
+				.es-stream-item-photo {
+					width: 50%;
+					.es-photo-image {
+						padding-top: 60%;
+						height: auto;
+					}
+
+					&:first-child {
+						padding-right: 5px;
+					}
+					// display: inline-block;
+					+ .es-stream-item-photo {
+						position: absolute;
+						right: 0;
+						padding-left: 5px;
+
+
+					}
+				}
+			}//2
+
+			&.es-stream-photos-3 {
+				.es-stream-item-photo {
+					// float: left;
+					// display: inline-block;
+					// font-size: 0;
+					width: 50%;
+					.es-photo-image {
+						height: 150px;
+					}
+
+					&:nth-child(2) {
+						clear: left;
+						padding-top: 5px;
+					}
+					&:nth-child(3) {
+						position: absolute;
+						right: 0;
+						padding-left: 10px;
+						top: 0;
+						.es-photo-image {
+							height: 310px;
+						}
+					}
+				}
+			}//3
+
+			&.es-stream-photos-4 {
+				.es-stream-item-photo {
+					width: 49%;
+					padding-bottom: 6px;
+					.es-photo-image {
+						// height: 130px;
+						height: auto;
+						padding-top: 50%;
+						// padding-bottom: 8px;
+					}
+					&:nth-child(even){
+						position: absolute;
+						right: 0;
+						// padding-left: 10px;
+					}
+					&:nth-child(2) {
+						top: 0;
+					}
+					&:nth-child(3) {
+						clear: left;
+						display: block;
+					}
+					// &:nth-child(3),
+					&:nth-child(4) {
+						// position: absolute;
+						bottom: 0;
+						// top: 136px;
+					}
+				}
+			}//4
+
+			&.es-stream-photos-5 {
+				.es-stream-item-photo {
+					width: 19%;
+					padding-right: 5px;
+					.es-photo-image {
+						// padding-right: 10px;
+						height: auto;
+						padding-top: 100%; //ratio 1:1
+						background-position: center;
+						+ .es-photo-image {
+							// padding-left: 10px;
+						}
+					}
+				}
+			}//5
+
+			&.es-stream-photos-1-4 {
+				.es-stream-item-photo {
+					width: 24%;
+					padding-right: 1%;
+					&:first-child {
+						width: 98%;
+						.es-photo-image {
+							padding-top: 50%;
+							margin-bottom: 10px;
+						}
+					}
+					.es-photo-image {
+						// padding-right: 10px;
+						height: auto;
+						padding-top: 100%; //ratio 1:1
+						background-position: center;
+						+ .es-photo-image {
+							// padding-left: 10px;
+						}
+					}
+				}
+			}//1/4
+		}
+	}
+
+}

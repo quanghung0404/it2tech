@@ -1,0 +1,120 @@
+.es-photo-upload-item {
+
+	position: relative;
+
+	.upload-title {
+		font-weight: bold;
+
+		> span {
+			display: none;
+		}
+	}
+
+	&.pending {
+		.upload-title-pending {
+			display: inline-block;
+		}
+	}
+
+	&.preparing {
+		.upload-title-preparing {
+			display: inline-block;
+		}
+	}
+
+	&.uploading {
+		.upload-title-uploading {
+			display: inline-block;
+		}
+	}
+
+	&.failed {
+		.upload-title-failed {
+			display: inline-block;
+		}
+	}
+
+	&.done {
+		.upload-title-done {
+			display: inline-block;
+		}
+	}
+
+	.upload-status td {
+		vertical-align: middle;
+	}
+
+	table {
+		width: 100%;
+		height: 100%;
+		border-collapse: separate;
+		table-layout: fixed;
+	}
+
+	.upload-details {
+		display: none;
+		td {
+			height: 100%;
+			vertical-align: top;
+			padding: 8px;
+			background: @esPhotoUploadBackground;
+			word-wrap: break-word;
+		}
+	}
+
+	&.show-details {
+		.upload-details {
+			display: table-row;
+		}
+	}
+
+	.upload-details-button {
+		font-size: 90%;
+		color: @esPhotoUploadBtnColor;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.upload-filename {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.upload-progress {
+		margin-bottom: 3px;
+		height: 18px;
+	}
+
+	.upload-filesize {
+		font-size: 90%;
+		text-align: right;
+	}
+
+	.upload-status {
+		td {
+			padding: 8px;
+		}
+	}
+
+	.upload-remove-button {
+		position: absolute;
+		top: 8px;
+		right: 4px;
+		cursor: pointer;
+
+		i {
+			font-size: @fontSizeSmall;
+			color: @esPhotoUploadBtnColor;
+		}
+	}
+}
+
+
+&.popbox.popbox-upload {
+	width: 200px;
+	background: @esBackground;
+	padding: 10px;
+}

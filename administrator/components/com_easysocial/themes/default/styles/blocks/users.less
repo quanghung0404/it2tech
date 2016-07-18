@@ -1,0 +1,123 @@
+/*------------------------------------*\
+    $user.less
+\*------------------------------------*/
+
+.es-user-form {
+	.es-user-profile {
+		.es-user-profile-tabs {
+			ul {
+				list-style: none;
+				margin: 15px 0 0;
+				padding: 0;
+				height: 27px;
+				border-bottom: 1px solid #ddd;
+				.clearfix();
+				> li {
+					margin: -1px 10px -1px -3px;
+					display: block;
+					float: left;
+					height: 28px;
+					line-height: 28px;
+					a {
+						padding: 8px 10px 4px;
+						font-weight: bold;
+						border: 1px solid #ddd;
+						border-bottom: 1px solid transparent;
+						position: relative;
+						color: #555;
+						background: #f5f5f5;
+						.no-focus-outline();
+						border-radius: 3px 3px 0 0;
+
+						&:hover {
+						}
+						&:before,
+						&:after {
+							display: block;
+							position: absolute;
+							content: '';
+							background: #ddd;
+							width: 1px;
+						}
+						&:before {
+							left: -1px;
+							bottom: -2px;
+							height: 3px;
+						}
+						&:after {
+							right: -1px;
+							bottom: -2px;
+							height: 2px;
+						}
+					}
+					&:first-child {
+						margin-left: -1px;
+					}
+					&.active {
+						background: white;
+						z-index: 2;
+						a {
+							padding: 8px 10px 5px;
+							border-top: 3px solid #7cc110;
+							background: white;
+							border-bottom: 1px solid transparent;
+							&:before {
+								height: 1px;
+								bottom: -1px;
+							}
+							&:after {
+								display: none;
+							}
+							&:hover {
+								border-bottom: 1px solid transparent;
+							}
+						}
+					}//active
+					&.error {
+						a {
+							border-top: 3px solid #BE1F23;
+							background: #ffe5e6;
+						}
+					}
+				}//li
+			}
+		}
+		.es-user-profile-content.tab-content{
+			display: block;
+		}
+	}
+
+	.es-user-activities{
+
+		margin: 0;
+		padding: 0;
+		list-style:none;
+
+		li + li{
+			border-top: 1px solid #e6e6e6;
+			margin-top: 10px;
+			padding-top: 10px;
+		}
+
+		> li {
+			list-style:none;
+
+			.activity-meta{
+
+			}
+
+			.activity-date {
+				font-size: 11px;
+				color: #666;
+			}
+
+			.activity-content{
+				margin-top: 10px;
+				background: #f5f5f5;
+				border: 1px solid #e6e6e6;
+				padding: 10px 5px;
+			}
+		}
+
+	}
+}

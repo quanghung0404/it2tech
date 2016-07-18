@@ -1,0 +1,60 @@
+[
+    {
+        "title": "APP_EVENT_GUESTS_SETTINGS_WIDGETS",
+        "desc": "APP_EVENT_GUESTS_SETTINGS_WIDGETS_DESC",
+        "fields":
+        [
+            {
+                "label": "APP_EVENT_GUESTS_SETTINGS_WIDGETS_SHOW_GUESTS",
+                "tooltip": "APP_EVENT_GUESTS_SETTINGS_WIDGETS_SHOW_GUESTS_DESC",
+                "name": "show_guests",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_EVENT_GUESTS_SETTINGS_WIDGETS_SHOW_FRIENDS_IN_EVENT",
+                "tooltip": "APP_EVENT_GUESTS_SETTINGS_WIDGETS_SHOW_FRIENDS_IN_EVENT_DESC",
+                "name": "show_friends",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_EVENT_GUESTS_SETTINGS_WIDGETS_SHOW_ONLINE_GUESTS",
+                "tooltip": "APP_EVENT_GUESTS_SETTINGS_WIDGETS_SHOW_ONLINE_GUESTS_DESC",
+                "name": "show_online",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_APPS_SETTINGS_STREAM",
+        "desc": "COM_EASYSOCIAL_APPS_SETTINGS_STREAM_DESC",
+        "fields":
+        [
+            {
+                "label": "APP_EVENT_EVENTS_SETTINGS_STREAM_USER_PROMOTED",
+                "tooltip": "APP_EVENT_EVENTS_SETTINGS_STREAM_USER_PROMOTED_DESC",
+                "name": "stream_makeadmin",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_EVENT_EVENTS_SETTINGS_STREAM_USER_GOING",
+                "tooltip": "APP_EVENT_EVENTS_SETTINGS_STREAM_USER_GOING_DESC",
+                "name": "stream_going",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_EVENT_EVENTS_SETTINGS_STREAM_USER_NOT_GOING",
+                "tooltip": "APP_EVENT_EVENTS_SETTINGS_STREAM_USER_NOT_GOING_DESC",
+                "name": "stream_notgoing",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    }
+]
+
+

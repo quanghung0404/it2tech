@@ -1,0 +1,160 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$badges - badges.less
+\*------------------------------------*/
+// Blocks aka modules in html apply rely on few classes
+
+// Badges view
+&.view-badges{
+	ul.badge-list {
+		> li {
+			width: 30%;
+			float: left;
+			margin: 20px 20px 0 0;
+		}
+	}
+}
+
+//Single badge block with fixed width
+.es-badge-wrapper {
+	.clearfix();
+	position: relative;
+	background: @esBadgesWrapperBackground;
+	padding-bottom: 30px;
+	.es-badge {
+		width: 240px;
+		margin: 0 auto;
+	}
+
+}
+
+//Badges container
+//extend .es-widget
+.es-badge {
+	text-align: center;
+	background: @esBadgesBackground;
+	border: 1px solid @esBadgesBorder;
+	.getContrast(@esBadgesBackground);
+	border-radius: 3px;
+	.es-widget-head {
+
+		// Fixed height
+		height: 60px;
+		overflow: hidden;
+	}
+	.es-widget-body {
+		padding: 10px 0;
+
+		// Fixed height
+		height: 200px;
+		overflow: hidden;
+	}
+	.es-widget-foot {
+		.getContrast(@esBadgesFootBackground);
+		background: @esBadgesFootBackground;
+		border-radius: 0 0 3px 3px;
+		border-top: 1px solid @esBadgesFootBorder;
+		.box-shadow(@esBadgesFootBoxShadow);
+		h6 {
+			margin: 0;
+		}
+		[class*="span"] {
+			text-align: left;
+		}
+	}
+	.badge-icon {
+		margin: 10px 0 20px;
+	}
+	.badge-desp {
+		margin-bottom: 10px;
+		padding: 0 10px;
+	}
+}
+
+.es-badge-list { //ul
+	.es-badge-item {
+		display: inline-block;
+		margin-bottom: 3px;
+		.es-badge-icon {
+			width: 20px;
+			height: 20px;
+			max-width: 20px;
+			max-height: 20px;
+		}
+	}
+}
+
+
+
+/**
+ * Achievements layout
+ **/
+.es-achievements{
+
+	ul.achievements-list{
+		margin: 0;
+        padding: 0;
+		list-style:none;
+		>li {
+			text-align:center;
+			margin: 10px 10px 20px;
+			display: inline-block;
+			width: 120px;
+			padding: 8px;
+			list-style: none;
+
+			&.empty{
+				width: 100%;
+				text-align:center;
+                margin: 10px 0;
+			}
+			div.achievement-title{
+				font-size: 14px;
+				margin-top: 15px;
+			}
+
+			div.achievement-date{
+				font-size: @baseFontSize;
+				color: @esAchievementDateColor;
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+.es-achievers-load-button {
+	text-align: center;
+}
+
+// Responsive
+&.w600 {
+	&.view-badges{
+		ul.badge-list {
+			> li {
+				width: 48%;
+				float: left;
+				margin: 20px 0 0 0;
+				&:nth-child(even) {
+					margin-right: 0;
+					float: right;
+				}
+			}
+		}
+	}
+}
+&.w320 {
+	&.view-badges{
+		ul.badge-list {
+			> li {
+				width: 100%;
+				float: left;
+				margin: 20px 0 0 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,95 @@
+.eb-mm-foldertree {
+    background: #fff;
+    border: 1px solid @eb-composer-border-color;
+    border-radius: @eb-composer-border-radius;
+    padding: 5px;
+}
+
+.eb-mm-tree {
+	.eb-mm-tree {
+		padding: 3px 0 3px 20px;
+	}
+
+	&.is-empty {
+		display: none !important;
+	}
+}
+
+.eb-mm-tree-item {
+	cursor: pointer;
+	border-radius: 2px;
+
+	> span {
+		border-radius: 2px;
+		display: block;
+		padding: 5px 10px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		.fa {
+			font-size: 14px;
+			width: 18px;
+			vertical-align: middle;
+			color: #999;
+			margin-right: 3px;
+			text-align: center;
+		}
+
+		> .fa-angle-right,
+		> .fa-angle-down,
+		> .fa-circle-o-notch  {
+			display: none;
+		}
+	}
+
+	// Hide subtree
+	> .eb-mm-tree {
+		display: none;
+	}
+
+	&.is-expanded {
+		> .eb-mm-tree {
+			display: block;
+		}
+
+		// > span {
+		// 	background: #eee;
+
+		// 	> .fa {
+		// 		color: #555;
+		// 	}
+		// }
+	}
+
+	&.is-loading {
+		> span {
+			> .fa-circle-o-notch  {
+				display: inline-block;
+				color: #999 !important;
+			}
+
+			> .fa-folder {
+				display: none;
+			}
+		}
+	}
+
+	&.active,
+	&.active:hover {
+		> span {
+			background: lighten(@brand-primary, 35%) !important;
+			color: darken(@brand-primary, 10%) !important;
+
+			> .fa {
+				color: @brand-primary !important;
+			}
+		}
+	}
+
+	&:hover {
+		> span {
+			background: #eee;
+		}
+	}
+}

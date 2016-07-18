@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="site" method="upgrade">
+	<name>EasySocial Registration Requester</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>10th May 2016</creationDate>
+	<copyright>Copyright (C) 2009 - 2013 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.4.9</version>
+	<description><![CDATA[MOD_EASYSOCIAL_REGISTRATION_REQUESTER_DESC]]></description>
+	<files>
+		<folder>images</folder>
+		<folder>scripts</folder>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename module="mod_easysocial_registration_requester">mod_easysocial_registration_requester.php</filename>
+		<filename>mod_easysocial_registration_requester.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easysocial_registration_requester.ini</language>
+		<language tag="en-GB">en-GB.mod_easysocial_registration_requester.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_easysocial/models/fields">
+			<fieldset name="basic">
+				<field name="profile_id" type="easysocial_profile" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SELECT_PROFILE" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SELECT_PROFILE_DESC" required="true" message="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SELECT_PROFILE_REQUIRED" />
+				<field name="show_heading_title" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SHOW_HEADING_TITLE" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SHOW_HEADING_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="heading_title" type="text" default="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_HEADING_TITLE_DEFAULT" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_HEADING_TITLE" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_HEADING_TITLE_DESC" />
+				<field name="show_heading_desc" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SHOW_HEADING_DESCRIPTION" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SHOW_HEADING_DESCRIPTION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="heading_desc" type="textarea" default="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_HEADING_DESCRIPTION_DEFAULT" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_HEADING_DESCRIPTION" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_HEADING_DESCRIPTION_DESC" />
+				<field name="social" type="radio" default="1" class="btn-group" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SHOW_SOCIAL" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SHOW_SOCIAL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="splash">
+				<field name="splash_image" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SPLASH_IMAGE" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SPLASH_IMAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="splash_image_url" type="text" default="/modules/mod_easysocial_registration_requester/images/splash.jpg" label="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SPLASH_IMAGE_URL" description="MOD_EASYSOCIAL_REGISTRATION_REQUESTER_SPLASH_IMAGE_URL_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

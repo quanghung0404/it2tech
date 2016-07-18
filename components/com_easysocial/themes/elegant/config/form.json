@@ -1,0 +1,628 @@
+[
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_STREAM",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DATE_DISPLAY_STYLE",
+                "name": "stream_datestyle",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_THE_DATE_DISPLAY_STYLE_IN_FRONTEND_TOOLTIP",
+                "type": "select",
+                "options": [
+                    {
+                        "title": "Time elapsed style",
+                        "value": "elapsed"
+                    },
+                    {
+                        "title": "Normal datetime style",
+                        "value": "datetime"
+                    }
+                ],
+                "default": "elapsed"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DATETIME_FORMAT",
+                "name": "stream_dateformat_format",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_THE_FORMAT_OF_DATETIME_WHEN_NORMAL_DATETIME_STYLE_SELECTED__TOOLTIP",
+                "type": "text",
+                "default": "Y-m-d H:i"
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_DASHBOARD",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_LOGIN_FOR_GUESTS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_LOGIN_FOR_GUESTS_DESC",
+                "name": "dashboard_login_guests",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_EVERYONE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_EVERYONE_DESC",
+                "name": "dashboard_feeds_everyone",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_FRIEND_LISTS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_FRIEND_LISTS_DESC",
+                "name": "dashboard_feeds_friendlists",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_GROUPS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_GROUPS_DESC",
+                "name": "dashboard_feeds_groups",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_GROUPS_LIMIT",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_GROUPS_LIMIT_DESC",
+                "name": "dashboard_groups_total",
+                "type": "limit",
+                "default": 0
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_EVENTS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_EVENTS_DESC",
+                "name": "dashboard_feeds_events",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_EVENTS_LIMIT",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_EVENTS_LIMIT_DESC",
+                "name": "dashboard_events_total",
+                "type": "limit",
+                "default": 0
+            },
+             {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APPS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APPS_DESC",
+                "name": "dashboard_show_apps",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS_DESC",
+                "name": "dashboard_feeds_apps",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE_DESC",
+                "name": "dashboard_apps_browse",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_REGISTRATION",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_HEADERS_IN_SELECTING_PROFILE_PAGE",
+                "name": "registration_profile_headers",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_HEADING_THAT_APPEARS_BELOW_THE_TOOLBAR_SHOULD_BE_ENABLED__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_PROFILE_AVATAR",
+                "name": "registration_profile_avatar",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_PROFILE_AVATAR_SHOULD_BE_VISIBLE_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_PROFILE_DESCRIPTION",
+                "name": "registration_profile_desc",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_PROFILE_DESCRIPTION_SHOULD_BE_VISIBLE_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_PROFILE_REGISTRATION_TYPE",
+                "name": "registration_profile_type",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_PROFILE_TYPE_SHOULD_BE_VISIBLE_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_USERS_REGISTERED_IN_PROFILE",
+                "name": "registration_profile_users",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_USERS_THAT_ARE_REGISTERED_IN_THAT_PROFILE_SHOULD_BE_VISIBLE_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_PROGRESS_BAR_DURING_REGISTRATION",
+                "name": "registration_progress",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_USERS_SHOULD_BE_ABLE_TO_SEE_THE_REGISTRATION_PROGRESS_BAR__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_SELECTED_PROFILE_DURING_REGISTRATION",
+                "name": "registration_profile_selected",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_THIS_OPTION_IS_ENABLED__USERS_WOULD_BE_ABLE_TO_SEE_THE_PROFILE_THAT_THEY_HAVE_SELECTED_INITIALLY__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_TOOLBAR",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_TOOLBAR",
+                "name": "toolbar",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_TOOLBAR_SHOULD_BE_ENABLED__TOOLTIP",
+                "type": "boolean",
+                "default": "true"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_TOOLBAR_FOR_GUEST",
+                "name": "toolbar_guests",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_TOOLBAR_SHOULD_BE_VISIBLE_BY_GUEST_USERS__TOOLTIP",
+                "type": "boolean",
+                "default": "true"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_DASHBOARD",
+                "name": "toolbar_dashboard",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_HOME_ICON_SHOULD_BE_VISIBLE_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": "true"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_SEARCH",
+                "name": "toolbar_search",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_SEARCH_BOX_SHOULD_BE_ENABLED_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": "true"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_LOGIN",
+                "name": "toolbar_login",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_LOGIN_ICON_SHOULD_BE_VISIBLE_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": "true"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SHOW_ACCOUNT_DROPDOWN",
+                "name": "toolbar_account",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_IF_THE_YOUR_PROFILE_SUBMENU_ITEM_SHOULD_BE_VISIBLE_OR_NOT__TOOLTIP",
+                "type": "boolean",
+                "default": "true"
+            },
+            {
+                "label": "COM_EASYSOCIAL_TOOLBAR_SHOW_BROWSE_USERS",
+                "tooltip": "COM_EASYSOCIAL_TOOLBAR_SHOW_BROWSE_USERS_DESC",
+                "name": "show_browse_users",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label"     : "COM_EASYSOCIAL_TOOLBAR_SHOW_ADVANCED_SEARCH",
+                "tooltip"   : "COM_EASYSOCIAL_TOOLBAR_SHOW_ADVANCED_SEARCH_DESC",
+                "name"      : "show_advanced_search",
+                "type"      : "boolean",
+                "default"   : true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_CONVERSATIONS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_CONVERSATIONS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_CONVERSATIONS_TO_DISPLAY_PER_PAGE_IN_THE_CONVERSATION_LISTINGS_TOOLTIP",
+                "name": "conversation_limit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "20"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_CONVERSATION_SORTING",
+                "name": "conversation_sorting",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_THE_SORTING_SEQUENCE_FOR_CONVERSATIONS_THAT_ARE_LISTED_ON_THE_CONVERSATIONS_PAGE__TOOLTIP",
+                "type": "select",
+                "default": "created",
+                "options": [
+                    {
+                        "title": "Creation Date",
+                        "value": "created"
+                    },
+                    {
+                        "title": "Last Replied Date",
+                        "value": "lastreplied"
+                    }
+                ]
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_CONVERSATION_ORDERING",
+                "name": "conversation_ordering",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DETERMINES_THE_ORDERING_FOR_CONVERSATIONS_THAT_ARE_LISTED_ON_THE_CONVERSATIONS_PAGE__TOOLTIP",
+                "type": "select",
+                "default": "desc",
+                "options": [
+                    {
+                        "title": "Descending (Higher to Lower)",
+                        "value": "desc"
+                    },
+                    {
+                        "title": "Ascending (Lower to Higher)",
+                        "value": "asc"
+                    }
+                ]
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_MESSAGES_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_MESSAGES_TO_DISPLAY_PER_PAGE_WHEN_READING_A_CONVERSATION_TOOLTIP",
+                "name": "messages_limit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "20"
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_PROFILE",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_PROFILE_COVER",
+                "name": "profile_cover",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USERS_PROFILE_COVER_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_POINTS",
+                "name": "profile_points",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USERS_POINTS_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DISPLAY_PROFILE_TITLE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DISPLAY_PROFILE_DESC",
+                "name": "profile_type",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_BADGES",
+                "name": "profile_badges",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USERS_BADGES_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_AGE",
+                "name": "profile_age",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USERS_AGE_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_GENDER",
+                "name": "profile_gender",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USERS_GENDER_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_ADDRESS",
+                "name": "profile_address",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USERS_ADDRESS_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_WEBSITE",
+                "name": "profile_website",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USERS_WEBSITE_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_REPORT_USER",
+                "name": "profile_report",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__REPORT_LINK_WILL_BE_DISPLAYED_IN_THE_USERS_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_LASTLOGIN",
+                "name": "profile_lastlogin",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_LASTLOGIN_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_JOINDATE",
+                "name": "profile_joindate",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_JOINDATE_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_PROFILE_SHOW_APP_FILTERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_PROFILE_SHOW_APP_FILTERS_DESC",
+                "name": "profile_feeds_apps",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE_DESC",
+                "name": "profile_apps_browse",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_APPS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_SORTING_ITEMS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED__USER_CAN_SORT_APPS_WHEN_THEY_ARE_VIEWING_THE_APPS__TOOLTIP",
+                "name": "apps_sorting",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_USERS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_USERS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_USERS_TO_DISPLAY_PER_PAGE_IN_THE_USERS_LISTINGS_TOOLTIP",
+                "name": "userslimit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "10"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_LASTLOGIN",
+                "name": "users_lastlogin",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_LASTLOGIN_WILL_BE_DISPLAYED_IN_USER_LISTING__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_JOINDATE",
+                "name": "users_joindate",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_JOINDATE_WILL_BE_DISPLAYED_IN_USER_LISTING__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_FRIENDS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_USERS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_USERS_TO_DISPLAY_PER_PAGE_IN_THE_FRIENDS_LISTINGS_TOOLTIP",
+                "name": "friendslimit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "20"
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_FOLLOWERS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_FOLLOWERS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_FOLLOWERS_PER_PAGE_DESC",
+                "name": "followersLimit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "20"
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_BADGES",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_BADGES_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_BADGES_TO_DISPLAY_PER_PAGE_IN_THE_BADGE_LISTINGS_TOOLTIP",
+                "name": "badgeslimit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "10"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_ACHIEVERS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_ACHIEVERS_TO_DISPLAY_PER_PAGE_IN_THE_BADGE_PAGE_TOOLTIP",
+                "name": "achieverslimit",
+                "type": "pagination",
+                "start": "10",
+                "increment": "10",
+                "max": "100",
+                "default": "50"
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_POINTS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_POINTS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_POINTS_TO_DISPLAY_PER_PAGE_IN_THE_POINTS_LISTINGS_TOOLTIP",
+                "name": "pointslimit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "10"
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_GROUPS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_RESULTS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_RESULTS_PER_PAGE_DESC",
+                "name": "groups_limit",
+                "type": "pagination",
+                "start": 5,
+                "increment": 5,
+                "max": 100,
+                "default": 20
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_CATEGORY_HEADERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_CATEGORY_HEADERS_DESC",
+                "name": "groups_category_header",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_DESCRIPTION",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_DESCRIPTION_DESC",
+                "name": "groups_description",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS_DESC",
+                "name": "groups_feeds_apps",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_APP_FILTERS_LIMIT",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_APP_FILTERS_LIMIT_DESC",
+                "name": "groups_feeds_apps_total",
+                "type": "limit",
+                "default": 0
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_EVENTS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_RESULTS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_RESULTS_PER_PAGE_DESC",
+                "name": "events_limit",
+                "type": "pagination",
+                "start": 5,
+                "increment": 5,
+                "max": 100,
+                "default": 20
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_CATEGORY_HEADERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_CATEGORY_HEADERS_DESC",
+                "name": "events_category_header",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_DESCRIPTION",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_DESCRIPTION_DESC",
+                "name": "events_description",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_APP_FILTERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_APP_FILTERS_DESC",
+                "name": "events_feeds_apps",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_APP_FILTERS_LIMIT",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_APP_FILTERS_LIMIT_DESC",
+                "name": "events_feeds_apps_total",
+                "type": "limit",
+                "default": 0
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_ADDRESS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_ADDRESS_DESC",
+                "name": "events_seatsleft",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_SEATS_LEFT",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_SEATS_LEFT_DESC",
+                "name": "events_seatsleft",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_SEARCH",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_RESULTS_IN_TOOLBAR",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_SEARCH_RESULTS_TO_DISPLAY_IN_TOOLBAR_SEARCH_TOOLTIP",
+                "name": "search_toolbarlimit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "5"
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_RESULTS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_SPECIFY_THE_NUMBER_OF_SEARCH_RESULTS_TO_DISPLAY_PER_PAGE_IN_SEARCH_PAGE_TOOLTIP",
+                "name": "search_limit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "10"
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_VIDEOS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_VIDEOS_RESULTS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_VIDEOS_RESULTS_PER_PAGE_TOOLTIP",
+                "name": "videos_limit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "10"
+            }
+        ]
+    }
+]

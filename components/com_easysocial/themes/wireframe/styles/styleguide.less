@@ -1,0 +1,57 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/**
+ * Styleguide area.
+ */
+
+.guide-navigation
+{
+	i {
+		margin-right: 5px;
+	}
+	li {
+		margin-top: 5px;
+		padding: 5px;
+	}
+	li + li {
+
+		border-top: 1px solid #ccc;
+	}
+}
+
+.hero-unit
+{
+	background-color: #EEEEEE;
+	border-radius: 6px 6px 6px 6px;
+	color: inherit;
+	font-size: 18px;
+	font-weight: 200;
+	line-height: 30px;
+	margin-bottom: 30px;
+	padding: 60px;
+}
+
+.example {
+	padding: 10px;
+	margin: 5px 0;
+	&.example-lightgray {
+		background: lighten(@grayLighter, 2%);
+	}
+	&.example-darkgray {
+		background: @grayDark;
+	}
+}
+
+.show-grid [class*="span"] {
+	background-color: #EEEEEE;
+	border-radius: 3px 3px 3px 3px;
+	line-height: 40px;
+	min-height: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}

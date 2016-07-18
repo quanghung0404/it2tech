@@ -1,0 +1,491 @@
+
+/*= SOME BOOTSTRAP OVERWRITE
+---------------------------------------------------------------------------------------------- */
+
+.btn {
+	.box-shadow(none);
+}
+
+.text-small {
+	font-size: 11px !important;
+}
+
+.control-label {
+	font-weight: normal;
+
+	&:after
+	{
+		content: " :"
+	}
+}
+
+.form-action {
+	margin-top: 25px;
+}
+
+.input-group.pull-left {
+	+ .btn
+	{
+		margin-left: 5px;
+	}
+}
+
+.alert {
+	.close {
+		position: relative;
+		right: 0;
+		line-height: 14px;
+		padding: 3px 0;
+	}
+}
+
+
+/*= DASHBOARD NAVBAR
+---------------------------------------------------------------------------------------------- */
+
+.eb-toolbar {
+	background: #282828;
+	border: 1px solid #1b1b1b;
+	border-radius: 3px 3px 0 0;
+
+	+ .eb-alert {
+		margin: 0;
+		border-radius: 0;
+	}
+
+	> .col-cell {
+		text-align: center;
+		position: relative;
+
+		&:first-child,
+		&:last-child {
+			width: 40px;
+		}
+
+		&:last-child {
+			.eb-toolbar-dropdown {
+				right: -1px;
+				left: auto;
+			}
+		}
+
+		> a,
+		> div,
+		> div > a {
+			display: inline-block;
+			vertical-align: top;
+			line-height: 40px;
+			min-width: 40px;
+			text-align: center;
+			color: #fff;
+			position: relative;
+		}
+
+		> .dropdown-backdrop {
+			position: fixed;
+		}
+	}
+
+
+
+	.fa {
+		font-size: 14px;
+		line-height: inherit;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.fa-pencil {
+		position: relative;
+		text-indent: 3px;
+
+		&:after {
+			font-size: 8px;
+			content: "\f067";
+			position: absolute;
+			left: -5px;
+			top: -5px;
+			color: @brand-danger;
+		}
+	}
+}
+
+.eb-toolbar-master {
+	> a {
+		background: #3a3a3a;
+		line-height: 32px !important;
+		margin: 4px;
+		border-radius: 3px;
+	}
+}
+
+.eb-toolbar-dropdown {
+	background: #282828;
+	border: 1px solid #1b1b1b;
+	border-radius: 3px;
+	min-width: 200px;
+	left: -1px;
+	margin-top: 3px;
+
+	> li {
+		> a {
+			color: #c1c1c1;
+			padding: 0 15px;
+			line-height: 32px;
+			position: relative;
+
+			.fa {
+				display: none;
+			}
+
+			&:hover,
+			&:focus {
+				background: #353535;
+  				color: #fff;
+			}
+
+			b {
+				background: #c00;
+				border-radius: 2px;
+				color: #fff;
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -10px;
+				line-height: 20px;
+				height: 20px;
+				display: inline-block;
+				padding: 0 7px;
+				font-size: 10px;
+			}
+		}
+	}
+
+	> .active > a {
+		background: lighten(#282828, 7.5%) !important;
+		color: #fff !important;
+	}
+
+	> .divider {
+		background: #1b1b1b;
+  		border: 0 !important;
+	}
+}
+
+
+/*= DASHBOARD HEADER
+---------------------------------------------------------------------------------------------- */
+
+.eb-head {
+	background: #f9f9f9;
+	border: 1px solid @box_border_color;
+	border-top: 0;
+	padding: 25px 15px;
+	margin-bottom: @box_gap;
+	border-radius: 0 0 2px 2px;
+	// border-radius: 2px;
+	.clearfix();
+}
+
+.eb-head-title {
+	font-size: 18px;
+	line-height: 30px;
+	height: 30px;
+	margin: 0;
+
+	> .fa {
+		font-size: 14px;
+		border: 2px solid #ddd;
+		width: 30px;
+		text-align: center;
+		line-height: 26px;
+		border-radius: 50%;
+		height: 30px;
+		color: #888;
+	}
+}
+
+.eb-head-popover {
+	color: #bbb;
+	text-decoration: none;
+
+	&:hover {
+		color: #999;
+	}
+
+	i {
+		font-size: 14px;
+		vertical-align: text-top;
+	}
+}
+
+.fd-popover-content {
+	font: 11px/1.35 'Lucida Grande', Tahoma, Arial, sans-serif;
+	padding: 10px 15px;
+}
+
+
+/*= DASHBOARD BOXES
+---------------------------------------------------------------------------------------------- */
+
+.eb-box {
+	background: #fff;
+	border: 1px solid @box_border_color;
+	border-bottom-color: @box_border_color_a;
+	margin-top: @box_gap;
+	border-radius: 2px;
+	font-size: 12px;
+
+	&.is-empty {
+		display: block !important;
+	}
+
+	&.empty {
+		display: none;
+		padding: 100px 0;
+		font-size: 16px;
+
+		>i {
+			font-size: 64px;
+			display: block;
+			color: #666;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.eb-box-head {
+	font-weight: bold;
+	border-bottom: 1px solid @box_border_color;
+	padding: 15px 20px;
+}
+
+.eb-box-body
+{
+	padding: 20px;
+
+	&.no-padding
+	{
+		padding: 0;
+	}
+
+	.form-group {
+		margin: 0 -5px;
+
+		+ .form-group {
+			margin-top: 10px;
+		}
+
+		.control-label,
+		.control-label + div {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+}
+
+.eb-box-lead {
+	background: #f5f5f5;
+	border-bottom: 1px solid @box_border_color;
+	color: #999;
+	display: block;
+	padding: 10px 20px;
+	margin: -20px -20px 20px;
+
+	&.notice {
+		background: #ffd;
+		color: darken(#ffd, 60%);
+
+		.fa {
+			color: darken(#ffd, 55%);
+			font-size: 14px;
+			margin-right: 5px;
+		}
+	}
+}
+
+.eb-box-help {
+	margin-top: 5px;
+	font-size: 11px;
+}
+
+.eb-box-tags {
+	.clearfix();
+}
+
+.eb-box-tag-remove {
+	display: none;
+	background: #fff;
+	color: #f2765b;
+	position: absolute;
+	line-height: 32px;
+	height: 32px;
+	width: 32px;
+	left: 0;
+	top: 0;
+	text-align: center;
+}
+
+.eb-box-tag-link {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.eb-box-tag {
+	background: #fff;
+	color: #555;
+	display: inline-block;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	line-height: 32px;
+	padding: 0 10px 0 32px;
+	margin: 3px 0;
+	position: relative;
+	overflow: hidden;
+
+	> i {
+		color: #aaa;
+		position: absolute;
+		line-height: 32px;
+		height: 32px;
+		width: 32px;
+		left: 0;
+		top: 0;
+		text-align: center;
+	}
+
+	> b {
+		color: #bbb;
+		font-weight: normal;
+	}
+
+	&:hover {
+		.eb-box-tag-remove {
+			display: block;
+		}
+	}
+}
+
+.eb-box-carousel-comments {
+	line-height: 1.3;
+
+	.carousel-indicators {
+		width: auto;
+		margin: 0;
+		right: 0;
+		bottom: auto;
+		top: -30px;
+		left: auto;
+		text-align: right;
+
+		> li {
+			border: 1px solid #ddd;
+			width: 10px !important;
+			height: 10px !important;
+			margin: 0;
+			float: none;
+
+			&.active {
+				background: #ddd;
+			}
+		}
+	}
+
+	.media-content {
+		line-height: 16px;
+		height: 48px;
+		overflow: hidden;
+	}
+}
+
+.eb-box-pagination {
+	width: 100%;
+}
+
+
+
+
+/*= DASHBOARD OVERVIEW
+---------------------------------------------------------------------------------------------- */
+
+.eb-stats-listing {
+	> div {
+		overflow: hidden;
+
+		+ div {
+			margin-top: 10px;
+			padding-top: 10px;
+			border-top: 1px solid @box_border_color;
+		}
+
+		> b {
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 20px;
+			line-height: 20px;
+			white-space: nowrap;
+
+			i {
+				font-size: 14px;
+			}
+
+			a {
+				color: inherit;
+			}
+		}
+
+		> span {
+			margin: 0 0 0 10px;
+			height: 20px;
+			line-height: 20px;
+		}
+	}
+}
+
+.eb-pager {
+	margin-top: @box_gap;
+	.clearfix();
+}
+
+/*= CONTENT VERSIONING
+---------------------------------------------------------------------------------------------- */
+
+.diff-html-added {
+	background-color:#ccffcc;
+}
+.diff-html-removed {
+	background-color:#ffcccc;
+	// color: #ccc;
+	text-decoration:line-through;
+}
+
+
+
+&.w600 {
+	.eb-head-form {
+		border-top: 1px solid @box_border_color;
+		padding-top: 15px;
+		margin-top: 15px;
+
+		.input-group {
+			width: auto !important;
+		}
+	}
+}
+
+@media(max-width: 990px) {
+	.eb-box-body .control-label {
+		float: none !important;
+		display: block;
+		margin-bottom: 5px;
+		width: auto;
+		text-align: inherit;
+	}
+}
+
+

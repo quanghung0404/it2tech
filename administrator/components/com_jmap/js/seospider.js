@@ -630,6 +630,51 @@
 				
 				// Refresh tooltips
 				$('*.seospider-duplicates.hasTooltip').tooltip({trigger:'hover', placement:'top'});
+				
+				var seospiderTable = $('table.seospiderlist').clone();
+				$(seospiderTable).find('*.badge-success').wrap('<font COLOR="#FFFFFF"></font>').parents('td').attr({'BGCOLOR':'#3c763d'});
+				$(seospiderTable).find('*.badge-danger').wrap('<font COLOR="#FFFFFF"></font>').parents('td').attr({'BGCOLOR':'#d9534f'});
+				$(seospiderTable).find('*.badge-warning').append(' - ').wrap('<font COLOR="#FFFFFF"></font>').parents('td').attr({'BGCOLOR':'#f89406'});
+				$(seospiderTable).find('div[data-bind]').filter(function(index){
+					return $(this).text() === '-';
+				}).text(' ');
+				$(seospiderTable).find('br').remove();
+
+				var seospiderTableHtml = seospiderTable.html();
+				seospiderTableHtml = seospiderTableHtml.replace(/<a/g, '<div');
+				seospiderTableHtml = seospiderTableHtml.replace(/<\/a>/g, '</div>');
+
+				// Create a unique file name for download
+				var saveDate = new Date();
+				var saveDateYear = saveDate.getFullYear();
+				
+				var saveDateMonth = parseInt(saveDate.getMonth()) + 1;
+				saveDateMonth = saveDateMonth < 10 ? '0' + saveDateMonth : saveDateMonth;
+				
+				var saveDateDay = saveDate.getDate();
+				saveDateDay = saveDateDay < 10 ? '0' + saveDateDay : saveDateDay;
+				
+				var saveDateHour = saveDate.getHours();
+				saveDateHour = saveDateHour < 10 ? '0' + saveDateHour : saveDateHour;
+				
+				var saveDateMinute = saveDate.getMinutes();
+				saveDateMinute = saveDateMinute < 10 ? '0' + saveDateMinute : saveDateMinute;
+				
+				var saveDateSecond = saveDate.getSeconds();
+				saveDateSecond = saveDateSecond < 10 ? '0' + saveDateSecond : saveDateSecond;
+				
+				var filename = 'seospider_report_' + 
+							    saveDateYear + '-' +
+							    saveDateMonth + '-' +
+							    saveDateDay + '_' +
+							    saveDateHour + ':' +
+							    saveDateMinute + ':' +
+							    saveDateSecond + '.xls';
+
+				$('#toolbar-download button').remove();
+				$('#toolbar-download').append('<a class="btn btn-small"><span class="icon-download"></span>' + COM_JMAP_EXPORT_XLS + '</a>');
+				$('#toolbar-download > a').attr('href', 'data:text/html;charset=utf-8,' + encodeURIComponent('<table>' + seospiderTableHtml + '</table>'))
+										  .attr('download', filename);
 			});
 		};
 		

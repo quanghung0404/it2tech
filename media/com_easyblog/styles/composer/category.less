@@ -1,0 +1,313 @@
+.eb-composer-category {
+}
+
+.eb-composer-category-list {
+	border: 1px solid @eb-composer-border-color;
+	border-bottom: 0;
+	border-radius: @border-radius @border-radius 0 0;
+	background: #fff;
+}
+
+.eb-composer-category-search {
+	border: 1px solid @eb-composer-border-color;
+	border-radius: 0 0 @border-radius @border-radius;
+	background: #fff;
+
+	padding: @eb-composer-gutter / 4;
+	position: relative;
+
+	i {
+		font-size: 12px;
+		position: absolute;
+		top: 10px;
+		left: 12px;
+		color: @grayLight;
+	}
+}
+
+.make-category-tree(@index) when (@index >= 12) {}
+.make-category-tree(@index) when (@index < 12) {
+
+	&.level-@{index} {
+		left: 100% * @index * -1;
+	}
+
+	// .eb-composer-category-item-group
+	> div:nth-child(@{index}) {
+		left: 100% * (@index - 1);
+	}
+
+	.make-category-tree(@index + 1);
+}
+
+.eb-composer-category-viewport {
+	height: @eb-composer-category-viewport-height;
+	overflow: hidden;
+}
+
+.eb-composer-category-tree {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	.transition(left @eb-composer-category-tree-transition-duration ease);
+	.make-category-tree(0);
+}
+
+.eb-composer-category-item-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    // To accomdate group header
+    padding-top: @eb-composer-category-item-group-height;
+
+	// Root category doesn't have group header
+    &[data-id="0"] {
+    	padding-top: 0;
+
+    	.eb-composer-category-item-group-header {
+			// !important flag is required for this to
+			// take effect when nested under data-id="search"
+    		display: none !important;
+    	}
+    }
+
+	&[data-id="search"] {
+		padding-top: 0;
+		overflow: hidden;
+		overflow-y: scroll;
+
+		.eb-composer-category-item-group {
+			position: relative;
+			height: auto;
+			padding-top: 0;
+
+			+ .eb-composer-category-item-group {
+				border-top: none;
+			}
+		}
+
+		.eb-composer-category-item-group-viewport {
+			position: relative;
+		}
+
+		.eb-composer-category-item-group-header {
+			display: block;
+			position: relative;
+		}
+	}
+}
+
+.eb-composer-category-item-group-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: @eb-composer-category-item-group-height;
+	padding: 0 @eb-composer-gutter;
+	border-bottom: 1px solid @eb-composer-border-color;
+
+	font-weight: bold;
+	line-height: @eb-composer-category-item-group-height;
+	text-align: center;
+	.text-overflow();
+	cursor: pointer;
+
+	i {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		padding: 0 10px;
+		font-size: 11px;
+		line-height: @eb-composer-category-item-group-height;
+		color: @grayLight;
+		cursor: pointer;
+	}
+
+	&:hover {
+		color: @link-color;
+
+		i {
+			color: @link-color;
+		}
+	}
+
+	&.active {
+		background: @eb-composer-category-item-active-bg;
+	}
+}
+
+.eb-composer-category-item-group-body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.eb-composer-category-item-group-viewport {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.eb-composer-category-item {
+	position: relative;
+	padding: @eb-composer-category-item-padding-vertical @eb-composer-category-item-padding-horizontal*2 @eb-composer-category-item-padding-vertical @eb-composer-category-item-padding-horizontal+10;
+	// +10 is to acoomodate checkbox spacing & text
+	// padding-right *2 is to acomodate category post count
+
+	font-size: 12px;
+	line-height: @eb-composer-category-item-size;
+	.text-overflow();
+
+	small {
+		color: #888;
+		display: none;
+	}
+
+	&.is-primary {
+		small {
+			display: inline;
+		}
+	}
+
+	+ .eb-composer-category-item {
+		border-top: 1px solid #eee;
+	}
+
+	&:nth-child(even) {
+		background: @eb-composer-category-item-alt-bg;
+	}
+
+	> b {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		// Allow wider area for clicking checkbox
+		padding-top: @eb-composer-category-item-padding-vertical;
+		padding-bottom: @eb-composer-category-item-padding-vertical;
+		padding-left: @eb-composer-gutter / 3;
+
+		b {
+			position: relative;
+			border: 1px solid @eb-composer-border-color;
+			border-radius: @border-radius;
+			background: @eb-composer-category-item-checkbox-bg;
+			width: @eb-composer-category-item-size;
+			height: @eb-composer-category-item-size;
+			cursor: pointer;
+			float: left;
+			.transition(border-color @eb-composer-transition-duration / 4 ease);
+		}
+
+		// Tick for selected children
+		i {
+			font-size: 10px;
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			display: none;
+		}
+
+		// Indicator for has-selected-children
+		em {
+			font-size: 9px;
+			position: relative;
+			top: 2px;
+			left: 3px;
+			color: @eb-composer-category-item-checkbox-border-color;
+			display: none;
+		}
+
+		&:hover {
+			b {
+				border: 1px solid @eb-composer-category-item-checkbox-border-hover-color;
+			}
+		}
+	}
+
+	> span {
+
+	}
+
+	&:hover {
+		.eb-composer-category-item-count {
+			color: @link-color;
+		}
+	}
+
+	&.has-selected-children {
+		> b b em {
+			display: block;
+		}
+	}
+
+	&.selected {
+		> b b i {
+			display: block;
+		}
+
+		// Don't show has-selected-children indicator
+		> b b em {
+			display: none;
+		}
+	}
+
+	> span {
+		// Cosmetic fixes
+		cursor: default;
+		position: relative;
+		line-height: @eb-composer-category-item-size + 2; // plus 2 is to cover the border area for checkbox
+	}
+
+	&.has-children {
+		.eb-composer-category-item-count {
+			display: inline-block;
+		}
+	}
+
+	&.active {
+		background: @eb-composer-category-item-active-bg;
+	}
+
+	&[data-id="all"] {
+		> span {
+			font-weight: bold;
+		}
+	}
+}
+
+.eb-composer-category-item-count {
+	display: none;
+	color: @grayLight;
+	position: absolute;
+	top: @eb-composer-category-item-padding-vertical - 1px; // 1px cosmetic
+	right: @eb-composer-gutter / 3;
+	cursor: pointer;
+
+	> span {
+		font-size: 11px;
+	}
+
+	i {
+		margin-left: @eb-composer-gutter / 5;
+	}
+}
+
+.eb-composer-category-search-textfield {
+	width: 100%;
+	padding: 0;
+	padding-left: 24px;
+	padding-bottom: 2px; // Cosmetic
+	border: none;
+	border-radius: 0;
+	.box-shadow(none);
+
+	&:focus {
+		.box-shadow(none);
+	}
+}

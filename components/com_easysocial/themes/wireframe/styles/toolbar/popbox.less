@@ -1,0 +1,169 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+@import "@{global}/popbox/variables";
+@import "@{site}/popbox/variables";
+
+
+&.popbox-friends {
+	width: 200px;
+	min-height: 50px;
+	text-align: center;
+}
+
+
+// #4480
+&.popbox-api-friends {
+	width: 180px;
+	min-height: 30px;
+	text-align: center;
+	.popbox-content {
+		padding: 5px;
+		text-align: center;
+	}
+}
+
+&.popbox-followers {
+	width: 220px;
+	min-height: 80px;
+	.popbox-content {
+		padding: 10px;
+	}
+}
+
+&.popbox-updates {
+	width: 300px;
+	min-height: 80px;
+	.popbox-content {
+		padding: 20px;
+	}
+}
+
+&.popbox-toolbar {
+	width: 250px;
+	min-height: 20px;
+	height: auto;
+
+	background: @popboxBackground;
+	.arrow {
+		border-bottom-color: @popboxBackground;
+		&:after {
+			border-bottom-color: @popboxBorder;
+		}
+	}
+	// }
+	.divider {
+		border-bottom: 1px solid @esToolbarDropdownDividerBorder; //#f5f5f5
+		display: block;
+		margin: 7px 1px;
+		overflow: hidden;
+	}
+	h5
+	{
+		color: #666;
+		line-height: 20px;
+		height: 20px;
+		vertical-align: middle;
+		font-size: 12px;
+
+		i{
+			margin-right: 4px;
+		}
+	}
+	label {
+		color: @esColor;
+	}
+
+	.logout-form{
+		display: none;
+	}
+	.logout-link{
+		margin-bottom: 8px;
+	}
+
+
+	.dropdown-menu-login {
+		// padding: 10px;
+		form {
+			margin: 0;
+		}
+		li {
+			.clearfix();
+			padding: 5px 10px;
+		}
+		li > a {
+			background: none;
+			border: none;
+			color: @esToolbarDropdownLoginColor;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.es-dropdownmenu-btn-register {
+			padding: 0;
+			text-align: right;
+			margin-bottom: 5px;
+		}
+		#remember { //checkbox
+			position: relative;
+			top: 0;
+		}
+		li.item-social {
+			background: @esToolbarItemSocialBackground;
+			border-top: 1px solid @esBorder;
+			border-bottom: 1px solid @esBorder;
+			padding: 10px;
+			margin-top: 5px;
+		}
+		.btn-es-facebook {
+			text-align: center;
+			// padding-left: 22px;
+
+			border-radius: 2px;
+			// .buttonBackground(#5692ce, #2b6cb3, #fff, @btnEsTextShadow);
+			// .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+			&:before {
+				display: none;
+			}
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.dropdown-menu-footer {
+			text-align: left;
+			font-size: @baseFontSize;
+			margin-top: 5px;
+			ul {
+				li {
+					padding: 2px 10px;
+					i {
+						font-size: @fontSizeSmall;
+						color: @esToolbarDropdownFooterColor;
+						&:before {
+							top: 1px;
+						}
+					}
+					a {
+						display: inline;
+						padding-left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+&.popbox-search {
+	min-width: 180px;
+	min-height: 40px;
+	height: auto;
+	border-radius: 0;
+	//margin-top: -20px; // stick to data-nav-search-input
+	.arrow {
+		display: none;
+	}
+}

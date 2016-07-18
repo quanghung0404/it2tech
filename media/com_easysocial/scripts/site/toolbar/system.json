@@ -1,0 +1,11 @@
+[
+    {
+        "view": [
+            "site/notifications/system.empty"
+        ],
+        "library": [
+            "tinyscrollbar"
+        ],
+        "adapter": "EasySocial"
+    }
+]

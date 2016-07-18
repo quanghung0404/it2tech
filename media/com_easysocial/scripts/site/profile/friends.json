@@ -1,0 +1,13 @@
+[
+    {
+        "view": [
+            "site/loading/small"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_FRIENDS_DIALOG_CANCEL_REQUEST",
+            "COM_EASYSOCIAL_CANCEL_BUTTON",
+            "COM_EASYSOCIAL_YES_CANCEL_MY_REQUEST_BUTTON"
+        ],
+        "adapter": "EasySocial"
+    }
+]

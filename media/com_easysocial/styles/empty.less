@@ -1,0 +1,44 @@
+/*
+Empty states:
+
+<div class="is-empty">
+	<div class="empty"
+		Empty message
+	</div>
+</div>
+*/
+// Empty message hidden by default.
+.empty
+{
+	display: none;
+}
+.is-empty > .empty
+{
+	display: block !important;
+}
+.is-empty td.empty
+{
+	display: table-cell !important;
+}
+
+
+.empty-hero { // .empty modifier
+    display: none;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 40px 80px;
+    border: 1px dashed @esBorder;
+    background: @esBackground;
+    color: @esColor;
+    text-align: center;
+    width: 100%;
+
+    >i
+    {
+        color: @esColor;
+        margin-bottom: 20px;
+        display: block;
+        font-size: 48px;
+    }
+}

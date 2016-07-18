@@ -1,0 +1,15 @@
+[
+    {
+        "library": [
+            "image",
+            "imgareaselect"
+        ],
+        "stylesheet": [
+            "imgareaselect/default"
+        ],
+        "language": [
+            "PLG_FIELDS_AVATAR_VALIDATION_EMPTY_PROFILE_PICTURE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Latest Bloggers Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[Latest bloggers module for your EasyBlog's component.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easybloglatestblogger.ini</language>
+	</languages>
+	<files>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_easybloglatestblogger">mod_easybloglatestblogger.php</filename>
+		<filename>mod_easybloglatestblogger.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+
+				<field name="count" type="text" default="5" label="MOD_EASYBLOGLATESTBLOGGER_COUNT" description="MOD_EASYBLOGLATESTBLOGGER_COUNT_DESC" />
+
+				<field name="showavatar" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGLATESTBLOGGER_SHOW_AVATAR" description="MOD_EASYBLOGLATESTBLOGGER_SHOW_AVATAR_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showbio" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGLATESTBLOGGER_SHOW_BIO" description="MOD_EASYBLOGLATESTBLOGGER_SHOW_BIO_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="bio_length" type="text" default="50" label="MOD_EASYBLOGLATESTBLOGGER_BIO_LENGTH" description="MOD_EASYBLOGLATESTBLOGGER_BIO_LENGTH_DESC" />
+
+				<field
+					name="showwebsite"
+					type="radio" class="btn-group"
+					default="1"
+					label="MOD_EASYBLOGLATESTBLOGGER_SHOW_WEBSITE"
+					description="MOD_EASYBLOGLATESTBLOGGER_SHOW_WEBSITE_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="showcount"
+					type="radio" class="btn-group"
+					default="1"
+					label="MOD_EASYBLOGLATESTBLOGGER_SHOW_TOTAL_POST"
+					description="MOD_EASYBLOGLATESTBLOGGER_SHOW_TOTAL_POST_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="excludeemptypost"
+					type="radio" class="btn-group"
+					default="0"
+					label="MOD_EASYBLOGLATESTBLOGGER_EXCLUDE_BLOGGER_NO_POST"
+					description="MOD_EASYBLOGLATESTBLOGGER_EXCLUDE_BLOGGER_NO_POST_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="onlyfeatured"
+					type="radio" class="btn-group"
+					default="0"
+					label="MOD_EASYBLOGLATESTBLOGGER_SHOW_FEATURED"
+					description="MOD_EASYBLOGLATESTBLOGGER_SHOW_FEATURED_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="ordertype" type="list" default="DESC" label="MOD_EASYBLOGLATESTBLOGGER_ORDERING" description="MOD_EASYBLOGLATESTBLOGGER_ORDERING_DESC">
+					<option value="latest">Recent</option>
+					<option value="postcount">Most posts</option>
+					<option value="active">Most active</option>
+					<option value="featured">Featured</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx" type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

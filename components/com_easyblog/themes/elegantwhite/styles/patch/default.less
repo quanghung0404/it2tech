@@ -1,0 +1,218 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+
+
+.eb-post-side {
+	.fa {
+		font-size: 14px;
+		color: darken(@theme-color-primary, 30%);
+		border-color: darken(@theme-color-primary, 5%);
+	}
+}
+
+.eb-post-foot {
+	color: @theme-text-color;
+
+	.fa {
+		font-size: 14px;
+		color: darken(@theme-color-primary, 20%);
+	}
+}
+
+
+// EMPTY BLOCK
+
+.eb-empty {
+	background: lighten(@theme-color-secondary, 10%);
+	border-color: @theme-box-border;
+	color: @theme-text-color;
+}
+
+
+//PAGINATION
+
+.eb-pager {
+	background: @theme-color-primary;
+	border: 1px solid @theme-box-border;
+	position: relative;
+
+	> a, 
+	> div {
+		position: relative;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background: lighten(@theme-color-primary, 10%);
+		}
+	}
+
+	> a {
+		color: @theme-link-color;
+	}
+
+	> div {
+		border-color: darken(@theme-color-primary, 10%);
+	}
+
+	.fa,
+	a.disabled {
+		color: darken(@theme-color-primary, 20%)
+	}
+}
+
+
+// CATEGORIES & AUTHORS LISTING
+
+.eb-category,
+.eb-author {
+	background: @theme-color-secondary;
+	border: 1px solid @theme-box-border;
+	border-radius: 0;
+	color: @theme-text-color;
+
+	a {
+		color: @theme-link-color;
+	}
+
+	.btn-default {
+		background: lighten(@theme-color-primary, 10%) !important;
+		border-color: @theme-box-border;
+		text-shadow: none;
+	}
+}
+
+.eb-authors-head {
+	background: @theme-color-primary;
+	border-bottom-color: @theme-box-border;
+	border-radius: 0;
+}
+
+.eb-category-subscribe > span + span {
+	border-color: @theme-box-border;
+}
+
+
+.eb-stats-nav {
+	> li {
+		.btn {
+			background: @theme-color-primary;
+			text-shadow: none;
+			border-color: @theme-box-border !important;
+
+			&:hover {
+				background: lighten(@theme-color-primary, 3%) !important;
+			}
+		}
+
+		&.active {
+			.btn {
+				background: lighten(@theme-color-primary, 10%) !important;
+			}
+		}
+	}
+}
+
+
+// CALENDAR
+
+.eb-calendar {
+	background: @theme-color-secondary;
+
+	tbody > tr > td {
+		border-color: @theme-box-border;
+	}
+
+	tbody > tr > td.empty > small {
+		background: lighten(@theme-color-secondary, 2.5%)
+	}
+
+	tbody > tr > td.has-posts > div {
+		background: lighten(@theme-color-secondary, 10%);
+		color: @theme-link-color;
+	}
+}
+
+.eb-calendar-control {
+	> td {
+		background: darken(@theme-color-secondary, 2%);
+	}
+	> td.eb-calendar-month > a { 
+		color: @theme-link-color; 
+	}
+
+	 > td.eb-calendar-previous,
+	 > td.eb-calendar-next {
+	 	border-color: @theme-box-border;
+	 }
+}
+
+.eb-calendar-days {
+	> td {
+		background: @theme-color-primary;
+
+		&:first-child,
+		&:last-child {
+			border-color: @theme-box-border;
+		}
+	}
+}
+
+// ENTRY
+
+.eb-entry {
+	background: @theme-color-secondary;
+	border: 1px solid @theme-box-border;
+	padding: @theme-spacing;
+	color: @theme-text-color;
+
+	a {
+		color: @theme-link-color;
+	}
+}
+
+.eb-entry-nav {
+	> div > a {
+		background: @theme-color-primary;
+		color: @theme-link-color;
+		position: relative;
+
+		.fa {
+			color: #fff;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background: lighten(@theme-color-primary, 10%);
+		}
+
+		&:hover {
+			background: lighten(@theme-color-primary, 2.5%);
+		}
+	}
+}
+
+.eb-entry-author-bio {
+	background: lighten(@theme-color-secondary, 4.5%);
+}
+
+.eb-entry-author-recents {
+	background: lighten(@theme-color-secondary, 1.5%);
+}

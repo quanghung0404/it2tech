@@ -1,0 +1,194 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+.page-headline
+{
+	margin:35px 0;
+
+		.page-title{ .shape-reset(); line-height:1.3 }
+		.page-desc{margin:10px 0 0;}
+		.page-meta{margin:10px 0 0;}
+}
+
+.notifications
+{
+	.notification
+	{
+		.streams
+		{
+			[class^="icon-"],
+			[class*=" icon-"]
+			{
+				margin: 0 8px;
+			}
+		}
+
+		+ .notification
+		{
+			margin-top: 40px;
+		}
+	}
+}
+
+
+
+
+.columns
+{
+	.column
+	{
+		width: 50%;
+	}
+
+		&.single
+		{
+			.column
+			{
+				float: none;
+				width: auto;
+				display:block;
+			}
+		}
+
+	&.boxes
+	{
+			.column
+			{
+				margin: 5px	 0;
+
+					> div
+					{
+						padding:10px;
+						.square-rounded( #ddd, 2px );
+
+						&.column-right
+						{
+							margin-right:5px;
+						}
+						&.column-left
+						{
+							margin-left :5px;
+						}
+					}
+					.column-options
+					{
+						display:none;
+					}
+					.stream-author
+					{
+						display:block!important;
+						.ellipsis();
+					}
+					.people-intro
+					{
+						border-left:2px solid #eee;
+						margin:10px 0;
+						padding:2px 0 2px 15px;
+						display:none;
+					}
+					.people-briefs
+					{
+						margin-top:8px;
+
+							.brief
+							{
+								+ .brief
+								{
+									margin:4px 0 0;
+								}
+								a
+								{
+									text-decoration: none;
+									color: inherit !important;
+									background: none !important;
+									border: none !important;
+									vertical-align: middle;
+
+										&:hover
+										{
+											text-decoration: underline;
+										}
+								}
+								[class^="icon-"],
+								[class*=" icon-"]
+								{
+									margin-top:0;
+									opacity:0.6;
+								}
+								&:hover
+								{
+									[class^="icon-"],
+									[class*=" icon-"]
+									{
+										opacity:0.8;
+									}
+								}
+							}
+					}
+
+				&:hover
+				{
+					> div
+					{
+						.square-rounded( #cacaca #cacaca #bbbbbb, 2px );
+						.box-shadow( 0 1px 0 rgba(0,0,0,0.1) );
+					}
+
+					.column-options
+					{
+						display:block;
+					}
+				}
+			}
+
+
+
+		&.single
+		{
+			.column
+			{
+				+ .column
+				{
+					margin-top:10px;
+				}
+
+				> div
+				{
+					&.column-right
+					{
+						margin-right:0;
+					}
+					&.column-left
+					{
+						margin-left :0;
+					}
+				}
+
+				.stream-box-l
+				{
+					// .streamBox( @avatarSizeM );
+				}
+				.people-intro
+				{
+					display:block;
+				}
+				.people-briefs
+				{
+					.brief
+					{
+						display:inline;
+
+							+ .brief
+							{
+								margin:0 0 0 15px;
+							}
+					}
+				}
+			}
+		}
+	}
+
+}

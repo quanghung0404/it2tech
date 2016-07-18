@@ -44,6 +44,7 @@ $articleExclusionText = $exclusionWay == 'exclude' ? 'COM_JMAP_CHOOSE_ARTICLES_E
 	</div>
 </div>
 
+<?php if(isset($this->lists['articleexclusion'])):?>
 <div id="accordion_datasource_excludearticles" class="sqlquerier panel panel-info panel-group adminform">
 	<div class="panel-heading accordion-toggle" data-toggle="collapse" data-target="#datasource_excludearticles"><h4><?php echo $exclusionWay == 'exclude' ? JText::_('COM_JMAP_ARTICLES_EXCLUSION' ) : JText::_('COM_JMAP_ARTICLES_INCLUSION' ); ?></h4></div>
 	<div class="panel-body panel-collapse collapse" id="datasource_excludearticles">
@@ -59,6 +60,7 @@ $articleExclusionText = $exclusionWay == 'exclude' ? 'COM_JMAP_CHOOSE_ARTICLES_E
 		</table>
 	</div>
 </div>
+<?php endif;?>
 
 <div id="accordion_datasource_catspriorities" class="sqlquerier panel panel-info panel-group adminform">
 	<div class="panel-heading accordion-toggle" data-toggle="collapse" data-target="#datasource_catspriorities"><h4><?php echo JText::_('COM_JMAP_CATS_PRIORITIES' ); ?></h4></div>

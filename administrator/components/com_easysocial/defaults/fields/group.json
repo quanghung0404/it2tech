@@ -1,0 +1,88 @@
+[
+	{
+		"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_INFO",
+		"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_INFO_DESC",
+		"fields"		:
+		[
+			{
+				"element"				: "header",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_ACCOUNT_INFO",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_ACCOUNT_INFO_DESC",
+				"visible_display"		: false
+			},
+			{
+				"element"				: "title",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_TITLE",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_TITLE_DESC",
+				"required"				: true
+			},
+			{
+				"element"				: "permalink",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_PERMALINK",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_PERMALINK_DESC",
+				"required"				: true
+			},
+			{
+				"element"				: "description",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_DESCRIPTION",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_DESCRIPTION_DESC"
+			},
+			{
+				"element"				: "type",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_TYPE",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_TYPE_DESC",
+				"required"				: true,
+				"searchable"			: false,
+				"visible_display"		: false
+			},
+			{
+				"element"				: "url",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_WEBSITE",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_WEBSITE_DESC",
+				"required"				: false
+			},
+			{
+				"element"				: "photos",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_PHOTO",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_PHOTO_DESC",
+				"required"				: false
+			},
+			{
+				"element"				: "videos",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_VIDEO",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_VIDEO_DESC",
+				"required"				: false
+			},
+			{
+				"element"				: "news",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_NEWS",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_NEWS_DESC",
+				"required"				: false
+			},
+			{
+				"element"				: "discussions",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_DISCUSSIONS",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_DISCUSSIONS_DESC",
+				"required"				: false
+			},
+			{
+				"element"				: "header",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_PERSONALIZATION",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_PERSONALIZATION_DESC",
+				"visible_display"		: false
+			},
+			{
+				"element"				: "avatar",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_AVATAR",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_AVATAR_DESC",
+				"required"				: false
+			},
+			{
+				"element"				: "cover",
+				"title"					: "COM_EASYSOCIAL_FIELDS_GROUP_COVER",
+				"description"			: "COM_EASYSOCIAL_FIELDS_GROUP_COVER_DESC",
+				"required"				: false
+			}
+		]
+	}
+]

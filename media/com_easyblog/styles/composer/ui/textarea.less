@@ -1,0 +1,23 @@
+.eb-composer-textarea {
+
+    border: 1px solid @eb-composer-border-color;
+    border-radius: 3px;
+    background: #fff;
+
+    .form-control {
+        border: none !important;
+        resize: none;
+        width: 100%;
+        .no-focus-outline();
+
+        &:focus {
+            .box-shadow(none);
+        }
+    }
+}
+
+.eb-composer-textarea-footer {
+    padding: @eb-composer-gutter / 4;
+    border-top: 1px solid @eb-composer-fieldset-border-color;
+    .clearfix();
+}

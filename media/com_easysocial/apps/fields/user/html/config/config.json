@@ -1,0 +1,25 @@
+{
+	"privacy": false,
+	"searchable": false,
+	"required": false,
+	"display_title": false,
+	"title": false,
+	"display_description": false,
+	"description": false,
+	"default": false,
+
+	"html":
+	{
+		"label"		: "FIELDS_USER_HTML_CONFIG_CONTENT",
+		"tooltip"	: "FIELDS_USER_HTML_CONFIG_CONTENT_DESC",
+		"type"		: "textarea"
+	},
+
+	"fullcolumn":
+	{
+		"label"		: "FIELDS_USER_HTML_CONFIG_USE_FULL_COLUMN",
+		"tooltip"	: "FIELDS_USER_HTML_CONFIG_USE_FULL_COLUMN_DESC",
+		"type"		: "boolean",
+		"default"	: false
+	}
+}

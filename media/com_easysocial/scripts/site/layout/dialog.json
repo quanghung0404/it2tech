@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "dialog"
+        ],
+        "view": [
+            "site/dialog/default"
+        ],
+        "adapter": "EasySocial"
+    }
+]

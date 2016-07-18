@@ -1,0 +1,16 @@
+[
+    {
+        "script": [
+            "site/friends/list",
+            "site/friends/item",
+            "site/friends/suggest",
+            "site/conversations/composer"
+        ],
+        "view": [
+            "site/loading/small",
+            "site/friends/default.empty",
+            "site/friends/list.assign"
+        ],
+        "adapter": "EasySocial"
+    }
+]

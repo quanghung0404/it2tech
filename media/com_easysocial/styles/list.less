@@ -1,0 +1,269 @@
+//
+// List
+// --------------------------------------------------
+// apply to ul .list-unstyled modified
+// for main content/dialog listing only
+// * cant apply it sidebar widget
+
+// .es-item-list,
+.es-item-grid {
+	width: 100%;
+    .fd-reset-list();
+	.clearfix();
+	> li {
+		.clearfix();
+        .fd-reset-list();
+		margin-bottom: 10px;
+	}
+}
+
+.es-item-list {
+    .fd-reset-list();
+	display: block;
+	list-style: none outside none;
+	> li {
+		position: relative;
+	}
+}
+.es-item-grid {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+	line-height: normal;
+	> li {
+        .fd-reset-list();
+		float: left;
+		position: relative;
+		margin-right: 1%;
+		&:nth-child(2n+1) {
+
+		}
+	}
+	// 1 col
+	&.es-item-grid_1col {
+		> li {
+			float: none;
+			width: 100%;
+			margin-bottom: 10px;
+			margin-right: 0;
+			.clearfix();
+		}
+	}
+	// // 2 col
+	// &.es-item-grid_2col {
+	// 	> li {
+	// 		width: 49%;
+	// 		&:nth-child(2n+1) {
+	// 			clear: left;
+	// 		}
+	// 	}
+	// }
+	// // 3 col
+	// &.es-item-grid_3col {
+	// 	> li {
+	// 		width:32.333%;
+	// 		&:nth-child(3n+1) {
+	// 			clear: left;
+	// 		}
+	// 	}
+	// }
+	// // 4 col
+	// &.es-item-grid_4col {
+	// 	> li {
+	// 		width:23.777%;
+	// 		&:nth-child(4n+1) {
+	// 			clear: left;
+	// 		}
+	// 	}
+	// }
+	// // 5 col
+	// &.es-item-grid_5col {
+	// 	> li {
+	// 		width:18.888%;
+	// 		&:nth-child(5n+1) {
+	// 			clear: left;
+	// 		}
+	// 	}
+	// }
+}
+
+
+
+// container for item-list
+.es-item {
+	.clearfix();
+	border: 1px solid @esBorder;
+	border-radius: 3px;
+	padding: 10px;
+	.es-item-title {
+		font-weight: bold;
+		white-space: normal;
+	}
+	.es-item-body {
+		.clearfix();
+		margin-left: 50px;
+	}
+	&.es-item-borderless {
+		border: none;
+	}
+}
+
+
+.es-avatar-list {
+	margin: 0;
+	padding: 0;
+	.clearfix();
+	> li {
+		margin-top: 10px;
+		display: inline-block;
+		.es-avatar {
+			// border: 2px solid @esBorder;
+			img {
+				// border: 2px solid white;
+				background: #f5f5f5;
+				// width: 60px;
+				// height: 60px;
+			}
+		}
+		&.active {
+			.es-avatar {
+				border: 2px solid #5b93ce;
+				img {
+					border: 2px solid white;
+				}
+			}
+		}
+	}
+}
+.es-avatar-adduser { // modifier for .es-avatar-list
+	> li {
+		width: 48%;
+		border: 1px solid @esBorder;
+		vertical-align: top;
+		padding: 5px 0;
+		&:nth-child(even) {
+			margin-left: 1%;
+		}
+	}
+}
+
+
+.es-cover-list {
+	.clearfix();
+	> li {
+		margin-top: 10px;
+		display: inline-block;
+		.es-cover {
+			border: 2px solid @esBorder;
+			img {
+				border: 2px solid white;
+			}
+		}
+		&.active {
+			.es-cover {
+				border: 2px solid #5b93ce;
+				img {
+					border: 2px solid white;
+				}
+			}
+		}
+	}
+}
+
+
+
+// Slightly different from BS3 .media-list. BS3 <li class="media"> overflow hidden causing dropdown can not be display.
+.list-media { // apply to ul
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .media {
+        margin: 0;
+    }
+    >li {
+        +li {
+            border-top: 1px solid @esBorder;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+    }
+
+    .media-object {
+        margin: 0 15px 0 0;
+        position: relative;
+
+        img {
+            width: 64px;
+            height: auto;
+        }
+    }
+
+    .media-name {
+        font-weight: bold;
+        font-size: 14px;
+        .label {
+            vertical-align: text-top;
+            font-size: 10px;
+            line-height: 18px;
+            padding: 2px 4px;
+        }
+    }
+
+    .media-meta {
+        font-size: 11px;
+        >span {
+            +span {
+                margin: 0 0 0 15px;
+            }
+        }
+    }
+
+    .media-featured-label {
+        line-height: 16px;
+        display: inline-block;
+    }
+}
+.list-media-options {
+    // position: absolute;
+    // right: 0;
+}
+.list-media-footer {
+    background: #F8F9FB;
+    // border-bottom: 1px solid @esBorder;
+    padding: 10px 15px;
+    .es-rsvp-text {
+        padding: 5px;
+    }
+    nav {
+        .btn {
+            + .btn {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+
+
+// List with vertical divider
+.es-list-vertical-divider {
+    >:not(:first-child) {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px dotted @esBorder;
+    }
+    > span,
+    > div {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: top;
+    }
+
+    .fa-film {
+        position: relative;
+        top: -1px;
+    }
+}

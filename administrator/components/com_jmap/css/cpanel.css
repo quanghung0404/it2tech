@@ -33,7 +33,7 @@ label.label {
 	font-size: 115%;
 }
 
-div.panel-body label.glyphicon, div.panel-body a.glyphicon.fancybox {
+div.panel-body label.glyphicon, div.panel-body a.glyphicon.fancybox, #xmlsitemap_export label.glyphicon {
 	font-size: 170%;
 	cursor: pointer;
 }
@@ -50,8 +50,8 @@ div#jmap_seo div.panel-body label.glyphicon {
 	padding-right: 5px;
 }
 
-div#jmap_seo span.label { 
-	margin: 0 5px;
+div#jmap_seo span.label {
+	margin: -2px 5px;
 	font-size: 12px;
 	padding: 2px 6px !important;
 }
@@ -218,6 +218,10 @@ span.seostats_details {
 	font-style: italic;
 }
 
+#semrush_chart {
+	height: 128px;
+}
+
 div.waiterinfo {
 	font-size: 14px;
 }
@@ -241,7 +245,9 @@ div.single_stat_container.alexachart {
 	width: 250px;
 }
 
-div.single_stat_container:nth-child(2),div.single_stat_container:nth-child(4)
+div.single_stat_container:nth-child(2),
+div.single_stat_container:nth-child(4),
+div.single_stat_container:nth-child(8)
 	{
 	border-right: 1px solid #CCC;
 	margin-right: 15px;
@@ -288,6 +294,7 @@ span.glyphicon-large {
 ul.subdescription_stats {
 	list-style: none;
 	margin: 0 0 10px 10px;
+	padding: 0;
 	width: 100px;
 }
 
@@ -303,6 +310,36 @@ ul.subdescription_stats li {
 	text-align: center;
 }
 
+ul.subdescription_stats li.clickable {
+	cursor: pointer;
+}
+
+ul.semrush_popovers div.popover-content {
+	text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+ul.semrush_popovers div.popover-content div {
+	font-size: 14px;
+    font-weight: bold;
+    margin: 4px;
+    padding: 4px;
+    float: left;
+    border-radius: 2px;
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border: 1px solid #6687AD;
+}
+
+div.single_stat_rowseparator {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #CCC;
+    clear: both;
+    padding: 10px;
+	display: none;
+}
+
 ul.subdescription_stats.alexachart {
 	width: 100%;
 }
@@ -312,18 +349,35 @@ ul.subdescription_stats li.fancybox-image img {
 	height: auto;
 }
 
-/* RSS feed buttons */
+/* RSS feed e export cronjob buttons and links */
 #rssfeed div:first-child {
 	margin-left: 16%;
 }
 
-#rssfeed input {
+#rssfeed input, #xmlsitemap_export input {
 	clear: left;
-	display: block;
-	min-width: 100%
+	display: inline-block;
+	min-width: 98%;
+	margin-right: 2px;
 }
 
-#rssfeed label {
+#xmlsitemap_export div.popover-content input {
+	min-width: 88%;
+}
+
+#xmlsitemap_export label.glyphicon {
+	margin-right: 2px;
+}
+
+#xmlsitemap_export input {
+	margin-bottom: 10px !important;	
+}
+
+#xmlsitemap_export > div.popover.top {
+	min-width: 480px;
+}
+
+#rssfeed label, #xmlsitemap_export label {
 	clear: left;
 	display: block;
 	width: 180px;
@@ -331,12 +385,34 @@ ul.subdescription_stats li.fancybox-image img {
 	text-align: left;
 }
 
+#xmlsitemap_export label.hasTooltip {
+	display: inline-block;
+    width: auto;
+    min-width: inherit;
+}
+
+#xmlsitemap_export label {
+	width: 300px;
+}
+
+#xmlsitemap_export a.last-child {
+	margin-bottom: 20px;
+}
+
+#xmlsitemap_export .popover-content {
+	padding: 9px 5px;
+}
+
+ul.semrush_popovers div.popover {
+	max-width: 350px;
+}
+
 @media screen and (max-width: 640px) {
-	#rssfeed div:first-child {
+	#rssfeed div:first-child, #xmlsitemap_export div:first-child {
 		margin-left: 0;
 	}
 	
-	#rssfeed label {
+	#rssfeed label, #xmlsitemap_export label {
 		width: 100%;
 	}
 	

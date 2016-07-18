@@ -1,0 +1,67 @@
+#jsn-header {
+  z-index: 601;
+  position: relative;
+}
+.jfbconnect-wrapper {
+  text-align: center;
+}
+.jfbconnect-wrapper .social-login .pull-left {
+  float: none !important;
+  margin: 0 !important;
+}
+.jfbconnect-wrapper .social-login .pull-left a {
+  display: inline-block !important;
+}
+.jfbconnect-wrapper .social-login .pull-left a img {
+  max-width: 90px !important;
+}
+.jfbconnect-wrapper .social-login >div {
+  display: inline-block !important;
+}
+[class^="tm-"] div#fd button,
+[class^="tm-"] div#fd input,
+[class^="tm-"] div#fd textarea {
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+.method-totp .well {
+  display: none;
+}
+.method-totp fieldset legend {
+  font-size: 12px;
+  font-weight: 700;
+}
+.method-totp fieldset ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.method-totp fieldset ul li {
+  list-style: none;
+}
+.method-totp fieldset .span6 {
+  width: 100%;
+}
+.method-totp fieldset .alert-info {
+  background: none;
+  border: none;
+}
+.method-totp fieldset .control-group label.control-label {
+  width: 20%;
+}
+.method-totp fieldset .control-group .controls {
+  margin-left: 0;
+}
+.method-totp fieldset .control-group .controls #totpsecuritycode {
+  font-size: 12px;
+  padding: 5px 10px;
+  line-height: 1.5;
+  border-radius: 3px;
+  height: 30px;
+  width: 160px;
+}
+div#fd .rokpad-editor-wrapper i {
+  height: 16px;
+  width: 16px;
+}

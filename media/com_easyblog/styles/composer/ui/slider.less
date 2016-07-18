@@ -1,0 +1,81 @@
+// RANGE SLIDER
+
+@slider-track-height : 6px;
+@slider-handle-width : 24px;
+@slider-handle-height : 16px;
+@slider-handle-border : #ccc;
+
+.eb-composer-range-slider {
+    margin: 15px 0 0;
+}
+
+.eb-composer-slider-track {
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    height: @slider-track-height;
+    position: relative;
+}
+
+.eb-composer-slider-handle {
+    background: #fff;
+    border: 1px solid @slider-handle-border;
+    border-radius: 7px;
+    cursor: pointer;
+
+    position: absolute;
+    left: 50%;
+    top: -(@slider-handle-height - @slider-track-height)/2 - 1; // minus 1px, reserved for border
+    margin-left: -@slider-handle-width/2 - 1; // minus 1px, reserved for border
+
+    width: @slider-handle-width;
+    height: @slider-handle-height;
+
+    z-index: 10;
+
+    &:before {
+        background: @slider-handle-border;
+        content: "";
+        display: block;
+        width: 1px;
+        height: 6px;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -3px;
+
+        box-shadow: -4px 0 0 0px @slider-handle-border, 4px 0 0 0px @slider-handle-border;
+    }
+}
+
+.eb-composer-slider-track-value {
+    display: table;
+    width: 100%;
+
+    > div {
+        display: table-cell;
+        width: 1%;
+        text-align: center;
+        position: relative;
+        padding: 15px 0 0;
+        color: #999;
+
+        &:before {
+            background: #ddd;
+            content: "";
+            display: block;
+            height: 10px;
+            width: 1px;
+
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin: 0 0 0 -.5px;
+        }
+
+        &.active {
+            color: #555;
+        }
+    }
+}

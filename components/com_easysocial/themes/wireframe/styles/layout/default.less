@@ -1,0 +1,175 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$Layout - layout.less
+\*------------------------------------*/
+
+
+font-family: @baseFontFamily;
+font-size: @baseFontSize;
+// color: @esColor;
+
+line-height: 18px;
+// background: @esBackground; // temporary remove white background as default #1204
+font-size-adjust: none;
+
+&.es-main {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+.es-container {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+    position: relative;
+    z-index: 1;
+
+    .es-sidebar,
+    .es-content {
+    	padding-top: 15px;
+    	display: table-cell;
+		vertical-align: top;
+		position: relative;
+    }
+
+	.es-sidebar {
+		width: 220px;
+		border-right: 1px solid @esBorder;
+		
+
+		.btn-close-sidebar {
+			display: none;
+		}
+
+		+ .es-content {
+			padding-left: 20px;
+		}
+	}
+	.es-content {
+		height: 100%;
+
+		> .loading-indicator {
+			height: 100px;
+			position: relative;
+		}
+	}
+	&.es-container-alt {
+		.es-sidebar {
+			float: right;
+			width: 320px;
+		}
+		.es-content {
+			margin-left: 0;
+		}
+	}
+
+}//es-container
+
+// Min height issues #1858, #1993
+.es-container[data-achievements] .achievements-list,
+.es-container[data-conversations] .conversation-list,
+.es-container[data-friends] [data-friends-items],
+.es-container[data-profile-about] .profile-data-box,
+.es-notification-list {
+	min-height: 450px;
+}
+.btn-sidebar-toggle {
+	margin: 10px 0;
+	display: none;
+	width: 100%;
+	height: 30px;
+
+	padding: 6px;
+	height: 30px;
+	line-height: 16px;
+	clear: both;
+	position: relative;
+}
+
+.es-dashboard,
+.es-profile {
+
+	.es-content > .loading-indicator {
+		display: none;
+	}
+
+	&.loading {
+		.es-content > .loading-indicator {
+			display: block;
+		}
+	}
+}
+
+//Responsive control
+
+&.w480 {
+	.btn-sidebar-toggle {
+		display: block;
+		float: none !important;
+	}
+	//generel sidebar styling in mobile view
+	.es-container {
+		display: block;
+		.es-sidebar {
+			float: none !important;
+			width: 100%;
+			display: none;
+			background: @esSidebarBackground;
+			border: 1px solid @esBorder;
+			border-radius: @borderRadius;
+			margin: 0 0 10px;
+
+			.btn-close-sidebar {
+				display: inline-block;
+				border: 1px solid @esBorder;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				z-index: 2;
+				padding: 4px 9px;
+				color: #333;
+				height: 26px;
+				line-height: 14px;
+
+			}
+			&.sidebar-open {
+				display: block;
+				overflow: hidden;
+			}
+		}
+		.es-content {
+			clear: both;
+			display: block;
+			margin-left: 0;
+			padding: 0 0 15px;
+			.clearfix();
+		}
+	}//es-container
+
+	// specific sidebar styling in profile view up on request #751
+	&.view-profile {
+		.es-container {
+			.es-sidebar {
+				// top: 380px;
+			}
+		}
+	}
+}
+
+.es-photo-camera,
+.es-photo-camera-preview {
+	background: #b3b3b3;
+	border-radius: 2px;
+	padding: 62px 0;
+	text-align: center;
+
+	* {
+		display: inline-block;
+		vertical-align: top;
+	}
+}

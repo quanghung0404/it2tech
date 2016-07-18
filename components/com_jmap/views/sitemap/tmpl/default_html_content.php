@@ -55,7 +55,7 @@ if (count ( $this->source->data ) != 0) {
 		$noExpandableNode = $elm->id ? '' : ' noexpandable';
 		$category = ($isMindMap || !$linkableContentCats) ? $elm->category : '<a target="' . $openTarget . '" href="' . JRoute::_ ( ContentHelperRoute::getCategoryRoute($elm->catid, $elm->language ) ) . '">' . $elm->category . '</a>';
 		if($mergeMenuTreeLevels == 'toplevel') {
-			$topLevelCategoryId = $elm->level > 1 ? $topLevelCategoryId : $elm->catid;
+			$topLevelCategoryId = $elm->level > 1 ? @$topLevelCategoryId : $elm->catid;
 		} else {
 			$topLevelCategoryId = $elm->catid;
 		}

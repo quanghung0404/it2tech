@@ -188,10 +188,20 @@ class JMapController extends JControllerLegacy {
 		
 		$conf = JFactory::getConfig ();
 		$componentParams = JComponentHelper::getParams($this->option);
+		
+		// days to hours to minutes (core cache multiplies by 60 secs), default 1 day
+		$lifeTimeMinutes = ( int ) $componentParams->get ( 'lifetime_view_cache', 1 ) * 24 * 60;
+		
+		//Check for an RSS feed lifetime override
+		$format = $this->app->input->get ( 'format', 'html' );
+		if($format == 'rss') {
+			$lifeTimeMinutes = ( int ) $componentParams->get ( 'rss_lifetime_view_cache', 60 );
+		}
+		 
 		$options = array (
 				'defaultgroup' => $this->option,
 				'cachebase' => $conf->get ( 'cache_path', JPATH_CACHE ),
-				'lifetime' => ( int ) $componentParams->get ( 'cache_lifetime', 24 ) * 60, // hours to minutes (core cache multiplies by 60 secs), default 24 hours
+				'lifetime' => $lifeTimeMinutes, 
 				'language' => $conf->get ( 'language', 'en-GB' ),
 				'storage' => $conf->get ( 'cache_handler', 'file' ) 
 		);

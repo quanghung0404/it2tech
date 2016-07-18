@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "history"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

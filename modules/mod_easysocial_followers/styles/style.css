@@ -1,0 +1,28 @@
+div#fd.es.mod-es-followers .es-avatar {
+  background: #fff !important;
+  width: 40px;
+  height: 40px;
+  line-height: 40px !important;
+  overflow: hidden !important;
+  border-radius: 2px !important;
+}
+div#fd.es.mod-es-followers .es-avatar img {
+  width: 40px;
+  height: 40px;
+}
+div#fd.es.mod-es-followers .widget-list-grid {
+  padding-top: 5px;
+}
+div#fd.es.mod-es-followers .widget-list-grid > li {
+  margin-bottom: 10px;
+}
+div#fd.es.mod-es-followers .widget-list-grid > li > a {
+  display: inline-block;
+  background: white;
+  border-radius: 3px;
+}
+div#fd.es.mod-es-followers .empty {
+  text-align: center;
+  font-size: 11px;
+  padding: 10px 0;
+}

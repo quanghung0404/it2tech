@@ -1,0 +1,160 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.editor {
+    overflow: visible;
+    padding-bottom: 20px; // Get some space so that able to scroll down to reach toggle buttons 
+    .clearfix(); // Clear floating editor buttons at the bottom
+}
+
+.mce-tinymce {
+    border-color: #d5d5d5;
+    border-radius: 3px;
+    margin-bottom: 10px; // Get some space in between toggle buttons
+}
+
+.mce-menubar {
+    padding: 5px 10px !important;
+    font-size: 12px;
+    border-color: #d5d5d5;
+
+    .mce-menubtn {
+        border-radius: 20px;
+    }
+
+    button span { font-size: 12px; }
+}
+
+.mce-btn button {
+    padding: 4px 10px !important;
+    text-transform: none;
+}
+
+.mce-flow-layout-item {
+    margin: 0 5px 0 0;
+}
+
+.mce-caret {
+    vertical-align: middle;
+    margin: 0;
+    .opacity(.8);
+}
+
+.mce-toolbar-grp {
+    background: #f0f0f0;
+    padding: 0 0 5px 5px;
+    white-space: normal;
+
+    .mce-toolbar {
+        background: #fdfdfd;
+        background-image: -moz-linear-gradient(top, #fdfdfd, #ddd);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
+        background-image: -webkit-linear-gradient(top, #fdfdfd, #ddd);
+        background-image: -o-linear-gradient(top, #fdfdfd, #ddd);
+        background-image: linear-gradient(to bottom, #fdfdfd, #ddd);
+        border: 1px solid #ccc;
+        border-bottom-color: #bbb;
+        border-radius: 2px;
+        display: inline-block;
+        margin: 5px 5px 0 0;
+    }
+
+    .mce-btn {
+        background: none;
+        border: 0;
+        .box-shadow(none);
+
+        + .mce-btn {
+            border-left: 1px solid #ddd;
+        }
+
+        button {
+            line-height: 32px;
+            height: 32px;
+            padding: 0 8px !important;
+            position: relative;
+
+            .mce-ico,
+            span {
+                line-height: 32px;
+                height: 32px;
+                vertical-align: top;
+                text-transform: none;
+
+                &:before {
+                    display: inline-block;
+                    vertical-align: top;
+                    line-height: 32px;
+                }
+            }
+
+            .mce-preview {
+                height: 2px;
+                position: absolute;
+                left: 8px;
+                bottom: 0;
+                margin: 7px 0 0;
+            }
+
+            .mce-i-forecolor,
+            .mce-i-backcolor {
+                line-height: 18px;
+                height: 18px;
+                margin-top: 7px;
+                &:before {
+                    position: relative;
+                    top: -4px;
+                }
+            }
+        }
+
+        &.mce-active button {
+            background: #ddd;
+            background-image: -moz-linear-gradient(top, #ccc, #fdfdfd);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#fdfdfd));
+            background-image: -webkit-linear-gradient(top, #ccc, #fdfdfd);
+            background-image: -o-linear-gradient(top, #ccc, #fdfdfd);
+            background-image: linear-gradient(to bottom, #ccc, #fdfdfd);
+        }
+    }
+}
+
+.mce-container-body {
+    white-space: normal;
+
+    .mce-btn-group {
+        white-space: normal;
+        float: left;
+        margin: 0;
+
+        + .mce-btn-group {
+            border-left: 1px solid #ccc;
+        }
+
+        > div {
+            white-space: normal;
+        }
+    }
+}
+
+.mce-edit-area {
+    border-top-color: #ccc;
+}
+
+.mce-statusbar {
+    border-color: #ddd;
+
+    * {
+        font-size: 12px;
+    }
+}
+
+.mce-resizehandle {
+    display: none !important;
+    width: 0;
+    height: 0;
+}

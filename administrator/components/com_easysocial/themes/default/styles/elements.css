@@ -1,0 +1,280 @@
+div#fd.es {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f8f8f8;
+  font-size: 12px;
+  line-height: 18px;
+}
+div#fd.es p {
+  font-size: 12px;
+  line-height: 18px;
+}
+div#fd.es table {
+  border-collapse: collapse;
+}
+div#fd.es hr {
+  clear: both;
+}
+div#fd.es .dropdown > a {
+  outline: none !important;
+}
+div#fd.es .dropdown > a::-moz-focus-inner {
+  border: 0 !important;
+}
+div#fd.es .panel-title {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: normal;
+  margin: 0 0 0px;
+  padding: 0;
+  color: #626d7f;
+}
+div#fd.es .privacy-custom-menu {
+  position: absolute;
+  padding: 10px;
+  min-width: 350px;
+}
+div#fd.es .priority-1 {
+  color: #2aacd2;
+}
+div#fd.es .priority-2 {
+  color: #51a351;
+}
+div#fd.es .priority-3 {
+  color: #FBB450;
+}
+div#fd.es .priority-4 {
+  color: #EE5F5B;
+}
+div#fd.es .filter-bar {
+  padding: 10px;
+}
+div#fd.es .filter-bar .form-group {
+  display: inline-block;
+}
+div#fd.es .filter-bar .form-group:before,
+div#fd.es .filter-bar .form-group:after {
+  content: " ";
+  display: table;
+}
+div#fd.es .filter-bar .form-group:after {
+  clear: both;
+}
+div#fd.es .filter-bar .form-group +.form-group {
+  margin-left: 20px;
+}
+div#fd.es .filter-bar .form-group > strong,
+div#fd.es .filter-bar .form-group > div {
+  float: left;
+}
+div#fd.es .filter-bar .form-group > strong {
+  color: #888;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 30px;
+  margin-right: 5px;
+}
+div#fd.es .filter-bar .form-group .input-group {
+  max-width: 320px;
+}
+div#fd.es.es-window .app-filter,
+div#fd.es.es-window .app-table {
+  margin: 0;
+}
+div#fd.es.es-window .form-group {
+  margin: 0;
+}
+div#fd.es.es-window .panel-table {
+  margin: 0 1px;
+  background: #fff;
+}
+div#fd.es .es-avatar {
+  line-height: 0;
+  display: inline-block;
+  border: 2px solid white;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+}
+div#fd.es .es-avatar img {
+  display: block;
+}
+div#fd.es .es-avatar-circle {
+  border-radius: 50%;
+}
+div#fd.es .es-avatar-circle img {
+  border-radius: 50%;
+}
+div#fd.es a.es-avatar {
+  color: transparent;
+}
+div#fd.es .es-avatar-lg {
+  width: 120px;
+  height: 120px;
+}
+div#fd.es .es-avatar-md {
+  width: 58px;
+  height: 58px;
+}
+div#fd.es .es-avatar-sm {
+  width: 32px;
+  height: 32px;
+}
+div#fd.es .btn-es:hover {
+  background-position: 0 0px;
+  border: 1px solid #BBB;
+}
+div#fd.es .btn-es-social {
+  border-radius: 10px;
+  font-size: 11px;
+  position: relative;
+  padding-left: 22px;
+}
+div#fd.es .btn-es-social:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../../../../media/com_easysocial/images/icons/icons-btn-social.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+div#fd.es .btn-es-facebook {
+  color: #fff !important;
+  background-color: #5692ce !important;
+  border-color: #2b6cb3 !important;
+}
+div#fd.es .btn-es-facebook:hover,
+div#fd.es .btn-es-facebook:focus,
+div#fd.es .btn-es-facebook:active,
+div#fd.es .btn-es-facebook.active,
+.open .dropdown-toggle_div#fd.es .btn-es-facebook {
+  color: #fff !important;
+  background-color: #387ec3 !important;
+  border-color: #1f4e82 !important;
+}
+div#fd.es .btn-es-facebook:active,
+div#fd.es .btn-es-facebook.active,
+.open .dropdown-toggle_div#fd.es .btn-es-facebook {
+  background-image: none;
+}
+div#fd.es .btn-es-facebook.disabled,
+div#fd.es .btn-es-facebook.disabled:hover,
+div#fd.es .btn-es-facebook.disabled:focus,
+div#fd.es .btn-es-facebook.disabled:active,
+div#fd.es .btn-es-facebook.disabled.active,
+div#fd.es .btn-es-facebook[disabled],
+div#fd.es .btn-es-facebook[disabled]:hover,
+div#fd.es .btn-es-facebook[disabled]:focus,
+div#fd.es .btn-es-facebook[disabled]:active,
+div#fd.es .btn-es-facebook[disabled].active,
+fieldset[disabled] div#fd.es .btn-es-facebook,
+fieldset[disabled] div#fd.es .btn-es-facebook:hover,
+fieldset[disabled] div#fd.es .btn-es-facebook:focus,
+fieldset[disabled] div#fd.es .btn-es-facebook:active,
+fieldset[disabled] div#fd.es .btn-es-facebook.active {
+  background-color: #5692ce !important;
+  border-color: #2b6cb3 !important;
+}
+div#fd.es .btn-es-facebook .badge {
+  color: #5692ce;
+  background-color: #fff;
+}
+div#fd.es .btn-es-facebook:before {
+  background-position: 0 0;
+}
+div#fd.es .btn-es-twitter {
+  color: #fff !important;
+  background-color: #61cef4 !important;
+  border-color: #05b3f4 !important;
+}
+div#fd.es .btn-es-twitter:hover,
+div#fd.es .btn-es-twitter:focus,
+div#fd.es .btn-es-twitter:active,
+div#fd.es .btn-es-twitter.active,
+.open .dropdown-toggle_div#fd.es .btn-es-twitter {
+  color: #fff !important;
+  background-color: #3bc2f1 !important;
+  border-color: #0487b8 !important;
+}
+div#fd.es .btn-es-twitter:active,
+div#fd.es .btn-es-twitter.active,
+.open .dropdown-toggle_div#fd.es .btn-es-twitter {
+  background-image: none;
+}
+div#fd.es .btn-es-twitter.disabled,
+div#fd.es .btn-es-twitter.disabled:hover,
+div#fd.es .btn-es-twitter.disabled:focus,
+div#fd.es .btn-es-twitter.disabled:active,
+div#fd.es .btn-es-twitter.disabled.active,
+div#fd.es .btn-es-twitter[disabled],
+div#fd.es .btn-es-twitter[disabled]:hover,
+div#fd.es .btn-es-twitter[disabled]:focus,
+div#fd.es .btn-es-twitter[disabled]:active,
+div#fd.es .btn-es-twitter[disabled].active,
+fieldset[disabled] div#fd.es .btn-es-twitter,
+fieldset[disabled] div#fd.es .btn-es-twitter:hover,
+fieldset[disabled] div#fd.es .btn-es-twitter:focus,
+fieldset[disabled] div#fd.es .btn-es-twitter:active,
+fieldset[disabled] div#fd.es .btn-es-twitter.active {
+  background-color: #61cef4 !important;
+  border-color: #05b3f4 !important;
+}
+div#fd.es .btn-es-twitter .badge {
+  color: #61cef4;
+  background-color: #fff;
+}
+div#fd.es .btn-es-twitter:before {
+  background-position: -16px 0;
+}
+div#fd.es .btn-es-linkedin {
+  color: #fff !important;
+  background-color: #6cb3d3 !important;
+  border-color: #4b97c3 !important;
+}
+div#fd.es .btn-es-linkedin:hover,
+div#fd.es .btn-es-linkedin:focus,
+div#fd.es .btn-es-linkedin:active,
+div#fd.es .btn-es-linkedin.active,
+.open .dropdown-toggle_div#fd.es .btn-es-linkedin {
+  color: #fff !important;
+  background-color: #4da3ca !important;
+  border-color: #34769d !important;
+}
+div#fd.es .btn-es-linkedin:active,
+div#fd.es .btn-es-linkedin.active,
+.open .dropdown-toggle_div#fd.es .btn-es-linkedin {
+  background-image: none;
+}
+div#fd.es .btn-es-linkedin.disabled,
+div#fd.es .btn-es-linkedin.disabled:hover,
+div#fd.es .btn-es-linkedin.disabled:focus,
+div#fd.es .btn-es-linkedin.disabled:active,
+div#fd.es .btn-es-linkedin.disabled.active,
+div#fd.es .btn-es-linkedin[disabled],
+div#fd.es .btn-es-linkedin[disabled]:hover,
+div#fd.es .btn-es-linkedin[disabled]:focus,
+div#fd.es .btn-es-linkedin[disabled]:active,
+div#fd.es .btn-es-linkedin[disabled].active,
+fieldset[disabled] div#fd.es .btn-es-linkedin,
+fieldset[disabled] div#fd.es .btn-es-linkedin:hover,
+fieldset[disabled] div#fd.es .btn-es-linkedin:focus,
+fieldset[disabled] div#fd.es .btn-es-linkedin:active,
+fieldset[disabled] div#fd.es .btn-es-linkedin.active {
+  background-color: #6cb3d3 !important;
+  border-color: #4b97c3 !important;
+}
+div#fd.es .btn-es-linkedin .badge {
+  color: #6cb3d3;
+  background-color: #fff;
+}
+div#fd.es .btn-es-linkedin:before {
+  background-position: -32px 0;
+}
+div#fd.es .btn-toolbar .btn-group {
+  display: inline-block;
+}
+div#fd.es .btn-micro {
+  font-size: 10px;
+  line-height: 8px;
+  padding: 1px 4px;
+}

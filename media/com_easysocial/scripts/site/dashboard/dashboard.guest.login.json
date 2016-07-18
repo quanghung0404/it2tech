@@ -1,0 +1,9 @@
+[
+    {
+        "script": [
+            "field",
+            "validate"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,40 @@
+{
+	"title"	: "COM_EASYSOCIAL_MENU_GROUP_GROUPS",
+	"link"	: "index.php?option=com_easysocial&view=groups",
+	"access": "easysocial.access.groups",
+	"class"	: "fa-users",
+	"view"	: "groups",
+	"counter"	: "groups/getPendingCount",
+	"active": "layout",
+	"childs":
+	[
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_GROUPS_CATEGORIES",
+			"url"	:
+			{
+				"view"	: "groups",
+				"layout": "categories"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_GROUPS_GROUPS",
+			"url"	:
+			{
+				"view"	: "groups",
+				"layout": ""
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_GROUPS_PENDING",
+			"url"	:
+			{
+				"view"	: "groups",
+				"layout": "pending"
+			},
+			"counter"	: "groups/getPendingCount",
+			"childs": []
+		}
+	]
+}

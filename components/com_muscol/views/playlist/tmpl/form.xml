@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Form Playlist Layout" hidden="true" >
+		<message>
+			Displays the form to add new Playlist
+		</message>
+	</layout>
+	<state>
+		<name>Form Playlist Layout</name>
+		<description>Form Playlist Layout</description>
+		
+		<params>
+		</params>
+	</state>
+</metadata>

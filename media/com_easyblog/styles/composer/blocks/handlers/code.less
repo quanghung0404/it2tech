@@ -1,0 +1,22 @@
+.ebd-block {
+    &[data-type=code] {
+
+        .ebd-block-content > pre {
+            display: none;
+        }
+
+        .ebd-overlay-placeholder {
+            width: 100%;
+            min-height: 96px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.ebd-overlay {
+    &[data-type=code] {
+        iframe {
+            border: 1px solid #ccc;
+        }
+    }
+}

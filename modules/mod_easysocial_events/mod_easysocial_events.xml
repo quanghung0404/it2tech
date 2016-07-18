@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="site" method="upgrade">
+	<name>EasySocial Events</name>
+	<author>StackIdeas</author>
+	<creationDate>10th May 2016</creationDate>
+	<copyright>Copyright (C) 2009 - 2014 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.4.9</version>
+	<description><![CDATA[MOD_EASYSOCIAL_EVENTS_DESC]]></description>
+	<files>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename module="mod_easysocial_events">mod_easysocial_events.php</filename>
+		<filename>mod_easysocial_events.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easysocial_events.ini</language>
+		<language tag="en-GB">en-GB.mod_easysocial_events.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_easysocial/models/fields">
+			<fieldset name="basic">
+				<field name="filter" type="list" class="input-xxlarge" default="0" label="MOD_EASYSOCIAL_EVENTS_FILTER_TYPE" description="MOD_EASYSOCIAL_EVENTS_FILTER_TYPE_DESC">
+					<option value="0">MOD_EASYSOCIAL_EVENTS_NO_FILTERING</option>
+					<option value="2">MOD_EASYSOCIAL_EVENTS_FILTER_FEATURED</option>
+					<option value="3">MOD_EASYSOCIAL_EVENTS_FILTER_LOGGED_IN_USER</option>
+				</field>
+				<field name="category" type="easysocial_eventcategory" default="" label="MOD_EASYSOCIAL_EVENTS_CATEGORY_FILTER" description="MOD_EASYSOCIAL_EVENTS_CATEGORY_FILTER_DESC" />
+				<field name="ordering" type="list" default="latest" label="MOD_EASYSOCIAL_EVENTS_ORDERING" description="MOD_EASYSOCIAL_EVENTS_ORDERING_DESC">
+					<option value="start">MOD_EASYSOCIAL_EVENTS_ORDERING_START</option>
+					<option value="created">MOD_EASYSOCIAL_EVENTS_ORDERING_CREATED</option>
+				</field>
+				<field name="display_rsvp" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_EVENTS_DISPLAY_RSVP_BUTTONS" description="MOD_EASYSOCIAL_EVENTS_DISPLAY_RSVP_BUTTONS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_member_counter" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_EVENTS_DISPLAY_GUEST_COUNTER" description="MOD_EASYSOCIAL_EVENTS_DISPLAY_GUEST_COUNTER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_category" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_EVENTS_DISPLAY_CATEGORY" description="MOD_EASYSOCIAL_EVENTS_DISPLAY_CATEGORY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_limit" type="text" default="5" class="input-mini text-center" label="MOD_EASYSOCIAL_EVENTS_DISPLAY_LIMIT" description="MOD_EASYSOCIAL_EVENTS_DISPLAY_LIMIT_DESC" />
+				<field name="event_inclusion" type="text" default="" label="MOD_EASYSOCIAL_EVENTS_INCLUSION" description="MOD_EASYSOCIAL_EVENTS_INCLUSION_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

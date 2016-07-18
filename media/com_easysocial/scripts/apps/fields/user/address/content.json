@@ -1,0 +1,16 @@
+[
+    {
+        "library": [
+            "gmaps"
+        ],
+        "language": [
+            "PLG_FIELDS_ADDRESS_PLEASE_ENTER_ADDRESS1",
+            "PLG_FIELDS_ADDRESS_PLEASE_ENTER_ADDRESS2",
+            "PLG_FIELDS_ADDRESS_PLEASE_ENTER_CITY",
+            "PLG_FIELDS_ADDRESS_PLEASE_ENTER_STATE",
+            "PLG_FIELDS_ADDRESS_PLEASE_ENTER_ZIP",
+            "PLG_FIELDS_ADDRESS_PLEASE_ENTER_COUNTRY"
+        ],
+        "adapter": "EasySocial"
+    }
+]

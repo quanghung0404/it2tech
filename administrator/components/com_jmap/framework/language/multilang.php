@@ -70,7 +70,11 @@ class JMapLanguageMultilang extends JLanguage {
 	 * @return string
 	 */
 	public static function getCurrentSefLanguage() {
-		$defaultLanguageSef = null;
+		static $defaultLanguageSef;
+		if($defaultLanguageSef) {
+			return $defaultLanguageSef;
+		}
+		
 		$knownLangs = JLanguageHelper::getLanguages();
 			
 		// Setup predefined site language

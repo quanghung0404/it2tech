@@ -1,0 +1,283 @@
+.ebd-block[data-type=video] {
+
+    .eb-video {
+        &:before {
+            content: ' ';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: block;
+            z-index: 3; // Play button has z-index 2
+        }
+    }
+
+    &.active {
+        .eb-video {
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    &.is-standalone {
+        width: 480px; // Initial width
+    }
+}
+
+.eb-composer-block-fieldgroup[data-type=video] {
+    &.is-new {
+        .eb-video-size-fieldset,
+        .eb-video-controls-fieldset {
+            display: none;
+        }
+    }
+}
+
+//
+// Video Size
+//
+.eb-video-size-field {
+
+    .eb-video-ratio-field {
+        display: none;
+    }
+
+    .eb-video-ratio-custom-field {
+        display: none;
+    }
+
+    &.no-alignment {
+
+        .eb-video-alignment-field {
+            display: none;
+        }
+
+        .eb-video-dimension-field {
+            border-bottom: none;
+        }
+    }
+
+    &.view-selectratio {
+
+        .eb-video-dimension-field,
+        .eb-video-alignment-field {
+            display: none;
+        }
+
+        .eb-video-ratio-field {
+            display: block;
+            border-top: none;
+            border-bottom: none;
+        }
+    }
+
+    &.view-customratio {
+
+        .eb-video-dimension-field,
+        .eb-video-alignment-field {
+            display: none;
+        }
+
+        .eb-video-ratio-custom-field {
+            display: block;
+            border-top: none;
+            border-bottom: none;
+        }
+    }
+}
+
+@eb-video-ratio-size: 50px;
+
+.eb-video-dimension-field {
+    // To accomodate video ratio field
+    padding-right: @eb-video-ratio-size;
+}
+
+//
+// Video Ratio
+//
+.eb-video-ratio-toggle {
+    position: absolute;
+    top: 0;
+    right: @eb-video-ratio-size * -1;
+    height: 100%;
+    width: @eb-video-ratio-size;
+    border: @eb-composer-gutter / 6 solid transparent;
+    border-left: none;
+    border-right: none;
+
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid @eb-composer-border-color;
+        border-left: none;
+        width: 50%;
+        height: 100%;
+        border-radius: 0 @eb-composer-border-radius @eb-composer-border-radius 0;
+    }
+
+    > div  {
+        @video-ratio-toggle-size: 60%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 10px solid transparent;
+        border-right: none;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.eb-video-ratio-button {
+
+    &.btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    i {
+        position: relative;
+        display: block;
+
+        &.fa-unlock-alt {
+            display: none;
+        }
+    }
+
+    span {
+        display: block;
+        font-weight: bold;
+        font-size: 10px;
+        line-height:10px;
+        height: 10px;
+        padding: 0 2.5px;
+        .text-overflow();
+    }
+
+    &.ratio-unlocked {
+
+        i {
+
+            &.fa-lock {
+                display: none;
+            }
+
+            &.fa-unlock-alt {
+                display: block;
+            }
+        }
+
+        span {
+            display: none;
+        }
+    }
+}
+
+.eb-video-ratio-field {
+
+    &:before {
+        display: none !important;
+    }
+
+    .eb-composer-fieldrow-label {
+        margin-bottom: @eb-composer-gutter / 3;
+    }
+}
+
+.eb-video-ratio-selection {
+
+    .eb-swatch-preview {
+        > div {
+            border: @eb-composer-gutter / 3 solid transparent;
+
+            > div {
+                display: table;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.eb-video-ratio-preview {
+    display: table-cell;
+    vertical-align: bottom;
+
+    > div {
+        .ratio-container();
+        background: @eb-composer-border-light-color;
+
+        > div {
+            .vertical-align-middle();
+            text-align: center;
+        }
+    }
+
+    span {
+        padding: 0 @eb-composer-gutter / 6;
+        font-weight: bold;
+        font-size: 10px;
+    }
+
+    &.ar-unlocked {
+
+        > div {
+            background: transparent;
+            border: 1px dashed @eb-composer-border-light-color;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+}
+
+.eb-video-ratio-actions {
+    margin-top: @eb-composer-gutter / 3;
+    text-align: right;
+}
+
+.eb-video-ratio-custom-field {
+
+    &:before {
+        display: none !important;
+    }
+
+    .eb-composer-fieldrow-label {
+        margin-bottom: @eb-composer-gutter / 3;
+    }
+}
+
+//
+// Video Alignment
+//
+.eb-video-alignment-field {
+}
+
+//
+// Custom Display for Composer View
+//
+
+&.eb-view-composer div.vjs-fullscreen-control {
+    display: none;
+}
+
+&.eb-view-composer div.vjs-volume-control {
+    margin-right: 15px;
+}
+
+
+
+
+

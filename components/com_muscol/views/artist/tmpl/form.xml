@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Form Artist Layout (ADD NEW ARTIST)">
+		<message>
+			Displays the form to add new artist
+		</message>
+	</layout>
+	<state>
+		<name>Form Artist Layout</name>
+		<description>Form Artist Layout</description>
+		
+		<params>
+		</params>
+	</state>
+</metadata>

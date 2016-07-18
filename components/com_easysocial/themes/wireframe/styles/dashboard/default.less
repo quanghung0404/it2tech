@@ -1,0 +1,88 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+    $profile - dashboard.less
+\*------------------------------------*/
+
+// Dashboard view.
+.es-dashboard {
+
+    .es-container {
+
+        .es-sidebar {
+
+            .fd-nav-stacked {
+                a {
+                    font-size: @baseFontSize;
+                }
+            }
+
+            a:hover, a:active, a:focus {
+                outline: 0;
+            }
+
+            .fd-nav {
+                li {
+                    a > i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+
+        .es-content {
+            > .loading-indicator{
+                &.large{
+                    margin-top: 80px;
+                }
+            }
+
+            .item-heading {
+                padding: 0 0 0 20px;
+            }
+        }
+    }
+}
+&.w480 {
+    .es-dashboard {
+        .es-content {
+            .group-heading {
+                padding: 0;
+            }
+            .es-header {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.item-heading {
+	.es-header-footer {
+		padding-left: 15px !important;
+	}
+}
+// Edit profile.
+#profile{
+
+    .stepItem {
+        line-height: 20px;
+        margin: 10px 0 10px 0;
+        a {
+            font-size: 12px;
+        }
+    }
+
+}
+
+/*
+ * Dashboard view
+ */
+.updateProfile {
+    margin-top: 30px;
+}
+
+

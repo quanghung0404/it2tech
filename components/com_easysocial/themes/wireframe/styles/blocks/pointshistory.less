@@ -1,0 +1,202 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	pointshistory.less
+\*------------------------------------*/
+.es-pointshistory {
+	position: relative;
+	.clearfix();
+	padding: 10px 0 100px;
+	// background: red;
+	&:before { //timeline
+		display: block;
+		content: '';
+		width: 3px;
+		position: absolute;
+		// background-color: rgba(0, 0, 0, 0.04);
+		background-color: @esPointsHistoryTimeline;
+		.opacity(.4);
+		left: 50%;
+		top: 0px;
+		bottom: 0;
+		margin-left: -2px;
+		// min-height: 320px;
+	}
+	//elements
+	.es-timeline-dot {
+		border: 2px solid @esPointsHistoryBorder;
+		display: block;
+		width: 9px;
+		height: 9px;
+		position: absolute;
+		background: @esPointsHistoryBackground;
+		top: 13px;
+		border-radius: 50%;
+	}
+	.es-date {
+		font-size: @fontSizeSmall;
+		position: absolute;
+		top: -16px;
+		color: #888;
+	}
+	.es-timeline-item-separator{
+		border-top: 1px dashed @esPointsHistoryBorder;
+		clear: both;
+		margin-bottom: 50px;
+		margin-top: 50px;
+	}
+	//timeline block
+	.es-timeline-points { //ul
+		position: relative;
+		.clearfix();
+		padding-top: 30px;
+		margin-top: 30px;
+		.es-timeline-item { //li
+			position: relative;
+			display: inline-block;
+			width: 50%;
+			float: left;
+			margin-bottom: 40px;
+			// background: #fcfcfc;
+			// border: 1px solid #e0e0e0;
+
+			.es-item {
+				position: relative;
+				// height: 44px;
+				font-size: @baseFontSize;
+				// overflow: hidden;
+				line-height: 18px;
+				color: @esPointsHistoryColor;
+				background: @esPointsHistoryBackground;
+				&:before, &:after {
+					content: "";
+					position: absolute;
+					border-color: transparent;
+					border-style: solid;
+					display: inline-block;
+					top: 10px;
+				}
+			}//item
+
+
+			&:nth-child(2n) {
+				top: 40px;
+				padding-right: 14px;
+				.es-item {
+					&:before {
+						z-index: 2;
+						right: -9px;
+						border-width: 8px 0 8px 8px;
+						border-color: rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0) @esPointsHistoryBorder;
+					}
+					&:after {
+						z-index: 3;
+						right: -8px;
+						border-width: 8px 0 8px 8px;
+						border-color: rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0) @esPointsHistoryBackground;
+					}
+					.es-timeline-dot {
+						right: -19px;
+					}
+				}//item
+				.es-date {
+					right: 0;
+				}
+			}
+			&:nth-child(2n+1) { //2n
+				top: -20px;
+				// margin-top: 20px;
+				float: right;
+				padding-left: 14px;
+				.es-item {
+					// background: red;
+					&:before {
+						z-index: 2;
+						left: -9px;
+						border-width: 8px 8px 8px 0;
+						border-color: rgba(255,255,255,0) @esPointsHistoryBorder rgba(255,255,255,0) rgba(255,255,255,0);
+					}
+					&:after {
+						z-index: 3;
+						left: -8px;
+						border-width: 8px 8px 8px 0;
+						border-color: rgba(255,255,255,0) @esPointsHistoryBackground rgba(255,255,255,0) rgba(255,255,255,0);
+					}
+					.es-timeline-dot {
+						left: -20px;
+					}
+				}
+				// + li {
+				// 	margin-top: 40px;
+				// }
+			}//even
+
+		}//timeline-item
+
+	}//timeline block
+
+	.es-history-message {
+		padding: 0 0 0 15px;
+		margin: 10px 0 16px;
+		border-left: 5px solid @grayLighter;
+		background: none;
+		min-height: 5px;
+	}
+
+	.btn-loadmore {
+		position: absolute;
+		left: 50%;
+		width: 90px;
+		height: auto;
+		margin-left: -45px;
+		bottom: -2px;
+		padding: 3px;
+	}
+
+}
+
+
+// Responsive
+&.w480 {
+	.es-pointshistory {
+		//timeline block
+		&:before,
+		&:after {
+			display: none;
+		}
+		.es-timeline-points { //ul
+			.es-timeline-item {
+				width: 100%;
+				top: 0 !important;
+				.es-item {
+					&:before,
+					&:after {
+						display: none;
+					}
+				}
+				&:nth-child(odd),
+				&:nth-child(even) {
+					width: 100%;
+					margin-bottom: 10px;
+					float: none;
+					padding: 5px;
+				}
+				.es-timeline-dot {
+					display: none;
+				}
+				.es-date {
+					top: 0;
+					left: 0;
+					position: relative;
+				}
+				blockquote {
+					margin-bottom: 0;
+				}
+			}
+		}//timeline-points
+	}
+}

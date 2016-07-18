@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EASYBLOG_MENU_BLOGGERS_LAYOUT">
+		<message>
+			<![CDATA[COM_EASYBLOG_MENU_BLOGGERS_LAYOUT_DESC]]>
+		</message>
+		<view>blogger</view>
+	</layout>
+	
+	<fields name="params">
+		
+		<fieldset name="authors" label="COM_EASYBLOG_MENU_AUTHOR_OPTIONS" addfieldpath="/administrator/components/com_easyblog/elements">
+			<field name="authors_search" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_SEARCH" description="COM_EASYBLOG_SHOW_SEARCH_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="authors_sorting" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_SORTING" description="COM_EASYBLOG_SHOW_SORTING_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_avatar" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_AVATAR" description="COM_EASYBLOG_SHOW_AUTHOR_AVATAR_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_comments_counter" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_COMMENTS_COUNTER" description="COM_EASYBLOG_SHOW_AUTHOR_COMMENTS_COUNTER_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_bio" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_BIO" description="COM_EASYBLOG_SHOW_AUTHOR_BIO_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_twitter" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_TWITTER" description="COM_EASYBLOG_SHOW_AUTHOR_TWITTER_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_website" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_WEBSITE" description="COM_EASYBLOG_SHOW_AUTHOR_WEBSITE_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_subscribe_email" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_SUBSCRIBE_EMAIL" description="COM_EASYBLOG_SHOW_SUBSCRIBE_EMAIL_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_subscribe_rss" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_SUBSCRIBE_RSS" description="COM_EASYBLOG_SHOW_SUBSCRIBE_RSS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_posts" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_POSTS" description="COM_EASYBLOG_SHOW_AUTHOR_POSTS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_tags" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_TAGS" description="COM_EASYBLOG_SHOW_AUTHOR_TAGS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="author_categories" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_AUTHOR_CATEGORIES" description="COM_EASYBLOG_SHOW_AUTHOR_CATEGORIES_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+
+		<fieldset name="request" addfieldpath="/administrator/components/com_easyblog/elements" >
+			<field type="pagination" name="limit" default="-2" label="COM_EASYBLOG_ITEMS_PER_PAGE" description="COM_EASYBLOG_ITEMS_PER_PAGE_DESC" />
+		</fieldset>
+	</fields>		
+</metadata>

@@ -1,0 +1,27 @@
+[
+    {
+        "library": [
+            "ui/draggable",
+            "scrollTo"
+        ],
+        "script": [
+            "composer/blocks/panel",
+            "composer/blocks/guide",
+            "composer/blocks/nestable",
+            "composer/blocks/droppable",
+            "composer/blocks/resizable",
+            "composer/blocks/scrollable",
+            "composer/blocks/font",
+            "composer/blocks/dimensions",
+            "composer/blocks/text",
+            "composer/blocks/removal",
+            "composer/blocks/tree",
+            "composer/blocks/search",
+            "composer/blocks/mobile",
+            "composer/blocks/media",
+            "composer/blocks/toolbar",
+            null
+        ],
+        "adapter": "EasyBlog"
+    }
+]

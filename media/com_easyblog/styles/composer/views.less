@@ -1,0 +1,123 @@
+.eb-composer-views {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: @eb-composer-views-zindex;
+
+    // Use this so it provides enough contrast against border color
+    background: @eb-composer-border-light-color;
+}
+
+.eb-composer-view {
+    .fill-area();
+    z-index: 1;
+    opacity: 0;
+
+    .eb-composer-toolbar {
+        display: none;
+    }
+
+    &.active {
+        z-index: 2;
+        opacity: 1;
+
+        .eb-composer-toolbar {
+            display: block;
+        }
+
+        .eb-composer-viewport {
+            .transform_(scale(1));
+            opacity: 1;
+        }
+    }
+}
+
+.eb-composer-viewport {
+    width: 100%;
+    height: 100%;
+    z-index: @eb-composer-document-viewport-zindex;
+    background: fadeout(@eb-composer-face-color, 10%);
+
+    // Creates zoom in effect on view
+    .transition(all @eb-composer-transition-duration ease);
+    .transform_(scale(1.2));
+    opacity: 0;
+
+    // Scrollbar
+    > s[data-scrolly-axis=y] {
+        // 7px from scrolly default's scrollbar gutter
+        border-top: @eb-composer-toolbar-size + 7px solid transparent;
+    }
+}
+
+.eb-composer-viewport-content {
+    // Accomodate toolbar
+    padding-top: @eb-composer-toolbar-size;
+}
+
+// Quickfix 
+// Since scrolly.js it's not perform in mobile devices and conflict with desktop browser have to use back traditional overflow method
+// Make container able to scroll in touch devices.
+// @media(max-width: 1000px) {
+.eb-composer-viewport-content,
+[data-scrolly-viewport],
+.eb-composer-posts-item-group {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+.view-blocks {
+    .eb-composer-document {
+        [data-scrolly-viewport] {
+            overflow: hidden; // when add blocks active disable scroll on document layer 
+        }
+        
+    }
+}
+// }
+// @media(max-width: 1000px) {
+
+// Hide scrollbar handle from scrolly
+[data-scrolly] [data-scrolly-axis] {
+    display: none !important; // have to use important to counter inline style 
+}
+// }
+
+// Control how views are displayed
+&.eb-composer-frame {
+
+    &.view-document {
+        .eb-composer-document {
+            display: block;
+        }
+    }
+
+    &.view-blocks {
+        .eb-composer-blocks {
+            display: block;
+        }
+    }
+
+    &.view-media {
+        .eb-composer-media {
+            display: block;
+        }
+    }
+
+    &.view-posts {
+        .eb-composer-posts {
+            display: block;
+        }
+    }
+
+    &.view-revisions {
+
+        .eb-composer-document {
+            display: block;
+        }
+
+        .eb-composer-revisions {
+            display: block;
+        }
+    }
+}

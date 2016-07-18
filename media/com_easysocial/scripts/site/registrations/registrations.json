@@ -1,0 +1,16 @@
+[
+    {
+        "script": [
+            "validate",
+            "field"
+        ],
+        "view": [
+            "site/registration/dialog.error"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_CLOSE_BUTTON",
+            "COM_EASYSOCIAL_REGISTRATION_ERROR_DIALOG_TITLE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

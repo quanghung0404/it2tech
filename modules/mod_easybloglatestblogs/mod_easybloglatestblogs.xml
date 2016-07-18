@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Latest Blogs Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description>
+		<![CDATA[Latest blogs by module for your EasyBlog's component.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easybloglatestblogs.ini</language>
+	</languages>
+	<files>
+		<folder>elements</folder>
+		<folder>tmpl</folder>
+		<filename>categories.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_easybloglatestblogs">mod_easybloglatestblogs.php</filename>
+		<filename>mod_easybloglatestblogs.xml</filename>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_easyblog/elements/">
+			<fieldset name="basic" addfieldpath="/modules/mod_easybloglatestblogs/elements/">
+				<field name="type" type="moduletype" default="0" label="MOD_LATESTBLOGS_MODULE_TYPE" description="MOD_LATESTBLOGS_MODULE_TYPE_DESC" />
+
+				<field name="alignment" type="radio" class="btn-group" default="vertical" label="MOD_LATESTBLOGS_LAYOUT" description="MOD_LATESTBLOGS_LAYOUT_DESC">
+					<option value="vertical">MOD_LATESTBLOGS_VERTICAL</option>
+					<option value="horizontal">MOD_LATESTBLOGS_HORIZONTAL</option>
+				</field>
+				<field name="column" type="text" default="3" label="MOD_LATESTBLOGS_COLUMN_NUMBER" description="MOD_LATESTBLOGS_COLUMN_NUMBER_DESC" />
+
+				<field name="allentrieslink" type="radio" class="btn-group" default="0" label="MOD_LATESTBLOGS_SHOW_ALL_ENTRIES_LINK" description="MOD_LATESTBLOGS_SHOW_ALL_ENTRIES_LINK_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="module_responsive" type="radio" class="btn-group" default="0" label="MOD_LATESTBLOGS_RESPONSIVE" description="MOD_LATESTBLOGS_RESPONSIVE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<!-- Latest posts -->
+			<fieldset name="latest">
+				<field name="catid" type="multicategories" default="" label="MOD_LATESTBLOGS_CATEGORIES" description="MOD_LATESTBLOGS_CATEGORIES_DESC" />
+				<field name="usefeatured" type="radio" class="btn-group" default="0" label="MOD_LATESTBLOGS_ONLY_FEATURED" description="MOD_LATESTBLOGS_ONLY_FEATURED_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<!-- Blogger's parameter -->
+			<fieldset name="blogger">
+				<field name="bloggerlisttype" type="list" default="include" label="MOD_LATESTBLOGS_BLOGGER_LIST_TYPE" description="MOD_LATESTBLOGS_BLOGGER_LIST_TYPE_DESC">
+					<option value="include">MOD_LATESTBLOGS_INCLUDE</option>
+					<option value="exclude">MOD_LATESTBLOGS_EXCLUDE</option>
+				</field>
+				<field name="bloggerlist" type="authors" default="" label="MOD_LATESTBLOGS_AUTHORS" description="MOD_LATESTBLOGS_AUTHORS_DESC" />
+				<field name="showbavatar" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_AUTHORS_SHOW_AVATAR" description="MOD_LATESTBLOGS_AUTHORS_SHOW_AVATAR_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showwebsite" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_AUTHORS_SHOW_WEBSITE" description="MOD_LATESTBLOGS_AUTHORS_SHOW_WEBSITE_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showbcount" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_AUTHORS_SHOW_POST_COUNT" description="MOD_LATESTBLOGS_AUTHORS_SHOW_POST_COUNT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="biography_length" type="text" default="50" label="Biography Length" description="The number of characters that should be displayed when the user sets their biography." />
+			</fieldset>
+
+			<fieldset name="category">
+				<field name="cid" type="categories" default="0" label="MOD_LATESTBLOGS_CATEGORIES" description="MOD_LATESTBLOGS_CATEGORIES_DESC" />
+				<field name="showcavatar" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_CATEGORIES_SHOW_AVATAR" description="MOD_LATESTBLOGS_CATEGORIES_SHOW_AVATAR_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showccount" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_CATEGORIES_SHOW_POST_COUNT" description="MOD_LATESTBLOGS_CATEGORIES_SHOW_POST_COUNT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="tag">
+				<field name="tagid" type="text" default="" label="MOD_LATESTBLOGS_TAGIDS" description="MOD_LATESTBLOGS_TAGIDS_DESC" />
+				<field name="showtcount" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_TAGS_SHOW_POST_COUNT" description="MOD_LATESTBLOGS_TAGS_SHOW_POST_COUNT_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="team">
+				<field name="tid" type="text" default="" label="MOD_LATESTBLOGS_TEAMIDS" description="MOD_LATESTBLOGS_TEAMIDS_DESC" />
+				<field name="showtavatar" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_TEAMS_SHOW_AVATAR" description="MOD_LATESTBLOGS_TEAMS_SHOW_AVATAR_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="standard">
+				<field name="trigger_plugins" type="radio" class="btn-group" default="0" label="MOD_LATESTBLOGS_TRIGGER_PLUGINS" description="MOD_LATESTBLOGS_TRIGGER_PLUGINS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="striptags" type="radio" class="btn-group" default="0" label="MOD_LATESTBLOGS_STRIP_HTML_CODES" description="MOD_LATESTBLOGS_STRIP_HTML_CODES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="dateformat" type="text" default="%d %B %Y" label="Date format" description="Enter a date format for the " />
+				<field name="count" type="text" default="5" label="MOD_LATESTBLOGS_TOTAL_POSTS_TO_SHOW" description="MOD_LATESTBLOGS_TOTAL_POSTS_TO_SHOW_DESC" />
+				<field name="showintro" type="list" default="-1" label="MOD_LATESTBLOGS_CONTENT_SOURCE" description="MOD_LATESTBLOGS_CONTENT_SOURCE_DESC" >
+					<option value="-1">Do not show any content</option>
+					<option value="0">Introtext</option>
+					<option value="1">Main content</option>
+				</field>
+				<field name="postType" type="list" default="all" label="Filter by Post type" description="Choose which post type you want to filter with." >
+					<option value="all">All</option>
+					<option value="posts">Text</option>
+					<option value="quote">Quote</option>
+					<option value="link">Link</option>
+					<option value="photo">Photo</option>
+					<option value="video">Video</option>
+					<option value="twitter">Twitter</option>
+				</field>
+				<field name="textcount" type="text" default="0" label="MOD_LATESTBLOGS_TOTAL_CHARACTERS" description="MOD_LATESTBLOGS_TOTAL_CHARACTERS_DESC" />
+				<field name="showauthor" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_SHOW_AUTHOR" description="MOD_LATESTBLOGS_SHOW_AUTHOR_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showavatar" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_SHOW_AUTHOR_AVATAR" description="MOD_LATESTBLOGS_SHOW_AUTHOR_AVATAR_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showcommentcount" type="list" default="1" label="MOD_LATESTBLOGS_SHOW_COMMENTS" description="MOD_LATESTBLOGS_SHOW_COMMENTS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showratings" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_SHOW_RATINGS" description="MOD_LATESTBLOGS_SHOW_RATINGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="enableratings" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_ENABLE_RATINGS" description="MOD_LATESTBLOGS_ENABLE_RATINGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showhits" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_SHOW_HITS" description="MOD_LATESTBLOGS_SHOW_HITS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showreadmore" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_SHOW_READMORE" description="MOD_LATESTBLOGS_SHOW_READMORE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showdate" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_SHOW_DATE" description="MOD_LATESTBLOGS_SHOW_DATE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showcategory" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_SHOW_CATEGORY" description="MOD_LATESTBLOGS_SHOW_CATEGORY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="includesubcategory" type="radio" class="btn-group" default="0" label="MOD_LATESTBLOGS_INCLUDE_SUBCATEGORIES" description="MOD_LATESTBLOGS_INCLUDE_SUBCATEGORIES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sortby" type="list" default="0" label="MOD_LATESTBLOGS_SORTING_BY" description="MOD_LATESTBLOGS_SORTING_BY_DESC">
+					<option value="latest">MOD_LATESTBLOGS_CREATED_DATE</option>
+					<option value="modified">MOD_LATESTBLOGS_MODIFIED_DATE</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="photos" addfieldpath="/administrator/components/com_easyblog/elements/">
+				<field name="photo_show" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_PHOTO_SHOW" description="MOD_LATESTBLOGS_PHOTO_SHOW_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="photo_legacy" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_PHOTO_LEGACY" description="MOD_LATESTBLOGS_PHOTO_LEGACY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="show_photo_placeholder" type="radio" class="btn-group" default="0" label="MOD_LATESTBLOGS_SHOW_PHOTO_PLACEHOLDER" description="MOD_LATESTBLOGS_SHOW_PHOTO_PLACEHOLDER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="photo_size" type="list" default="default" label="MOD_LATESTBLOGS_PHOTO_SIZE" description="Set the photo size.">
+                    <option value="large">MOD_LATESTBLOGS_PHOTO_SIZE_LARGE</option>
+					<option value="medium">MOD_LATESTBLOGS_PHOTO_SIZE_MEDIUM</option>
+					<option value="small">MOD_LATESTBLOGS_PHOTO_SIZE_SMALL</option>
+				</field>
+
+				<field name="photo_layout" type="cover" label="MOD_LATESTBLOGS_PHOTO_LAYOUT_TYPE" description="MOD_LATESTBLOGS_PHOTO_LAYOUT_TYPE_DESC" crop="1" full="1" defaultwidth="260" defaultheight="200" alignment="center" />
+
+			</fieldset>
+
+
+			<fieldset name="Videos">
+				<field name="video_show" type="radio" class="btn-group" default="1" label="MOD_LATESTBLOGS_VIDEO_SHOW" description="MOD_LATESTBLOGS_VIDEO_SHOW_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="video_width" type="text" default="250" size="5" label="MOD_LATESTBLOGS_VIDEO_WIDTH" description="MOD_LATESTBLOGS_VIDEO_WIDTH_DESC" />
+				<field name="video_height" type="text" default="250" size="5" label="MOD_LATESTBLOGS_VIDEO_HEIGHT" description="MOD_LATESTBLOGS_VIDEO_HEIGHT_DESC" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

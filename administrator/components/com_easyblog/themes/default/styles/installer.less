@@ -1,0 +1,105 @@
+/*------------------------------------*\
+    $layout.less
+\*------------------------------------*/
+
+body{
+	// background-color: #F8F8F8 !important;
+	color: #595959 !important;
+}
+
+#es-wrap{
+	.center{
+		text-align: center !important;
+	}
+
+	.section-heading{
+		i {
+			margin: 0 10px 0 0;
+		}
+
+		span {
+			line-height: 32px;
+			height: 32px;
+		}
+	}
+
+	hr {
+
+		&.section-separator{
+			margin: 5px 0 10px;
+		}
+	}
+
+	table {
+		&.stats{
+			thead {
+				tr {
+					> td {
+						border-bottom: 1px solid #ccc !important;
+						font-weight: 700;
+					}
+
+				}
+			}
+		}
+	}
+	.es-installer {
+		.clearfix();
+		margin: 12px auto 20px;
+		width: 800px;
+		background: white;
+		border-radius: 5px 5px 0 0;
+		// .box-shadow(~"inset 0 1px 1px rgba(255,255,255,.4) , 0 1px 2px rgba(0,0,0,.2)");
+		.box-shadow(0 1px 2px rgba(0,0,0,.2));
+
+		.es-installer-hd {
+			height: 80px;
+			line-height: 80px;
+			padding: 0 20px;
+			vertical-align: middle;
+			border: 1px solid darken(#17568C, 5%);
+			border-top:1px solid lighten(#17568C, 12%);
+			border-radius: 5px 5px 0 0;
+			#gradient > .vertical(#17568C, #1A3867);
+
+			position: relative;
+			z-index: 10;
+			.es-installer-title {
+				color: white;
+				font-size: 18px;
+				font-weight: 700;
+			}
+
+		}//es-installer-hd
+
+		.es-installer-body {
+			border-top: 1px solid lighten(@eb-border, 10%);
+			border-bottom: 1px solid lighten(@eb-border, 10%);
+			margin-top: 10px;
+			padding: 10px 30px;
+			.radio input[type="radio"],
+			.checkbox input[type="checkbox"] {
+				margin-left: -20px;
+				float: left;
+			}
+		}
+
+		.es-installer-ft {
+			.clearfix();
+			// background: @panel-header-bg;
+			text-align: center;
+			padding: 15px 10px;
+			border-radius: 0 0 4px 4px;
+			// .box-shadow(~"inset 0 1px 1px rgba(255,255,255,.4) , 0 1px 2px rgba(0,0,0,.2)");
+			strong {
+				font-size: 11px;
+				color:white;
+				font-weight: normal;
+			}
+			a {
+				color:white;
+				font-size: 11px;
+			}
+		}
+	}
+}

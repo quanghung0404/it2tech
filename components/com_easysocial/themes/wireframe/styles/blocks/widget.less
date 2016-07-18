@@ -1,0 +1,475 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$widget - widget.less
+\*------------------------------------*/
+.es-widget,
+.es-widget-head,
+.es-widget-body,
+.es-widget-foot {
+	.clearfix();
+}
+
+.es-widget {
+    * {
+        font-size: @baseFontSize; // #3537
+    }
+
+	+ .es-widget {
+		margin-top: 20px;
+	}
+
+	&.es-widget-borderless {
+		border: none;
+
+		.es-widget-head + .es-widget-head{
+			margin-top: 12px;
+		}
+	}
+
+	&.es-widget-border {
+		border: 1px solid @esWidgetBorder;
+	}
+
+	.fd-nav {
+		> li {
+			position: relative;
+			margin-bottom: 1px;
+			> a {
+
+				padding: 4px 0 4px 4px;
+				word-wrap: break-word;
+				&:hover {
+					cursor: pointer;
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+			&.active {
+				font-weight: bold;
+				background: @esWidgetNavActiveBackground;
+
+				> a {
+					background: @esWidgetNavActiveBackground;
+					line-height: 16px;
+				}
+				&:before, &:after {
+					content: "";
+					position: absolute;
+					border-color: transparent;
+					border-style: solid;
+					display: inline-block;
+				}
+			}
+			&.error {
+				background: @esWidgetNavErrorBackground;
+				> a {
+					background: @esWidgetNavErrorBackground;
+					color: @esWidgetNavErrorColor;
+					border-left: 2px solid @esWidgetNavErrorBorder;
+				}
+			}
+			&.loading {
+				> a {
+					&:before {
+						position: absolute;
+						top: 8px;
+						right: 6px;
+						content: '';
+						display: block;
+						width: 16px;
+						height: 11px;
+						background: url('@{media_uri}/images/loading.gif') no-repeat;
+					}
+				}
+                .es-count-no {
+                    display: none;
+                }
+			}
+		}
+
+        &.fd-nav-media {
+            li {
+                + li {
+                    margin-top: 10px;
+                }
+            }
+        }
+		&.fd-nav-thumbs {
+			> li {
+				> a {
+					border-bottom: 1px solid @esWidgetBorder;
+				}
+				&.loading {
+					> a {
+						&:before {
+							top: 50%;
+							left: 50%;
+							margin: -5px 0 0 -8px;
+						}
+					}
+				}
+			}
+			.es-avatar {
+				margin-top: 3px;
+			}
+		}
+
+        .divider {
+            border-bottom: 1px solid @grayLighter;
+            margin-bottom: 10px;
+        }
+
+        .fd-nav-meta {
+            color: @esColor;
+        }
+	}//es-nav
+
+	.widget-main-link {
+		font-weight: bold;
+	}
+
+	.widget-list,
+	.widget-list-grid {
+		margin-left: 0;
+        padding: 0;
+		.clearfix();
+        > li {
+            list-style: none;
+            background: none;
+            padding: 0;
+
+        }
+		.es-avatar {
+			margin: 0;
+		}
+	}
+	.widget-list-grid {
+		> li {
+			float: left; // Explicity set the float since we don't require .span* classes
+			margin-bottom: 6px;
+			margin-right: 11px;
+
+		}
+	}
+	.widget-list {
+		> li {
+			position: relative;
+			&.active {
+			}
+		}
+		.es-count-no {
+			position: absolute;
+			right: 10px;
+			top: 2px;
+			padding: 0 4px;
+            font-weight: normal;
+		}
+		.filter-item-default { //icons
+			color: @esWidgetFilterItemDefaultColor;
+			position: relative;
+			top: -1px;
+			margin-right: 3px;
+		}
+
+        &.widget-list-with-count {
+            > li {
+                padding-right: 30px; // reserve space for .es-count-no #3740
+            }
+        }
+
+        &.friends-suggestion-list {
+        	> li {
+        		display: inline-block;
+        		width: 100%;
+        		
+        		+ li {
+        			border-top: 1px solid @grayLighter;
+        			margin-top: 10px;
+        			padding-top: 10px;
+        		}
+        	}
+        }
+	}
+	.total-no {
+		color: @esWidgetTotalnoColor;
+		margin-bottom: 10px;
+	}
+	.es-friends-suggestion-item {
+		.total-no {
+			font-size: 12px;
+		}
+	}
+
+	.widget-title {
+		display: inline-block;
+		max-width: 150px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		height: 20px;
+		line-height: 20px;
+		white-space: nowrap;
+
+        font-family: @esTitleFont;
+	}
+
+
+	// Feed items
+	.fd-nav {
+		.widget-filter {
+			position: relative;
+			&.custom-filter{
+				.custom-filter-edit{
+					display: none;
+				}
+			}
+		}
+		.widget-filter {
+			&.custom-filter:hover {
+				.custom-filter-edit{
+					display: inline-block;
+				}
+			}
+
+			&.has-fonticon {
+				.filter-title {
+					margin-left: 24px;
+				}
+			}
+		}
+		.widget-filter-group {
+			font-size: @fontSizeSmall;
+			font-weight: 700;
+			color: #666;
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+		.data-dashboardfeeds-filter-edit {
+			position: absolute;
+			top: 0;
+			right: 5px;
+		}
+		.data-dashboardfeeds-item {
+			display: inline-block;
+			width: 90%;
+		}
+	}
+
+    // Applied to <ul class="fd-nav es-widget-tab">
+    .es-widget-tab {
+        > li {
+
+
+            > a {
+                padding: 0;
+                font-weight: normal;
+
+            }
+
+            &.active {
+                background: none;
+
+                > a {
+                    background: none;
+                    font-weight: bold;
+
+                }
+            }
+            + li {
+                padding: 0 0 0 8px;
+                margin: 0 0 0 4px;
+                border-left: 1px solid @esBorder;
+            }
+        }
+    }
+
+    .filter-more {
+    	color: inherit;
+    	font-size: 90%;
+    	.opacity(.5);
+
+    	&:hover {
+    		.opacity(.8);
+    	}
+    }
+}//es-widget
+
+.es-widget-head {
+	color: #666;
+	position: relative;
+	padding: 8px;
+	padding-right: 6px;
+	border-bottom: 1px solid @esWidgetDividerColor;
+	font-weight: bold;
+	margin-bottom: 6px;
+	.widget-label {
+		background: none;
+		color: @grayLight;
+		font-weight: normal;
+
+		margin-left: 3px;
+
+	}
+}
+.es-widget-body {
+	position: relative;
+	padding: 6px;
+	padding-right: 0;
+}
+.es-widget-foot {
+	position: relative;
+	padding: 8px;
+	border-bottom: 1px solid @esWidgetDividerColor;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+
+.es-widget-create {
+	.btn {
+		font-weight: bold;
+	}
+}
+
+.es-widget-filter {
+	> li {
+		> a {
+			line-height: 20px;
+			display: block;
+			padding: 3px 10px;
+
+			&:hover {
+				background: #f5f5f5;
+			}
+
+			b {
+				float: right;
+				line-height: 20px;
+				font-size: 11px;
+				font-weight: normal;
+				text-align: right;
+
+			    // background: #f2f2f2;
+			    // border: 1px solid #f0f0f0;
+			    // border-radius: 2px;
+			    // color: #666;
+			}
+		}
+
+		&.active {
+			> a {
+				background: #e9e9e9;
+				color: #555;
+			}
+		}
+
+		&.active > a b,
+		> a:hover b {
+			border-color: transparent;
+			background: none;
+		}
+	}
+}
+
+//es-widget-search
+.es-widget-search {
+	.es-widget-body {
+		background: @esWidgetSearchBackground;
+		padding: 8px 6px;
+		form {
+			margin: 0;
+			position: relative;
+			input {
+				padding-left: 26px;
+			}
+			&:before,
+			&:after {
+				display: block;
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				line-height: 16px;
+			}
+			&:before {
+				top: 4px;
+				left: 10px;
+				content: "\e00a";
+				font-family: 'easysocial';
+			}
+		}
+	}
+}
+
+// Modules as widget missing modules styles 
+// (If more than 1 module then only need to seperate this block to another file)
+&.mod-es-events {
+    .es-events-list {
+        list-style: none;
+
+        > li {
+            margin-bottom: 10px;
+            list-style: none;
+
+            .es-event-object {
+                margin-bottom:5px;
+            }
+
+            .es-event-avatar {
+                float: right;
+
+                + .es-event-object {
+                    margin-right: 35px;
+                }
+            }
+            
+            .event-title {
+                font-size: 14px;
+                display: inline-block;
+            }
+
+            .es-event-meta {
+                font-size: 10px;
+                color: @esColor;
+
+                span {
+                    margin-right: 5px;
+
+                    +span {
+                        border-left: 1px dotted @esBorder;
+                        padding-left: 8px;
+                    }
+                }
+            }
+
+            +li {
+                padding-top: 10px;
+                border-top: 1px dotted @esBorder;
+            }
+        }
+    }
+}
+
+
+// Responsive control
+&.w480 {
+	.es-widget {
+		.es-widget-head {
+			width: 100%;
+		}
+		.fd-nav {
+			> li.active {
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}

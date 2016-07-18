@@ -1,0 +1,15 @@
+[
+    {
+        "view": [
+            "site/loading/small",
+            "site/activities/loadbutton"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_ACTIVITY_LOG_LOAD_PREVIOUS_STREAM_ITEMS"
+        ],
+        "script": [
+            "site/activities/item"
+        ],
+        "adapter": "EasySocial"
+    }
+]

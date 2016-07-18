@@ -1,0 +1,31 @@
+.eb-mm-folder {
+
+    &.is-searching {
+
+        .eb-composer-toolbar-set {
+
+            &[data-name=media-folder] {
+                display: none;
+            }
+
+            &[data-name=users-search] {
+                display: table;
+            }
+        }
+    }
+
+    .hint-notfound {
+        display: none;
+    }
+
+    &.is-notfound {
+
+        .hint-notfound {
+            display: table;
+        }
+
+        .eb-mm-folder-content-panel {
+            display: none;
+        }
+    }
+}

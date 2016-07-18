@@ -1,0 +1,34 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<dialog>
+	<width>400</width>
+	<height>150</height>
+	<title><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_MOVE_FIELD_DIALOG_TITLE' ); ?></title>
+	<content>
+		[% if(pages.length === 0) { %]
+		<p><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_MOVE_FIELD_DIALOG_NO_PAGE' ); ?></p>
+		[% } else { %]
+		<p><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_MOVE_FIELD_DIALOG_SELECT_PAGE' ); ?></p>
+		<div>
+			<select data-move-selection>
+				[% $.each(pages, function(i, page) { %]
+				<option value="[%= page.uid %]">[%= page.title %]</option>
+				[% }); %]
+			</select>
+		</div>
+		[% } %]
+	</content>
+	[% if(pages.length > 0) { %]
+	<buttons>
+		<button data-move-cancel type="button" class="btn btn-es btn-sm"><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_MOVE_FIELD_DIALOG_CANCEL' ); ?></button>
+		<button data-move-confirm type="button" class="btn btn-es-success btn-sm"><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_MOVE_FIELD_DIALOG_MOVE' ); ?></button>
+	</buttons>
+	[% } %]
+</dialog>

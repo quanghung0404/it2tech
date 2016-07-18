@@ -86,7 +86,7 @@ class JMapViewCpanel extends JMapView {
 		$doc->addCustomTag ('<script type="text/javascript" src="' . JURI::root ( true ) . '/administrator/components/com_jmap/js/jquery.fancybox.pack.js' . '"></script>');
 		
 		if($componentParams->get('geositemap_enabled', 0) && $componentParams->get('geositemap_address', null)) {
-			$doc->addScript ( 'https://maps.google.com/maps/api/js?sensor=true' );
+			$doc->addScript ( 'https://maps.google.com/maps/api/js' );
 			$doc->addScript ( JURI::root ( true ) . '/administrator/components/com_jmap/js/gmap.js' );
 			$doc->addScriptDeclaration("var jmap_geositemapAddress='" . addslashes($componentParams->get('geositemap_address', '')) . "';");
 		}
@@ -129,6 +129,7 @@ class JMapViewCpanel extends JMapView {
 								'COM_JMAP_METAINFO_GENERATION_COMPLETE',
 								'COM_JMAP_SEOSTATS_LOADING',
 								'COM_JMAP_ALEXA_GRAPH',
+								'COM_JMAP_SEMRUSH_GRAPH',
 								'COM_JMAP_NULL_RESPONSEDATA',
 								'COM_JMAP_ERROR_HTTP',
 								'COM_JMAP_CLICKTOUPDATE', 
@@ -144,12 +145,33 @@ class JMapViewCpanel extends JMapView {
 								'COM_JMAP_SEOSPIDER_PROCESS_RUNNING',
 								'COM_JMAP_SEOSPIDER_STARTED_SITEMAP_GENERATION',
 								'COM_JMAP_SEOSPIDER_ERROR_STORING_FILE',
-								'COM_JMAP_SEOSPIDER_GENERATION_COMPLETE');
+								'COM_JMAP_SEOSPIDER_GENERATION_COMPLETE',
+								'COM_JMAP_CRONJOB_GENERATED_SITEMAP_FILE',
+								'COM_JMAP_PING_SITEMAP_CRONJOB',						
+								'COM_JMAP_ROBOTS_SITEMAP_ENTRY_CRONJOB',
+								'COM_JMAP_PING_GOOGLE',
+								'COM_JMAP_PING_BING',
+								'COM_JMAP_PING_YANDEX',
+								'COM_JMAP_PING_BAIDU');
 		$this->injectJsTranslations($translations, $doc);
 		
 		// Check for custom link domain
 		$customDomain = trim($componentParams->get('custom_sitemap_domain', ''));
-		$livesite = $customDomain ? rtrim($customDomain, '/') : substr_replace(JURI::root(), "", -1, 1);
+		$livesite = $customDomain ? rtrim($customDomain, '/') : substr_replace(JUri::root(), "", -1, 1);
+		
+		if($customDomain) {
+			$customHttpPort = trim($componentParams->get('custom_http_port', ''));
+			$getPort = $customHttpPort ? ':' . $customHttpPort : null;
+			if($getPort) {
+				$livesite = rtrim($livesite . $getPort, '/');
+			}
+			
+			$adminRoute = JRoute::_('index.php');
+			$pathSubdomain = explode('/administrator', $adminRoute);
+			if(!empty($pathSubdomain[0])) {
+				$livesite = rtrim($livesite . $pathSubdomain[0], '/');
+			}
+		}
 		
 		$user = JFactory::getUser();
 		
@@ -160,6 +182,8 @@ class JMapViewCpanel extends JMapView {
 		$doc->addScriptDeclaration("var jmap_linksRandom=" . $componentParams->get('sitemap_links_random', 0) . ";");
 		$doc->addScriptDeclaration("var jmap_forceFormat=" . $componentParams->get('sitemap_links_forceformat', 0) . ";");
 		$doc->addScriptDeclaration("var jmap_validationAnalysis=" . $componentParams->get('linksanalyzer_validation_analysis', 2) . ";");
+		$doc->addScriptDeclaration("var jmap_splittingStatus=" . $componentParams->get('split_sitemap', 0) . ";");
+		$doc->addScriptDeclaration("var jmap_livesite='" . $livesite . "';");
 		
 		// Assign SEF mode
 		$this->siteRouter = JRouterSite::getInstance('site', array('mode'=>JROUTER_MODE_SEF));
@@ -187,8 +211,8 @@ class JMapViewCpanel extends JMapView {
 		$this->getIcon ( '#xmlsitemap_xslt', 'icon-48-xsl_sitemap.png', JText::_('COM_JMAP_SHOW_XML_MAP_XSLT' ), '', 'title="' . JText::_('COM_JMAP_SHOW_XML_MAP_XSLT' ) . '"', 'class="fancybox"' );
 		$this->getIcon ( '#xmlsitemap_export', 'icon-48-xml_export.png', JText::_('COM_JMAP_EXPORT_XML_SITEMAP' ), '', 'title="' . JText::_('COM_JMAP_EXPORT_XML_SITEMAP' ) . '"', 'class="fancybox"' );
 		$this->getIcon ( substr_replace(JURI::root(), "", -1, 1) . '/index.php?option=com_jmap&task=sitemap.exportxml&format=xml', 'icon-48-analyze.png', JText::_('COM_JMAP_ANALYZE_MAP' ), '', 'title="' . JText::_('COM_JMAP_ANALYZE_MAP' ) . '"', 'class="jmap_analyzer"' );
-		$this->getIcon ( substr_replace(JURI::root(), "", -1, 1) . '/index.php?option=com_jmap&task=sitemap.exportxml&format=xml', 'icon-48-metainfo.png', JText::_('COM_JMAP_METAINFO' ), '', 'title="' . JText::_('COM_JMAP_METAINFO' ) . '"', 'class="jmap_metainfo"' );
 		$this->getIcon ( substr_replace(JURI::root(), "", -1, 1) . '/index.php?option=com_jmap&task=sitemap.exportxml&format=xml', 'icon-48-seospider.png', JText::_('COM_JMAP_SEOSPIDER' ), '', 'title="' . JText::_('COM_JMAP_SEOSPIDER' ) . '"', 'class="jmap_seospider"' );
+		$this->getIcon ( substr_replace(JURI::root(), "", -1, 1) . '/index.php?option=com_jmap&task=sitemap.exportxml&format=xml', 'icon-48-metainfo.png', JText::_('COM_JMAP_METAINFO' ), '', 'title="' . JText::_('COM_JMAP_METAINFO' ) . '"', 'class="jmap_metainfo"' );
 		$this->getIcon ( 'index.php?option=com_jmap&task=indexing.display', 'icon-48-indexing.png', JText::_('COM_JMAP_SITEMAP_INDEXING' ), '', 'title="' . JText::_('COM_JMAP_SITEMAP_INDEXING' ) . '"');
 		$this->getIcon ( 'index.php?option=com_jmap&task=datasets.display', 'icon-48-datasets.png', JText::_('COM_JMAP_SITEMAP_DATASETS' ), '', 'title="' . JText::_('COM_JMAP_SITEMAP_DATASETS' ) . '"');
 		
@@ -236,7 +260,25 @@ class JMapViewCpanel extends JMapView {
 		$this->getIcon ( $livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=gnews', 'icon-48-xml_sitemap_gnews.png', JText::_('COM_JMAP_EXPORT_XML_GNEWS_MAP' ));
 		$this->getIcon ( $livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=mobile', 'icon-48-xml_sitemap_mobile.png', JText::_('COM_JMAP_EXPORT_XML_MOBILE_MAP' ));
 		$this->getIcon ( $livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=videos', 'icon-48-xml_sitemap_videos.png', JText::_('COM_JMAP_EXPORT_XML_VIDEOS_MAP' ));
-		$this->getIcon ( $livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=hreflang', 'icon-48-xml_sitemap_hreflang.png', JText::_('COM_JMAP_EXPORT_XML_HREFLANG_MAP' ), 'data-language="1"');
+		$this->getIcon ( $livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=hreflang', 'icon-48-xml_sitemap_hreflang.png', JText::_('COM_JMAP_EXPORT_XML_HREFLANG_MAP' ), 'data-language="1" class="last-child"');
+			echo '<label class="label label-primary">' . JText::_('COM_JMAP_CRONJOB_XML_LINK') . '</label>';?>
+			<input data-role="sitemap_links" class="sitemap_links hasClickPopover" type="text" value="<?php echo JFilterOutput::ampReplace($livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=xml&cronjobclient=1');?>" />
+			<?php 
+			echo '<label class="label label-primary">' . JText::_('COM_JMAP_CRONJOB_IMAGES_LINK') . '</label>';?>
+			<input data-role="sitemap_links" class="sitemap_links hasClickPopover" type="text" value="<?php echo JFilterOutput::ampReplace($livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=images&cronjobclient=1');?>" />
+			<?php 
+			echo '<label class="label label-primary">' . JText::_('COM_JMAP_CRONJOB_GNEWS_LINK') . '</label>';?>
+			<input data-role="sitemap_links" class="sitemap_links hasClickPopover" type="text" value="<?php echo JFilterOutput::ampReplace($livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=gnews&cronjobclient=1');?>" />
+			<?php 
+			echo '<label class="label label-primary">' . JText::_('COM_JMAP_CRONJOB_MOBILE_LINK') . '</label>';?>
+			<input data-role="sitemap_links" class="sitemap_links hasClickPopover" type="text" value="<?php echo JFilterOutput::ampReplace($livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=mobile&cronjobclient=1');?>" />
+			<?php 
+			echo '<label class="label label-primary">' . JText::_('COM_JMAP_CRONJOB_VIDEOS_LINK') . '</label>';?>
+			<input data-role="sitemap_links" class="sitemap_links hasClickPopover" type="text" value="<?php echo JFilterOutput::ampReplace($livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=videos&cronjobclient=1');?>" />
+			<?php 
+			echo '<label class="label label-primary">' . JText::_('COM_JMAP_CRONJOB_HREFLANG_LINK') . '</label>';?>
+			<input data-role="sitemap_links" class="sitemap_links hasClickPopover" type="text" value="<?php echo JFilterOutput::ampReplace($livesite . '/index.php?option=com_jmap&task=sitemap.exportxml&format=hreflang&cronjobclient=1');?>" />
+		<?php
 		echo '</div>';
 		
 		echo '<div style="display:none" id="rssfeed">';

@@ -1,0 +1,33 @@
+/*------------------------------------*\
+	$sharing - sharing.less
+\*------------------------------------*/
+
+.es-sharing {
+	.es-sharing-list { // @extend .es-item-grid
+		> li {
+			width: 30px;
+			padding-right: 3px;
+			&:nth-child(2n+1) {
+				clear: none;
+			}
+			// &:nth-child(3n+1) {
+			// 	clear: left;
+			// }
+			> a {
+				// border: 1px solid @esBorder;
+				padding: 4px 3px;
+				display: block;
+				font-size: 11px;
+				border-radius: 2px;
+			}
+			.es-sharing-title {
+				display: none;
+			}
+		}
+	}
+}
+
+//dropdown
+.dropdown-menu-sharing {
+	.arrow(6px, white, top, 14px, auto, 0, rgba(0, 0, 0, 0.2));
+}

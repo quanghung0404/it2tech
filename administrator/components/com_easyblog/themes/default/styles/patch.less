@@ -1,0 +1,25 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+@import "elements/variables";
+
+@import "patch/core";
+
+body {
+	@import "patch/joomla25";
+
+}
+
+body.com_easyblog {
+    @import "patch/joomla";
+
+}
+
+@{EasyBlog} {
+	@import "patch/interface";
+	@import "patch/editors";
+}

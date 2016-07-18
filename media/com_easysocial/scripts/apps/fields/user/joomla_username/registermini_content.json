@@ -1,0 +1,9 @@
+[
+    {
+        "language": [
+            "PLG_FIELDS_JOOMLA_USERNAME_CHECKING",
+            "PLG_FIELDS_JOOMLA_USERNAME_EMPTY_USERNAME"
+        ],
+        "adapter": "EasySocial"
+    }
+]

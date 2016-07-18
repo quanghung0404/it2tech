@@ -1,0 +1,44 @@
+.eb-composer-textboxlist {
+
+    // Increases specificity for overriding
+    &.textboxlist {
+        border: 1px solid @eb-composer-border-color;
+        border-bottom: none;
+        border-radius: 3px 3px 0px 0px;
+        background: #fff;
+        min-height: 72px;
+        padding: @eb-composer-gutter/4 - 2;
+    }
+
+    .textboxlist-item {
+        background: #eee;
+        border: 1px solid #ccc;
+        color: #555;
+        border-radius: 3px;
+        .user-select(none);
+        cursor: default;
+
+        &:hover {
+            background: lighten(@brand-danger, 40%);
+            border-color: lighten(@brand-danger, 20%);
+            color: @brand-danger;
+        }
+
+        &.is-locked {
+            background: #729bcd;
+            border: 1px solid #6387b3;
+            color: #fff;
+        }
+
+        .fa-lock {
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            line-height: inherit;
+            width: 24px;
+            text-align: center;
+            .opacity(.7);
+        }
+    }
+}

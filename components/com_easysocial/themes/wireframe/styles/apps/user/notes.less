@@ -1,0 +1,116 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-dashboard
+{
+	.app-notes
+	{
+		.note-items
+		{
+			>li
+			{
+				border: 1px solid #d7d7d7;
+				padding: 12px;
+
+				h4
+				{
+					margin-top: 0;
+				}
+
+				hr
+				{
+					margin-top: 5px;
+				}
+
+				+li
+				{
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}
+
+// Profile view
+.es-profile
+{
+	.app-notes
+	{
+		.note-meta
+		{
+			color: #666;
+			padding-bottom: 8px;
+			border-bottom: 1px dashed #d7d7d7;
+
+			span
+			{
+				i>
+				{
+					margin-right: 4px;
+				}
+				font-size: @baseFontSize;
+			}
+		}
+
+		.note-item
+		{
+			padding: 12px;
+			border: 1px dashed #d7d7d7;
+
+			+ .note-item
+			{
+				margin-top: 25px;
+			}
+
+			.es-action-wrap
+			{
+				margin-top: 15px;
+				font-size: @baseFontSize;
+				padding-left: 0;
+			}
+		}
+
+		.note-excerpt
+		{
+			margin-top: 8px;
+			font-size: @baseFontSize;
+		}
+	}
+}
+
+// Generic entry view
+.app-notes
+{
+	.notes-entry
+	{
+		>hr
+		{
+			margin-top: 5px;
+		}
+
+		.note-excerpt
+		{
+			font-size: @baseFontSize;
+		}
+
+		.es-action-wrap
+		{
+			padding-left: 0;
+		}
+	}
+}
+
+.stream-notes
+{
+	.note-content
+	{
+		margin-top: 10px;
+		padding: 12px;
+		border: 1px dashed #d7d7d7;
+		background: #FEFEF8;
+	}
+}

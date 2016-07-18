@@ -1,0 +1,13 @@
+[
+    {
+        "script": [
+            "site/toolbar/friends",
+            "site/toolbar/story",
+            "site/toolbar/system",
+            "site/toolbar/profile",
+            "site/toolbar/login",
+            "site/toolbar/conversations"
+        ],
+        "adapter": "EasySocial"
+    }
+]

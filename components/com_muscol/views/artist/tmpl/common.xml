@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Common Artist Layout" hidden="true">
+		<message>
+			Displays an artist (detailed albums view)
+		</message>
+	</layout>
+	<state>
+		<name>Common Artist Layout</name>
+		<description>Common Artist Layout</description>
+		<url addpath="/components/com_muscol/elements">
+			<param name="id" type="artistselect" default="0" label="Artist" description="Select an artist" />
+		</url>
+		<params>
+		</params>
+	</state>
+</metadata>

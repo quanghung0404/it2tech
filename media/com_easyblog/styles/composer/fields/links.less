@@ -1,0 +1,16 @@
+.eb-links {
+}
+
+.eb-link-item-group {
+
+    .eb-link-item + .eb-link-item {
+        margin-top: @eb-composer-gutter / 6;
+    }
+
+    &.has-existing-links {
+
+        .eb-link-item.is-new {
+            display: none;
+        }
+    }
+}

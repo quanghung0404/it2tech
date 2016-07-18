@@ -1,0 +1,73 @@
+// VARIATIONS
+
+.eb-mm-variation-list {
+    &.eb-list {
+        border: none;
+    }
+}
+
+.eb-mm-variation-item-group {
+    max-height: 220px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.eb-mm-variation-item {
+
+    &.eb-list-item {
+        padding: @eb-mm-gutter / 4 @eb-mm-gutter;
+    }
+
+    > div {
+        position: relative;
+    }
+
+    i {
+        width: 14px;
+        line-height: 18px;
+        text-align: center;
+        float: left;
+        margin-left: @eb-mm-gutter / -2;
+    }
+
+    span {
+        .text-overflow();
+        line-height: 18px;
+        margin-left: @eb-mm-gutter / 4;
+        padding-right: 72px;
+        display: block;
+    }
+
+    small {
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 18px;
+        font-size: 11px;
+        color: @eb-mm-text-light-color;
+        padding-right: @eb-mm-gutter / 3;
+    }
+
+    &.is-missing {
+
+        i {
+            color: @brand-danger;
+        }
+
+        span {
+            color: @eb-mm-text-light-color;
+        }
+    }
+}
+
+.eb-mm-variation-actions {
+    .btn {
+        display: block;
+        font-weight: normal;
+        font-size: 11px;
+        width: 100%;
+        border-color: #aaa;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

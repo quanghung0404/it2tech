@@ -1,0 +1,28 @@
+{
+	"title": {
+		"default": "PLG_FIELDS_GROUP_TYPE_DEFAULT_TITLE"
+	},
+
+	"description": {
+		"default": "PLG_FIELDS_GROUP_TYPE_DEFAULT_DESCRIPTION"
+	},
+
+	"privacy"	: false,
+
+	"default": {
+        "type": "select",
+        "default": 1,
+        "option": [{
+            "label": "PLG_FIELDS_GROUP_TYPE_PUBLIC",
+            "value": 1
+        },{
+            "label": "PLG_FIELDS_GROUP_TYPE_PRIVATE",
+            "value": 2
+        },{
+            "label": "PLG_FIELDS_GROUP_TYPE_INVITE_ONLY",
+            "value": 3
+        }]
+    },
+
+    "visible_registration": true
+}

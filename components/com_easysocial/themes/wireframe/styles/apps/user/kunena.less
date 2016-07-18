@@ -1,0 +1,106 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-profile
+{
+	.app-kunena
+	{
+		h4
+		{
+			border-bottom: 1px solid #f6f6f6;
+			padding-bottom: 5px;
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+		.stat-meta
+		{
+			margin-top: 15px;
+			border-top: 1px solid #f6f6f6;
+			padding-top: 15px;
+
+			.stat-item
+			{
+				+.stat-item
+				{
+					border-left: 1px solid #f6f6f6;
+					height: 60px;
+				}
+			}
+		}
+
+		.stat-points
+		{
+			text-align: center;
+			font-size: 26px;
+			font-weight: 700;
+			margin-top: 10px;
+		}
+
+		.discussions-list
+		{
+			margin-top: 30px;
+
+			+.discussions-list
+			{
+				margin-top: 50px;
+			}
+
+			.empty
+			{
+				background: #f6f6f6;
+				border: 1px solid #eee;
+				padding: 40px;
+				color: #666;
+				text-align:center;
+			}
+
+			.post-item
+			{
+				.clearfix();
+
+				.post-title
+				{
+					a
+					{
+						font-size: 14px;
+						line-height: 24px;
+						color: #666;
+					}
+				}
+
+				.post-meta
+				{
+					font-size: @baseFontSize;
+				}
+
+				+.post-item
+				{
+					margin-top: 25px;
+				}
+
+				.hits-count
+				{
+					padding: 6px 12px;
+					width: 64px;
+					background: #38648b;
+					border-radius: 3px;
+					-moz-border-radius: 3px;
+					-webkit-border-radius: 3px;
+					color: #fff;
+					text-align: center;
+					float: left;
+					margin-right: 10px;
+				}
+
+				.post-info
+				{
+					margin-left: 90px;
+				}
+			}
+		}
+	}
+}

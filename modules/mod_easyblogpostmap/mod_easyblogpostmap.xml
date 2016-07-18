@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Post Map Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[Post map using Google Maps for your EasyBlog's component]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easyblogpostmap.ini</language>
+	</languages>
+	<files>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>location.php</filename>
+		<filename module="mod_easyblogpostmap">mod_easyblogpostmap.php</filename>
+		<filename>mod_easyblogpostmap.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+				<field name="type" type="list" default="0" label="MOD_EASYBLOGPOSTMAP_FILTER_TYPE" description="MOD_EASYBLOGPOSTMAP_FILTER_TYPE_DESC">
+					<option value="0">COM_MODULES_FILTERBYLATEST_FIELDSET_LABEL</option>
+					<option value="1">COM_MODULES_FILTERBYBLOGGER_FIELDSET_LABEL</option>
+					<option value="2">COM_MODULES_FILTERBYCATEGORY_FIELDSET_LABEL</option>
+					<option value="3">COM_MODULES_FILTERBYTAG_FIELDSET_LABEL</option>
+					<option value="4">COM_MODULES_FILTERBYTEAM_FIELDSET_LABEL</option>
+				</field>
+				<field name="count" type="text" default="5" label="MOD_EASYBLOGPOSTMAP_COUNT" description="MOD_EASYBLOGPOSTMAP_COUNT_DESC" />
+				<field name="showimage" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_SHOW_IMAGE" description="MOD_EASYBLOGPOSTMAP_SHOW_IMAGE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showauthor" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_SHOW_AUTHOR" description="MOD_EASYBLOGPOSTMAP_SHOW_AUTHOR_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showavatar" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_SHOW_AVATAR" description="MOD_EASYBLOGPOSTMAP_SHOW_AVATAR_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showaddress" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_SHOW_SHOW_ADDRESS" description="MOD_EASYBLOGPOSTMAP_SHOW_SHOW_ADDRESS_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showhits" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_SHOW_HITS" description="MOD_EASYBLOGPOSTMAP_SHOW_HITS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showratings" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_SHOW_RATINGS" description="MOD_EASYBLOGPOSTMAP_SHOW_RATINGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="enableratings" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_ENABLE_RATINGS" description="MOD_EASYBLOGPOSTMAP_ENABLE_RATINGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="showcommentcount" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_SHOW_COMMENT_COUNT" description="MOD_EASYBLOGPOSTMAP_SHOW_COMMENT_COUNT_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="filterbylatest">
+				<field name="usefeatured" type="radio" class="btn-group" default="0" label="MOD_EASYBLOGPOSTMAP_SHOW_FEATURED_ONLY" description="MOD_EASYBLOGPOSTMAP_SHOW_FEATURED_ONLY_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="filterbyblogger">
+				<field name="bloggerid" type="text" default="" label="MOD_EASYBLOGPOSTMAP_BLOGGERID" description="MOD_EASYBLOGPOSTMAP_BLOGGERID_DESC" />
+			</fieldset>
+
+			<fieldset name="filterbycategory">
+				<field name="categoryid" type="text" default="" label="MOD_EASYBLOGPOSTMAP_CATEGORYID" description="MOD_EASYBLOGPOSTMAP_CATEGORYID_DESC" />
+			</fieldset>
+
+			<fieldset name="filterbytag">
+				<field name="tagid" type="text" default="" label="MOD_EASYBLOGPOSTMAP_TAGID" description="MOD_EASYBLOGPOSTMAP_TAGID_DESC" />
+			</fieldset>
+
+			<fieldset name="filterbyteam">
+				<field name="teamid" type="text" default="" label="MOD_EASYBLOGPOSTMAP_TEAMID" description="MOD_EASYBLOGPOSTMAP_TEAMID_DESC" />
+			</fieldset>
+
+			<fieldset name="map">
+				<field name="fluid" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_FLUID_MODE" description="MOD_EASYBLOGPOSTMAP_FLUID_MODE_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mapwidth" type="text" default="600" label="MOD_EASYBLOGPOSTMAP_MAP_WIDTH" description="MOD_EASYBLOGPOSTMAP_MAP_WIDTH_DESC" />
+				<field name="mapheight" type="text" default="600" label="MOD_EASYBLOGPOSTMAP_MAP_HEIGHT" description="MOD_EASYBLOGPOSTMAP_MAP_HEIGHT_DESC" />
+				<field name="infowidth" type="text" default="250" label="MOD_EASYBLOGPOSTMAP_INFO_MAX_WIDTH" description="MOD_EASYBLOGPOSTMAP_INFO_MAX_WIDTH_DESC" />
+				<field name="featuredimgwidth" type="text" default="230" label="MOD_EASYBLOGPOSTMAP_FEATURED_IMAGE_MAX_WIDTH" description="MOD_EASYBLOGPOSTMAP_FEATURED_IMAGE_MAX_WIDTH_DESC" />
+				<field name="featuredimgheight" type="text" default="150" label="MOD_EASYBLOGPOSTMAP_FEATURED_IMAGE_MAX_HEIGHT" description="MOD_EASYBLOGPOSTMAP_FEATURED_IMAGE_MAX_HEIGHT_DESC" />
+				<field name="mapui" type="radio" class="btn-group" default="0" label="MOD_EASYBLOGPOSTMAP_SHOW_MAPS_UI" description="MOD_EASYBLOGPOSTMAP_SHOW_MAPS_UI_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="fitbounds" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGPOSTMAP_FIT_MARKER" description="MOD_EASYBLOGPOSTMAP_FIT_MARKER_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="zoom" type="text" default="15" label="MOD_EASYBLOGPOSTMAP_ZOOM_LEVEL" description="MOD_EASYBLOGPOSTMAP_ZOOM_LEVEL_DESC" />
+				<field name="language" type="list" default="en" label="MOD_EASYBLOGPOSTMAP_MAP_LANGUAGE" description="MOD_EASYBLOGPOSTMAP_MAP_LANGUAGE_DESC">
+					<option value="ar">Arabic</option>
+					<option value="eu">Basque</option>
+					<option value="bn">Bengali</option>
+					<option value="bg">Bulgarian</option>
+					<option value="ca">Catalan</option>
+					<option value="zh-CN">Chinese (Simplified)</option>
+					<option value="zh-TW">Chinese (Traditional)</option>
+					<option value="hr">Croatian</option>
+					<option value="cs">Czech</option>
+					<option value="da">Danish</option>
+					<option value="nl">Dutch</option>
+					<option value="en">English</option>
+					<option value="en-AU">English (Australian)</option>
+					<option value="en-GB">English (Great Britain)</option>
+					<option value="fa">Farsi</option>
+					<option value="fil">Filipino</option>
+					<option value="fi">Finnish</option>
+					<option value="fr">French</option>
+					<option value="gl">Galician</option>
+					<option value="de">German</option>
+					<option value="el">Greek</option>
+					<option value="gu">Gujarati</option>
+					<option value="iw">Hebrew</option>
+					<option value="hi">Hindi</option>
+					<option value="hu">Hungarian</option>
+					<option value="id">Indonesian</option>
+					<option value="it">Italian</option>
+					<option value="ja">Japanese</option>
+					<option value="kn">Kannada</option>
+					<option value="ko">Korean</option>
+					<option value="lv">Latvian</option>
+					<option value="lt">Lithuanian</option>
+					<option value="ml">Malayalam</option>
+					<option value="mr">Marathi</option>
+					<option value="no">Norwegian</option>
+					<option value="pl">Polish</option>
+					<option value="pt">Portuguese</option>
+					<option value="pt-BR">Portuguese (Brazil)</option>
+					<option value="pt-PT">Portuguese (Portugal)</option>
+					<option value="ro">Romanian</option>
+					<option value="ru">Russian</option>
+					<option value="sr">Serbian</option>
+					<option value="sk">Slovak</option>
+					<option value="sl">Slovenian</option>
+					<option value="es">Spanish</option>
+					<option value="sv">Swedish</option>
+					<option value="tl">Tagalog</option>
+					<option value="ta">Tamil</option>
+					<option value="te">Telugu</option>
+					<option value="th">Thai</option>
+					<option value="tr">Turkish</option>
+					<option value="uk">Ukrainian</option>
+					<option value="vi">Vietnamese</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx" type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

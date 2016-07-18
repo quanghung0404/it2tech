@@ -1,0 +1,35 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-story-friends-textbox {
+    border: none;
+    min-height: 24px;
+    font-size: @baseFontSize;
+
+    padding: 6px 0 2px; // 2px is to compenstate mentions input 4px margin-bottom
+    padding-left: 10px; // 10px padding
+    padding-right: 10px;
+
+    position: relative;
+    line-height: 22px;
+
+    .clearfix();
+
+    .textboxlist-item {
+        margin: 0 8px 4px -4px;
+    }
+
+    .textboxlist-item + .textboxlist-textField {
+        position: relative;
+        left: -4px;
+    }
+
+    .textboxlist-textField {
+        float: left;
+        font-size: 11px !important;
+    }
+}

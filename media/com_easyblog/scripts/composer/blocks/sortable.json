@@ -1,0 +1,8 @@
+[
+    {
+        "library": [
+            "ui/sortable"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

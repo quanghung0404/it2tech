@@ -1,0 +1,51 @@
+[
+    {
+        "title"        : "APP_EVENT_PHOTOS_SETTINGS_STREAM",
+        "desc"        : "APP_EVENT_PHOTOS_SETTINGS_STREAM_DESC",
+        "fields"    :
+        [
+            {
+                "label"        : "APP_EVENT_PHOTOS_SETTINGS_STREAM_SHARE",
+                "tooltip"    : "APP_EVENT_PHOTOS_SETTINGS_STREAM_SHARE_DESC",
+                "name"        : "stream_share",
+                "type"        : "boolean",
+                "default"    : true
+            },
+            {
+                "label"        : "APP_EVENT_PHOTOS_SETTINGS_STREAM_SHARE_UPLOAD_IN_ALBUM",
+                "tooltip"    : "APP_EVENT_PHOTOS_SETTINGS_STREAM_SHARE_UPLOAD_IN_ALBUM_DESC",
+                "name"        : "stream_upload",
+                "type"        : "boolean",
+                "default"    : true
+            },
+            {
+                "label"        : "APP_EVENT_PHOTOS_SETTINGS_STREAM_UPDATE_AVATAR",
+                "tooltip"    : "APP_EVENT_PHOTOS_SETTINGS_STREAM_UPDATE_AVATAR_DESC",
+                "name"        : "stream_avatar",
+                "type"        : "boolean",
+                "default"    : true
+            },
+            {
+                "label"        : "APP_EVENT_PHOTOS_SETTINGS_STREAM_UPDATE_COVER",
+                "tooltip"    : "APP_EVENT_PHOTOS_SETTINGS_STREAM_UPDATE_COVER_DESC",
+                "name"        : "stream_cover",
+                "type"        : "boolean",
+                "default"    : true
+            }
+        ]
+    },
+    {
+        "title"        : "APP_EVENT_PHOTOS_SETTINGS_WIDGET",
+        "desc"        : "APP_EVENT_PHOTOS_SETTINGS_WIDGET_DESC",
+        "fields"    :
+        [
+            {
+                "label"        : "APP_EVENT_PHOTOS_SETTINGS_WIDGET_ALBUMS",
+                "tooltip"    : "APP_EVENT_PHOTOS_SETTINGS_WIDGET_ALBUMS_DESC",
+                "name"        : "widgets_album",
+                "type"        : "boolean",
+                "default"    : true
+            }
+        ]
+    }
+]

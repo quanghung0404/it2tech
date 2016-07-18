@@ -1,0 +1,35 @@
+div#fd.es.mod-es-events .es-events-list {
+  list-style: none;
+}
+div#fd.es.mod-es-events .es-events-list > li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+div#fd.es.mod-es-events .es-events-list > li .es-event-object {
+  margin-bottom: 5px;
+}
+div#fd.es.mod-es-events .es-events-list > li .es-event-avatar {
+  float: right;
+}
+div#fd.es.mod-es-events .es-events-list > li .es-event-avatar + .es-event-object {
+  margin-right: 35px;
+}
+div#fd.es.mod-es-events .es-events-list > li .event-title {
+  font-size: 14px;
+  display: inline-block;
+}
+div#fd.es.mod-es-events .es-events-list > li .es-event-meta {
+  font-size: 10px;
+  color: #666;
+}
+div#fd.es.mod-es-events .es-events-list > li .es-event-meta span {
+  margin-right: 5px;
+}
+div#fd.es.mod-es-events .es-events-list > li .es-event-meta span +span {
+  border-left: 1px dotted #d7d7d7;
+  padding-left: 8px;
+}
+div#fd.es.mod-es-events .es-events-list > li +li {
+  padding-top: 10px;
+  border-top: 1px dotted #d7d7d7;
+}

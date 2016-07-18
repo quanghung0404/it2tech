@@ -1,0 +1,102 @@
+//
+// uploader
+// --------------------------------------------------
+.form-uploader {
+	//form uploader
+	.upload-submit {
+		clear: both;
+		padding: 18px 10px;
+		border: 2px dashed @esBorder;
+		margin-top: 20px;
+		border-radius: 3px;
+		.clearfix();
+	}
+	.queue-item {
+		clear: both;
+		padding: 10px;
+		border: 1px solid @esBorder;
+		position: relative;
+		border-radius: 3px;
+		+ .queue-item {
+			margin-top: 10px;
+		}
+		//padding for remove icon
+		.media {
+			padding-right: 40px;
+			.media-object {
+				margin-right: 20px;
+			}
+		}
+		.queue-item-thumb {
+			.square(32px);
+			background: @esBorder;
+		}
+		.queue-item-info {
+			position: relative;
+			margin-bottom: 4px;
+			> span {
+				display: inline-block;
+				position: relative;
+			}
+		}
+		.queue-item-name {
+
+		}
+		.queue-item-size {
+			color: @grayLight;
+		}
+		.queue-item-size,
+		.queue-item-status {
+			padding-left: 6px;
+			margin-left: 6px;
+			&:before {
+				display: block;
+				content: '';
+				background: @grayLight;
+				width: 1px;
+				height: 11px;
+				position: absolute;
+				top: 4px;
+				left: 0;
+			}
+
+		}
+		.queue-item-status {
+			// border-left: 1px solid @grayLight;
+
+		}
+		.progress {//extend
+			height: 8px;
+			margin: 0;
+		}
+		&.is-queue {
+		}
+		&.is-done {
+			.queue-item-info {
+				top: 5px;
+			}
+			.queue-item-status {
+				color: #a4c757;
+			}
+			.progress {
+				display: none;
+			}
+		}
+		&.is-error {
+			.queue-item-status {
+				color: #B94A48;
+			}
+		}
+	}//queue-item
+	.attach-remove {
+		position: absolute;
+		top: 14px;
+		right: 10px;
+		padding: 0 4px;
+		width: 20px;
+		height: 20px;
+		font-size: 14px;
+		color: #666;
+		line-height: 14px;
+	}
+}

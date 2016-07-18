@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "tinyscrollbar"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_FRIENDS_REQUEST_REJECTED"
+        ],
+        "adapter": "EasySocial"
+    }
+]

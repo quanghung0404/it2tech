@@ -38,6 +38,10 @@ $formEnctype = $this->record->type == 'plugin' ? 'enctype="multipart/form-data"'
 	<?php if($this->record->type == 'plugin' && $this->record->id) {
 		echo $this->loadTemplate('edit_pluginparams');
 	}?>	
+	<!-- Links Data source only --> 
+	<?php if($this->record->type == 'links') {
+		echo $this->loadTemplate('edit_links');
+	}?>	
 	<input type="hidden" name="option" value="<?php echo $this->option?>" />
 	<input type="hidden" name="id" value="<?php echo $this->record->id; ?>" />
 	<input type="hidden" id="regenerate_query" name="regenerate_query" value="" />

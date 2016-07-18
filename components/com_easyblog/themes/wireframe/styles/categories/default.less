@@ -1,0 +1,133 @@
+// Turn off styling for html tag
+// img
+// {
+// 	max-width: none;
+// 	max-height: none;
+// }
+
+.eb-category {
+	overflow: hidden;
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	margin-bottom: @eb-gutter;
+}
+
+.eb-category-profile {
+    padding: @eb-gutter;
+
+    .col-cell + .col-cell {
+        padding-left: @eb-gutter;
+    }
+}
+
+.eb-category-name {
+	font-size: @eb-box-title-size;
+}
+
+.eb-category-bio,
+.eb-category-subs {
+    border-top: 1px solid @eb-box-divider;
+	padding: @eb-gutter 0;
+    margin: 0 @eb-gutter;
+}
+
+.eb-category-subscribe {
+	margin-top: @eb-gutter/2;
+	overflow: hidden;
+
+	> span + span {
+		border-left: 1px solid @eb-box-divider;
+	}
+}
+
+.eb-category-stats {
+	margin: 0 20px 20px;
+}
+
+
+
+.eb-category-sm {
+	overflow: hidden;
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	padding: @eb-gutter/3;
+
+	+ .eb-category-sm {
+		margin-top: @eb-gutter/3;
+	}
+
+	> a,
+	> div {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.eb-category-sm-thumb {
+	img {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+.eb-category-sm-body {
+	padding: 0 0 0 @eb-gutter/2;
+}
+
+.eb-category-sm-name {
+	font-size: 16px;
+}
+
+.eb-category-sm-subscribe {
+	font-size: 90%;
+	margin-top: 10px;
+	overflow: hidden;
+
+	> span {
+		float: left;
+		display: inline-block;
+
+		+ span {
+			margin: 0 0 0 10px;
+			padding: 0 0 0 10px;
+			border-left: 1px solid @eb-box-divider;
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+
+	.fa {
+		font-size: 14px;
+	}
+}
+
+
+// Responsive
+// ----------------
+&.w320 {
+    .eb-category-thumb,
+    .eb-category-details {
+        display: block;
+    }
+    .eb-category-profile .col-cell {
+        + .col-cell {
+            padding-top: 15px;
+            padding-left: 0;    
+        }
+    }
+    .eb-category-subscribe {
+        margin-top: 20px;
+        > span {
+            display: block;
+            width: 100%;
+            + span {
+                border-left: 0;
+                border-top: 1px solid @eb-box-divider;
+                margin: 10px 0 0 0;
+                padding: 10px 0 0 0;
+            }
+        }
+    }
+}

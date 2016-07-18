@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="easyblog" method="upgrade">
+	<name>EasyBlog - Auto Article</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>24 Sept 2010</creationDate>
+	<copyright>Copyright 2009 - 2010 StackIdeas. All rights reserved.</copyright>
+	<license>GPL License</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://www.stackideas.com</authorUrl>
+	<version>5.0.1</version>
+	<description>
+		EasyBlog auto article creation
+	</description>
+	<files>
+		<filename plugin="autoarticle">autoarticle.php</filename>
+		<filename>index.html</filename>
+		<folder>elements</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/plugins/easyblog/autoarticle/elements/fields">
+				<field
+					name="status"
+					type="list"
+					default="0"
+					label="Default article status"
+					description="Default article status." >
+					<option value="0">Unpublish</option>
+					<option value="1">Publish</option>
+				</field>
+
+				<field
+					name="access"
+					type="list"
+					default="-1"
+					label="Article's permission"
+					description="Default article's permission." >
+					<option value="-1"> Follow EasyBlog Permission</option>
+					<option value="0"> Public </option>
+					<option value="1"> Registered </option>
+					<option value="2"> Special </option>
+				</field>
+
+				<field
+					name="frontpage"
+					type="list"
+					default="1"
+					label="Frontpage"
+					description="Whether or not to show joomla article at frontpage." >
+					<option value="-1"> Follow EasyBlog Frontpage</option>
+					<option value="0"> No </option>
+					<option value="1"> Yes </option>
+				</field>
+
+				<field name="unpublish" type="list" default="0" label="Automatically unpublish" description="Automatically unpublish content items once a blog post is deleted">
+					<option value="0"> No </option>
+					<option value="1"> Yes </option>
+				</field>
+
+				<field
+					name="sectionCategory"
+					type="modal_categories"
+					default="0"
+					label="Default article's category"
+					description="Specify the default joomla category in your article." />
+
+				<field name="autocategory" type="list" default="0" label="Auto map Joomla category" description="If enabled, EasyBlog will try to map the category from your Joomla. If mapping failed, EasyBlog fall back to the default category defined in above.">
+					<option value="0"> No </option>
+					<option value="1"> Yes </option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

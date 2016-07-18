@@ -1,0 +1,321 @@
+/*------------------------------------*\
+	$Flyout - dropdowns.less
+\*------------------------------------*/
+//
+// Dropdown menus
+// --------------------------------------------------
+
+
+// Use the .menu class on any <li> element within the topbar or ul.tabs and you'll get some superfancy dropdowns
+.dropup,
+.dropdown_ {
+  position: relative;
+}
+.dropdown-toggle_ {
+  // The caret makes the toggle a bit too tall in IE7
+  *margin-bottom: -3px;
+}
+.dropdown-toggle_:active,
+.open .dropdown-toggle_ {
+  outline: 0;
+}
+
+
+
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @zindex-dropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  background-color: @dropdownBackground;
+  border: 1px solid #ccc; // Fallback for IE7-8
+  border: 1px solid @dropdownBorder;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+
+  border-radius: 3px;
+  .box-shadow(0 5px 10px rgba(0,0,0,.2));
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+
+  // Aggressive way to standardize dropdown menu font size
+  * {
+    font-size: 11px !important;
+  }
+
+  //
+  li {
+    // Issue #1887 prevent .dropdown-menu li float left/right
+    float: none;
+    // Reset .dropdown-menu > li
+    border: none;
+  }
+
+  // Aligns the dropdown menu to right
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // Dividers (basically an hr) within the dropdown
+  .divider {
+    .nav-divider(@dropdown-divider-bg);
+  }
+
+  // Links within the dropdown menu
+  li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: @baseLineHeight;
+    color: @dropdownlinkColor;
+    white-space: nowrap;
+    // border-top: 1px solid transparent;
+    // border-bottom: 1px solid transparent;
+  }
+  li > h5 {
+    color: #666;
+  }
+
+  // Footer (for actions)
+  .modal-footer {
+    padding: 10px 15px 11px;
+    margin-bottom: 0;
+    text-align: right; // right align buttons
+    background-color: #f5f5f5;
+    border-top: 1px solid @esBorder;
+    border-radius: 0 0 6px 6px;
+    .box-shadow(inset 0 1px 0 @white);
+    .clearfix(); // clear it in case folks use .pull-* classes on buttons
+
+    // Properly space out buttons
+    .btn + .btn {
+      margin-left: 5px;
+      margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+    }
+    // but override that for button groups
+    .btn-group .btn + .btn {
+      margin-left: -1px;
+    }
+    // and override it for block buttons as well
+    .btn-block + .btn-block {
+      margin-left: 0;
+    }
+  }
+}
+
+// Hover state
+// -----------
+// .dropdown-menu li > a:hover,
+// .dropdown-menu li > a:focus,
+// .dropdown-submenu:hover > a {
+//   text-decoration: none;
+//   color: @dropdownlinkColorHover;
+//   #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 5%));
+
+//   // background: #E7EDF3;
+//   border-top: 1px solid @dropdownDividerHoverTop;
+//   border-bottom: 1px solid @dropdownDividerHoverBottom;
+// }
+// Hover/Focus state
+.dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @dropdown-link-hover-color;
+    background-color: @dropdown-link-hover-bg;
+  }
+}
+
+// Active state
+// ------------
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  color: @dropdownlinkColorActive;
+  text-decoration: none;
+  outline: 0;
+  #gradient > .vertical(@dropdownLinkBackgroundActive, darken(@dropdownLinkBackgroundActive, 5%));
+}
+
+// Disabled state
+// --------------
+// Gray out text and ensure the hover state remains gray
+.dropdown-menu .disabled > a,
+.dropdown-menu .disabled > a:hover {
+  color: @grayLight;
+}
+// Nuke hover effects
+.dropdown-menu .disabled > a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none; // Remove CSS gradient
+  cursor: default;
+}
+
+// Open state for the dropdown
+// ---------------------------
+.open {
+  // IE7's z-index only goes to the nearest positioned ancestor, which would
+  // make the menu appear below buttons that appeared later on the page
+  *z-index: @zindex-dropdown;
+
+  & > .dropdown-menu {
+    display: block;
+  }
+}
+
+// Right aligned dropdowns
+// ---------------------------
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+// ------------------------------------------------------
+// Just add .dropup after the standard .dropdown class and you're set, bro.
+// TODO: abstract this so that the navbar fixed styles are not placed here?
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  // Reverse the caret
+  .caret {
+    border-top: 0;
+    border-bottom: 4px solid @black;
+    content: "";
+  }
+  // Different positioning for bottom up menu
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 1px;
+  }
+}
+
+// Sub menus
+// ---------------------------
+.dropdown-submenu {
+  position: relative;
+}
+// Default dropdowns
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+// Dropups
+.dropup .dropdown-submenu > .dropdown-menu {
+  top: auto;
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: -2px;
+  border-radius: 5px 5px 5px 0;
+}
+
+// Caret to indicate there is a submenu
+.dropdown-submenu > a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: darken(@dropdownBackground, 20%);
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover > a:after {
+  border-left-color: @dropdownlinkColorHover;
+}
+
+// Left aligned submenus
+.dropdown-submenu.pull-left {
+  // Undo the float
+  // Yes, this is awkward since .pull-left adds a float, but it sticks to our conventions elsewhere.
+  float: none;
+
+  // Positioning the submenu
+  > .dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    border-radius: 6px 0 6px 6px;
+  }
+}
+
+// Tweak nav headers
+// -----------------
+// Increase padding from 15px to 20px on sides
+.dropdown .dropdown-menu .nav-header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+// Typeahead
+// ---------
+.typeahead {
+  z-index: 1051;
+  margin-top: 2px; // give it some space to breathe
+  border-radius: @baseBorderRadius;
+}
+
+
+
+// dropdown menu arrow
+// ----------------
+//// .arrow(size, color, direction, left-offset, right-offset, border-size, border-color);
+.dropdown-arrow-topleft {
+  margin-top: 10px;
+  .arrow(7px, @esArrowBackground, top, 20px, auto, 0, @dropdownBorder);
+}
+.dropdown-arrow-topright {
+  margin-top: 10px;
+  .arrow(7px, @esArrowBackground, top, auto, 20px, 0, @dropdownBorder);
+}
+.dropdown-arrow-topcenter {
+  margin-top: 10px;
+  .arrow(7px, @esArrowBackground, top, 50%, auto, 0, @dropdownBorder);
+
+
+  // Ensure arrow is centered
+  &:before{
+    margin-left: -9px;
+  }
+  &:after {
+    margin-left: -8px;
+    left: 50%;
+  }
+}
+
+
+//divider
+.dropdown-menu .divider {
+  background: @dropdownDividerBackground;
+}
+
+
+//dropdown-menu-modal
+.dropdown-menu-modal {
+  width: 450px;
+  padding: 0;
+  [class*=" modal-"],
+  [class^="modal-"] {
+    border: 0;
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="file" version="3.0" method="upgrade">
+	<name>RAXO Module Template (K2) - All-mode Bricks</name>
+	<author>RAXO Group</author>
+	<copyright>Copyright (C) 2009-2014 RAXO Group. All rights reserved.</copyright>
+	<authorEmail>support@raxo.org</authorEmail>
+	<authorUrl>http://www.raxo.org</authorUrl>
+	<license>
+		GNU General Public License v2.0 for PHP files.
+		If not otherwise stated, all other files (CSS, JS, images, icons, etc) are NOT GPL, these files are under RAXO Commercial License.
+	</license>
+	<version>1.0</version>
+	<creationDate>September 2014</creationDate>
+	<description>
+		<![CDATA[<h3 style="margin-left:10px">All-mode Bricks <span style="font-weight:normal">(RAXO All-mode K2 J3.x Template)</span></h3><p>Now you can choose this template in Template Options in RAXO All-mode K2 module administration panel.</p>]]>
+	</description>
+	<fileset>
+		<files target="modules/mod_raxo_allmode_k2/tmpl">
+			<filename>allmode-bricks.php</filename>
+			<filename>allmode-bricks.xml</filename>
+			<folder>allmode-bricks</folder>
+		</files>
+	</fileset>
+</extension>

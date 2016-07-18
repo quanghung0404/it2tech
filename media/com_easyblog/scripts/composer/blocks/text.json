@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "colorpicker",
+            "nouislider"
+        ],
+        "script": [
+            "layout/elements"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

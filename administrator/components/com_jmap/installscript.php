@@ -194,6 +194,20 @@ class com_jmapInstallerScript {
 			}
 		}
 		
+		// DB UPDATES PROCESSING
+		$queryFields = 	"SHOW COLUMNS " .
+						"\n FROM " . $database->quoteName('#__jmap_metainfo');
+		$database->setQuery($queryFields);
+		try {
+			$elements = $database->loadColumn();
+			if(!in_array('meta_image', $elements)) {
+				$addFieldQuery = "ALTER TABLE " .  $database->quoteName('#__jmap_metainfo') .
+								 "\n ADD " . $database->quoteName('meta_image') .
+								 "\n VARCHAR( 255 ) NULL AFTER " .  $database->quoteName('meta_desc');
+				$database->setQuery($addFieldQuery)->execute();
+			}
+		} catch (Exception $e) { }
+		
 		// Processing complete
 		return true;
 	}
@@ -214,6 +228,8 @@ class com_jmapInstallerScript {
 			if (isset($parentManifest->install->sql)) {
 				$parentParent->parseSQLFiles($parentManifest->install->sql);
 			}
+			// Force refresh of the SEO stats on update to the 4.0 SEMrush new branch
+			echo ("<script>if(window.sessionStorage !== null){sessionStorage.removeItem('seostats');}</script>");
 		} catch (Exception $e) {
 			// Do nothing for user for Joomla 3.x case, case Exception handling
 		}
@@ -283,6 +299,7 @@ class com_jmapInstallerScript {
 			//Caching
 			$params ['enable_view_cache'] = '0';
 			$params ['lifetime_view_cache'] = '1';
+			$params ['rss_lifetime_view_cache'] = '60';
 			$params ['enable_precaching'] = '0';
 			$params ['precaching_limit_xml'] = '5000';
 			$params ['precaching_limit_images'] = '50';
@@ -306,6 +323,7 @@ class com_jmapInstallerScript {
 			$params ['images_global_filter_exclude'] = '';
 			$params ['videos_global_filter_include'] = '';
 			$params ['videos_global_filter_exclude'] = '';
+			$params ['cdn_protocol'] = '';
 			$params ['rss_channel_name'] = '';
 			$params ['rss_channel_description'] = '';
 			$params ['rss_channel_image'] = '';
@@ -324,12 +342,14 @@ class com_jmapInstallerScript {
 			// Advanced settings
 			$params ['include_archived'] = '0';
 			$params ['multiple_content_sources'] = '0';
+			$params ['enable_articles_exclusions'] = '1';
 			$params ['disable_acl'] = 'enabled';
 			$params ['showalways_language_dropdown'] = '';
 			$params ['lists_limit_pagination'] = '10';
 			$params ['selectable_limit_pagination'] = '10';
 			$params ['seostats_custom_link'] = '';
 			$params ['seostats_enabled'] = '1';
+			$params ['seostats_site_query'] = '1';
 			$params ['linksanalyzer_workingmode'] = '1';
 			$params ['linksanalyzer_validation_analysis'] = '2';
 			$params ['linksanalyzer_indexing_analysis'] = '1';
@@ -347,7 +367,7 @@ class com_jmapInstallerScript {
 			$params ['custom_sitemap_domain'] = '';
 			$params ['custom_http_port'] = '';
 			$params ['resources_limit_management'] = '1';
-			$params ['advanced_multilanguage'] = '1';
+			$params ['advanced_multilanguage'] = '0';
 			$params ['socket_mode'] = 'dns';
 			$params ['site_itemid'] = '';
 			$params ['metainfo_urldecode'] = '1';

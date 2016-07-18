@@ -1,0 +1,103 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+&.eb-greenie {
+	background: @eb-box-shade;
+	padding: @eb-gutter;
+	border-radius: @eb-box-radius+2;
+}
+
+.eb-empty {
+	background: @eb-box-shade-lite;
+}
+
+// POST
+
+.eb-post,
+.eb-entry {
+	background: #fff;
+	padding: @eb-gutter;
+	border-radius: 3px;
+	border: 1px solid darken(@eb-box-shade, 10%);
+	border-bottom-color: darken(@eb-box-shade, 15%);
+}
+
+.eb-post-foot {
+	border-top: 1px solid darken(@eb-box-shade, 5%);
+	margin: @eb-gutter -@eb-gutter 0 0;
+	padding-top: @eb-gutter;
+}
+
+
+// PAGINATION
+
+.eb-pager {
+	background: @eb-box-background;
+}
+
+
+// ENTRY 
+
+.eb-entry-nav {
+	background: @eb-box-background;
+
+	> div > a:hover {
+		background: @eb-box-shade-lite;
+	}
+}
+
+.eb-entry-author {
+	background: @eb-box-background;
+}
+
+.eb-entry-author-recents {
+	background: @eb-box-shade-lite;
+}
+
+
+// CATEGORIES, BLOGGERS, TEAMBLOGS LISTING
+
+.eb-category,
+.eb-author {
+	background: @eb-box-background;
+}
+
+.eb-authors-head {
+	background: @eb-box-shade-lite;
+}
+
+
+// CALENDARS
+
+.eb-calendar-days > td {
+	background: @eb-box-shade-lite;
+}
+
+
+// COMMENTS
+
+.eb-comment {
+	background: @eb-box-shade-lite;
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	padding: @patch-spacing;
+	margin: @eb-gutter/2 0 0;
+
+	+ .eb-comment-form {
+		margin: 5px 0 0;
+	}
+}
+
+.eb-comment-form {
+	background: @eb-box-shade-lite;
+}
+
+// SHOWCASE
+
+.eb-showcase {
+	background: #fff;
+}

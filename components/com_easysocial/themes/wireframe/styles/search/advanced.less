@@ -1,0 +1,95 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+    advanced-search.less
+\*------------------------------------*/
+.es-adv-search {
+    .es-title {
+        font-weight: bold;
+        margin: 20px 0 10px;
+    }
+    .form-criteria {
+        width: 90%; // reserve space for minus icon
+        margin-bottom: 10px;
+        select {
+            font-weight: bold;
+        }
+    }
+
+    .form-condition {
+        display: table;
+        width: 100%;
+        > span {
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 3px;
+        }
+        .form-control {
+            width: 100%;
+        }
+
+        // datepicker
+        .datepicker-wrap input {
+            width: 100%;
+        }
+    }
+
+    .form-inline {
+        + .form-inline {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid @esBorder;
+        }
+        [data-itemdatakey],
+        [data-itemcriteria],
+        [data-itemoperator] {
+            width: 22%;
+        }
+        [data-itemcondition] {
+            max-width: 150px;
+        }
+
+        .form-plus-minus {
+            float: right;
+            margin-left: 10px;
+            position: relative;
+            z-index: 2;
+            i {
+                margin-right: 2px;
+            }
+            .ies-minus-2 {
+                color: #C94332;
+            }
+            .ies-plus-2 {
+                color: #8AC72C;
+            }
+        }
+    }
+}
+
+&.w480 {
+    .es-adv-search {
+        .form-criteria {
+
+            width: 80%;
+        }
+        .form-condition {
+            margin-bottom: 0;
+        }
+        .form-plus-minus {
+            margin: 0 0 10px;
+        }
+        .form-inline {
+            + .form-inline {
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+        }
+    }
+
+
+}

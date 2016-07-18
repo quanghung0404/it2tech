@@ -1,0 +1,49 @@
+.eb-list {
+    border: 1px solid @eb-composer-border-color;
+    border-radius: @border-radius;
+    background: #fff;
+}
+
+.eb-list-item-group {
+}
+
+.eb-list-item {
+
+    padding: @eb-composer-gutter/3 @eb-composer-gutter/2;
+    position: relative;
+    cursor: pointer;
+
+    + .eb-list-item {
+        border-top: 1px solid @eb-composer-border-light-color;
+    }
+
+    &:before {
+        display: none;
+        content: "\f00c";
+
+        position: absolute;
+        top: 50%;
+        right: @eb-composer-gutter/2;
+
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 12px;
+        line-height: 12px;
+        margin-top: -6px;
+        color: @eb-composer-text-light-color;
+    }
+
+    &:hover:not(.active) {
+        &:before {
+            display: block;
+        }
+    }
+
+    &.active {
+        background: @eb-composer-active-color;
+
+        &:before {
+            display: block;
+            color: @eb-composer-accent-color;
+        }
+    }
+}

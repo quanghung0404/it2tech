@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Random Post Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[Displays random blog posting from EasyBlog.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easyblograndompost.ini</language>
+	</languages>
+	<files>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename module="mod_easyblograndompost">mod_easyblograndompost.php</filename>
+		<filename>mod_easyblograndompost.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+
+				<field name="module_layout" type="radio" class="btn-group" default="vertical" label="MOD_EASYBLOGRANDOMPOST_LAYOUT" description="MOD_EASYBLOGRANDOMPOST_LAYOUT_DESC">
+					<option value="vertical">MOD_EASYBLOGRANDOMPOST_VERTICAL</option>
+					<option value="horizontal">MOD_EASYBLOGRANDOMPOST_HORIZONTAL</option>
+				</field>
+
+				<field name="column" type="text" default="4" label="MOD_EASYBLOGRANDOMPOST_COLUMN_NUMBER" description="MOD_EASYBLOGRANDOMPOST_COLUMN_NUMBER_DESC" />
+
+				<field name="total" type="text" default="5" label="MOD_EASYBLOGRANDOMPOST_COUNT" description="MOD_EASYBLOGRANDOMPOST_COUNT_DESC" />
+
+				<field name="catid" type="text" default="" label="MOD_EASYBLOGRANDOMPOST_CATEGORY_ID" description="MOD_EASYBLOGRANDOMPOST_CATEGORY_ID_DESC" />
+
+				<field name="showintro" type="list" class="btn-group" default="0" label="MOD_EASYBLOGRANDOMPOST_SHOW_INTRO" description="MOD_EASYBLOGRANDOMPOST_SHOW_INTRO_DESC">
+					<option value="-1">Do not show any content</option>
+					<option value="0">Introtext</option>
+					<option value="1">Main content</option>
+				</field>
+
+				<field name="textcount" type="text" default="200" label="MOD_EASYBLOGRANDOMPOST_TOTAL_CHARACTERS" description="MOD_EASYBLOGRANDOMPOST_TOTAL_CHARACTERS_DESC" />
+
+				<field name="showcommentcount" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_COMMENT_COUNT" description="MOD_EASYBLOGRANDOMPOST_COMMENT_COUNT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showratings" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_SHOW_RATINGS" description="MOD_EASYBLOGRANDOMPOST_SHOW_RATINGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="enableratings" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_ENABLE_RATINGS" description="MOD_EASYBLOGRANDOMPOST_ENABLE_RATINGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="increasehits" type="radio" class="btn-group" default="0" label="MOD_EASYBLOGRANDOMPOST_INCREASE_HITS" description="MOD_EASYBLOGRANDOMPOST_INCREASE_HITS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="striptags" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_STRIP_HTML_TAGS" description="MOD_EASYBLOGRANDOMPOST_STRIP_HTML_TAGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showhits" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_SHOW_HITS" description="MOD_EASYBLOGRANDOMPOST_SHOW_HITS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showavatar" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_SHOW_AVATAR" description="MOD_EASYBLOGRANDOMPOST_SHOW_AVATAR_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showreadmore" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_SHOW_READ_MORE" description="MOD_EASYBLOGRANDOMPOST_SHOW_READ_MORE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showauthor" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_SHOW_POST_BY" description="MOD_EASYBLOGRANDOMPOST_SHOW_POST_BY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showdate" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_SHOW_DATE" description="MOD_EASYBLOGRANDOMPOST_SHOW_DATE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset name="Photos" addfieldpath="/administrator/components/com_easyblog/elements/">
+				<field name="photo_show" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_PHOTO_SHOW" description="MOD_EASYBLOGRANDOMPOST_PHOTO_SHOW_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="photo_legacy" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_PHOTO_LEGACY" description="MOD_EASYBLOGRANDOMPOST_PHOTO_LEGACY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="photo_size" type="list" default="default" label="MOD_EASYBLOGRANDOMPOST_PHOTO_SIZE" description="Set the photo size.">
+                    <option value="large">MOD_EASYBLOGRANDOMPOST_PHOTO_SIZE_LARGE</option>
+					<option value="medium">MOD_EASYBLOGRANDOMPOST_PHOTO_SIZE_MEDIUM</option>
+					<option value="small">MOD_EASYBLOGRANDOMPOST_PHOTO_SIZE_SMALL</option>
+
+				</field>
+				<field name="photo_layout" type="cover" label="MOD_EASYBLOGRANDOMPOST_PHOTO_LAYOUT_TYPE" description="MOD_EASYBLOGRANDOMPOST_PHOTO_LAYOUT_TYPE_DESC" crop="1" full="1" defaultwidth="260" defaultheight="200" />
+				<field name="alignment" type="list" default="center" label="Alignment" description="Set the photo alignment.">
+                    <option value="center">MOD_EASYBLOGRANDOMPOST_CENTER</option>
+					<option value="left">MOD_EASYBLOGRANDOMPOST_LEFT</option>
+					<option value="right">MOD_EASYBLOGRANDOMPOST_RIGHT</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="Videos">
+				<field name="video_show" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGRANDOMPOST_VIDEO_SHOW" description="MOD_EASYBLOGRANDOMPOST_VIDEO_SHOW_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="video_width" type="text" default="250" size="5" label="MOD_EASYBLOGRANDOMPOST_VIDEO_WIDTH" description="MOD_EASYBLOGRANDOMPOST_VIDEO_WIDTH_DESC" />
+
+				<field name="video_height" type="text" default="250" size="5" label="MOD_EASYBLOGRANDOMPOST_VIDEO_HEIGHT" description="MOD_EASYBLOGRANDOMPOST_VIDEO_HEIGHT_DESC" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

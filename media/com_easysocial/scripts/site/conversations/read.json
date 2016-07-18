@@ -1,0 +1,16 @@
+[
+    {
+        "library": [
+            "dialog"
+        ],
+        "script": [
+            "site/conversations/composer",
+            "site/friends/suggest"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_CONVERSATION_REPLY_POSTED_SUCCESSFULLY",
+            "COM_EASYSOCIAL_CONVERSATION_REPLY_FORM_EMPTY"
+        ],
+        "adapter": "EasySocial"
+    }
+]

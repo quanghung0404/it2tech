@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "dialog"
+        ],
+        "stylesheet": [
+            "dialog/default"
+        ],
+        "adapter": "Komento"
+    }
+]

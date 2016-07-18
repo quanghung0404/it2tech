@@ -1,0 +1,315 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+    text-shadow: none !important;
+    box-shadow: none; // reset box-shadow for BS2
+}
+.btn-es {
+    .button-variant(@btn-default-color; @esBackground; @esBorder);
+    transition: none 0s ease 0s;
+    &.active {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    }
+}
+.btn-clear {
+    .icon-es-x {
+        top: 5px;
+    }
+}
+.btn.btn-clean {
+    .button-variant(@btn-default-color; @esBackground; @esBorder);
+    &:hover {
+        background: none;
+    }
+}
+.btn.btn-notext {
+    height: 31px;
+    padding: 4px 8px; //default size
+    .icon-es-white,
+    .icon-es-black {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    &.btn-mini {
+        height: 23px;
+    }
+}
+.btn-radius {
+    border-radius: @borderRadiusSmall;
+}
+.btn-group {
+    > .btn-radius {
+        &:first-child {
+            border-radius: @borderRadiusSmall;
+        }
+    }
+}
+
+// extend .btn
+.btn {
+    &.btn-dashed
+    {
+        border: 1px dashed @esBorder;
+        background: none;
+    }
+}
+
+.btn {
+    &.btn-stream-updates {
+        font-size: 11px;
+        width: 100%;
+    }
+}
+
+
+.btn-loading {
+    position: relative;
+    padding-left: 26px;
+    text-indent: -9999px;
+    min-width: 26px;
+    &:before {
+        position: absolute;
+        margin-top: 3px;
+        left: 6px;
+        content: '';
+        display: block;
+        width: 16px;
+        height: 11px;
+        background: url('@{media_uri}/images/loading.gif') no-repeat;
+    }
+    &.with-text {
+        text-indent: 0;
+    }
+}
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+.btn-es-primary.active,
+.btn-es-warning.active,
+.btn-es-danger.active,
+.btn-es-success.active,
+.btn-es-info.active,
+.btn-es-inverse.active {
+    color: rgba(255,255,255,.75);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn-es-primary,
+.btn-es-primary:focus {
+    color: #fff !important;
+    border: 1px solid @btnEsPrimaryBorder !important;
+    #gradient > .vertical(@start-color: @btnEsPrimaryBackgroundHighlight; @end-color: @btnEsPrimaryBackground) !important;
+    background-position: 0; // override bs2 templates
+    > a {
+        color: #fff;
+    }
+}
+
+// Success appears as green
+.btn-es-success,
+.btn-es-success:focus {
+    color: #fff !important;
+    border: 1px solid @btnEsSuccessBorder !important;
+    #gradient > .vertical(@start-color: @btnEsSuccessBackgroundHighlight; @end-color: @btnEsSuccessBackground) !important;
+    background-position: 0; // override bs2 templates
+}
+
+// Warning appears are orange
+.btn-es-warning,
+.btn-es-warning:focus {
+    color: #fff !important;
+    border: 1px solid @btnEsWarningBorder !important;
+    #gradient > .vertical(@start-color: @btnEsWarningBackgroundHighlight; @end-color: @btnEsWarningBackground) !important;
+    background-position: 0; // override bs2 templates
+}
+
+// Danger and error appear as red
+.btn-es-danger,
+.btn-es-danger:focus {
+    color: #fff !important;
+    border: 1px solid @btnEsDangerBorder !important;
+    #gradient > .vertical(@start-color: @btnEsDangerBackgroundHighlight; @end-color: @btnEsDangerBackground) !important;
+    background-position: 0; // override bs2 templates
+}
+
+// Info
+.btn-es-info,
+.btn-es-info:focus {
+    color: #fff !important;
+    border: 1px solid @btnEsInfoBorder !important;
+    #gradient > .vertical(@start-color: @btnEsInfoBackgroundHighlight; @end-color: @btnEsInfoBackground) !important;
+    background-position: 0; // override bs2 templates
+}
+
+// Inverse appears as dark gray
+.btn-es-inverse,
+.btn-es-inverse:focus {
+    color: #fff !important;
+    border: 1px solid @btnEsInverseBorder !important;
+    #gradient > .vertical(@start-color: @btnEsInverseBackgroundHighlight; @end-color: @btnEsInverseBackground) !important;
+    background-position: 0; // override bs2 templates
+}
+
+
+// Buttons ES Sizes
+// ----------------
+// Large
+.btn-es,
+[class^="btn-es-"],
+[class*=" btn-es-"] {
+    &:focus {
+        color: #fff;
+    }
+
+    &.btn-large [class^="icon-"],
+    &.btn-large [class*=" icon-"] {
+        margin-top: 2px;
+    }
+
+    // Small
+    &.btn-small {
+        font-size: 12px;
+    }
+
+    &.btn-small [class^="icon-"],
+    &.btn-small [class*=" icon-"] {
+        margin-top: 0;
+    }
+
+    // Mini
+    &.btn-mini {
+        padding: @paddingMini;
+        font-size: @fontSizeMini;
+        border-radius: @borderRadiusSmall;
+        [class^="ies-"],
+        [class*=" ies-"]
+        {
+            line-height: 11px;
+        }
+    }
+}
+
+.btn-es {
+    &:focus
+    {
+        color: @grayDark;
+    }
+}
+
+// .btn-action-followers
+// {
+//  &.is-following,
+//  &.is-following:hover,
+//  &.is-following:focus
+//  {
+//      [class^="ies-"],
+//      [class*=" ies-"]
+//      {
+//          &:before
+//          {
+//              font-size: 9px;
+//          }
+//      }
+//      // #gradient > .vertical(#8dbde6, #72a1d1);
+//      // color: white !important;
+//  }
+// }
+
+// add friends buttons group
+// ----------------
+.btn-action-friends {
+    // .dropdown-toggle
+    // {
+    //  width: 180px;
+    //  overflow: hidden;
+    //  padding: 5px 12px;
+    //  text-align: left;
+    //  z-index: 2;
+    //  background: white;
+    //  font-size: 11px;
+    //  [class^="ies-"],
+    //  [class*=" ies-"]
+    //  {
+    //      margin-right: 8px;
+    //      vertical-align: text-top;
+    //      &:before
+    //      {
+    //          color: #595959;
+    //          font-size: 11px;
+    //          position: relative;
+    //          top: 2px;
+    //          left: 1px;
+    //      }
+    //  }
+    // }//toggle
+
+    .dropdown-menu {
+        width: 180px;
+        left: 0;
+        top: 25px;
+        z-index: 100;
+        border-top: 1px solid @dropdownBorder;
+        border-radius: 0 0 3px 3px;
+
+        .divider {
+            border-bottom: 1px solid @dropdownDividerBackground;
+            display: block;
+        }
+    }
+
+    // //state control
+    // &.is-notfriend
+    // {
+    //  [class^="ies-"],
+    //  [class*=" ies-"]
+    //  {
+    //      &:before
+    //      {
+    //          content: "\e013"; //user plus
+    //          font-size: 16px;
+    //      }
+    //  }
+    // }
+
+    // &.is-friends,
+    // &.is-friends:hover,
+    // &.is-friends:focus
+    // {
+    //  #gradient > .vertical(#8dbde6, #72a1d1);
+    //  color: white !important;
+    // }
+}//action-friends
+
+
+//social button
+.btn-es-social {
+    border-radius: 10px;
+    font-size: 11px;
+    position: relative;
+    white-space: pre-line;
+}
+.btn-es-facebook {
+    .button-variant(#fff, #5692ce, #2b6cb3);
+    // .buttonBackground(#5692ce, #2b6cb3, #fff, @btnEsTextShadow);
+    // &:before {
+    //  background-position: 0 0;
+    // }
+}
+.btn-es-twitter {
+    .button-variant(#fff, #61cef4, #05b3f4);
+}
+.btn-es-linkedin {
+    .button-variant(#fff, #6cb3d3, #4b97c3);
+}
+
+
+.btn:focus {
+    outline: none;
+    outline: none;
+    outline-offset: 0;
+    background-position: 0;
+}

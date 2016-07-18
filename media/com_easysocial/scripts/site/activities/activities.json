@@ -1,0 +1,12 @@
+[
+    {
+        "script": [
+            "site/activities/sidebar",
+            "site/activities/sidebar.item"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

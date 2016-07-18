@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    $widget.less
+\*------------------------------------*/
+
+
+
+/* =Widget and widget head/body elements
+================================================== */
+
+.dialog-content {
+	.widget,
+	.widget-box {
+		border: none;
+	}
+}
+.widget {
+	background: @esBackground;
+	border: 1px solid lighten(@esBorder, 5%);
+	border-radius: 3px;
+	margin: 0px auto 20px;
+	position: relative;
+
+	&.widget-alert {
+		background: #F0F3F8;
+
+		hr{
+			border: 1px solid #C5CFD6;
+		}
+	}
+
+	.accordion-body {
+		overflow: hidden;
+	}
+
+	.wbody {
+		font-size: 12px;
+		padding:0;
+		.clearfix();
+		&.wbody-padding {
+			padding: 14px 16px;
+		}
+
+	}//wbody
+
+
+	h6 {
+		margin:0;
+	}
+	.in {
+		// overflow: visible;
+	}
+}//widget

@@ -1,0 +1,263 @@
+@import "textboxlist/variables";
+
+.textboxlist {
+    border: 1px solid @textboxlistAutocompleteBorder;
+    padding: 8px;
+    border-radius: 3px;
+    min-height: 32px;
+    cursor: text;
+    position: relative;
+    .clearfix();
+
+    &.disabled {
+        background-color: @textboxlistAutocompleteDisabledBackground;
+    }
+}
+
+.textboxlist-textField {
+    height: @textboxlistItemHeight !important;
+    line-height: @textboxlistItemHeight !important;
+    // This ensure textbox doesn't overflow container
+    max-width: 100%;
+    float: left;
+
+    /* reset */
+    border: none !important;
+    padding: 0 !important;
+    margin: @textboxlistItemGap !important;
+    box-shadow: none !important;
+    font-size: @textboxlistItemFontSize !important;
+    background: transparent !important;
+
+    float: left;
+}
+
+.textboxlist-itemGroup { //ul
+    margin: 0;
+    padding: 0;
+    .clearfix();
+    list-style: none;
+
+    li {
+        float: left;
+        list-style: none;
+    }
+}
+
+.textboxlist-item { //li
+    float: left;
+
+    background: @textboxlistAutocompleteItemBackground;
+    border: 1px solid @textboxlistAutocompleteItemBorder;
+    border-radius: 5px;
+    color: @textboxlistAutocompleteItemColor;
+    font-size: @textboxlistItemFontSize;
+    font-weight: bold;
+
+    position: relative;
+    height: @textboxlistItemHeight;
+    line-height: @textboxlistItemHeight - 2; // minus 2px for border top & bottom
+    margin: @textboxlistItemGap; // set for 2px, easier to maintain spacing
+    padding: 0 @textboxlistRemoveBtnWidth/4 0 @textboxlistRemoveBtnWidth;
+    overflow: hidden; // long name issue
+
+    // Friend list styling
+    &.list{
+        background: @textboxlistAutocompleteItemListBackground;
+        border: 1px solid @textboxlistAutocompleteItemListBorder;
+        color: @textboxlistAutocompleteItemListColor;
+    }
+
+    .textboxlist-itemContent {
+
+        img {
+            width: 12px;
+            height: 12px;
+            margin-top: -2px;
+        }
+    }
+
+    .textboxlist-field { //li
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+}
+
+.textboxlist-itemRemoveButton {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: @textboxlistRemoveBtnWidth;
+    opacity: 0.6;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    > i {
+        font-size: 14px;
+        line-height: inherit;
+        color: inherit;
+
+        &:before {
+            content: "\f057";
+        }
+    }
+}
+
+.textboxlist-autocomplete() {
+    position: absolute;
+    z-index: 99999;
+    margin-top: 8px;
+    overflow: hidden; // To clip sticky shadow
+
+    // Sticky shadow
+    > b {
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        height: 1px;
+        padding: 0px 5px;
+        z-index: 2;
+        display: none;
+
+        > b {
+            height: 5px;
+            width: 100%;
+            margin-top: -5px;
+            .box-shadow(@textboxlistAutocompleteStickyShadow);
+            display: block;
+        }
+    }
+
+    &.loading {
+        .textboxlist-autocomplete-loading {
+            display: block;
+        }
+
+        .textboxlist-menu {
+            display: none;
+        }
+    }
+
+    &.empty {
+        .textboxlist-autocomplete-empty {
+            display: block;
+        }
+        .textboxlist-menu {
+            display: none;
+        }
+
+        // Loading takes precendence
+        &.loading {
+            .textboxlist-autocomplete-empty {
+                display: none;
+            }
+        }
+    }
+
+    &.has-shadow {
+        > b {
+            display: block;
+        }
+    }
+
+    &.has-animation {
+
+        .textboxlist-autocomplete-inner {
+            top: -@textboxlistAutocompleteMaxHeight;
+            .transition(all .1s ease);
+        }
+
+        &.active {
+            top: 0;
+        }
+    }
+
+    &.is-sticky {
+        .textboxlist-autocomplete-inner {
+            border-top: 0px;
+            border-radius: 0px 0px 3px 3px;
+            // weird 1px issue hence 9px
+            // 5px bottom for animation
+            margin: 0px 9px 5px 10px;
+        }
+    }
+}
+
+.textboxlist-autocomplete {
+    .textboxlist-autocomplete();
+}
+
+.textboxlist-autocomplete-loading,
+.textboxlist-autocomplete-empty {
+    display: none;
+}
+
+.textboxlist-autocomplete-loading-indicator {
+    display: block;
+    padding: 8px 0px;
+    height: 16px;
+    background: url("@{global_uri}/images/loading.gif") center center no-repeat;
+}
+
+.textboxlist-autocomplete-empty-text {
+    padding: 8px 0px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    color: @textboxlistAutocompleteEmptyColor;
+}
+
+.textboxlist-autocomplete-inner {
+    border: 1px solid @textboxlistAutocompleteBorder;
+    border-radius: 3px;
+    color: @textboxlistAutocompleteColor;
+    background: @textboxlistAutocompleteBackground;
+    max-height: @textboxlistAutocompleteMaxHeight;
+    overflow-y: auto;
+
+    position: relative;
+    z-index: 1;
+    .box-shadow(@textboxlistAutocompleteMenuShadow);
+    margin-bottom: 5px; // For shadow
+}
+
+.textboxlist-menu { //ul
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+
+    .textboxlist-menuItem { //li
+        cursor: pointer;
+        padding: 6px;
+        text-align: left;
+        font-size: 12px;
+        margin: 0;
+
+        + .textboxlist-menuItem {
+            border-top: 1px solid @textboxlistAutocompleteMenuItemBorder;
+        }
+
+        &.active {
+            background: @textboxlistAutocompleteActiveBackground;
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        &.list {
+            font-weight: bold;
+            + .user {
+                border-top: 1px dashed @textboxlistAutocompleteMenuListUserBorder;
+            }
+        }
+    }
+}

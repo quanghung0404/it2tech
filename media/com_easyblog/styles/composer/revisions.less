@@ -1,0 +1,283 @@
+.eb-composer-revisions {
+    width: 50%;
+    top: 0;
+    left: 50%;
+
+    .eb-composer-toolbar {
+        width: 200%;
+        left: -100%;
+    }
+
+    .eb-composer-viewport {
+        position: absolute;
+        border-left: 1px solid @eb-composer-border-color;
+        background: #fff;
+    }
+}
+
+&.eb-composer-frame {
+
+    &.view-revisions {
+
+        .eb-composer-body {
+            padding-right: 0;
+        }
+
+        .eb-composer-panels {
+            .transform_(translateX(100%));
+        }
+
+        .eb-composer-document {
+            width: 50%;
+            z-index: 2;
+
+            .eb-composer-viewport {
+                background: #fff;
+            }
+        }
+
+        .eb-composer-page {
+            padding: 0;
+
+            > div {
+                .box-shadow(none);
+            }
+        }
+    }
+}
+
+
+.eb-revisions-fieldset {
+
+    .eb-composer-field + .eb-composer-field {
+        margin-top: 0;
+    }
+
+    &.show-revision-list {
+
+        .eb-revisions-current-field,
+        .eb-revisions-actions-field {
+            background: @eb-composer-lightgray-accent-color;
+        }
+
+        .eb-revisions-list-field {
+            display: block;
+        }
+    }
+
+    .hint-autosave {
+        margin-top: 5px;
+    }
+}
+
+.eb-revisions-current-field {
+    position: relative;
+    margin-bottom: @eb-composer-gutter / 3;
+}
+
+.eb-revisions-list-field {
+    border-bottom: 1px solid @eb-composer-border-color;
+}
+
+.eb-revisions-actions-field {
+    border: @eb-composer-gutter / 3 solid transparent;
+    border-radius: 0 0 2px 2px;
+
+    .col-cell + .col-cell {
+        text-align: right;
+    }
+}
+
+
+
+.eb-composer-manager {
+
+    &.is-saving {
+        // TODO: replace revision blip with loading indicator
+    }
+}
+
+
+
+@eb-revision-display-arrow-size: 16px;
+@eb-revision-display-arrow-color : #bbb;
+
+.eb-revision-display {
+    display: none;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    border: 30px solid transparent;
+    border: 30px solid rgba(255, 255, 255, 0.5);
+    border-bottom-width: 90px;
+
+    &.active {
+        display: block;
+    }
+
+    > div {
+        border: 1px solid @eb-revision-display-arrow-color;
+        border-radius: 3px;
+        height: 100%;
+        left: 0;
+        position: absolute !important;
+        top: 0;
+        width: 100%;
+        .box-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            margin-left: -(@eb-revision-display-arrow-size);
+            bottom: -@eb-revision-display-arrow-size;
+            border-top: @eb-revision-display-arrow-size solid darken(@eb-revision-display-arrow-color, 5%);
+            border-left: @eb-revision-display-arrow-size solid transparent;
+            border-right: @eb-revision-display-arrow-size solid transparent;
+            width: @eb-revision-display-arrow-size;
+        }
+
+        &:after {
+            border-top-color: #fff;
+            bottom: -@eb-revision-display-arrow-size + 1;
+        }
+    }
+}
+
+.eb-composer-revision-item {
+    display: table;
+    padding: 10px;
+    width: 100%;
+
+    cursor: pointer;
+
+    &.is-current:not(.is-primary) {
+        // padding-left: 30px;
+    }
+
+
+    + .eb-composer-revision-item {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    &:not(.is-primary) {
+        .eb-revision-number {
+            width: 32px;
+            height: 32px;
+            line-height: 28px;
+            margin-right: 7px;
+            font-size: 12px;
+        }
+    }
+
+    &.active {
+        background: #f0f9fc;
+
+        .eb-revision-options {
+            display: block;
+        }
+
+        .eb-revision-numbers {
+            vertical-align: top;
+        }
+    }
+
+    .eb-revision-meta {
+        font-size: 11px;
+        line-height: 12px;
+    }
+
+    &.is-current {
+        .eb-revision-number {
+            background: lighten(@brand-info, 35%);
+            border-color: lighten(@brand-info, 15%) !important;
+            color: darken(@brand-info, 20%);
+        }
+    }
+
+    &.is-single {
+        padding: 0;
+        background: none !important;
+        border: 0;
+    }
+
+    &.is-primary {
+
+        .eb-revision-number {
+            margin-right: 8px;
+        }
+
+        .eb-revision-title {
+            font-size: 14px;
+        }
+
+        .eb-revision-meta {
+            font-size: 12px;
+            line-height: 15px;
+            margin-top: 2px;
+        }
+    }
+}
+
+.eb-revision-listing {
+    .eb-revision-published span {
+        visibility: hidden;
+    }
+
+    .is-published .eb-revision-published span {
+        visibility: visible;
+    }
+}
+
+.eb-revision-number {
+    border-radius: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    color: #777;
+    background: #fff;
+
+    font-size: 15px;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    line-height: 32px;
+    font-weight: bold;
+}
+
+.eb-revision-published {
+    background: #ddd;
+    color: #999;
+    padding: 2px 7px;
+    border-radius: 8px;
+    font-size: 8px;
+    text-transform: uppercase;
+    margin: 0 0 0 5px;
+    line-height: 11px;
+}
+
+.eb-revision-options {
+    margin-top: 5px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.eb-revision-option {
+    > div {
+        padding: 0 5px;
+        text-align: center;
+
+        .fa-bars {
+            width: 3px;
+            overflow: hidden;
+            text-align: center;
+            display: inline-block;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+    }
+}

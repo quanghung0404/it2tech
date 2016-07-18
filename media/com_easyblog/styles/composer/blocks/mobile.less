@@ -1,0 +1,26 @@
+// Placeholder for mobile floating panel.
+&.show-templates {
+    .eb-blipp {
+        display: none !important;
+    }
+}
+
+.eb-blipp {
+    // Temporarily turn this off
+    display: none;
+    
+    position: absolute;
+    @blipp-width: 100px;
+    @blipp-height: 100px;
+    width: @blipp-width;
+    height: @blipp-height;
+    margin-left: @blipp-width / -2;
+    margin-top: @blipp-height / -2;
+    top: 30%;
+    left: 0%;
+    border-radius: 50%;
+    background: pink;
+    z-index: 9999;
+    cursor: pointer;
+    .user-select(none);
+}

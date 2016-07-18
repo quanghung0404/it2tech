@@ -1,0 +1,53 @@
+.ebd-workarea {
+    // This ensure the styling only gets
+    // inherited when it is really nested.
+    .ebd-nest {
+
+        // Sets a min-height. If it gets too short,
+        // user can't drop blocks onto it.
+        min-height: @eb-composer-gutter;
+
+        // This clears floated blocks so nest
+        // would have a proper width and height.
+        .clearfix();
+
+        .ebd-block {
+
+            &.is-nested {
+
+                border: none;
+
+                // Reset behaviour that doesn't apply to nested blocks.
+                &:first-child,
+                &:last-child {
+                    border-top-width: 0px;
+                    border-bottom-width: 0px;
+                }
+            }
+        }
+
+        // Block nest
+        &[data-type=block] {
+        }
+
+        // Content nest
+        &[data-type=content] {
+
+            .ebd-block {
+
+                // When nested block appears as a placeholder on a content nest
+                &.is-placeholder {
+                    min-height: 120px;
+                }
+            }
+        }
+    }
+
+    &.is-debugging {
+        .ebd-nest {
+            &.is-receiving {
+                // background: fadeout(yellow, 50%);
+            }
+        }
+    }
+}

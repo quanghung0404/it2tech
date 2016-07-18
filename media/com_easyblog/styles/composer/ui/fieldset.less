@@ -1,0 +1,114 @@
+.eb-composer-fieldset {
+    padding: @eb-composer-fieldset-padding;
+    position: relative;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid @eb-composer-fieldset-border-color;
+
+    &.is-disabled {
+        .eb-composer-fieldset-content {
+            display: none;
+        }
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+
+    &:last-child {
+        padding-bottom: 50px; // Reserve spaces for popover tooltips
+    }
+}
+
+.eb-composer-fieldset-header {
+
+    position: relative;
+
+    .user-select(none);
+
+    .clearfix();
+
+    // eb-composer-fieldset-label
+    > strong {
+        color: @eb-composer-fieldset-label-color;
+        font-size: @eb-composer-fieldset-label-font-size;
+        text-shadow: 1px 1px 0px #fff;
+    }
+
+    // eb-composer-fieldset-caption
+    > small {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        color: @eb-composer-text-light-color;
+        font-size: @eb-composer-fieldset-label-font-size;
+    }
+}
+
+.eb-composer-fieldset-content {
+    margin-top: @eb-composer-gutter / 6;
+}
+
+
+.eb-composer-fieldset-toggle {
+    position: absolute;
+    top: 1px;
+    left: -22px;
+}
+
+.eb-composer-fieldset-dropdown {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    color: @eb-composer-text-light-color;
+    font-size: @eb-composer-fieldset-label-font-size;
+
+    cursor: pointer;
+
+    .dropdown-toggle_ {
+
+        &:hover {
+            color: @eb-composer-text-color;
+        }
+
+        .caret {
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    .dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 0;
+        padding: 0;
+    }
+}
+
+// TODO: Refactor this
+.eb-composer-field {
+    .clearfix();
+
+    .btn-group-yesno {
+        float: left;
+
+        .btn {
+            float: left;
+            width: 50%;
+            line-height: 16px;
+        }
+    }
+
+    .datetime_container {
+        .text-overflow();
+    }
+}
+
+.eb-composer-panel-content {
+
+    .eb-composer-fieldset:first-child {
+        border-top: none;
+    }
+}

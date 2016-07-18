@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "ui/sortable"
+        ],
+        "language": [
+            "PLG_FIELDS_FILE_ERROR_UNKNOWN_ERROR_OCCURED",
+            "COM_EASYSOCIAL_WORKING"
+        ],
+        "adapter": "EasySocial"
+    }
+]

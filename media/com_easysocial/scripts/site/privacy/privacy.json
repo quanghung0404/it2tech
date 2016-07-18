@@ -1,0 +1,16 @@
+[
+    {
+        "library": [
+            "textboxlist"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_PRIVACY_TOOLTIPS_SHARED_WITH_PUBLIC",
+            "COM_EASYSOCIAL_PRIVACY_TOOLTIPS_SHARED_WITH_MEMBER",
+            "COM_EASYSOCIAL_PRIVACY_TOOLTIPS_SHARED_WITH_FRIENDS_OF_FRIEND",
+            "COM_EASYSOCIAL_PRIVACY_TOOLTIPS_SHARED_WITH_FRIEND",
+            "COM_EASYSOCIAL_PRIVACY_TOOLTIPS_SHARED_WITH_ONLY_ME",
+            "COM_EASYSOCIAL_PRIVACY_TOOLTIPS_SHARED_WITH_CUSTOM"
+        ],
+        "adapter": "EasySocial"
+    }
+]

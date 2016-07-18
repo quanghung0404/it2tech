@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Tag Cloud Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[This module will list down tags created through EasyBlog in a tag cloud layout.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easyblogtagcloud.ini</language>
+	</languages>
+	<files>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_easyblogtagcloud">mod_easyblogtagcloud.php</filename>
+		<filename>mod_easyblogtagcloud.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+
+				<field name="layout" type="list" default="default" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" >
+					<option value="default">MOD_EASYBLOGTAGCLOUD_LAYOUT_TAG_CLOUD</option>
+					<option value="list">MOD_EASYBLOGTAGCLOUD_LAYOUT_LIST</option>
+				</field>
+
+				<field name="order" type="list" default="postcount" label="MOD_EASYBLOGTAGCLOUD_ORDERING" description="MOD_EASYBLOGTAGCLOUD_ORDERING_DESC" >
+					<option value="postcount">MOD_EASYBLOGTAGCLOUD_POST_COUNT</option>
+					<option value="title">MOD_EASYBLOGTAGCLOUD_TITLE</option>
+					<option value="created">MOD_EASYBLOGTAGCLOUD_SORT_CREATION_DATE</option>
+				</field>
+
+				<field name="sort" type="list" default="desc" label="MOD_EASYBLOGTAGCLOUD_SORTING" description="MOD_EASYBLOGTAGCLOUD_SORTING_DESC" >
+					<option value="asc">MOD_EASYBLOGTAGCLOUD_ASCENDING</option>
+					<option value="desc">MOD_EASYBLOGTAGCLOUD_DESCENDING</option>
+				</field>
+
+				<field name="count" type="text" default="0" label="MOD_EASYBLOGTAGCLOUD_COUNT" description="MOD_EASYBLOGTAGCLOUD_COUNT_DESC" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+
+			<fieldset name="tagcloud">
+				<field name="shuffleTags" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGTAGCLOUD_SHUFFLE" description="MOD_EASYBLOGTAGCLOUD_SHUFFLE_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="categoryBased" type="radio" class="btn-group" default="0" label="MOD_EASYBLOGTAGCLOUD_CATEGORY_BASED" description="MOD_EASYBLOGTAGCLOUD_CATEGORY_BASED_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="minsize" type="text" default="10" label="MOD_EASYBLOGTAGCLOUD_MIN_SIZE" description="MOD_EASYBLOGTAGCLOUD_MIN_SIZE_DESC" />
+
+				<field name="maxsize" type="text" default="30" label="MOD_EASYBLOGTAGCLOUD_MAX_SIZE" description="MOD_EASYBLOGTAGCLOUD_MAX_SIZE_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

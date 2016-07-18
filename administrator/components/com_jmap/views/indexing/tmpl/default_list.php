@@ -58,6 +58,11 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 			<span class="label label-primary label-icon pull-left">
 				<?php echo JText::sprintf('COM_JMAP_INDEXING_CURRENT_SEARCHSERP', $this->serpsearch);?>
 			</span>
+			<?php if(isset($this->totalPagesValue)):?>
+				<span class="label label-primary label-icon pull-left">
+					<?php echo JText::sprintf('COM_JMAP_INDEXING_TOTAL_RESULTS', $this->totalPagesValue);?>
+				</span>
+			<?php endif; ?>
 			<span class="label label-primary label-icon pull-right">
 				<img src="<?php echo JURI::base(true);?>/components/com_jmap/images/icon-24-google.png" alt="google"/>
 				<?php echo JText::sprintf('COM_JMAP_INDEXING_GOOGLEPAGE', $index);?>

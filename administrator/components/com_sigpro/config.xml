@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<params group="basic" label="COM_SIGPRO_BASIC_SETTINGS" addpath="/administrator/components/com_sigpro/elements">
+		<param name="galleries_rootfolder" type="text" default="images/stories" label="COM_SIGPRO_ROOT_FOLDER" description="COM_SIGPRO_SELECT_THE_STARTING_FOLDER_FOR_ALL_YOUR_IMAGE_GALLERIES_THIS_IS_GENERALLY_PREFERRED_TO_BE_IMAGESSTORIES_SO_YOU_CAN_EASILY_USE_THE_JOOMLA_MEDIA_MANAGER_TO_UPLOAD_YOUR_IMAGES_INTO_SUBFOLDERS_WITHIN_THIS_FOLDER_EG_INSIDE_IMAGESSTORIESGALLERIESSOMEIMAGEGALLERY" />
+		<param name="popup_engine" type="list" default="jquery_fancybox" label="COM_SIGPRO_POPUP_ENGINE_FOR_IMAGE_GALLERIES" description="COM_SIGPRO_DEPENDING_ON_WHAT_JAVASCRIPT_LIBRARYFRAMEWORK_YOU_USE_IN_YOUR_SITE_CHOOSE_AN_APPROPRIATE_POPUP_ENGINE_TO_ACHIEVE_MAXIMUM_COMPATIBILITY_AND_AVOID_ANY_JAVASCRIPT_CONFLICTS_POPUP_ENGINES_NOT_BASED_ON_JQUERY_OR_MOOTOOLS_WILL_GENERALLY_BE_NEUTRAL_ON_ALL_JOOMLA_WEBSITES">
+			<option value="jquery_fancybox">COM_SIGPRO_PE_FANCYBOX</option>
+			<option value="jquery_colorbox">COM_SIGPRO_PE_COLORBOX</option>
+			<option value="jquery_prettyphoto">COM_SIGPRO_PE_PRETTYPHOTO</option>
+			<option value="jquery_lightview">COM_SIGPRO_PE_LIGHTVIEW</option>
+			<option value="jquery_slimbox">COM_SIGPRO_PE_SLIMBOX</option>
+			<option value="jquery_fresco">COM_SIGPRO_PE_FRESCO</option>
+			<option value="jquery_swipebox">COM_SIGPRO_PE_SWIPEBOX</option>
+			<option value="jquery_nivolightbox">COM_SIGPRO_PE_NIVOLIGHTBOX</option>
+			<option value="jquery_magnificpopup">COM_SIGPRO_PE_MAGNIFICPOPUP</option>
+			<option value="highslide">COM_SIGPRO_PE_HIGHSLIDE</option>
+			<option value="lytebox">COM_SIGPRO_PE_LYTEBOX</option>
+			<option value="simplebox">COM_SIGPRO_PE_SIMPLEBOX</option>
+		</param>
+		<param name="jQueryHandling" type="list" default="googlecdn" label="COM_SIGPRO_JQUERY_LIBRARY_HANDLING" description="COM_SIGPRO_JQUERY_LIBRARY_HANDLING_DESC">
+			<option value="0">COM_SIGPRO_JQUERY_DO_NOT_LOAD_THE_JQUERY_LIBRARY</option>
+			<option value="local">COM_SIGPRO_JQUERY_LOAD_LOCAL</option>
+			<option value="jquerycdn">COM_SIGPRO_JQUERY_LOAD_FROM_JQUERYCDN</option>
+			<option value="googlecdn">COM_SIGPRO_JQUERY_LOAD_FROM_GOOGLECDN</option>
+			<option value="mscdn">COM_SIGPRO_JQUERY_LOAD_FROM_MSCDN</option>
+			<option value="yandexcdn">COM_SIGPRO_JQUERY_LOAD_FROM_YANDEXCDN</option>
+			<option value="cdnjs">COM_SIGPRO_JQUERY_LOAD_FROM_CDNJS</option>
+			<option value="jsdelivr">COM_SIGPRO_JQUERY_LOAD_FROM_JSDELIVR</option>
+			<option value="qihoo360">COM_SIGPRO_JQUERY_LOAD_FROM_QIHOO360</option>
+		</param>
+		<param name="jQueryRelease" type="list" default="1.11" label="COM_SIGPRO_JQUERY_RELEASE" description="COM_SIGPRO_JQUERY_RELEASE_DESC">
+			<option value="1.7">COM_SIGPRO_JQUERY_LOAD_V1_7</option>
+			<option value="1.8">COM_SIGPRO_JQUERY_LOAD_V1_8</option>
+			<option value="1.9">COM_SIGPRO_JQUERY_LOAD_V1_9</option>
+			<option value="1.10">COM_SIGPRO_JQUERY_LOAD_V1_10</option>
+			<option value="1.11">COM_SIGPRO_JQUERY_LOAD_V1_11</option>
+		</param>
+		<param name="thb_template" type="template" directory="/plugins/content/jw_sigpro/tmpl" default="Classic" hide_default="1" hide_none="1" label="COM_SIGPRO_LAYOUT_TEMPLATE_FOR_IMAGE_GALLERIES" description="COM_SIGPRO_CHOOSE_A_TEMPLATE_TO_DISPLAY_YOUR_IMAGE_GALLERIES" />
+		<param name="thb_width" type="text" default="200" size="3" label="COM_SIGPRO_THUMBNAIL_VIEWPORT_WIDTH" description="COM_SIGPRO_ADJUST_THE_MAXIMUM_IMAGE_THUMBNAIL_WIDTH_IN_PIXELS" />
+		<param name="thb_height" type="text" default="160" size="3" label="COM_SIGPRO_THUMBNAIL_VIEWPORT_HEIGHT" description="COM_SIGPRO_ADJUST_THE_MAXIMUM_IMAGE_THUMBNAIL_HEIGHT_IN_PIXELS" />
+		<param name="smartResize" type="radio" default="1" label="COM_SIGPRO_SMART_THUMBNAIL_RESIZE_BASED_ON_ABOVE_DIMENSIONS" description="COM_SIGPRO_IF_SET_TO_DISABLED_IMAGE_THUMBNAILS_ARE_DISPLAYED_BASED_ON_THE_ASPECT_RATIO_OF_THE_ORIGINAL_IMAGE_IF_SET_TO_ENABLED_IMAGES_ARE_RESIZED_TO_FIT_THE_THUMBNAIL_VIEWPORT_AS_SET_ON_THE_DIMENSION_OPTIONS_ABOVE_THE_LAST_OPTION_IS_IDEAL_WHEN_YOU_WANT_TO_DISPLAY_IMAGES_OF_DIFFERENT_ASPECT_RATIO_IN_THUMBNAILS_OF_THE_SAME_DIMENSIONS">
+			<option value="0">COM_SIGPRO_DISABLED</option>
+			<option value="1">COM_SIGPRO_ENABLED</option>
+		</param>
+		<param name="jpg_quality" type="text" default="80" size="3" label="COM_SIGPRO_THUMBNAIL_IMAGE_QUALITY" description="COM_SIGPRO_ADJUST_THE_QUALITY_OF_THE_GENERATED_IMAGE_THUMBNAIL_VALUES_RANGE_FROM_0_TO_100_WITH_100_GIVING_THE_BEST_POSSIBLE_RESULT_VALUES_BETWEEN_70_TO_80_SHOULD_GENERALLY_BE_PREFERRED_REMEMBER_THAT_THE_LOWER_THIS_VALUE_IS_THE_SMALLER_THE_SIZE_OF_THE_GENERATED_THUMBNAIL_WILL_BE" />
+		<param name="singlethumbmode" type="radio" default="0" label="COM_SIGPRO_DISPLAY_MODE" description="COM_SIGPRO_CHOOSE_SINGLE_THUMBNAIL_MODE_TO_LAUNCH_POPUP_SLIDESHOWS_FROM_THE_FIRST_THUMBNAIL_OF_YOUR_GALLERY_USE_THIS_OPTION_WHEN_YOU_WANT_TO_SAVE_SOME_SPACE_IN_YOUR_DOCUMENT_IF_YOU_SELECT_NORMAL_ALL_CORRESPONDING_THUMBNAILS_WILL_DISPLAY">
+			<option value="0">COM_SIGPRO_NORMAL</option>
+			<option value="1">COM_SIGPRO_SINGLE_THUMBNAIL</option>
+		</param>
+		<param name="sortorder" type="list" default="0" label="COM_SIGPRO_ORDERING" description="COM_SIGPRO_ORDER_OF_APPEARANCE_FOR_THE_IMAGES_PREFER_THE_DEFAULT_OPTION_IF_OTHERS_DONT_WORK_AS_EXPECTED">
+			<option value="0">COM_SIGPRO_DEFAULT</option>
+			<option value="1">COM_SIGPRO_ALPHABETICAL_ORDER</option>
+			<option value="2">COM_SIGPRO_ALPHABETICAL_ORDER_CASE_INSENSITIVE</option>
+			<option value="3">COM_SIGPRO_REVERSE_DEFAULT_ORDER</option>
+			<option value="4">COM_SIGPRO_RANDOM_ORDER</option>
+		</param>
+		<param name="showcaptions" type="list" default="1" label="COM_SIGPRO_DEFAULT_CAPTION_LABEL_HANDLING" description="COM_SIGPRO_PLEASE_NOTE_THAT_WHEN_YOU_SELECT_READ_CONTENTS_OF_CAPTION_FILES_THE_RELATED_LABEL_FILES_WILL_BE_AUTOMATICALLY_CREATED_FOR_YOU">
+			<option value="0">COM_SIGPRO_NO_CAPTIONS</option>
+			<option value="1">COM_SIGPRO_SHOW_GENERIC_MESSAGES</option>
+			<option value="2">COM_SIGPRO_READ_CONTENTS_OF_CAPTION_FILES</option>
+		</param>
+		<param name="wordlimit" type="text" default="" size="3" label="COM_SIGPRO_CAPTION_WORD_LIMIT" description="COM_SIGPRO_SET_CAPTION_WORD_LIMIT_TO_AVOID_HUGE_CAPTIONS_POTENTIALLY_HIDING_THUMBNAIL_IMAGES" />
+		<param name="enabledownload" type="radio" default="1" label="COM_SIGPRO_ENABLE_ORIGINAL_IMAGE_DOWNLOAD_LINK_IN_THE_POPUP" description="">
+			<option value="0">COM_SIGPRO_NO</option>
+			<option value="1">COM_SIGPRO_YES</option>
+		</param>
+		<param name="loadmoduleposition" type="positions" default="" label="COM_SIGPRO_LOAD_A_MODULE_POSITION_IN_THE_POPUP" description="COM_SIGPRO_SELECT_A_MODULE_POSITION_TO_LOAD_IN_THE_POPUP_WINDOW" />
+	</params>
+	<params group="flickr" label="COM_SIGPRO_FLICKR_SETTINGS">
+		<param name="flickrApiKey" type="text" default="" size="20" label="COM_SIGPRO_FLICKR_API_KEY" description="COM_SIGPRO_FLICKR_API_KEY_DESC" />
+		<param name="flickrImageCount" type="text" default="20" size="3" label="COM_SIGPRO_FLICKR_TOTALIMAGES" description="COM_SIGPRO_FLICKR_TOTALIMAGES_DESC" />
+	</params>
+	<params group="advanced" label="COM_SIGPRO_ADVANCED_SETTINGS">
+		<param name="resizeSrcImage" type="text" default="" size="4" label="COM_SIGPRO_XML_FORCE_RESIZE_SRC_IMG_IN_PX" description="COM_SIGPRO_XML_FORCE_RESIZE_SRC_IMG_IN_PX_DESC" />
+		<param name="cache_expire_time" type="text" default="120" size="3" label="COM_SIGPRO_THUMBNAIL_CACHE_EXPIRATION_TIME" description="COM_SIGPRO_THUMBNAIL_CACHE_EXPIRATION_TIME_IN_MINUTES_TO_INSTANTLY_REFRESH_THE_THUMBNAIL_CACHE_FOR_A_PARTICULAR_GALLERY_SIMPLY_SET_THIS_VALUE_TO_0_RELOAD_THE_GALLERY_PAGE_IN_JOOMLA_AND_RESET_IT_TO_120_NEVER_FORGET_THIS_VALUE_TO_0_OR_ELSE_THUMBNAILS_WILL_BE_CREATED_EVERY_TIME_A_GALLERY_IS_LOADED_THUS_OVERLOADING_THE_SERVERS_RESOURCES" />
+		<param name="memoryLimit" type="text" default="" size="3" label="COM_SIGPRO_MEMORY_LIMIT_IN_MBS" description="COM_SIGPRO_CHANGE_YOUR_SERVERS_MEMORY_LIMIT_IF_GALLERIES_FAIL_TO_CREATE_OR_YOU_GET_THE_WHITE_PAGE_ERROR_ON_YOUR_SITE_THIS_OPTION_MAY_NOT_WORK_IN_ALL_CASES" />
+		<param name="debugMode" type="radio" default="1" label="COM_SIGPRO_DEBUG_MODE" description="COM_SIGPRO_ENABLE_THIS_OPTION_TO_DISPLAY_POSSIBLE_ERRORS_OR_OTHER_WARNINGS_USEFUL_FOR_DEBUGGING">
+			<option value="0">COM_SIGPRO_DISABLED</option>
+			<option value="1">COM_SIGPRO_ENABLED</option>
+		</param>
+	</params>
+	<fieldset label="COM_SIGPRO_BASIC_SETTINGS" name="basic" addfieldpath="/administrator/components/com_sigpro/elements">
+		<field name="galleries_rootfolder" type="text" default="images" label="COM_SIGPRO_ROOT_FOLDER" description="COM_SIGPRO_SELECT_THE_STARTING_FOLDER_FOR_ALL_YOUR_IMAGE_GALLERIES_THIS_IS_GENERALLY_PREFERRED_TO_BE_IMAGESSTORIES_SO_YOU_CAN_EASILY_USE_THE_JOOMLA_MEDIA_MANAGER_TO_UPLOAD_YOUR_IMAGES_INTO_SUBFOLDERS_WITHIN_THIS_FOLDER_EG_INSIDE_IMAGESSTORIESGALLERIESSOMEIMAGEGALLERY" />
+		<field name="popup_engine" type="list" default="jquery_fancybox" label="COM_SIGPRO_POPUP_ENGINE_FOR_IMAGE_GALLERIES" description="COM_SIGPRO_DEPENDING_ON_WHAT_JAVASCRIPT_LIBRARYFRAMEWORK_YOU_USE_IN_YOUR_SITE_CHOOSE_AN_APPROPRIATE_POPUP_ENGINE_TO_ACHIEVE_MAXIMUM_COMPATIBILITY_AND_AVOID_ANY_JAVASCRIPT_CONFLICTS_POPUP_ENGINES_NOT_BASED_ON_JQUERY_OR_MOOTOOLS_WILL_GENERALLY_BE_NEUTRAL_ON_ALL_JOOMLA_WEBSITES">
+			<option value="jquery_fancybox">COM_SIGPRO_PE_FANCYBOX</option>
+			<option value="jquery_colorbox">COM_SIGPRO_PE_COLORBOX</option>
+			<option value="jquery_prettyphoto">COM_SIGPRO_PE_PRETTYPHOTO</option>
+			<option value="jquery_lightview">COM_SIGPRO_PE_LIGHTVIEW</option>
+			<option value="jquery_slimbox">COM_SIGPRO_PE_SLIMBOX</option>
+			<option value="jquery_fresco">COM_SIGPRO_PE_FRESCO</option>
+			<option value="jquery_swipebox">COM_SIGPRO_PE_SWIPEBOX</option>
+			<option value="jquery_nivolightbox">COM_SIGPRO_PE_NIVOLIGHTBOX</option>
+			<option value="jquery_magnificpopup">COM_SIGPRO_PE_MAGNIFICPOPUP</option>
+			<option value="highslide">COM_SIGPRO_PE_HIGHSLIDE</option>
+			<option value="lytebox">COM_SIGPRO_PE_LYTEBOX</option>
+			<option value="simplebox">COM_SIGPRO_PE_SIMPLEBOX</option>
+		</field>
+		<field name="jQueryHandling" type="list" default="googlecdn" label="COM_SIGPRO_JQUERY_LIBRARY_HANDLING" description="COM_SIGPRO_JQUERY_LIBRARY_HANDLING_DESC">
+			<option value="0">COM_SIGPRO_JQUERY_DO_NOT_LOAD_THE_JQUERY_LIBRARY</option>
+			<option value="local">COM_SIGPRO_JQUERY_LOAD_LOCAL</option>
+			<option value="jquerycdn">COM_SIGPRO_JQUERY_LOAD_FROM_JQUERYCDN</option>
+			<option value="googlecdn">COM_SIGPRO_JQUERY_LOAD_FROM_GOOGLECDN</option>
+			<option value="mscdn">COM_SIGPRO_JQUERY_LOAD_FROM_MSCDN</option>
+			<option value="yandexcdn">COM_SIGPRO_JQUERY_LOAD_FROM_YANDEXCDN</option>
+			<option value="cdnjs">COM_SIGPRO_JQUERY_LOAD_FROM_CDNJS</option>
+			<option value="jsdelivr">COM_SIGPRO_JQUERY_LOAD_FROM_JSDELIVR</option>
+			<option value="qihoo360">COM_SIGPRO_JQUERY_LOAD_FROM_QIHOO360</option>
+		</field>
+		<field name="jQueryRelease" type="list" default="1.11" label="COM_SIGPRO_JQUERY_RELEASE" description="COM_SIGPRO_JQUERY_RELEASE_DESC">
+			<option value="1.7">COM_SIGPRO_JQUERY_LOAD_V1_7</option>
+			<option value="1.8">COM_SIGPRO_JQUERY_LOAD_V1_8</option>
+			<option value="1.9">COM_SIGPRO_JQUERY_LOAD_V1_9</option>
+			<option value="1.10">COM_SIGPRO_JQUERY_LOAD_V1_10</option>
+			<option value="1.11">COM_SIGPRO_JQUERY_LOAD_V1_11</option>
+		</field>
+		<field name="thb_template" type="template" directory="/plugins/content/jw_sigpro/jw_sigpro/tmpl" default="Classic" hide_default="1" hide_none="1" label="COM_SIGPRO_LAYOUT_TEMPLATE_FOR_IMAGE_GALLERIES" description="COM_SIGPRO_CHOOSE_A_TEMPLATE_TO_DISPLAY_YOUR_IMAGE_GALLERIES" />
+		<field name="thb_width" type="text" default="200" size="3" label="COM_SIGPRO_THUMBNAIL_VIEWPORT_WIDTH" description="COM_SIGPRO_ADJUST_THE_MAXIMUM_IMAGE_THUMBNAIL_WIDTH_IN_PIXELS" />
+		<field name="thb_height" type="text" default="160" size="3" label="COM_SIGPRO_THUMBNAIL_VIEWPORT_HEIGHT" description="COM_SIGPRO_ADJUST_THE_MAXIMUM_IMAGE_THUMBNAIL_HEIGHT_IN_PIXELS" />
+		<field name="smartResize" type="radio" default="1" label="COM_SIGPRO_SMART_THUMBNAIL_RESIZE_BASED_ON_ABOVE_DIMENSIONS" description="COM_SIGPRO_IF_SET_TO_DISABLED_IMAGE_THUMBNAILS_ARE_DISPLAYED_BASED_ON_THE_ASPECT_RATIO_OF_THE_ORIGINAL_IMAGE_IF_SET_TO_ENABLED_IMAGES_ARE_RESIZED_TO_FIT_THE_THUMBNAIL_VIEWPORT_AS_SET_ON_THE_DIMENSION_OPTIONS_ABOVE_THE_LAST_OPTION_IS_IDEAL_WHEN_YOU_WANT_TO_DISPLAY_IMAGES_OF_DIFFERENT_ASPECT_RATIO_IN_THUMBNAILS_OF_THE_SAME_DIMENSIONS">
+			<option value="0">COM_SIGPRO_DISABLED</option>
+			<option value="1">COM_SIGPRO_ENABLED</option>
+		</field>
+		<field name="jpg_quality" type="text" default="80" size="3" label="COM_SIGPRO_THUMBNAIL_IMAGE_QUALITY" description="COM_SIGPRO_ADJUST_THE_QUALITY_OF_THE_GENERATED_IMAGE_THUMBNAIL_VALUES_RANGE_FROM_0_TO_100_WITH_100_GIVING_THE_BEST_POSSIBLE_RESULT_VALUES_BETWEEN_70_TO_80_SHOULD_GENERALLY_BE_PREFERRED_REMEMBER_THAT_THE_LOWER_THIS_VALUE_IS_THE_SMALLER_THE_SIZE_OF_THE_GENERATED_THUMBNAIL_WILL_BE" />
+		<field name="singlethumbmode" type="radio" default="0" label="COM_SIGPRO_DISPLAY_MODE" description="COM_SIGPRO_CHOOSE_SINGLE_THUMBNAIL_MODE_TO_LAUNCH_POPUP_SLIDESHOWS_FROM_THE_FIRST_THUMBNAIL_OF_YOUR_GALLERY_USE_THIS_OPTION_WHEN_YOU_WANT_TO_SAVE_SOME_SPACE_IN_YOUR_DOCUMENT_IF_YOU_SELECT_NORMAL_ALL_CORRESPONDING_THUMBNAILS_WILL_DISPLAY">
+			<option value="0">COM_SIGPRO_NORMAL</option>
+			<option value="1">COM_SIGPRO_SINGLE_THUMBNAIL</option>
+		</field>
+		<field name="sortorder" type="list" default="0" label="COM_SIGPRO_ORDERING" description="COM_SIGPRO_ORDER_OF_APPEARANCE_FOR_THE_IMAGES_PREFER_THE_DEFAULT_OPTION_IF_OTHERS_DONT_WORK_AS_EXPECTED">
+			<option value="0">COM_SIGPRO_DEFAULT</option>
+			<option value="1">COM_SIGPRO_ALPHABETICAL_ORDER</option>
+			<option value="2">COM_SIGPRO_ALPHABETICAL_ORDER_CASE_INSENSITIVE</option>
+			<option value="3">COM_SIGPRO_REVERSE_DEFAULT_ORDER</option>
+			<option value="4">COM_SIGPRO_RANDOM_ORDER</option>
+		</field>
+		<field name="showcaptions" type="list" default="1" label="COM_SIGPRO_DEFAULT_CAPTION_LABEL_HANDLING" description="COM_SIGPRO_PLEASE_NOTE_THAT_WHEN_YOU_SELECT_READ_CONTENTS_OF_CAPTION_FILES_THE_RELATED_LABEL_FILES_WILL_BE_AUTOMATICALLY_CREATED_FOR_YOU">
+			<option value="0">COM_SIGPRO_NO_CAPTIONS</option>
+			<option value="1">COM_SIGPRO_SHOW_GENERIC_MESSAGES</option>
+			<option value="2">COM_SIGPRO_READ_CONTENTS_OF_CAPTION_FILES</option>
+		</field>
+		<field name="wordlimit" type="text" default="" size="3" label="COM_SIGPRO_CAPTION_WORD_LIMIT" description="COM_SIGPRO_SET_CAPTION_WORD_LIMIT_TO_AVOID_HUGE_CAPTIONS_POTENTIALLY_HIDING_THUMBNAIL_IMAGES" />
+		<field name="enabledownload" type="radio" default="1" label="COM_SIGPRO_ENABLE_ORIGINAL_IMAGE_DOWNLOAD_LINK_IN_THE_POPUP" description="">
+			<option value="0">COM_SIGPRO_NO</option>
+			<option value="1">COM_SIGPRO_YES</option>
+		</field>
+		<field name="loadmoduleposition" type="positions" default="" label="COM_SIGPRO_LOAD_A_MODULE_POSITION_IN_THE_POPUP" description="COM_SIGPRO_SELECT_A_MODULE_POSITION_TO_LOAD_IN_THE_POPUP_WINDOW" />
+	</fieldset>
+	<fieldset label="COM_SIGPRO_FLICKR_SETTINGS" name="flickr">
+		<field name="flickrApiKey" type="text" default="" size="20" label="COM_SIGPRO_FLICKR_API_KEY" description="COM_SIGPRO_FLICKR_API_KEY_DESC" />
+		<field name="flickrImageCount" type="text" default="20" size="3" label="COM_SIGPRO_FLICKR_TOTALIMAGES" description="COM_SIGPRO_FLICKR_TOTALIMAGES_DESC" />
+	</fieldset>
+	<fieldset label="COM_SIGPRO_ADVANCED_SETTINGS" name="advanced">
+		<field name="resizeSrcImage" type="text" default="" size="4" label="COM_SIGPRO_XML_FORCE_RESIZE_SRC_IMG_IN_PX" description="COM_SIGPRO_XML_FORCE_RESIZE_SRC_IMG_IN_PX_DESC" />
+		<field name="cache_expire_time" type="text" default="120" size="3" label="COM_SIGPRO_THUMBNAIL_CACHE_EXPIRATION_TIME" description="COM_SIGPRO_THUMBNAIL_CACHE_EXPIRATION_TIME_IN_MINUTES_TO_INSTANTLY_REFRESH_THE_THUMBNAIL_CACHE_FOR_A_PARTICULAR_GALLERY_SIMPLY_SET_THIS_VALUE_TO_0_RELOAD_THE_GALLERY_PAGE_IN_JOOMLA_AND_RESET_IT_TO_120_NEVER_FORGET_THIS_VALUE_TO_0_OR_ELSE_THUMBNAILS_WILL_BE_CREATED_EVERY_TIME_A_GALLERY_IS_LOADED_THUS_OVERLOADING_THE_SERVERS_RESOURCES" />
+		<field name="memoryLimit" type="text" default="" size="3" label="COM_SIGPRO_MEMORY_LIMIT_IN_MBS" description="COM_SIGPRO_CHANGE_YOUR_SERVERS_MEMORY_LIMIT_IF_GALLERIES_FAIL_TO_CREATE_OR_YOU_GET_THE_WHITE_PAGE_ERROR_ON_YOUR_SITE_THIS_OPTION_MAY_NOT_WORK_IN_ALL_CASES" />
+		<field name="debugMode" type="radio" default="1" label="COM_SIGPRO_DEBUG_MODE" description="COM_SIGPRO_ENABLE_THIS_OPTION_TO_DISPLAY_POSSIBLE_ERRORS_OR_OTHER_WARNINGS_USEFUL_FOR_DEBUGGING">
+			<option value="0">COM_SIGPRO_DISABLED</option>
+			<option value="1">COM_SIGPRO_ENABLED</option>
+		</field>
+	</fieldset>
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" class="inputbox" validate="rules" filter="rules" component="com_sigpro" section="component"/>
+	</fieldset>
+</config>

@@ -1,0 +1,394 @@
+/**
+ * =============================================================
+ * RAXO All-mode K2 J3.x - Template CSS
+ * -------------------------------------------------------------
+ * @package		RAXO All-mode K2
+ * @subpackage	All-mode Bricks Template
+ * @copyright	Copyright (C) 2009-2014 RAXO Group
+ * @license		RAXO Commercial License
+ * 				This file is forbidden for redistribution
+ * @link		http://www.raxo.org
+ * =============================================================
+ */
+
+
+/* ----- RESET Styles ----- */
+.allmode-bricks [class^="allmode-"],
+.allmode-bricks img,
+.allmode-bricks a {
+	margin: 0; padding: 0;
+	background: transparent none;
+	border: 0 none;
+		-moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.allmode-bricks a {																/* Item LINKS */
+	text-decoration: none;
+	outline: 0;
+	transition: all 0.2s linear 0s;
+}
+	.allmode-bricks a:hover {
+		background: transparent none;
+	}
+
+
+
+/* ----- MODULE BLOCK Styles ----- */
+.allmode-bricks {
+	position: relative;
+	margin-top: 20px;
+}
+	.allmode-bricks:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+.allmode-bricks .allmode-name {													/* BLOCK NAME Text */
+	margin-bottom: 16px; padding: 3px 12px;
+	font: normal 17px/24px  Tahoma, Helvetica, Arial, sans-serif;
+	color: #1a1a1a;
+	border-width: 2px 0 0; border-style: solid;
+}
+	.allmode-bricks .allmode-name a {
+		color: #1a1a1a;
+	}
+
+.allmode-bricks .allmode-showall {												/* SHOW ALL Text */
+	float: right;
+	margin: -8px 12px 16px 0; padding: 0 12px;
+	font-size: 13px; line-height: 20px;
+	color: #ffffff;
+	border-radius: 2px;
+}
+	.allmode-bricks .allmode-showall a {
+		display: inline-block;
+		margin: 0 -10px 0 -12px; padding: 0 10px 0 12px;
+		color: #ffffff;
+	}
+	.allmode-bricks .allmode-showall a:hover {
+		opacity: 0.75;
+	}
+
+.allmode-bricks .allmode-name ~ .allmode-showall {
+	position: absolute;
+	top: 8px; right: 12px;
+	float: none;
+	margin: 0;
+}
+
+
+.allmode-bricks .allmode-itemsbox {												/* Items DIV */
+	padding-top: 2px;
+	overflow: hidden;
+}
+.allmode-bricks .allmode-item {													/* Item DIV */
+	margin-bottom: 32px;
+	font: normal 12px/18px "Arial", "Helvetica", sans-serif;
+	background-color: #fcfcfc;
+	border-radius: 3px 3px 2px 2px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+		-webkit-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.15);
+}
+	.allmode-bricks .allmode-item > div:first-child {
+		border-width: 3px 0 0; border-style: solid;
+		border-top-left-radius: 3px; border-top-right-radius: 3px;
+	}
+	.allmode-bricks .allmode-item > div:last-child {
+		border-bottom-left-radius: 2px; border-bottom-right-radius: 2px;
+	}
+
+
+
+/* ----- IMAGE Styles ----- */
+.allmode-bricks .allmode-img {													/* Item IMAGE */
+	position: relative;
+	border-width: 0 0 3px !important;
+}
+	.allmode-bricks .allmode-img img {
+		display: block;
+		width: 100%; max-width: 100%; height: auto;
+		border-radius: 3px 3px 0 0;
+	}
+	.allmode-bricks .allmode-img:hover img {
+		opacity: 0.85;
+	}
+
+.allmode-bricks .allmode-category {												/* Item CATEGORY */
+	position: absolute;
+	left: -4px; top: 15%;
+	padding: 0 10px 0 12px;
+	line-height: 20px;
+	color: #ffffff;
+	border-radius: 2px;
+}
+	.allmode-bricks .allmode-category a {
+		display: inline-block;
+		margin: 0 -10px 0 -12px; padding: 0 10px 0 12px;
+		color: #ffffff;
+	}
+	.allmode-bricks .allmode-category a:hover {
+		opacity: 0.75;
+	}
+
+
+
+/* ----- CONTENT Styles ----- */
+.allmode-bricks .allmode-content {
+	padding: 24px 10%;
+	overflow: hidden;
+}
+	.allmode-bricks .allmode-content > div:first-child {
+		margin-top: 0;
+	}
+
+.allmode-bricks .allmode-title {												/* Item TYTLE */
+	font: bold 16px/20px Tahoma, Helvetica, Arial, sans-serif;
+	text-transform: none;
+}
+	.allmode-bricks .allmode-title a {
+		color: #1a1a1a;
+	}
+
+.allmode-bricks .allmode-info {													/* Item DATE & AUTHOR */
+	margin-top: 6px;
+	color: #808080;
+	overflow: hidden;
+}
+	.allmode-bricks .allmode-info span + span {
+		margin-left: 12px;
+	}
+
+.allmode-bricks .allmode-text {													/* Item TEXT */
+	margin-top: 18px;
+	color: #4c4c4c;
+}
+	.allmode-bricks .allmode-text a:hover {
+		text-decoration: underline;
+	}
+
+
+
+/* ----- DETAILS Styles ----- */
+.allmode-bricks .allmode-details {
+	padding: 7px 10%;
+	/*min-height: 18px;*/
+	font-size: 11px; color: #666666;
+	background-color: #f4f4f4;
+	border-top: 1px solid #e0e0e0;
+	overflow: hidden;
+}
+
+.allmode-bricks .allmode-hits,
+.allmode-bricks .allmode-rating,
+.allmode-bricks .allmode-comments {												/* Content ELEMENTS */
+	padding: 1px 0 0 18px !important;
+	background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAABgCAQAAACHv4twAAABP0lEQVR4Ae2WsY2EMBBFaYEWCDcl3oz0SyS0QAlLCbiEpYMTFZxEAwSON9uMmIAGfF9fhsOr80mn0+kSzwj0x2++GRM5+22ggIGFY1qq4ow6rFweUeGphhXdjgZMxE8itig7rgxEMJjktXQ6n/QRm4yyoGx3oGw1hfNOFvZAVjWd+zdz5iA0SOubx7R8SukSqr475x9FihQp8BZHNzjcYnBBjyXmm/meAy9q9t+5uKFWtVHfuVZrCJaUuPjmi9o3DSccThmusHic0OOlGS7QAbpCTtTeeQ2P8c5nUUqfYQ+H2R9lpu5DWIcnz1KkSPGzQHvcS0a0Z5BjYjbIpRtV+Q4Nhpd9BhiPsUqEe6180x+HDia2bUO47gOVwUAFrKBuNBSfR2GLlTaElCMqv2UF4xs50Ne/ghm9E9E/wmb/Eh/jmOfnJyOd7AAAAABJRU5ErkJggg==") no-repeat 0 0;
+	/*background: transparent url("icons.png") no-repeat 0 0;*/
+	background-size: 14px 96px;
+}
+	.allmode-bricks .allmode-hits {												/* Item HITS */
+		background-position: 0 0;
+	}
+	.allmode-bricks .allmode-rating {											/* Item RATING */
+		background-position: 0 -40px;
+	}
+	.allmode-bricks .allmode-comments {											/* Item COMMENTS */
+		background-position: 0 -80px;
+	}
+	.allmode-bricks .allmode-details span + span {
+		margin-left: 12px;
+	}
+			
+.allmode-bricks .allmode-readmore {												/* Item READMORE */
+	float: right;
+	border-radius: 2px;
+}
+	.allmode-bricks .allmode-readmore a {
+		display: inline-block;
+		padding: 0 8px;
+		line-height: 18px;
+		color: #ffffff;
+	}
+	.allmode-bricks .allmode-readmore a:hover {
+		opacity: 0.75;
+	}
+
+
+
+/* ----- HIGH RESOLUTION Media Queries ----- */
+@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+	only screen and (min-device-pixel-ratio: 1.3),
+	only screen and (min-resolution: 120dpi) 
+{
+	.allmode-bricks .allmode-hits,
+	.allmode-bricks .allmode-rating,
+	.allmode-bricks .allmode-comments {
+		background-image: url(icons@3x.png);
+	}
+}
+
+
+
+/* ----- COLOR Schemes ----- */
+
+/* --- Light Blue Color (default) --- */
+.allmode-bricks .allmode-name a:hover,
+.allmode-bricks .allmode-title a:hover,
+.allmode-bricks .allmode-text a:hover {
+	color: #3598dc;
+}
+.allmode-bricks .allmode-showall,
+.allmode-bricks .allmode-category,
+.allmode-bricks .allmode-readmore {
+	background-color: #3598dc;
+}
+.allmode-bricks .allmode-name,
+.allmode-bricks .allmode-item > div:first-child {
+	border-color: #3598dc;
+}
+
+/* --- Red Color --- */
+.bricks-red .allmode-name a:hover,
+.bricks-red .allmode-title a:hover,
+.bricks-red .allmode-text a:hover {
+	color: #cc1f1f;
+}
+.bricks-red .allmode-showall,
+.bricks-red .allmode-category,
+.bricks-red .allmode-readmore {
+	background-color: #cc1f1f;
+}
+.bricks-red .allmode-name,
+.bricks-red .allmode-item > div:first-child {
+	border-color: #cc1f1f;
+}
+
+/* --- Pink Color --- */
+.bricks-pink .allmode-name a:hover,
+.bricks-pink .allmode-title a:hover,
+.bricks-pink .allmode-text a:hover {
+	color: #d24087;
+}
+.bricks-pink .allmode-showall,
+.bricks-pink .allmode-category,
+.bricks-pink .allmode-readmore {
+	background-color: #d24087;
+}
+.bricks-pink .allmode-name,
+.bricks-pink .allmode-item > div:first-child {
+	border-color: #d24087;
+}
+
+/* --- Orange Color --- */
+.bricks-orange .allmode-name a:hover,
+.bricks-orange .allmode-title a:hover,
+.bricks-orange .allmode-text a:hover {
+	color: #d94d16;
+}
+.bricks-orange .allmode-showall,
+.bricks-orange .allmode-category,
+.bricks-orange .allmode-readmore {
+	background-color: #d94d16;
+}
+.bricks-orange .allmode-name,
+.bricks-orange .allmode-item > div:first-child {
+	border-color: #d94d16;
+}
+
+/* --- Yellow Color --- */
+.bricks-yellow .allmode-name a:hover,
+.bricks-yellow .allmode-title a:hover,
+.bricks-yellow .allmode-text a:hover {
+	color: #ebc300;
+}
+.bricks-yellow .allmode-showall,
+.bricks-yellow .allmode-category,
+.bricks-yellow .allmode-readmore {
+	background-color: #ebc300;
+}
+.bricks-yellow .allmode-name,
+.bricks-yellow .allmode-item > div:first-child {
+	border-color: #ebc300;
+}
+
+/* --- Green Color --- */
+.bricks-green .allmode-name a:hover,
+.bricks-green .allmode-title a:hover,
+.bricks-green .allmode-text a:hover {
+	color: #4d9926;
+}
+.bricks-green .allmode-showall,
+.bricks-green .allmode-category,
+.bricks-green .allmode-readmore {
+	background-color: #4d9926;
+}
+.bricks-green .allmode-name,
+.bricks-green .allmode-item > div:first-child {
+	border-color: #4d9926;
+}
+
+/* --- Turquoise Color --- */
+.bricks-turquoise .allmode-name a:hover,
+.bricks-turquoise .allmode-title a:hover,
+.bricks-turquoise .allmode-text a:hover {
+	color: #1bb39e;
+}
+.bricks-turquoise .allmode-showall,
+.bricks-turquoise .allmode-category,
+.bricks-turquoise .allmode-readmore {
+	background-color: #1bb39e;
+}
+.bricks-turquoise .allmode-name,
+.bricks-turquoise .allmode-item > div:first-child {
+	border-color: #1bb39e;
+}
+
+/* --- Blue Color --- */
+.bricks-blue .allmode-name a:hover,
+.bricks-blue .allmode-title a:hover,
+.bricks-blue .allmode-text a:hover {
+	color: #0a55bf;
+}
+.bricks-blue .allmode-showall,
+.bricks-blue .allmode-category,
+.bricks-blue .allmode-readmore {
+	background-color: #0a55bf;
+}
+.bricks-blue .allmode-name,
+.bricks-blue .allmode-item > div:first-child {
+	border-color: #0a55bf;
+}
+
+/* --- Violet Color --- */
+.bricks-violet .allmode-name a:hover,
+.bricks-violet .allmode-title a:hover,
+.bricks-violet .allmode-text a:hover {
+	color: #6c3aad;
+}
+.bricks-violet .allmode-showall,
+.bricks-violet .allmode-category,
+.bricks-violet .allmode-readmore {
+	background-color: #6c3aad;
+}
+.bricks-violet .allmode-name,
+.bricks-violet .allmode-item > div:first-child {
+	border-color: #6c3aad;
+}
+
+/* --- Gray Color --- */
+.bricks-gray .allmode-name a:hover,
+.bricks-gray .allmode-title a:hover,
+.bricks-gray .allmode-text a:hover {
+	color: #636363;
+}
+.bricks-gray .allmode-showall,
+.bricks-gray .allmode-category,
+.bricks-gray .allmode-readmore {
+	background-color: #636363;
+}
+.bricks-gray .allmode-name,
+.bricks-gray .allmode-item > div:first-child {
+	border-color: #636363;
+}

@@ -1,0 +1,65 @@
+
+.migrators
+{
+	> ul
+	{
+		>li
+		{
+			.clearfix();
+			background: #fff;
+			border: 1px solid #d7d7d7;
+			width: 50%;
+			padding: 10px 20px !important;
+			border-radius: 6px;
+
+			h3
+			{
+				margin-top: 0;
+				margin-bottom: 10px;
+				font-size: 18px;
+			}
+			i
+			{
+				color: #666;
+				font-size: 32px;
+				margin-top: 10px;
+				margin-right: 15px;
+			}
+			+ li
+			{
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.instructions
+	{
+		>li
+		{
+			font-weight: 700;
+			text-decoration: underline;
+		}
+	}
+
+	.widget-box
+	{
+		table
+		{
+			tr
+			{
+				&:first-child
+				{
+					th
+					{
+						border-top: 1px solid #d7d7d7 !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.es-scan-result {
+    max-height: 250px;
+    overflow-x: auto;
+}

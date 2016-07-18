@@ -1,0 +1,204 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-checkbox {
+    padding-left: 20px;
+
+    label{
+        display: block;
+        position: relative;
+        padding: 0 0 0 5px;
+        font-weight: normal;
+        font-size: inherit;
+        line-height: 16px;
+        margin: 0;
+
+        &::before{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 0;
+            margin-left: -20px;
+            border: 1px solid @input-border;
+            border-radius: 2px;
+            background-color: #fff;
+            .transition(~"border 0.15s ease-in-out, color 0.15s ease-in-out");
+        }
+
+        &::after{
+            display: inline-block;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 0;
+            top: 0;
+            margin-left: -20px;
+            padding-left: 3px;
+            padding-top: 1px;
+            font-size: 11px;
+            color: @gray;
+        }
+    }
+
+    input[type="checkbox"]{
+        display: none;
+
+        &:checked + label::after{
+            font-family: easysocial;
+            font-weight: normal;
+            font-style: normal;
+            display: inline-block;
+            text-decoration: inherit;
+              content: "\e02b";
+        }
+
+        &:disabled + label{
+            opacity: 0.65;
+
+            &::before{
+                background-color: @gray-lighter;
+                cursor: not-allowed;
+            }
+        }
+
+    }
+}
+
+.es-polls-question {
+    font-weight: bold;
+}
+
+.es-polls-item {
+    padding-right: 80px;
+
+    + .es-polls-item {
+        margin-top: 10px;
+        padding-top: 10px;
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            height: 1px;
+            background: #e5e5e5;
+            position: absolute;
+            left: 25px;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+ 
+.es-polls-count {
+    position: absolute;
+    right: -80px;
+    top: 0;
+    width: 80px;
+    text-align: right;
+    color: #999;
+    line-height: 16px;
+}
+
+.es-polls-voters {
+    overflow: hidden;
+    margin-top: 5px;
+
+    > .es-avatar {
+        float: left;
+        margin: 5px 5px 0 0;
+    }
+}
+
+.es-polls-progress {
+    background: #e5e5e5;
+    margin: 10px 0 0;
+    height: 4px;
+    .box-shadow(none);
+}
+
+.is-checked .es-polls-progress .progress-bar {
+    background: @brand-success;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

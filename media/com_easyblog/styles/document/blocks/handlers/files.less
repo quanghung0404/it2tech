@@ -1,0 +1,85 @@
+.eb-block-file {
+    border: 1px solid #ddd;
+    border-bottom-color: #ccc;
+    border-radius: 3px;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+
+.eb-file-thumb {
+    background: #fafafa;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+
+    i {
+        color: #333;
+        font-size: 80px;
+        position: relative;
+        display: inline-block;
+        line-height: 80px;
+
+        b {
+            color: #fff;
+            font-size: 12px;
+            .opacity(.75);
+
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+    }
+}
+
+.eb-file-details {
+    padding: 15px 15px 55px;
+    position: relative;
+    vertical-align: top;
+
+    .btn {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 26px;
+        padding: 0 15px;
+
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+    }
+
+    > div {
+        + div {
+            margin-top: .5em;
+        }
+    }
+}
+
+.eb-block-file.w300 {
+    display: block;
+}
+
+.w300 {
+    .eb-file-thumb,
+    .eb-file-details {
+        display: block;
+        width: auto;
+    }
+
+    .eb-file-thumb {
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .eb-file-details {
+        padding: 15px;
+
+        .btn {
+            position: static;
+            margin-top: 10px;
+            word-break: break-word;
+            display: block;
+            white-space: inherit;
+        }
+    }
+}

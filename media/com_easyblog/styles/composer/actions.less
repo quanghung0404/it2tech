@@ -1,0 +1,115 @@
+.eb-composer-actions {
+}
+
+.eb-composer-manager {
+
+    .eb-composer-apply-post-button,
+    .eb-composer-publish-post-button,
+    .eb-composer-update-post-button,
+    .eb-composer-submit-post-button,
+    .eb-composer-approve-post-button,
+    .eb-composer-update-template-button,
+    .eb-composer-unpublish-post-button {
+        display: none !important;
+    }
+
+    .eb-composer-apply-post-button,
+    .eb-composer-publish-post-button,
+    .eb-composer-update-post-button,
+    .eb-composer-submit-post-button,
+    .eb-composer-approve-post-button,
+    .eb-composer-update-template-button,
+    .eb-composer-unpublish-post-button {
+
+        &.is-saving {
+            i {
+                display: inline-block !important;
+            }
+
+            i + i {
+                display: none !important;
+            }
+        }
+    }
+
+    &.is-editing-template {
+        .eb-composer-update-template-button {
+            display: block !important;
+        }
+        .eb-composer-save-template-button {
+            display: block !important;
+        }
+    }
+
+    &.revision-draft {
+
+        &.can-save {
+            .eb-composer-submit-post-button {
+                display: block !important;
+            }
+
+            .eb-composer-apply-post-button {
+                display: none !important;
+            }
+        }
+
+        &.can-publish {
+            .eb-composer-publish-post-button {
+                display: block !important;
+            }
+
+            .eb-composer-apply-post-button {
+                display: block !important;
+            }
+        }
+    }
+
+    &.revision-pending {
+
+        &.can-save {
+            .eb-composer-submit-post-button {
+                display: block !important;
+            }
+
+            .eb-composer-apply-post-button {
+                display: none !important;
+            }
+        }
+
+        &.can-publish,
+        &.can-moderate {
+            .eb-composer-approve-post-button {
+                display: block !important;
+            }
+        }
+    }
+
+    &.revision-finalized {
+
+        &.can-save {
+            .eb-composer-submit-post-button {
+                display: block !important;
+            }
+
+            .eb-composer-apply-post-button {
+                display: none !important;
+            }
+        }
+
+        &.can-publish,
+        &.can-moderate {
+
+            .eb-composer-unpublish-post-button {
+                display: block !important;
+            }
+            
+            .eb-composer-update-post-button {
+                display: block !important;
+            }
+
+            .eb-composer-apply-post-button {
+                display: block !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+	// EasySocial EasyBlog posts Modules
+	&.mod-es-recent-blogs {
+
+		.es-mod-title {
+			font-weight: bold;
+			margin-bottom: 5px;
+			font-size: 14px;
+		}
+		.es-mod-desp {
+			margin-bottom: 5px;
+		}
+		.es-mod-author {
+
+		}
+		ul.es-nav-blogs {
+			> li{
+				padding: 15px 0 !important;
+
+				.author-meta{
+					margin-top:3px;
+				}
+			}
+
+			> li + li {
+				border-top: 1px solid #d7d7d7;
+			}
+		}
+	}
+
+}

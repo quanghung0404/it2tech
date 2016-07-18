@@ -1,0 +1,256 @@
+.es-media-group {
+
+	position: relative;
+	line-height: 16px;
+	font-size: 12px;
+
+	.content-hint {
+		text-align: center;
+		font-size: 16px;
+		color: @esMediaGroupColor;
+		padding: 100px 0;
+		display: none;
+		background: @esMediaGroupBackground;
+	}
+
+	.no-photos-hint {
+		display: block;
+	}
+
+	.no-albums-hint {
+		display: block;
+
+		.btn {
+			margin-top: 10px;
+			padding: 5px 10px;
+		}
+	}
+
+	.drop-photo-hint {
+	}
+
+	&.can-drop-file {
+		.no-photos-hint {
+			display: none;
+		}
+
+		.drop-photo-hint {
+			display: block;
+		}
+	}
+
+	.btn-upload {
+		opacity: 0;
+	}
+
+	&.can-upload {
+		.btn-upload {
+			opacity: 1;
+		}
+	}
+
+	&.has-photos {
+		.no-photos-hint {
+			display: none;
+		}
+		.drop-photo-hint {
+			display: none;
+		}
+	}
+
+	&.has-albums {
+		// opacity: 0;
+
+		.no-albums-hint {
+			display: none;
+		}
+	}
+
+	&.loading {
+
+		> .es-media-loader {
+			display: block;
+		}
+	}
+}
+
+
+// Shared
+// ----------------
+.es-media-item {
+	z-index: 1;
+	position: relative;
+
+	.show-on-hover {
+		opacity: 0;
+	}
+
+	&:hover {
+		.show-on-hover {
+			opacity: 1;
+			.transition(all .1s ease);
+		}
+	}
+
+	&.show-all {
+		z-index: 2;
+
+		.show-on-hover {
+			opacity: 1 !important;
+		}
+	}
+
+	&.loading {
+
+		> .es-media-loader {
+			display: block;
+		}
+	}
+}
+
+.es-media-item-menu {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+	.btn {
+		.dropdown-menu {
+			left: auto;
+			right: 0;
+			margin-top: 9px;
+			margin-right: -1px; // aligns with border width
+			text-align: left;
+			.arrow(6px, @esMediaArrowBackground, top, auto, 5px, 0, @esMediaArrowBorder);
+		}
+	}
+
+	.btn-group {
+		float: right;
+		margin: 0;
+
+		+ .btn-group {
+			margin-right: 8px;
+		}
+	}
+}
+
+.es-media-header {
+	margin-bottom: 10px;
+
+	.media {
+		position: relative;
+		z-index: 3; // fixed overlapped by .es-photo-content
+		overflow: visible;
+		height: 42px + 1px; // 1px cosmetic
+		border-bottom: 1px solid @esMediaHeaderBorder;
+	}
+
+	.media-object {
+		margin-right: 7px;
+	}
+
+	.es-avatar {
+		width: 32px;
+		height: 32px;
+	}
+}
+
+.es-media-info {
+	position: relative;
+	z-index: 1;
+
+	> small {
+		display: block;
+		margin-top: 3px;
+		position: relative;
+
+		> span {
+			display: inline;
+			color: #858585;
+			> i {
+				width: 11px;
+				height: 11px;
+				line-height: 11px;
+			}
+		}
+	}
+}
+
+.es-media-title {
+	font-size: 16px;
+	font-weight: bold;
+    font-family: @esTitleFont;
+	margin-bottom: 2px;
+	padding-top: 10px;
+	word-break: break-all;
+}
+
+.es-media-caption {
+	margin-bottom: 2px;
+	padding: 4px 0;
+	display: inline;
+}
+
+
+.es-media-loader {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url('@{media_uri}/images/loading.gif') no-repeat center rgba(0,0,0,0.5);
+	display: none;
+}
+
+.es-media-stats {
+	border-bottom: 1px solid @esMediaStatsBorder;
+	margin-top: -10px; // accomodate content
+	margin-bottom: 15px;
+	.clearfix();
+}
+
+.es-media-stat {
+	width: 33%;
+	float: left;
+	padding: 15px;
+	text-align: center;
+
+	b {
+		display: block;
+		color: #999;
+		font-size: 12px;
+		line-height: 12px;
+		padding-bottom: 5px;
+	}
+	i {
+		display: none;
+	}
+	span {
+		font-size: 20px;
+		line-height: 20px;
+	}
+}
+
+
+// Album empty state quick fix
+// Duplicate styling for albums empty state due to dom changing no more wrapping with .es-media-group 
+// #4437
+.es-albums {
+	.content-hint {
+		text-align: center;
+		font-size: 16px;
+		color: @esMediaGroupColor;
+		padding: 100px 0;
+		display: none;
+		background: @esMediaGroupBackground;
+	}
+	
+	.no-albums-hint {
+	    display: block;
+    	.btn {
+        	margin-top: 10px;
+    	    padding: 5px 10px;
+        }
+	}	
+}

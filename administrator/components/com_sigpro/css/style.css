@@ -1,0 +1,979 @@
+/**
+ * @version     3.1.x
+ * @package     Simple Image Gallery Pro
+ * @author      JoomlaWorks - http://www.joomlaworks.net
+ * @copyright   Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
+ * @license     http://www.joomlaworks.net/license
+ */
+
+/* Legend
+ * color used:
+ * purple: #c74484;
+ * gray: #494949;
+ * green: #3da500;
+ * light-gray: ##efefed
+ **/
+
+/* Reseting CMS styles */
+body {text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;}
+html {overflow-y:auto!important;}
+#content-box {border-radius:0!important;margin-bottom:0;}
+#content-box div#element-box div.m {padding:0;background:none;border-radius:0;border:0;}
+body #element-box {padding:0;margin-bottom:0;}
+#sigPro p {margin:0 0 15px;}
+#sigPro a:link {text-decoration:none;outline:0;}
+#toolbar-box, #submenu-box {display:none;}
+div#footer {display:none;}
+div#content-box + p[align="center"] {display:none;}
+/* menu fix */
+#module-menu #menu {z-index:9999;}
+#sigPro input, #sigPro input:focus {outline:0;}
+#sigPro input[type="checkbox"] {border:0;}
+.sigJVersionSmall {font-weight:700;padding:0 5px 0 10px;color:#fff;font-size:13px;display:inline-block;vertical-align:top;}
+.contentpane {overflow:auto;}
+.isJVersion30 #content + hr {display:none;}
+img {-ms-interpolation-mode:bicubic;}
+.clr {clear:both;}
+
+/* -------------------------------------------------------------
+/* Creating our boxed layout */
+.sigGrayFix {position:fixed;top:20px;left:11px;bottom:0px;right:10px;border-right:1px solid #d0d0d0;background:#F0F0EE; }
+.sigMiddleWhiteFix {position:fixed;top:20px;left:11px;bottom:0px;right:10px;border-right:1px solid #d0d0d0;background:#FFF; }
+
+/* Joomla 1.5 overrides */
+.isJVersion15 .t, .isJVersion15 .b,.isJVersion15	#border-bottom {display:none;}
+.isJVersion15 #content-box .padding {padding:0;}
+
+/* creating our boxed layout and fixing z-index issues */
+/* Joomla 1.5 && 2.5 */
+.isJVersion25 { }
+	.isJVersion25 #content-box, .isJVersion15 #content-box {border:0;}
+	.isJVersion25 #border-top, .isJVersion25 #header-box, .isJVersion25 .sigProHeader,
+	.isJVersion15 #border-top, .isJVersion15 #header-box, .isJVersion15 .sigProHeader { position:fixed;z-index: 9;left:10px;right:10px;min-width:580px; }
+	.isJVersion25 #border-top, .isJVersion15 #border-top {z-index:13;}
+	.isJVersion25 #header-box, .isJVersion15 #header-box {top:64px;z-index:13;} /* in order to hide the modals */
+	.isJVersion25 .sigProHeader, .isJVersion15 .sigProHeader {top:89px;}
+	.isJVersion25 .sigProToolbar, .isJVersion15 .sigProToolbar {right:10px;padding:0;top:149px;height:25px;position:fixed;z-index:8;left:55px;min-height:51px;border-right:1px solid #d6d6d4;}
+	.isJVersion25 #sigSideBar, .isJVersion15 #sigSideBar {top:150px;bottom:0px;left:10px;height:auto;position:fixed;width:46px;overflow:hidden;z-index:9;}
+	.isJVersion25 .sigProPagination, .isJVersion15 .sigProPagination {position:fixed;z-index:7;bottom:0px;right:11px;left:10px;width:auto;}
+	.isJVersion25 #sigPro #adminFormContainer,
+	.isJVersion15 #sigPro #adminFormContainer {padding:195px 0 70px 44px;}
+	.isJVersion25 .sigTopWhiteFix, .isJVersion15 .sigTopWhiteFix {width:100%;z-index:12;position:fixed;top:0;height:20px;background:#fff;left:0;}
+	.isJVersion25 .sigBtmWhiteFix, .isJVersion15 .sigBtmWhiteFix {z-index:10;position:fixed;bottom:0;height:1px;background:#fff;left:10px;right:10px;border-top:1px solid #d0d0d0;}
+	.isJVersion25 #sigProModal, .isJVersion15 #sigProModal {margin-top:95px;}
+	.contentpane #sigProModal {margin-top:5px!important;}
+		/* J! 1.5 specific */
+		.isJVersion15 .sigPermissions .sigInformationWrap {padding-top:0;}
+		.isJVersion15 table.admintable td.key, .isJVersion15 table.admintable td.paramlist_key {background:transparent;}
+		.isJVersion15 .sigGrayFix,
+		.isJVersion15 .sigMiddleWhiteFix { z-index: 2; }
+		.isJVersion15 #sigPro { margin-right: 1px; z-index: 3; }
+
+/* Joomla 3.0 */
+body.isJVersion30 {background:#f0f0ee;}
+body.contentpane.isJVersion30 {background:#fff;}
+.isJVersion30 header.header {display:none;}
+.isJVersion30 {-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+	.isJVersion30 li {line-height:inherit;}
+	.isJVersion30 .container-fluid, .isJVersion30 .container-main {padding:0;}
+	.isJVersion30 .subhead-fixed {z-index:12;}
+	.isJVersion30 .subhead {margin-bottom:0;}
+	.isJVersion30 form {margin:0;}
+	.isJVersion30 .navbar-fixed-top {z-index:12;position:fixed;}
+	.isJVersion30 .navbar-fixed-bottom {z-index:9; }
+	.isJVersion30 #status {box-shadow:0 0 0 transparent;}
+	/* fixed layout */
+	.isJVersion30 .sigProHeader {position:fixed;z-index:9;left:0;right:0;min-width:580px;top:29px; }
+	.isJVersion30 .sigGrayFix {left:0;bottom:0;right:0;z-index:2;display:none;}
+	.isJVersion30 .sigMiddleWhiteFix {left:0;bottom:0;right:0;z-index:2;}
+	.isJVersion30 .subhead-collapse {display:none;}
+	.isJVersion30 #sigPro {z-index:3;}
+	.isJVersion30 .sigProToolbar {right:0;padding:0;top:90px;height:25px;position:fixed;z-index:8;left:45px;min-height:51px;border-right:1px solid #d6d6d4;}
+	.isJVersion30 #sigSideBar {top:90px;bottom:11px;left:0;height:auto;position:fixed;width:46px;overflow:hidden;z-index:11; }
+	.isJVersion30 .sigProThumbnailsToolbar {bottom:19px;}
+	.isJVersion30 .sigProGrid {padding:135px 25px 95px 45px;}
+	.isIE8.isJVersion30 .sigProGrid	{padding-top:160px;}
+	.isJVersion30 .sigProGrid.sideBarIsOpen {padding:135px 25px 95px 300px;}
+	.isJVersion30 #sigProModal {margin-top:35px;}
+	.isJVersion30 .sigProPagination {position:fixed;z-index:9;bottom:29px;right:0;left:0;width:auto;border-bottom:1px solid #d0d0d0; }
+	.isJVersion30 .sigInformationNav {top:141px;left:46px;}
+	.isJVersion30 .sigProGrid.sigInformationWrap {padding:141px 20px 55px;}
+	.isJVersion30 .sigInformationWrap.sideBarIsOpen {padding-left:285px;}
+	.isJVersion30 .sigSideNavBar.sideBarIsOpen {left:300px;}
+
+/* -------------------------------------------------------------
+ *Plugin Settings (when in a modal) */
+/* reseting the component's layout when inside a modal */
+body.contentpane {margin:0;padding:0;min-height:100px;}
+	body.contentpane.isJVersion15 {height:100%; padding: 0 0 23px; margin: 0 -15px 0 0; }
+	body.contentpane .sigTopWhiteFix,
+	body.contentpane .sigBtmWhiteFix {display:none;}
+	body.contentpane .sigGrayFix {left:0;bottom:0;right:0;}
+
+	.sigProModalSite { } /* main prefix class */
+	.sigProModalSite #sigSideBar,
+	.sigProModalSite .sigProJToolbar {display:none;}
+	.sigProModalSite .sigProHeader {top:0;right:0;left:0;}
+	.sigProModalSite .sigProToolbar {top:59px;right:0;left:0;}
+	.sigProModalSite .sigInformationNav {top:59px;}
+	.sigProModalSite .sigProPagination {position:fixed;bottom:64px;left:0;right:0;}
+	.sigProModalSite .sigProPagination .sigProPagiWrap {padding:0 25px;}
+	.sigProModalSite .sigProGrid {padding:138px 0 80px;}
+	.fancybox-lock .fancybox-overlay {background:#000;background:rgba(0,0,0,.8);}
+		/* alerts inside the modal */
+		.sigProModalSite #system-message-container {z-index:13;top:61px;}
+		.contentpane.isJVersion15 dl#system-message {z-index:13;top:61px; }
+
+/* Common Styles */
+.sigTextRight {text-align:right;}
+.sigTextCenter {text-align:center;}
+.hidden {display:none!important;}
+.sigFloatLeft {float:left;}
+.sigFloatRight {float:right;}
+.sigFloatNone {float:none;}
+.sigPurple {color:#c74484;}
+.sigBoxSizing {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+#sigPro h1,#sigPro h2,#sigPro h3,#sigPro h4,#sigPro h5 {font-weight:400;}
+.sigThin {font-weight:300;}
+.sigTransition {	/*
+							uncomment at your own risk safari does not play well with position fixed and transitions
+							-webkit-transition:all 350ms cubic-bezier(0.730, 0, 0.445, 1.000);
+							-webkit-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);*/
+								 -moz-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);
+								 	-ms-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);
+									 -o-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);
+									 		/* transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);*/
+}
+.sigSafeTransition {/* -webkit-transition:all 350ms cubic-bezier(0.730, 0, 0.445, 1.000);
+							-webkit-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);
+								 -moz-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);
+								 	-ms-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);
+									 -o-transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000);
+									 		transition:all 350ms cubic-bezier(0.730, -0.005, 0.445, 1.000); *//* used when safe for webkit browsers *(transition and fixed don't mix well) */ }
+
+.sigPro50 {width:50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.sigStrong {font-weight:700;}
+
+/* Rockettheme mission control template */
+#mc-standard { } /* mission control specific body class */
+	#mc-standard #mc-header {position:fixed;z-index:100000;left:0;right:0;top:0;} /* position it above all else */
+	#mc-standard .sigProHeader {top:110px;left:0;right:0;}
+	#mc-standard #sigSideBar {top:171px;left:0;}
+	#mc-standard .sigProToolbar {top:170px;right:0;left:45px;}
+	#mc-standard .sigGrayFix {right:0;}
+	#mc-standard .sigProPagination {right:0;}
+	#mc-standard .sigBtmWhiteFix {right:0;background:#F5F5F5;}
+	#mc-standard #mc-component {background:transparent;padding:0;}
+	#mc-standard #sigPro #adminFormContainer {padding-left:20px;}
+	/* info pages */
+	#mc-standard .sigInformationNav {top:222px;left:46px;}
+	#mc-standard #sigPro #adminFormContainer.sigInformationForm {padding-left:335px;}
+	#mc-standard .sigSideNavBar.sideBarIsOpen {left:296px;}
+	/* various fixes */
+	#mc-standard .sigProPaginationPages ul li {padding:0;}
+	#mc-standard #mc-footer {display:none;}
+	#mc-standard #sigProModal {margin-top:85px;}
+	/* when in a modal */
+	#mc-standalone #sigPro #adminFormContainer {background:#fff;min-height:90px;padding:0;margin:0;}
+	/* error messages */
+	#mc-standard #system-message dd {margin:0;padding:0;border:0;background:transparent;}
+	#mc-standard #system-message-container {top:134px;}
+
+/* Component Container */
+#sigPro{font-family:'Open Sans',sans-serif;font-size:13px;line-height:1.4;overflow:hidden;position:relative;}
+
+/* Joomla! Toolbar inside component */
+.sigProJToolbar{margin:12px;}
+.sigProJToolbar .pagetitle,.sigProJToolbar .header{float:left;}
+
+/* Component Heading and Menus*/
+.sigProHeader {border-top:1px solid #4a4949;overflow:hidden;border-bottom:1px solid #000;background:#4a4949;}
+	.sigProTopRow, .sigProBtmRow {height:4px;width:100%;background-color:#c74383;box-shadow:0 1px 0 rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.2);}
+	.sigProHeader .sigProLogo {width:226px;height:33px;background:url(../images/logo.png) no-repeat 0 0;margin:12px 4px 0;}
+	.sigMenuVersion{display:inline-block;vertical-align:middle;color:#fff;font-size:11px;padding:0 5px;line-height:55px;letter-spacing:-0.5px;}
+	.sigProHeader ul {list-style:none outside none;height:55px;line-height:51px;margin:0;padding:0;}
+	.sigProHeader ul li {display:inline-block;height:55px;vertical-align:top;margin:0 -2px;}
+	.sigProHeader ul li a:link { }
+		/* bolder theme (menu) */
+		.sigProHeader.sigBoldMenu ul {background:#323232;}
+		.sigProHeader.sigBoldMenu ul li {border-right:1px solid #4a4949;}
+		.sigProHeader.sigBoldMenu ul li:last-child {border:0;}
+		.sigProHeader.sigBoldMenu ul a.sigProMenuItems:link,
+		.sigProHeader.sigBoldMenu ul a.sigProMenuItems:visited {padding:0 39px;color:#fff;font-weight:700;font-size:13px;display:block;height:55px;border-top:1px solid transparent;}
+		.sigProHeader.sigBoldMenu ul a.sigProMenuItems:hover {background:#c74484;border-top:1px solid #4a4949;}
+		/* lighter theme (menu) */
+		.sigProHeader.sigLight ul { }
+		.sigProHeader.sigLight ul li {}
+		.sigProHeader.sigStartMenu ul {padding:0;}
+		.sigProHeader.sigLight ul li a.sigProMenuItems:link,
+		.sigProHeader.sigLight ul li a.sigProMenuItems:visited {font-size:18px;color:#fff;padding:0 20px;display:block;border-top:1px solid transparent;letter-spacing:-1px;height:55px;}
+		.sigProHeader.sigLight ul li a.sigProMenuItems:hover {background:#c74484;border-top:1px solid #4a4949;}
+		.sigProHeader.sigLight ul li .sig-icon {font-size:20px;color:#fff;font-weight:400;}
+		.sigProHeader.sigLight ul li .sig-icon:before {margin-right:10px;}
+
+/* Component toolbar */
+.sigProToolbar { }
+	.sigProToolbar.sideBarIsOpen {margin-left:256px;}
+	.sigProUpperToolbar {padding:9px 15px 16px;height:25px;background:#fff;position:relative;z-index:8;box-shadow:0 1px 0 rgba(0,0,0,.1);border-left:5px solid #c74484;}
+	.sigProUpperToolbar h3 {display:inline-block;vertical-align:middle;}
+	.sigProLowerToolbar {display:none;overflow:hidden;padding:5px 15px;background:#fff;background:rgba(255,255,255,.9);position:absolute;right:0;
+	left:-5px;top:50px;z-index:11;border-top:1px solid #d6d6d4;border-bottom:1px solid #d6d6d4; }
+	.sigProLowerToolbar span {}
+		/* information toolbar */
+		.sigInformationToolbar {padding:0 15px;height:50px;line-height:50px;}
+		/* toolbar items */
+		h3.sigProPageTitle {margin:0;padding:0;font-size:18px;letter-spacing:-1px;}
+		#selectedCount {font-size:20px;margin-right:5px;}
+		.sigProItemDeleteLinks {height:28px;line-height:28px;}
+		.sigProItemDeleteLinks a:link,
+		.sigProItemDeleteLinks a:visited {color:#c74484;font-weight:700;font-size:12px;}
+		.sigProItemDeleteLinks a:before {margin-right:5px;vertical-align:middle;font-size:18px;color:#000;}
+		/* Ordering */
+		.sigProOrdering{height:40px;margin:-11px 0;padding:11px 0 0;border-left:1px solid #e7e7e7;}
+		.sigProOrdering img{padding-left:6px;}
+		.sigProOrdering strong.selectHeading {position:relative;z-index:2;padding:0 15px;}
+		.sigProOrdering label {padding:0 15px;font-size:12px;margin-bottom:0;}
+		.isJVersion15 .sigProOrdering,
+		.isJVersion25 .sigProOrdering {position:relative;right:-20px;}
+		/* J!3 */
+		.isJVersion30 .sigProOrdering {height:38px;margin:-8px 0;}
+		.isJVersion30 .sigProModalSite .sigProOrdering {padding:5px 0;}
+
+/* -------------------------------------------------------------
+ *Galleries View */
+
+/* Grid - common styles */
+.sigProGrid {background:#f0f0ee;padding:11px 25px 30px 0;position:relative;float:left;width:100%;overflow:auto;min-height:430px;}
+	.sigProGrid.sideBarIsOpen {padding:11px 25px 30px 255px;}
+	.sigProGrid.sigPaddingTop {padding-top:45px!important;}
+	.sigProModalSite .sigProGrid.sigPaddingTop {padding-top:173px!important;}
+	.isJVersion30 .sigProGrid.sigPaddingTop {padding-top:168px!important;}
+	.sigProGrid .sigProGridColumn{display:block;margin:0 0 20px 16px;float:left;background:#fff;border:1px solid #9d9d9b;border-radius:5px;
+ -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:relative;overflow:hidden;}
+	.contentpane .sigProGrid .sigProGridColumn {margin:0 0 15px 10px;} /* shrink them a bit when inside a modal */
+	.sigProGrid .sigProGalleryImage {width:335px;display:inline-block;vertical-align:top;float:none;}
+	.sigProGrid .sigProGallery {width:276px;border:1px solid #bcbbbb;box-shadow:0 1px 2px rgba(50,50,50,.25), inset 0 1px 0 rgba(255,255,255,.55);}
+	.sigProGrid .sigProGridColumn.selectedImage {box-shadow:0 0 0 3px #c74484;}
+	.sigCover {-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;background-repeat:no-repeat;background-position:50% 50%;}
+	.isIE8 .sigCover { }
+	.sigPortrait {padding-bottom:50%;}
+
+/* Gallery/Galleries - common styles	*/
+.sigProGalleryTextInner {padding:15px 20px 25px;overflow:hidden;}
+.sigProImageContainer {position:relative;cursor:pointer;max-width:100%;min-width:100%;border-bottom:1px solid #bcbbbb;overflow:hidden;}
+.sigProGridColumn.selectedImage .sigProImageContainer {margin:0;}
+.sigProImageContainer img {min-width:100%;/* max-width:none;min-height:100%;height:100%;max-height:none;width:auto; */ }
+
+/* Galleries ( galleries view) information */
+.sigProGallery { }
+	.sigProGallery input[type="checkbox"] {display:block;}
+	.sigProNumOfImages {position:absolute;right:16px;top:16px;border-radius:12px;background:#000;background:rgba(0,0,0,.5);text-align:center;color:#fff;font-size:12px;font-weight:700;
+	display:inline-block;padding:7px 18px;line-height:1;z-index: 7;}
+	.sigProGalleryTextWrapper {overflow:hidden;padding:7px 9px;}
+		.sigProGalleryTitle {font-size:14px;font-weight:bold;margin:0;}
+			.sigProGalleryTitle a.sigProGalleryLink:link,
+			.sigProGalleryTitle a.sigProGalleryLink:visited {color:#c74484;}
+			.sigProGalleryTitle a.sigProGalleryLink:hover {text-decoration:underline!important;}
+			.sigProGalleryImageLink {display:block;width:276px;height:207px;}
+		.sigProGalleryPath {font-size:11px;}
+		.sigProGalleryPath span {color:#969696;}
+			/* Selected Gallery */
+			.sigProGallery.sigProSelectedGal {background:#c74484;}
+			.sigProGallery.sigProSelectedGal .sigProImageContainer {background:#fff;}
+			.sigProGallery.sigProSelectedGal .sigProGalleryTitle a.sigProGalleryLink:link,
+			.sigProGallery.sigProSelectedGal .sigProGalleryTitle a.sigProGalleryLink:visited {color:#fff;}
+			.sigProGallery.sigProSelectedGal .sigProGalleryPath {color:#000; }
+			.sigProGallery.sigProSelectedGal .sigProGalleryPath span {color:#fff;}
+			/* Gallery Settings */
+			.sigProGallerySettings{width:100%;height:64px;padding:0;position:fixed;left:0;bottom:0;background:#FFFFFF;text-align:center;border-top:4px solid #DDDDDD;z-index:12;}
+			.sigProGallerySettingsInner{padding:8px;}
+			.sigProGallerySettings .innerSettingsBlock {display:inline-block;vertical-align:top;margin:0 20px 0 0;}
+			.sigProGallerySettings .innerSettingsBlock:last-child {margin-right:0;}
+			.sigProGallerySettings h3{display:inline-block;vertical-align:middle;margin:0 20px 0 0;height:46px;line-height:46px;font-size:18px;color:#c74484;}
+			.sigProGallerySettings label {font-size:11px;color:#323232;text-align:center;padding:0 0 5px;}
+			.sigProGallerySettings input,
+			.sigProGallerySettings select {display:block;margin:0 auto;height:30px;line-height:30px!important;max-height:30px;font-size:12px;color:#4a4949;font-weight:700;}
+			/* Joomla! 3.0 */
+			.isJVersion30 .sigProGallerySettings label {margin:0;}
+			.isJVersion30 .sigProGallerySettings input {margin:0 auto;max-width:40px;max-height:23px;display:block;}
+			/* When inside a modal */
+			.sigProGalleryActions {width:213px;height:78px;border-radius:3px;position:absolute;z-index:7;display:none;
+			top:50%;left:50%;margin:-39px 0 0 -106px;}
+			.sigProGalleryPreviewImage {background-repeat:no-repeat;height:207px;width:100%;}
+			img.sigProGalleryPreview {width:auto;min-height:100%;height:100%;}
+			.sigProGalleryPreviewImage:hover + .sigProGalleryActions, .sigProGalleryPreviewImage:hover .sigProGalleryActions, .sigProGalleryActions:hover {display:block;}
+			.sigProGalleryAction:link,
+			.sigProGalleryAction:visited {color:#fff;text-align:center;text-shadow:0 1px 0 rgba(0,0,0,.22);font-weight:700;letter-spacing:-1px;width:106px;height:78px;display:block;float:left;text-transform:uppercase;
+			background:#000;background:rgba(0,0,0,.5);border-radius:0 3px 3px 0;}
+			.sigProGalleryAction:first-child {margin-right:1px;border-radius:3px 0 0 3px;}
+			.sigProGalleryAction .sigIcon {display:block;font-weight:400;margin:15px auto 4px;font-size:24px;}
+
+/* single Gallery View */
+.sigProGalleryHeading{background:#ffffff;padding:0;margin:0;}
+.sigProEditingGalleryTitle{margin:0;font-size:17px; }
+.sigProEditingGalleryTitle .sigStrong { max-width: 300px;text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: inline-block; vertical-align: top; }
+.sigProModalSite .sigProEditingGalleryTitle .sigStrong { max-width: 200px; }
+.sigProLanguageSwitcher{float:right;}
+.sigProImageInfo {font-size:11px;margin:15px 0 0;}
+	/* Empty gallery handling */
+	.sigProGalleryEmpty {background:#efefed;border:0; }
+	.sigProGalleryEmpty .sigProGalleryHeading,
+	.sigProGalleryEmpty .sigProThumbnailsToolbar{display:none;}
+	.sigProGalleryEmpty h2 {color:#7d7d7c;font-size:21px;position:relative;margin:0 auto;display:inline-block;padding:50px 0px 95px 50px;font-weight:400;}
+	.sigProGalleryEmpty h2:after {content:"";display:block;background:url(../images/pointingArrow.png) no-repeat 0 0;position:absolute;left:0;top:10px;width:41px;height:54px;}
+	.sigProGalleryEmptyMessage {display:none;}
+	.sigProGalleryEmptyMessage.blockIt { display: block; }
+	.sigProGalleryEmpty .sigProGalleryEmptyMessage {display:block;margin:0 auto;text-align:center;}
+	.sigProGalleryEmptyBody {color:#7d7d7c;font-size:44px;font-weight:300;padding:0 0 150px;}
+	.sigProGalleryEmptyBody .hugeNoGalleryIcon {font-weight:400;font-size:150px;margin:0 0 10px;display:block;color:#d6d6d4;}
+	/* edit the image/ Gallery (single view) */
+	.sigProGalleryImage input,.sigProGalleryImage label,.sigProGalleryImage textarea{float:none;width:100%;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+	.sigProGalleryImage textarea{resize:none;}
+	.sigProGalleryImage label {color:#323232;display:block;font-weight:700;margin:15px 0 8px;}
+	.sigCheckWrapper {display:inline-block; position:absolute;left:0;top:0;z-index:7;background-color:#313131;background-color:rgba(50,50,50,.5);border-radius:4px 0;padding:12px; }
+	.sigProGalleryImage input[type="checkbox"]{min-height:0;width:auto;margin:0;}
+	.sigProImageToolbar {}
+	.sigProImageToolbar a:link, .sigProImageToolbar a, .sigProImageToolbar:visited {font-weight:700;color:#000;text-decoration:none;line-height:1;}
+	.sigProImageToolbar a:hover {color:#c74484 }
+	.sigProImageToolbar a:before {color:#acacac;vertical-align:middle;font-weight:400;font-size:16px;margin:-2px 5px 0 0;}
+	.sigProImageToolbar a:hover:before {color:#000;}
+	.sigProLabel{cursor:pointer;}
+	#sigProImageTemplate{display:none;}
+		/* preview the image */
+		.sigProPreviewButton,
+		.sigProPreviewButton:visited,
+		.sigProPreviewButton:link {position:absolute;width:100%;height:100%;text-align:center;vertical-align:middle;color:#fff;display:none;font-size:70px;
+		 text-decoration:none;z-index:6;}
+		.sigProPreviewButton span {width:120px;height:77px;display:inline-block;background:#000;background:rgba(50,50,50,.67);border-radius:6px;line-height:77px;position:absolute;
+		top:50%;left:50%;margin-top:-37px;margin-left:-60px;text-align:center;}
+		.sigProPreviewButton:hover, .sigProImageContainer:hover .sigProPreviewButton {display:block!important;}
+
+/* Pagination */
+.sigProPagination {text-align:center;display:block;z-index:8;bottom:0;left:0;background:#fff;width:100%;
+ -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;box-shadow:0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 -15px 15px rgba(255, 255, 255, 0.6);}
+	.sigProPagination .sigProPagiWrap {margin:0 0 4px;border-top:1px solid #c8c8c6;overflow:hidden;line-height:1;padding:0 25px 0 66px;}
+	.sigProPagination .container {clear:none;display:inline-block;vertical-align:middle;text-align:center;width:70%;margin:0 auto;padding:3px 0 0;line-height:2.5;}
+
+	/* sigProPaginationPages */
+	.sigProPaginationPages {display:inline-block;vertical-align:top;}
+	.sigProPaginationPages ul {list-style:none outside none;margin:0;padding:0 50px;}
+	.sigProPaginationPages ul li {display:inline-block;vertical-align:middle;font-weight:700;}
+	.sigProPaginationPages ul li a:link,
+	.sigProPaginationPages ul li a:visited {border-top:3px solid transparent;padding:13px 10px 10px;display:block;color:#676767;}
+	.sigProPaginationPages ul li a.sigActive {border-color:#000;}
+	.sigProPaginationPages ul li.pagination-page { }
+	.sigProPagination select#limit {}
+	.sigProPagination label {padding:0 10px;margin:0;font-size:13px;display:inline-block;vertical-align:middle;}
+	.sigProPagination input[type="checkbox"], .sigProPagination select {display:inline-block;vertical-align:middle;margin:0;}
+	.sigProPagination .limit {display:inline-block;padding:13px 0 0;}
+	.sigProPageItem {padding-top:15px;}
+
+	/* Aside (sidebar) */
+	#sigSideBar {background-color:#fff;z-index:10;
+		background-image:-moz-linear-gradient(bottom, #efefed 0%, #fff 100%);
+		background-image:-o-linear-gradient(bottom, #efefed 0%, #fff 100%);
+		background-image:-webkit-linear-gradient(bottom, #efefed 0%, #fff 100%);
+		background-image:linear-gradient(bottom, #efefed 0%, #fff 100%);
+	 }
+		.sigSideBarWrapper {position:absolute;left:-254px;width:300px;height:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+	 	#sigSideBar.openSideBar {width:300px;border-left:1px solid #d0d0d0;}
+		#sigSideBar.openSideBar .sigSideBarWrapper {left:0;}
+		.sideBarTextArea {width:254px;overflow:auto;padding:0 0 20px;height:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+		.sideBarBody {padding:65px 22px 22px;font-size:12px;}
+		.sideBarBody h3 {font-size:18px;letter-spacing:-1px;margin:0 0 15px;}
+		.sideBarBody .sideBarDesc {padding-bottom:50px;}
+		#sigPro .sideBarBody a:link,
+		#sigPro .sideBarBody a:visited {color:#181818;text-decoration:underline;}
+		#sigPro .sideBarBody a:hover {color:#c74484;}
+		.sideBarBody ol {padding:0 15px;}
+		.sideBarBody ul {list-style:outside circle;padding:0 15px;}
+		.sideBarBody ol li,
+		.sideBarBody ul li {margin:0 0 5px;}
+		.sidebarHandle {width:46px;height:100%;text-align:center;overflow:hidden;border-left:1px solid #d0d0d0;border-right:1px solid #d0d0d0;position:absolute;right:0;top:0;}
+		.sidebarHandle .sideToggler:link,
+		.sidebarHandle .sideToggler:visited {background-color:#fbfbfb;color:#313131; width:32px;height:28px;border-radius:2px;border:1px solid #828080;
+		margin:11px auto;font-size:28px;line-height:30px;text-align:center;display:block;}
+		.isJVersion30 .sidebarHandle .sideToggler:link,
+		.isJVersion30 .sidebarHandle .sideToggler:visited {line-height:21px;}
+		.openSideBar .sidebarHandle .sideToggler:link,
+		.openSideBar .sidebarHandle .sideToggler:visited {background-color:#313131;color:#fff;}
+		.sideBarHeader {border-bottom:1px solid #d0d0d0;padding:12px 0;margin:0 0 15px; position: absolute; left: 0; top: 0; width: 254px; background: #fefefe;}
+			.sideBarHeader a:link, .sideBarHeader a:visited {color:#323232;margin:0 7px;font-size:18px;}
+			/* Thmbnails toolbar */
+			.sigProThumbnailsToolbar{text-align:right;position:absolute;left:0;bottom:0;}
+			.sigProThumbnailsToolbar a {display:block;width:45px;height:45px;background:url(../images/aspectRatio.png) no-repeat 0 0;}
+				.sigProThumbnailsToolbar a.sigViewLandscape.sigHighlighted	{background-position:0 0; }
+				.sigProThumbnailsToolbar a.sigViewPortrait {background-position:0 -45px;}
+				.sigProThumbnailsToolbar a.sigViewLandscape {background-position:0 -90px;}
+				.sigProThumbnailsToolbar a.sigViewPortrait.sigHighlighted {background-position:0 -135px;}
+			.sigProBtm {position:absolute;bottom:0;}
+			.sigBrdrFix {width:45px;border-bottom:1px solid #d0d0d0; }
+			/* Footer */
+			#sigProAdminFooter{text-align:center;clear:both;position:absolute;left:0;bottom:0;height:45px;font-size:11px;padding:7px 15px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:255px;
+			border-top:1px solid #d0d0d0;border-bottom:1px solid #d0d0d0;background:#f0f0ee;}
+				#sigProAdminFooter a:link, #sigProAdminFooter a:visited {color:#181818;}
+				#sigProAdminFooter a:hover {color:#c74484;}
+				.isJVersion30 #sigProAdminFooter {bottom:19px;}
+
+/* -------------------------------------------------------------
+ * Information Page */
+	.sigInformationNav {position:fixed;left:56px;top:201px;bottom:10px;width:300px;background:#f0f0ee;border-right:1px solid #d0d0d0;z-index:8;}
+		#sigPro #adminFormContainer.sigInformationForm {padding-left:345px;}
+		.sigInformationWrap {padding-top:10px;max-width:800px;}
+		.sigSideNavBar.sideBarIsOpen {left:306px;}
+		.sigInformationWrap.sideBarIsOpen {padding-top:10px;}
+		.sigInformationWrap ul	{margin:25px 10px;}
+		.sigInformationDummyHeight {display:block;width:100%;height:620px;}
+		/* sidebar menu */
+			.sigInformationNav ul {list-style:none outside none;margin:0; padding:0;}
+			.sigInformationNav ul li {margin:0;padding:0;display:block;height:45px;line-height:45px;border-bottom:1px solid #d0d0d0;}
+			.sigInformationNav ul li.sigPaddingSide {padding:0 20px;}
+			.sigInformationNav ul li a:link,
+			.sigInformationNav ul li a:visited {font-size:13px;color:#181818;font-weight:700;display:block;padding:0 20px;}
+			.sigInformationNav ul li a:hover {
+				background-color:#c9c9c9;color:#fff;
+				background-image:-moz-linear-gradient(bottom, #c74383 0%, #e14d95 100%);
+				background-image:-o-linear-gradient(bottom, #c74383 0%, #e14d95 100%);
+				background-image:-webkit-linear-gradient(bottom, #c74383 0%, #e14d95 100%);
+				background-image:linear-gradient(bottom, #c74383 0%, #e14d95 100%);
+			 }
+			.sigInformationNav ul li a:after {content:'\e762';font-family:fontello;color:#9d9d9d;font-size:17px;float:right;}
+			.sigInformationNav ul li.active {background-color:#c9c9c9;color:#fff;
+				background-image:-moz-linear-gradient(bottom, #c74383 0%, #e14d95 100%);
+				background-image:-o-linear-gradient(bottom, #c74383 0%, #e14d95 100%);
+				background-image:-webkit-linear-gradient(bottom, #c74383 0%, #e14d95 100%);
+				background-image:linear-gradient(bottom, #c74383 0%, #e14d95 100%);}
+			.sigInformationNav ul li.active	a:link,
+			.sigInformationNav ul li.active a:visited {color:#fff;}
+			.sigInformationNav ul li.active a:after:hover,
+			.sigInformationNav ul li.active a:after {color:#fff;}
+
+/* -------------------------------------------------------------
+ *Settings View (Permissions) */
+	.sigPermissions { }
+	.sigPermissions p {margin-left:0;padding-left:17px;}
+ 	h3.sigPermissionHeader{font-size:23px;font-weight:300;color:#4a4949;display:block;padding:0 0 15px;margin:0 0 15px;border-bottom:1px solid #c5c4c4;text-indent:17px;}
+	.sigSettingsFieldSet {margin:0 0 50px;max-width:800px;padding:8px 25px;}
+	/* common */
+	.sigFieldsetRow {margin:0 0 17px;overflow:hidden;max-width:465px;min-height:35px;}
+	.J15 .sigFieldsetRow {max-width:600px;}
+	.sigFieldsetRow.sigpermissionsFieldset {max-width:100%;}
+	.sigFieldsetRow label {display:inline-block;vertical-align:middle;text-align:left;width:200px;padding:0 17px;font-size:13px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+	.sigFieldsetRow input[type="text"] { min-width:90px;max-width:260px;width:260px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+	.sigFieldsetRow #jform_galleries_rootfolder {max-width:260px;width:260px;}
+	.sigFieldsetRow select {max-width:260px;width:260px;display:inline-block;vertical-align:middle;}
+	.sigFieldsetRow #jform_flickrApiKey {}
+	#sigPro .sigFieldsetRow fieldset.radio {margin:0;padding:0;max-width:260px;display:inline-block;vertical-align:top;}
+		.sigFieldsetRow fieldset.radio label {width:auto;margin:0 10px;padding:0;vertical-align:middle;float:none;}
+		.sigFieldsetRow fieldset.radio input[type="radio"] {display:inline-block;vertical-align:middle;float:none;margin:0 0 0 10px;}
+		.sigSettingsDummyHeight {height:400px;width:100%;clear:both;}
+	/* J! 1.5 */
+	.J15 .sigSettingsFieldSet { }
+		.J15 .sigFieldsetRow table tr td {min-height:35px;padding:0 0 17px;}
+		.J15 .sigFieldsetRow table.admintable td.key, .sigFieldsetRow table.admintable td.paramlist_key {text-align:left;}
+		.J15 .sigFieldsetRow .paramlist_value label {padding:0 5px;width:auto;}
+
+	#sigPro .rule-notes {margin:30px 0 0;font-size:12px;}
+	#sigPro .rule-notes em {font-weight:700;}
+	#sigPro .rule-notes br {display:block;margin-bottom:20px;}
+
+	#sigPro #permissions-sliders {width:100%;max-width:800px;margin-top:0;}
+	#sigPro #permissions-sliders ul#rules {border:1px solid #cfcfcf;border-radius:5px;background:#fff;}
+		#sigPro #permissions-sliders ul#rules ul { }
+		#sigPro #permissions-sliders ul#rules li{}
+		#sigPro ul#rules li .pane-sliders .panel h3.title{}
+		#sigPro #permissions-sliders ul#rules .pane-slider{background:#e4e3e3;border:0;box-shadow:inset 0 2px 2px rgba(170,169,169,.59);}
+		#sigPro #permissions-sliders ul#rules .pane-slider.pane-hide{}
+		#sigPro #permissions-sliders ul#rules li h3{border:0;border-bottom:1px solid #c5c4c4;margin:0;padding:13px 0;color:#494949;font-weight:400;background:transparent;}
+		#sigPro #permissions-sliders ul#rules li h3 a:link,
+		#sigPro #permissions-sliders ul#rules li h3 a:visited {color:#494949;}
+		#sigPro #permissions-sliders ul#rules li h3.pane-toggler-down a{}
+		#sigPro #permissions-sliders ul#rules li h3.pane-toggler-down{border:0;}
+		#sigPro #permissions-sliders ul#rules .group-kind{}
+		#sigPro #permissions-sliders ul#rules table.group-rules{margin:0;}
+		#sigPro #permissions-sliders ul#rules table.group-rules td{border:0;border-bottom:1px solid #c5c4c4;padding:15px 3px;}
+		#sigPro #permissions-sliders ul#rules table tr td:first-child,
+		#sigPro #permissions-sliders ul#rules table.group-rules th:first-child {padding-left:19px;}
+		#sigPro #permissions-sliders ul#rules table.group-rules th {background:transparent;font-weight:700;color:#494949; border:0;border-bottom:1px solid #c5c4c4; }
+		#sigPro #permissions-sliders .panel {margin:0;border-bottom:0;}
+		#sigPro #permissions-sliders .pane-sliders .content {border:0;}
+		#sigPro #permissions-sliders ul#rules .mypanel {background:transparent;}
+		#sigPro #permissions-sliders p.rule-desc{font-size:inherit;}
+		#sigPro #permissions-sliders div.rule-notes{ }
+		ul#rules table.group-rules td label {font-weight:400;}
+		#sigPro #permissions-sliders span.icon-16-allowed,
+		#sigPro #permissions-sliders span.icon-16-unset,
+		#sigPro .pane-toggler-down span,
+		#sigPro .pane-toggler span ,
+		#sigPro #permissions-sliders span.icon-16-locked {background:none;font-family:'fontello', 'Open Sans', sans-serif;}
+		#sigPro #permissions-sliders span.icon-16-allowed:before {display:inline-block;vertical-align:middle;line-height:1;color:#72c53c;content:'\2713';font-size:18px;margin-right:7px;}
+		#sigPro #permissions-sliders span.icon-16-unset:before { display:inline-block;vertical-align:middle;line-height:1;color:#e80000;content:'\2796';font-size:18px;margin-right:7px;}
+		#sigPro #permissions-sliders .pane-toggler span,
+		#sigPro #permissions-sliders .pane-toggler-down span {padding:0;}
+		#sigPro .pane-toggler-down:before {display:inline-block;font-size:18px;vertical-align:middle;line-height:1;color:#d2488b;content:'\25be';padding:0 5px 0 20px;}
+		#sigPro .pane-toggler:before {display:inline-block;font-size:18px;vertical-align:middle;line-height:1;content:'\25b8';padding:0 5px 0 20px;}
+		#sigPro #permissions-sliders span.icon-16-locked {padding-left:0;}
+		#sigPro #permissions-sliders span.icon-16-locked:before {display:inline-block;vertical-align:middle;line-height:1;padding:0 8px 0 0;content:'🔒';font-size:16px;}
+		/* Joomla! 3.0 */
+		.isJVersion30 #sigPro .tabs-left > .nav-tabs {margin-right:0;}
+		.isJVersion30 #sigPro .tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover {border-color:#C5C4C4 transparent #DDDDDD #DDDDDD;}
+		#sigPro label#jform_rules-lbl {display:none;}
+		/* #sigPro label#jform_memoryLimit-lbl {font-weight:400;} */
+
+/* -------------------------------------------------------------
+ *UI Elements */
+
+
+/* -------------------------------------------------------------
+ * Modals */
+#sigProModal{width:auto;top:-200%;position:absolute;left:50%;z-index:10;border:0;padding:8px;margin-top:10px;min-width:600px;
+border-radius:0 0 4px 4px;background:#fff;box-shadow:0 1px 1px rgba(0,0,0,.75), inset 0 1px 0 rgba(0,0,0,.22);font-family:'Open Sans',sans-serif;font-size:12px;}
+	.sigProModalInner{padding:8px;}
+	#sigProModal iframe{border:none;}
+	#sigProModal iframe.sigProModalAddGalleryFrame{overflow:hidden;min-height:110px;}
+	#sigProUploader {width:600px;}
+	.sigProModalSite{padding-bottom:40px;}
+	.contentpane #sigPro #adminFormContainer {background:#fff;min-height:90px;padding:0;margin:0;/* when in a modal */ }
+	.contentpane #sigPro {min-height:80px;}
+	.contentpane #sigPro label {display:inline-block;}
+
+/* Form elements (used mostly on the information page) */
+#sigPro td, #sigPro th {font-family:'Open Sans',sans-serif;margin:0;}
+/* #sigPro form {position:relative;} */
+	#sigPro #adminFormContainer {overflow:hidden;background:#F0F0EE;}
+	#sigPro.sigProAddGallery #adminFormContainer {padding-left:0 }
+	#sigPro fieldset {padding:0 0 40px;border:0;}
+	#sigPro legend {font-size:23px;font-weight:300;color:#4a4949;display:block;margin:0 0 10px;border:0;position:static;float:none;}
+	#sigPro label {color:#494949;font-weight:700;line-height:1;}
+	#sigPro textarea {font-family:'Open Sans',sans-serif;border-radius:4px;font-size:13px;padding:8px;}
+	#sigPro input[type="text"] {font-family:'Open Sans',sans-serif;line-height:33px;height:33px;padding:0 8px;border:1px solid #cdcdcd;background:#fff;border-radius:4px;font-size:13px;}
+	#sigPro input:focus,
+	#sigPro textarea:focus {outline:none;box-shadow:inset 0 0 3px rgba(0,0,0,.41);border:1px solid #8e8c8c;}
+
+	/* tables */
+	#sigPro table.adminlist {border-spacing:0;background:#f0f0f0;width:100%;max-width:800px;}
+	#sigPro table.adminlist tfoot {display:none;}
+	#sigPro th {background:#fff;height:35px;line-height:35px;border-color:#c5c4c4;border-style:solid;border-width:1px 0 0;text-align:left;padding:0 15px;}
+	#sigPro td {padding:8px 15px;border:0;}
+	#sigPro table.adminlist tbody tr td {background:#f0f0f0;}
+	#sigPro table.adminlist tbody tr td.tCellodd {background:#e8e8e8;}
+	#sigPro table.adminlist tbody tr td a {font-size:13px!important;}
+
+		/* Buttons */
+		.sigProButton:link, .sigProButton:visited {display:inline-block;text-align:center;border:1px solid #cdcdcd;border-radius:4px;background-clip:padding-box;background-color:#fff;
+		cursor:pointer;padding: 0 20px;height:33px;line-height:33px;color:#494949;font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.75);
+			background-image:-moz-linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+			background-image:-o-linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+			background-image:-webkit-linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+			background-image:linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+		}
+		.sigProButton:hover{text-decoration:none;background-color:#dcdcdc;
+			background-image:-moz-linear-gradient(bottom, #dcdcdc 0%, #f9f9f9 100%);
+			background-image:-o-linear-gradient(bottom, #dcdcdc 0%, #f9f9f9 100%);
+			background-image:-webkit-linear-gradient(bottom, #dcdcdc 0%, #f9f9f9 100%);
+			background-image:linear-gradient(bottom, #dcdcdc 0%, #f9f9f9 100%);
+		}
+		.sigProButton:active{position:relative;top:1px;background-color:#e5e5e3;
+			background-image:-moz-linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+			background-image:-o-linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+			background-image:-webkit-linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+			background-image:linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+		}
+
+		.sigProModalCloseButton {float:right;clear:both;margin:10px 15px;cursor:pointer;font-weight:700;}
+		.sigProModalCloseButton:hover {text-decoration:none;}
+		.sigProModalCloseButton.sig-icon, .sigProModalCloseButton .sig-icon {color:#bfbfbf;font-size:24px;font-weight:400;margin:0 0 0 5px;}
+		.sigProModalCloseButton:hover {color:#000;}
+		.sigProProceedButton{display:none;float:right;clear:both;}
+
+			/* Specific Buttons */
+			.sigProRatioButton { }
+			.sigProModalCloseButton {color:#181818;}
+			.sigProProceedButton { }
+
+			/* Add Button */
+			.sigProBtnadd,
+			.sigProBtnadd:link,
+			.sigProBtnadd:visited {height:30px;line-height:30px;display:inline-block;vertical-align:middle;border-radius:6px;margin:0 0 0 15px;padding:0 12px 0 0;
+			text-indent:38px;position:relative;border:2px solid #e9e9e9;background-color:#358e00;font-weight:700;color:#fff;font-size:12px;
+					background-image:-moz-linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+					background-image:-o-linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+					background-image:-webkit-linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+					background-image:linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+			 }
+			.sigProBtnadd:hover {background-color:#4ecf01;
+					background-image:-moz-linear-gradient(bottom, #40aa00 0%, #4ecf01 100%);
+					background-image:-o-linear-gradient(bottom, #4ecf01 0%, #4ecf01 100%);
+					background-image:-webkit-linear-gradient(bottom, #40aa00 0%, #4ecf01 100%);
+					background-image:linear-gradient(bottom, #4ecf01 0%, #4ecf01 100%);
+			}
+			.sigProBtnadd:active {background-color:#358e00;
+					background-image:-moz-linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+					background-image:-o-linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+					background-image:-webkit-linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+					background-image:linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+ 			}
+			.sigProBtnadd:before {font-family:'fontello';color:#edf3eb;font-size:17px;line-height:32px;content:'\2795';font-weight:400; left:-40px;display:block;position:absolute;top:0;text-indent:49px;}
+			.sigProBtnadd:after {content:""; width:1px;height:100%;left:30px;background:#368f00;border-right:1px solid #3fa800;display:block;position:absolute;top:0;}
+			.isJVersion30 .sigProBtnadd:link, .isJVersion30 .sigProBtnadd:visited {margin-top:0;}
+
+			/* Notes */
+			.sigProNote {font-weight:400;color:#c74484;font-size:18px;}
+			.sigProSubNote {display:block;font-weight:normal;margin:0 18px;}
+			h3.sigProNote {padding:0;margin:1em 18px 10px;}
+
+			/* AJAX validation */
+			.sigProValidation{padding-top:15px;font-size:14px;font-weight:700;display:block;}
+			.sigProValidationWorking{background:url('../images/loader.gif') 0 85% no-repeat;padding-left:20px;}
+			.sigProValidationSuccess{color:#3da500;}
+			.sigProValidationSuccess:before {content:'\2713';font-family:"Fontello";font-size:24px;display:inline-block;vertical-align:middle;margin:0 8px;}
+			.sigProValidationFail {color:#900;}
+			.sigProValidationFail:before {color:#900;content:'\2716';font-family:"Fontello";font-size:24px;display:inline-block;vertical-align:middle;margin:0 10px 0 0;}
+
+/* Add a gallery */
+.sigProAddGallery{position:absolute;top:10px;padding:0 10px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.sigProAddGallery label {margin:10px 0;}
+.sigProAddGallery #folder {width:70%;}
+.sigProAddGallery.sigProButton {width:20%;text-align:center;}
+.sigProAddWrapper {overflow:hidden;}
+.sigProGalleryImage input{min-height:30px;}
+#sigProModal .sigProModalCloseButton.sig-icon {position:absolute;right:26px;top:32px;}
+
+	/* Custom select boxes */
+	#sigPro .chzn-container {min-width:220px;}
+	#sigPro .chzn-search {display:none;}
+	#sigPro ul.chzn-results {list-style:none outside none;margin:0 0 0 -1px;padding:0;display:none;min-width:185px;}
+	#sigPro ul.chzn-results li {border-left:1px solid #e7e7e7; border-bottom:1px solid #e7e7e7;background:#fff;width:100%;height:40px;line-height:40px;display:block;color:#313131;
+	cursor:pointer;padding:0 15px;}
+	#sigPro ul.chzn-results li.result-selected { }
+	#sigPro ul.chzn-results li:hover {background:#c74484;color:#fff;}
+	#sigPro .chzn-container-active ul.chzn-results {display:block;}
+	#sigPro a.chzn-single:link,
+	#sigPro a.chzn-single:visited {color:#181818;font-size:13px;display:block;height:28px;padding:0 15px;min-width:200px;}
+	#sigPro a.chzn-single-with-drop:link,
+	#sigPro a.chzn-single-with-drop:visited { }
+	#sigPro a.chzn-single:before {font-family:'fontello';float:right;margin-right:15px;content:'\e764';}
+	#sigPro .chzn-container-active a.chzn-single:before {content:'\e767';}
+
+/* Custom Checkboxes and Radios */
+label.sigCheckbox{padding:0;display:block;margin:0;position:relative;-webkit-transition:all 0.2s linear 0s;-moz-transition:all 0.2s linear 0s;-o-transition:all 0.2s linear 0s;transition:all 0.2s linear 0s;-webkit-backface-:hidden;cursor:pointer;}
+ .sigCheckbox:hover{color:#1abc9c;}
+
+ .sigCheckbox input {outline:none !important;opacity:0;filter:alpha(opacity=0);zoom:1;}
+ .sigIconFade {display:none;position:relative;top:-3px;left:1px;}
+ .isJVersion30 .sigIconFade {top:-5px;}
+ .sigCheckbox.sigChecked .sigIconFade {display:block;color:#c74484;font-size:18px;}
+ .sigCheckbox.sigChecked .sigIcon {display:none;}
+ .sigCheckbox {width:14px;height:14px;border:1px solid #ccc;border:1px solid rgba(0,0,0,.32);border-radius:3px;background-color:#efefef;}
+ .sigCheckbox.checked {background:#fff;}
+
+ /* -------------------------------------------------------------
+ 	* System Messages */
+ 	#system-message-container {width:610px;max-width:100%;position:absolute;left:50%;top:149px;margin-left:-305px;z-index:9;
+ 	box-shadow:0 1px 1px rgba(0,0,0,.75), inset 0 1px 0 rgba(0,0,0,.22);border-radius:0 0 4px 4px;}
+	.isJVersion30 #system-message-container {top:90px;}
+	.isJVersion30 #system-message-container button.close { display: none;}
+
+	dl#system-message {margin:0;font-family:'Open Sans',sans-serif;font-size:13px;}
+		.isJVersion15 dl#system-message {width:610px;max-width:100%;position:fixed;left:50%;top:150px;margin-left:-305px;z-index:4;
+ 	box-shadow:0 1px 1px rgba(0,0,0,.75), inset 0 1px 0 rgba(0,0,0,.22);border-radius:0 0 4px 4px;}
+		dl#system-message dt.message { display: none; }
+		dl#system-message dd.message {position:relative; margin-left: 0;}
+		dl#system-message dd.message ul {margin:0;background-image:none;}
+		dl#system-message dd.message ul li {display:block;height:40px;line-height:40px;overflow:hidden;}
+		dl#system-message > dd {text-indent:0;}
+		dl#system-message > dd > ul {border:0;display:block;padding:0;height:40px;line-height:40px;}
+		dl#system-message dd:last-child ul {border-radius:0 0 4px 4px;}
+		/* color variations */
+		dl#system-message dd.message ul {background:#3fa800;color:#fff;}
+			dl#system-message dd.message ul:before {background-color:#106f00;width:44px;text-align:center;color:#fff;
+			height:40px;line-height:40px;font-family:'fontello','Open Sans',sans-serif;font-weight:400;margin-right:10px;
+			content:'\e705';float:left;font-size:19px;}
+		dl#system-message dd.notice.message ul {background:#f2b40e;box-shadow:inset 0 1px 0 rgba(0,0,0,.22);}
+			dl#system-message dd.notice.message ul:before {background-color:#e67f01;content:'\26a0';position:relative;top:1px;height:39px;}
+		dl#system-message dd.error.message ul {background:#e33726;box-shadow:inset 0 1px 0 rgba(0,0,0,.22);}
+			dl#system-message dd.error.message ul:before {background-color:#ca0c06;content:'🚫';position:relative;top:1px;height:39px;}
+		/* buttons */
+		.sigIconDel {display:block;color:#fff;position:absolute;right:10px;top:10px;font-size:20px;font-family:'fontello','Open Sans',sans-serif;}
+			.isJVersion30 .sigIconDel {top:18px;right:15px;}
+			.sigIconDel:hover {cursor:pointer;}
+			dl#system-message dd.error.message .sigIconDel {color:#9f0500;}
+			dl#system-message dd.notice.message .sigIconDel {color:#e67f01;}
+			dl#system-message dd.message .sigIconDel {color:#106f00;}
+			.sigCloseMsg {background-color:#494949;color:#fff;font-weight:700;padding:0 10px;height:30px;line-height:30px;font-size:13px;border-radius:0 0 4px 4px }
+				.sigIconDelAll {font-family:'fontello','Open Sans',sans-serif;color:#bfbfbf;margin-left:3px;font-size:18px;}
+				.sigIconDelAll:before {margin-left:3px;font-size:18px;display:inline-block;vertical-align:middle;}
+				.sigIconDelAll:hover {cursor:pointer;}
+		/* Joomla! 3.0 system messages */
+		.isJVersion30 #system-message-container .alert {margin:0;padding:0;border-radius:0;position:relative;color:#fff;border:0;font-family:'Open Sans',sans-serif;text-shadow:0 0;height:54px;overflow:hidden;}
+		.isJVersion30 #system-message-container .alert:last-child {border-radius:0 0 4px 4px;}
+		.isJVersion30 #system-message-container .alert a.close { display: none; }
+		.isJVersion30 #system-message-container .alert.alert-message,
+		.isJVersion30 #system-message-container .alert.alert-success {background:#3fa800;}
+		.isJVersion30 #system-message-container .alert.alert-error, .isJVersion30 .alert-danger {background:#e33726;box-shadow:inset 0 1px 0 rgba(0,0,0,.22);}
+		.isJVersion30 #system-message-container .alert.alert-info {background:#f2b40e;box-shadow:inset 0 1px 0 rgba(0,0,0,.22);}
+		.isJVersion30 #system-message-container .alert.alert-success .sigIconDel {color:#106f00;}
+		.isJVersion30 #system-message-container .alert.alert-error .sigIconDel,
+		.isJVersion30 #system-message-container .alert-danger .sigIconDel {color:#9f0500;}
+		.isJVersion30 #system-message-container .alert.alert-info .sigIconDel {color:#e67f01;}
+		.isJVersion30 #system-message-container .alert:before {font-family:'fontello','Open Sans',sans-serif;font-weight:400;margin-right:10px;height:54px;line-height:54px;
+		float:left;font-size:19px;display:block;width:45px;text-align:center;}
+			.isJVersion30 #system-message-container .alert.alert-success:before,
+			.isJVersion30 #system-message-container .alert.alert-message:before {content:'\e705';background-color:#106f00;}
+			.isJVersion30 #system-message-container .alert.alert-error:before,
+			.isJVersion30 #system-message-container .alert-danger:before {background-color:#ca0c06;content:'🚫';position:relative;top:1px;}
+			.isJVersion30 #system-message-container .alert.alert-info:before {background-color:#e67f01;content:'\26a0';position:relative;top:1px;}
+		.isJVersion30 #system-message-container .alert h4 {color: #fff; padding:10px 0 0; margin: 0; font-size: 14px; line-height: 16px;}
+		.isJVersion30 #system-message-container .alert p {padding:0 0 10px;margin:0; font-size: 13px; line-height: 18px;}
+		/* System Messages when inside a modal */
+		.contentpane #system-message-container {top:61px;}
+		.contentpane.isJVersion30	 #system-message-container {top:59px;}
+
+/* Media manager */
+#sigProMediaManager {font-size:14px;padding-left:45px;border:0;}
+	.isJVersion15 #sigProMediaManager {padding-top:191px;}
+	.isJVersion25 #sigProMediaManager {padding-top:191px;}
+	.isJVersion30 #sigProMediaManager {padding-top:112px;}
+#sigProMediaManager.sideBarIsOpen {padding-left:300px!important;}
+
+/* Information table */
+#sigProInfoTable{width:100%;}
+#sigProInfoTable td{vertical-align:top;}
+
+/* ClearFix */
+.sigProClearFix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+/* Collapse large content */
+.sigProCollapse{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+/* Template fixes */
+html{overflow-x:hidden;}
+#folder{float:none;height:20px;margin-left:8px;}
+/* Joomla! 3.0 template fixes */
+table.sigProToolbar{border-collapse:separate;}
+table.sigProToolbar input{margin:0;}
+
+/* old Browser Message */
+div#deprecatedOverlay {position:absolute;width:100%;height:100%;z-index:99999;left:0;top:4px;background:#fff;color:#4a4949;text-align:center;font-size:16px;line-height:23px;}
+ div#deprecatedOverlay #browserUpdateWrapper {position:absolute;top:50%;margin-top:-165px;left:0;width:100%;}
+ div#deprecatedOverlay a,div#deprecatedOverlay a:link,div#deprecatedOverlay a:visited {color:#4a4949;text-decoration:underline;font-weight:bold }
+ div#deprecatedOverlay a:hover {color:#c74484;}
+ div#deprecatedOverlay div#frownie {font-size:70px;line-height:70px;font-weight:bold;clear:both;overflow:hidden;color:#c74484;margin:0 0 36px;}
+ div#deprecatedOverlay h1#sorry {color:#4a4949;font-size:48px;line-height:58px;margin:0;padding:0;font-weight:300;}
+ div#deprecatedOverlay h2#notSupported {margin:0 0 5px;padding:0;font-size:24px;font-weight:400;}
+ div#deprecatedOverlay div#modernBrowsers {margin:15px auto;width:450px;clear:both;overflow:hidden;margin-top:20px;text-align:left;}
+	 div#deprecatedOverlay div#modernBrowsers a:link, div#deprecatedOverlay div#modernBrowsers a:visited {text-decoration:none;font-size:14px;color:#4a4949;font-weight:bold;display:inline-block;*display:inline;zoom:1;
+	 background:url(../images/browsers.png) no-repeat 0 0;height:105px;position:relative;margin:0 6px;vertical-align:top;}
+	 div#deprecatedOverlay div#modernBrowsers a span {position:absolute;z-index:999;display:block;width:100%;text-align:center;bottom:0;left:0;}
+	 div#deprecatedOverlay div#modernBrowsers a:hover {color:#c74484;text-decoration:none;}
+		 div#deprecatedOverlay div#modernBrowsers a#ff {background-position:0 -129px;width:77px;}
+		 div#deprecatedOverlay div#modernBrowsers a#gc {background-position:0 -258px;width:76px;}
+		 div#deprecatedOverlay div#modernBrowsers a#as {background-position:0 0;width:71px;}
+		 div#deprecatedOverlay div#modernBrowsers a#op {background-position:0 -511px;width:69px;}
+		 div#deprecatedOverlay div#modernBrowsers a#ie {background-position:0 -384px;width:74px;}
+
+/* downsize the menu on smaller screens */
+@media only screen and (max-width:1180px) {
+	.sigProHeader.sigLight ul { }
+	.sigProHeader.sigLight ul li {margin:0 3px;}
+	.sigProHeader.sigLight ul li a.sigProMenuItems:link, .sigProHeader.sigLight ul li a.sigProMenuItems:visited {padding:0 5px;font-size:15px;}
+	.sigProHeader.sigLight ul li .sig-icon {font-size:18px;}
+}
+
+@media only screen and (max-width:975px) {
+	/* J 2.5 */
+	.sig-hide-on-medium {display:none!important;}
+	body#minwidth-body {min-width: 600px!important; }
+	#module-status .loggedin-users, #module-status .backloggedin-users, #module-status .no-unread-messages, #module-status .viewsite {display:none;}
+	.sigProEditingGalleryTitle .sigStrong { max-width: 200px; }
+}
+
+@media only screen and (max-width:850px) {
+	#minwidth {min-width:600px!important;max-width:100%;}
+	.hide-on-tablet {display:none!important;}
+
+	.sigProHeader.sigLight ul li .sig-icon {display:none;}
+
+	.sigProHeader.sigBoldMenu ul a.sigProMenuItems:link, .sigProHeader.sigBoldMenu ul a.sigProMenuItems:visited {padding:0 15px;}
+	/* Grid Items */
+	.sigProGrid .sigProGalleryImage {width:315px;}
+	.sigProGrid .sigProGallery {width:315px;}
+	.sigProGalleryImageLink {display:block;width:100%;height:236px;}
+	/* resize the sidebar on the info page */
+	.sigInformationNav {width:250px;}
+	#sigPro #adminFormContainer.sigInformationForm {padding-left:285px;}
+	/* Pagination */
+	.sigProPaginationPages ul {padding:0 15px;}
+	/* Responsive Modals */
+	#sigProModal {max-width:590px;}
+	#sigProModal iframe {max-width:570px;}
+	.plupload_file_name {max-width:325px;}
+
+	.elfinder-toolbar {height:auto!important;overflow:hidden;clear:both;}
+}
+
+@media only screen and (max-width:1024px) and (min-width:769px) {
+	.sigProGrid .sigProGallery {width:270px;}
+	.sigProGrid .sigProGalleryImage {width:285px;}
+}
+
+@media only screen and (max-width:768px) {
+	.sigProHeader .sigProLogo {width:40px;} /* show only the icon */
+	.sigProPagination div.page,
+	.sigProPagination .pagination div.limit {display:none;}
+}
+
+@media only screen and (max-width:767px) {
+	.hide-on-phone {display:none!important;}
+	body.isJVersion30 {padding:0;}
+		.isJVersion30 .navbar-fixed-top, .isJVersion30 .navbar-fixed-bottom {margin-left:0;margin-right:0;}
+	/* grid items */
+	.sigProGrid {padding:17px 0;}
+	.sigProGrid .sigProGridColumn {margin:10px;}
+	.sigProGrid .sigProGallery {width:245px;}
+	.sigProGalleryImageLink	{height:185px;}
+	.sigProGrid .sigProGalleryImage {width:245px;}
+	/* top Menu */
+	.sigProHeader.sigLight ul li a.sigProMenuItems:link, .sigProHeader.sigLight ul li a.sigProMenuItems:visited {padding:0 2px;font-size:13px;}
+	.sigProEditingGalleryTitle span.sigPurple {display:none;}
+	/* Joomla! 3.0 */
+	.isJVersion30 .sigProPagination,
+	.isJVersion30 .sigProThumbnailsToolbar,
+	.isJVersion30 #sigSideBar {bottom:0;}
+	/* J! 1.5 */
+	.isJVersion15 #menu > li > a,
+	.isJVersion15 #menu > li > a:hover {padding:0.35em 0.5em 0.35em; }
+
+	.sigProEditingGalleryTitle .sigStrong { max-width: 150px; }
+}
+
+@media only screen and (max-width:650px) {
+	.sigProEditingGalleryTitle .sigStrong { max-width: 100px; }
+}
+
+@media only screen and (max-width:610px) {
+	 /* body#minwidth-body {margin:0;padding:0;} */
+	.sig-hide-on-small {display:none!important;}
+	.cd-dropdown, .cd-select {width:180px;}
+	.sigProHeader.sigLight ul {padding:0;text-align:center;}
+	.sigInformationNav {display:none;}
+
+	.isJVersion25 #sigProMediaManager,
+	.isJVersion15 #sigProMediaManager {margin-right:10px;}
+
+	/* side menu is not visible at this point */
+	.isJVersion25 #sigPro #adminFormContainer.sigInformationForm,
+	.isJVersion15 #sigPro #adminFormContainer.sigInformationForm {padding-top:140px;}
+	#sigPro #adminFormContainer.sigInformationForm {padding-left:0;padding-right:0;}
+	.sigInformationWrap {max-width:500px;padding:60px 35px 0;}
+	.isJVersion30 .sigProGrid.sigInformationWrap {padding-left:55px;}
+}
+
+@-moz-document url-prefix() {
+	.sigProPagination .limit label {position:relative;top:-3px;}
+	.isJVersion15 .sigProButton:link, .isJVersion15 .sigProButton:visited { margin-right: 5px; }
+}
+
+/*
+   Plupload
+------------------------------------------------------------------- */
+.moxie-shim.moxie-shim-html5 { top: auto!important; bottom: 20px; }
+.plupload_button { padding-right: 20px; height: 35px; line-height: 35px; display: inline-block; vertical-align: middle; border-radius: 5px; margin: 0 10px 0 0; text-indent: 50px; position: relative; }
+.isIE8 .plupload_button { width: 140px; }
+.plupload_button:hover { text-decoration: none; }
+.plupload_disabled, a.plupload_disabled:hover { opacity: 0.5; }
+.plupload_buttons { display: inline-block; }
+.plupload_add,
+.plupload_add:link,
+.plupload_add:visited { border: 1px solid #062f00; background-color: #358e00; font-weight: 700; color:#fff; font-size: 12px; padding-right: 20px;
+		background-image: -moz-linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+		background-image: -o-linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+		background-image: -webkit-linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+		background-image: linear-gradient(bottom, #358e00 0%, #3fa700 100%);
+ }
+.plupload_add:hover {  background-color: #4ecf01;
+		background-image: -moz-linear-gradient(bottom, #40aa00 0%, #4ecf01 100%);
+		background-image: -o-linear-gradient(bottom, #4ecf01 0%, #4ecf01 100%);
+		background-image: -webkit-linear-gradient(bottom, #40aa00 0%, #4ecf01 100%);
+		background-image: linear-gradient(bottom, #4ecf01 0%, #4ecf01 100%);
+}
+.plupload_add:active { background-color: #358e00;
+		background-image: -moz-linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+		background-image: -o-linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+		background-image: -webkit-linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+		background-image: linear-gradient(bottom, #3fa700 0%, #358e00 100%);
+}
+.plupload_start,
+.plupload_start:link,
+.plupload_start:visited { border: 1px solid #cdcdcd; background-color: #e5e5e3; text-shadow: 0 1px 0 rgba(255,255,255,.75); font-weight: 700; color: #494949; padding-right: 20px;
+		background-image: -moz-linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+		background-image: -o-linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+		background-image: -webkit-linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+		background-image: linear-gradient(bottom, #e5e5e3 0%, #fff 100%);
+}
+.plupload_start:hover { background-color: #f9f9f9;
+		background-image: -moz-linear-gradient(bottom, #f9f9f9 0%, #fff 100%);
+		background-image: -o-linear-gradient(bottom, #f9f9f9 0%, #fff 100%);
+		background-image: -webkit-linear-gradient(bottom, #f9f9f9 0%, #fff 100%);
+		background-image: linear-gradient(bottom, #f9f9f9 0%, #fff 100%);
+}
+.plupload_start:active { background-color: #e5e5e3;
+		background-image: -moz-linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+		background-image: -o-linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+		background-image: -webkit-linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+		background-image: linear-gradient(bottom, #fff 0%, #e5e5e3 100%);
+}
+.plupload_button:before, .plupload_button:after { font-family:'fontello'; display:block; position: absolute; top: 0px;}
+.plupload_add:before { color: #edf3eb; font-size: 20px; content: '\2795'; font-weight: 400;  left: -40px;  }
+.plupload_start:before { color: #181818; font-size: 22px; content: '\2b06'; font-weight: 400; left: -40px; }
+.plupload_add:after { content:"";  width: 1px; height: 100%; left: 37px; background: #368f00; border-right: 1px solid #3fa800; }
+.plupload_start:after{ content:"";  width: 1px; height: 100%; left: 37px; background: #e7e7e6; border-right: 1px solid #fff; }
+
+.plupload_wrapper { padding: 12px; }
+.plupload_wrapper div { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+.plupload_container { }
+.plupload_container input { }
+.plupload_header { margin: 0 0 24px; }
+.plupload_header:before { margin: 0 12px 0 0; font-size: 44px; line-height: 1; color: #3f3f3f;  font-family:'fontello'; content: '\e711'; display: inline-block;
+vertical-align: middle; float: left; }
+.plupload_header_content { }
+.plupload_header_title { color: #c74383; font-size: 18px; letter-spacing: -1px; }
+.plupload_header_text { }
+.plupload_filelist { list-style: none outside none; padding: 0; margin: 0 -20px; }
+.plupload_scroll .plupload_filelist { max-height: 175px; overflow: auto; }
+.plupload_filelist li { display: block; vertical-align: top; height: 43px; line-height: 43px; border-bottom: 1px solid #cacaca; padding: 0 20px 0 20px; position: relative; clear: both; }
+.plupload_filelist li:last-child { border-bottom: 0; }
+.plupload_filelist li:after { font-family:'fontello'; font-size: 16px; margin-left: 20px; position: absolute; right: 20px; top: 0; }
+.plupload_filelist_header,
+.plupload_filelist_footer { padding: 10px 64px 10px 20px; margin: 0 -20px; }
+.plupload_filelist_header { line-height: 1; box-shadow: 0px 1px 3px rgba(0,0,0,.25), inset 0 1px 0 rgba(0,0,0,.22); }
+.plupload_filelist_footer { border-top: 1px solid #c7c7c7; border-bottom: 1px solid #c7c7c7;  }
+.plupload_file_name { display: inline-block; vertical-align: middle; font-weight: 700; width: 430px; font-size: 12px; padding-right: 15px; line-height: 1;  }
+.plupload_file_status { }
+.plupload_file_status span { }
+.plupload_file_size, .plupload_file_status, .plupload_progress { display: inline-block; font-weight: 700; font-size: 12px;  }
+.plupload_file_size, .plupload_file_status, .plupload_file_action { display: inline-block; vertical-align: middle; }
+.plupload_file_action { float: right; }
+.plupload_file_status { width: 40px; }
+.plupload_file_size { padding-left: 15px; }
+.plupload_filelist .plupload_file_name { }
+.plupload_file_action { }
+.plupload_file_action * { }
+li.plupload_uploading { }
+li.plupload_done { }
+li.plupload_done:after { color: #3ea700; content: "✓"; font-family: 'fontello';  }
+li.plupload_delete a { }
+li.plupload_delete a:after { color: #ee4630; content: '\2716'; font-size: 15px; font-family: 'fontello'; display: inline-block; vertical-align: middle; cursor: pointer; }
+li.plupload_failed { background: #f6f6f6; }
+li.plupload_failed:after { color: #ee4630; content: '\2716'; font-size: 15px; font-family: 'fontello'; }
+li.plupload_failed a { }
+li.plupload_done a { }
+.plupload_progress, .plupload_upload_status { display: inline-block; vertical-align: middle; }
+.plupload_progress_container { }
+.plupload_progress_bar { }
+.plupload_scroll .plupload_filelist_header .plupload_file_action, .plupload_scroll .plupload_filelist_footer .plupload_file_action { }
+.plupload_clear,.plupload_clearer { clear: both; line-height: 0;}
+.plupload_progress, .plupload_upload_status { display: none; }
+.plupload_progress_container{margin-top:3px;width:131px;height:12px;border-radius:2px;background-clip:padding-box;background-color:#cdcdcd;}
+.plupload_progress_bar{width:0px;border-radius:2px;height:12px;background:#c74484;}
+ul#sigProUploader_filelist li.plupload_droptext { background: #e8e8e8 url(../images/fileTarget.png) no-repeat 50% 50%; font-weight: 700; font-size: 21px; color:#b3b3b3;  margin: 0 auto; padding: 68px 0; display: block;
+text-align: center; border-top: 1px solid #dadada; }
+

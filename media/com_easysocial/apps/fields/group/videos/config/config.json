@@ -1,0 +1,13 @@
+{
+	"privacy": false,
+	"title": {
+		"default": "PLG_FIELDS_GROUP_VIDEOS_DEFAULT_TITLE"
+	},
+	"description": {
+		"default": "PLG_FIELDS_GROUP_VIDEOS_DEFAULT_DESC"
+	},
+	"default": {
+		"type": "boolean",
+		"default": true
+	}
+}

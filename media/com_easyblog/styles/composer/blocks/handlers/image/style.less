@@ -1,0 +1,33 @@
+//
+// Image Style
+//
+.eb-image-style-fieldset {
+
+    .eb-swatch-preview > div {
+        padding: 10px;
+    }
+
+    .eb-image {
+        display: table;
+        width: 100%;
+        height: 100%;
+
+        &.style-simple {
+            padding: 10px; // Fake a 10px padding for consistency
+        }
+    }
+
+    .eb-image-figure {
+        display: table-row;
+        height: 100%;
+
+        > div {
+            display: table-cell;
+            #gradient > .vertical(darken(#ccc,10%), lighten(#ccc,10%));
+        }
+    }
+
+    .eb-image-caption {
+        display: table-row;
+    }
+}

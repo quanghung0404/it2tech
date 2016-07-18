@@ -1,0 +1,8 @@
+[
+    {
+        "title": "COM_EASYSOCIAL_ACCESS_USER_UPLOAD_FILES",
+        "description": "COM_EASYSOCIAL_ACCESS_USER_UPLOAD_FILES_DESC",
+        "group": "user",
+        "name": "files.upload"
+    }
+]

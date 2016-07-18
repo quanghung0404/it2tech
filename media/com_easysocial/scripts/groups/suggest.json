@@ -1,0 +1,11 @@
+[
+    {
+        "view": [
+            "site/groups/suggest.item"
+        ],
+        "library": [
+            "textboxlist"
+        ],
+        "adapter": "EasySocial"
+    }
+]

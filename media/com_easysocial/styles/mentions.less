@@ -1,0 +1,46 @@
+// Load original mentions variable
+@import "mentions/default";
+
+// Extends original mentions autocomplete
+&.mentions-autocomplete {
+
+	.mentions-autocomplete();
+
+	.mentions-menu {
+
+		.mentions-menuItem {
+
+			> img {
+				background: #fafafa;
+				float: left;
+				margin-right: 6px;
+				width: 16px;
+				height: 16px;
+				display: block;
+			}
+		}
+	}
+
+	.mentions-menu-avatar {
+		width: 16px;
+		height: 16px;
+		position: relative;
+		top: 1px;
+	}
+}
+
+/*
+.mentions-textfield.for-styleguide {
+	// You should define your own set of css properties
+	// that emulates the appearance of a textarea.
+	width: 450px;
+	padding: 5px;
+	border: 1px solid #ccc;
+
+	.mentions > div {
+		color: green;
+		min-height: 16px;
+		-ms-text-autospace: none;
+	}
+}
+*/

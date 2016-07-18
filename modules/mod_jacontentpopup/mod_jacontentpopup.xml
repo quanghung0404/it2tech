@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension 
+	type="module" 
+	version="2.5" 
+	client="site"
+	method="upgrade">
+	
+	<name>JA Content Popup</name>
+	<author>JoomlArt.com</author>
+	<creationDate>03 April 2015</creationDate>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.1.2</version>
+	<updateservers>
+	    <server type="collection">http://update.joomlart.com/service/tracking/list.xml</server>
+	</updateservers>
+	<description>
+	<![CDATA[
+	<div align="left">
+	<h2>JA Content Popup module for Joomla! 2.5 and Joomla! 3.3</h2>
+	<div style='font-weight: normal'>
+		<p><span style='color: #ff6600;'><strong>Overview:</strong></span> JA Content popup module allows easy and elegant display of articles (from selected categories) and display them with thumbnail image, title and description. The thumnails together build up a portfolio layout. The full article will be opened in a popup, which supports many cool animation types such as fading, verticle slices, zoom or rotate... </p>
+		<strong><span style='color: #ff0000;'>Features:</span></strong><br />
+		<ul>
+			<li>Native with Joomla! 2.5 & Joomla! 3.3</li>
+			<li>6 animation types supported.</li>
+			<li>Title and description display can be optional.</li>
+			<li>Easy to customize Item's thumbnail size & popup size.</li>
+			<li>Limit number of items to display on one page.</li>
+			<li>Items can be grouped by categories.</li>
+			<li>...</li>
+		</ul>
+		<p><strong><span style="color: #ff0000;">Upgrade Method:</span><br /></strong></p>
+		<ol>
+		<li>You can install new version directly over this version. Uninstallation is not required. Backup any customized files before upgrading. OR</li>
+		<li>Use <strong><a href="http://extensions.joomla.org/extensions/core-enhancements/installers/12077" target="_blank">JA Extensions Manager</a></strong> Component for easy upgrades and rollbacks. <strong><a href="http://www.youtube.com/user/JoomlArt#p/c/BC9B0C0BFE98657E/2/mNAuJRmifG8" target="_blank">Watch Video..</a></strong></li>
+		</ol>
+		<p><span style="color: #008000;"><strong>Links:</strong></span></p>
+		<ul>
+		<li><a target="_blank" href="http://pm.joomlart.com/browse/JAMODPOPUP">Report Bug</a></li>
+		<li><a target="_blank" href="http://update.joomlart.com/">Updates &amp; Versions</a></li>
+		</ul>
+		<p>Copyright 2004 - 2014 <a href="http://www.joomlart.com/" title="Visit Joomlart.com!">JoomlArt.com</a>.</p>
+	</div>
+	</div>
+	]]>
+	</description>
+	<languages>
+			<language tag="en-GB">en-GB.mod_jacontentpopup.ini</language>
+	</languages>
+	
+	<files>
+		<filename module="mod_jacontentpopup">mod_jacontentpopup.php</filename>
+		<filename module="mod_jacontentpopup">index.html</filename>
+		<folder>assets</folder>
+		<folder>admin</folder>
+		<folder>helpers</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+	<config>
+		<fields 
+			name="params" 
+			addfieldpath="/modules/mod_jacontentpopup/assets/elements">
+			<fieldset name="basic">
+				
+				<field type="spacer" hr="false" label="CONTENT_SETTINGS" />
+				
+				<field 
+					name="source" 
+					type="list" 
+					default="JANewsHelper" 
+					label="FROM_SOURCE"
+					class="mselect"
+					description="FROM_SOURCE_DESC">
+						<option value="JAK2CHelper">K2</option>
+						<option value="JANewsHelper">JOOMLA_CONTENT</option>						
+				</field>
+				
+				<field 
+					name="catsid" 
+					type="category"
+					default=""
+					level="3"
+					extension="com_content"
+					class="mselect"
+					label="SELECT_CATEGORIES" 
+					multiple="true"
+					size="5"
+					width="300"
+					description="SELECT_CATEGORIES_DESC" >
+						<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				<field 
+					name="k2catsid" 
+					type="K2category" 
+					subtype="getCategory"
+					class="mselect"
+					multiple="true"
+					default="" 
+					level="3"
+					label="SELECT_K2_CATEGORIES" 
+					description="SELECT_K2_CATEGORIES_DESC"
+					show_root="true" />	
+				<field 
+					name="group_categories"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="JA_GROUP_CATEGORIES"
+					description="JA_GROUP_CATEGORIES_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="limited" 
+					type="text" 
+					default="10"
+					size="5"
+					class="validate-numeric" 
+					label="LIMIT_IN_PAGE" 
+					description="LIMIT_IN_PAGE_DESC" />
+				<field 
+					name="sort_order_field" 
+					type="list" 
+					default="created" 
+					label="JACP_SORT_ORDER_BY" 
+					description="JACP_SORT_ORDER_BY_DESC">
+						<option value="created">JACP_CREATED_DATE</option>
+						<option value="ordering">JACP_ORDER</option>
+						<option value="hits">JACP_HITS</option>
+						<option value="rand">JACP_RANDOM</option>
+				</field>
+				<field 
+					name="sort_order_field_cat" 
+					type="list" 
+					default="name" 
+					label="JACP_SORT_ORDER_BY" 
+					description="JACP_SORT_ORDER_BY_DESC">
+						<option value="name">JACP_CATEGORY_NAME</option>
+						<option value="ordering">JACP_ORDER</option>
+						<option value="rand">JACP_RANDOM</option>
+				</field>
+				<field 
+					name="sort_order" 
+					type="list" 
+					default="DESC"
+					label="JACP_ASC_OR_DESC" 
+					description="JACP_ASC_OR_DESC_DESC">
+						   <option value="ASC">JACP_ASC</option>
+						   <option value="DESC">JACP_DESC</option>
+				 </field>
+				<field type="spacer" hr="true" />
+				<field 
+					name="show_titles"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="JA_SHOW_TITLES"
+					description="JA_SHOW_TITLES_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="show_introtext"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="JA_SHOW_INTROTEXT"
+					description="JA_SHOW_INTROTEXT_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="show_nav_control"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="JA_SHOW_NAV_CONTROL"
+					description="JA_SHOW_NAV_CONTROL_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field 
+					name="show_paging"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="JA_SHOW_NAV_PAGING"
+					description="JA_SHOW_NAV_PAGING_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field 
+					name="anim_type" 
+					type="list"
+					label="JFIELD_ALT_ANIM_TYPE_LABEL"
+					description="JFIELD_ALT_ANIM_TYPE_DESC" >
+						<option value="fade">JFIELD_FADE</option>
+						<option value="slidehrz">JFIELD_HORIZONTAL_SLICE</option>
+						<option value="slidevrt">JFIELD_VERTICAL_SLICE</option>
+						<option value="slicehrz">JFIELD_HORIZONTAL_SLICES</option>
+						<option value="slicevrt">JFIELD_VERTICAL_SLICES</option>
+						<option value="slicezoom">JFIELD_ZOOM_ROTATE</option>
+				</field>
+				
+				<field type="spacer" hr="false" label="IMAGE_SETTINGS" />
+				<field 
+					name="thumbnail_mode" 
+					type="list" 
+					default="crop" 
+					label="THUMBNAIL_MODE" 
+					description="THUMBNAIL_MODE_DESC">
+						<option value="none">USING_IMAGE_SOURCE</option>
+						<option value="resize">USING_RESIZE</option>
+						<option value="crop">USING_CROP</option>
+				</field>
+				<field 
+					name="use_ratio" 
+					type="radio"
+					class="btn-group" 
+					default="1" 
+					label="RESIZE_WITH_THE_RATIO" 
+					description="RESIZE_WITH_THE_RATIO_DESC">
+						<option value="1">Yes</option>
+						<option value="0">No</option>
+				</field>
+				<field 
+					name="width" 
+					type="text" 
+					default="100" 
+					class="validate-numeric"
+					label="NORMAL_ARTICLE_IMAGE_WIDTH" 
+					description="NORMAL_ARTICLE_IMAGE_WIDTH_DESC" />
+			
+				<field 
+					name="height" 
+					type="text" 
+					default="100" 
+					class="validate-numeric"
+					label="NORMAL_ARTICLE_IMAGE_HEIGHT" 
+					description="NORMAL_ARTICLE_IMAGE_HEIGHT_DESC" />	
+					
+				<field type="spacer" hr="false" label="POPUP_SETTINGS" />
+				<field 
+					name="show_popup"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="JA_SHOW_POP"
+					description="JA_SHOW_POP_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field
+					name="iframewidth"
+					type="text"
+					default="500"
+					size="5"
+					class="validate-numeric"
+					label="IFRAME_WITDH"
+					description="IFRAME_WITDH_DESC" />
+				<field
+					name="iframeheight"
+					type="text"
+					default="500"
+					size="5"
+					class="validate-numeric"
+					label="IFRAME_HEIGHT"
+					description="IFRAME_HEIGHT_DESC" />		
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					
+				<field name="cache" type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field name="cache_time" type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+					
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+				
+				<field type="japanel" path="modules/mod_jacontentpopup/assets/elements/" />
+				<field 
+					name="groupsource" 
+					type="japanel" 					
+					function="depend" 
+					hidden="true" 
+					level="3">											
+						<option for="source" value="JANewsHelper" hideRow="true">catsid</option>
+						<option for="source" value="JAK2CHelper" hideRow="true">k2catsid</option>
+						<option for="show_popup" value="1" hideRow="true">iframewidth,iframeheight</option>
+						<option for="group_categories" value="0" hideRow="true">sort_order_field</option>
+						<option for="group_categories" value="1" hideRow="true">sort_order_field_cat</option>
+						<option for="thumbnail_mode" value="crop" hideRow="true">use_ratio</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

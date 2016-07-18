@@ -67,7 +67,7 @@ class JMapViewConfig extends JMapView {
 							Joomla.submitform( pressbutton );
 				
 							// Clear SEO stats and fetch new fresh data
-							if( window.sessionStorage !== null ) {
+							if( window.sessionStorage !== null && jQuery('#params_seostats_custom_link').data('changed') == 1) {
 								sessionStorage.removeItem('seostats');
 							}
 							return true;

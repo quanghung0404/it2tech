@@ -43,8 +43,9 @@ class InstallerViewDatabase extends InstallerViewDefault
 		$this->updateVersion = ($this->updateVersion) ?  $this->updateVersion : JText::_('JNONE');
 		$this->pagination = $this->get('Pagination');
 		$this->errorCount = count($this->errors);
-
-		if (version_compare($this->schemaVersion, JVERSION) != 0)
+		// HungNQ start https://github.com/joomla/joomla-cms/pull/3249/files
+		//if (version_compare($this->schemaVersion, JVERSION) != 0)
+		if ($this->schemaVersion != $this->changeSet->getSchema())
 		{
 			$this->errorCount++;
 		}

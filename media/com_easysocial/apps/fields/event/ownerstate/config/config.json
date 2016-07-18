@@ -1,0 +1,11 @@
+{
+    "privacy": false,
+    "default": false,
+    "title": {
+        "default": "FIELDS_EVENT_OWNERSTATE_DEFAULT_TITLE"
+    },
+
+    "description": {
+        "default": "FIELDS_EVENT_OWNERSTATE_DEFAULT_DESCRIPTION"
+    }
+}

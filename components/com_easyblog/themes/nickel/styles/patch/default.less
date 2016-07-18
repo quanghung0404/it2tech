@@ -1,0 +1,116 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+@theme-post-bg		: #fff;
+@theme-post-cover	: #e5e5e5;
+@theme-masonry-gap	: 10px;
+@theme-masonry-pad	: @theme-masonry-gap*1.5;
+
+@eb-box-radius-s	: @eb-box-radius - 1;
+
+.eb-masonry {
+	min-height: 200px; // Masonry will inline height:0 if content is empty. 
+}
+.eb-masonry,
+.eb-posts {
+	margin: 0 -@theme-masonry-gap;
+
+	&.w480 {
+		.eb-masonry-post {
+			width: 100% !important;
+			position: static !important;
+		}
+	}
+}
+
+.eb-masonry-post {
+	float: left;
+	width: 50%;
+	padding: 0 @theme-masonry-gap;
+
+	&.w320 {
+		.eb-post-more {
+			display: block;
+		}
+
+		.eb-post-hits,
+		.eb-post-comments {
+			display: inline-block;
+			padding: 10px 0 0;
+		}
+	}
+}
+
+.eb-post {
+	background: @theme-post-bg;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin-bottom: @theme-masonry-gap*2;
+
+	+ .eb-post {
+		margin-top: 0;
+	}
+}
+
+.eb-post-top {
+	border-bottom: 1px solid #ddd;
+	padding: @theme-masonry-pad;
+
+	.eb-avatar img {
+		width: 40px;
+		height: 40px;
+		margin: 0 10px 0 0;
+	}
+
+	.col-cell {
+		position: relative;
+	}
+
+	.eb-post-author-avatar { // team avatar
+		+ .eb-post-author-avatar { // author avatar
+			img {
+				width: 26px;
+				height: 26px;
+			}
+		}
+	}
+	
+
+	.eb-post-admin {
+		float: none;
+		display: inline-block;
+	}
+}
+
+.eb-post-author {
+	a {
+		color: inherit;
+		font-weight: bold;
+	}
+}
+
+.eb-post-content {
+	margin: @theme-masonry-pad;
+}
+
+.eb-post-foot {
+	background: @eb-box-shade;
+	border-top: 1px solid #ddd;
+	border-radius: 0 0 2px 2px;
+	padding: @theme-masonry-pad;
+}
+
+.eb-post-body .eb-post-image {
+	display: block;
+	float: none;
+	margin: 0 0 15px;
+	width: auto;
+}
+
+.eb-entry .eb-image-viewport {
+	padding: 0;
+}

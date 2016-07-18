@@ -1,0 +1,8 @@
+[
+    {
+        "script": [
+            "site/profile/header"
+        ],
+        "adapter": "EasySocial"
+    }
+]

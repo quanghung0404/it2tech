@@ -1,0 +1,28 @@
+[
+    {
+        "name": "videos.create",
+        "type": "boolean",
+        "title": "COM_EASYSOCIAL_ACCESS_VIDEOS_UPLOAD_VIDEOS"
+    },
+    {
+        "name": "videos.total",
+        "type": "limit",
+        "default": 0,
+        "title": "COM_EASYSOCIAL_ACCESS_VIDEOS_TOTAL"
+    },
+    {
+        "name": "videos.maxsize",
+        "type": "text",
+        "class": "form-control input-sm input-short text-center",
+        "default": 8,
+        "suffix": "MB",
+        "title": "COM_EASYSOCIAL_ACCESS_VIDEOS_MAX_SIZE"
+    },
+    {
+        "name": "videos.daily",
+        "type": "limit",
+        "default": 50,
+        "suffix": "videos",
+        "title": "COM_EASYSOCAIL_ACCESS_VIDEOS_TOTAL_DAILY"
+    }
+]

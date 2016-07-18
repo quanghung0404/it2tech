@@ -1,0 +1,87 @@
+.ebd {
+    .ebd-block {
+        &[data-type=thumbnails] {
+        }
+    }
+}
+
+@eb-thumbs-gutter: 5px;
+
+.make-thumb-grid(@index) when (@index >= 9) {}
+.make-thumb-grid(@index) when (@index < 9) {
+
+    &.col-@{index} {
+        .eb-thumbs-col {
+            width: 100% / @index;
+        }
+    }
+
+    .make-thumb-grid(@index + 1);
+}
+
+// TODO: Responsive. Small width device should be enforced to min 4 columns per row
+.eb-thumbs {
+
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    // margin-left: @eb-thumbs-gutter * -1;
+    // margin-right: @eb-thumbs-gutter * -1;
+
+    .make-thumb-grid(1);
+
+    .eb-image {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.eb-thumbs-col {
+    display: table-cell;
+    height: 100%;
+    position: relative;
+    vertical-align: top;
+}
+
+&.w480 {
+    .eb-thumbs .eb-thumbs-col {
+        display: block;
+        width: 100% !important;
+    }
+}
+
+.eb-thumb {
+
+    position: relative;
+
+    // .eb-thumb-viewport
+    > div {
+        position: relative;
+
+        // Gutter
+        border: @eb-thumbs-gutter solid transparent;
+        border-top: 0;
+        border-bottom: @eb-thumbs-gutter * 2 solid transparent;
+
+        // This will either be .eb-thumb-placeholder,
+        // or .eb-image-container
+        > div {
+
+            &.eb-thumb-placeholder,
+            &.ebd-block {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            &.ebd-block {
+                border: none;
+            }
+        }
+    }
+}

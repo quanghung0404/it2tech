@@ -152,6 +152,54 @@ jQuery(function($){
 				}
 			});
 			
+			// Register events for links data source type adder/deleter rows
+			$('button[data-role=rawlinks_action]').on('click', {bind:this}, function(event) {
+				event.preventDefault();
+				var buttonAction = $(event.target).data('action');
+				// Add a row
+				if(buttonAction == 'add') {
+					var numberOfRows = $('table.rawlinks_table_links tr').length;
+					var rowSnippet = '<tr>' +
+											'<td class="key left_title">' +
+											'<label class="title_label">' + COM_JMAP_RAW_SOURCE_LINK.replace('%d', (numberOfRows + 1)) + '</label>' +
+											'<input type="checkbox" value=""/> ' +
+										'</td>' +
+										'<td class="right_details">' +
+											'<label class="as label label-primary">Title</label> ' +
+											'<input class="sitemap_rawtitle" type="text" name="sqlquery_managed[title][]" value=""> ' +
+											'<label class="as label label-primary">Link</label> ' +
+											'<input class="sitemap_rawlink" type="text" data-validation="required url" name="sqlquery_managed[link][]" value=""> ' +
+										'</td>' +
+									'</tr>';
+					$('table.rawlinks_table_links').append(rowSnippet);
+				}
+				
+				// Delete selected rows
+				if(buttonAction == 'delete') {
+					// Get selected records
+					var selectedRecords = $('table.rawlinks_table_links input[type=checkbox]:checked');
+					if(!selectedRecords.length) {
+						alert(COM_JMAP_SELECTED_LINK_RECORDS);
+						return false;
+					}
+					// Remove selected records
+					$('table.rawlinks_table_links input[type=checkbox]:checked').each(function(index, element){
+						$(element).parents('tr').remove();
+					});
+					
+					// Array reordering of rows
+					$('table.rawlinks_table_links tr').each(function(index, tableRow){
+						$('label.title_label', tableRow).text(COM_JMAP_RAW_SOURCE_LINK.replace('%d', (index + 1)));
+					});
+				}
+			});
+			
+			// Register events for select all links
+			$('input[type=checkbox][data-role=selectall]').on('click', function(jqEvent){
+				var checkedState = $(this).prop('checked');
+				$('table.rawlinks_table_links input[type=checkbox]').prop('checked', checkedState);
+			});
+			
 			// Go to bottom button
 			$('#gobottom').on('click', function(){
 				$('html, body').animate({

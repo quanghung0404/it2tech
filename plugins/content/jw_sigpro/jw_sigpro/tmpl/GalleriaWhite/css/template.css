@@ -1,0 +1,59 @@
+/**
+ * @version     3.1.x
+ * @package     Simple Image Gallery Pro
+ * @author      JoomlaWorks - http://www.joomlaworks.net
+ * @copyright   Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
+ * @license     http://www.joomlaworks.net/license
+ */
+
+/* --- Generic Styling --- */
+a:active,a:focus {outline:0;}
+table.contentpaneopen {width:100%;}
+li.sigProClear {clear:both;float:none!important;height:0!important;line-height:0!important;border:none!important;background:none!important;width:auto;margin:0!important;padding:0!important;}
+
+/* Container */
+div.sigProGalleriaWhiteContainer {background:#efefef;margin:8px 0;padding:16px;clear:both;}
+	div.sigProGalleriaWhitePlaceholderContainer {background:#fff url(../images/loader_squares.gif) no-repeat 50% 50%;padding:0;margin-bottom:8px;}
+		div.sigProGalleriaWhitePlaceholder {position:relative;}
+ul.sigProGalleriaWhite {margin:0 auto!important;padding:0!important;list-style:none;clear:both;overflow:hidden;}
+	ul.sigProGalleriaWhite.singleThumbGallery {}
+
+/* Placeholder */
+a.sigProGalleriaWhiteTargetLink {display:block;}
+a.sigProGalleriaWhiteTargetLink img {display:block;width:100%;height:auto;}
+p.sigProGalleriaWhiteTargetTitle {position:absolute;bottom:0;left:0;right:0;background:#000;opacity:0.8;display:block;font-size:24px;line-height:120%;margin:0;padding:8px;color:#fff;}
+
+/* Thumbnail */
+ul.sigProGalleriaWhite li.sigProThumb {float:left;background:#fff!important;margin:0 4px 4px 0;padding:0;border:none!important;}
+ul.sigProGalleriaWhite li.sigProThumb span.sigProLinkOuterWrapper {}
+ul.sigProGalleriaWhite li.sigProThumb span.sigProLinkWrapper {}
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLink,
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLink:hover {position:relative;display:block;padding:0;margin:0;overflow:hidden;}
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLink {color:#333;background-color:#fff;}
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLink:hover {color:#eee;text-decoration:none;opacity:0.6;}
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLinkSelected {opacity:0.6;}
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLink img.sigProImg,
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLink:hover img.sigProImg {display:block;padding:0;margin:0;border:none;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;}
+
+/* Caption */
+ul.sigProGalleriaWhite span.sigProPseudoCaption,
+ul.sigProGalleriaWhite span.sigProCaption {display:none;}
+ul.sigProGalleriaWhite li.sigProThumb a.sigProLink:hover span.sigProCaption {display:block;position:absolute;bottom:0;left:0;right:0;text-align:center;padding:4px 0;color:#000;font-size:11px;font-weight:normal;background:#fff;opacity:0.8;line-height:120%;}
+ul.sigProGalleriaWhite span.sigProPseudoCaption b {display:block;position:absolute;bottom:0;left:0;right:0;text-align:center;padding:4px 0;font-size:11px;font-weight:normal;visibility:hidden;}
+
+/* Popup */
+span.sigProPopupCaption {font-weight:bold;color:#C63C13;font-size:13px;}
+a.sigProDownloadLink,
+a.sigProDownloadLink:hover {background:url(../images/disk.png) no-repeat left center;padding:4px 0 4px 20px;}
+div.sigProModulePosition {text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding:4px;margin:8px 0;background:#ffffdd;}
+
+/* IE specific styling: Use "body.sigProIsIEX element {}" - where X is 6, 7 or 8 - to target elements for these browser versions only */
+body.sigProIsIE6 {}
+body.sigProIsIE7 {}
+body.sigProIsIE8 {}
+
+/* Flickr Set link */
+a.sigProFlickrSetLink {display:block;clear:left;padding:2px 8px;font-size:10px;text-align:center;}
+
+/* Print message */
+.sigProPrintMessage {display:none;}

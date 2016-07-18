@@ -1,0 +1,15 @@
+[
+    {
+        "script": [
+            "site/stream/item"
+        ],
+        "view": [
+            "site/loading/small",
+            "site/stream/loadbutton"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_STREAM_LOAD_PREVIOUS_STREAM_ITEMS"
+        ],
+        "adapter": "EasySocial"
+    }
+]

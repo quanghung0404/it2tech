@@ -173,6 +173,8 @@
 			<option value="30">COM_JMAP_1MONTH</option>  
 			<option value="99999">COM_JMAP_USE_ALWAYS</option>
 		</field>
+		<field name="rss_lifetime_view_cache" type="text" datavalidation="numbers" default="60" size="50" label="COM_JMAP_RSS_LIFETIME_CACHE" description="COM_JMAP_RSS_LIFETIME_CACHE_DESC" />
+		
 		<field type="spacer" class="label label-info spacer" label="COM_JMAP_PRECACHING_AJAX"/>
 		<field name="enable_precaching" type="radiocache" default="0" cachetype="PRE" label="COM_JMAP_PRECACHING_ENABLED" description="COM_JMAP_PRECACHING_ENABLED_DESC">
 			<option value="1">JENABLED</option>
@@ -255,6 +257,7 @@
 		<field name="images_global_filter_exclude" type="text" class="inputbox-large" default="" size="50" label="COM_JMAP_ELEMENTS_IMAGES_FILTEREXCLUDE" description="COM_JMAP_ELEMENTS_IMAGES_FILTEREXCLUDE_DESC" />
 		<field name="videos_global_filter_include" type="text" class="inputbox-large" default="" size="50" label="COM_JMAP_ELEMENTS_VIDEOS_FILTERINCLUDE" description="COM_JMAP_ELEMENTS_VIDEOS_FILTERINCLUDE_DESC" />
 		<field name="videos_global_filter_exclude" type="text" class="inputbox-large" default="" size="50" label="COM_JMAP_ELEMENTS_VIDEOS_FILTEREXCLUDE" description="COM_JMAP_ELEMENTS_VIDEOS_FILTEREXCLUDE_DESC" />
+		<field name="cdnprotocol" type="text" default="" size="50" label="COM_JMAP_CDN_PROTOCOL" description="COM_JMAP_CDN_PROTOCOL_DESC" />
 		
 		<field type="spacer" class="label label-info spacer" label="COM_JMAP_RSS_FEED"/>
 		<field name="rss_channel_name" type="text" default="" size="50" label="COM_JMAP_RSS_CHANNEL_NAME" description="COM_JMAP_RSS_CHANNEL_NAME_DESC" />
@@ -291,6 +294,10 @@
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
+		<field name="enable_articles_exclusions" class="btn-group" type="radio" default="1" label="COM_JMAP_ENABLE_ARTICLES_EXCLUSIONS" description="COM_JMAP_ENABLE_ARTICLES_EXCLUSIONS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
 		<field name="disable_acl" class="btn-group" type="radio" default="enabled" label="COM_JMAP_DISABLE_ACL" description="COM_JMAP_DISABLE_ACL_DESC">
 			<option value="enabled">JENABLED</option>
 			<option value="disabled">JDISABLED</option>
@@ -323,6 +330,10 @@
 		<field name="seostats_enabled" class="btn-group" type="radio" default="1" label="COM_JMAP_SEOSTATS" description="COM_JMAP_SEOSTATS_DESC">
    			<option value="0">JNO</option>              
    			<option value="1">JYES</option>
+   		</field>
+		<field name="seostats_site_query" class="btn-group" type="radio" default="1" label="COM_JMAP_SEOSTATS_SITE_QUERY" description="COM_JMAP_SEOSTATS_SITE_QUERY_DESC">
+   			<option value="0">COM_JMAP_WHOLE_DOMAIN</option>              
+   			<option value="1">COM_JMAP_EXACT_SITE</option>
    		</field>
    		
    		<field type="spacer" class="label label-info spacer" label="COM_JMAP_LINKS_ANALYZER"/>
@@ -408,7 +419,7 @@
    			<option value="0">COM_JMAP_SERVER</option>              
    			<option value="1">COM_JMAP_COMPONENT</option>
    		</field>
-   		<field name="advanced_multilanguage" class="btn-group" type="radio" default="1" label="COM_JMAP_ADVANCED_MULTILANGUAGE" description="COM_JMAP_ADVANCED_MULTILANGUAGE_DESC">
+   		<field name="advanced_multilanguage" class="btn-group" type="radio" default="0" label="COM_JMAP_ADVANCED_MULTILANGUAGE" description="COM_JMAP_ADVANCED_MULTILANGUAGE_DESC">
 			<option value="0">COM_JMAP_MODE_STANDARD</option>              
 			<option value="1">COM_JMAP_MODE_ADVANCED</option>
 		</field>

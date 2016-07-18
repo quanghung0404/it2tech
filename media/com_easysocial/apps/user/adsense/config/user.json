@@ -1,0 +1,17 @@
+[
+	{
+		"title"		: "APP_USER_ADSENSE_SETTINGS_USER_PROFILE",
+		"desc"		: "APP_USER_ADSENSE_SETTINGS_USER_PROFILE_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_USER_ADSENSE_SETTINGS_USER_ADSENSE_CODE",
+				"tooltip"	: "APP_USER_ADSENSE_SETTINGS_USER_ADSENSE_CODE_DESC",
+				"name"		: "profile_adsense_code",
+				"type"		: "textarea",
+				"class"		: "input-sm",
+				"default"	: ""
+			}
+		]
+	}
+]

@@ -1,0 +1,62 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+.eb-header {
+	background: url(../images/eblog-entry.png) @theme-color-secondary !important;
+	border: 1px solid @theme-box-border;
+	padding: 15px 15px 0;
+	color: @theme-text-color;
+	margin: 0 0 @eb-gutter;
+	box-shadow: 0 1px 0 rgba(0,0,0,.05);
+
+	h1 {
+		color: @theme-link-color;
+	}
+}
+
+.eb-navbar {
+	border: 1px solid rgba(0, 0, 0, 0.45);
+	border-radius: 0;
+	margin-bottom: -1px;
+	position: relative;
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background: lighten(@theme-color-primary, 10%);
+	}
+}
+
+.eb-navbar-left li:first-child > a {
+	border-radius: 0;
+}
+
+.eb-navbar-right li:last-child > a {
+	border-radius: 0;
+}
+
+.eb-navbar-collapse {
+	> ul,
+	> form {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.eb-navbar.w480 {
+	.eb-navbar-collapse.in,
+	.eb-navbar-dropdown, 
+	.eb-navbar-dropdown-login {
+		border: 0;
+		border-top: 1px solid #081b2f;
+	}
+}

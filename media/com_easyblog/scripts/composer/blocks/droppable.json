@@ -1,0 +1,9 @@
+[
+    {
+        "library": [
+            "ui/draggable",
+            "ui/droppable"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

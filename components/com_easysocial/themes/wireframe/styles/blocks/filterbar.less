@@ -1,0 +1,51 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+.es-filterbar {
+    position: relative;
+    z-index: 2;
+    padding: 0 0 15px;
+    margin: 0 0 15px;
+    border-bottom: 1px solid @esBorder;
+
+    // AS FOR 1.4.3, .es-filterbar WILL UTILISE .row-table, AND .col-cell for its content
+
+    > .col-cell {
+        vertical-align: middle;
+    }
+
+    .filterbar-title {
+        font-weight: bold;
+    }
+}
+
+
+.es-snackbar {
+    color: darken(@esBorder, 60%);
+    background: lighten(@esBorder, 6%);
+    border-radius: 3px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0 10px;
+    margin-bottom: 15px;
+    line-height: 30px;
+
+    .dropdown-menu-right {
+        left: auto;
+        right: 0;
+    }
+
+    .row-table {
+        display: table;
+        width: 100%;
+        
+        > .col-cell {
+            display: table-cell !important;
+            vertical-align: middle;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$profile - dashboard.less
+\*------------------------------------*/
+
+// Dashboard view.
+.es-dashboard{
+
+	.es-container{
+
+		.es-sidebar{
+
+			.fd-nav-stacked {
+				a {
+					font-size: @baseFontSize;
+				}
+			}
+
+			a:hover, a:active, a:focus {
+				outline: 0;
+			}
+
+			// Feed items
+			.feed-items{
+				.dashboard-filter {
+					position: relative;
+
+					&.custom-filter{
+						.custom-filter-edit{
+							display: none;
+						}
+					}
+				}
+				.dashboard-filter:hover{
+					&.custom-filter{
+						.custom-filter-edit{
+							display: inline-block;
+						}
+					}
+				}
+				.data-dashboardfeeds-filter-edit {
+					position: absolute;
+					top: 0;
+					right: 5px;
+				}
+				.data-dashboardfeeds-item {
+					display: inline-block;
+					width: 90%;
+				}
+			}
+
+			.fd-nav{
+				li {
+					a > i {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+
+		.es-content{
+			> .loading-indicator{
+				&.large{
+					margin-top: 80px;
+				}
+			}
+		}
+
+		.es-app-wrapper{
+			padding: 10px;
+		}
+	}
+}
+
+// Edit profile.
+#profile{
+
+	.stepItem {
+		line-height: 20px;
+		margin: 10px 0 10px 0;
+		a {
+			font-size: 12px;
+		}
+	}
+
+}
+
+/*
+ * Dashboard view
+ */
+.updateProfile{
+	margin-top: 30px;
+}
+
+

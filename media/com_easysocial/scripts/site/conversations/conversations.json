@@ -1,0 +1,13 @@
+[
+    {
+        "script": [
+            "site/conversations/mailbox",
+            "site/conversations/item",
+            "site/conversations/filter"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_NO_BUTTON"
+        ],
+        "adapter": "EasySocial"
+    }
+]

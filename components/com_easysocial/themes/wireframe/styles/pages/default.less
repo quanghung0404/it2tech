@@ -1,0 +1,81 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.page-item {
+
+	.page-apps-container,
+	.app-contents-wrap {
+		padding: 10px 0 0;
+	}
+
+
+    .page-more {
+        font-size: @baseFontSize;
+        margin-top: 15px;
+    }
+
+    .page-misc {
+        nav {
+            > span {
+                font-size: @baseFontSize;
+                + span {
+                    border-left : 1px dotted @esBorder;
+                    padding-left: 10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+}
+
+
+// No idea what is this
+// Files widget
+.es-groups-item
+{
+    .recent-files
+    {
+        ul
+        {
+            margin: 0 10px 0 0;
+
+            li
+            {
+                margin-bottom: 10px;
+                +li
+                {
+                    border-top: 1px dotted @esBorder;
+                    padding-top: 10px;
+                }
+            }
+            a
+            {
+                font-size: @baseFontSize;
+
+                > i
+                {
+                    vertical-align: top;
+                }
+            }
+
+            .author-info
+            {
+                >div
+                {
+                    font-size: @baseFontSize;
+                    color: @esColor;
+                }
+
+                i
+                {
+                    color: @esColor;
+                }
+            }
+        }
+    }
+}

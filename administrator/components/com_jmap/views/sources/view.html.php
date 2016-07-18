@@ -213,7 +213,11 @@ class JMapViewSources extends JMapView {
 							  'COM_JMAP_CHOOSE_ARTICLES_EXCLUSION',
 							  'COM_JMAP_CHOOSE_ARTICLES_EXCLUSION_DESC',
 							  'COM_JMAP_CHOOSE_ARTICLES_INCLUSION',
-							  'COM_JMAP_CHOOSE_ARTICLES_INCLUSION_DESC');
+							  'COM_JMAP_CHOOSE_ARTICLES_INCLUSION_DESC',
+							  'COM_JMAP_RAW_SOURCE_LINK',
+							  'COM_JMAP_LINK_TITLE',
+							  'COM_JMAP_LINK_HREF',
+							  'COM_JMAP_SELECTED_LINK_RECORDS');
 		$this->injectJsTranslations($translations, $doc);
 		
 		// Load specific JS App

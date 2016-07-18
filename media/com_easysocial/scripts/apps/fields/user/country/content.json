@@ -1,0 +1,13 @@
+[
+    {
+        "library": [
+            "textboxlist"
+        ],
+        "language": [
+            "PLG_FIELDS_COUNTRY_VALIDATION_REQUIRED",
+            "PLG_FIELDS_COUNTRY_VALIDATION_MINIMUM_ERROR",
+            "PLG_FIELDS_COUNTRY_VALIDATION_MAXIMUM_ERROR"
+        ],
+        "adapter": "EasySocial"
+    }
+]

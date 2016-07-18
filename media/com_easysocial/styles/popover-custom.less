@@ -1,0 +1,48 @@
+//
+// Override fd-popover
+// --------------------------------------------------
+
+// Field error
+
+@es-field-error-arrow-color: #de614f;
+@es-field-error-arrow-outer-color: #dc4248;
+
+&.fd-popover.es-field-error {
+    background-color: #de614f !important;
+    border-color: #dc4248 !important;
+    color: #fff !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+&.fd-popover.es-field-error {
+    &.top .arrow {
+        border-top-color: @es-field-error-arrow-outer-color;
+        &:after {
+            border-top-color: @es-field-error-arrow-color;
+        }
+    }
+    &.right .arrow {
+        border-right-color: @es-field-error-arrow-outer-color;
+        &:after {
+            border-right-color: @es-field-error-arrow-color;
+        }
+    }
+    &.bottom .arrow {
+        border-bottom-color: @es-field-error-arrow-outer-color;
+        &:after {
+            border-bottom-color: @es-field-error-arrow-color;
+        }
+    }
+    &.left .arrow {
+        border-left-color: @es-field-error-arrow-outer-color;
+        &:after {
+            border-left-color: @es-field-error-arrow-color;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    &.fd-popover.es-field-error {
+        display: none !important;
+    }
+}

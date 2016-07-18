@@ -1,0 +1,8 @@
+[
+    {
+        "script": [
+            "site/conversations/mailbox"
+        ],
+        "adapter": "EasySocial"
+    }
+]

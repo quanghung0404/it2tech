@@ -1,0 +1,167 @@
+/*------------------------------------*\
+	Scaffolding/Reset
+\*------------------------------------*/
+// reset to prevent conflict for Joomla Template
+
+// Prevent templates globally align center
+& {
+	text-align: left;
+}
+
+*,
+*:before,
+*:after {
+	//safe to use width:100% without caring the padding
+	.box-sizing(border-box);
+}
+
+img,
+input {
+    // Reset to prevent templates using min-height mess up ES input fields and images
+    min-width: 0;
+    min-height: 0;
+}
+
+//reset some HTML elements
+blockquote,
+header,
+nav,
+figure,
+article,
+aside,
+footer,
+form {
+	// box model
+	padding: 0;
+	margin: 0;
+	width: auto;
+	height: auto;
+	border: 0;
+	outline: 0;
+
+	// layout
+	float: none;
+	position: static;
+	display: block;
+	background: none;
+
+	// text
+	text-align: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	text-shadow: none;
+
+}
+
+// Apply for <ul> <ol> ONLY
+//reset some template add in value to :before :after
+//e.g.: <li> with bullet
+.fd-reset-list,
+.fd-reset-list > li {
+    .fd-reset-list();
+}
+
+tr, td {
+	border: 1px  solid transparent;
+}
+
+a {
+	background: transparent;
+	&:link {
+		text-decoration: none;
+	}
+
+	&:hover {
+		color: @link-hover-color;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: @link-color;
+		background-color: transparent;
+	}
+}
+
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+
+// Images
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  .img-responsive();
+}
+
+// Rounded corners
+.img-rounded {
+  border-radius: @border-radius-large;
+}
+
+// Image thumbnails
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  padding: @thumbnail-padding;
+  line-height: @line-height-base;
+  background-color: @thumbnail-bg;
+  border: 1px solid @thumbnail-border;
+  border-radius: @thumbnail-border-radius;
+  .transition(all .2s ease-in-out);
+
+  // Keep them at most 100% wide
+  .img-responsive(inline-block);
+}
+
+// Perfect circle
+.img-circle {
+  border-radius: 50%; // set radius in percents
+}
+
+
+// Horizontal rules
+
+hr {
+  margin-top:    @line-height-computed;
+  margin-bottom: @line-height-computed;
+  border: 0;
+  border-top: 1px solid @hr-border;
+}
+
+// prevent templates have border color for .divider
+.divider {
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+// previously global font-size 11px class
+.fd-small {
+	font-size:11px;
+	margin:auto;
+	padding:auto;
+	font-weight: normal;
+	> a {
+		font-size: 11px;
+	}
+}
+
+// Reset BS3 .row conflict with BS2
+.row {
+    display: block;
+    margin: auto;
+}

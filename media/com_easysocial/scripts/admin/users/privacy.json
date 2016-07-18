@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "textboxlist"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

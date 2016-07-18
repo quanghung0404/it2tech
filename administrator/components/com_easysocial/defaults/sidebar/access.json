@@ -1,0 +1,29 @@
+{
+	"title"	: "COM_EASYSOCIAL_MENU_GROUP_ACCESS",
+	"link"	: "index.php?option=com_easysocial&view=access",
+	"class"	: "fa-lock",
+	"access": "easysocial.access.access",
+	"view"	: "access",
+	"active": "layout",
+	"childs":
+	[
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_ACCESS_INSTALL",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "access",
+				"layout": "install"
+			}
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_ACCESS_DISCOVER",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "access",
+				"layout": "discover"
+			}
+		}
+	]
+}

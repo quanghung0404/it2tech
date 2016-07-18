@@ -1,0 +1,13 @@
+{
+	"title"			: "",
+	"description"	: {},
+	"default"		: false,
+	"list_ids":
+	{
+		"label"		: "PLG_FIELDS_ACYMAILING_ENTER_LIST_IDS",
+		"tooltip"	: "PLG_FIELDS_ACYMAILING_ENTER_LIST_IDS_DESC",
+		"type"		: "text",
+		"default"	: "1",
+		"group"		: "core"
+	}
+}

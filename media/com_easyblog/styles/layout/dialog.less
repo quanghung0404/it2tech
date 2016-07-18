@@ -1,0 +1,248 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+@eb-dialog-gutter: @eb-gutter;
+@eb-dialog-header-size: 50px;
+@eb-dialog-footer-size: 50px;
+@eb-dialog-body-min-width: 320px;
+@eb-dialog-body-min-height: 120px;
+@eb-dialog-header-bg: #fafafa;
+@eb-dialog-body-bg: #fff;
+@eb-dialog-footer-bg: #fafafa;
+@eb-dialog-border-color: #ccc;
+@eb-dialog-border-radius: 3px;
+
+&.eb-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99999;
+    .transition(all .5s ease);
+    .transform_(scale(1.2));
+    opacity: 0;
+    background: transparent;
+
+    &.active {
+        .transform_(scale(1));
+        opacity: 1;
+    }
+
+    &.is-loading {
+        .no-transition();
+        .hint-loading {
+            display: table;
+        }
+    }
+
+    &.is-failed {
+        .hint-failed {
+            display: table;
+        }
+    }
+
+    .eb-hint {
+        display: none;
+        background: #fff;
+    }
+}
+
+.eb-dialog-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    .transform_(translateX(-50%) translateY(-50%));
+
+    display: block;
+    border-radius: @eb-dialog-border-radius;
+    .box-shadow(0 2px 3px rgba(0,0,0,0.2));
+    max-width: 100%;
+    max-height: 100%;
+    min-width: @eb-dialog-body-min-width;
+    min-height: @eb-dialog-header-size + @eb-dialog-body-min-height;
+}
+
+&.eb-dialog.has-footer {
+
+    .eb-dialog-modal {
+        min-height: @eb-dialog-header-size + @eb-dialog-body-min-height + @eb-dialog-footer-size;
+    }
+}
+
+.eb-dialog-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @eb-dialog-header-size;
+    z-index: 3;
+
+    background: @eb-dialog-header-bg;
+    border: 1px solid @eb-dialog-border-color;
+    border-bottom: none;
+    padding: @eb-dialog-gutter / 3;
+    border-radius: @eb-dialog-border-radius @eb-dialog-border-radius 0 0;
+
+    > .row-table {
+        height: 100%;
+    }
+}
+
+.eb-dialog-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: @eb-dialog-footer-size;
+    z-index: 2;
+    display: none;
+
+    background: @eb-dialog-footer-bg;
+    border: 1px solid @eb-dialog-border-color;
+    border-top: none;
+    padding: @eb-dialog-gutter / 3;
+    border-radius: 0 0 @eb-dialog-border-radius @eb-dialog-border-radius;
+}
+
+.eb-dialog-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    border-top: @eb-dialog-header-size solid transparent;
+    border-bottom: 0;
+}
+
+.eb-dialog-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    // Without footer
+    background: @eb-dialog-body-bg;
+    border: 1px solid @eb-dialog-border-color;
+    border-radius: 0 0 @eb-dialog-border-radius @eb-dialog-border-radius;
+}
+
+&.is-loading {
+    .eb-dialog-container {
+        overflow: hidden;
+    }
+}
+
+// With footer
+&.eb-dialog.has-footer {
+
+    .eb-dialog-body {
+        border-bottom: @eb-dialog-footer-size solid transparent;
+    }
+
+    .eb-dialog-container {
+        border-radius: 0;
+    }
+
+    .eb-dialog-footer {
+        display: block;
+    }
+}
+
+.eb-dialog-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.eb-dialog-close-button {
+    color: #bbb;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+        color: #888;
+    }
+
+    i {
+        padding: 0 @eb-dialog-gutter / 6 0 @eb-dialog-gutter / 3;
+    }
+}
+
+.eb-dialog-content {
+    position: relative;
+    padding: @eb-dialog-gutter / 3;
+
+    * {
+        font-size: 12px;
+    }
+
+    .checkbox, .radio {
+        margin: 0;
+    }
+
+    .control-label {
+        width: 125px;
+        text-align: right;
+        padding: 0 5px;
+    }
+
+    .form-control {
+        margin: 0;
+    }
+
+    .form-group {
+        display: table;
+        width: 100%;
+        margin: 0;
+
+        + .form-group {
+            margin-top: 10px;
+        }
+
+        > label {
+            &:after {
+                color: #999;
+                content: ':';
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+}
+
+.eb-dialog-footer-content {
+    text-align: right;
+}
+
+.eb-dialog-error-message {
+    display: block;
+    font-weight: normal;
+}
+
+&.eb-dialog.type-iframe {
+
+    .eb-dialog-container {
+        overflow: hidden;
+    }
+
+    .eb-dialog-content {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}

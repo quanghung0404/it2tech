@@ -1,0 +1,460 @@
+[
+	{
+		"title": "COM_EASYBLOG_SIDEBAR_DASHBOARD",
+		"icon": "fa-dashboard"
+	},
+	{
+		"access": "easyblog.manage.setting",
+		"title": "COM_EASYBLOG_SIDEBAR_SETTINGS",
+		"link": "index.php?option=com_easyblog&view=settings&layout=general",
+		"view": "settings",
+		"icon": "fa-cog",
+		"childs":
+		[
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_GENERAL",
+				"icon"		: "fa-wrench",
+				"url"		:
+				{
+					"layout"	: "general"
+				}
+			}, {
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_MEDIA",
+				"icon"		: "fa-picture-o",
+				"url"		:
+				{
+					"layout"	: "media"
+				}
+			}, {
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_SEO",
+				"icon"		: "fa-cloud",
+				"url"		:
+				{
+					"layout"	: "seo"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_COMMENTS",
+				"icon"		: "fa-comments-o",
+				"url"		:
+				{
+					"layout"	: "comments"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_LAYOUT",
+				"icon"		: "fa-desktop",
+				"url"		:
+				{
+					"layout"	: "layout"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_NOTIFICATIONS",
+				"icon"		: "fa-bell-o",
+				"url"		:
+				{
+					"layout"	: "notifications"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_INTEGRATIONS",
+				"icon"		: "fa-sitemap",
+				"url"		:
+				{
+					"layout"	: "integrations"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_SOCIALINTEGRATIONS",
+				"icon"		: "fa-share-alt-square",
+				"url"		:
+				{
+					"layout"	: "social"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_MAILBOX_PUBLISHING",
+				"icon"		: "fa-envelope",
+				"url"		:
+				{
+					"layout"	: "mailbox"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_REMOTE_PUBLISHING",
+				"icon"		: "fa-rocket",
+				"url"		:
+				{
+					"layout"	: "remote"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_AUTHORS",
+				"icon"		: "fa-user",
+				"url"		:
+				{
+					"layout"	: "users"
+				}
+			}, {
+				"title": "COM_EASYBLOG_SETTINGS_TAB_TEAMBLOGS",
+				"icon": "fa-users",
+				"url": {
+					"layout": "teamblogs"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SETTINGS_TAB_SYSTEM",
+				"icon"		: "fa-database",
+				"url"		:
+				{
+					"layout"	: "system"
+				}
+			}
+		]
+	},
+	{
+		"access": "easyblog.manage.autoposting",
+		"title": "COM_EASYBLOG_SIDEBAR_AUTOPOSTING",
+		"view"		: "autoposting",
+		"icon"		: "fa-paw",
+		"childs"	:
+		[
+			{
+				"title"		: "COM_EASYBLOG_AUTOPOST_FACEBOOK",
+				"icon" : "fa-facebook-square",
+				"url"		:
+				{
+					"layout"	: "facebook"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_AUTOPOST_TWITTER",
+				"icon" : "fa-twitter-square",
+				"url"		:
+				{
+					"layout"	: "twitter"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_AUTOPOST_LINKEDIN",
+				"icon" : "fa-linkedin-square",
+				"url"		:
+				{
+					"layout"	: "linkedin"
+				}
+			}
+		]
+	},
+	{
+		"access": "easyblog.manage.blog",
+		"counter": "pending/getTotal",
+		"title": "COM_EASYBLOG_SIDEBAR_POSTS",
+		"view": "blogs",
+		"icon": "fa-file-text-o",
+		"childs": [
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_POSTS",
+				"icon"		: "fa-file-text-o",
+				"url": {
+					"layout": ""
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_DRAFTS_BLOGS",
+				"icon"		: "fa-file-o",
+				"url"		:
+				{
+					"layout"	: "drafts"
+				}
+			},
+			{
+				"counter"	: "pending/getTotal",
+				"title"		: "COM_EASYBLOG_SIDEBAR_PENDING_BLOGS",
+				"icon"		: "fa-clipboard",
+				"url"		:
+				{
+					"layout"	: "pending"
+				}
+			},
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_POST_TEMPLATES",
+				"icon": "fa-files-o",
+				"url": {
+					"layout": "templates"
+				}
+			}
+		]
+	},
+	{
+		"access": "easyblog.manage.blocks",
+		"title": "COM_EASYBLOG_SIDEBAR_BLOCKS",
+		"view": "blocks",
+		"icon": "fa-cubes"
+	},
+	{
+		"access": "easyblog.manage.fields",
+		"title"		: "COM_EASYBLOG_SIDEBAR_CUSTOMFIELDS",
+		"view"		: "fields",
+		"icon"		: "fa-list-alt",
+		"childs"	:
+		[
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_CUSTOMFIELDS_FIELDS",
+				"icon"		: "fa-list-ul",
+				"url"		:
+				{
+					"layout"	: "fields"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_CUSTOMFIELDS_GROUPS",
+				"icon"		: "fa-columns",
+				"url"		:
+				{
+					"layout"	: "groups"
+				}
+			}
+		]
+	},
+	{
+		"access": "easyblog.manage.category",
+		"title"		: "COM_EASYBLOG_SIDEBAR_CATEGORIES",
+		"view"		: "categories",
+		"icon"		: "fa-archive"
+	},
+	{
+		"access": "easyblog.manage.comment",
+		"title"		: "COM_EASYBLOG_SIDEBAR_COMMENTS",
+		"view"		: "comments",
+		"icon"		: "fa-comments"
+	},
+	{
+		"access": "easyblog.manage.acl",
+		"title"		: "COM_EASYBLOG_TITLE_ACL",
+		"view"		: "acls",
+		"icon"		: "fa-lock"
+	},
+	{
+		"access": "easyblog.manage.user",
+		"title"		: "COM_EASYBLOG_SIDEBAR_AUTHORS",
+		"view"		: "bloggers",
+		"icon"		: "fa-group"
+	},
+	{
+		"access": "easyblog.manage.feeds",
+		"title"		: "COM_EASYBLOG_SIDEBAR_FEED_IMPORTER",
+		"view"		: "feeds",
+		"icon"		: "fa-rss-square"
+	},
+	{
+		"access": "easyblog.manage.mail",
+		"title"		: "COM_EASYBLOG_TITLE_MAIL_ACTIVITIES",
+		"view"		: "spools",
+		"icon"		: "fa-envelope-o"
+	},
+	{
+		"access": "easyblog.manage.languages",
+		"title" : "COM_EASYBLOG_SIDEBAR_LANGUAGES",
+		"view"	: "languages",
+		"icon"	: "fa-language"
+	},
+	{
+		"access": "easyblog.manage.meta",
+		"title"		: "COM_EASYBLOG_SIDEBAR_SEO",
+		"view"		: "metas",
+		"icon"		: "fa-unlink"
+	},
+	{
+		"access": "easyblog.manage.migrator",
+		"title"		: "COM_EASYBLOG_SIDEBAR_MIGRATORS",
+		"view"		: "migrators",
+		"icon"		: "fa-laptop",
+		"childs"	:
+		[
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_MIGRATORS_JOOMLA_ARTICLES",
+				"icon": "fa-joomla",
+				"url": {
+					"layout"	: "joomla"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_MIGRATORS_WORDPRESS_FOR_JOOMLA",
+				"icon": "fa-wordpress",
+				"url"		:
+				{
+					"layout"	: "wordpressjoomla"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_MIGRATORS_WORDPRESS",
+				"icon": "fa-wordpress",
+				"url"		:
+				{
+					"layout"	: "wordpress"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_MIGRATORS_K2",
+				"icon": "fa-cube",
+				"url"		:
+				{
+					"layout"	: "k2"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_MIGRATORS_ZOO",
+				"icon": "fa-cube",
+				"url"		:
+				{
+					"layout"	: "zoo"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_MIGRATORS_BLOGGER",
+				"icon": "fa-cube",
+				"url"		:
+				{
+					"layout"	: "blogger"
+				}
+			}
+		]
+	},
+	{
+		"access": "easyblog.manage.report",
+		"counter": "reports/getTotal",
+		"title": "COM_EASYBLOG_SIDEBAR_REPORTING",
+		"view": "reports",
+		"icon": "fa-exclamation-triangle"
+	},
+	{
+		"access": "easyblog.manage.subscription",
+		"title": "COM_EASYBLOG_SIDEBAR_SUBSCRIPTIONS",
+		"view": "subscriptions",
+		"icon": "fa-bell",
+		"childs": [{
+				"title": "COM_EASYBLOG_SIDEBAR_SUBSCRIPTIONS_SITE_WIDE",
+				"url": {
+					"layout": "",
+					"filter": "site"
+				}
+			},
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_SUBSCRIPTIONS_AUTHORS",
+				"url": {
+					"layout": "bloggers",
+					"filter": "blogger"
+				}
+			},
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_SUBSCRIPTIONS_CATEGORIES",
+				"url": {
+					"layout": "categories",
+					"filter": "category"
+				}
+			},
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_SUBSCRIPTIONS_TEAMS",
+				"url": {
+					"layout": "teamblogs",
+					"filter": "team"
+				}
+			},
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_SUBSCRIPTIONS_ENTRIES",
+				"url": {
+					"layout": "entries",
+					"filter": "entry"
+				}
+			},
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_SUBSCRIPTIONS_IMPORT",
+				"url": {
+					"layout": "import",
+					"filter": ""
+				}
+			}			
+		]
+	},
+	{
+		"access": "easyblog.manage.tag",
+		"title"		: "COM_EASYBLOG_SIDEBAR_TAGS",
+		"view"		: "tags",
+		"icon"		: "fa-tags"
+	},
+	{
+		"access": "easyblog.manage.teamblog",
+		"title"		: "COM_EASYBLOG_SIDEBAR_TEAM_BLOGS",
+		"view"		: "teamblogs",
+		"icon"		: "fa-group",
+		"childs"	:
+		[
+			{
+				"title"		: "COM_EASYBLOG_SIDEBAR_TEAM_BLOGS",
+				"icon"		: "fa-group",
+				"url"		:
+				{
+					"layout"	: ""
+				}
+			},
+			{
+				"title": "COM_EASYBLOG_SIDEBAR_TEAM_BLOGS_REQUESTS",
+				"icon": "fa-archive",
+				"url": {
+					"layout": "requests"
+				}
+			}
+		]
+	},
+	{
+		"access": "easyblog.manage.theme",
+		"title"		: "COM_EASYBLOG_THEMES",
+		"view"		: "themes",
+		"icon"		: "fa-flask",
+		"childs"	:
+		[
+			{
+				"title"		: "COM_EASYBLOG_THEMES",
+				"icon"		: "fa-flask",
+				"url"		:
+				{
+					"layout"	: ""
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_THEMES_INSTALL",
+				"icon"		: "fa-cloud-upload",
+				"url"		:
+				{
+					"layout"	: "install"
+				}
+			}
+		]
+	},
+	{
+		"access": "easyblog.manage.maintenance",
+		"title"		: "COM_EASYBLOG_MAINTENANCE",
+		"view"		: "maintenance",
+		"icon"		: "fa-ambulance",
+		"childs"	:
+		[
+			{
+				"title"		: "COM_EASYBLOG_MAINTENANCE_SCRIPTS",
+				"icon"		: "fa-file-text",
+				"url"		:
+				{
+					"layout"	: "scripts"
+				}
+			},
+			{
+				"title"		: "COM_EASYBLOG_MAINTENANCE_DATABASE",
+				"icon"		: "fa-database",
+				"url"		:
+				{
+					"layout"	: "database"
+				}
+			}
+		]
+	}
+]

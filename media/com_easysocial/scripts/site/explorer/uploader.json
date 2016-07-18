@@ -1,0 +1,8 @@
+[
+    {
+        "library": [
+            "plupload"
+        ],
+        "adapter": "Foundry"
+    }
+]

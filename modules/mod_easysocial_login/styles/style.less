@@ -1,0 +1,156 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+    // EasySocial Login Modules
+    &.mod-es-login {
+
+        &.style-horizontal {
+            .input-area {
+                font-size: 11px;
+                display: table;
+                width: 100%;
+                .input-area-cell {
+                    display: table-cell;
+
+                    + .input-area-cell {
+                        padding: 0 0 0 10px;
+                    }
+                }
+                .form-inline {
+                    background: #fff !important;
+                    padding-left: 18px;
+                    border: 1px solid #d7d7d7;
+                    border-radius: 3px;
+                    width: 100% !important;
+                    display: inline-block;
+                    position: relative;
+
+
+                    i {
+                        font-size: 11px;
+                        color: #ccc;
+                        position: absolute;
+                        left: 6px;
+                        top: 12px;
+                    }
+
+                    .form-control {
+                        border: 0 !important;
+                        background: none !important;
+                    }
+
+                    input {
+                        padding-left: 5px;
+                        width: 55%;
+                        font-size: 11px;
+                        display: inline-block;
+                    }
+
+                    .btn-es {
+                        height: 25px;
+                        font-size: 10px;
+                        padding: 2px 8px;
+                        position: absolute;
+                        top: 5px;
+                        right: 5px;
+                    }
+
+                }
+                .es-secret-key {
+                    // width: 21%;
+                    input {
+                        width: 100%;
+                    }
+                }
+                input {
+                    font-size: 11px;
+                    border: 0;
+                    box-shadow: none;
+                }
+                .btn {
+                    height: 34px;
+                    line-height: 20px;
+                    font-size: 11px;
+                    margin: 0;
+
+                }
+                .btn-login,
+                .btn-register {
+                    width: 100%;
+                }
+                input,
+                button {
+                    display: inline;
+                }
+            }
+
+            .remember {
+                margin-top: 5px;
+                .checkbox {
+                    margin-top: 0;
+                }
+            }
+            //responsive
+            &.w768 {
+                .form-inline {
+                    // width: 48%;
+                    margin-bottom: 10px;
+                }
+            }
+            &.w320 {
+                .input-area {
+                    display: block;
+                    .input-area-cell {
+                        display: block;
+                        padding: 0 0 10px;
+                    }
+                }
+                .form-inline {
+                    width: 100%;
+                }
+            }
+        }
+
+        label {
+            font-size: 11px;
+        }
+
+        .es-signin-social {
+            p {
+                margin-top: 20px;
+            }
+            .line {
+                position: relative;
+                &:before {
+                    content: '';
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 9px;
+                    height: 1px;
+                }
+                strong {
+                    padding: 0 6px;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+            .text-error,
+            .text-error a {
+                color: #B94A48;
+            }
+        }//es-signin-social
+
+        .btn-login {
+            margin-top: 10px;
+        }
+    }
+
+}

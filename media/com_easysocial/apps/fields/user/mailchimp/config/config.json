@@ -1,0 +1,21 @@
+{
+	"title"			: "",
+	"description"	: {},
+	"default"		: false,
+	"welcome_email":
+	{
+		"label"		: "PLG_FIELDS_MAILCHIMP_SEND_WELCOME_EMAIL",
+		"tooltip"	: "PLG_FIELDS_MAILCHIMP_SEND_WELCOME_EMAIL_DESC",
+		"type"		: "boolean",
+		"default"	: true,
+		"group"		: "core"
+	},
+	"custom_list_id" : 
+	{
+		"label"		: "PLG_FIELDS_MAILCHIMP_CUSTOM_LIST_ID",
+		"tooltip"	: "PLG_FIELDS_MAILCHIMP_CUSTOM_LIST_ID_DESC",
+		"type"		: "text",
+		"default"	: "",
+		"group"		: "core"
+	}
+}

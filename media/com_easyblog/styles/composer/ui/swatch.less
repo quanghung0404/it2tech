@@ -1,0 +1,69 @@
+.eb-swatch {
+
+    &.swatch-grid {
+        .row {
+            margin: 0 -5px -10px;
+
+            > [class*="col"],
+            > [class*=" col"] {
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+.eb-swatch-item {
+
+    background: #fff;
+    border: 1px solid @eb-composer-border-color;
+    border-radius: @eb-composer-border-radius;
+    .box-shadow(0 2px 0 0 @eb-composer-shadow-light-color);
+    cursor: pointer;
+    z-index: 1;
+
+    &.active,
+    &.selected {
+        border-color: @eb-composer-accent-color;
+        .box-shadow(~"none");
+        z-index: 2;
+
+        .eb-swatch-label {
+            background: @eb-composer-accent-color;
+            border-top-color: @eb-composer-accent-color;
+            color: #fff;
+        }
+    }
+}
+
+.eb-swatch-preview {
+    position: relative;
+    overflow: hidden;
+
+    &.is-responsive {
+        padding-top: 100%; // Implementee changes this
+
+        > div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.eb-swatch-label {
+    background: @eb-composer-lightgray-accent-color;
+    border-radius: 0 0 @eb-composer-border-radius - 1px @eb-composer-border-radius - 1px;
+    border-top: 1px solid @eb-composer-border-light-color;
+
+    > span {
+        text-align: center;
+        display: block;
+        font-weight: bold;
+        padding: @eb-composer-gutter / 6;
+        .text-overflow();
+    }
+}

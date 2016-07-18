@@ -1,0 +1,535 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+    $Conversation - conversation.less
+\*------------------------------------*/
+
+&.view-conversations {
+
+    .search-conversation{
+        width: 90%;
+    }
+
+    .es-sidebar {
+        * {
+            word-break: break-all;
+        }
+        h5 {
+            a {
+                font-size: @baseFontSize;
+                font-weight: normal;
+            }
+        }
+        ul{
+            li{
+                padding: 5px 0 5px 0;
+                clear: both;
+                line-height: 22px;
+
+                &.active{
+                    font-weight: 700;
+                }
+
+                > ul {
+                    > li {
+                        > a {
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+
+            li:hover{
+                cursor: pointer;
+            }
+        }
+
+        hr{
+            margin-top: 5px;
+        }
+
+        .es-count-no
+        {
+            float: right;
+        }
+
+        .composeConversation{
+            margin-bottom: 10px;
+        }
+
+        .es-avatar-wrap{
+            float: left;
+            width: 24px;
+            display: inline-block;
+            .es-avatar{
+                width: 24px;
+                height: 24px;
+                img{
+                    width: 24px;
+                    height: auto;
+                }
+            }
+        }//avatar
+        .es-username-wrap {
+            float: left;
+            margin-left: 5px;
+            width: 165px;
+            // .text-overflow();
+            // display: inline-block;
+        }
+        .es-conversation-username {
+            // float: left;
+            margin: 5px 0 0 5px;
+            font-size: @baseFontSize;
+            line-height: 16px;
+            .text-overflow();
+            > a {
+                //
+            }
+        }
+    }
+
+    .es-content {
+
+        .loading-indicator{
+            display: none;
+        }
+
+        .empty {
+            margin-top: 50px;
+
+            a.startConversation{
+                margin-top: 40px;
+            }
+        }
+
+        &.is-loading {
+            .loading-wrap {
+                position: relative;
+                min-height: 60px;
+            }
+            .loading-indicator{
+                display: block;
+            }
+
+            .empty{
+                display: none;
+            }
+            .conversation-list{
+                display: none;
+            }
+        }
+
+        .btn-archive{
+            display: inline-block;
+        }
+
+        .btn-unarchive{
+            display: none;
+        }
+
+        &.layout-archives{
+            .btn-archive{
+                display: none;
+            }
+
+            .btn-unarchive{
+                display: inline-block;
+            }
+        }
+
+
+
+        &.is-empty {
+
+            .loading-indicator{
+                display: none;
+            }
+
+            .conversation-list{
+                display: none;
+            }
+            .empty {
+                display: block;
+            }
+        }
+
+        .conversation-actions{
+            display: inline-block;
+            left: 30px;
+            position: relative;
+            .opacity(0);
+
+            .dropdown-menu{
+                font-size: @baseFontSize;
+                color: #595959;
+            }
+
+            &.is-checked{
+                .opacity(1);
+            }
+        }
+
+        .conversation-tool{
+            height: 35px;
+            line-height: 35px;
+            position: relative;
+
+            .item-check {
+                position: absolute;
+                top: 10px;
+            }
+        }
+
+        .conversation-tool-header {
+            background: @esConversationBackground;
+            border-bottom: 1px solid @esConversationBorder;
+        }
+
+
+        .conversation-filters{
+            font-size: @baseFontSize;
+            > li {
+                display: inline-block;
+            }
+
+            li+li{
+                margin-right: 5px;
+            }
+
+            li.active{
+                border-bottom: 3px solid #83B3DE;
+            }
+        }
+
+        li.conversation-item + li.conversation-item{
+
+            border-top: 1px solid @esConversationBorder;
+        }
+
+        li.conversation-item{
+            background: @esBackground;
+            &.unread{
+                .conversation-title{
+                    font-weight: 700;
+                }
+
+                >div{
+                    background: @esConversationUnreadBackground;
+                }
+            }
+
+            &.selected{
+                // background: #ffc;
+                background: @esConversationSelectedBackground;
+            }
+
+
+            >div{
+                padding: 15px 0;
+            }
+
+            i.with-attachments{
+                margin-top: 2px;
+            }
+
+            .checkbox-column{
+                float: left;
+                width: 20px;
+            }
+
+            .content-column{
+                float: left;
+                width: 92%;
+                padding: 0 15px;
+            }
+
+            .conversation-meta{
+                font-size: @baseFontSize;
+                // background: red;
+                .text-overflow();
+                .getContrast(@esConversationBackground);
+            }
+            .message-time {
+                color: @esConversationTimeColor;
+            }
+        }
+    }
+
+    // Compose layout
+    &.layout-compose{
+
+        textarea{
+            width: 100%;
+            min-height: 150px;
+        }
+
+        .location-service,
+        .attachment-service{
+            hr {
+                margin-top: 0;
+            }
+
+            h5 {
+                margin-bottom: 3px;
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .location-service{
+            margin-top: 35px;
+        }
+
+        .form-actions{
+            margin-top: 50px;
+        }
+    }
+
+    // Read layout
+    &.layout-read{
+        .es-content > div {
+            padding: 0 10px;
+        }
+
+        textarea{
+            width: 100%;
+            min-height: 100px;
+        }
+
+        .last-updated{
+            font-size: @baseFontSize;
+        }
+
+        .location-service,
+        .attachment-service{
+            hr {
+                margin-top: 0;
+            }
+
+            h5 {
+                margin-bottom: 3px;
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .location-service{
+            margin-top: 35px;
+        }
+
+        .form-actions{
+            margin-top: 50px;
+        }
+
+        ul.conversation-messages{
+            .conversation-date {
+                text-align: center;
+                position: relative;
+                &:before {
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    height: 1px;
+                    width: 100%;
+                    top: 7px;
+                    background: @esConversationBackground;
+
+                }
+                .conversation-timestamp {
+                    position: relative;
+                    z-index: 5;
+                    background: @esConversationBackground;
+                    padding: 1px 10px;
+                    color: @esConversationTimestampColor;
+                    font-size: @fontSizeSmall;
+                }
+            }
+            > li + li{
+                // border-top: 1px solid #f4f4f4;
+            }
+
+            > li.message-item + li.message-item{
+                border-top: 1px dotted @esBorder;
+            }
+
+            > li.message-item {
+                padding: 15px 0;
+                font-size: @baseFontSize;
+                width: 100%;
+
+                .message-user-name {
+                    float: left;
+                    font-weight: bold;
+                    .text-overflow();
+                    > a {
+                        word-break: break-all;
+                    }
+                }
+                .message-time-wrap {
+                    color: @esConversationTimestampColor;
+                    float: right;
+                    margin-left: 1px;
+                }
+                .media-object {
+                    float: left;
+                    margin-right: 10px;
+                    padding: 3px;
+                }
+                //you
+                &.message-right {
+                    .message-user-name {
+                        float: right;
+                        text-align: right;
+                    }
+                    .message-time-wrap {
+                        float: left;
+                    }
+                    .media-object {
+                        float: right;
+                        margin-right: auto;
+                        margin-left: 10px;
+                    }
+                    .media-body {
+                        text-align: left;
+                    }
+                }
+            }//message-item
+
+
+        }//conversation-messages
+
+        .files-list{
+            font-size: @baseFontSize;
+        }
+
+        .conversation-attachments{
+            margin-top: 15px;
+
+            h6{
+                text-decoration: underline;
+            }
+
+            li+ li{
+                margin-top: 5px;
+                padding-top: 5px;
+                border-top: 1px dotted @esBorder;
+            }
+
+            li {
+                .delete-attachment{
+                    >i:before{
+                        font-size: 8px;
+                        color: @esConversationTimestampColor;
+                    }
+
+                }
+
+                .attachment-preview {
+                    margin-top: 10px;
+                    background: @esConversationAttachmentPreviewBackground;
+                    img{
+                        border-radius: @borderRadiusSmall;
+                        border: 1px solid @esConversationAttachmentPreviewBorder;
+
+                        max-width: 120px;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+
+        .dropdown-conversation-actions,
+        .conversation-action{
+            font-size: @baseFontSize;
+        }
+
+        .conversation-action{
+            border-radius: @borderRadiusSmall;
+        }
+
+        .dropdown-conversation-actions{
+            a {
+                padding: 3px 10px;
+                color: @esColor;
+            }
+
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.composer-textarea{
+    min-height: 150px;
+    padding: 8px;
+    border: 1px solid @esBorder;
+    border-radius: 3px;
+
+    .form-control {
+        background: none;
+        font-size: @baseFontSize;
+        min-height: 150px;
+        border-color: transparent;
+        .box-shadow(none);
+    }
+}
+.avatar-wrap {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    .clearfix();
+    .es-avatar {
+        position: static;
+        float: left;
+        + .es-avatar {
+            margin-left: -28px;
+        }
+    }
+
+    &:hover {
+        .es-avatar + .es-avatar {
+            margin-left: 0;
+        }
+    }
+}
+
+
+// Responsive
+&.w480 {
+    &.view-conversations {
+        &.layout-compose {
+            .form-horizontal {
+                .control-label {
+                    float: none;
+                    width: 100%;
+                    text-align: left;
+                }
+                .controls {
+                    margin-left: 0;
+                }
+                .form-actions {
+                    padding: 10px;
+                    .pull-right {
+                        float: none !important;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+        .conversation-tool {
+            height: auto;
+            > div,
+            > div + div {
+                float: none !important;
+            }
+        }
+    }
+}

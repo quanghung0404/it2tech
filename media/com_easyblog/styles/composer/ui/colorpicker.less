@@ -1,0 +1,35 @@
+@import "colorpicker/default";
+
+.eb-colorpicker-header {
+    margin-bottom: @eb-composer-gutter / 3;
+
+    // .colorpicker-toggle
+    .col-cell:nth-child(1) {
+        padding-right: @eb-composer-gutter / 3;
+    }
+    // .colorpicker-hex-input
+
+    .col-cell:nth-child(2) {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.eb-colorpicker {
+
+    .colorpicker-hex-input {
+        width: 100px;
+        padding-right: 27px;
+        text-align: left;
+        float: left;
+    }
+
+    .colorpicker-preview {
+        width: 20px;
+        height: 21px;
+        float: left;
+        position: relative;
+        left: -25px;
+        top: 5px;
+    }
+}

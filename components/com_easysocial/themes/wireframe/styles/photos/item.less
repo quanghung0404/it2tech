@@ -1,0 +1,395 @@
+.es-photo-item-group {
+    .transition(opacity .6s ease-in-out);
+
+    &.no-transition {
+        .es-photo-item {
+            .transition(none);
+        }
+        .es-photo-image {
+            .transition(none);
+        }
+    }
+}
+
+// No floating when you're on single photos view
+.es-photo-browser {
+    .es-photo-item {
+        float: none;
+    }
+}
+
+.es-photo-item {
+
+    position: relative;
+    width: 100%;
+
+    // Single photo view
+    // .media-object,
+    // .es-photo-owner {
+    //  display: none;
+    // }
+
+    .es-media-item-menu {
+        .btn {
+            padding: 0;
+
+            > a {
+                padding: 0 10px;
+                height: 24px;
+                line-height: 24px;
+                color: #555;
+                font-size: 11px;
+                font-weight: bold;
+            }
+        }
+
+        .btn-es-featured {
+            &.btn-es-primary {
+                    background: @esBackground !important;
+                    border: 1px solid @esBorder !important;
+
+                a {
+                    color: darken(#fc0, 2.5%);
+                }
+            }
+        }
+
+        li[data-photo-share-button],
+        li[data-photo-cover-button],
+        a[data-photo-original-button] {
+            display: none;
+        }
+    }
+
+    .es-photo-header {
+        position: relative;
+        z-index: 3;
+    }
+
+    .es-photo-content {
+        position: relative;
+        // Higher than es-photo-footer because
+        // there's a tag suggestion dropdown.
+        z-index: 2;
+        background: @esPhotoContentBackground;
+
+        margin-bottom: 10px;
+
+        .loading-indicator {
+            display: none;
+        }
+
+        &.loading {
+            .loading-indicator {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                margin: 0;
+            }
+        }
+
+        .es-photo {
+            float: none;
+
+            > a {
+                // 4:3 ratio
+                padding-top: (3 / 4) * 100%;
+            }
+        }
+    }
+
+    .es-photo-footer {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.layout-item {
+
+        .es-photo-menu-item {
+            display: block;
+        }
+
+        .es-photo-menu-form {
+            display: none;
+        }
+
+        .es-photo-tag-viewport {
+            z-index: 3;
+        }
+
+        .es-photo-nav-button {
+            z-index: 2;
+        }
+
+        .es-photo-form {
+            display: none;
+        }
+    }
+
+    &.layout-form {
+        float: none;
+
+        .es-photo-info {
+            display: none;
+        }
+
+        .es-photo-menu-item {
+            display: none;
+        }
+
+        .es-photo-menu-form {
+            display: block;
+        }
+
+        .es-photo-nav-button {
+            display: none;
+        }
+    }
+
+    &.layout-dialog {
+
+        float: left;
+        width: 20%;
+        height: 100px;
+
+        .es-photo-header {
+            display: none;
+        }
+
+        .es-photo-content {
+            border: 1px solid transparent;
+        }
+
+        .es-photo-content,
+        .es-photo-image {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        &.selected {
+            .es-photo-image {
+                border: 5px solid @esPhotoSelectedBorder;
+
+                a:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .es-photo-image {
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .es-photo-footer {
+            display: none;
+        }
+
+        .es-photo-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            cursor: pointer;
+
+            // Covers the entire area for photo info
+            // to display at the bottom of the tile.
+            width: 100%;
+            height: 100%;
+        }
+
+        // Shows at the bottom of the photo thumbnail
+        .es-photo-info {
+            padding: 0;
+            position: absolute;
+            bottom: 30px; // accomodate stats
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            .transition(all .2s ease);
+        }
+
+        .es-photo-title {
+            color: @esPhotoTitleColor;
+
+            text-shadow: @esPhotoTextShadow;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 0;
+            padding: 0 10px;
+
+            a, a:hover {
+                color: @esPhotoTitleColor;
+                text-shadow: @esPhotoTextShadow;
+                font-weight: bold;
+                font-size: 13px;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(0,0,0,0.25);
+            .text-overflow();
+        }
+
+        .es-photo-form {
+            display: none;
+        }
+    }
+
+    &.new-item {
+        // Flip effect
+        .es-photo-image {
+            .transform_(perspective(800px) rotateY(-180deg));
+        }
+    }
+
+    .es-photo-hint {
+        position: absolute;
+        top: -36px - 10px;
+        width: 100%;
+        opacity: 0;
+        .transition(opacity .3s ease);
+
+        > button {
+            padding: 2px 8px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+
+            // Cosmetic
+            > span {
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+
+    &.rotating-ready {
+        .es-photo {
+            &.css-resizing {
+                 > a {
+                      &.fit-height,
+                      &.fit-width,
+                      &.fit-both {
+                           b {
+                                display: block;
+                           }
+                      }
+                 }
+            }
+        }
+        .es-photo-image {
+            opacity: 0 !important;
+            .transform_(scale(0.6) rotate(0deg));
+            .transition(none);
+        }
+    }
+
+    &.rotating-left {
+        .es-photo {
+            &.css-resizing {
+                 > a {
+                      &.fit-height,
+                      &.fit-width,
+                      &.fit-both {
+                           b {
+                                display: none;
+                           }
+                      }
+                 }
+            }
+        }
+        .es-photo-image {
+            opacity: 0.5 !important;
+            .transform_(scale(0.6) rotate(-90deg));
+            .transition(all .6s ease-in-out); // enforce transition on places no-transition is turned on
+        }
+        .loading-indicator {
+            opacity: 1;
+        }
+    }
+
+    &.rotating-right {
+        .es-photo {
+            &.css-resizing {
+                 > a {
+                      &.fit-height,
+                      &.fit-width,
+                      &.fit-both {
+                           b {
+                                display: none;
+                           }
+                      }
+                 }
+            }
+        }
+        .es-photo-image {
+            opacity: 0.5 !important;
+            .transform_(scale(0.6) rotate(90deg));
+            .transition(all .6s ease-in-out); // enforce transition on places no-transition is turned on
+        }
+        .loading-indicator {
+            opacity: 1;
+        }
+    }
+
+
+
+    // &.creatingAvatar {
+    //  .es-photo-viewport {
+    //      cursor: crosshair;
+    //      margin-top: 35px;
+    //      background: #aaa;
+    //      // border: 1px dashed #ccc;
+    //  }
+    //  .es-photo-nav-button {
+    //      display: none !important;
+    //  }
+
+    //  .es-photo-hint.create-avatar-hint {
+    //      display: block;
+    //  }
+    // }
+}
+
+.es-photo-image {
+
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    // For any kind of CSS3 transitions
+    .backface-visibility(hidden);
+    .transition(all .6s ease-in-out);
+    .transform-style(preserve-3d);
+    .transform_(perspective(800px) rotateY(0deg));
+    outline: 1px solid transparent;
+}
+
+.es-photo-response {
+    //fix .fd-nav for view=photo layout=item
+    .fd-nav {
+        margin-right: 0;
+    }
+
+    ul > .es-action-privacy > div{
+        display: inline-block;
+    }
+}
+
+.es-photo-location {
+
+    > u {
+        text-decoration: none;
+        border-bottom: 1px dotted @esPhotoLocationBorder;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,31 @@
+[
+    {
+        "script": [
+            "site/likes/likes",
+            "site/reports/reports",
+            "site/blocks/blocks",
+            "site/repost/repost",
+            "site/share/share",
+            "site/layout/dialog",
+            "site/layout/responsive",
+            "site/layout/elements",
+            "site/photos/photos",
+            "site/users/login",
+            "site/profile/popbox",
+            "site/privacy/privacy",
+            "site/locations/popbox",
+            "site/sidebar/sidebar",
+            "site/friends/api",
+            "site/popbox/popbox",
+            "site/conversations/api",
+            "site/groups/api",
+            "site/followers/api",
+            "site/stream/video",
+            "oauth/facebook"
+        ],
+        "library": [
+            "history"
+        ],
+        "adapter": "EasySocial"
+    }
+]

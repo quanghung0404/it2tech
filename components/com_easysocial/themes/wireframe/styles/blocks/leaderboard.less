@@ -1,0 +1,93 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	leaderboard.less
+\*------------------------------------*/
+
+.es-leaderboard {
+	.es-item-list {
+		> li + li {
+			margin-top: -3px;
+			z-index: 2;
+			background-color: white;
+			.es-item {
+				border-radius: 0;
+			}
+		}
+		> li:last-child {
+			.es-item {
+				border-radius: 0 0 3px 3px;
+			}
+		}
+		.es-item {
+			padding: 20px;
+			.es-item-body {
+				margin-left: 90px;
+			}
+			.es-avatar-wrap {
+				width: 64px;
+			}
+		}
+	}
+	.es-rank-item {
+		margin-right: 20px;
+	}
+}
+
+
+.es-rank-item {
+	.es-rank-no {
+		display: block;
+		float: right;
+		width: 62px;
+		height: 62px;
+		padding: 2px;
+		border: 2px solid @esBorder;
+		text-align: center;
+		background: white;
+		border-radius: 50%;
+		> span {
+			display: block;
+			background: #ccc;
+			color: white;
+			width: 54px;
+			height: 54px;
+			line-height: 54px;
+			font-size: 30px;
+			border-radius: 50%;
+		}
+	}
+	.es-rank-point {
+		margin-right: 14px;
+		display: inline-block;
+		float: left;
+		padding-top: 15px;
+		> div {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 4px;
+		}
+		> span {
+
+		}
+	}
+}
+
+// Responsive
+&.w320 {
+	.es-rank-item {
+		float: left;
+		margin-top: 20px;
+		.es-rank-no {
+			float: left;
+		}
+		.es-rank-point {
+			margin-right: 0;
+			margin-left: 10px;
+		}
+	}
+}

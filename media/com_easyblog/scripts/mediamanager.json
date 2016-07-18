@@ -1,0 +1,13 @@
+[
+    {
+        "library": [
+            "pageslide",
+            "plupload2",
+            "ui/draggable"
+        ],
+        "script": [
+            "mediamanager/uploader"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

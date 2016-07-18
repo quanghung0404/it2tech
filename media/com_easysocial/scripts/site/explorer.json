@@ -1,0 +1,12 @@
+[
+    {
+        "script": [
+            "site/explorer/uploader"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_EXPLORER_ENTER_FOLDER_NAME",
+            "COM_EASYSOCIAL_EXPLORER_INVALID_FOLDER_NAME"
+        ],
+        "adapter": "EasySocial"
+    }
+]

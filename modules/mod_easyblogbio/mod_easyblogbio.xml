@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Biography Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[Bio module which displays current blog's author in a module.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easyblogbio.ini</language>
+	</languages>
+	<files>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename module="mod_easyblogbio">mod_easyblogbio.php</filename>
+		<filename>mod_easyblogbio.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements">
+				<field name="biolimit" type="text" default="100" label="MOD_EASYBLOGBIO_MAX_CHAR_BIO" description="MOD_EASYBLOGBIO_MAX_CHAR_BIO_DESC" />
+				<field name="showavatar" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGBIO_SHOW_BLOGGER_AVATAR" description="MOD_EASYBLOGBIO_SHOW_BLOGGER_AVATAR_DESC" >
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="showbio" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGBIO_SHOW_BLOGGER_BIO" description="MOD_EASYBLOGBIO_SHOW_BLOGGER_BIO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

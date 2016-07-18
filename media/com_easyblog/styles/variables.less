@@ -1,0 +1,191 @@
+/*------------------------------------*\
+	$Variables.less
+\*------------------------------------*/
+
+// Wrapper
+@Foundry: ~"div#fd";
+@EasyBlog: ~"div#fd.eb";
+
+//
+// Variables
+// --------------------------------------------------
+
+// Global values
+// --------------------------------------------------
+// Main Color
+@eb-bg: #fff; // main bg color fff
+@eb-color: #666; // main text color 666
+@eb-border: #d7d7d7; // main border color d7d7d7
+@eb-gutter: @grid-gutter-width;
+@eb-text-light-color: #888;
+// @eb-unread-bg: #f6fbff;
+// @eb-selected-bg: #ffc; // light yellow
+
+// Double-check with Chang. Moved from wireframe/variables.
+@eb-gutter: 20px;  // Bootstrap's default is 30px
+@eb-border-radius: 3px;
+@eb-text-dark: #666;
+@eb-text-light: #999;
+@eb-icon-light: @eb-text-light;
+@eb-title-size-header: 20px;
+@eb-title-size-listing: 20px;
+@eb-title-size-entry: 20px;
+@eb-box-title-size: 20px;
+@eb-box-border: #ddd;
+@eb-box-divider: lighten(@eb-box-border, 2%);
+@eb-box-radius: 3px;
+@eb-box-shade: #fafafa;
+
+
+@border-radius: 3px;
+@input-border-radius: @border-radius;
+
+// BS 2 variables
+@black: #000;
+@white: #fff;
+@grayDarker: @gray-darker;            // #222
+@grayDark: @gray-dark;              // #333
+@grayLight: @gray-light;             // #999
+@grayLighter: @gray-lighter;           // #eee
+
+@btn-border: #bbb;
+
+// Navbar (BS2)
+// -------------------------
+// @navbarCollapseWidth:             979px;
+// @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
+
+// @navbarHeight:                    40px;
+// @navbarBackgroundHighlight:       #ffffff;
+// @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
+// @navbarBorder:                    darken(@navbarBackground, 12%);
+
+// @navbarText:                      #777;
+// @navbarLinkColor:                 #777;
+// @navbarLinkColorHover:            @grayDark;
+// @navbarLinkColorActive:           @gray;
+// @navbarLinkBackgroundHover:       transparent;
+// @navbarLinkBackgroundActive:      darken(@navbarBackground, 5%);
+
+// Accent colors (BS2)
+// -------------------------
+// @blue:                  #049cdb;
+// @blueDark:              #0064cd;
+// @green:                 #46a546;
+// @red:                   #9d261d;
+// @yellow:                #ffc40d;
+// @orange:                #f89406;
+// @pink:                  #c3325f;
+// @purple:                #7a43b6;
+
+
+// @activeBackground: #f5f5f5;
+
+
+
+
+// Typography
+// -------------------------
+//http://css-tricks.com/sans-serif/
+//@sansFontFamily:        'Lucida Grande', 'Gisha', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Arial, Verdana, sans-serif;
+//@serifFontFamily:       serif;
+//@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+//@baseFontSize:          12px; // bs2
+@font-size-base:          12px; // bs3 default 14px
+
+//@baseLineHeight:        16px; // bs2
+
+
+//@baseFontFamily:        @sansFontFamily;
+//@altFontFamily:         @serifFontFamily;
+
+//@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+//@headingsFontWeight:    bold;    // instead of browser default, bold
+//@headingsColor:         inherit; // empty to use BS default, @textColor
+
+//@ebTextShadow: 0 1px 1px rgba(0,0,0,.55); // default 0
+//@ebTextShadowAlt: 0 1px 1px rgba(255,255,255,.55); // default 255
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+//@fontSizeLarge:         16px; // ~18px
+//@fontSizeSmall:         11px; // ~12px
+//@fontSizeMini:          11px; // ~11px
+
+//@paddingLarge:          11px 19px; // 44px
+//@paddingSmall:          2px 10px;  // 26px
+//@paddingMini:           0 6px;   // 22px
+
+//@baseBorderRadius:      3px;
+//@borderRadiusLarge:     4px;
+//@borderRadiusSmall:     2px;
+
+// HR
+//@hrBorder: darken(@ebBorder, -10%);
+//@hrBorderBottom: darken(@hrBorder, -8%);
+
+// Pagination
+// -------------------------
+//@paginationBackground:                #fff;
+//@paginationBorder:                    #ddd;
+//@paginationActiveBackground:          #f5f5f5;
+//@paginationColor: inherit;
+
+// TB-Buttons
+// ----------------
+//@btnTextShadow: 0 1px 1px rgba(0,0,0,.1);
+//@btnTextShadowAlt: 0 1px 1px rgba(255,255,255,.1);
+//@btnTextShadowNone: 0 0px 0px rgba(255,255,255,.1);
+
+
+// Priority
+// -------------------------
+@priority1: 				#2aacd2;
+@priority2: 				#51a351;
+@priority3: 				#FBB450;
+@priority4: 				#EE5F5B;
+
+
+// btn-group-yesno
+@eb-yesno-background: #e5e5e5;
+@eb-yesno-color: #626262;
+@eb-yesno-btn-background: #c5c5c5;
+@eb-yesno-btn-active-background: #fff;
+@eb-yesno-btn-background-highlight: #f2f2f2;
+@eb-yesno-btn-color: #333;
+@eb-yesno-BtnBorder: #c5c5c5;
+@eb-yesno-BtnBorderBottom: #a7a7a7;
+@eb-yesno-ActiveColor: #626262;
+@eb-yesno-TextShadow: 0 1px 1px rgba(255,255,255,.1);
+
+// @ebArrowBackground: #fff;
+
+
+// Modals
+@eb-modal-color: #666;
+@eb-modal-background: #fff;
+@eb-modal-backdrop-background: #000;
+@eb-modal-border: #c0c0c0;
+@eb-modal-header-background-highlight: #f8f8f8;
+@eb-modal-header-background: #ebebeb;
+@eb-modal-footer-background: #f5f5f5;
+
+// Dialog
+@eb-dialog-color: #595959;
+@eb-dialog-title-color: #666;
+
+// Datepicker
+@eb-datepicker-background: #fff;
+@eb-datepicker-color: #636363;
+@eb-datepicker-border: #ccc;
+@eb-datepicker-header-background-highlight: #ececec;
+@eb-datepicker-header-background: #f8f8f8;
+@eb-datepicker-td-border: #aaa;
+
+// Avatar
+@eb-avatar-background: @eb-bg;
+@eb-avatar-border: @eb-avatar-background;
+
+

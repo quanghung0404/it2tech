@@ -1,0 +1,155 @@
+div#fd.es.mod-es-menu .es-title {
+  font-weight: bold !important;
+  margin: 5px 0 8px !important;
+}
+div#fd.es.mod-es-menu .es-avatar {
+  background: #fff !important;
+  width: 42px;
+  height: 42px;
+  line-height: 42px !important;
+  overflow: hidden !important;
+  border-radius: 2px !important;
+}
+div#fd.es.mod-es-menu .es-avatar > img {
+  width: 40px;
+  height: 40px;
+}
+div#fd.es.mod-es-menu .badge {
+  height: auto !important;
+  right: 0 !important;
+  top: 0 !important;
+  width: auto !important;
+}
+div#fd.es.mod-es-menu .has-notice > .badge-notification {
+  display: inline-block !important;
+}
+div#fd.es.mod-es-menu .badge-notification {
+  color: #fff !important;
+  background: #e16273 !important;
+  border: 1px solid #e27a93 !important;
+  border-radius: 30px !important;
+  font-size: 8px !important;
+  padding: 0 3px !important;
+  line-height: 12px !important;
+  position: absolute !important;
+  display: none !important;
+}
+div#fd.es.mod-es-menu .es-user {
+  position: relative !important;
+}
+div#fd.es.mod-es-menu .es-user .user-name {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  margin-bottom: 5px !important;
+  padding-right: 18px !important;
+}
+div#fd.es.mod-es-menu .es-user .user-points {
+  color: #888 !important;
+}
+div#fd.es.mod-es-menu .es-user .user-edit {
+  position: absolute !important;
+  top: 5px !important;
+  right: 0 !important;
+}
+div#fd.es.mod-es-menu .es-user .user-edit > a {
+  color: #C6C9D0 !important;
+  font-size: 14px !important;
+}
+div#fd.es.mod-es-menu .es-user .user-info {
+  min-height: 0 !important;
+}
+div#fd.es.mod-es-menu .es-notification {
+  border-top: 1px solid rgba(0,0,0,0.05) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  position: relative !important;
+}
+div#fd.es.mod-es-menu .es-notification:before,
+div#fd.es.mod-es-menu .es-notification:after {
+  display: block !important;
+  position: absolute !important;
+  background: rgba(0,0,0,0.05) !important;
+  content: '' !important;
+  width: 1px !important;
+  height: 100% !important;
+  top: 0 !important;
+}
+div#fd.es.mod-es-menu .es-notification:before {
+  left: 32% !important;
+}
+div#fd.es.mod-es-menu .es-notification:after {
+  left: 65% !important;
+}
+div#fd.es.mod-es-menu .es-notification .es-menu-items:before,
+div#fd.es.mod-es-menu .es-notification .es-menu-items:after {
+  content: " ";
+  display: table;
+}
+div#fd.es.mod-es-menu .es-notification .es-menu-items:after {
+  clear: both;
+}
+div#fd.es.mod-es-menu .es-notification .es-menu-item {
+  width: 33% !important;
+  display: block !important;
+  float: left !important;
+}
+div#fd.es.mod-es-menu .es-notification .es-menu-item > a {
+  display: block !important;
+  padding: 4px 8px !important;
+  width: 52px !important;
+  font-size: 16px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  text-align: center !important;
+  color: #C6C9D0 !important;
+  outline: none !important;
+}
+div#fd.es.mod-es-menu .es-notification .es-menu-item > a .badge {
+  position: absolute !important;
+}
+div#fd.es.mod-es-menu .es-badges {
+  margin: 0 0 20px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+div#fd.es.mod-es-menu .es-badges .total-badges {
+  color: #888 !important;
+  font-weight: normal !important;
+  letter-spacing: 1px !important;
+  margin-left: 2px !important;
+}
+div#fd.es.mod-es-menu .es-badges ul > li {
+  display: inline-block !important;
+  margin: 0 5px 5px 0 !important;
+}
+div#fd.es.mod-es-menu .es-badges ul > li > a {
+  display: block !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+div#fd.es.mod-es-menu .es-badges ul > li > a > img {
+  width: 22px !important;
+  height: 22px !important;
+}
+div#fd.es.mod-es-menu .es-menu-list {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+div#fd.es.mod-es-menu .es-menu-list >li {
+  position: relative !important;
+  font-size: 11px !important;
+  list-style: none !important;
+  margin: 0 !important;
+}
+div#fd.es.mod-es-menu .es-menu-list >li a {
+  display: block !important;
+  padding: 8px 0 !important;
+  color: #595959 !important;
+  text-decoration: none !important;
+}
+div#fd.es.mod-es-menu .es-menu-list >li a i {
+  margin-right: 3px !important;
+}
+div#fd.es.mod-es-menu .es-menu-list >li a .badge {
+  left: 2px !important;
+  position: relative !important;
+}

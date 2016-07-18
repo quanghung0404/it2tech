@@ -1,0 +1,442 @@
+.es-album-item {
+
+	// Album item
+	&.layout-item {
+		// .es-photo-upload-item {
+		// 	margin: 1px;
+		// }
+	}
+
+	&.layout-form {
+		.es-photo-upload-item {
+			padding: 0 !important;
+		}
+		.es-photo-image {
+			background-size: contain;
+		}
+	}
+
+	.es-photo-item {
+
+		/* Album-based reset */
+		// Media bar is not visible in both item & form layout.
+		.es-photo-header {
+
+			.media,
+			.media-body {
+				position: relative;
+				z-index: 2;
+				overflow: visible;
+				border-bottom: none;
+				height: 0;
+			}
+
+			.media-object,
+			.es-photo-owner,
+			.es-photo-caption,
+			.es-photo-album,
+			.es-media-info > small {
+				display: none;
+			}
+		}
+
+		.es-photo-content {
+
+			margin-bottom: 0;
+			background: transparent;
+
+			.es-photo-nav-button,
+			.es-photo-tag-viewport,
+			.es-photo-hint {
+				display: none;
+			}
+		}
+
+		.es-photo-upload-item {
+			border: 1px solid #eee;
+		}
+
+		// These menu items should be hidden
+		[data-photo-edit-button],
+		[data-photo-tag-button] {
+			display: none;
+		}
+
+		.es-media-item-menu {
+			// These menu items should be displayed
+			li[data-photo-share-button],
+			li[data-photo-cover-button] {
+				display: block;
+			}
+		}
+
+		/* Layout-based reset */
+		&.layout-item {
+
+			// margin: 1px;
+			float: left;
+			cursor: pointer;
+			z-index: 2;
+			width: 25%;
+
+			&.featured {
+				width: 50%;
+			}
+
+			&.grid-sizer {
+				z-index: 1;
+				visibility: hidden;
+				position: absolute;
+			}
+
+			> div {
+				position: relative;
+				width: 100%;
+				padding-top: 100%;
+			}
+
+			> div > div {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				border: 1px solid transparent;
+			}
+
+			.es-photo-header {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 3;
+				margin: 0;
+
+				// Covers the entire area for photo info
+				// to display at the bottom of the tile.
+				width: 100%;
+				height: 100%;
+			}
+
+			.es-photo-content {
+				z-index: 1;
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			.es-photo {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+
+				> a {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					padding: 0;
+					.transform_(scale(1)); // This fixes jaggy edges on both FF & Chrome
+				}
+
+				em {
+					// Provides at least 2px bleeding
+					// Fixes jaggy edges when rendered via gpu.
+					width: 102%;
+					height: 102%;
+					top: -2px;
+					left: -2px;
+				}
+			}
+
+			.es-photo-footer {
+				z-index: 2;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,1));
+				background-color: transparent;
+				opacity: 0;
+				.transition(all .2s ease);
+				height: 30px + 30px;
+				padding-top: 30px; // background accomodate title
+			}
+
+			.es-photo-interaction {
+				display: none;
+			}
+
+			.es-photo-image {
+				background-size: cover;
+				// background-color: @photoImageBackground;
+			}
+
+			// Shows at the bottom of the photo thumbnail
+			.es-photo-info {
+				padding: 0;
+				position: absolute;
+				bottom: 30px; // accomodate stats
+				left: 0;
+				width: 100%;
+				opacity: 0;
+				.transition(all .2s ease);
+			}
+
+			.es-photo-title {
+				color: #fff;
+
+				text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+				font-weight: bold;
+				font-size: 13px;
+				margin-bottom: 0;
+				padding: 0 10px;
+
+				a, a:hover {
+					color: #fff;
+					text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+					font-weight: bold;
+					font-size: 13px;
+				}
+
+				a:hover {
+					text-decoration: underline;
+				}
+
+				padding-bottom: 6px;
+				border-bottom: 1px solid rgba(0,0,0,0.25);
+				.text-overflow();
+			}
+
+			.es-media-stats {
+				border: none;
+				border-top: 1px solid rgba(255,255,255,0.25);
+				color: #fff;
+				text-align: center;
+				width: 100%;
+				margin: 0;
+
+				i {
+					font-size: @fontSizeSmall;
+				}
+			}
+
+			.es-media-stat {
+				float: left;
+				width: 33%;
+				padding: 4px 0;
+				color: rgba(255,255,255,0.7);
+				border-right: 1px solid rgba(0,0,0,0.25);
+
+				// Don't show stat label
+				> b {
+					display: none;
+				}
+
+				> i {
+					display: inline-block;
+					// font-size: 8px;
+					// line-height: 10px;
+				}
+
+				> span {
+					font-size: @fontSizeSmall;
+				}
+
+				+ .es-media-stat {
+					border-left: 1px solid rgba(255,255,255,0.25);
+					border-right: 1px solid rgba(0,0,0,0.25);
+				}
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+
+			.es-photo-menu-item {
+				top: 10px;
+				right: 10px;
+				opacity: 0;
+				.transition(all .2s ease);
+			}
+
+			&.show-all {
+				z-index: 3;
+			}
+			&:hover,
+			&.show-all {
+				.es-photo-menu-item {
+					opacity: 1;
+				}
+
+				.es-photo-info {
+					opacity: 1;
+				}
+
+				.es-photo-footer {
+					opacity: 1;
+				}
+			}
+
+			.btn[data-photo-share-button],
+			.btn[data-photo-report-button],
+			.btn[data-photo-original-button] {
+				display: none;
+			}
+
+			// Don't show edit label
+			[data-item-actions-menu] {
+				> a > span { display: none; }
+			}
+		}
+
+		&.layout-form {
+
+			border: 1px solid transparent;
+			// padding: 10px;
+			float: left;
+			width: 50%;
+			height: 332px;
+			padding-top: 200px;
+
+			&.es-photo-upload-item {
+				> div,
+				> div > div {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.es-photo-header {
+				// background-color: @esPhotoHeaderBackground;
+				padding: 0px 10px 10px;
+				margin: 0;
+			}
+
+			.es-photo-form {
+				margin: 0;
+				// padding-left: 10px + 160px + 10px;
+			}
+
+			.es-photo-form-fields {
+			}
+
+			.es-photo-title-field {
+				font-size: 12px !important;
+			}
+
+			// This is to pull the photo up to the corner
+			.es-photo-content {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 200px;
+				// background-color: @esPhotoHeaderBackground;
+				padding: 10px;
+			}
+
+			.es-photo {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				.transition(none);
+
+				> a {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					padding: 0;
+				}
+			}
+
+			.es-photo-image {
+				width: 100%;
+				height: 100%;
+				background-color: transparent;
+			}
+
+			.es-photo-footer {
+				display: none;
+			}
+
+			.es-photo-menu-form {
+				display: none;
+				margin-right: -8px; // Compensate margin from secondary btn-group
+				top: -190px;
+				right: 0px;
+			}
+
+			.es-photo-stats {
+				display: none;
+			}
+
+			&:hover,
+			&.show-all {
+				.es-photo-menu-form {
+					display: block;
+				}
+			}
+
+			// Don't show edit label
+			[data-item-actions-menu] {
+				> a > span { display: none;
+				}
+			}
+
+			// Menu items that we don't need
+			[data-photo-done-button],
+			[data-photo-cancel-button] {
+				display: none;
+			}
+		}
+	}
+}
+
+&.w600 {
+	.es-album-item {
+		.es-photo-item {
+			&.layout-item {
+
+				width: 50%;
+
+				&.featured {
+					width: 100%;
+				}
+
+				.es-photo-menu-item {
+					opacity: 1;
+				}
+				.es-photo-info {
+					opacity: 1;
+				}
+				.es-photo-footer {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+&.w320 {
+	.es-album-item {
+		.es-photo-item {
+			&.layout-item {
+
+				width: 100%;
+
+				&.featured {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,200 @@
+{
+	"title"	: "COM_EASYSOCIAL_MENU_GROUP_SETTINGS",
+	"link"	: "index.php?option=com_easysocial&view=settings",
+	"class"	: "fa-cog",
+	"access": "easysocial.access.settings",
+	"view"	: "settings",
+	"active": "page",
+	"childs":
+	[
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_ALERTS",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "notifications"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_CONVERSATION",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "conversations"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_GENERAL",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "general"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_LINKS",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "links"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_PHOTOS",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "photos"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_REPORTS",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "reports"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_FACEBOOK",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "facebook"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_STORAGE",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "storage"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_STREAM",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "stream"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_USERS",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "users"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_REGISTRATION",
+			"class" : "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "registration"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_SHARING",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "sharing"
+			}
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_STORAGE_PATH",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "storagepath"
+			}
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_EVENTS",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "events"
+			}
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_GROUPS",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "groups"
+			}
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_COMMENTS",
+			"class"	: "",
+			"url"	:
+			{
+				"view"	: "settings",
+				"layout": "form",
+				"page"	: "comments"
+			}
+		},
+		{
+			"title": "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_LOCATION_SERVICE",
+			"class": "",
+			"url": {
+				"view": "settings",
+				"layout": "form",
+				"page": "location"
+			}
+		},
+		{
+			"title": "COM_EASYSOCIAL_MENU_ITEM_SETTINGS_VIDEOS",
+			"class": "",
+			"url": {
+				"view": "settings",
+				"layout": "form",
+				"page": "videos"
+			}
+		}
+	]
+}

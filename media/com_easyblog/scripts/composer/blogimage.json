@@ -1,0 +1,10 @@
+[
+    {
+        "library": [
+            "image",
+            "plupload2",
+            "ui/droppable"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

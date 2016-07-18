@@ -1,0 +1,14 @@
+[
+    {
+        "library": [
+            "textboxlist"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_STREAM_STORY_WITH",
+            "COM_EASYSOCIAL_STREAM_STORY_WITH_JOINER",
+            "COM_EASYSOCIAL_STREAM_STORY_WITH_LAST_JOINER",
+            "COM_EASYSOCIAL_AND"
+        ],
+        "adapter": "EasySocial"
+    }
+]

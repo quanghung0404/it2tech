@@ -1,0 +1,14 @@
+[
+    {
+        "library": [
+            "plupload"
+        ],
+        "view": [
+            "site/uploader/queue.item"
+        ],
+        "script": [
+            "uploader/queue"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,9 @@
+{
+	"title"	: "COM_EASYSOCIAL_MENU_GROUP_PROFILES",
+	"link"	: "index.php?option=com_easysocial&view=profiles",
+	"class"	: "fa-file-text-o",
+	"access": "easysocial.access.profiles",
+	"view"	: "profiles",
+	"active": "layout",
+	"childs": []
+}

@@ -525,7 +525,7 @@ class JMapModelSitemap extends JMapModel implements IJMapModelSitemap, IJMapMode
 		
 		// If sitemap format is rss, allow only content data source and 3PD user data source that are supported as compatible, avoid calculate unuseful data and return immediately
 		if($this->documentFormat === 'rss') {
-			if($source->type === 'menu') {
+			if($source->type === 'menu' || $source->type === 'links') {
 				return false;
 			}
 			// Load always manifest, both content and third party data sources
@@ -576,6 +576,17 @@ class JMapModelSitemap extends JMapModel implements IJMapModelSitemap, IJMapMode
 		$sourceItems = array();
 		switch ($source->type) {
 			case 'user':
+				// Get the language param for the user data source and ensure that it's all langs or match the current language, if not skip getting data
+				$languageTag = JMapLanguageMultilang::getCurrentSefLanguage();
+				$dataSourceLanguage = $resultSourceObject->params->get('datasource_language', '*');
+				if($dataSourceLanguage != '*' && ($languageTag != $dataSourceLanguage)) {
+					// Detected a precaching call, set 0 affected rows to complete correctly the precaching process just now
+					if($this->limitRows) {
+						$this->setState('affected_rows', 0);
+					}
+					break;
+				}
+				
 				$query = $source->sqlquery;
 				$debugMode = $resultSourceObject->params->get('debug_mode', 0);
 				// Do runtime preprocessing if any for selected data source extension
@@ -976,6 +987,38 @@ class JMapModelSitemap extends JMapModel implements IJMapModelSitemap, IJMapMode
 					$resultSourceObject->data = array();
 					return $resultSourceObject;
 				}
+				break;
+				
+			case 'links':
+				// Re-initialize the $sourceItems var as an object not an array
+				$sourceItems = new stdClass();
+				$sourceItems->title = array();
+				$sourceItems->link = array();
+				
+				// Get the language param for the links data source and ensure that it's all langs or match the current language, if not skip getting data
+				$languageTag = JMapLanguageMultilang::getCurrentSefLanguage();
+				$dataSourceLanguage = $resultSourceObject->params->get('datasource_language', '*');
+				if($dataSourceLanguage != '*' && ($languageTag != $dataSourceLanguage)) {
+					// Detected a precaching call, set 0 affected rows to complete correctly the precaching process just now
+					if($this->limitRows) {
+						$this->setState('affected_rows', 0);
+					}
+					break;
+				}
+				
+				// Check if a limit for query rows has been set, this means we are in precaching process by JS App client
+				if(!$this->limitRows) {
+					// Get directly the links from the source
+					$sourceItems = $resultSourceObject->chunks;
+				} else {
+					// Get directly the links from the source
+					$sourceItems->title = array_slice($resultSourceObject->chunks->title, $this->limitStart, $this->limitRows, false);
+					$sourceItems->link = array_slice($resultSourceObject->chunks->link, $this->limitStart, $this->limitRows, false);
+					
+					// Detected a precaching call, so store in the model state the number of affected rows for JS app
+					$this->setState('affected_rows', count($sourceItems->link));
+				}
+			
 				break;
 		}
 		 

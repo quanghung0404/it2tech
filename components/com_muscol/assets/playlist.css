@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h1.playlist_name {
+	/*color:#006699;
+	font-family:"century gothic",arial;*/
+	font-size:28px;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	text-align:left;
+}
+
+.table td.num_song, td.num_song{
+	text-align:center;
+}
+.play_button{
+	display:none;
+}
+
+tr.tr_song_link:hover .play_button, tr.info .play_button{
+	display:inline ;
+}
+
+tr.tr_song_link:hover .song_position, tr.info .song_position{
+	display:none;
+}
+
+.play_button:hover .icon-volume-up {
+background-position: -288px -72px;
+}
+.image_song_list {
+margin-right: 5px;
+}

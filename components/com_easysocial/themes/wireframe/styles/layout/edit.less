@@ -1,0 +1,97 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$Layout - layout.less
+\*------------------------------------*/
+
+
+&.layout-edit{
+
+    .es-sidebar{
+        width: 190px;
+    }
+    .edit-form {
+        margin: 0 20px;
+        min-height : 450px;
+        // font-size: @baseFontSize; // #3537
+        label {
+            // font-size: @baseFontSize;
+        }
+        .yesno-list {
+            > li {
+                div.pull-left{
+                    max-width: 320px;
+                }
+            }
+        }
+    }
+
+    .control-label {
+        font-size: 12px; // #3537
+    }
+
+    .step-content{
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+
+    // Shouldn't enforce this
+    // .step-content:first-child{
+    //  display: block;
+    // }
+
+    //avatar
+    .avatar-preview {
+        display: block;
+        width: 128px;
+        height: 128px;
+        position: relative;
+        background: #f5f5f5;
+        border-radius: 3px;
+        img {
+            position: absolute;
+        }
+        .loading-indicator {
+            position: absolute;
+            left: 50%;
+            margin-left: -25px;
+            top: 20%;
+        }
+    }
+    // .avatar-upload-field {
+    //  height: 30px;
+    // }
+    .es-avatar-list {
+        > li {
+            .es-avatar {
+                border: 4px solid white;
+                border-radius: 8px;
+            }
+            img {
+                border: none;
+                width: 58px;
+                height: 58px;
+            }
+            &:hover {
+                .es-avatar {
+                    border: 4px solid #ccc;
+                }
+            }
+            &.active {
+                .es-avatar {
+                    border: 4px solid #5B93CE;
+                }
+            }
+        }
+    }
+
+    .form-actions {
+        margin-left: 1px;
+    }
+}

@@ -1,0 +1,92 @@
+.ebd-workarea {
+
+    .ebd-block {
+
+        // For dropzones in Easy Mode
+        &.is-dropzone {
+            height: @eb-composer-gutter * 2;
+            z-index: @ebd-workarea-block-hover-zindex;
+
+            // Gutter for root level blocks
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            // Gutter for nested blocks
+            &.is-nested {
+
+                // For content nest
+                &.nest-left,
+                &.nest-right {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+
+                // For block nest
+                &:first-child {
+                    margin-top: 0px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+
+            // Placeholder preview
+            > div {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: @eb-composer-lightgray-accent-color;
+                padding: 5px;
+                border: 1px solid @eb-composer-border-light-color;
+                .box-shadow(inset 0px 0px 0px 0px @eb-composer-shadow-color);
+                .transition(all @eb-composer-transition-fast-duration ease);
+                text-align: center;
+
+                &:before {
+                    content: ' ';
+                    display: inline-block;
+                    height: 100%;
+                    vertical-align: middle;
+                    margin-right: -0.25em;
+                }
+
+                span {
+                    color: @eb-composer-shadow-color;
+                    font-size: 13px;
+                    font-weight: bold;
+                    opacity: 0;
+                    position: relative;
+                    top: 2px; // Cosmetic
+                    text-shadow: 0 1px 0px #fff;
+                }
+            }
+
+            // On hover
+            &.is-receiving {
+
+                > div {
+                    background: @eb-composer-gray-accent-color;
+                    border-color: @eb-composer-border-color;
+                    .box-shadow(inset 0px 3px 10px 0px @eb-composer-shadow-color);
+
+                    span {
+                        opacity: 1;
+                        color: @eb-composer-text-light-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.eb-composer-manager {
+
+    &.is-dropping-block,
+    &.is-moving-block {
+
+        .ebd-block.is-dropzone {
+            cursor: pointer;
+        }
+    }
+}

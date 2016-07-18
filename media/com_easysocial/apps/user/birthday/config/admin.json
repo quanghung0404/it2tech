@@ -1,0 +1,23 @@
+[
+	{
+		"title"		: "APP_USER_BIRTHDAY_SETTINGS_WIDGETS",
+		"desc"		: "APP_USER_BIRTHDAY_SETTINGS_WIDGETS_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_USER_BIRTHDAY_SETTINGS_WIDGET_KEY",
+				"tooltip"	: "APP_USER_BIRTHDAY_SETTINGS_WIDGET_KEY_DESC",
+				"name"		: "dashboard_show_uniquekey",
+				"type"		: "admin:/includes/form/renderer/fieldkey",
+				"default"	: "BIRTHDAY"
+			},
+			{
+				"label"		: "APP_USER_BIRTHDAY_SETTINGS_WIDGET_DISPLAY_YEAR",
+				"tooltip"	: "APP_USER_BIRTHDAY_SETTINGS_WIDGET_DISPLAY_YEAR_DESC",
+				"name"		: "dashboard_show_birthday",
+				"type"		: "boolean",
+				"default"	: true
+			}
+		]
+	}
+]

@@ -1,0 +1,11 @@
+{
+	"style": [
+        "foundry",
+        "reset",
+        "component",
+        "layout",
+        "elements",
+        "modal",
+        "patch"
+	]
+}

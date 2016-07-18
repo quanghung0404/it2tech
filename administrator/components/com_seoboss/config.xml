@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset
+            name="utf8"
+            label="UTF-8 support"
+            description="Enable UTF-8 support by SEO Boss"
+            >
+        <field
+                name="utf8_enable"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="Enable UTF-8"
+                description="Enable UTF-8 support by SEO Boss."
+                default="0"
+                >
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </field>
+    </fieldset>
+    <fieldset
+            name="vm_lang"
+            label="VirtueMart language"
+            description="Provide language to be supported in VirtueMart"
+            >
+        <field
+                name="default_virtuemart_language"
+                type="text"
+                class=""
+                label="Enter language code there E.g.: EN_GB"
+                description=""
+                default=""
+                >
+        </field>
+    </fieldset>
+</config>

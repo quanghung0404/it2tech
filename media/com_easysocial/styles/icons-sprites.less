@@ -1,0 +1,484 @@
+//
+// Icon sprites
+// --------------------------------------------------
+// mixins
+// ----------------
+// =Icon -add in custom icon (@element)
+@sprite-px: 16px; //icon grid
+.spriteGrid(@x, @y) {
+	background-position: -((@x*@sprite-px)-@sprite-px) -((@y*@sprite-px)-@sprite-px);
+}
+.spriteSize(@size) {
+	width: @size;
+	height: @size;
+	line-height:@size;
+}
+
+[class^="icon-es-"],
+[class*=" icon-es-"] {
+	display: inline-block;
+	width: @sprite-px;
+	height: @sprite-px;
+	line-height: @sprite-px;
+	*margin-right: .3em;
+	// margin-top: 1px;
+	vertical-align: text-top;
+	background-repeat: no-repeat;
+	background-image: url("@{media_uri}/images/icons/icons-sprites.png") !important;
+}
+
+.es-nav [class^="icon-es-"],
+.es-nav [class*=" icon-es-"] {
+  margin-right: 2px;
+}
+
+.icon-es-12 {
+	.spriteSize(12px);
+}
+.icon-es-24 {
+	.spriteSize(24px);
+}
+
+//toolbar
+.icon-es-user {
+	.spriteGrid(1, 1);
+}
+.icon-es-photos {
+	.spriteGrid(2, 1);
+}
+.icon-es-note {
+	.spriteGrid(3, 1);
+}
+.icon-es-drinks {
+	.spriteGrid(4, 1);
+}
+.icon-es-safetybox {
+	.spriteGrid(5, 1);
+}
+.icon-es-note2 {
+	.spriteGrid(6, 1);
+}
+.icon-es-mail {
+	.spriteGrid(7, 1);
+}
+.icon-es-friends {
+	.spriteGrid(8, 1);
+}
+.icon-es-ball {
+	.spriteGrid(9, 1);
+}
+.icon-es-album {
+	.spriteGrid(10, 1);
+}
+.icon-es-love {
+	.spriteGrid(11, 1);
+}
+.icon-es-games {
+	.spriteGrid(12, 1);
+}
+.icon-es-videos {
+	.spriteGrid(13, 1);
+}
+.icon-es-links {
+	.spriteGrid(14, 1);
+}
+.icon-es-location {
+	.spriteGrid(15, 1);
+}
+.icon-es-plus {
+	.spriteGrid(16, 1);
+}
+.icon-es-minus {
+	.spriteGrid(17, 1);
+}
+.icon-es-dropdown {
+	.spriteGrid(18, 1);
+	width: 6px;
+	height: 4px;
+}
+.icon-es-clock {
+	.spriteGrid(19, 1);
+}
+.icon-es-dialog {
+	.spriteGrid(20, 1);
+}
+.icon-es-heart {
+	.spriteGrid(21, 1);
+}
+.icon-es-user2 {
+	.spriteGrid(22, 1);
+}
+.icon-es-pic {
+	.spriteGrid(23, 1);
+}
+.icon-es-video {
+	.spriteGrid(24, 1);
+}
+.icon-es-add {
+	.spriteGrid(25, 1);
+}
+.icon-es-remove {
+	.spriteGrid(26, 1);
+	.spriteSize(12px);
+}
+.icon-es-comment-action {
+	.spriteGrid(19, 2);
+}
+
+.icon-es-shared {
+	.spriteGrid(20, 2);
+}
+.icon-es-points {
+	.spriteGrid(21, 2);
+}
+/**
+ * famfamfam
+ */
+.icon-es-create {
+	.spriteGrid( 3 , 2 );
+}
+.icon-es-pm {
+	.spriteGrid( 4 , 2 );
+}
+.icon-es-feed {
+	.spriteGrid( 6 , 2 );
+}
+.icon-es-clipboard {
+	.spriteGrid( 7 , 2 );
+}
+.icon-es-store {
+	.spriteGrid( 8 , 2 );
+}
+.icon-es-friends {
+	.spriteGrid( 9 , 2 );
+}
+.icon-es-usersuggest {
+	.spriteGrid( 10 , 2 );
+}
+.icon-es-mapdetect {
+	.spriteGrid( 11 , 2 );
+}
+.icon-es-chatgroup {
+	.spriteGrid( 12 , 2 );
+}
+.icon-es-basicinfo {
+	.spriteGrid( 13 , 2 );
+}
+.icon-es-book {
+	.spriteGrid( 14 , 2 );
+}
+.icon-es-building {
+	.spriteGrid( 15 , 2 );
+}
+.icon-es-useredit {
+	.spriteGrid( 16 , 2 );
+}
+.icon-es-delete {
+	.spriteGrid( 17 , 2 );
+}
+.icon-es-help {
+	.spriteGrid( 18 , 2 );
+}
+.icon-es-true{
+	.spriteGrid( 22 , 2 );
+}
+.icon-es-false{
+	.spriteGrid( 23 , 2 );
+}
+.icon-es-php{
+	.spriteGrid( 24 , 2 );
+}
+.icon-es-sql{
+	.spriteGrid( 25 , 2 );
+}
+.icon-es-pdf{
+	.spriteGrid( 26 , 2 );
+}
+.icon-es-text{
+	.spriteGrid( 27 , 2 );
+}
+.icon-es-unknown {
+	.spriteGrid( 22 , 3 );
+}
+/**
+ * Fugue icons
+ */
+.icon-es-mailbox{
+	.spriteGrid( 1 , 4 );
+}
+.icon-es-sentmail{
+	.spriteGrid( 2 , 4 );
+}
+.icon-es-upload {
+	.spriteGrid( 3 , 4 );
+}
+.icon-es-window-apps{
+	.spriteGrid( 4 , 4 );
+}
+.icon-es-window-fields{
+	.spriteGrid( 5 , 4 );
+}
+
+/**
+ * Aircons
+ */
+.icon-es-genius{
+	.spriteGrid( 1 , 5 );
+}
+.icon-es-wlan{
+	.spriteGrid( 2 , 5 );
+}
+.icon-es-aircon-mail{
+	.spriteGrid( 3 , 5 );
+}
+.icon-es-aircon-user{
+	.spriteGrid( 4 , 5 );
+}
+.icon-es-aircon-checkmark{
+	.spriteGrid( 5 , 5 );
+}
+.icon-es-aircon-document{
+	.spriteGrid( 6 , 5 );
+}
+.icon-es-aircon-following{
+	.spriteGrid( 7 , 5 );
+}
+.icon-es-aircon-adduser{
+	.spriteGrid( 8 , 5 );
+}
+.icon-es-aircon-locked{
+	.spriteGrid( 9 , 5 );
+}
+.icon-es-aircon-checkmark3{
+	.spriteGrid( 10 , 5 );
+}
+.icon-es-aircon-follow{
+	.spriteGrid( 11 , 5 );
+}
+
+/**
+ * minicons
+ */
+.icon-es-settings {
+	.spriteGrid( 1 , 3 );
+}
+.icon-es-account {
+	.spriteGrid( 2 , 3 );
+}
+.icon-es-app {
+	.spriteGrid( 3 , 3 );
+}
+.icon-es-tick {
+	.spriteGrid( 4 , 3 );
+}
+.icon-es-map {
+	.spriteGrid( 5 , 3 );
+}
+.icon-es-attachment {
+	.spriteGrid( 6 , 3 );
+}
+.icon-es-marker {
+	.spriteGrid( 7 , 3 );
+}
+.icon-es-cloud {
+	.spriteGrid( 8 , 3 );
+}
+.icon-es-mailbundle {
+	.spriteGrid( 9 , 3 );
+}
+.icon-es-zip{
+	.spriteGrid( 10 , 3 );
+}
+.icon-es-box{
+	.spriteGrid( 11 , 3 );
+}
+.icon-es-package{
+	.spriteGrid( 12 , 3 );
+}
+.icon-es-newspaper{
+	.spriteGrid( 13 , 3 );
+}
+.icon-es-cake{
+	.spriteGrid( 14 , 3 );
+}
+.icon-es-calendar{
+	.spriteGrid( 15 , 3 );
+}
+.icon-es-lifebuoy{
+	.spriteGrid( 16 , 3 );
+}
+.icon-es-save{
+	.spriteGrid( 17 , 3 );
+}
+.icon-es-facebook-16 {
+	.spriteGrid( 18 , 3 );
+}
+.icon-es-twitter-16 {
+	.spriteGrid( 19 , 3 );
+}
+.icon-es-linkedin-16 {
+	.spriteGrid( 20 , 3 );
+}
+.icon-es-joomla-16 {
+	.spriteGrid( 21 , 3 );
+}
+
+/**
+ * luvicons
+ */
+.icon-es-star{
+	.spriteGrid( 23 , 3 );
+}
+
+/**
+ * misc
+*/
+[class^="icon-es-empty-"],
+[class*=" icon-es-empty-"] {
+	.spriteSize(48px);
+}
+.icon-es-empty-feed {
+	.spriteGrid( 1 , 8 );
+}
+.icon-es-empty-friends {
+	.spriteGrid( 4 , 8 );
+}
+.icon-es-empty-suggest {
+	.spriteGrid( 7 , 8 );
+}
+.icon-es-empty-pending {
+	.spriteGrid( 10 , 8 );
+}
+.icon-es-empty-request {
+	.spriteGrid( 13 , 8 );
+}
+.icon-es-empty-follow,
+.icon-es-empty-group,
+.icon-es-empty-event {
+	.spriteGrid( 16 , 8 );
+}
+.icon-es-empty-photo {
+	.spriteGrid( 19 , 8 );
+}
+.icon-es-empty-activity {
+	.spriteGrid( 22 , 8 );
+}
+.icon-es-empty-apps {
+	.spriteGrid( 25 , 8 );
+}
+.icon-es-empty-profile {
+	.spriteGrid( 28 , 8 );
+}
+.icon-es-empty-achievements {
+	.spriteGrid( 1 , 11 );
+}
+.icon-es-empty-search {
+	.spriteGrid( 4 , 11 );
+}
+
+
+
+.icon-es-replied {
+	.spriteGrid( 29 , 4 );
+	.spriteSize(12px);
+}
+.icon-es-drag {
+	.spriteGrid( 30 , 4 );
+	width: 8px;
+	height: 22px;
+}
+
+.icon-es-x {
+	.spriteGrid(30, 1);
+	.spriteSize(6px);
+	position: relative;
+}
+
+.icon-es-tri-up {
+	.spriteGrid(28, 1);
+	.spriteSize(12px);
+}
+.icon-es-tri-down {
+	.spriteGrid(29, 1);
+	.spriteSize(12px);
+}
+.icon-es-default_avatar {
+	.spriteGrid(28, 2);
+	width: 42px;
+	height: 24px;
+}
+
+.icon-es-form-success {
+	.spriteGrid(1, 2);
+}
+.icon-es-form-error {
+	.spriteGrid(2, 2);
+}
+.icon-es-form-warning {
+	.spriteGrid(5, 2);
+}
+
+
+/**
+ * sharing
+ */
+.icon-es-email {
+	.spriteGrid(1, 6);
+}
+.icon-es-facebook {
+	.spriteGrid(3, 6);
+}
+.icon-es-twitter {
+	.spriteGrid(5, 6);
+}
+.icon-es-google {
+	.spriteGrid(7, 6);
+}
+.icon-es-live {
+	.spriteGrid(9, 6);
+}
+.icon-es-linkedin {
+	.spriteGrid(11, 6);
+}
+.icon-es-myspace {
+	.spriteGrid(13, 6);
+}
+.icon-es-vk {
+	.spriteGrid(15, 6);
+}
+.icon-es-stumbleupon {
+	.spriteGrid(17, 6);
+}
+.icon-es-digg {
+	.spriteGrid(19, 6);
+}
+.icon-es-tumblr {
+	.spriteGrid(21, 6);
+}
+.icon-es-evernote {
+	.spriteGrid(23, 6);
+}
+.icon-es-reddit {
+	.spriteGrid(25, 6);
+}
+.icon-es-delicious {
+	.spriteGrid(27, 6);
+}
+
+
+
+.icon-loader {
+	display: inline-block;
+	background-image: url("@{media_uri}/images/loading.gif") !important;
+	width: 16px;
+	height: 11px;
+	line-height: 11px;
+}
+
+.icon-es-video-play {
+	display: inline-block;
+	background-image: url("@{media_uri}/images/icons/icon-es-video-play.png") !important;
+	width: 35px;
+	height: 26px;
+	line-height: 26px;
+}

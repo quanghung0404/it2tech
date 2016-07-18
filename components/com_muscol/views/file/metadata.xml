@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Document Link">
+		<message>
+			<![CDATA[This menu item points directly to an existing document]]>
+		</message>
+	</layout>
+	<state>
+		<name>Document Link</name>
+		<description>This menu item points directly to an existing document</description>
+		<url addpath="/components/com_rubberdoc/elements">
+			<param name="id" type="docselect" default="0" label="Document" description="Select A Document" />
+			<param name="format" type="hidden" default="raw" label="Format" description="" />
+		</url>
+	</state>
+</metadata>

@@ -1,0 +1,8 @@
+[
+    {
+        "script": [
+            "uploader/uploader"
+        ],
+        "adapter": "EasySocial"
+    }
+]

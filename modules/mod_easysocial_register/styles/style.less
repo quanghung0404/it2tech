@@ -1,0 +1,186 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial}
+{
+	// EasySocial Register Modules
+	&.mod-es-register
+	{
+		.quick-register
+		{
+			border-radius: 8px;
+			border: 1px solid @esBorder;
+			font-size: 11px;
+			position: relative;
+
+			.quick-register-splash
+			{
+				position: absolute;
+				float: left;
+				width: 55%;
+				height: 100%;
+				border-right: 1px solid #d7d7d7;
+
+				.splash-image
+				{
+					border-radius: 8px 0 0 8px;
+					background-size: cover;
+					z-index: 1;
+					position: absolute;
+					top: 0;
+					height: 100%;
+					width: 100%;
+				}
+
+				.splash-header
+				{
+					color: #fff;
+					position: absolute;
+					top: 0;
+					z-index: 3;
+					width: 100%;
+					text-align:center;
+
+					h2
+					{
+						margin: 15px 0;
+						opacity: 1;
+						font-weight: 700;
+						font-size: 36px;
+						text-shadow: 0 0 3px #000;
+					}
+				}
+
+				.splash-footer
+				{
+					width: 100%;
+					border-radius: 0 0 0 8px;
+					z-index: 1;
+					position: absolute;
+					bottom: 0;
+					background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+					color: #fff;
+					font-size: 12px;
+					padding: 30px 15px;
+				}
+			}
+
+			&.has-splash
+			{
+				.quick-register-form
+				{
+					width: 40%;
+					min-width: 315px; // to fit datepicker
+				}
+			}
+
+			.quick-register-form
+			{
+				width: 100%;
+				float: right;
+				text-align: center;
+				padding: 0 30px;
+				font-size: 11px;
+				.checkbox {
+					text-align: left;
+				}
+			}
+
+			.form-group
+			{
+				color: #666;
+
+				.radio-inline
+				{
+					font-size: 11px;
+				}
+
+				[data-field-joomla_fullname] {
+					.clearfix();
+					.form-control {
+						float: left;
+						+ .form-control {
+							float: right;
+						}
+					}
+				}
+				[data-field-datetime] {
+					#fd.ui {
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		//responsive
+		&.w600
+		{
+			.quick-register
+			{
+				.quick-register-splash
+				{
+					border-right: none;
+					float: none;
+					height: 100%;
+					position: absolute;
+					width: 100%;
+					.splash-image
+					{
+						border-radius: 8px;
+					}
+					.splash-header,
+					.splash-footer
+					{
+						display: none;
+					}
+				}
+				&.has-splash
+				{
+				}
+				.quick-register-form
+				{
+					background: rgba(255, 255, 255, 0.85);
+					float: none;
+					left: 50%;
+					margin-left: -32%;
+					margin: 10px 0 10px -32%;
+					padding: 10px 20px;
+					position: relative;
+					width: 65%;
+					z-index: 3;
+					border-radius: 4px;
+					.form-group
+					{
+						background: transparent;
+						border-radius: 4px;
+					}
+				}
+				.form-control {
+					width: 100% !important;
+					float: none !important;
+					+ .form-control {
+						margin-top: 15px;
+					}
+
+				}
+
+			}
+		}//600
+		&.w320 {
+			.quick-register {
+				.quick-register-form {
+					left: 0;
+					margin: 0;
+					width: 100%;
+					min-width: 100% !important;
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="site" method="upgrade">
+	<name>Recent Blog Posts (EasyBlog)</name>
+	<author>StackIdeas</author>
+	<creationDate>10th May 2016</creationDate>
+	<copyright>Copyright (C) 2009 - 2013 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.4.9</version>
+	<description><![CDATA[MOD_EASYSOCIAL_RECENT_BLOG_POSTS_DESC]]></description>
+	<files>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename module="mod_easysocial_easyblog_posts">mod_easysocial_easyblog_posts.php</filename>
+		<filename>mod_easysocial_easyblog_posts.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easysocial_easyblog_posts.ini</language>
+		<language tag="en-GB">en-GB.mod_easysocial_easyblog_posts.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="show_image" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_EASYBLOG_SHOW_BLOG_IMAGE" description="MOD_EASYSOCIAL_EASYBLOG_SHOW_BLOG_IMAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_author" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_EASYBLOG_SHOW_AUTHOR" description="MOD_EASYSOCIAL_EASYBLOG_SHOW_AUTHOR_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_category" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_EASYBLOG_SHOW_CATEGORY" description="MOD_EASYSOCIAL_EASYBLOG_SHOW_CATEGORY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="popover" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_EASYBLOG_SHOW_AUTHOR_POPOVER" description="MOD_EASYSOCIAL_EASYBLOG_SHOW_AUTHOR_POPOVER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="total" type="text" class="input-mini text-center" default="5" label="MOD_EASYSOCIAL_EASYBLOG_TOTAL_POSTS" description="MOD_EASYSOCIAL_EASYBLOG_TOTAL_POSTS_DESC" />
+				<field name="sorting" type="list" default="latest" label="MOD_EASYSOCIAL_EASYBLOG_SORTING_OPTION" description="MOD_EASYSOCIAL_EASYBLOG_SORTING_OPTION_DESC">
+					<option value="latest">MOD_EASYSOCIAL_EASYBLOG_SORT_LATEST</option>
+					<option value="published">MOD_EASYSOCIAL_EASYBLOG_SORT_PUBLISHING_DATE</option>
+					<option value="popular">MOD_EASYSOCIAL_EASYBLOG_SORT_POPULAR</option>
+					<option value="alphabet">MOD_EASYSOCIAL_EASYBLOG_SORT_ALPHA</option>
+					<option value="modified">MOD_EASYSOCIAL_EASYBLOG_SORT_LAST_MODIFIED</option>
+					<option value="random">MOD_EASYSOCIAL_EASYBLOG_SORT_RANDOM</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,185 @@
+/*------------------------------------*\
+    $Notifications - notifications.less
+\*------------------------------------*/
+
+.es-notification-list {
+    position: relative;
+}
+.es-notification-tool {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    z-index: 3;
+}
+&.w320 {
+    .es-notification-tool {
+        position: relative;
+    }
+}
+
+.es-notifications {
+    position: relative;
+    padding: 0 0 50px;
+    margin: 0 0 20px;
+    &:before { //timeline
+        display: block;
+        content: '';
+        width: 4px;
+        position: absolute;
+        background-color: @esNotificationsTimeline;
+        left: 34px;
+        top: 20px;
+        bottom: 0;
+    }
+    .btn-loadmore {
+        position: absolute;
+        bottom: 0;
+        padding: 3px 5px;
+    }
+    .es-item-list {
+        border-top: 1px solid @esBorder;
+        margin: 0 0 0 60px;
+        > li {
+
+
+            margin: 0;
+            border-bottom: 1px solid @esBorder;
+            &:hover {
+                background: @esNotificationsHoverBackground;
+            }
+            .close {
+                font-size: 12px;
+            }
+            // &.is-date {
+            //  font-size: 14px;
+            //  font-weight: bold;
+            //  padding-top: 18px;
+            //  padding-bottom: 12px;
+            //  margin: 0;
+            //  &:hover {
+            //      background: none;
+            //  }
+            // }
+            .es-notification {
+                position: relative;
+
+                padding: 8px 30px 8px 12px;
+
+                &:before { //dot
+                    display: block;
+                    content: '';
+                    width: 9px;
+                    height: 9px;
+                    top: 10px;
+                    left: -28px;
+                    position: absolute;
+                    background-color: @esNotificationDotBackground;
+                    border-radius: 50%;
+                }
+                .es-time {
+                    color: @esNotificationTimeColor;
+                    font-size: @fontSizeSmall;
+                    // margin-left: 5px;
+                }
+                .es-image-wrap {
+                    display: block;
+                    clear: both;
+                    width: 60px;
+                    margin: 0 0 5px;
+                    // overflow: hidden;
+                    // position: relative;
+                }
+                .es-image {
+                    width: 60px;;
+                    max-width: 60px;
+                }
+                .es-notice-content {
+                    margin: 15px 0;
+                    border-left: 2px solid @esNotificationContentBorder;
+                    padding-left: 10px;
+                }
+                .media {
+                    margin: 15px 0 10px;
+                }
+                .media-body {
+                    .es-notice-content {
+                        margin: 0;
+                    }
+                }
+                .es-notice-action {
+                    position: absolute;
+                    top: 5px;
+                    right: 15px;
+                }
+            }
+            &.is-remove {
+                .es-notification {
+                    .opacity(.5);
+                }
+                .is-noclick {
+                    background: transparent;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    z-index: 2;
+                    top: 0;
+                    left: 0;
+                    // .opacity(.4);
+                }
+            }
+        }//li
+    }
+    .notification-date {
+        margin: 22px 0 10px;
+        padding: 0 0 0 20px;
+        font-family: @esTitleFont;
+        position: relative;
+        font-size: 16px;
+        line-height: 20px;
+        z-index: 2;
+
+    }
+    .btn-mini {
+        padding: 1px;
+        i {
+            position: relative;
+            top: 0;
+        }
+    }
+    .dropdown-arrow-topright {
+        right: -9px;
+        top: 16px;
+        &:before {
+            right: 8px;
+        }
+        &:after {
+            right: 9px;
+        }
+    }
+}//es-notifications
+
+.es-notifications {
+    .is-unread {
+        background: @esNotificationUnreadBackground;
+    }
+    .is-hidden {
+        display: none;
+    }
+
+}
+
+.es-notifications-empty {
+    border: 1px dashed @esNotificationEmptyBorder;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.type-badges .object-image > span,
+.type-friends .object-image > span {
+    background-size: contain !important;
+}
+

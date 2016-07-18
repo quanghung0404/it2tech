@@ -15,6 +15,6 @@ ul.errorlist li {
 	float: left;
 }
 
-.inputbox.error, .error {
+.inputbox.error, .error, input[type=text].error {
 	border-color: #F00;
 }

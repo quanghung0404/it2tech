@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    $languages.less
+\*------------------------------------*/
+
+.languages-wrapper {
+
+    &.error-api {
+        .invalid-api {
+            display: block;
+        }
+
+        .languages-loader {
+            display: none;
+        }
+    }
+    
+    .languages-loader{
+    	width: 50%;
+    	margin: 50px 25% 0 25%;
+    	padding: 60px;
+    	background: #fff;
+    	border: 1px solid #B6C3CC;
+
+    	font-size: 28px;
+    	text-align: center;
+    }
+
+    .invalid-api{
+        display: none;
+
+        i {
+            display: block;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        width: 50%;
+        margin: 50px 25% 0 25%;
+        padding: 60px;
+        background: #fff;
+        border: 1px solid #B6C3CC;
+
+        font-size: 20px;
+        line-height: 150%;
+        text-align: center;
+    }
+}

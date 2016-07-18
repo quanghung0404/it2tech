@@ -1,0 +1,112 @@
+.eb-blocks-tree-field {
+
+    &.has-children {
+
+        .eb-block-child {
+            display: inline;
+        }
+
+        .eb-blocks-tree {
+            display: block;
+        }
+    }
+
+    &.has-parent {
+
+        .eb-blocks-tree {
+            display: block;
+        }
+    }
+
+    &.tree-minimal {
+
+        .text-show-tree {
+            display: inline;
+        }
+
+        .text-hide-tree {
+            display: none;
+        }
+    }
+
+    &.tree-full {
+
+        .text-show-tree {
+            display: none;
+        }
+
+        .text-hide-tree {
+            display: inline;
+        }
+    }
+}
+
+//
+// Current Block
+//
+.eb-block {
+
+    .cell-ellipse {
+        padding: 0 @eb-composer-gutter / 3;
+    }
+}
+
+.eb-block-icon {
+
+    i {
+        font-size: 18px;
+        padding: 8px;
+        background: #fff;
+        color: @eb-composer-green-dark-accent-color;
+        border: 1px solid @eb-composer-green-accent-color;
+        border-radius: @eb-composer-border-radius;
+        text-align: center;
+        width: 36px;
+    }
+}
+
+.eb-block-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.eb-block-child {
+    display: none;
+}
+
+//
+// Tree
+//
+
+.eb-blocks-tree-toggle-button {
+}
+
+.eb-blocks-tree {
+
+    display: none;
+    margin-top: @eb-composer-gutter / 3;
+
+    .eb-fieldset {
+        padding: 0;
+    }
+}
+
+.eb-blocks-tree-item {
+
+    .make-tree-item-levels(1);
+
+    i {
+        margin-right: @eb-composer-gutter / 6;
+    }
+}
+
+.make-tree-item-levels(@index) when (@index >= 9) {}
+.make-tree-item-levels(@index) when (@index < 9) {
+
+    &.level-@{index} {
+        padding-left: 15px * (@index);
+    }
+
+    .make-tree-item-levels(@index + 1);
+}
+

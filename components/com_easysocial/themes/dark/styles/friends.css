@@ -1,0 +1,146 @@
+div#fd.es.view-friends .es-item-list.friend-items .es-item *,
+div#fd.es.view-friends .es-item-grid.friend-items .es-item * {
+  line-height: 16px;
+}
+div#fd.es.view-friends .es-item-list.friend-items .es-item-body,
+div#fd.es.view-friends .es-item-grid.friend-items .es-item-body {
+  margin-left: 60px;
+}
+div#fd.es.view-friends .es-item-list.friend-items .es-item-body > .btn-group,
+div#fd.es.view-friends .es-item-grid.friend-items .es-item-body > .btn-group {
+  position: absolute;
+  right: 10px;
+}
+div#fd.es.view-friends .es-item-list.friend-items >.empty,
+div#fd.es.view-friends .es-item-grid.friend-items >.empty {
+  margin-top: 40px;
+  width: 100%;
+}
+div#fd.es.view-friends .es-item-list .es-avatar img,
+div#fd.es.view-friends .es-item-grid .es-avatar img {
+  width: 32;
+  height: 32;
+}
+div#fd.es.view-friends .es-item-list > .friendItem .pending-action,
+div#fd.es.view-friends .es-item-grid > .friendItem .pending-action {
+  margin: 10px 0 5px;
+}
+div#fd.es.view-friends .listActions .dropdown-menu-lists hr {
+  margin: 5px 0;
+}
+div#fd.es.view-friends .es-item {
+  background: #222;
+}
+div#fd.es.view-friends .es-item .es-item-title {
+  margin-bottom: 6px;
+  width: 100%;
+  height: 16px;
+  padding-right: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div#fd.es.view-friends .es-item .es-item-body .dropdown-menu li > a {
+  font-size: 12px;
+  padding: 3px 10px;
+}
+div#fd.es.view-friends .es-item .es-friends-links {
+  font-size: 12px;
+}
+div#fd.es.view-friends .es-item .es-friends-links > li {
+  margin: 0 10px 5px 0;
+}
+div#fd.es.view-friends .es-item .es-friends-links > li:last-child {
+  margin: 0 0 5px 0;
+}
+div#fd.es.view-friends .es-item .es-friends-links > li .muted {
+  color: #aaa;
+}
+div#fd.es.view-friends .es-item .es-friends-links > li .muted:hover {
+  color: #ccc;
+}
+div#fd.es.view-friends .es-item .es-friends-links [class^="icon-es-"],
+div#fd.es.view-friends .es-item .es-friends-links [class*=" icon-es-"] {
+  vertical-align: bottom;
+}
+div#fd.es .es-sidebar h5 {
+  font-size: 12px;
+}
+div#fd.es .es-sidebar h5 a {
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+div#fd.es .friends-list .ies-star {
+  display: none;
+}
+div#fd.es .friends-list .default .ies-star {
+  display: inline-block;
+}
+div#fd.es .friends-list .fd-nav > li > a {
+  padding: 4px 30px 4px 4px;
+  word-wrap: break-word;
+}
+div#fd.es.view-followers .es-content .es-item-list .empty,
+div#fd.es.view-followers .es-content .es-item-grid .empty {
+  margin-top: 40px;
+  width: 100%;
+}
+div#fd.es.view-followers .es-content .es-item-list .es-avatar img,
+div#fd.es.view-followers .es-content .es-item-grid .es-avatar img {
+  width: 32;
+  height: 32;
+}
+div#fd.es.view-followers .es-content .es-item-list > .friendItem .pending-action,
+div#fd.es.view-followers .es-content .es-item-grid > .friendItem .pending-action {
+  margin: 10px 0 5px;
+}
+div#fd.es.view-followers .listActions .dropdown-menu-lists hr {
+  margin: 5px 0;
+}
+div#fd.es.view-followers .es-item .es-item-title {
+  margin-bottom: 6px;
+}
+div#fd.es.view-followers .es-item .es-item-body .dropdown-menu li > a {
+  color: #eee;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+div#fd.es.view-followers .es-item .es-friends-links {
+  font-size: 12px;
+}
+div#fd.es.view-followers .es-item .es-friends-links > li {
+  margin-bottom: 4px;
+}
+div#fd.es.view-followers .es-item .es-friends-links > li + li {
+  margin-left: 5px;
+}
+div#fd.es.view-followers .es-item .es-friends-links .muted {
+  color: #aaa;
+}
+div#fd.es.view-followers .es-item .es-friends-links .muted:hover {
+  color: #ccc;
+}
+div#fd.es.view-followers .es-item .es-friends-links [class^="icon-es-"],
+div#fd.es.view-followers .es-item .es-friends-links [class*=" icon-es-"] {
+  vertical-align: bottom;
+}
+div#fd.es .es-sidebar >.es-filter >.list-unstyled >li.follower-filter {
+  padding: 5px 0 5px 0;
+  clear: both;
+  line-height: 22px;
+}
+div#fd.es .es-sidebar >.es-filter >.list-unstyled >li.follower-filter .es-count-no {
+  float: right;
+}
+div#fd.es .es-sidebar >.es-filter >.list-unstyled >li:hover {
+  cursor: pointer;
+}
+div#fd.es .es-sidebar h5 {
+  font-size: 12px;
+}
+div#fd.es .es-sidebar h5 a {
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 5px;
+}

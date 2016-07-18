@@ -1,0 +1,97 @@
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.alert {
+  padding: 8px 35px 8px 15px;
+  margin-bottom: @baseLineHeight;
+  text-shadow: none;
+  background-color: @warningEsBackground;
+  border: 0px;
+  border-radius: @baseBorderRadius;
+  color: @warningEsText;
+  position: relative;
+  min-height: 36px;
+  line-height: 16px;
+  
+  .button.close {
+    padding: 0 2px;
+  }
+}
+
+.alert h4 {
+  margin: 0;
+}
+
+// Adjust close link position
+.alert .close {
+  padding: 0 0 3px;
+  position: relative;
+  top: 2px;
+  right: -21px;
+  color: white;
+  text-shadow: none;
+  font-family: 'Lucida Grande','Gisha','Lucida Sans Unicode','Lucida Sans',Lucida,Arial,Verdana,sans-serif;
+  background: black;
+  line-height: 13px;
+  font-size: 11px;
+  .opacity(.3);
+  border-radius: 50%;
+  .square(15px);
+  &:hover {
+    color: white;
+    .opacity(.4);
+    background: black;
+    text-shadow: none;
+    // border-radius: 2px;
+  }
+}
+
+
+// Alternate styles
+// -------------------------
+
+.alert-success {
+  background-color: @successEsBackground;
+  border-color: @successEsBorder;
+  color: @successEsText;
+}
+.alert-danger,
+.alert-error {
+  background-color: @errorEsBackground;
+  border-color: @errorEsBorder;
+  color: @errorEsText;
+  // text-shadow: @btnTextShadowAlt;
+}
+.alert-info {
+  background-color: @infoEsBackground;
+  border-color: @infoEsBorder;
+  color: @infoEsText;
+}
+.alert-info-2 {
+    background-color: #EDF8FC;
+    color: @esColor;
+    border: none;
+}
+
+// Block alerts
+// -------------------------
+
+.alert-block {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &:before {
+    top: 14px;
+  }
+}
+.alert-block > p,
+.alert-block > ul {
+  margin-bottom: 0;
+}
+.alert-block p + p {
+  margin-top: 5px;
+}

@@ -1,0 +1,231 @@
+.ebd-block[data-type="image"]:not(.eb-composer-block-menu) {
+    .clearfix();
+    clear: both;
+    margin-bottom: @eb-gutter / 2;
+    
+    
+}
+
+// Other editors have to behave like 'inline-block' but EB composer have to display 'block' for alignment.
+.eb-entry-body .ebd-block[data-type="image"]:not(.eb-composer-block-menu) {
+    // display: inline-block; 
+    // vertical-align: top;
+}
+
+// Image
+.eb-image {
+    display: block;
+}
+
+// Image Figure
+.eb-image-figure {
+    // Removed background color due to clash with customers transparent image
+    // background: #fff;
+    position: relative;
+    text-align: center;
+    margin: 0 auto; // For root block centering
+}
+
+// Image Viewport (eb-image-viewport)
+// This element creates a relative anchor.
+//
+// This element clips overflowing large images,
+// or vertically center small images.
+//
+// This element also acts as link.
+.eb-image-viewport {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-size: 0;
+    max-width: 100%;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+}
+
+// Fluid Image
+.eb-image.is-fluid {
+    display: block;
+    margin: 0 auto;
+
+    .eb-image-figure {
+        // Set to 4/3 by default, but JS should assign a value.
+        // padding-top: 1 / (4/3) * 100%;
+        padding-top: 0;
+    }
+
+    .eb-image-viewport {
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        &:before {
+            // Temporary comment out cause it will make popup magnify not showing when applied .eb-image-popup-button.
+            // display: none; 
+        }
+    }
+
+    .eb-image-figure img {
+        position: absolute;
+        max-width: none;
+
+        // Set to fit width 100%, but JS should reassign a value.
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+// Image Caption (eb-image-caption)
+.eb-image-caption {
+    display: block;
+    text-align: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// To override inline width.
+&.w480 {
+    .eb-image-caption {
+        width: auto !important;
+    }
+}
+// Image Caption Text (eb-image-caption-text)
+.eb-image-caption > span {
+    display: block;
+    padding-top: 10px;
+}
+
+
+// Image Size
+.eb-image {
+
+    // Auto
+    .eb-image-figure {
+        img {
+            display: inline-block;
+            position: relative;
+            max-width: 100%;
+            max-height: none;
+        }
+    }
+
+    &.align-right {
+        text-align: right;
+    }
+
+    &.align-left {
+        text-align: left;
+    }
+}
+
+// Image Caption Styles
+.eb-image {
+
+    &.style-clear {
+    }
+
+    &.style-gray {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #f0f0f0;
+    }
+
+    &.style-polaroid {
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #fff;
+        .box-shadow(0px 3px 3px #ccc);
+    }
+
+    &.style-popup {
+        padding: 10px;
+        // background: #fff;
+    }
+
+    &.style-solid {
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #ccc;
+    }
+    &.style-dashed {
+        padding: 10px;
+        background: #fff;
+        border: 1px dashed #ccc;
+    }
+
+    &.style-dotted {
+        padding: 10px;
+        background: #fff;
+        border: 1px dotted #ccc;
+    }
+}
+
+// Image Popup - magnify
+.eb-image-popup-button {
+    position: relative;
+    &:before {
+        position: absolute;
+        background: rgba(0,0,0,0.3);
+        color: #fff;
+        z-index: 2;
+        content: '\f002';
+        font-family: FontAwesome;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        font-size: 20px;
+        line-height: 36px;
+        text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+        border-radius: 100%;
+        margin: -20px 0 0 -20px;
+        .transform_(scale(0));
+        opacity: 0;
+        .transition(all .2s ease); 
+        
+    }
+    &:hover {
+        &:before {
+            .transform_(scale(1));
+            opacity: 1;    
+        }
+        
+    }
+}
+
+
+
+.eb-image {
+    &:hover {
+        .eb-image-popup-button {
+            .transform_(scale(1));
+            opacity: 1;
+        }
+    }
+}
+
+// Responsive styling issues for image without is-fluid.
+&.w600 {
+    .eb-image:not(.is-fluid) {
+        .eb-image-figure,
+        .eb-image-figure img {
+            width: 100% !important;
+            height: auto !important;
+        }    
+    }
+}

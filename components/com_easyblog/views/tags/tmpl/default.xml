@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EASYBLOG_MENU_TAGS_LAYOUT">
+		<message><![CDATA[COM_EASYBLOG_MENU_TAGS_LAYOUT_DESC]]></message>
+		<view>tags</view>
+	</layout>
+
+	<fields name="params">
+		<fieldset name="tags" label="COM_EASYBLOG_MENU_TAG_OPTIONS">
+			<field name="tag_search" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_SEARCH" description="COM_EASYBLOG_SHOW_SEARCH_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="tag_sorting" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_SORTING" description="COM_EASYBLOG_SHOW_SORTING_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="tag_rss" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_RSS" description="COM_EASYBLOG_SHOW_RSS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="tag_used_counter" type="radio" default="1" class="btn-group" label="COM_EASYBLOG_SHOW_USED_COUNTER" description="COM_EASYBLOG_SHOW_USED_COUNTER_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

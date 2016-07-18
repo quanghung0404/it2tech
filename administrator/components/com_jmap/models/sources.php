@@ -589,6 +589,7 @@ class JMapModelSources extends JMapModel implements IJMapModelSources {
 		$datasourceTypes[] = JHTML::_('select.option', 'menu', JText::_('COM_JMAP_MENU_DATASOURCE'));
 		$datasourceTypes[] = JHTML::_('select.option', 'content', JText::_('COM_JMAP_CONTENT_DATASOURCE'));
 		$datasourceTypes[] = JHTML::_('select.option', 'plugin', JText::_('COM_JMAP_PLUGIN_DATASOURCE'));
+		$datasourceTypes[] = JHTML::_('select.option', 'links', JText::_('COM_JMAP_LINKS_DATASOURCE'));
 		$filters ['type'] = JHTML::_ ( 'select.genericlist', $datasourceTypes, 'filter_type', 'onchange="Joomla.submitform();"', 'value', 'text', $this->getState ( 'type' ));
 		
 		return $filters;
@@ -736,8 +737,10 @@ class JMapModelSources extends JMapModel implements IJMapModelSources {
 			$lists['catexclusion']	= JHTML::_('select.genericlist', $categoryOptions, 'params[catexclusion][]', 'class="inputbox" size="15" multiple="multiple"', 'value', 'text', $record->params->get('catexclusion', array()), 'catexclusion' );
 		
 			// Get articles exclusion multiselect
-			$articleOptions = JMapHtmlArticles::getArticles();
-			$lists['articleexclusion']	= JHTML::_('select.genericlist', $articleOptions, 'params[articleexclusion][]', 'class="inputbox" size="15" multiple="multiple"', 'value', 'text', $record->params->get('articleexclusion', array()), 'articleexclusion' );
+			if($this->getComponentParams()->get('enable_articles_exclusions', 1)) {
+				$articleOptions = JMapHtmlArticles::getArticles();
+				$lists['articleexclusion']	= JHTML::_('select.genericlist', $articleOptions, 'params[articleexclusion][]', 'class="inputbox" size="15" multiple="multiple"', 'value', 'text', $record->params->get('articleexclusion', array()), 'articleexclusion' );
+			}
 
 			// Get articles categories priorities
 			$selectionsCatsWithPriority = JMapHtmlCatspriorities::getCategories();
@@ -764,8 +767,34 @@ class JMapModelSources extends JMapModel implements IJMapModelSources {
 		if($record->type == 'user') {
 			$sefItemid = JMapHtmlMenu::getMenuItems();
 			array_unshift($sefItemid, JHTML::_('select.option', '0', JText::_('COM_JMAP_NOMENUSELECTED')));
-			$lists['sef_itemid']	= JHTML::_('select.genericlist', $sefItemid, 'params[sef_itemid]', 'class="inputbox" size="15"', 'value', 'text', $record->params->get('sef_itemid', null), 'sef_itemid' );
+			$lists['sef_itemid'] = JHTML::_('select.genericlist', $sefItemid, 'params[sef_itemid]', 'class="inputbox" size="15"', 'value', 'text', $record->params->get('sef_itemid', null), 'sef_itemid' );
 		}
+
+		// Configure a language dropdown if the links source is requested
+		if($record->type == 'links' || $record->type == 'user') {
+			// Check if multilanguage dropdown is always active
+			if($this->getComponentParams()->get('showalways_language_dropdown', false)) {
+				$languageFilterPluginEnabled = true;
+			} else {
+				// Detect Joomla Language Filter plugin enabled
+				$query = "SELECT " . $this->_db->quoteName('enabled') .
+						 "\n FROM #__extensions" .
+						 "\n WHERE " . $this->_db->quoteName('element') . " = " . $this->_db->quote('languagefilter') .
+						 "\n OR " . $this->_db->quoteName('element') . " = " . $this->_db->quote('jfdatabase');
+				$this->_db->setQuery($query);
+				$languageFilterPluginEnabled = $this->_db->loadResult();
+			}
+			$languageOptions = JMapHtmlLanguages::getAvailableLanguageOptions(true);
+			if(count($languageOptions) >= 2 && $languageFilterPluginEnabled) {
+				$currentSelectedLanguage = $record->params->get('datasource_language', null);
+				$lists['languages']	= JHTML::_('select.genericlist',   $languageOptions, 'params[datasource_language]', 'class="inputbox" style="width: 200px"', 'value', 'text', $currentSelectedLanguage, 'datasource_language' );
+				// Append a flag button image if the language is a specific one
+				if($currentSelectedLanguage && $currentSelectedLanguage != '*') {
+					$lists['languages'] .= '<img id="language_flag_image" src="' . JUri::root(false) . 'media/mod_languages/images/' . $currentSelectedLanguage . '.gif" alt="language_flag" />';
+				}
+			}
+		}
+		
 		return $lists;
 	}
 	
@@ -877,7 +906,7 @@ class JMapModelSources extends JMapModel implements IJMapModelSources {
 		}
 
 		// Content source always supported by default
-		if($record->type == 'content' || $record->type == 'plugin') {
+		if($record->type == 'content' || $record->type == 'plugin' || $record->type == 'links') {
 			$hasGNewsSupport = true;
 			return $hasGNewsSupport;
 		}
@@ -983,11 +1012,15 @@ class JMapModelSources extends JMapModel implements IJMapModelSources {
 		}
 
 		// Available only for content and user data source that supports created field not newly created
-		if(!$record->id || $record->type == 'menu' || $record->type == 'plugin') {
+		if(!$record->id || $record->type == 'menu' || $record->type == 'plugin' || $record->type == 'links') {
 			return false;
 		}
 
 		if(strpos($record->sqlquery_managed->table_maintable, 'categor')) {
+			return false;
+		}
+
+		if(!isset($record->sqlquery_managed->table_maintable)) {
 			return false;
 		}
 

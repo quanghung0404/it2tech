@@ -1,0 +1,107 @@
+&.eb-composer-frame {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    background: #fff;
+    line-height: 18px;
+
+    @import "ui/resizable";
+
+    &.show-templates {
+        .eb-composer-templates {
+            display: table;
+            // display: none;
+        }
+    }
+
+    &.show-compare {
+        .eb-composer-compare {
+            right: 0;
+        }
+
+        .eb-composer-sidebar {
+            display: block !important;
+            width: 50px;
+        }
+
+        .eb-composer-body {
+            padding-right: 0;
+        }
+
+        .eb-composer-main {
+            width: 50%;
+        }
+
+        .eb-composer-sub {
+            right: -420px;
+        }
+
+        .eb-composer-viewport {
+            border-bottom: 0;
+        }
+    }
+}
+
+.eb-composer-manager {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+// This is the overlay on top of composer form
+// to hold all the ghost elements like drag & drop
+// ghosts or tooltips.
+.eb-composer-ghosts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: visible;
+    z-index: @eb-composer-ghosts-zindex;
+
+    > * {
+        position: absolute;
+    }
+}
+
+.mobile-show {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.eb-plupload-btn {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+@media(max-width: 1000px) {
+    .mobile-hide {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    .mobile-show {
+        display: block !important;
+        visibility: visible !important;
+
+        &.row-table {
+            display: table !important;
+        }
+
+        &.col-cell {
+            display: table-cell !important;
+        }
+    }
+}

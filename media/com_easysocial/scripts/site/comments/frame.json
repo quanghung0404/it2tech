@@ -1,0 +1,26 @@
+[
+    {
+        "library": [
+            "mentions"
+        ],
+        "script": [
+            "site/comments/item",
+            "uploader/uploader",
+            "site/comments/control"
+        ],
+        "view": [
+            "site/friends/suggest.item",
+            "site/friends/suggest.hint.search",
+            "site/friends/suggest.hint.empty",
+            "site/hashtags/suggest.item",
+            "site/hashtags/suggest.hint.search",
+            "site/hashtags/suggest.hint.empty"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_COMMENTS_LOADED_OF_TOTAL",
+            "COM_EASYSOCIAL_COMMENTS_STATUS_SAVING",
+            "COM_EASYSOCIAL_COMMENTS_STATUS_SAVED"
+        ],
+        "adapter": "EasySocial"
+    }
+]

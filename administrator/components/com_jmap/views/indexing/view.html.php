@@ -56,6 +56,20 @@ class JMapViewIndexing extends JMapView {
 		$this->items = $rows;
 		$this->lists = $lists;
 		
+		// Store number of indexed links found
+		$totalLinksHtml = JMapSeostatsServicesGoogleSearch::$numberIndexedPages;
+		if($totalLinksHtml && isset($totalLinksHtml[1])) {
+			$explodedChunks = explode(' ', $totalLinksHtml[1]);
+			if(JMapSeostatsServicesGoogleSearch::$paginationNumber > 0) {
+				$calculatedChunk = count($explodedChunks) - 4;
+			} else {
+				$calculatedChunk = 1;
+			}
+			if(is_numeric(str_replace(',', '.', $explodedChunks[$calculatedChunk]))) {
+				$this->totalPagesValue = $explodedChunks[$calculatedChunk];
+			}
+		}
+		
 		// Aggiunta toolbar
 		$this->addDisplayToolbar();
 			

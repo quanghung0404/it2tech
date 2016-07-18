@@ -1,0 +1,57 @@
+{
+    "style": [
+        "foundry-light",
+        "icons",
+        "reset",
+        "component-light",
+        "document",
+        "blocks",
+        "layout",
+        "brand",
+        "toolbar",
+        "featured",
+        "bloggers",
+        "entry",
+        "categories",
+        "comments",
+        "tags",
+        "login",
+        "patch"
+    ],
+
+    "style-modules": [
+        "modules"
+    ],
+
+    "style-dashboard": [
+        "foundry",
+        "reset",
+        "component",
+        "dashboard"
+    ],
+
+    "style-composer": [
+        "foundry",
+        "reset",
+        "component",
+        "document",
+        "composer",
+        "mediamanager",
+        "editor"
+    ],
+
+
+
+    "style-rtl": [
+        "rtl",
+        "patch-rtl"
+    ],
+
+    "style-dashboard-rtl": [
+        "dashboard-rtl"
+    ],
+
+    "style-composer-rtl": [
+        "composer-rtl"
+    ]
+}

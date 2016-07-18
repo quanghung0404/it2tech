@@ -1,0 +1,145 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.eb-tags-filter {
+	border-bottom: 1px solid @eb-tags-filter-border;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+
+	.col-cell + .col-cell { padding-left: 10px; }
+}
+
+.eb-tags-finder {
+	position: relative;
+
+	.form-control {
+		padding-left: 40px;
+        box-shadow: none;
+	}
+
+	.fa-tags {
+		color: @eb-tags-icon-color;
+		width: 40px;
+		height: 20px;
+		line-height: 20px;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -10px;
+		z-index: 10;
+		text-align: center;
+	}
+}
+
+@tag-list-spacing : 16px;
+
+.eb-tags-list {
+	margin: 0 -@tag-list-spacing/2;
+}
+
+.eb-tags-grid {
+	float: left;
+	padding: 0 @tag-list-spacing/2;
+	width: 100%/3;
+}
+
+.eb-tags-item {
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	padding: 5px 10px;
+	margin-bottom: @tag-list-spacing;
+	overflow: hidden;
+
+	> a {
+		color: #555;
+		float: left;
+		display: block;
+		overflow: hidden;
+		background: none;
+
+		* {
+			font-weight: inherit;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		b {
+			color: inherit;
+			max-width: 80%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		+ a {
+			float: none;
+			padding: 0 0 0 5px;
+
+			i {
+				color: @eb-text-light;
+				font-style: normal;
+				float: right;
+			}
+		}
+
+		.fa-rss-square {
+			color: @eb-tags-item-icon-color;
+		}
+	}
+}
+
+.eb-tag {
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	margin-bottom: @eb-gutter;
+}
+
+.eb-tag-avatar {
+	margin: 20px;
+}
+
+.eb-tag-head {
+	background: @eb-box-shade;
+	border-bottom: 1px solid @eb-box-divider;
+	border-radius: (@eb-box-radius - 1) (@eb-box-radius - 1) 0 0;
+	padding: @eb-gutter/1.5;
+}
+
+.eb-tag-name {
+	font-size: @eb-box-title-size;
+
+	a {
+		color: inherit;
+
+		span {
+			padding: 0 10px 0 0;
+		}
+	}
+}
+
+.eb-tag-bio {
+	margin: @eb-gutter/1.5;
+}
+
+.eb-tag-rss {
+	a {
+		color: inherit;
+	}
+
+	.fa-rss-square {
+		color: #e08d2d;
+	}
+}
+
+
+// RESPONSIVE
+
+&.w480 {
+	.eb-tags-grid {
+		width: 100% / 2;
+	}
+}

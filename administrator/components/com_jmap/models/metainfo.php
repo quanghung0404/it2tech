@@ -51,6 +51,12 @@ class JMapModelMetainfo extends JMapModel {
 		// Final name
 		$cachedSitemapFilename = 'sitemap_xml' . $sitemapLang . $sitemapDataset . $sitemapItemid . '.xml'; 
 		
+		// Detect PHP 7
+		$php7 = false;
+		if (version_compare(PHP_VERSION, '7.0', '>=')) {
+			$php7 = true;
+		}
+		
 		// Start processing
 		try {
 			// Now check if the file correctly exists
@@ -87,6 +93,11 @@ class JMapModelMetainfo extends JMapModel {
 						$isMatching = (stripos($url->loc, $searchFilter) !== false);
 						if(!$isMatching) {
 							array_splice($loadedSitemapXML, $index, 1);
+							
+							// Re-assign array
+							if($php7) {
+								$loadedSitemapXML = array_values($loadedSitemapXML);
+							}
 							continue;
 						}
 					}

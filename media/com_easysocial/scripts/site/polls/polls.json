@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "datetimepicker",
+            null
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "adapter": "EasySocial"
+    }
+]

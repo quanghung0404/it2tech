@@ -90,8 +90,16 @@ if ($this->orders['order'] == 's.ordering') {
 			$published = $row->published ? '<img alt="' . $altPublishing . '" src="' . JURI::base(true) . '/components/com_jmap/images/icon-16-tick.png" width="16" height="16" border="0" alt="unpublish" />' : JHtml::image('admin/publish_x.png', 'publish', '', true);
 		}
 		
+		// Check for the links type data source language
+		if($row->type == 'links' || $row->type == 'user') {
+			$dataSourceParams = json_decode($row->params);
+			if(isset($dataSourceParams->datasource_language) && $dataSourceParams->datasource_language != '*') {
+				$published .= '<img style="margin-left:10px" src="' . JUri::root(false) . 'media/mod_languages/images/' . $dataSourceParams->datasource_language . '.gif" alt="language_flag" />';
+			}
+		}
+		
 		$checked = null;
-		if($row->type == 'user' || $row->type == 'plugin' || ($row->type == 'content' && $this->cParams->get('multiple_content_sources', 0))) {
+		if($row->type == 'user' || $row->type == 'plugin' || $row->type == 'links' || ($row->type == 'content' && $this->cParams->get('multiple_content_sources', 0))) {
 			if($this->user->authorise('core.edit', 'com_jmap')) {
 				$checked = $row->checked_out && $row->checked_out != $this->user->id ? JHtml::_('jgrid.checkedout', $i, '', $row->checked_out_time, 'sources.', false) : JHtml::_('grid.id', $i, $row->id);
 			} else {

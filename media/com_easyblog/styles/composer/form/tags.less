@@ -1,0 +1,186 @@
+@textboxlistItemHeight: 26px;
+
+.eb-composer-tags-suggestions {
+    border: 1px solid @eb-composer-border-color;
+    border-radius: 0px 0px 3px 3px;
+    border-top: none;
+    background: #fff;
+    // padding: @eb-composer-gutter / 4;
+
+    &.is-showing {
+        .eb-composer-tags-selection {
+            border-top: 1px solid @eb-composer-border-color;
+            max-height: 160px;
+        }
+
+        .eb-composer-tags-toggle {
+            color: @link-color;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                border-top: 5px solid darken(@eb-composer-border-color, 10%);
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                margin-left: -5px;
+            }
+
+            &:after {
+                top: -1px;
+                border-top-color: #f5f5f5;
+            }
+
+            span {
+                color: #999;
+                display: inline-block;
+                font-size: 12px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &.is-empty {
+        small.empty-tags {
+            display: block;
+            font-size: 12px;
+            color: #bbb;
+            height: @textboxlistItemHeight + @eb-composer-gutter / 2 + 4;
+            line-height: @textboxlistItemHeight;
+            padding: @eb-composer-gutter / 4;
+            margin-bottom: -@eb-composer-gutter / 2;
+        }
+    }
+
+    &.is-busy {
+
+    }
+
+    &.is-autofilling {
+
+        .eb-composer-tags-toggle {
+            display: none;
+        }
+
+        .eb-composer-tags-autofill-indicator {
+            display: inline-block;
+        }
+    }
+}
+
+.eb-composer-tags-autofill-indicator {
+    display: none;
+}
+
+.eb-composer-tags-selection {
+    position: relative;
+    background: #f5f5f5;
+    max-height: 0px;
+    overflow: hidden;
+    .transition(max-height .3s ease);
+
+    // Hidden by default
+    .clearfix();
+
+    // Hints
+    > small {
+        display: none;
+        text-align: center;
+        height: 0;
+        overflow: hidden;
+
+        &.empty-tags {
+        }
+    }
+
+    // This is a top drop shadow
+    > s {
+        display: none;
+    }
+}
+
+.eb-composer-tags-selection-itemgroup {
+    padding: @eb-composer-gutter / 4;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 160px;
+    text-align: center;
+
+    > div {
+        background: lighten(@brand-primary, 40%);
+        border: 1px solid lighten(@brand-primary, 30%);
+        color: @brand-primary;
+        line-height: @textboxlistItemHeight - 2;
+        height: @textboxlistItemHeight;
+        padding: 0 8px;
+        margin: 2px;
+        padding: 0 4px;
+        cursor: pointer;
+        border-radius: 3px;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: bold;
+
+        &.active {
+            background: lighten(@brand-success, 40%);
+            border: 1px solid lighten(@brand-success, 30%);
+            color: @brand-success;
+        }
+
+        // &:hover {
+        //     color: #666;
+        //     border: 1px solid #aaa;
+        // }
+
+        &.is-used {
+            display: none;
+        }
+    }
+}
+
+.eb-composer-tags-actions {
+    .clearfix();
+    position: relative;
+    padding: @eb-composer-gutter / 4;
+    border-top: 1px solid @eb-composer-border-color;
+    min-height: 35px;
+
+    &.is-loading {
+        .eb-loader-o {
+            display: inline-block;
+        }
+    }
+
+    .eb-loader-o {
+        display: none;
+    }
+
+    > span {
+        cursor: pointer;
+    }
+}
+
+.eb-composer-tags-toggle {
+    position: absolute;
+    padding: 0 @eb-composer-gutter / 4;
+    height: 100%;
+    top: 0;
+    left: 0;
+    line-height: 35px;
+    .box-sizing(padding-box);
+    color: #aaa;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    > span {
+        display: none;
+    }
+
+    &:hover {
+        color: @link-color;
+    }
+}

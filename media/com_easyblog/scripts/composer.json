@@ -1,0 +1,28 @@
+[
+    {
+        "library": [
+            "scrolly",
+            "history"
+        ],
+        "script": [
+            "composer/debugger",
+            "composer/document",
+            "composer/blocks",
+            "composer/category",
+            "composer/tags",
+            "composer/revisions",
+            "composer/media",
+            "composer/posts",
+            "composer/templates",
+            "composer/blogimage",
+            "composer/location",
+            "composer/panels",
+            "composer/panels/post",
+            "composer/panels/authorship",
+            "composer/panels/category",
+            "composer/panels/seo",
+            "composer/panels/autopost"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

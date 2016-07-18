@@ -1,0 +1,300 @@
+// Filelist
+.eb-mm-filelist {
+	height: 100%;
+}
+
+// File
+.eb-mm-file {
+	position: relative;
+	cursor: pointer;
+	z-index: 1;
+
+	i {
+		font-size: 16px;
+	}
+}
+
+.eb-mm-file-tile-layout {
+
+	float: left;
+	width: 100% / @eb-mm-file-tile-columns;
+	position: relative;
+	border: 1px solid transparent;
+
+	.progress-bar {
+		font-size: 0; // reset
+		line-height: 0; // reset
+	}
+
+	i {
+		display: block;
+		padding-top: 100%;
+		font-size: 0;
+		line-height: 0;
+		z-index: 2;
+
+		background-color: transparent;
+		background-size: contain;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+
+		position: relative;
+	}
+
+	&.active {
+		// background: @brand-primary;
+
+		&:before {
+			.transform_(scale(1));
+			opacity: 1;
+		}
+
+		i {
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border: 2px solid @brand-primary;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+
+	// Container
+	> div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	// File name
+	span {
+		// Filename not displayed in tile mode.
+		display: none;
+	}
+
+	// File size
+	small {
+		font-weight: bold;
+		display: block;
+	}
+
+	.progress {
+		position: absolute;
+		z-index: 2;
+
+		margin: 0; // reset
+		bottom: 10%;
+		left: 10%; // (80% - 20%) / 2
+		width: 80%;
+		height: 6px;
+	}
+}
+
+.eb-mm-file-list-layout {
+
+	padding: 0 @eb-mm-gutter / 2;
+	font-size: 12px;
+	line-height: @eb-mm-file-size;
+	float: left;
+	width: 100% / @eb-mm-file-list-columns;
+
+	i {
+		margin-right: 5px;
+		color: #999;
+		float: left;
+		line-height: 24px;
+		height: 24px;
+		position: relative;
+		top: -1px;
+	}
+
+	> div {
+		.text-overflow();
+		line-height: 24px;
+		height: 24px;
+	}
+
+	b {
+		color: #aaa;
+		font-size: 14px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		line-height: @eb-mm-file-size;
+		text-align: center;
+		width: @eb-mm-file-size;
+
+		display: none;
+	}
+
+	&:hover {
+		background: @eb-mm-file-hover-bg;
+	}
+
+	&.active {
+		background: @brand-primary;
+		color: #fff;
+
+		i {
+			color: inherit;
+			opacity: 0.5;
+		}
+	}
+}
+
+// Views
+.eb-mm-filelist {
+
+	&.view-tile {
+
+		.clearfix();
+		padding: 1px; // For tile border
+
+		.eb-mm-file {
+			.eb-mm-file-tile-layout();
+		}
+	}
+
+	&.view-list {
+
+		.eb-mm-file {
+			.eb-mm-file-list-layout();
+		}
+	}
+}
+
+// Toggle newly uploaded item
+.eb-mm-folder {
+
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	// Show only newly uploaded items
+	&.filter-new {
+
+		.eb-mm-file {
+			display: none;
+
+			&.is-new {
+				display: block;
+			}
+		}
+
+		.eb-mm-filegroup-show-all-button {
+			display: none;
+		}
+
+		.eb-mm-filegroup {
+			display: none;
+
+			&.has-new-files {
+				display: block;
+			}
+		}
+	}
+
+	&.has-search-results {
+
+		.eb-mm-file {
+			display: none;
+
+			&.is-search-result {
+				display: block;
+			}
+		}
+
+		.eb-mm-filegroup-more {
+			display: block;
+		}
+
+		.eb-mm-filegroup-show-all-button {
+			display: none;
+		}
+
+		.eb-mm-filegroup {
+			display: none;
+
+			&.has-search-results {
+				display: block;
+			}
+		}
+	}
+
+	&.has-search-results[data-key=users] {
+
+		.eb-mm-filegroup {
+			display: block;
+		}
+
+		.eb-mm-file {
+			display: none;
+
+			&.is-search-result {
+				display: block;
+			}
+		}
+
+	}
+}
+
+.eb-mm-file {
+	&.type-upload {
+
+		// 0.5 opacity for upload thumbnails
+		i {
+			opacity: 0.5;
+		}
+	}
+}
+
+.eb-mm-filegroup.type-folder {
+	.eb-mm-file {
+		b {
+			display: block !important;
+		}
+	}
+}
+
+.eb-composer-ghosts {
+
+	.eb-mm-file {
+
+		&.layout-tile {
+			.eb-mm-file-tile-layout();
+		}
+
+		&.layout-list {
+
+			display: table;
+			background: fade(@eb-mm-file-hover-bg, 80%);
+			padding: @eb-gutter / 10 @eb-gutter / 5;
+			border-radius: @eb-mm-border-radius;
+
+			i {
+				display: table-cell;
+				color: #999;
+
+				// .cell-tight
+				width: 1px;
+				white-space: nowrap;
+			}
+
+			> div {
+				display: table-cell;
+				padding-left: 3px;
+				white-space: nowrap;
+			}
+
+			b {
+				display: none;
+			}
+		}
+	}
+}

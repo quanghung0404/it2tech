@@ -1,0 +1,127 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+// News app
+.app-news {
+    font-size: @baseFontSize;
+
+    .create-news {
+        margin-top: 5px;
+    }
+
+    &.news-form {
+
+        input.news-title {
+            font-size: 18px;
+            height: 50px;
+            line-height: 50px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        label.checkbox {
+            font-size: @baseFontSize;
+            margin-bottom: 15px;
+        }
+    }
+
+    &.is-empty {
+        .group-news-contents {
+            .group-news-items {
+                display: none;
+            }
+
+            .empty {
+                display: block;
+            }
+        }
+    }
+
+    .group-news-contents {
+        .empty {
+            // display: none;
+
+            // font-size: 18px;
+            // font-weight: 700;
+            // margin-top: 40px;
+            // padding: 60px 120px;
+            // border: 1px dotted #ccc;
+            // background: #f4f4f4;
+            // color: #666;
+            // text-align: center;
+        }
+
+        &.is-loading {
+            background: url("@{media_uri}/images/loading.gif") center center no-repeat;
+        }
+    }
+
+    // Viewing single article
+    .group-news-item {
+        .group-news-meta {
+            margin-bottom: 15px;
+
+            ul {
+                li {
+                    display: inline-block;
+
+                    +li {
+                        border-left: 1px dotted @esBorder;
+                        margin-left: 10px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .group-news-items {
+        margin-top: 10px;
+
+        > li + li {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dotted @esBorder;
+        }
+
+        .media {
+            .media-object {
+                margin-top: 10px;
+                border: 1px solid @esBorder;
+                border-radius: 4px;
+
+                img {
+                    padding: 1px;
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            .media-body {
+                h3 {
+                    padding-top: 0;
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .group-news-meta {
+            margin-bottom: 15px;
+
+            ul {
+                li {
+                    display: inline-block;
+
+                    +li {
+                        border-left: 1px dotted @esBorder;
+                        margin-left: 10px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

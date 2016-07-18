@@ -1,0 +1,28 @@
+div#fd.es.view-users .es-content {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+div#fd.es.view-users .es-item {
+  min-height: 120px;
+}
+div#fd.es.view-users .es-item .user-meta {
+  margin-top: 10px;
+}
+div#fd.es.view-users .es-item .user-meta > li {
+  margin: 0 10px 5px 0;
+}
+div#fd.es.view-users .es-item .users-actions {
+  margin-top: 20px;
+}
+div#fd.es.view-users .users-actions .btn {
+  font-size: 11px;
+}
+div#fd.es.view-users .users-actions .btn >i:before {
+  font-size: 11px;
+}
+div#fd.es.w480.view-users .es-content {
+  padding-left: 0;
+}
+div#fd.es.w480.view-users .users-actions .btn {
+  margin-bottom: 10px;
+}

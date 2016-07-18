@@ -1,0 +1,193 @@
+.es-albums {
+	.transition(opacity .6s ease-in-out);
+	opacity: 1;
+}
+.es-albums-date {
+	font-size: inherit;
+	line-height: 28px;
+	margin: 0 0 15px;
+	padding-left: 15px;
+	border-bottom: 1px dotted #ccc;
+
+	i {
+		margin-right: 0;
+	}
+}
+
+.es-album-item + .es-albums-date {
+	margin-top: 30px;
+}
+
+.es-item-actions {
+	position: relative;
+	.clearfix();
+
+	[class^="ies-"],
+	[class*=" ies-"] {
+		font-size: @fontSizeSmall;
+		width: 10px;
+	}
+
+	span:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.es-item-action-content {
+
+		max-width: 320px;
+		width: 320px;
+		margin-top: 8px;
+		padding: 5px;
+
+		color: #595959; // TODO: Locate source variable of this color
+
+		a {
+			color: @link-color;
+			display: inline-block;
+			padding: 0;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.viewport {
+			height: auto;
+			max-height: 280px;
+		}
+
+		.overview {
+			position: relative;
+		}
+
+		.es-close-button {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			padding: 0;
+		}
+
+		.loading-indicator {
+			display: none;
+		}
+
+		&.loading {
+			.loading-indicator {
+				display: block;
+			}
+		}
+
+		.es-comments {
+			margin-bottom: 2px;
+		}
+
+		.es-item-likes {
+			margin-bottom: 4px;
+		}
+	}
+
+	.btn-like {
+		.unlike-text { display: none; }
+		&.liked {
+			.like-text { display: none; }
+			.unlike-text { display: inline; }
+		}
+	}
+
+	.btn-counts {
+		position: absolute;
+		right: 0px;
+
+		&:hover, &:hover * {
+			text-decoration: none !important;
+		}
+
+		span + span {
+			margin-left: 3px;
+		}
+	}
+
+	b {
+		font-size: 6px;
+		position: relative;
+		top: -2px;
+	}
+}
+
+.es-album-actions-menu {
+	.arrow(6px, white, top, 10px, auto, 0, rgba(0, 0, 0, 0.2));
+	z-index: 3;
+	text-align: left;
+	width: 300px;
+	max-width: none;
+}
+// .es-privacy {
+// 	position: relative;
+// 	// background: red;
+// 	// text-align: right;
+// }
+
+.es-photo-caption-input {
+	.resizable(vertical);
+}
+
+[name=date-form] {
+	margin-left: 5px;
+	width: 235px;
+	input, select {
+		float: left;
+		text-align: right;
+		margin-bottom: 0px;
+	}
+	input {
+		width: 50px;
+	}
+	select {
+		width: 120px;
+		margin: 0 5px;
+		text-align: left;
+	}
+}
+
+
+// Loop items
+// ----------------
+
+.es-album-cover {
+	&.no-cover {
+		.es-album-image {
+			background-color: #f3f3f3;
+			background-image: url("@{site_base_uri}/../images/album-no-cover.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 64px;
+		}
+	}
+}
+
+.es-album-image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: @grayLighter;
+}
+
+.es-albums-pagination { //@extend .pagination
+	margin: 10px 0;
+	height: auto;
+	.pagination {
+		margin: 0;
+		height: auto;
+	}
+	ul {
+		> li {
+			a {
+				line-height: 38px;
+			}
+		}
+	}
+}

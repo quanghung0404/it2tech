@@ -1,0 +1,39 @@
+div#fd.es.mod-es-dating-search .es-item-grid > li {
+  margin-bottom: 1%;
+  width: 60px;
+}
+div#fd.es.mod-es-dating-search .es-location-autocomplete {
+  z-index: 25;
+}
+div#fd.es .es-dating-search-form .form-control {
+  width: 100%;
+}
+div#fd.es .es-dating-search-form .radio-inline + .radio-inline {
+  margin-left: 0;
+}
+div#fd.es .es-dating-search-form .es-control-input .control-label {
+  text-align: left;
+  width: auto;
+  margin-right: 10px;
+}
+div#fd.es .es-dating-search-form .es-control-input input {
+  width: 80px;
+}
+div#fd.es .es-dating-search-form .es-control-input .input-col {
+  width: 86px;
+  display: inline-block;
+}
+div#fd.es .es-dating-search-form.w480 .control-label {
+  width: 100%;
+  text-align: left;
+}
+div#fd.es .es-dating-search-form.w480 .control-label + div {
+  width: 100%;
+  clear: both;
+}
+div#fd.es .es-dating-search-form.w480 .es-control-input input {
+  width: 100%;
+}
+div#fd.es .es-dating-search-form.w480 .mod-search-distance__location-detect-text {
+  display: none;
+}

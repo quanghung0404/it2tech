@@ -1,0 +1,60 @@
+.compare-title {
+    border-bottom: 1px solid #ccc;
+    color: #555;
+    font-size: 24px;
+    line-height: 36px;
+    padding: 5px 0;
+    margin: 0 0 5px;
+}
+
+.compare-category {
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.compare-toolbar {
+    background: #f8f8f8;
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 30px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+
+
+    .col-cell {
+        position: relative;
+    }
+
+    .col-cell + .col-cell {
+        padding-left: 10px;
+    }
+}
+
+.compare-options,
+.compare-label,
+.compare-close {
+    background: #bbb;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 28px;
+    padding: 0 10px;
+}
+
+.compare-options {
+    background: #666;
+    font-weight: bold;
+    cursor: pointer;
+
+    .caret {
+        .opacity(.5);
+        margin: 0 0 0 3px;
+    }
+}

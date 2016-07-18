@@ -1,0 +1,828 @@
+//
+// Forms (customize for Easysocial)
+// --------------------------------------------------
+
+
+// Form fields reset
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+	// background: transparent; // Temp turn off reset #2692
+}
+
+
+.form-control {
+	// height: @input-height-base + 1;
+	&:focus {
+		border-color: @input-border;
+		outline:0px !important;
+		// -webkit-appearance:none;
+		.box-shadow(none);
+	}
+}
+
+legend {
+	padding-bottom: 10px; // Globally apply padding-bottom for legend.
+    font-size: 14px; // #3537
+    font-weight: bold;
+}
+label {
+    font-size: 12px; // #3537
+}
+//error text hidden by default
+//fixed text-note color
+.form-group {
+	position: relative;
+	.controls-error {
+		display: none;
+		.help-block {
+			margin-bottom: 5px;
+		}
+	}
+	.text-note {
+		color: @gray !important;
+	}
+	.label {
+		line-height: 18px;
+	}
+}
+[data-field-password-strength] {
+	display: none;
+	&[class*=" password_strength_"] {
+		display: inline;
+	}
+}
+// Warning
+.form-group.has-warning {
+	.form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
+}
+// Error
+.form-group.has-error {
+	.form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
+	//error text appear when .has-error
+	.controls-error {
+		display: inline-block;
+	}
+}
+// Success
+.has-success {
+  .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
+}
+// Success
+// .control-group.info {
+// 	.formFieldState(@infoText, @infoText, @infoBackground);
+// }
+// Loading
+.form-group.is-loading {
+	.controls-error {
+		display: inline-block;
+	}
+}
+
+.es-terms-field,
+.form-noresize {
+	resize: none;
+}
+
+
+// BS2 classes
+.form-actions {
+	.clearfix();
+	padding-left: 20px;
+	padding: 17px 20px 18px;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	background-color: @formActionsBackground;
+	border-top: 1px solid @esBorder;
+}
+
+//listing
+.input-vertical {
+	margin: 0;
+	> li {
+		margin-bottom: 5px;
+	}
+}
+
+
+//Custom forgot password field
+.es-forgotpass { // @extended .well
+	input[type="text"] {
+		margin: 0;
+	}
+}
+
+//terms field
+.es-terms-field {
+	height: 150px;
+}
+
+
+//mollom field
+.mollom-group {
+	img {
+		margin: 0 0 5px;
+	}
+	.mollom-wrap {
+		border: 1px solid @esBorder;
+		padding: 10px;
+		display: inline-block;
+		border-radius: 4px;
+		margin-bottom: 5px;
+	}
+}
+
+//file field
+.data-field-file-item {
+	margin: 5px 0;
+	.file-wrap {
+		display: inline-block;
+	}
+
+	.file-name {
+		background: #F5F5F5;
+		border: 1px dashed @esBorder;
+		border-radius: 3px 3px 3px 3px;
+		padding: 4px 5px;
+		display: inline-block;
+		.close {
+			position: relative;
+			font-size: 12px;
+			top: -1px;
+			margin-left: 10px;
+		}
+	}
+
+	.file-move {
+		cursor: move;
+		margin-right: 10px;
+	}
+}
+.data-field-file-item-drag {
+	background: #F5F5F5;
+	border: 1px dashed @esBorder;
+	border-radius: 3px 3px 3px 3px;
+	display: inline-block;
+}
+.alert.field-file-error { // extend .alert
+	display: inline-block;
+	height: 26px !important;
+	line-height: 12px !important;
+	margin: 0 0 3px !important;
+	min-height: 26px;
+	padding: 6px 25px 6px 30px !important;
+	&:before {
+		top: 4px !important;
+	}
+	.close {
+		top: -2px !important;
+		line-height: 13px;
+	}
+}
+
+// datepicker
+.datepicker-wrap {
+	position: relative;
+	display: inline-block;
+	&:before {
+		display: block;
+		width: 12px;
+		height: 12px;
+		line-height: 12px;
+		content: '';
+		position: absolute;
+		right: 8px;
+		top: 50%;
+		color: #888;
+		margin-top: -6px;
+
+		content: "\f073";
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		display: inline-block;
+		text-decoration: inherit;
+	}
+	input {
+		padding-right: 24px;
+	}
+
+	+ select + .chzn-container { // #3375 spacing for chosen
+		margin-top: 10px;
+	}
+}
+
+// Relationship
+.data-field-relationship {
+	position: relative;
+}
+.data-relationship-display {
+	position: relative;
+
+	width: 300px;
+	&[data-relationship-display-pending] {
+		border: 1px solid @esBorder;
+		border-radius: 3px;
+		.data-relationship-display-actions {
+			position: relative;
+			right: auto;
+			margin-top: 8px;
+		}
+	}// pending
+	&[data-relationship-display-confirm] {
+		.data-relationship-display-info {
+			padding-top: 5px;
+		}
+	}
+	.label {
+		margin-top: 5px;
+	}
+	.data-relationship-display-actions {
+		position: absolute;
+		top: 0px;
+		right: 5px;
+		a {
+			color: #bbb;
+		}
+		.btn-delete {
+			border: 1px solid @esBorder;
+			display: inline-block;
+			// height: 16px;
+			font-size: 12px;
+			line-height: 1.2;
+			padding: 3px 5px;
+			position: relative;
+			top: 4px;
+			border-radius: 3px;
+			text-align: center;
+            background: @esBackground;
+		}
+		.btn-approve,
+		.btn-reject {
+			position: relative;
+			// top: 22px;
+			// right: 5px;
+			font-size: 11px;
+			padding: 4px 6px;
+		}
+	}
+}
+&.w768 {
+	.data-relationship-display,
+	.data-relationship-form-target .media {
+		width: 100%;
+	}
+}
+&.w600 {
+	.data-relationship-display .data-relationship-display-actions,
+	.data-relationship-form-target {
+		.btn-delete {
+			padding: 4px 8px;
+			height: auto;
+			width: auto;
+			font-size: 16px;
+			line-height: 1.5;
+		}
+	}
+}
+.data-relationship-display-type {
+	position: relative;
+	// padding-top: 5px;
+	.btn-delete {
+		top: -2px;
+		right: 0;
+		position: absolute;
+		color: #bbb;
+
+	}
+}
+.data-relationship-display-info {
+	padding: 10px;
+	.media {
+		margin-top: 5px;
+	}
+}
+.data-relationship-form-target {
+
+}
+
+// Avatar
+.data-relationship-display-target {
+	img {
+		.square(40px);
+	}
+}
+
+
+// Relationship form
+.data-relationship-form-target {
+	position: relative;
+	top: 5px;
+	margin-bottom: 5px;
+	.media {
+		width: 300px;
+		// background: #f5f5f5;
+		position: relative;
+		padding: 5px;
+		margin-top: 5px;
+		border: 1px solid @esBorder;
+		border-radius: 3px;
+	}
+	.media-object {
+		img {
+			.square(40px);
+		}
+	}
+	.btn-delete {
+		color: #bbb;
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		text-align: center;
+
+		border: 1px solid @esBorder;
+		display: block;
+		width: 17px;
+		height: 16px;
+		font-size: 14px;
+		line-height: 9px;
+		padding: 1px 2px;
+		// position: relative;
+		// top: 4px;
+		border-radius: 3px;
+
+	}
+}
+
+// Avatar field
+[data-element="avatar"] {
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #d7d7d7;
+}
+.data-field-avatar {
+	.avatar-wrap-frame {
+		width: 136px;
+		height: 136px;
+		background: #eee;
+		padding: 4px;
+		position: relative;
+		border-radius: 3px;
+	}
+	.avatar-frame {
+
+		background-size: cover;
+		width: 128px;
+		height: 128px;
+		background-position: center center;
+		position: relative;
+		background-repeat: no-repeat;
+		margin: 0 0 10px;
+		&.avatar-frame-crop {
+			background-size: contain;
+			width: 100%;
+			height: 130px; // issues #2387
+		}
+	}
+	.avatar-viewport {
+		position: absolute;
+	}
+	.avatar-remove {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		a {
+			color: #fff !important;
+			background: #B2282A;
+
+			display: block;
+			width: 16px;
+			height: 16px;
+			line-height: 13px;
+			text-align: center;
+			border-radius: 2px;
+		}
+	}
+	.avatar-upload-field {
+	}
+}
+
+// Cover field
+.data-field-cover {
+	.cover-image-wrap {
+		background: #eee;
+		padding: 4px;
+		position: relative;
+		min-height: 50px;
+		border-radius: 3px;
+	}
+	.cover-image {
+		background-size: cover;
+		background-repeat: no-repeat;
+		&.cover-move {
+			cursor: move;
+		}
+	}
+
+	.cover-remove {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		a {
+			color: #fff !important;
+			background: #B2282A;
+
+			display: block;
+			width: 16px;
+			height: 16px;
+			line-height: 13px;
+			text-align: center;
+			border-radius: 2px;
+		}
+	}
+}
+
+// Textarea
+.data-field-textarea {
+	textarea {
+		min-height: 100px;
+	}
+}
+
+
+// Choice reorder position
+.fields-config-param-choice {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+// Choices
+.fields-config-param-choices {
+	// #2457
+	overflow-y: scroll;
+	max-height: 330px;
+	clear: both;
+
+	input[type='text'] {
+		width: 33%;
+	}
+	.es-state-default,
+	.es-state-featured {
+		position: relative;
+		// top: 5px; # 3751
+	}
+}
+
+// Birthday field
+.data-field-birthday-yearprivacy {
+	border: 1px @esBorder dashed;
+	padding: 0 10px 10px 10px;
+}
+&.w480 {
+	[data-field-datetime-day],
+	[data-field-datetime-month],
+	[data-field-datetime-year] {
+		width: 100% !important;
+		margin-bottom: 5px;
+	}
+}
+// Datetime field
+.data-field-datetime-yearprivacy {
+	border: 1px @esBorder dashed;
+	padding: 0 10px 10px 10px;
+	.es-title {
+		font-size: 12px;
+		margin: 5px 0;
+	}
+}
+
+// Multitextbox field
+.data-field-multitextbox-item {
+	+ .data-field-multitextbox-item {
+		margin-top: 10px;
+	}
+	.media-object {
+		float: left;
+	}
+	.item-move {
+		cursor: move;
+		margin-right: 10px;
+		position: relative;
+		top: 0;
+	}
+	.btn-del {
+		text-shadow: none;
+		color: #777;
+	}
+}
+
+// Multidropdown field
+.data-field-multidropdown-item {
+	+ .data-field-multidropdown-item {
+		margin-top: 10px;
+	}
+	.media-object {
+		float: left;
+	}
+	.item-move {
+		cursor: move;
+		margin-right: 10px;
+		position: relative;
+		top: 0;
+	}
+	select {
+		width: 70%;
+		display: inline;
+	}
+	.btn-del {
+		margin-left: 10px;
+		text-shadow: none;
+		color: #777;
+	}
+}
+
+// Address field
+.data-field-address {
+	input.form-control.has-error, select.form-control.has-error {
+		border-color: #a94442;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+		box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	}
+}
+
+
+// Joomla Editor
+.editor-wrap {
+	.btn {
+		border: 1px solid @esBorder;
+	}
+}
+
+//input group type="file"
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.input-group input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+
+
+// cta popup (temporary put here need to move to module)
+.mod-es-cta {
+    .es-splash-image {
+        background-size: cover;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .es-cta-info {
+        position: absolute;
+        width: 55%;
+        padding: 20px;
+        z-index: 2;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin: 15px 0;
+        }
+    }
+    .es-cta-actions {
+        position: absolute;
+        left: 60%;
+        text-align: center;
+        z-index: 2;
+    }
+    .es-cta-form,
+    .es-cta-login {
+        border: 1px solid #D6EEFC;
+        background: #fff;
+        padding: 15px;
+        border-radius: 5px;
+
+    }
+
+    .btn-es-facebook {
+        margin-bottom: 20px;
+    }
+
+    .es-cta-form {
+        + .es-cta-login {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+
+.es-field-datetime-group { // inline year/month/day
+    text-align: center;
+    display: table-cell;
+    select {
+        width: 90%;
+    }
+}
+.es-field-datetime-form { // calendar
+	box-shadow: none;
+	padding: 0;
+    display: table;
+    width: 100%;
+	&.with-border {
+		border: 1px solid @esBorder;
+	}
+    &.with-calendar {
+        padding-right: 34px; // 34px detect button + 5px gutter between button and input (gutter removed)
+    }
+	padding: 6px 10px;
+	// padding-left: 10px; // 10px padding
+	position: relative; // So detect location button will this parent its anchor
+
+	&.has-datetime {
+		.es-field-datetime-remove-button {
+			display: block;
+		}
+	}
+
+	.es-field-datetime-buttons {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		z-index: 2;
+
+		> * {
+			width: 34px;
+			height: 34px;
+			line-height: 34px;
+			text-align: center;
+			cursor: pointer;
+			float: right;
+			color: #666;
+			position: relative;
+
+			&:hover {
+				color: #5580BE;
+			}
+		}
+	}
+
+	.es-field-datetime-remove-button {
+		display: none;
+
+		i {
+			font-size: 8px;
+			position: relative;
+			top: -1px;
+		}
+	}
+
+	.es-field-datetime-textbox {
+		display: block;
+		padding: 0 0 0 20px;
+		width: 100%;
+
+		i {
+			position: absolute;
+			line-height: 32px;
+			width: 32px;
+			text-align: center;
+			top: 0;
+			left: 0;
+		}
+
+		input {
+			width: 100%;
+			padding: 0;
+			height: 22px !important;
+			line-height: 22px !important;
+			border: none !important;
+			background: none !important;
+			.box-shadow(~"none");
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+.es-field-startend-wrap {
+	border: 1px solid #E9E9E9;
+	padding: 5px;
+
+	.es-field-startend-legend {
+		font-weight: bold;
+		color: #bbb;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: 5px 0 10px 5px;
+	}
+}
+
+// General box layout with header and borders
+.es-field-box {
+	border: 1px solid #E9E9E9;
+	padding: 5px;
+	border-radius: 4px;
+
+	.es-field-box-header {
+		font-weight: bold;
+		color: #bbb;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: 5px 0 10px 5px;
+	}
+}
+
+// date picker
+[data-picker-toggle],
+[data-recurring-end-toggle] {
+    cursor: pointer;
+}
+.es-recurring-select,
+.es-recurring-daily-list {
+    width: 50%;
+}
+&.w320 {
+    .es-recurring-select,
+    .es-recurring-daily-list {
+        width: 100%;
+    }
+}
+.es-recurring-daily-list {
+    // .fd-reset-list();
+    border: 1px solid @esBorder;
+    padding: 0 10px 10px;
+}
+
+// loading indicator
+
+.es-form-loading {
+    background-image: url('@{media_uri}/images/loading.gif') !important;
+    background-repeat: no-repeat !important;
+}
+input.es-form-loading {
+    background-position: right 10px center !important;
+}
+textarea.es-form-loading {
+    background-position: right 10px top 10px !important;
+}
+
+
+
+// form-actions text-align:
+.es-recur-action-text {
+    position: relative;
+    left: 60%;
+    width: 40%;
+}
+&.w480 {
+    .es-recur-action-text {
+        left: 5%;
+        width: 100%;
+    }
+    .btn-edit-save {
+        + .btn-edit-save {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+// Scale down recaptcha in narrow view #4058
+@media (max-width: 369px) {
+[data-field-recaptcha] {
+	transform:scale(0.86);
+	transform-origin:0;
+	-webkit-transform:scale(0.86);
+	transform:scale(0.86);
+	-webkit-transform-origin:0 0;
+	transform-origin:0 0;
+	}
+}

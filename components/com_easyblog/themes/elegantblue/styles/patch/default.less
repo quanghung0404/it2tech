@@ -1,0 +1,411 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+
+// FEATURED POST
+
+.eb-showcases {
+	background: url(../images/eblog-entry.png) #444;
+	color: @theme-text-color;
+}
+
+.eb-showcase-title {
+	color: #fff;
+}
+
+// POST LISTING
+
+.eb-posts {
+	.eb-post {
+		background: url(../images/eblog-entry.png) @theme-color-secondary;
+		border: 1px solid @theme-box-border;
+		color: @theme-text-color;
+		padding: @theme-spacing;
+	}
+}
+
+.eb-post-side {
+	background: url(../images/avatar-wrap-a.png) 0 0;
+	width: 88px;
+	margin-bottom: 22px;
+	padding-top: 22px;
+	top: -22px;
+	position: relative;
+
+	&:after {
+		background: url(../images/avatar-wrap-b.png) 0 0;
+		content: "";
+		display: block;
+		width: 88px;
+		height: 22px;
+
+		position: absolute;
+		bottom: -22px;
+	}
+
+	> div {
+		+ div {
+			&:before {display: none;}
+		}
+	}
+
+	.fa {
+		font-size: 14px;
+		color: lighten(@theme-color-primary, 50%);
+		border-color: lighten(@theme-color-primary, 35%);
+	}
+
+	+ .eb-post-content {
+		margin: 0 0 0 105px;
+
+		.eb-post-foot {
+			margin-left: (-105px)-15px;
+		}
+	}
+
+	&.no-avatar {
+		width: 88px;
+
+		+ .eb-post-content {
+			margin: 0 0 0 105px;
+		}
+	}
+}
+
+.eb-post-author-avatar {
+	a {
+		background: none;
+		border: 1px solid rgba(0, 0, 0, 0.5);
+		border-radius: 0;
+		padding: 0;
+
+		img {
+			border-radius: 0;
+			width: 64px;
+			height: auto;
+		}
+	}
+}
+
+.eb-post-title {
+	color: @theme-link-color;
+	margin-bottom: 15px;
+}
+
+.eb-post-meta {
+	a {color: @theme-link-color;}
+}
+
+.eb-post-image {
+
+}
+
+.eb-post-foot {
+	background: @theme-color-primary;
+	border-top: 1px solid @theme-box-border;
+	color: lighten(@theme-color-primary, 60%);
+	clear: both;
+	padding: @theme-spacing - 5 @theme-spacing;
+	margin: @theme-spacing -@theme-spacing -@theme-spacing;
+	position: relative;
+	font-size: 11px;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		height: 1px;
+		width: 100%;
+		background: lighten(@theme-color-primary, 10%);
+	}
+
+	> div {
+		padding-right: 15px;
+
+		+ div {
+			border-left: 1px solid @theme-box-border;
+			border-left: 1px solid rgba(0, 0, 0, 0.25);
+			padding-left: 15px;
+		}
+	}
+
+	.fa {
+		font-size: 14px;
+		color: lighten(@theme-color-primary, 40%);
+	}
+
+	a {
+		color: @theme-link-color !important;
+		background: none !important;
+		border: 0 !important;
+		padding: 0;
+		box-shadow: none;
+		text-shadow: none;
+	}
+}
+
+
+// EMPTY BLOCK
+
+.eb-empty {
+	background: lighten(@theme-color-secondary, 10%);
+	border-color: @theme-box-border;
+	color: @theme-text-color;
+}
+
+
+//PAGINATION
+
+.eb-pager {
+	background: @theme-color-primary;
+	border: 1px solid @theme-box-border;
+	position: relative;
+
+	> a, 
+	> div {
+		position: relative;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background: lighten(@theme-color-primary, 10%);
+		}
+	}
+
+	> a {
+		color: @theme-link-color;
+	}
+
+	> div {
+		border-color: darken(@theme-color-primary, 10%);
+	}
+
+	.fa,
+	a.disabled {
+		color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+
+// CATEGORIES & AUTHORS LISTING
+
+.eb-category,
+.eb-author {
+	background: @theme-color-secondary;
+	border: 1px solid @theme-box-border;
+	border-radius: 0;
+	color: @theme-text-color;
+
+	a {
+		color: @theme-link-color;
+	}
+
+	.btn-default {
+		background: lighten(@theme-color-primary, 10%) !important;
+		border-color: @theme-box-border;
+		text-shadow: none;
+	}
+}
+
+.eb-authors-head {
+	background: @theme-color-primary;
+	border-bottom-color: @theme-box-border;
+	border-radius: 0;
+}
+
+.eb-category-subscribe > span + span {
+	border-color: @theme-box-border;
+}
+
+
+.eb-stats-nav {
+	> li {
+		.btn {
+			background: @theme-color-primary;
+			text-shadow: none;
+			border-color: @theme-box-border !important;
+
+			&:hover {
+				background: lighten(@theme-color-primary, 3%) !important;
+			}
+		}
+
+		&.active {
+			.btn {
+				background: lighten(@theme-color-primary, 10%) !important;
+			}
+		}
+	}
+}
+
+
+// CALENDAR
+
+.eb-calendar {
+	background: @theme-color-secondary;
+
+	tbody > tr > td {
+		border-color: @theme-box-border;
+	}
+
+	tbody > tr > td.empty > small {
+		background: lighten(@theme-color-secondary, 2.5%)
+	}
+
+	tbody > tr > td.has-posts > div {
+		background: lighten(@theme-color-secondary, 10%);
+		color: @theme-link-color;
+	}
+}
+
+.eb-calendar-control {
+	> td {
+		background: darken(@theme-color-secondary, 2%);
+	}
+	> td.eb-calendar-month > a { 
+		color: @theme-link-color; 
+	}
+
+	 > td.eb-calendar-previous,
+	 > td.eb-calendar-next {
+	 	border-color: @theme-box-border;
+	 }
+}
+
+.eb-calendar-days {
+	> td {
+		background: @theme-color-primary;
+
+		&:first-child,
+		&:last-child {
+			border-color: @theme-box-border;
+		}
+	}
+}
+
+// ENTRY
+
+.eb-entry {
+	background: @theme-color-secondary;
+	border: 1px solid @theme-box-border;
+	padding: @theme-spacing;
+	color: @theme-text-color;
+
+	a {
+		color: @theme-link-color;
+	}
+}
+
+.eb-entry-nav {
+	background: @theme-color-primary;
+	position: relative;
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background: lighten(@theme-color-primary, 10%);
+	}
+	> div > a {
+		background: @theme-color-primary;
+		color: @theme-link-color;
+		position: relative;
+
+		.fa {
+			color: lighten(@theme-color-primary, 20%);
+		}
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background: lighten(@theme-color-primary, 10%);
+		}
+
+		&:hover {
+			background: lighten(@theme-color-primary, 2.5%);
+		}
+	}
+}
+
+// COMMENTS 
+
+.eb-comment,
+.eb-comment-form {
+	background: url(../images/eblog-entry.png) @theme-color-secondary !important;
+	border: 1px solid @eb-box-border;
+	border-radius: @eb-box-radius;
+	color: @theme-text-color;
+	padding: @theme-spacing;
+	margin: @eb-gutter/2 0 0;
+}
+
+.eb-comment + .eb-comment-form {
+	margin: 5px 0 0;
+}
+
+.eb-comment-foot {
+	span {
+		+ span {
+			&:before {
+				background: darken(@theme-text-color, 30%);
+			}
+		}
+	}
+}
+
+.eb-comment-form {
+	.markItUpHeader {
+		background: @theme-color-secondary;
+
+		> ul > li > a {
+			background-color: lighten(@theme-color-secondary, 5%) !important;
+			border: 0 !important;
+		}
+	}
+}
+
+.eb-comment-editor {
+	.markItUpContainer .markItUpExpanding .markItUpEditor {
+		background: darken(@theme-color-secondary, 3%);
+		color: @theme-text-color;
+	}
+
+	.markItUpFooter {
+		background: @theme-color-secondary; 
+	}
+}
+
+
+
+// AVATARS
+
+.eb-comment-avatar,
+.eb-entry-author-avatar {
+	img {
+		border-radius: 0;
+	}
+}
+
+.eb-entry-author-recents {
+	background: lighten(@theme-color-secondary, 1.5%);
+}

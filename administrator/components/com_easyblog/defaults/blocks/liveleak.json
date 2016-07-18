@@ -1,0 +1,9 @@
+{
+	"group": "embeddables",
+	"element": "liveleak",
+	"title": "Live Leak",
+	"description": "Allows you to embed videos from Live Leak",
+	"keywords": "video, videos, liveleak videos, live leak, media, streaming",
+	"published": 1,
+    "ordering": 40
+}

@@ -1,0 +1,8 @@
+[
+    {
+        "view": [
+            "fields/user/checkbox/item"
+        ],
+        "adapter": "EasySocial"
+    }
+]

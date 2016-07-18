@@ -1,0 +1,61 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+.eb-login {
+    position: relative;
+    padding: 20px 20%;
+    border: 1px solid @eb-box-border;
+    border-radius: @eb-box-radius;
+
+    .eb-login-title {
+        font-size: 18px;
+    }
+}
+
+.eb-login-help {
+    margin: 0 0 8px;
+    
+    > div {
+        width: 1%;
+        padding: 0 4px 0 0;
+
+        + div {
+            padding: 0 0 0 4px;
+        }
+    }
+}
+
+.sourcecoast.login{
+    margin-top: 10px;
+    text-align: center;
+
+    .social-login { 
+        float: none !important;
+        display: inline-block !important;
+
+        > a {
+            margin-top: 15px;
+        }
+    }
+}
+
+/* RESPONSIVE DISPLAY : 480px -----------*/
+
+.eb-login.w480 {
+    padding: 20px;
+
+    .eb-login-help {
+        > div {
+            display: block;
+            width: auto;
+            padding: 0;
+
+            + div {
+                padding-top: 8px;
+            }
+        }
+    }
+}

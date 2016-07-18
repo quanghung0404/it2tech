@@ -1,0 +1,124 @@
+//
+// Popovers notifications
+// --------------------------------------------------
+// Global popbox notifications styling for joomla modules
+// 1. notifications
+// 2. conversations
+// 3. frends request
+// Responsive control at /media/com_easysocial/styles/ui.less
+
+@import "popbox/variables";
+
+&.popbox-notifications {
+
+	// Have to import again, when EasySocial styling not loaded. #1466
+	@import "bootstrap/media";
+	@import "approve-list";
+
+	font-family: @baseFontFamily;
+	font-size: @baseFontSize;
+	width: 420px;
+	font-size: @baseFontSize;
+	min-height: 64px;
+	//elements
+	.es-avatar {
+		width: 16px !important;
+		height: 16px !important;
+		img {
+			width: 16px !important;
+			height: 16px !important;
+		}
+	}
+	.popbox-body {
+		width: 100%;
+		max-height: 250px;
+		overflow: auto;
+		padding: 0;
+	}
+
+	.btn-es.btn-small,
+	.btn-small[class^="btn-es-"],
+	.btn-small[class*=" btn-es-"] {
+		font-size: 11px !important;
+		padding: 1px 8px !important;
+	}
+	// 1. notifications
+	// 2. conversations
+	.notifications-result,
+	.conversations-result {
+		padding-bottom: 10px;
+		i.ies-earth{
+			color: #999999;
+			margin-left: 1px;
+		}
+		.object-image {
+			.clearfix();
+			position: relative;
+			background-color: @popboxNoticeBackground;
+			border: 1px solid transparent;
+			display: inline-block;
+			margin-left: 7px;
+			outline: none;
+			padding: 1px;
+			position: relative;
+			> span {
+				width: 52px;
+				height: 38px;
+				background-color: transparent;
+				background-position: center 25%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				display: block;
+			}
+		}
+
+		.is-unread {
+			.notice-message {
+				background: @popboxNoticeUnreadBackground !important;
+
+			}
+		}
+		.notice-message {
+			padding: 4px 10px;
+
+			.es-avatar {
+				margin-top: 5px !important;
+			}
+			&:hover {
+				background: @popboxNoticeHoverBackground !important;
+			}
+			> a {
+				color: @popboxNoticeColor !important;
+				padding: 0 5px !important;
+				white-space: normal !important;
+				display: block !important;
+				&:hover {
+					text-decoration: none !important;
+				}
+			}
+		}
+	}
+
+	// 3. friend request
+	.friends-result {
+		padding-bottom: 10px;
+		.loading-indicator {
+			display: none !important;
+		}
+		.btn.view-profile {
+			// display: none !important;
+		}
+
+		.es-action-wrap {
+			clear: both;
+			position: relative;
+			padding: 5px 0 0;
+		}
+	}
+
+	.type-broadcast.is-unread > .notice-message {
+		background: #ffc !important;
+	}
+}
+
+// Responsive at /media/com_easysocial/styles/ui.less

@@ -1,0 +1,13 @@
+[
+    {
+        "script": [
+            "site/dashboard/apps",
+            "site/dashboard/feeds",
+            "site/dashboard/sidebar",
+            "site/stream/filter",
+            "site/dashboard/groups",
+            "site/dashboard/events"
+        ],
+        "adapter": "EasySocial"
+    }
+]

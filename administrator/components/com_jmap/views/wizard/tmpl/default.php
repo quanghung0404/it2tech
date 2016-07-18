@@ -25,6 +25,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 		<div class="panel-body">
 	    	<?php echo $this->customIcon; ?>
 	    	<?php echo $this->pluginIcon; ?>
+	    	<?php echo $this->linksIcon; ?>
 	  	</div>
 	</div>
 </div>

@@ -1,0 +1,103 @@
+.es-photo-form {
+	margin-top: 15px;
+	position: relative;
+}
+
+.es-photo-form-fields {
+	border: 1px solid @esAlbumFormBorder;	
+	border-radius: 3px;
+	min-height: 120px;
+	background: @esAlbumFormBackground;
+}
+
+.es-photo-title-field {
+	display: block;
+	width: 100%;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    height: 33px !important;
+    padding-right: 40px !important;
+    border: none !important;
+    border-bottom: 1px dotted @esAlbumFormBorder !important;
+    .box-shadow(~"none !important");
+    border-radius: 3px 3px 0px 0px !important;
+    margin: 0 !important;
+
+    &[readonly] {
+    	background: #f9f9f9;
+    }
+}
+
+.es-photo-caption-field {
+	display: block;	
+	width: 100%;
+	background: @esAlbumFormBackground;
+	border: none !important;
+	.box-shadow(~"none !important");
+	margin: 0 !important;
+	resize: none;
+	height: 61px;
+
+    &[readonly] {
+    	background: #f9f9f9;
+    }
+}
+
+.es-photo-meta-field {
+	position: relative;
+	padding: 0 140px 8px 6px;
+
+	.es-photo-date {
+		position: absolute;
+		top: 0;
+		right: 8px;
+		padding-left: 6px;
+		border-left: none;
+
+		> i {
+			position: relative;
+	    	top: -3px;
+		}
+
+		> span {
+			max-width: 120px;
+			.text-overflow();
+		}
+
+		.dropdown-menu {
+			left: auto;
+			right: 0;
+		}
+	}
+
+	.es-photo-location {
+		width: 100%;
+
+		> i {
+			position: absolute;
+		}
+
+		> span {
+			padding-left: 15px;
+			width: 100%;
+			.text-overflow();
+		}	
+	}
+}
+
+.es-photo-location-form {
+
+	padding: 5px;
+
+	.es-location-textbox input {
+		width: 360px;
+	}
+}
+
+.es-photo-privacy {
+    margin-right: 5px;
+    margin-top: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;	
+}

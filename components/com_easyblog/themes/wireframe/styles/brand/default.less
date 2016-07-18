@@ -1,0 +1,43 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.eb-brand {
+    margin: 0 0 @eb-gutter/2;
+
+    .fa {
+        font-size: 14px;
+    }
+}
+
+.eb-brand-name {
+    font-size: @eb-title-size-header;
+    line-height: @eb-title-size-header+6;
+    margin: 0 0 @eb-gutter/3;
+}
+
+.eb-brand-subscriber {
+    margin-top: 10px;
+
+    > span {
+        + span {
+            margin: 0 0 0 15px;
+        }
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        i {
+            color: @eb-icon-light;
+        }
+    }
+}

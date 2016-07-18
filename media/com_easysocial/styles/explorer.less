@@ -1,0 +1,298 @@
+@import "explorer/popup";
+
+.fd-explorer {
+	width: 100%;
+	border: 1px solid @esExplorerBorder;
+	position: relative;
+	.clearfix();
+
+	.alert {
+		margin-bottom: 0px;
+		border-radius: 0px;
+	}
+	&.is-loading {
+
+		.fd-explorer-browser-action {
+			i.es-loading-indicator.fd-small {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				display: block !important;
+				background-position: center right !important;
+				background-color: @esExplorerBackground !important;
+				padding: 0 !important;
+				top: 0;
+			}
+		}
+	}
+}
+
+.fd-explorer-content {
+	position: relative;
+	height: 400px;
+
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.fd-explorer-header {
+	width: 100%;
+	padding: 10px;
+	background: @esExplorerBackground;
+	border-bottom: 1px solid @esBorder;
+	.clearfix();
+	button.btn {
+		text-shadow: none;
+
+		&.btn-es {
+			color: @esExplorerHeaderBtnColor !important;
+			[class^="ies-"] {
+				color: @esExplorerHeaderIconColor !important;
+			}
+		}
+	}
+
+	.upload-limit{
+		margin-left: 3px;
+		font-size: 11px;
+	}
+}
+.fd-explorer-sidebar-action {
+	width: 140px;
+}
+
+.fd-explorer-browser-action {
+	position: relative;
+	margin-left: 140px;
+
+	.btn + .btn {
+		margin-left: 10px;
+	}
+
+	i.es-loading-indicator.fd-small {
+		display: none !important;
+	}
+}
+
+.fd-explorer-titlebar {
+	position: relative;
+	border-bottom: 1px solid @esBorder;
+	.fd-explorer-titlebar-side,
+	.fd-explorer-titlebar-content {
+		font-size: 11px;
+		.clearfix();
+		display: table-cell;
+	}
+	.fd-explorer-titlebar-side {
+		color: @esExplorerSideColor;
+		background: @esExplorerSideBackground;
+		padding: 5px;
+		border-right: 1px solid @esBorder;
+		width: 150px;
+		text-align: center;
+	}
+
+	.fd-explorer-titlebar-content {
+		padding: 5px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-left: 155px;
+	}
+
+	.checkbox-inline input[type="checkbox"] {
+		margin-top: 0;
+	}
+}
+
+.fd-explorer-sidebar {
+	width: 150px;
+	height: 100%;
+	// position: absolute;
+	top: 0;
+	left: 0;
+	background: @esExplorerSideBackground;
+	z-index: 2;
+
+	position: relative;
+	border-right: 1px solid @esBorder;
+	display: table-cell;
+	vertical-align: top;
+}
+
+
+.fd-explorer-browser {
+	padding-left: 150px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: @esExplorerBrowserBackground;
+	z-index: 1;
+
+	margin-left: 0;
+	height: 100%;
+	left: 0;
+	// min-height: 420px; //not works for display table-cell
+	display: table-cell; // for overflow hidden issue have to use table-cell
+	vertical-align: top;
+
+	i.es-loading-indicator.fd-small {
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		display: none !important;
+	}
+}
+
+
+.fd-explorer-viewport {
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.fd-explorer-file-group {
+	display: none;
+
+	&.is-active {
+		display: block;
+	}
+}
+
+.fd-explorer-file {
+	padding: 5px 6px;
+	cursor: pointer;
+	position: relative;
+	min-height: 52px;
+
+	.btn-file-remove {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 3;
+		display: none;
+	}
+	.file-title {
+		font-weight: bold;
+		.text-overflow();
+	}
+	.file-meta{
+		color: @esExplorerSideColor;
+		font-size: 11px;
+	}
+	&.is-checked {
+		background: @esExplorerFileCheckedBackground;
+	}
+	&.is-selected {
+		// #gradient > .vertical(fadeout(@blue, 30%), fadeout(@blueDark, 30%));
+		background: @esExplorerFileSelectededBackground;
+		.file-title,
+		.file-meta,
+		[class^="ies-"] {
+			color: @white;
+		}
+		// text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	}
+	+ .fd-explorer-file {
+		border-top: 1px solid @grayLighter;
+	}
+
+	&:hover {
+		.btn-file-remove {
+			display: block;
+		}
+	}
+}
+
+.fd-explorer-folder {
+	cursor: pointer;
+	padding: 6px;
+	position: relative;
+
+	&.is-active {
+		// #gradient > .vertical(fadeout(@grayLight, 30%), fadeout(@gray, 30%));
+		background: @esExplorerFolderBackground;
+		color: @esExplorerFolderColor;
+		text-shadow: @esExplorerFolderTextShadow;
+
+		.fd-folder-remove-button {
+			color: @esExplorerFolderColor;
+		}
+	}
+
+	.fd-folder-remove-button {
+		display: none;
+		position: absolute;
+		top: 6px;
+		right: 6px;
+		color: @esExplorerFolderBackground;
+
+		i {
+			font-size: 10px;
+		}
+	}
+
+	&:hover {
+		.fd-folder-remove-button {
+			display: block;
+		}
+	}
+
+	// Core folder cannot be removed
+	&[data-id="0"]:hover {
+		.fd-folder-remove-button {
+			display: none;
+		}
+	}
+}
+
+[data-alertlog] {
+	margin: 0;
+}
+
+.fd-explorer-funky {
+	border-bottom: 1px solid @esExplorerBorder;
+	padding: 10px;
+	margin: 0;
+}
+
+.funkybar {
+	margin: 10px 0px;
+}
+
+.service-state {
+
+	> span { display: none };
+
+	&.state-idle {
+		.idle {
+			display: block;
+		}
+	}
+
+	&.state-busy {
+		.working {
+			display: block;
+
+			i.es-loading-indicator.fd-small {
+				display: inline-block !important;
+				padding: 7px 29px 0 0 !important;
+			}
+		}
+	}
+}
+
+.togglefunky {
+	display: none;
+}
+
+.fd-explorer {
+	.insert-button {
+		display: none;
+	}
+	.close-button {
+		display: none;
+	}
+}

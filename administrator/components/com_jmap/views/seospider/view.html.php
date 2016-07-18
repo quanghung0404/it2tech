@@ -24,8 +24,14 @@ class JMapViewSeospider extends JMapView {
 	 */
 	protected function addDisplayToolbar() {
 		$doc = JFactory::getDocument();
+		$user = JFactory::getUser();
 		JToolBarHelper::title( JText::_( 'COM_JMAP_SITEMAP_SEOSPIDER' ), 'jmap' );
 
+		// Check user permissions to edit record
+		if ($user->authorise('core.edit', 'com_jmap')) {
+			JToolBarHelper::custom('seospider.exportXls', 'download', 'download', 'COM_JMAP_EXPORT_XLS', false);
+		}
+		
 		JToolBarHelper::custom('cpanel.display', 'home', 'home', 'COM_JMAP_CPANEL', false);
 	}
 	
@@ -88,7 +94,8 @@ class JMapViewSeospider extends JMapView {
 				'COM_JMAP_SEOSPIDER_OPEN_DETAILS',
 				'COM_JMAP_SEOSPIDER_TITLE_DETAILS',
 				'COM_JMAP_SEOSPIDER_DESCRIPTION_DETAILS',
-				'COM_JMAP_SEOSPIDER_SELECTED_LINK_DETAILS'
+				'COM_JMAP_SEOSPIDER_SELECTED_LINK_DETAILS',
+				'COM_JMAP_EXPORT_XLS'
 		);
 		$this->injectJsTranslations($translations, $doc);
 						

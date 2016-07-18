@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Grid Artist Layout">
+		<message>
+			Displays an artist (grid albums view)
+		</message>
+	</layout>
+	<state>
+		<name>Grid Artist Layout</name>
+		<description>Grid Artist Layout</description>
+		<url addpath="/components/com_muscol/elements">
+			<param name="id" type="artistselect" default="0" label="Artist" description="Select an artist" />
+		</url>
+		<params>
+		</params>
+	</state>
+	
+	<fields
+                name="request"
+                addfieldpath="/components/com_muscol/elements"
+        >
+                <fieldset name="request">
+                        <field
+                                name="id"
+                                type="artistselect"
+                                label="Artist"
+                                description="Select an artist"
+								required="true"
+                        />
+                </fieldset>
+        </fields>
+</metadata>

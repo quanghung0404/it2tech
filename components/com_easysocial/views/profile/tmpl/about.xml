@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EASYSOCIAL_PROFILE_LAYOUT_ABOUT">
+		<message>
+			<![CDATA[COM_EASYSOCIAL_PROFILE_LAYOUT_ABOUT_DESC]]>
+		</message>
+		<view>profile</view>
+		<layout>about</layout>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request" addfieldpath="/administrator/components/com_easysocial/models/fields">
+			<field name="id" type="easysocial_user" label="COM_EASYSOCIAL_JFIELD_SELECT_USER" required="true" description="COM_EASYSOCIAL_JFIELD_SELECT_USER_DESC" />
+		</fieldset>
+	</fields>
+
+</metadata>

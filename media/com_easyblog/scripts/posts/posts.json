@@ -1,0 +1,10 @@
+[
+    {
+        "script": [
+            "posts/tools",
+            "posts/reports",
+            "ratings"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

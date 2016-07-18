@@ -1,0 +1,391 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/**
+ * Location area.
+ */
+
+.form-location {
+
+	.location-coordinates{
+
+		margin-top: 20px;
+		display: none;
+
+		background: @esLocationBackground;
+		border: 1px solid @esLocationBorder;
+		color: @esLocationColor;
+		padding: 12px;
+
+		> h5{
+			margin-top: 0;
+			height: 30px;
+			line-height: 30px;
+		}
+
+		hr.separator{
+			margin-top: 3px;
+		}
+
+		.removeLocation{
+			font-size: 11px;
+			font-weight: normal;
+		}
+
+		.coordinate-actions{
+			display: none;
+			margin-top: 20px;
+
+			a{
+				font-size: 11px;
+			}
+		}
+
+		.editCoordinates{
+			font-size: 11px;
+		}
+
+		input{
+			text-align: center;
+			width: 80px;
+		}
+
+		&.editMode{
+			input {
+				display: inline-block;
+			}
+			.coordinates-info{
+				display: none;
+			}
+
+			.coordinate-actions{
+				display: block;
+			}
+		}
+
+		input{
+			display: none;
+		}
+	}
+
+	.location-map{
+		margin: 10px 2px 0 0;
+		display: none;
+
+		.map{
+			border: 1px solid @esLocationBorder;
+			background: @esLocationBackground;
+		}
+	}
+
+	.location-address{
+		width: 100%;
+
+		input{
+			width: 70%;
+		}
+
+		a.btn{
+			font-size: 11px;
+		}
+	}
+
+}
+
+
+.es-locations {
+	position: relative;
+
+	.fd-loading {
+		display: none;
+		background-position: center center;
+		padding: 0;
+	}
+
+	&.is-detectable {
+		.es-location-detect-button {
+			// Inline block is used to center the element.
+			display: inline-block;
+		}
+	}
+
+	&.is-busy {
+
+		.fd-loading {
+			display: block;
+			padding: 0;
+		}
+
+		> .ies-location-2 {
+			display: none;
+		}
+
+		.es-location-remove-button {
+			display: none;
+		}
+	}
+
+	&.has-location {
+
+		.es-location-remove-button {
+			display: block;
+		}
+
+		.es-location-detect-button {
+			display: none !important;
+		}
+
+		.es-location-map-image {
+			opacity: 1;
+		}
+	}
+	
+	&.has-suggested {
+		.es-location-suggestions {
+			display: block;
+		}
+	}
+
+}
+
+.es-location-form {
+	box-shadow: none;
+	border: 0;
+	padding: 0;
+
+	padding: 6px 0;
+	padding-left: 10px; // 10px padding
+	padding-right: 34px; // 34px detect button + 5px gutter between button and input (gutter removed)
+
+	position: relative; // So detect location button will this parent its anchor
+
+	&.has-border {
+		border: 1px solid @esBorder !important;
+	}
+}
+
+.es-location-map {
+	background-image: url(@esLocationImagePath);
+	background-position: center center;
+	background-repeat: repeat;
+
+	height: auto;
+	padding-top: 100/4%; // 4:1 aspect ratio
+	position: relative;
+	text-align: center;
+
+	// The first <div> container turns the padded area
+	// into normal area, fixes detect location button
+	// showing way off bottom on iOS.
+	> *,
+	> * > * {
+		width: 100%;
+		height: 100% !important;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.es-location-buttons {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 2;
+
+	> * {
+		width: 34px;
+		height: 34px;
+		line-height: 34px;
+		text-align: center;
+		cursor: pointer;
+		float: right;
+		color: #666;
+		position: relative;
+
+		&:hover {
+			color: #5580BE;
+		}
+	}
+}
+
+.es-location-map-image {
+	z-index: 1;
+	opacity: 0;
+}
+
+.es-location-map-actions {
+	position: relative !important;
+	text-align: center; // This centers the detect button
+	z-index: 2;
+}
+
+.es-location-detect-button {
+	display: none;
+
+	position: relative;
+	top: 50%;
+	margin-top: -20px;
+
+	float: none; // Some templates have floats on button.
+}
+
+.es-location-remove-button {
+	display: none;
+
+	i {
+		font-size: 8px;
+		position: relative;
+		top: -1px;
+	}
+}
+
+.es-location-autocomplete {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	padding: 0;
+	overflow: hidden;
+	display: none;
+	margin-top: 6px;
+
+	// Sticky shadow
+	> b {
+		position: absolute;
+		width: 100%;
+		left: 0px;
+		height: 1px;
+		padding: 0px 5px;
+		z-index: 9;
+		display: none;
+
+		> b {
+			height: 5px;
+			width: 100%;
+			margin-top: -5px;
+			.box-shadow(0 0 5px 0 #000000);
+			display: block;
+		}
+	}
+
+	&.active {
+		display: block;
+		.es-location-suggestions {
+			display: block;
+			top: 0px;
+		}
+		.es-location-autocomplete-shadow {
+			opacity: 1;
+		}
+	}
+
+	&.has-shadow {
+		> b {
+			display: block;
+		}
+	}
+
+	&.is-sticky {
+		.es-location-suggestions {
+			border-top: 0px;
+			border-radius: 0px 0px 3px 3px;
+			// weird 1px issue hence 9px
+			// 5px bottom for animation
+			margin: 0px 9px 5px 10px;
+		}
+	}
+}
+
+.es-location-suggestions {
+	display: none; // display none by default
+	border: 1px solid @esBorder;
+	border-radius: 3px;
+	.box-shadow(0 3px 2px rgba(0,0,0,.15));
+
+	background: @esLocationBackground;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 160px;
+	position: relative;
+	z-index: 8;
+	// top: -160px;
+	font-size: 11px;
+}
+
+.es-location-suggestion {
+	z-index: 10;
+	padding: 5px;
+	cursor: pointer;
+
+	+ .es-location-suggestion {
+		border-top: 1px solid @esLocationSuggestionsBorder;
+	}
+
+	&.active {
+		background: @esLocationSuggestionsActiveBackground;
+	}
+}
+
+.es-location-textbox {
+	display: block;
+	padding: 0;
+	width: 100%;
+
+	input {
+		width: 100%;
+		padding: 0;
+		height: 22px !important;
+		line-height: 22px !important;
+		border: none !important;
+		background: none !important;
+		.box-shadow(~"none");
+		margin-bottom: 0 !important;
+	}
+}
+
+// Profile content
+.profile-data-table {
+    .es-locations { // #3897 reserve space for privacy
+        margin-right: 50px;
+    }
+}
+.es-locations[data-location-base] {
+    position: relative;
+
+    &:hover {
+        .es-location-help {
+            display: block;
+        }
+    }
+}
+.es-location-help {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2px 4px;
+    z-index: 5;
+}
+
+// #fd.es.popbox-location
+&.popbox-location {
+	width : 400px;
+	height: 200px;
+	padding: 3px;
+    .arrow {
+        display: none;
+    }
+    * {
+        .box-sizing(border-box);
+    }
+	img {
+		// Fixes overflowing border when location image is still loading in popbox
+		height: 200px;
+        max-width: 100%;
+	}
+}

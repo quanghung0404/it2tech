@@ -1,0 +1,172 @@
+.eb-mm {
+    .fill-area();
+
+    .eb-composer-viewport-content {
+        padding: @eb-composer-gutter;
+        padding-top: @eb-composer-gutter + @eb-composer-toolbar-size;
+    }
+
+    .pageslide-viewport {
+        position: absolute;
+    }
+}
+
+.eb-mm-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.eb-composer-toolbar-set[data-name=media-places],
+.eb-composer-toolbar-set[data-name=media-folder],
+.eb-composer-toolbar-set[data-name=media-loading] {
+    display: table;
+}
+
+.eb-composer-toolbar-set[data-name=media-select] {
+}
+
+.eb-composer-toolbar-set[data-name=media-search] {
+}
+
+.eb-mm-pages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .user-select(none);
+}
+
+.eb-mm-messages {
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+    background: rgba(255,255,255,0.85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: none;
+
+    > div {
+        display: none;
+        width: 100%;
+        height: 100%;
+        padding: 0 30px;
+    }
+}
+
+.eb-mm {
+
+    &.has-messages {
+        .eb-mm-messaages {
+            display: block;
+        }
+
+        .eb-mm-pages {
+            border-top: 30px solid transparent;
+        }
+    }
+
+    &.is-selecting {
+
+        .eb-mm-messages {
+            display: block;
+        }
+
+        .eb-mm-msg-select {
+            display: table;
+            font-weight: bold;
+            background: #f0f9fc;
+            color: #2390b0;
+
+            .fa-info-circle {
+                margin-right: 3px;
+            }
+        }
+
+        .eb-mm-pages {
+            border-top: 30px solid transparent;
+        }
+
+        .eb-mm-info-insert-button {
+            .insert-text {
+                display: none;
+            }
+
+            .select-text {
+                display: inline;
+            }
+        }
+    }
+
+    &.show-foldermove-message {
+
+
+        .eb-mm-messages {
+            display: block;
+        }
+
+        background: #f0f9fc;
+
+        .eb-mm-msg-move {
+            display: table;
+            background: #C8E6C9;
+        }
+
+        .file-message {
+            display: none;
+        }
+
+        .folder-message {
+            display: table-cell;
+            color: #E8F5E9;
+            font-weight: bold;
+        }
+
+        .eb-mm-pages {
+            border-top: 30px solid transparent;
+        }
+    }
+
+    &.show-filemove-message {
+
+
+        .eb-mm-messages {
+            display: block;
+        }
+
+        .file-message {
+            display: table-cell;
+            color: #388E3C;
+            font-weight: bold;
+        }
+
+        .folder-message {
+            display: none;
+
+        }
+
+        .eb-mm-msg-move {
+            display: table;
+            background: #E8F5E9;
+        }
+
+        .eb-mm-pages {
+            border-top: 30px solid transparent;
+        }
+    }
+
+    .eb-mm-info-insert-button {
+        .select-text {
+            display: none;
+        }
+    }
+}
+
+.eb-composer-pagination {
+    > a,
+    > div {
+        padding: 10px;
+        overflow: hidden;
+    }
+}

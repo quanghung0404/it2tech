@@ -1,0 +1,10 @@
+[
+    {
+        "language": [
+            "PLG_FIELDS_JOOMLA_EMAIL_VALIDATION_REQUIRED",
+            "PLG_FIELDS_JOOMLA_EMAIL_VALIDATION_RECONFIRM_REQUIRED",
+            "PLG_FIELDS_JOOMLA_EMAIL_VALIDATION_NOT_MATCHING"
+        ],
+        "adapter": "EasySocial"
+    }
+]

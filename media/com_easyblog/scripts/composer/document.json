@@ -1,0 +1,15 @@
+[
+    {
+        "script": [
+            "composer/document/toolbar",
+            "composer/document/artboard",
+            "composer/redactor10",
+            "composer/document/overlay"
+        ],
+        "library": [
+            "expanding",
+            "selectionchange"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

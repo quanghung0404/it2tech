@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * @version		1.0.1
+ * @package		muscol
+ * @copyright	2009 JoomlaMusicSolutions.com
+ * @license		GPLv2
+ */
+
+.points img{
+cursor:pointer;
+}
+.message_green{
+color:#FFFFFF;
+font-weight:bold;
+background-color:#009900;
+text-align:center;
+padding:5px;
+}
+
+div.icon-48-album {	background: url(images/vinyl_48.png) no-repeat left; }
+div.icon-48-artist {	background: url(images/user_48.png) no-repeat left; }
+div.icon-48-format {	background: url(images/cd_48.png) no-repeat left; }
+div.icon-48-genre {	background: url(images/sitemap_48.png) no-repeat left; }
+div.icon-48-type {	background: url(images/types_48.png) no-repeat left; }
+div.icon-48-tag {	background: url(images/tag_48.png) no-repeat left; }
+div.icon-48-comment {	background: url(images/comment_48.png) no-repeat left; }
+div.icon-48-rating {	background: url(images/star_48.png) no-repeat left; }
+
+.cover{
+	background-color:#CFC;
+	border:1px solid #060;
+	padding:5px;
+}
+
+.discogs_release{
+	margin-bottom:5px;
+	
+	padding:5px;
+	background-color:#eee;
+	border:1px solid #999;
+}
+
+.individual_release{
+	margin-bottom:5px;
+	margin-left:30px;
+	
+	padding:5px;
+	
+}
+
+.ajax-loading {
+
+	background: url(images/spinner.gif) no-repeat center;
+}
+
+.searching_discogs {
+	background: url(images/spinner.gif) no-repeat left;
+	
+}
+#searching_discogs {
+
+	padding-left:20px;
+}
+
+#discogs_release_tracklist{
+	padding:10px;
+}
+#return_discogs{
+	margin-top:10px;
+}
+.advice{
+	background-color:#CFC;
+	border:1px solid #060;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.fast_add_content_input{
+	background-color:#EBEEF4 ;
+	padding:10px;
+	-moz-border-radius:4px;
+	margin-right:20px;
+	width:400px;
+	float:left;
+}
+.clear{
+	clear:both;
+}
+.fast_add_content {
+	-moz-border-radius:4px;
+	border:1px solid #999;
+	margin-bottom:10px;
+	padding:5px;
+}
+.fast_add_content h2{
+	color:#3B5998;
+	margin:0px;
+	padding:0px;
+	margin-bottom:5px;
+	font-size:16px;
+}
+.advice_discogs{
+	background-color:#F99;
+	border:1px solid #F00;
+	padding:5px;
+	margin-top:5px;
+}
+.files_in_folder{
+	background-color:#EBEEF4 ;
+	padding:10px;
+	-moz-border-radius:4px;
+	margin-right:20px;
+	width:400px;
+	float:left;
+}
+.create_album{
+
+	background: #EBEEF4 url(../../../templates/khepri/images/toolbar/icon-32-new.png) 2px 2px no-repeat;
+	padding:10px;
+	padding-left:40px;
+	-moz-border-radius:4px;
+	margin-right:20px;
+	width:370px;
+	float:left;
+}
+#return_new_album_folder{
+	/*background-color:#EBEEF4 ;
+	padding:10px;
+	-moz-border-radius:4px;*/
+
+}
+
+.remark{
+	background-color:#FC0;
+	color:#C00;
+}
+
+.alert{
+	background-color:#900;
+	color:#FFF;
+	padding:10px;	
+}
+.alert a{
+	color:#FFF;
+}
+.text-success {
+color: #468847;
+}
+
+.return-btn .btn {
+
+padding: 19px 24px;
+margin-bottom: 27px;
+font-size: 30px;
+line-height: 1;
+text-align: center;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}

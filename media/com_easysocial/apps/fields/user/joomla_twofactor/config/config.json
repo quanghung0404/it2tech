@@ -1,0 +1,21 @@
+{
+	"searchable": false,
+	"required": false,
+	"default": false,
+	"visible_display": {
+		"default": false,
+		"registration": false
+	},
+
+	"title": {
+		"default": "PLG_FIELDS_JOOMLA_TWOFACTOR_DEFAULT_TITLE"
+	},
+
+	"description": {
+		"default": "PLG_FIELDS_JOOMLA_TWOFACTOR_DEFAULT_DESCRIPTION"
+	},
+
+	"visible_mini_registration": {
+		"default": false
+	}
+}

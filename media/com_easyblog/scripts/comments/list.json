@@ -1,0 +1,8 @@
+[
+    {
+        "library": [
+            "markitup"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

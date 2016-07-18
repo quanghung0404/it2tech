@@ -1,0 +1,566 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+/*
+Main structure to control profile header
+
+.es-profile-header
+    .es-profile-header-heading (with-cover, without-cover)
+        .es-profile-header-cover
+        .es-profile-header-avatar
+    .es-profile-header-body
+    .es-profile-header-footer
+
+Styleguide: /index.php?option=com_easysocial&view=styleguide&layout=render&file=header
+*/
+
+
+// Layout
+// ----------------
+
+.es-profile {
+    margin-top: 15px;
+}
+.es-profile-header {
+    border: 1px solid @esHeaderBorder;
+}
+
+.es-profile-header-heading {
+    position: relative;
+}
+.es-profile-header-body {
+    margin: 10px 10px 0 205px;
+    min-height: 80px;
+}
+
+.es-profile-header-action {
+    width: 160px;
+    > div {
+        +div {
+            margin-top: 3px;
+        }
+        &:last-child {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            line-height: 15px;
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: left;
+            overflow: hidden;
+            .text-overflow();
+            display: block;
+        }
+    }
+    .fa {
+        width: 12px;
+        height: 12px;
+        text-align: center;
+    }
+}
+
+.es-profile-header-footer {
+    border-top: 1px solid @esHeaderBorder;
+    margin-top: 10px;
+    padding: 15px 10px;
+    overflow: hidden;
+}
+
+&.w480 .es-profile-header-footer{
+    > nav {
+        float: none !important;
+        display: block;
+        overflow: hidden;
+
+        + nav {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+        }
+    }
+
+    .es-list-vertical-divider {
+        > span {
+            float: left;
+            width: 50%;
+            margin: 5px 0;
+            padding: 0;
+            border-left: 0;
+
+            i {
+                width: 16px;
+                text-align: center;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+}
+
+// elements
+.es-profile-header-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+.es-teaser-about {
+    .fa {
+        width: 12px;
+        height: 12px;
+        text-align: center;
+    }
+}
+
+
+// Profile header avatar block
+// ----------------
+.es-profile-header-avatar {
+    background: rgba(0,0,0,0.1);
+    padding: 1px;
+
+    position: absolute;
+    bottom: -90px;
+    left: 10px;
+    z-index: 2;
+
+    >a {
+        border: 4px solid @esBackground;
+        display: block;
+        width: 180px;
+        height: 180px;
+
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+    .es-flyout-content {
+        bottom: 4px;
+        width: 100%;
+        .es-avatar-menu {
+
+            padding: 0 4px;
+            width: 100%;
+            text-align: center;
+        }
+        .es-flyout-button {
+            background: rgba(0,0,0,.6);
+            display: block;
+            color: #fff;
+            padding: 10px 0;
+        }
+    }
+}
+
+
+// Profile header cover block
+// ----------------
+.es-profile-header-cover {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: @esBackground;
+
+    &[data-es-photo] { // if popup photo exists
+        cursor: pointer;
+    }
+    .transition(all .5s ease);
+
+    &.es-cover-small {
+        width: 160px;
+        height: 60px;
+        img {
+            height: 56px;
+            width: 156px;
+        }
+    }
+
+    .es-cover-image {
+        width: 100%;
+        height: 100%;
+        background-color: #ccc;
+        background-size: cover;
+        background-position: 50% 50%;
+        cursor: move;
+        display: none;
+    }
+
+    .es-cover-hint {
+
+        // Vertically center the hint
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 2;
+
+        // Horizontally center fluid child content
+        text-align: center;
+        width: 30%; // If width: 100% unable to drag on the area #3730
+        margin-left: 35%;
+
+        // This is hidden except when parent is
+        // paired with .editing or .loading classnames.
+        opacity: 0;
+        .transition(opacity .2s ease);
+
+        // Hint content
+        > span {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: -15px;
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: none; /* Reversed should be inline-block */
+        }
+    }
+
+    .es-cover-loading-overlay {
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 1;
+    }
+
+    .es-flyout-content { // top dark area
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        background: rgba(0,0,0,.6);
+        padding: 10px;
+        cursor: default;
+        .es-cover-menu { // @extend dropdown_
+            text-align: right;
+        }
+        .es-flyout-button { // @extend dropdown-toogle_
+            color: #fff;
+        }
+        .es-cover-dropdown-menu { // @extend dropdown-menu
+            right: 0;
+            left: auto;
+        }
+    }
+
+    .es-cover-done-button,
+    .es-cover-cancel-button {
+        display: none;
+    }
+    .es-cover-done-button {
+        float: right;
+    }
+    .es-cover-cancel-button {
+        float: left;
+    }
+    .es-cover-hint-text {
+        color: #333;
+    }
+    // !important is used because .loading preceeds .editing
+    // when both classnames are used together.
+    &.loading {
+
+        .es-cover-hint {
+            opacity: 1;
+
+            // Hint content
+            > span {
+                display: inline-block;
+
+                // Loading indicator
+                .fd-loading {
+                    display: inline-block !important;
+                }
+
+                // Drag hint text
+                .es-cover-hint-text {
+                    display: none !important;
+                }
+            }
+        }
+
+        .es-cover-loading-overlay {
+            display: block;
+        }
+    }
+
+    &.editing {
+
+        .es-cover-hint {
+            opacity: 1;
+
+            // Hint content
+            > span {
+                display: inline-block;
+
+                // Loading indicator
+                .fd-loading {
+                    display: none;
+                }
+
+                // Drag hint text
+                .es-cover-hint-text {
+                    display: inline-block;
+                }
+            }
+        }
+
+        // When user holds down to drag, the cover hint fades out
+        &.active {
+            .es-cover-hint {
+                opacity: 0;
+            }
+
+            .es-flyout-content {
+                opacity: 0;
+            }
+        }
+
+        .es-flyout-content {
+            opacity: 1;
+        }
+
+        .es-cover-viewport {
+            display: block;
+        }
+
+        .es-cover-menu {
+            display: none;
+        }
+
+        .es-cover-image {
+            display: block;
+        }
+
+        .es-cover-done-button,
+        .es-cover-cancel-button {
+            display: inline-block;
+        }
+    }
+
+
+    &.no-cover {
+
+        .es-cover-menu {
+            .divider.for-cover-remove-button {
+                display: none;
+            }
+
+            li[data-cover-remove-button] {
+                display: none;
+            }
+
+            li[data-cover-edit-button] {
+                display: none;
+            }
+        }
+    }
+}
+
+// Upload dialog form
+.es-cover-form {
+
+    .es-cover-file {
+        width: 100%;
+    }
+
+    .es-cover-filename {
+        display: none;
+        line-height: 16px;
+    }
+
+    &.loading {
+        .es-cover-file {
+            display: none;
+        }
+        .es-cover-filename {
+            display: block;
+        }
+    }
+}
+
+.es-avatar-form {
+
+    .es-avatar-file {
+        width: 100%;
+    }
+
+    .es-avatar-filename {
+        display: none;
+        line-height: 16px;
+    }
+
+    &.loading {
+        .es-avatar-file {
+            display: none;
+        }
+        .es-avatar-filename {
+            display: block;
+        }
+    }
+}
+
+
+// Without cover
+// ----------------
+.without-cover {
+    .es-profile-header-avatar {
+        >a {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    + .es-profile-header-body {
+        margin: 10px 10px 0 115px;
+    }
+}
+&.w480 {
+    .es-profile-header-heading.without-cover {
+        height: 80px;
+    }
+}
+
+// Reponsive for profile-header
+&.w480 {
+    .es-profile-header {
+
+        .es-flyout-content {
+            .opacity(1);
+            background-color: transparent;
+        }
+
+        .es-profile-header-avatar {
+            bottom: -10px;
+            left: 50%;
+            margin-left: -40px;
+            > a {
+                width: 80px;
+                height: 80px;
+            }
+
+            .es-flyout-content {
+            }
+            .es-avatar-menu {
+                height: 100%;
+            }
+            .es-flyout-button {
+                color: transparent;
+                background-color: transparent;
+            }
+        }
+        .es-profile-header-body {
+            margin: 10px;
+        }
+        .es-profile-header-action {
+            width: 100%;
+            float: none !important;
+            margin: 10px 0;
+        }
+    }
+}
+
+// Event listing
+.ed-profile-header--event-list-item {
+    .es-profile-header-body {
+        margin-left: 105px;
+    }
+    .es-cover-container {
+        padding-top: 18%;
+    }
+    .es-profile-header-action {
+        position: absolute;
+        right: 10px;
+    }
+}
+.es-profile-header__options {
+     position: relative;
+     right: 10px;
+     top: 20px;
+     z-index: 2;
+}
+
+// Group listing
+.ed-profile-header--group-list-item {
+    .es-profile-header-body {
+        margin-left: 85px;
+    }
+    .es-cover-container {
+        padding-top: 18%;
+    }
+    .es-profile-header-action {
+        position: absolute;
+        right: 10px;
+    }
+    .es-profile-header-avatar {
+        bottom: -40px;
+    }
+}
+&.w320 {
+    .ed-profile-header--group-list-item {
+        .es-cover-container {
+            padding-top: 40%;
+        }
+    }
+}
+.es-profile-header-calendar {
+    background: #fff;
+    padding: 1px;
+
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    bottom: -60px;
+    left: 10px;
+    z-index: 2;
+    border: 1px solid @esHeaderBorder;
+
+    &__wrap {
+        position: relative;
+        top: 45%;
+        transform: translateY(-50%);
+    }
+    &__date-mth {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    &__date-day {
+        font-size: 30px;
+    }
+}
+.es-profile-header-footer__rsvp-wrap {
+    line-height: 28px;
+}
+&.w480 {
+    .events-content-wrapper {
+        .ed-profile-header--event-list-item {
+            .es-profile-header-body {
+                margin-left: 10px;
+                margin-top: 40px;
+            }
+            .es-cover-container {
+                padding-top: 22%;
+            }
+        }
+        .es-profile-header-calendar {
+            bottom: auto;
+            top: 10px;
+        }
+    }
+}
+&.w320 {
+
+    .events-content-wrapper {
+        .ed-profile-header--event-list-item {
+            .es-profile-header-body {
+                margin-top: 60px;
+            }
+        }
+    }
+}

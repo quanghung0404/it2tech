@@ -1,0 +1,273 @@
+@import "@{global}/popbox/variables";
+@import "@{site}/popbox/variables";
+
+&.popbox.popbox-profile {
+	width: 420px !important;
+	height: 215px !important;
+	background-color: @popboxBackground !important;
+	border-radius: 1px;
+	padding: 0;
+	border: 1px solid @popboxBorder;
+	.box-shadow(@popboxBoxShadow);
+	&.top-left {
+		.arrow {
+			border-top-color: @popboxFooterBackground;
+		}
+	}
+	.profile-details {
+		position: absolute;
+		z-index: 2;
+		bottom: 73px;
+		left: 0;
+		color: @popboxDetailsColor;
+
+		padding: 20px 10px 5px 86px;
+		width: 100%;
+		height: 61px;
+
+		#gradient > .vertical-three-colors(rgba(255, 255, 255, 0), rgba(0, 0, 0, .1), 30%,rgba(0, 0, 0, .5));
+		.profile-title {
+			font-weight: bold;
+			font-size: 13px;
+			> a {
+				color: @popboxDetailsColor !important;
+				&:hover {
+					text-decoration: underline !important;
+					background: none !important;
+				}
+			}
+		}
+		.profile-title,
+		.profile-desp {
+			text-shadow: @popboxDetailsTextShadow;
+			.text-overflow();
+		}
+	}
+	.popbox-cover {
+		display: block;
+		width: 100%;
+		height: 140px;
+		background: @popboxCoverBackground;
+		position: absolute;
+
+		> div {
+			width: 100%;
+			height: 100%;
+		}
+	}//cover
+	.es-online-status {
+		position: absolute;
+		bottom: 117px;
+		left: 77px;
+		right: auto;
+		top: auto;
+	}
+	.popbox-avatar {
+		position: absolute;
+		z-index: 2;
+		left: 10px;
+		// top: 90px;
+		bottom: 50px;
+		border-radius: 2px;
+		overflow: visible;
+		width: 64px;
+		height: 64px;
+		border: 2px solid @popboxAvatarBorder;
+		img {
+			width: 60px;
+			height: 60px;
+			background: @popboxAvatarBackground;
+			display: block;
+			max-width: none;
+		}
+	}//avatar
+	.popbox-info {
+		position: absolute;
+		width: 100%;
+		padding-left: 85px;
+		bottom: 32px;
+	}
+
+	//button-group
+	.btn-group {
+		display: inline-block;
+		font-size: 0;
+		position: relative;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+	.pull-right {
+		float: right;
+	}
+	.btn-es {
+		display: inline-block;
+		// .ie7-inline-block();
+		outline: 0;
+		padding: 4px 12px;
+		margin-bottom: 0; // For input.btn
+		font-size: @baseFontSize;
+		line-height: @baseLineHeight;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+		//.buttonBackground(@popboxBtnBackground, @popboxBtnBackgroundHighlight, @popboxBtnColor, @popboxBtnTextShadow);
+		border: 1px solid @popboxBtnBorder;
+		*border: 0; // Remove the border to prevent IE7's black border on input:focus
+		border-bottom-color: darken(@popboxBtnBorder, 10%);
+		border-radius: @baseBorderRadius;
+		// .ie7-restore-left-whitespace(); // Give IE7 some love
+		.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+
+		// Hover state
+		&:hover {
+			color: @popboxBtnColor;
+			text-decoration: none;
+			background-position: 0 -15px;
+			background-color: @popboxBtnHoverBackground;
+
+			// transition is only when going to hover, otherwise the background
+			// behind the gradient (there for IE<=9 fallback) gets mismatched
+			.transition(background-position .1s linear);
+		}
+
+		// Focus state for keyboard and accessibility
+		&:focus {
+			.tab-focus();
+		}
+
+		// Active state
+		&.active,
+		&:active {
+			background-image: none;
+			outline: 0;
+			.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+		}
+
+		// Disabled state
+		&.disabled,
+		&[disabled] {
+			cursor: default;
+			background-image: none;
+			.opacity(.65);
+			.box-shadow(none);
+		}
+
+	}//btn
+
+
+	.btn-group {
+		+ .btn-group {
+			margin: 0;
+			left: -5px;
+		}
+	}
+	.btn-friends {
+		border-radius: 3px;
+		// border-right: none;
+	}
+	.btn-message {
+		border-radius: 0 3px 3px 0;
+		position: relative;
+		left: -2px;
+	}
+
+
+	.popbox-footer {
+		background: @popboxFooterBackground;
+		position: absolute;
+		width: 100%;
+		height: 40px;
+		bottom: 0px;
+		padding: 7px 10px;
+
+		a:focus {
+			outline: none;
+		}
+	}
+	.popbox-items {
+		margin: 0 !important;
+		> li {
+			width: 31%;
+			display: inline-block !important;
+			text-align: center !important;
+			margin: 0 -3px 0 0 !important;
+		}
+	}
+	// Main 3 buttons. Friends, albums and followers.
+	.popbox-item-info {
+		border-left: 1px solid @popboxFooterBackground !important;
+		padding: 2px 2px 4px !important;
+		font-size: 11px !important;
+		line-height: 14px !important;
+		width: 100% !important;
+		height: 36px !important;
+		overflow: hidden !important;
+		> a {
+			// color: @popboxItemColor;
+			.getContrast(@popboxFooterBackground);
+
+			&:hover {
+				.popbox-item-total {
+					text-decoration: underline !important;
+				}
+			}
+		}
+		.popbox-item-total {
+			line-height: 14px !important;
+			.text-overflow();
+			display: block;
+			font-weight: bold;
+		}
+		.popbox-item-text {
+			line-height: 14px !important;
+		}
+	}
+
+	.fd-nav {
+		position: relative;
+	}
+
+}//popbox
+
+&.popbox.popbox-timezone {
+	.es-timezone-select {
+		// text-align: center;
+	}
+	.es-timezone-block {
+		display: block;
+		padding: 10px;
+		border-top: 1px solid @esBorder;
+		&:hover {
+			background: #fafafa;
+		}
+
+		&:first-child {
+			border-top: 0;
+		}
+
+		&.es-timezone-by a {
+			font-size: @fontSizeSmall;
+			color: #aaa;
+		}
+	}
+}
+
+// Responsive for popbox notification
+@media (max-width: 680px) {
+
+	&.popbox.popbox-profile {
+		width: 98% !important;
+		left: 5px !important;
+		right: 5px !important;
+		.arrow {
+			display: none !important;
+		}
+		.popbox-item-info {
+			// width: 90px !important;
+		}
+	}
+}
+
+
+
+

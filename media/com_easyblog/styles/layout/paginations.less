@@ -1,0 +1,104 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+.eb-pager {
+    background: @eb-box-shade;
+    border: 1px solid @eb-box-border;
+    border-radius: @eb-box-radius;
+    color: @eb-text-dark;
+    margin-top: @eb-gutter*1.5;
+    overflow: hidden;
+
+    a {
+        cursor: pointer;
+    }
+
+    .fa-chevron-left {
+        margin-right: 3px;
+    }
+
+    .fa-chevron-right {
+        margin-left: 3px;
+    }
+
+  
+    
+    &__fast-first-link,
+    &__pre-link {
+        float: left;
+    }
+
+    &__fast-last-link,
+    &__next-link {
+        float: right;
+    }
+
+    &__fast-first-link,
+    &__fast-last-link {
+        min-width: 50px;
+    }
+    &__prev-link,
+    &__next-link {
+        min-width: 100px;
+    }    
+
+    &__fast-first-link,
+    &__pre-link,
+    &__fast-last-link,
+    &__next-link,
+    &__link-list {
+        border: 0;
+        color: inherit;
+        font-weight: bold;
+        line-height: 40px;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0 10px;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &.disabled {
+            color: @eb-text-light;
+        }
+    }
+
+    &__link-list {
+        text-align: center;
+        border-left: 1px solid lighten( @eb-box-border, 4%);
+        border-right: 1px solid lighten( @eb-box-border, 4%);
+        white-space: nowrap;
+
+        a {
+            color: @eb-text-light;
+            margin: 0 3px;
+
+            &.active {
+                color: inherit;
+            }
+        }
+    }
+
+    &__fast-first-link {
+        border-right: 1px solid lighten( @eb-box-border, 4%);
+    }
+    &__fast-last-link {
+        border-left: 1px solid lighten( @eb-box-border, 4%);
+    }
+
+    &.w320 {
+        > a {
+            // float: none;
+            width: 50%;
+            border-bottom: 1px solid lighten( @eb-box-border, 4%);
+        }
+
+        > div {
+            border-left: 0;
+            border-right: 0;
+        }
+        
+    }
+}

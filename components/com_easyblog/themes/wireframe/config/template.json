@@ -1,0 +1,15 @@
+{
+	"name"		: "Wireframe",
+	"element"	: "wireframe",
+	"desc"		: "COM_EASYBLOG_THEMES_WIREFRAME_INFO",
+	"author"	: "Stack Ideas Sdn Bhd",
+	"email"		: "support@stackideas.com",
+	"website"	: "http://stackideas.com",
+	"created"	: "20th May 2014",
+	"version"	: "4.0",
+	"servers"	: 
+	{
+		"update"	: "http://stackideas.com/",
+		"version"	: "http://stackideas.com"
+	}
+}

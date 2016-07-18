@@ -1,0 +1,87 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-dashboard
+{
+	.app-tasks
+	{
+		.form-item
+		{
+			margin: 15px 0 25px 0;
+		}
+
+		.tasks-list
+		{
+			> li
+			{
+				padding: 10px 16px;
+				border-radius: 6px;
+				background: #fff;
+				border: 1px dashed #d7d7d7;
+
+				+ li
+				{
+					margin-top: 8px;
+				}
+
+				.task-title
+				{
+					font-size: @baseFontSize;
+				}
+
+				.task-time
+				{
+					font-size: @fontSizeSmall;
+					color: #666;
+				}
+
+				input
+				{
+					margin-top: 0;
+				}
+
+				.btn-group
+				{
+					display: none;
+				}
+
+				.task-stats
+				{
+					.label
+					{
+						display: none;
+					}
+				}
+
+				&:hover
+				{
+					.btn-group
+					{
+						display: inline-block;
+					}
+				}
+
+				&.is-resolved
+				{
+					background: #FFFED8;
+
+					.task-title
+					{
+						text-decoration: line-through;
+					}
+					.task-stats
+					{
+						.label
+						{
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+	}
+}

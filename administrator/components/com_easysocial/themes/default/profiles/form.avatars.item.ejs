@@ -1,0 +1,28 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<li class="avatarItem hover-panel published" data-id="[%= avatar.id %]">
+	<div class="thumbnail clearfix">
+		<i class="icon-es-default_avatar"></i>
+
+		<img src="[%= avatar.src.large %]" title="[%= avatar.title %]" class="avatarImage" />
+		<input type="checkbox" name="cid[]" class="check checkboxItem avatarCheckboxItem" />
+
+		<div class="avatarActions hover-panel-show">
+
+			<a href="javascript:void(0);" class="btn btn-mini setDefaultAvatar" data-es-provide="tooltip" data-placement="top" data-original-title="<?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_AVATAR_SET_DEFAULT_AVATAR' , true );?>" >
+				<i class="fa-star"></i> </a>
+
+			<a href="javascript:void(0);" class="btn btn-mini btn-unpublish unpublishAvatar" data-es-provide="tooltip" data-placement="top" data-original-title="<?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_AVATAR_UNPUBLISH_AVATAR' , true );?>" >
+				<i class="fa fa-trash"></i> </a>
+			<a href="javascript:void(0);" class="btn btn-mini btn-publish publishAvatar" data-es-provide="tooltip" data-placement="top" data-original-title="<?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_AVATAR_PUBLISH_AVATAR' , true );?>" >
+				<i class="icon-ok"></i> </a>
+		</div>
+	</div>
+</li>

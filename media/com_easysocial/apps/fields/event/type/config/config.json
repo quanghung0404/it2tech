@@ -1,0 +1,28 @@
+{
+    "title": {
+        "default": "FIELDS_EVENT_TYPE_DEFAULT_TITLE"
+    },
+
+    "description": {
+        "default": "FIELDS_EVENT_TYPE_DEFAULT_DESCRIPTION"
+    },
+
+    "privacy"   : false,
+
+    "default": {
+        "type": "select",
+        "default": 1,
+        "option": [{
+            "label": "FIELDS_EVENT_TYPE_PUBLIC",
+            "value": 1
+        },{
+            "label": "FIELDS_EVENT_TYPE_PRIVATE",
+            "value": 2
+        },{
+            "label": "FIELDS_EVENT_TYPE_INVITE_ONLY",
+            "value": 3
+        }]
+    },
+
+    "visible_registration": true
+}

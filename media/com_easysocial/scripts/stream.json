@@ -1,0 +1,26 @@
+[
+    {
+        "library": [
+            "dialog"
+        ],
+        "script": [
+            "comment"
+        ],
+        "view": [
+            "site/likes/item"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_SUBSCRIPTION_DIALOG_UNSUBSCRIBE",
+            "COM_EASYSOCIAL_SUBSCRIPTION_DIALOG_SUBSCRIBE",
+            "COM_EASYSOCIAL_SUBSCRIPTION_BUTTON_OK",
+            "COM_EASYSOCIAL_SUBSCRIPTION_BUTTON_SUBMIT",
+            "COM_EASYSOCIAL_SUBSCRIPTION_BUTTON_CANCEL",
+            "COM_EASYSOCIAL_SUBSCRIPTION_BUTTON_UNSUBSCRIBE",
+            "COM_EASYSOCIAL_SUBSCRIPTION_ARE_YOU_SURE_UNSUBSCRIBE",
+            "COM_EASYSOCIAL_SUBSCRIPTION_BUTTON_SUBSCRIBE",
+            "COM_EASYSOCIAL_STREAM_DIALOG_FEED",
+            "COM_EASYSOCIAL_STREAM_BUTTON_CLOSE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -1,0 +1,177 @@
+/**
+* @package 		EasyBlog
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+@jck-border-color: #ddd;
+
+.cke_wrapper {
+    border: 1px solid @jck-border-color;
+    padding: 0;
+}
+
+.cke_focus {
+    outline: none !important;
+}
+
+.cke_editor {
+    tr, td {
+        border: 0 !important;
+    }
+
+    td.cke_top {
+        background: #fafafa !important;
+        border-bottom: 1px solid @jck-border-color !important;
+        padding: 5px !important;
+    }
+
+    td.cke_bottom {
+        background: #fafafa !important;
+        border-top: 1px solid @jck-border-color !important;
+        padding: 5px !important;
+    }
+}
+
+.cke_toolbox {
+    border: 0;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+}
+
+.cke_toolbox_collapser {
+    display: none;
+}
+
+.cke_toolbar {
+    background: none !important;
+    border: 1px solid @jck-border-color;
+    border-radius: 0;
+    display: table;
+    margin: 2px;
+
+    > span {
+        background: none;
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        position: static;
+    }
+}
+
+.cke_toolgroup {
+    height: auto;
+}
+
+.cke_toolbar_start,
+.cke_toolbar_end {
+    display: none !important;
+}
+
+.cke_button {
+    background: none;
+    height: auto;
+
+    a {
+        border-radius: 0;
+        margin: 3px;
+        height: 24px;
+    }
+
+    a:hover, 
+    a:focus, 
+    a:active,
+    a.cke_on {
+        background: @jck-border-color;
+        border-color: @jck-border-color;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    a.cke_on {
+        background: darken(@jck-border-color, 5%);
+        border-color: darken(@jck-border-color, 5%);
+    }
+}
+
+.cke_rcombo {
+    padding: 0 5px !important;
+
+    .cke_label {
+        padding-left: 0;
+    }
+}
+
+.cke_rcombo,
+.cke_rcombo a,
+.cke_rcombo span,
+.cke_rcombo .cke_label,
+.cke_rcombo .cke_text, 
+.cke_rcombo .cke_openbutton, 
+.cke_rcombo .cke_label, 
+.cke_rcombo .cke_text, 
+.cke_rcombo .cke_openbutton {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    white-space: nowrap;
+}
+
+
+.cke_rcombo + .cke_rcombo,
+.cke_rcombo + .cke_button,
+.cke_button + .cke_rcombo,
+.cke_button + .cke_button,
+.cke_button + .cke_toolgroup,
+.cke_rcombo + .cke_toolgroup {
+    border-left: 1px solid lighten(@jck-border-color, 5%);
+}
+
+.cke_contents {
+    border: 0 !important;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

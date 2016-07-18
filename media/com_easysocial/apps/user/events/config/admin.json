@@ -1,0 +1,118 @@
+[
+    {
+        "title": "APP_USER_EVENTS_SETTINGS_STORY",
+        "desc": "APP_USER_EVENTS_SETTINGS_STORY_DESC",
+        "fields":
+        [
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_STORY_CREATE_EVENT",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_STORY_CREATE_EVENT_DESC",
+                "name": "story_event",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "title": "COM_EASYSOCIAL_APPS_SETTINGS_STREAM",
+        "desc": "COM_EASYSOCIAL_APPS_SETTINGS_STREAM_DESC",
+        "fields":
+        [
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_STREAM_CREATE_EVENT",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_STREAM_CREATE_EVENT_DESC",
+                "name": "stream_create",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_STREAM_UPDATE_EVENT",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_STREAM_UPDATE_EVENT_DESC",
+                "name": "stream_update",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_STREAM_FEATURED_EVENT",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_STREAM_FEATURED_EVENT_DESC",
+                "name": "stream_feature",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_STREAM_USER_PROMOTED",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_STREAM_USER_PROMOTED_DESC",
+                "name": "stream_makeadmin",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_STREAM_USER_GOING",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_STREAM_USER_GOING_DESC",
+                "name": "stream_going",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_STREAM_USER_NOT_GOING",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_STREAM_USER_NOT_GOING_DESC",
+                "name": "stream_notgoing",
+                "type": "boolean",
+                "default": true
+            },
+
+            {
+                "label"     : "APP_USER_EVENTS_STREAM_DISCUSSSION_CONTENT_MAXLENGTH",
+                "tooltip"   : "APP_USER_EVENTS_STREAM_DISCUSSSION_CONTENT_MAXLENGTH_DESC",
+                "name"      : "stream_discussion_maxlength",
+                "type"      : "text",
+                "default"   : 250
+            }
+        ]
+    },
+    {
+        "title": "APP_USER_EVENTS_SETTINGS_WIDGETS",
+        "desc": "APP_USER_EVENTS_SETTINGS_WIDGETS_DESC",
+        "fields":
+        [
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_WIDGETS_PROFILE",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_WIDGETS_PROFILE_DESC",
+                "name": "widget_profile",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_WIDGETS_PROFILE_TOTAL",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_WIDGETS_PROFILE_TOTAL_DESC",
+                "name": "widget_profile_total",
+                "type": "text",
+                "default": 5,
+                "class": "input-mini text-center"
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_WIDGETS_DASHBOARD",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_WIDGETS_DASHBOARD_DESC",
+                "name": "widget_dashboard",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_WIDGETS_DASHBOARD_DAYS",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_WIDGETS_DASHBOARD_DAYS_DESC",
+                "name": "widget_dashboard_days",
+                "type": "text",
+                "default": 7,
+                "class": "input-mini text-center"
+            },
+            {
+                "label": "APP_USER_EVENTS_SETTINGS_WIDGETS_DASHBOARD_TOTAL",
+                "tooltip": "APP_USER_EVENTS_SETTINGS_WIDGETS_DASHBOARD_TOTAL_DESC",
+                "name": "widget_dashboard_total",
+                "type": "text",
+                "default": 5,
+                "class": "input-mini text-center"
+            }
+        ]
+    }
+]

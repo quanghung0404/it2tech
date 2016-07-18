@@ -1,0 +1,211 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$blocks - blocks.less
+\*------------------------------------*/
+// Blocks aka modules in html apply rely on few classes
+
+.es-action {
+	.fd-nav {
+		> li {
+			margin: 0 5px 5px;
+			> .btn {
+				font-size: @baseFontSize;
+				padding: 5px 12px;
+				width: 180px;
+				text-align: left;
+				position: relative;
+				.label-notification {
+					position: absolute;
+					right: 3px;
+					top: 5px;
+					font-size: @baseFontSize;
+					font-weight: normal;
+				}
+				.caret {
+					// margin-top: 5px;
+				}
+			}
+		}
+	}
+}
+
+
+.es-friend-list {
+	> li {
+		border-bottom: 1px solid @esBorder;
+		padding: 6px 0px;
+	}
+}
+
+
+//sidebar filter
+.es-filter {
+	.fd-nav {
+		> li {
+			margin-bottom: 6px;
+			position: relative;
+			> a {
+				display: block;
+				font-weight: bold;
+				border: 1px solid @esBorder;
+				border-radius: 3px;
+				padding: 5px 6px;
+				position: relative;
+				font-size: 12px;
+			}
+			.close {
+				position: absolute;
+				right: 6px;
+				top: 5px;
+			}
+			&.active {
+				> a {
+					background: @esFilterActiveBackground;
+					color: @esFilterActiveColor;
+				}
+			}
+		}
+	}
+	.btn-dashed {
+		font-size: 12px;
+		text-align: left;
+		padding-left: 8px;
+		i {
+			vertical-align: bottom;
+		}
+	}
+}//es-filter
+
+.es-sidebar {
+	.es-filter {
+		padding: 0 10px;
+	}
+
+
+}
+
+
+.es-pagination-footer{
+	text-align:center;
+
+	font-size: @baseFontSize;
+
+	.pagination {
+        float: none;
+		> li {
+			display: inline-block;
+			float: left;
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
+
+// Calendar date
+.es-calendar-date {
+    text-align: center;
+    width: 64px;
+    height: 64px;
+    background: url('@{media_uri}/images/calendar-date-bg.png') no-repeat;
+    padding: 18px 5px 0;
+    overflow: hidden;
+    color: @esColor;
+    line-height: 18px;
+}
+.es-calendar-date-mth {
+    font-size: @baseFontSize;
+}
+.es-calendar-date-day {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+// btn group for date filter event listing
+.es-btn-group-date { // modifier for .btn-group.btn-group-justified
+    > .btn:first-child,
+    > .btn:last-child {
+        width: 9%;
+    }
+    .btn:not(:first-child):not(:last-child):not(.dropdown-toggle_) {
+        border-left: none;
+        border-right: none;
+        cursor: default;
+        width: 80%;
+        &:hover {
+            background: none;
+            border-color: @esBorder;
+        }
+    }
+}
+
+.es-stream-login-box {
+    padding: 24px;
+    background: none repeat scroll 0% 0% rgb(244, 244, 244);
+    margin: 0px 0px 0px 20px;
+    border: 1px dashed @esBorder;
+    font-size: @baseFontSize;
+}
+
+
+.es-detecting-location {
+    padding: 24px;
+    background: none repeat scroll 0% 0% rgb(244, 244, 244);
+    // margin: 0px 0px 0px 20px;
+    border: 1px dashed @esBorder;
+    text-align: center;
+    > i {
+        font-size: 30px;
+        vertical-align: middle;
+    }
+}
+
+
+.es-avatar-remove-tag { // wrapped by es-avatar-wrap
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    > a {
+        color: #fff;
+        background: #DB513B;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        text-align: center;
+        line-height: 8px;
+        
+        i {
+            font-size: 9px;
+        }
+    }
+}
+
+.es-section-divider {
+    border-top: 3px double @esBorder;
+    margin: 0 0 20px;
+}
+
+// special custom styling for guest limit
+
+.input-group > .input-group-addon {
+    font-size: inherit;
+}
+
+.input-group.guest-limit {
+    width: auto;
+
+    > .form-control {
+        width: 60px !important;
+    }
+
+    > .input-group-addon {
+        width: auto !important;
+    }
+}

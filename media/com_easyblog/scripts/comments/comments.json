@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "markitup"
+        ],
+        "script": [
+            "comments/form",
+            "comments/list"
+        ],
+        "adapter": "EasyBlog"
+    }
+]

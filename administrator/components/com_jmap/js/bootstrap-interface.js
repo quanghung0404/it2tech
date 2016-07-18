@@ -47,6 +47,7 @@ jQuery(function($) {
 							      'accordion_datasets_details':'datasets_details',
 							      'accordion_datasets_datasources':'datasets_datasources',
 							      'accordion_datasource_plugin_parameters':'datasource_plugin_parameters',
+							      'accordion_datasource_raw_links':'datasource_raw_links',
 							      'jmap_googlegraph_accordion':['jmap_googlestats_graph'],
 							      'jmap_googlegeo_accordion':['jmap_googlestats_geo'],
 							      'jmap_googletraffic_accordion':['jmap_googlestats_traffic'],
@@ -130,13 +131,12 @@ jQuery(function($) {
 	/**
 	 * Manage config template for html sitemap
 	 */
+	$('<div/>').insertAfter('#params_sitemap_html_template').css('background-image', 'url(components/com_jmap/images/templates.png)').addClass('sitemap_template');
 	$('#params_sitemap_html_template').css({'width':'150px', 'float':'left', 'transition':'none'}).on('change', function(jqEvent){
-		var currentSelectedTemplate = $(this).val();
-		if(!currentSelectedTemplate) {
-			currentSelectedTemplate = 'default';
-		}
-		$(this).next('img').remove();
-		$('<img/>').insertAfter(this).attr('src', 'components/com_jmap/images/templates/' + currentSelectedTemplate + '.png');
+		var nextDivPlaceholder = $(this).next('div');
+		var indexSelected = $('#params_sitemap_html_template option:selected').index() || 0;
+		var backgroundDisplacement = -(indexSelected * 181);
+		nextDivPlaceholder.css('background-position', '0 ' + backgroundDisplacement + 'px');
 	}).trigger('change');
 	
 	// Manage the hide/show of subcontrols for mindmap templating styles
@@ -201,6 +201,14 @@ jQuery(function($) {
 			$(element).val('');
 		});
 		$('#adminForm').submit();
+	});
+	
+	// Flag the changed domain for SEO stats and GTester
+	$('#params_seostats_custom_link').on('change', function(jqEvent){
+		$(this).attr('data-changed', 1);
+	});
+	$('label[for^=params_seostats_site_query]').on('click', function(jqEvent){
+		$('#params_seostats_custom_link').attr('data-changed', 1);
 	});
 	
 	/**

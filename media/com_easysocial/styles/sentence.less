@@ -1,0 +1,64 @@
+.sentence {
+	&.has-data {
+		.words {
+			> span {
+				&.with-data {
+					display: inline-block;
+				}
+				&.without-data {
+					display: none !important;
+				}
+			}	
+		}
+	}
+}
+
+.words {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+
+	+.words {
+		border-left: 1px solid #ccc;
+		padding-left: 4px;
+		.has-data {
+			border-left: none;
+		}
+	}
+
+	> span {
+		&:hover {
+			color: @link-color;
+			text-decoration: underline;
+		}
+
+		&.with-data {
+			 display: none;
+		}
+
+		&.without-data {
+			display: inline-block;
+			color: @link-color;
+		}
+	}
+
+	&.open {
+		> span {
+			color: @link-color;
+			text-decoration: underline;
+		}
+	}	
+
+	&.has-data {
+
+		> span {
+			&.with-data {
+				display: inline-block;
+			}
+			&.without-data {
+				display: none !important;
+			}
+		}
+	}
+}
+

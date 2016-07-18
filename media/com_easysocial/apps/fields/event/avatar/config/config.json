@@ -1,0 +1,11 @@
+{
+	"extends"	: "fields/user/avatar",
+
+	"title": {
+		"default": "FIELDS_EVENT_AVATAR_DEFAULT_TITLE"
+	},
+
+	"description": {
+		"default": "FIELDS_EVENT_AVATAR_DEFAULT_DESCRIPTION"
+	}
+}

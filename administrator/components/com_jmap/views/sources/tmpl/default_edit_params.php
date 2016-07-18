@@ -30,6 +30,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 					</fieldset>
 				</td>
 			</tr>
+			<?php if($this->record->type != 'links'):?>
 			<tr>
 				<td class="paramlist_key left_title"><span class="editlinktip"><label id="paramsdisable_acl-lbl" for="paramsdisable_acl" class="hasPopover" data-content="<?php echo JText::_('COM_JMAP_DISABLE_ACL_DESC');?>"><?php echo JText::_('COM_JMAP_DISABLE_ACL');?></label></span></td>
 				<td class="paramlist_value">
@@ -45,6 +46,17 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 					</fieldset>
 				</td>
 			</tr>
+			<?php endif; ?>
+			<?php if(($this->record->type == 'links' || $this->record->type == 'user') && array_key_exists('languages', $this->lists)):?>
+			<tr>
+				<td class="paramlist_key left_title"><span class="editlinktip"><label id="paramslanguages-lbl" for="paramslanguages" class="hasPopover" data-content="<?php echo JText::_('COM_JMAP_DATASOURCE_LANGUAGE_DESC');?>"><?php echo JText::_('COM_JMAP_DATASOURCE_LANGUAGE');?></label></span></td>
+				<td class="paramlist_value">
+					<fieldset id="jform_datasource_languages" class="radio btn-group">
+						<?php echo $this->lists['languages'];?>
+					</fieldset>
+				</td>
+			</tr>
+			<?php endif; ?>
 			<tr>
 				<td class="paramlist_key left_title"><span class="editlinktip"><label id="paramshtmlinclude-lbl" for="paramshtmlinclude" class="hasPopover" data-content="<?php echo JText::_('COM_JMAP_HTML_ELEMENTS_INCLUDE_DESC');?>"><?php echo JText::_('COM_JMAP_HTML_ELEMENTS_INCLUDE');?></label></span></td>
 				<td class="paramlist_value">
@@ -54,7 +66,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 				</td>
 			</tr>
 			<!-- RSS feed include if supported extension --> 
-			<?php if($this->supportedRSSExtension):?>
+			<?php if($this->supportedRSSExtension || $this->record->type == 'plugin'):?>
 			<tr>
 				<td class="paramlist_key left_title"><span class="editlinktip"><label id="paramsrssinclude-lbl" for="paramsrssinclude" class="hasPopover" data-content="<?php echo JText::_('COM_JMAP_RSS_ELEMENTS_INCLUDE_DESC');?>"><?php echo JText::_('COM_JMAP_RSS_ELEMENTS_INCLUDE');?></label></span></td>
 				<td class="paramlist_value">

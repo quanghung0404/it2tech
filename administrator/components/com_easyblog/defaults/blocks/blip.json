@@ -1,0 +1,9 @@
+{
+	"group": "embeddables",
+	"element": "blip",
+	"title": "Blip",
+	"description": "Allows you to embed videos from Blip",
+	"keywords": "video, videos, blip, blip.tv, media, streaming",
+	"published": 1,
+    "ordering": 41
+}

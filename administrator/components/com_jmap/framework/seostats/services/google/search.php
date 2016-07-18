@@ -23,16 +23,42 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  */
 class JMapSeostatsServicesGoogleSearch extends JMapSeostats {
 	/**
+	 * Store the number of curled SERP pages
+	 *
+	 * @access public
+	 * @static
+	 * @var string
+	 */
+	public static $numberIndexedPages;
+	
+	/**
+	 * Store the number of curled SERP page
+	 *
+	 * @access public
+	 * @static
+	 * @var string
+	 */
+	public static $paginationNumber;
+	
+	/**
 	 * Start the request for the SERP and the parsing of results
 	 *
 	 * @access protected
 	 * @return boolean
 	 */
-	protected static function makeRequest($pageNumber, $query, $result, $customHeaders) {
+	protected static function makeRequest($pageNumber, $query, $result, $customHeaders, $onlyIndexedCount = false) {
 		$ref = static::getReference ( $pageNumber, $query );
 		$pageSerp = static::getPageSerp ( $pageNumber, $query );
 		
 		$curledSerp = static::gCurl ( $pageSerp, $ref, $customHeaders );
+		
+		// Get total number of indexed pages
+		preg_match ( '#<div id="resultStats">(.*?)</div>#', $curledSerp, $matchesTotalIndexedPages );
+		static::$numberIndexedPages = $matchesTotalIndexedPages;
+		static::$paginationNumber = $pageNumber;
+		if($onlyIndexedCount) {
+			return $matchesTotalIndexedPages;
+		}
 		
 		// Found the captcha Google ban, return false
 		if (preg_match ( "#answer[=|/]86640#i", $curledSerp )) {
@@ -153,18 +179,18 @@ class JMapSeostatsServicesGoogleSearch extends JMapSeostats {
 	 */
 	protected static function gCurl($path, $ref, $customHeaders) {
 		$url = sprintf ( 'https://www.google.%s/', (@$customHeaders['countrytld'] ? $customHeaders['countrytld'] : JMapSeostatsServices::GOOGLE_TLD));
-		$referer = $ref == '' ? $url : $ref;
+		$referer = $ref == '' ? $url : ($ref != 'ncr' ? $url . $ref : $ref);
 		$url .= $path;
 		
 		// Randomize the user agent to avoid Google ban
 		$userAgents=array(
-		        "Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0",
-		        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10; rv:33.0) Gecko/20100101 Firefox/33.0",
-			 	"Mozilla/5.0 (X11; Linux i586; rv:31.0) Gecko/20100101 Firefox/31.0",
-				"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20130401 Firefox/31.0",
-		        "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
-		        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36",
-			 	"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1944.0 Safari/537.36",
+		        "Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/42.0",
+		        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10; rv:33.0) Gecko/20100101 Firefox/40.0",
+			 	"Mozilla/5.0 (X11; Linux i586; rv:31.0) Gecko/20100101 Firefox/45.0",
+				"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20130401 Firefox/44.0",
+		        "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36",
+		        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2227.1 Safari/537.36",
+			 	"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.1944.0 Safari/537.36",
 			 	"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2224.3 Safari/537.36",
 		 		"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A",
 		 		"Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25",
@@ -244,5 +270,16 @@ class JMapSeostatsServicesGoogleSearch extends JMapSeostats {
 		
 		static::makeRequest ( $pageNumber / 10, $q, $result, $customHeaders);
 		return $result->toArray ();
+	}
+	
+	/**
+	 * Returns integer, the number of aestimated indexed links
+	 *
+	 * @access public
+	 * @param string $query The containing the search query.
+	 * @return array $customHeaders The custom headers for country and language to get SERP for
+	 */
+	public static function getSerpsIndexedLinks($query) {
+		return static::makeRequest ( 0, $query, array(), array(), true);
 	}
 }

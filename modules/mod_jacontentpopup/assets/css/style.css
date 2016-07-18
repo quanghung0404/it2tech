@@ -1,0 +1,196 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Content Popup Module for J25 & J34
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+#yoxview_mediaPanel body.bd-popup {
+  padding-top: 0px;
+}
+
+.ja-cp-wrap {
+  position: relative;
+}
+
+.ja-cp-main-wrap {
+}
+
+.ja-cp-main {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Group items */
+.ja-cp-main .ja-cp-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+.ja-cp-main .ja-cp-group.active {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+
+.ja-cp-main .ja-cp-group .ja-cp-item {
+  float: left;
+  width: 25%;
+}
+
+.ja-cp-main .ja-cp-image {
+  display: block;
+  margin: 0px;
+  padding: 10px;
+}
+
+.ja-cp-main .ja-cp-image img {
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.ja-cp-main .ja-cp-title {
+  display: block;
+  font-weight: bold;
+  margin: 0 10px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.ja-cp-main .ja-cp-title a {
+}
+
+/* Loading */
+.ja-cp-loader {
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  display: none;
+  height: 32px;
+  margin-left: -16px;
+  margin-top: -16px;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 32px;
+  z-index: 100;
+}
+
+/* Pagination ---*/
+.ja-cp-pagination {
+  position: relative;
+  z-index: 90;
+}
+
+.ja-cp-pagination ul.ja-cp-pagelist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.ja-cp-pagination ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 2px 8px;
+}
+
+.ja-cp-pagination ul li:hover {
+  cursor: pointer;
+}
+
+.ja-cp-pagination ul li.active {
+}
+
+/* Animation ---*/
+
+.ja-cp-wrap.ja-anim-slice .ja-cp-item {
+-webkit-transition: all 1s cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+   -moz-transition: all 1s cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -ms-transition: all 1s cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+     -o-transition: all 1s cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+        transition: all 1s cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+
+  -webkit-transform: translate(0%, 0%) scale(1) rotateZ(0);
+     -moz-transform: translate(0%, 0%) scale(1) rotateZ(0);
+      -ms-transform: translate(0%, 0%) scale(1) rotateZ(0);
+       -o-transform: translate(0%, 0%) scale(1) rotateZ(0);
+          transform: translate(0%, 0%) scale(1) rotateZ(0);
+
+  opacity: 1;
+}
+
+.ja-cp-wrap.ja-anim-slice .ja-cp-item.no-anim {
+  -webkit-transition-duration: 0;
+     -moz-transition-duration: 0;
+       -o-transition-duration: 0;
+          transition-duration: 0;
+}
+
+.ja-cp-wrap.ja-anim-slice .top {
+  -webkit-transform: translate(0%, -100%);
+     -moz-transform: translate(0%, -100%);
+      -ms-transform: translate(0%, -100%);
+       -o-transform: translate(0%, -100%);
+          transform: translate(0%, -100%);
+
+  opacity: 0;
+}
+
+.ja-cp-wrap.ja-anim-slice .right {
+  -webkit-transform: translate(100%, 0%);
+     -moz-transform: translate(100%, 0%);
+      -ms-transform: translate(100%, 0%);
+       -o-transform: translate(100%, 0%);
+          transform: translate(100%, 0%);
+  opacity: 0;
+}
+
+.ja-cp-wrap.ja-anim-slice .bottom {
+  -webkit-transform: translate(0%, 100%);
+     -moz-transform: translate(0%, 100%);
+      -ms-transform: translate(0%, 100%);
+       -o-transform: translate(0%, 100%);
+          transform: translate(0%, 100%);
+  opacity: 0;
+}
+
+.ja-cp-wrap.ja-anim-slice .left {
+  -webkit-transform: translate(-100%, 0%);
+     -moz-transform: translate(-100%, 0%);
+      -ms-transform: translate(-100%, 0%);
+       -o-transform: translate(-100%, 0%);
+          transform: translate(-100%, 0%);
+  opacity: 0;
+}
+
+.ja-cp-wrap.ja-anim-slice .zoomin {
+  -webkit-transform: translate(0%, 0%) scale(0) rotateZ(0deg);
+     -moz-transform: translate(0%, 0%) scale(0) rotateZ(0deg);
+      -ms-transform: translate(0%, 0%) scale(0) rotateZ(0deg);
+       -o-transform: translate(0%, 0%) scale(0) rotateZ(0deg);
+          transform: translate(0%, 0%) scale(0) rotateZ(0deg);
+  opacity: 0;
+}
+
+.ja-cp-wrap.ja-anim-slice .zoomrotate {
+  -webkit-transform: translate(0%, 0%) scale(0) rotateZ(720deg);
+     -moz-transform: translate(0%, 0%) scale(0) rotateZ(720deg);
+      -ms-transform: translate(0%, 0%) scale(0) rotateZ(720deg);
+       -o-transform: translate(0%, 0%) scale(0) rotateZ(720deg);
+          transform: translate(0%, 0%) scale(0) rotateZ(720deg);
+  opacity: 0;
+}
+.ja-cp-main .ja-cp-image img.blank{
+	width:100%;
+}

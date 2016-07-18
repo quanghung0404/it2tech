@@ -1,0 +1,9 @@
+[
+    {
+        "language": [
+            "PLG_FIELDS_GROUP_PERMALINK_EXCEEDED_MAX_LENGTH",
+            "PLG_FIELDS_GROUP_PERMALINK_REQUIRED"
+        ],
+        "adapter": "EasySocial"
+    }
+]

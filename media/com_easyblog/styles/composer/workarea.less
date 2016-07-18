@@ -1,0 +1,35 @@
+.ebd-workarea {
+    position: relative;
+    clear: both;
+
+    // This lets workarea take up the entire available
+    // vertical space of .eb-composer-main and let blocks
+    // create the invisible gutter so that reordering
+    // blocks can be performed outside of the block area.
+    margin: 0 @eb-composer-gutter * -1;
+    z-index: 2;
+
+    // This should not be displayed.
+    // Editor like redactor will read the contents of this textarea
+    // and initialize an editor out of it.
+    .ebd-textarea {
+        display: none;
+    }
+
+    // When workarea is a ghost, remove negative margins.
+    &.is-ghost {
+        margin: 0;
+    }
+}
+
+@import "composer/workarea/root";
+@import "composer/workarea/block";
+@import "composer/workarea/text";
+@import "composer/workarea/overlay";
+@import "composer/workarea/guide";
+@import "composer/workarea/sortable";
+@import "composer/workarea/droppable";
+@import "composer/workarea/nestable";
+@import "composer/workarea/resizable";
+@import "composer/workarea/placeholder";
+@import "composer/workarea/standalone";

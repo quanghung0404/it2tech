@@ -1,0 +1,136 @@
+@import "markitup/variables";
+
+.markItUp {
+    width: 100%;
+    margin: 0;
+    border: 0px solid transparent;
+
+    .markItUpContainer {
+        background: @markitup-container-bg;
+        padding: 3px 10px 5px 10px;
+        border-radius: 4px;
+        border: 1px solid @markitup-container-border;
+        min-height: 180px;
+
+        .markItUpHeader {
+            display: inline-block;
+            width: 100%;
+            padding: 2px 4px 6px;
+            border-bottom: 0;
+
+            .markitup-bold a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/bold.png');
+            }
+            .markitup-italic a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/italic.png');
+            }
+            .markitup-underline a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/underline.png');
+            }
+            .markitup-code a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/code.png');
+            }
+            .markitup-files a{
+                background-image:url('@{foundry_uri}/styles/markitup/images/folder.png');
+            }
+            .markitup-url a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/link.png');
+            }
+            .markitup-picture a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/picture.png');
+            }
+            .markitup-video a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/video.png');
+            }
+            .markitup-bullet a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/list-bullet.png');
+            }
+            .markitup-numeric a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/list-numeric.png');
+            }
+            .markitup-list a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/list-item.png');
+            }
+
+            .markitup-quote a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/quotes.png');
+            }
+
+            .markitup-clean a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/clean.png');
+            }
+
+            .markitup-happy a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/emoticon-happy.png');
+            }
+            .markitup-smile a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/emoticon-smile.png');
+            }
+            .markitup-surprised a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/emoticon-surprised.png');
+            }
+            .markitup-tongue a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/emoticon-tongue.png');
+            }
+            .markitup-unhappy a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/emoticon-unhappy.png');
+            }
+            .markitup-wink a {
+                background-image:url('@{foundry_uri}/styles/markitup/images/emoticon-wink.png');
+            }
+
+            ul {
+                margin-left: 0;
+                margin-bottom: 0;
+                padding: 0;
+                >li {
+                    display: inline-block;
+                    margin-right: 4px;
+
+                    >a {
+                        background-repeat: no-repeat;
+                        display: block;
+                        height: 24px;
+                        margin: 0;
+                        padding: 3px;
+                        text-indent: -10000px;
+                        width: 24px;
+                        background-position: center;
+                        border: 1px solid transparent;
+                        border-radius: 3px;
+                        font-size: 0;
+                        background-color: @markitup-icon-bg;
+
+                        &:hover {
+                            border: 1px solid @markitup-icon-border-hover;
+                            background-color: @markitup-icon-bg-hover;
+                        }
+                    }
+                }
+
+                .markItUpSeparator {
+                    position: relative;
+                    top: 8px;
+                    background-color: @markitup-separator-bg;
+                    color: @markitup-separator-color;
+                    width: 1px;
+                    height: 16px;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .markItUpExpanding {
+            .markItUpEditor {
+                padding: 5px;
+                background: @markitup-editor-bg;
+                border: 1px solid @markitup-editor-border;
+                border-radius: 6px;
+                font-size: 12px;
+                width: 100%;
+                min-height: 120px;
+            }
+        }
+    }
+}
+

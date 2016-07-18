@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "image"
+        ],
+        "language": [
+            "PLG_FIELDS_COVER_VALIDATION_REQUIRED"
+        ],
+        "adapter": "EasySocial"
+    }
+]

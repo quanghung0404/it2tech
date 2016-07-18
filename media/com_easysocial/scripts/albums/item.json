@@ -1,0 +1,11 @@
+[
+    {
+        "script": [
+            "albums/editor"
+        ],
+        "library": [
+            "masonry"
+        ],
+        "adapter": "EasySocial"
+    }
+]

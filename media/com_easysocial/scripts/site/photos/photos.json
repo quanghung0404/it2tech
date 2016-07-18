@@ -1,0 +1,10 @@
+[
+    {
+        "script": [
+            "site/photos/popup",
+            "site/photos/dialog",
+            "site/photos/avatar"
+        ],
+        "adapter": "EasySocial"
+    }
+]

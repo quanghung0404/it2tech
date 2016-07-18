@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `#__jmap_metainfo` (
 	`linkurl` varchar(600) NOT NULL,
 	`meta_title` text NULL,
   	`meta_desc` text NULL,
+  	`meta_image` VARCHAR(255) NULL,
   	`robots` varchar(255) NULL,
   	`published` tinyint(1) NOT NULL default '0',
   	PRIMARY KEY (`id`),
@@ -82,4 +83,3 @@ CREATE TABLE IF NOT EXISTS `#__jmap_metainfo` (
 ) ENGINE=InnoDB CHARACTER SET `utf8`;
 
 -- Exceptions queries in reverse versioning order 10.0 -> 1.0
-ALTER TABLE `#__jmap_metainfo` ADD `meta_image` VARCHAR( 255 ) NULL AFTER `meta_desc`; -- Version 3.5

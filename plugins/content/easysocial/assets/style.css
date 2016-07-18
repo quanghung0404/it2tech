@@ -1,0 +1,54 @@
+/**
+ * Article author styling
+ */
+div#fd.es .es-article-author{
+	background: #ececec;
+	border: 1px solid #d7d7d7;
+	padding: 16px 8px;
+	margin-bottom: 25px;
+}
+div#fd.es .es-article-author h5{
+	padding: 0;
+	margin: 0 0 4px 0;
+	font-size: 14px;
+	font-weight: 700;
+}
+div#fd.es .es-article-author .es-article-author-badges{
+	margin-bottom: 20px;
+	color: #666;
+}
+div#fd.es .es-article-author .es-article-author-badges img{
+	max-width: 16px;
+}
+div#fd.es .es-article-author .es-article-author-actions ul,
+div#fd.es .es-article-author .es-article-author-badges ul{
+	margin: 0;
+	padding: 0;
+}
+
+div#fd.es .es-article-author .es-article-author-actions li,
+div#fd.es .es-article-author .es-article-author-badges li{
+	display: inline;
+	list-style: none;
+	background: none;
+}
+
+div#fd.es .es-article-author .es-article-author-actions li,
+div#fd.es .es-article-author .es-article-author-badges li{
+	font-size: 11px;
+}
+div#fd.es .es-article-author .es-article-author-actions li + li{
+	border-left: 1px dotted #666;
+	margin-left: 5px;
+	padding-left: 10px;
+}
+
+div#fd.es .es-article-author .es-article-author-info .btn-clean{
+	background: #fff;
+	font-size: 11px;
+	color: #666;
+}
+div#fd.es .es-article-author .es-article-author-info .btn-clean .points-counter{
+	font-size: 18px;
+	font-weight: 700;
+}

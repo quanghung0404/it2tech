@@ -1,0 +1,160 @@
+/*------------------------------------*\
+	$privacy - privacy.less
+\*------------------------------------*/
+
+.es-privacy {
+	position: relative;
+	&.solid,
+	&:hover {
+		.es-privacy-toggle {
+			.button-variant(@esPrivacyColor; @esPrivacyBackground; @esBorder) !important;
+			.caret {
+				.opacity(1);
+			}
+		}
+	}
+	.es-privacy-toggle-label {
+		color: @esPrivacyColor;
+		height: 24px;
+		padding: 0 4px 0;
+		background: none;
+		line-height: 24px;
+		[class^="ies-"],
+		[class*=" ies-"] {
+			font-size: 13px;
+			position: relative;
+			top: 3px;
+		}
+	}
+	.es-privacy-toggle {
+		color: @esPrivacyColor !important;
+		border: 1px solid rgba(0, 0, 0, 0) !important;
+		height: 24px;
+		padding: 0 3px 0;
+		background: none !important;
+		border: 1px solid transparent;
+		line-height: 24px;
+		.box-shadow(none);
+		[class^="ies-"],
+		[class*=" ies-"] {
+			font-size: 13px;
+		}
+		.caret {
+			position: relative;
+			top: -3px;
+			.opacity(0);
+			border-top: 4px solid @esColor;
+		}
+	}
+
+	.es-privacy-menu {
+		display: none;
+		margin-top: 8px;
+		.arrow(6px, @esPrivacyBackground, top, auto, 10px, 0, @esPrivacyBorder);
+		padding: 3px 0;
+		left: auto;
+		right: 0;
+		position: absolute;
+		border: 1px solid @esPrivacyBorder;
+		li {
+			&.active {
+				a {
+					color: @esPrivacyMenuActiveColor;
+				}
+			}
+		}
+		a {
+			color: @esPrivacyColor;
+			font-size: 11px;
+			&:hover {
+				border-top-color: rgba(0, 0, 0, 0);
+				border-bottom-color: rgba(0, 0, 0, 0);
+			}
+		}
+		[class^="ies-"],
+		[class*=" ies-"] {
+			font-size: 12px;
+		}
+		.divider {
+			border-bottom: 1px solid @grayLighter;
+		}
+	}
+
+	.es-privacy-custom-form {
+		padding: 10px;
+		width: 300px;
+
+		.btn {
+			float: right;
+			margin-left: 5px;
+		}
+	}
+
+	&.active {
+		.es-privacy-toggle {
+			// .buttonBackground(@esPrivacyActiveBackground, @esPrivacyActiveBackground, @grayDark, @btnEsTextShadow);
+			.caret {
+				.opacity(1);
+			}
+		}
+		.es-privacy-menu {
+			display: block;
+		}
+		.es-privacy-custom-form {
+			display: none;
+			> div {
+				white-space: normal;
+			}
+		}
+
+		&.custom-privacy {
+			.es-privacy-menu {
+				display: none;
+			}
+			.es-privacy-custom-form {
+				display: block;
+			}
+		}
+	}
+}//es-privacy
+
+
+//Privacy positioning in different views or blocks
+&.es-profile {
+	.es-privacy {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 20;
+	}
+}
+.es-stream {
+	.es-privacy {
+		// right: 30px;
+		display: inline;
+		position: relative;
+		top: -2px;
+		left: -4px;
+	}
+}
+
+.data-field-datetime-yearprivacy { // dashed box
+	.es-privacy {
+		position: relative;
+		top: 2px !important;
+	}
+}
+
+&.w480 {
+	.es-privacy {
+		.es-privacy-toggle {
+			.button-variant(@esPrivacyColor; @esPrivacyBackground; @esBorder) !important;
+			.caret {
+				.opacity(1);
+			}
+		}
+	}
+}
+
+
+

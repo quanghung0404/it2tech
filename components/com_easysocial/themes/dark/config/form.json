@@ -1,0 +1,591 @@
+[
+	{
+		"title"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_DASHBOARD",
+		"fields"	:
+		[
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_LOGIN_FOR_GUESTS",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_LOGIN_FOR_GUESTS_DESC",
+				"name"		: "dashboard_login_guests",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_EVERYONE",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_EVERYONE_DESC",
+				"name"		: "dashboard_feeds_everyone",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_FRIEND_LISTS",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_FRIEND_LISTS_DESC",
+				"name"		: "dashboard_feeds_friendlists",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_GROUPS",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_GROUPS_DESC",
+				"name"		: "dashboard_feeds_groups",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_GROUPS",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_GROUPS_DESC",
+				"name"		: "dashboard_feeds_groups",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS_DESC",
+				"name"		: "dashboard_feeds_apps",
+				"type"		: "boolean",
+				"default"	: true
+			},
+            {
+                "label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE",
+                "tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE_DESC",
+                "name"		: "dashboard_apps_browse",
+                "type"		: "boolean",
+                "default"	: true
+            }
+		]
+	},
+	{
+		"title"		: "Registration",
+		"fields"	:
+		[
+			{
+				"label"		: "Show headers in selecting profile page",
+				"name"		: "registration_profile_headers",
+				"tooltip"	: "Determines if the heading that appears below the toolbar should be enabled.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Show Profile Avatar",
+				"name"		: "registration_profile_avatar",
+				"tooltip"	: "Determines if the profile avatar should be visible or not.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Show Profile Description",
+				"name"		: "registration_profile_desc",
+				"tooltip"	: "Determines if the profile description should be visible or not.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Show Profile Registration Type",
+				"name"		: "registration_profile_type",
+				"tooltip"	: "Determines if the profile type should be visible or not.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Show Users Registered in Profile",
+				"name"		: "registration_profile_users",
+				"tooltip"	: "Determines if users that are registered in that profile should be visible or not.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Show progress bar during registration",
+				"name"		: "registration_progress",
+				"tooltip"	: "Determines if users should be able to see the registration progress bar.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Show selected profile during registration",
+				"name"		: "registration_profile_selected",
+				"tooltip"	: "If this option is enabled, users would be able to see the profile that they have selected initially.",
+				"type"		: "boolean",
+				"default"	: true
+			}
+		]
+	},
+	{
+		"title"		: "Toolbar",
+		"fields"	:
+		[
+			{
+				"label"		: "Show Toolbar",
+				"name"		: "toolbar",
+				"tooltip"	: "Determines if the toolbar should be enabled.",
+				"type"		: "boolean",
+				"default"	: "true"
+			},
+			{
+				"label"		: "Show Toolbar for Guest",
+				"name"		: "toolbar_guests",
+				"tooltip"	: "Determines if the toolbar should be visible by guest users.",
+				"type"		: "boolean",
+				"default"	: "true"
+			},
+			{
+				"label"		: "Show Dashboard",
+				"name"		: "toolbar_dashboard",
+				"tooltip"	: "Determines if the home icon should be visible or not.",
+				"type"		: "boolean",
+				"default"	: "true"
+			},
+			{
+				"label"		: "Show Search",
+				"name"		: "toolbar_search",
+				"tooltip"	: "Determines if the search box should be enabled or not.",
+				"type"		: "boolean",
+				"default"	: "true"
+			},
+			{
+				"label"		: "Show Login",
+				"name"		: "toolbar_login",
+				"tooltip"	: "Determines if the login icon should be visible or not.",
+				"type"		: "boolean",
+				"default"	: "true"
+			},
+			{
+				"label"		: "Show Account dropdown",
+				"name"		: "toolbar_account",
+				"tooltip"	: "Determines if the Your Profile submenu item should be visible or not.",
+				"type"		: "boolean",
+				"default"	: "true"
+			}
+
+		]
+	},
+	{
+		"title"		: "Conversations",
+		"fields"	:
+		[
+			{
+				"label"		: "Conversations Per Page",
+				"tooltip"	: "Specify the number of conversations to display per page in the conversation listings",
+				"name"		: "conversation_limit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "20"
+			},
+			{
+				"label"		: "Conversation sorting",
+				"name"		: "conversation_sorting",
+				"tooltip"	: "Determines the sorting sequence for conversations that are listed on the conversations page.",
+				"type"		: "select",
+				"default"	: "created",
+				"options"	:
+				[
+					{
+						"title"	: "Creation Date",
+						"value"	: "created"
+					},
+					{
+						"title"	: "Last Replied Date",
+						"value"	: "lastreplied"
+					}
+				]
+			},
+			{
+				"label"		: "Conversation ordering",
+				"name"		: "conversation_ordering",
+				"tooltip"	: "Determines the ordering for conversations that are listed on the conversations page.",
+				"type"		: "select",
+				"default"	: "desc",
+				"options"	:
+				[
+					{
+						"title"	: "Descending (Higher to Lower)",
+						"value"	: "desc"
+					},
+					{
+						"title"	: "Ascending (Lower to Higher)",
+						"value"	: "asc"
+					}
+				]
+			},
+			{
+				"label"		: "Messages Per Page",
+				"tooltip"	: "Specify the number of messages to display per page when reading a conversation",
+				"name"		: "messages_limit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "20"
+			}
+		]
+	},
+	{
+		"title"		: "Stream",
+		"fields"	:
+		[
+			{
+				"label"		: "Date display style",
+				"name"		: "stream_datestyle",
+				"tooltip"	: "Determines the date display style in frontend",
+				"type"		: "select",
+				"options"	:
+				[
+					{
+						"title"	: "Time elapsed style",
+						"value" : "elapsed"
+					},
+					{
+						"title"	: "Normal datetime style",
+						"value" : "datetime"
+					}
+				],
+				"default"	: "elapsed"
+			},
+			{
+				"label"		: "Datetime format",
+				"name"		: "stream_dateformat_format",
+				"tooltip"	: "Determines the format of datetime when normal datetime style selected.",
+				"type"		: "text",
+				"default"	: "Y-m-d H:i"
+			}
+		]
+	},
+	{
+		"title"		: "Profile",
+		"fields"	:
+		[
+			{
+				"label"		: "Display Profile Cover",
+				"name"		: "profile_cover",
+				"tooltip"	: "If enabled, user's profile cover will be displayed in their profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Display Points",
+				"name"		: "profile_points",
+				"tooltip"	: "If enabled, user's points will be displayed in their profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DISPLAY_PROFILE_TITLE",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DISPLAY_PROFILE_DESC",
+				"name"		: "profile_type",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Display Badges",
+				"name"		: "profile_badges",
+				"tooltip"	: "If enabled, user's badges will be displayed in their profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Display Age",
+				"name"		: "profile_age",
+				"tooltip"	: "If enabled, user's age will be displayed in their profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Display Gender",
+				"name"		: "profile_gender",
+				"tooltip"	: "If enabled, user's gender will be displayed in their profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Display Address",
+				"name"		: "profile_address",
+				"tooltip"	: "If enabled, user's address will be displayed in their profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Display Website",
+				"name"		: "profile_website",
+				"tooltip"	: "If enabled, user's website will be displayed in their profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "Display Report User",
+				"name"		: "profile_report",
+				"tooltip"	: "If enabled, report link will be displayed in the user's profile.",
+				"type"		: "boolean",
+				"default"	: true
+			},
+
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_LASTLOGIN",
+                "name": "profile_lastlogin",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_LASTLOGIN_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_JOINDATE",
+                "name": "profile_joindate",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_JOINDATE_WILL_BE_DISPLAYED_IN_THEIR_PROFILE__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_BROWSE_DESC",
+                "name": "profile_apps_browse",
+                "type": "boolean",
+                "default": true
+            }
+		]
+	},
+	{
+		"title"		: "Apps",
+		"fields"	:
+		[
+			{
+				"label"		: "Display sorting items",
+				"tooltip"	: "If enabled, user can sort apps when they are viewing the apps.",
+				"name"		: "apps_sorting",
+				"type"		: "boolean",
+				"default"	: true
+			}
+		]
+	},
+	{
+		"title"		: "Users",
+		"fields"	:
+		[
+			{
+				"label"		: "Users Per Page",
+				"tooltip"	: "Specify the number of users to display per page in the users listings",
+				"name"		: "userslimit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "10"
+			},
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_LASTLOGIN",
+                "name": "users_lastlogin",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_LASTLOGIN_WILL_BE_DISPLAYED_IN_USER_LISTING__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_DISPLAY_JOINDATE",
+                "name": "users_joindate",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_FIELD_IF_ENABLED_USERS_JOINDATE_WILL_BE_DISPLAYED_IN_USER_LISTING__TOOLTIP",
+                "type": "boolean",
+                "default": true
+            }
+		]
+	},
+	{
+		"title"		: "Friends",
+		"fields"	:
+		[
+			{
+				"label"		: "Users Per Page",
+				"tooltip"	: "Specify the number of users to display per page in the friend's listings",
+				"name"		: "friendslimit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "20"
+			}
+		]
+	},
+	{
+		"title"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_FOLLOWERS",
+		"fields"	:
+		[
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_FOLLOWERS_PER_PAGE",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_FOLLOWERS_PER_PAGE_DESC",
+				"name"		: "followersLimit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "20"
+			}
+		]
+	},
+	{
+		"title"		: "Badges",
+		"fields"	:
+		[
+			{
+				"label"		: "Badges Per Page",
+				"tooltip"	: "Specify the number of badges to display per page in the badge listings",
+				"name"		: "badgeslimit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "10"
+			},
+			{
+				"label"		: "Achievers Per Page",
+				"tooltip"	: "Specify the number of achievers to display per page in the badge page",
+				"name"		: "achieverslimit",
+				"type"		: "pagination",
+				"start"		: "10",
+				"increment"	: "10",
+				"max"		: "100",
+				"default"	: "50"
+			}
+		]
+	},
+	{
+		"title"		: "Points",
+		"fields"	:
+		[
+			{
+				"label"		: "Points Per Page",
+				"tooltip"	: "Specify the number of points to display per page in the points listings",
+				"name"		: "pointslimit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "10"
+			}
+		]
+	},
+	{
+		"title"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_GROUPS",
+		"fields"	:
+		[
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_RESULTS_PER_PAGE",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_RESULTS_PER_PAGE_DESC",
+				"name"		: "groups_limit",
+				"type"		: "pagination",
+				"start"		: 5,
+				"increment"	: 5,
+				"max"		: 100,
+				"default"	: 20
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_CATEGORY_HEADERS",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_CATEGORY_HEADERS_DESC",
+				"name"		: "groups_category_header",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_DESCRIPTION",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_GROUPS_DESCRIPTION_DESC",
+				"name"		: "groups_description",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_DASHBOARD_SHOW_APP_FILTERS_DESC",
+				"name"		: "groups_feeds_apps",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "COM_EASYSOCIAL_THEMES_WIREFRAME_APP_FILTERS_LIMIT",
+				"tooltip"	: "COM_EASYSOCIAL_THEMES_WIREFRAME_APP_FILTERS_LIMIT_DESC",
+				"name"		: "groups_feeds_apps_total",
+				"type"		: "limit",
+				"default"	: 0
+			}
+		]
+	},
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_SECTION_EVENTS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_RESULTS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_RESULTS_PER_PAGE_DESC",
+                "name": "events_limit",
+                "type": "pagination",
+                "start": 5,
+                "increment": 5,
+                "max": 100,
+                "default": 20
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_CATEGORY_HEADERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_CATEGORY_HEADERS_DESC",
+                "name": "events_category_header",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_DESCRIPTION",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_DESCRIPTION_DESC",
+                "name": "events_description",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_APP_FILTERS",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_SHOW_APP_FILTERS_DESC",
+                "name": "events_feeds_apps",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_APP_FILTERS_LIMIT",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_EVENTS_APP_FILTERS_LIMIT_DESC",
+                "name": "events_feeds_apps_total",
+                "type": "limit",
+                "default": 0
+            }
+        ]
+    },
+	{
+		"title"		: "Search",
+		"fields"	:
+		[
+			{
+				"label"		: "Results in toolbar",
+				"tooltip"	: "Specify the number of search results to display in toolbar search",
+				"name"		: "search_toolbarlimit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "5"
+			},
+			{
+				"label"		: "Results per page",
+				"tooltip"	: "Specify the number of search results to display per page in search page",
+				"name"		: "search_limit",
+				"type"		: "pagination",
+				"start"		: "5",
+				"increment"	: "5",
+				"max"		: "100",
+				"default"	: "10"
+			}
+		]
+	},
+    {
+        "title": "COM_EASYSOCIAL_THEMES_WIREFRAME_VIDEOS",
+        "fields": [
+            {
+                "label": "COM_EASYSOCIAL_THEMES_WIREFRAME_VIDEOS_RESULTS_PER_PAGE",
+                "tooltip": "COM_EASYSOCIAL_THEMES_WIREFRAME_VIDEOS_RESULTS_PER_PAGE_TOOLTIP",
+                "name": "videos_limit",
+                "type": "pagination",
+                "start": "5",
+                "increment": "5",
+                "max": "100",
+                "default": "10"
+            }
+        ]
+    }
+]

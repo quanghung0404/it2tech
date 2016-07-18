@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "plupload"
+        ],
+        "view": [
+            "apps/user/files/story/attachment.item",
+            "apps/user/files/story/progress"
+        ],
+        "adapter": "EasySocial"
+    }
+]

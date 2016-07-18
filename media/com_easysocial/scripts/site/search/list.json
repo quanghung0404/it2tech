@@ -1,0 +1,15 @@
+[
+    {
+        "view": [
+            "site/loading/small",
+            "site/search/loadbutton"
+        ],
+        "script": [
+            "site/search/item"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_SEARCH_LOAD_MORE_ITEMS"
+        ],
+        "adapter": "EasySocial"
+    }
+]

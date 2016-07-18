@@ -1,0 +1,1 @@
+<?php require(JPATH_COMPONENT.DS."views".DS."artist".DS."tmpl".DS."detailed_album.php");

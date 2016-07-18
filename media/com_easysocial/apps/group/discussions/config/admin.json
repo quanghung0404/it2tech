@@ -1,0 +1,109 @@
+[
+	{
+		"title"		: "APP_GROUPS_SETTINGS_GROUPS_VIEW",
+		"desc"		: "APP_GROUPS_SETTINGS_GROUPS_VIEW_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_GROUPS_SETTINGS_TOTAL_DISCUSSIONS",
+				"tooltip"	: "APP_GROUPS_SETTINGS_TOTAL_DISCUSSIONS_DESC",
+				"name"		: "total",
+				"class"		: "input-mini center",
+				"type"		: "text",
+				"default"	: 10
+			},
+			{
+				"label"		: "APP_GROUPS_SETTINGS_DISPLAY_HITS",
+				"tooltip"	: "APP_GROUPS_SETTINGS_DISPLAY_HITS_DESC",
+				"name"		: "display_total_hits",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_GROUPS_SETTINGS_DISPLAY_REPLIES",
+				"tooltip"	: "APP_GROUPS_SETTINGS_DISPLAY_REPLIES_DESC",
+				"name"		: "display_total_replies",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_GROUPS_SETTINGS_DISPLAY_STARTED_BY",
+				"tooltip"	: "APP_GROUPS_SETTINGS_DISPLAY_STARTED_BY_DESC",
+				"name"		: "display_started_by",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_GROUPS_SETTINGS_DISPLAY_LAST_REPLIED",
+				"tooltip"	: "APP_GROUPS_SETTINGS_DISPLAY_LAST_REPLIED_DESC",
+				"name"		: "display_last_replied",
+				"type"		: "boolean",
+				"default"	: true
+			}
+		]
+	},
+	{
+		"title"		: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_ITEM_VIEW",
+		"desc"		: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_ITEM_VIEW_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_ITEM_DISPLAY_STATS",
+				"tooltip"	: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_ITEM_DISPLAY_STATS_DESC",
+				"name"		: "stats_sidebar",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_ITEM_DISPLAY_PARTICIPANTS",
+				"tooltip"	: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_ITEM_DISPLAY_PARTICIPANTS_DESC",
+				"name"		: "participants_sidebar",
+				"type"		: "boolean",
+				"default"	: true
+			}
+		]
+	},
+	{
+		"title"		: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_STREAM_VIEW",
+		"desc"		: "APP_GROUPS_SETTINGS_GROUPS_DISCUSSION_STREAM_VIEW_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_GROUP_DISCUSSIONS_STREAM_CONTENT_LENGTH",
+				"tooltip"	: "APP_GROUP_DISCUSSIONS_STREAM_CONTENT_LENGTH_DESC",
+				"name"		: "stream_length",
+				"class"		: "input-mini center",
+				"type"		: "text",
+				"default"	: 250
+			},
+			{
+				"label"		: "APP_GROUP_DISCUSSIONS_STREAM_CREATE_DISCUSSION",
+				"tooltip"	: "APP_GROUP_DISCUSSIONS_STREAM_CREATE_DISCUSSION_DESC",
+				"name"		: "stream_create",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_GROUP_DISCUSSIONS_STREAM_REPLY_DISCUSSION",
+				"tooltip"	: "APP_GROUP_DISCUSSIONS_STREAM_REPLY_DISCUSSION_DESC",
+				"name"		: "stream_reply",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_GROUP_DISCUSSIONS_STREAM_ANSWERED_DISCUSSION",
+				"tooltip"	: "APP_GROUP_DISCUSSIONS_STREAM_ANSWERED_DISCUSSION_DESC",
+				"name"		: "stream_answered",
+				"type"		: "boolean",
+				"default"	: true
+			},
+			{
+				"label"		: "APP_GROUP_DISCUSSIONS_STREAM_LOCK_DISCUSSION",
+				"tooltip"	: "APP_GROUP_DISCUSSIONS_STREAM_LOCK_DISCUSSION_DESC",
+				"name"		: "stream_lock",
+				"type"		: "boolean",
+				"default"	: true
+			}
+		]
+	}
+]

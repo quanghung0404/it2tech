@@ -1,0 +1,229 @@
+.eb-composer-panels {
+    background: @eb-composer-panel-bg;
+    border-left: 1px solid @eb-composer-panel-border-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: @eb-composer-panel-size;
+    height: 100%;
+    z-index: @eb-composer-panels-zindex;
+    // .transition(transform @eb-composer-transition-duration ease);
+    .transition(@eb-composer-transition-duration ease);
+
+    @media(max-width: 1000px) {
+		width: 400px;
+		right: -400px;
+		.box-shadow(-2px 0 2px rgba(0,0,0,.075));
+	}
+
+	@media(max-width: 700px) {
+		width: 100%;
+		right: -100%;	
+	}
+
+    > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+	.show-drawer {
+		.eb-composer-panels {
+			right: 0;
+		}
+	}
+}
+
+.eb-composer-panel-group {
+	background: @eb-composer-panel-bg;
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-top: 50px solid transparent;
+
+    // Panel group is below panel tabs
+    z-index: 1;
+}
+
+.eb-composer-panel-tabs {
+	background: @eb-composer-panel-bg;
+    position: absolute;
+    border-left: 1px solid @eb-composer-panel-border-color;
+    top: 0;
+    left: 0;
+    left: -1px;
+    right: 0;
+
+	// Panel tabs is above panel group.
+	z-index: 2;
+	display: table;
+	width: 100%;
+}
+
+.eb-composer-panel-tab {
+	display: table-cell;
+	width: 20%;
+	background: @eb-composer-panel-tab-bg;
+	border-bottom: 1px solid @eb-composer-panel-border-color;
+	border-right: 1px solid @eb-composer-panel-border-color;
+	position: relative;
+
+	&:last-child {
+		border-right: 0;
+	}
+
+	> div {
+		text-align: center;
+		line-height: 49px; // 50 -1
+		height: 49px; // 50 -1
+		display: block;
+		position: relative;
+		.no-focus-outline();
+		cursor: pointer;
+	}
+
+	i {
+		font-size: @eb-composer-panel-tab-icon-size;
+		color: @eb-composer-panel-tab-icon-color;
+		opacity: 0.3;
+		line-height: inherit;
+	}
+
+	&:hover {
+		i {
+			opacity: 0.7;
+		}
+	}
+
+	span {
+		.user-select(none);
+		margin-left: 5px;
+		font-weight: bold;
+	}
+
+	&.active {
+		background: @eb-composer-panel-tab-active-bg;
+		// border-left: 1px solid @eb-composer-panel-border-color;
+		border-bottom: none;
+
+		&:first-child {
+			border-left: 0;
+		}
+
+		i {
+			opacity: 1;
+		}
+
+		&:first-child {
+			border-left: none;
+		}
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	&.has-error {
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			background: @eb-composer-panel-tab-error-bg;
+		}
+	}
+}
+
+.eb-composer-panel {
+    display: none;
+    position: relative;
+    height: 100%;
+
+    &.active {
+        display: block;
+    }
+}
+
+.eb-composer-panel-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: @eb-composer-panel-header-size;
+	z-index: 2;
+	background: @eb-composer-panel-bg;
+
+	border-bottom: 1px solid @eb-composer-panel-border-color;
+	.box-shadow(1px 0 0 1px #fff);
+	padding: @eb-composer-gutter / 2 @eb-composer-gutter;
+	text-align: left;
+	.user-select(none);
+	.clearfix();
+
+	strong {
+		font-size: @eb-composer-panel-header-font-size;
+		line-height: 32px;
+		font-weight: bold;
+		color: #262938;
+	}
+}
+
+.eb-composer-panel-content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+
+	// To accomodate .eb-composer-panel-header
+	// border-top: @eb-composer-panel-header-size solid transparent;
+}
+
+
+// Multipanel body
+.make-multipanel(@index) when (@index >= 5) {}
+.make-multipanel(@index) when (@index < 5) {
+
+	&.level-@{index} {
+		left: 100% * @index * -1;
+	}
+
+	// .eb-composer-category-item-group
+	> div:nth-child(@{index}) {
+		left: 100% * (@index - 1);
+	}
+
+	.make-multipanel(@index + 1);
+}
+
+.eb-composer-panel {
+	&.is-multipanel {
+		overflow: hidden;
+
+		.eb-composer-panel-content {
+			left: 0%;
+
+			.transition(left @eb-composer-panel-body-transition ease);
+			.make-multipanel(0);
+		}
+	}
+}
+
+.eb-composer-subpanel {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.eb-composer-subpanel-content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+

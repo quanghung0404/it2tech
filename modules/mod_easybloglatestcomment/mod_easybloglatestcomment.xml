@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Latest Comments Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[The module will list down recent comments that user has contributed in the site through EasyBlog.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easybloglatestcomment.ini</language>
+	</languages>
+	<files>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_easybloglatestcomment">mod_easybloglatestcomment.php</filename>
+		<filename>mod_easybloglatestcomment.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+
+				<field name="count" type="text" default="5" label="MOD_EASYBLOGLATESTCOMMENT_COUNT" description="MOD_EASYBLOGLATESTCOMMENT_COUNT_DESC" />
+
+				<field name="showprivate" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGLATESTCOMMENT_SHOW_COMMENT_PRIVATE" description="MOD_EASYBLOGLATESTCOMMENT_SHOW_COMMENT_PRIVATE_DESC" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showtitle" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGLATESTCOMMENT_SHOW_BLOG_TITLE" description="MOD_EASYBLOGLATESTCOMMENT_SHOW_BLOG_TITLE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showavatar" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGLATESTCOMMENT_SHOW_AVATAR" description="MOD_EASYBLOGLATESTCOMMENT_SHOW_AVATAR_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showauthor" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGLATESTCOMMENT_SHOW_AUTHOR_NAME" description="MOD_EASYBLOGLATESTCOMMENT_SHOW_AUTHOR_NAME_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="dateformat" type="text" default="%d.%m.%Y" label="MOD_EASYBLOGLATESTCOMMENT_DATE_FORMAT" description="MOD_EASYBLOGLATESTCOMMENT_DATE_FORMAT_DESC" />
+
+				<field name="maxcommenttext" type="text" default="100" label="MOD_EASYBLOGLATESTCOMMENT_MAX_CHARACTER_COMMENT" description="MOD_EASYBLOGLATESTCOMMENT_MAX_CHARACTER_COMMENT_DESC" />
+
+				<field name="maxtitletext" type="text" default="30" label="MOD_EASYBLOGLATESTCOMMENT_MAX_CHARACTER_TITLE" description="MOD_EASYBLOGLATESTCOMMENT_MAX_CHARACTER_TITLE_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

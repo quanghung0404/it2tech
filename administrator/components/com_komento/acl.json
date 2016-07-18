@@ -1,0 +1,42 @@
+/**
+ * @package		Komento
+ * @copyright	Copyright (C) 2010 - 2012 Stack Ideas Sdn Bhd. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ * Komento is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See COPYRIGHT.php for copyright notices and details.
+ */
+{
+	"basic": {
+		"read_comment": true,
+		"read_stickies": true,
+		"read_lovies": true,
+		"add_comment": true,
+		"like_comment": false,
+		"report_comment": false,
+		"share_comment": true,
+		"reply_comment": false,
+		"upload_attachment": false,
+		"download_attachment": true
+	},
+
+	"administrative": {
+		"edit_own_comment": false,
+		"delete_own_comment": false,
+		"delete_own_attachment": false,
+		"author_edit_comment": false,
+		"author_delete_comment": false,
+		"author_publish_comment": false,
+		"author_unpublish_comment": false,
+		"author_stick_comment": false,
+		"author_delete_attachment": false,
+		"edit_all_comment": false,
+		"delete_all_comment": false,
+		"publish_all_comment": false,
+		"unpublish_all_comment": false,
+		"stick_all_comment": false,
+		"delete_all_attachment": false
+	}
+}

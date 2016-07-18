@@ -1,0 +1,136 @@
+/*------------------------------------*\
+    $responsive.less
+\*------------------------------------*/
+
+@media (max-width: 767px) {
+	@{EasySocial} {
+		margin: 0 -20px;
+
+		//if dialog
+		&.es-window {
+			margin: 0 !important; // !4039
+
+			//form
+			input,
+			select {
+				width: auto;
+			}
+		}
+		//Main layout
+		.sidebar {
+			display: block;
+			left: 0px;
+			position: absolute;
+			width: 50px;
+			background: white;
+			.text {
+				display: none;
+			}
+
+		}
+		#sinav {
+			&.accordion {
+				margin-bottom: 0;
+			}
+			// Main items
+			> li {
+				// padding to make it act like buttons in mobile view
+				> a:first-child {
+					padding: 2px 20px 5px 15px;
+					// hide text
+					span {
+						display: none;
+					}
+				}
+			}
+
+			// Sub items
+			ul {
+				margin: 0;
+				padding: 0;
+				position: relative;
+				width: 49px;
+				> li {
+					//hide text
+					a {
+						padding: 6px 8px 4px 18px;
+					}
+					span {
+						display: none;
+					}
+				}
+			}
+		}//sinav
+		.es-content {
+			display: block;
+			padding-left: 40px;
+		}
+		.row {
+			[class*="col-"] {
+				display: block;
+				width: 100%;
+			}
+		}
+
+
+		//widget
+		.version-widget {
+			display: none;
+		}
+
+
+		//form
+		input,
+		select {
+			width: 94%;
+		}
+
+		//tab-box
+		.nav-tabs-icons {
+			> li {
+				width: 50%;
+			}
+		}
+		.tab-box {
+			&.tab-box-alt {
+				.nav-tabs {
+					> li {
+						margin: -1px 0 -1px -1px;
+					}
+				}
+			}//tab-box-alt
+
+			&.tab-box-sidenav {
+				.tab-content {
+					display: block;
+				}
+				.nav-tabs {
+					display: block;
+					> li {
+						float: left;
+						min-width: 50px;
+						width: 50%;
+						border-top: none;
+						border-bottom: 1px solid #ddd;
+						margin: 0;
+						&.active {
+							> a {
+								border: 1px solid transparent;
+								border-top: 1px solid #7CC110;
+							}
+
+						}
+						&:last-child {
+						}
+						> a {
+							border: 1px solid transparent;
+						}
+					}
+				}
+			}
+		}//tab-box
+	}//es-wrap
+
+
+}//767px
+

@@ -1,0 +1,83 @@
+.eb-link {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: @eb-composer-border-radius;
+    .box-shadow(0 2px 0 0 @eb-composer-shadow-light-color);
+}
+
+.eb-link-preview {
+    background: @eb-composer-lightgray-accent-color;
+    padding: @eb-composer-gutter / 3 @eb-composer-baseline * 2;
+    border-bottom: 1px solid @eb-composer-border-light-color;
+    .text-overflow();
+    border-radius: @eb-composer-border-radius @eb-composer-border-radius 0 0;
+
+    i.fa-link {
+        font-size: 14px;
+
+        // Cosmetic
+        position: relative;
+        top: 1px;
+        margin-right: 2px;
+    }
+}
+
+.eb-link-preview-caption {
+
+}
+
+.eb-link-input {
+
+    iframe {
+        width: 100%;
+        height: 80px;
+        border: none;
+    }
+}
+
+.eb-link-url-field {
+    border: none;
+    .box-shadow(~"none");
+    font-weight: bold;
+    font-size: 110%;
+    padding-bottom: 0;
+}
+
+.eb-link-title-field {
+    border: none;
+    resize: none;
+    .box-shadow(~"none");
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.eb-link-actions {
+    .clearfix();
+}
+
+.eb-link-blank-option {
+    float: left;
+    margin: 0;
+    position: relative;
+    top: 1px;
+
+    label {
+        font-size: 11px;
+        // padding-left: 22px;
+        // position: relative;
+        // right: 22px;
+
+        &:before,
+        &:after {
+            top: 1px;
+        }
+    }
+}
+
+.eb-link-remove-button {
+    float: right;
+}
+
+.eb-link-actions {
+    padding: @eb-composer-gutter / 3 @eb-composer-baseline * 2;
+}

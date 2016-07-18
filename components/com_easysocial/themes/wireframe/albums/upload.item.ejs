@@ -1,0 +1,38 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<div id="[%== file.id %]" data-photo-upload-item class="es-photo-upload-item es-photo-item">
+	<div>
+		<div>
+			<table>
+				<tr class="upload-status">
+					<td>
+						<div class="upload-title">
+							<span class="upload-title-pending"><?php echo JText::_('COM_EASYSOCIAL_UPLOAD_PENDING'); ?></span>
+							<span class="upload-title-preparing"><?php echo JText::_('COM_EASYSOCIAL_UPLOAD_PREPARING'); ?></span>
+							<span class="upload-title-uploading"><?php echo JText::_('COM_EASYSOCIAL_UPLOAD_UPLOADING'); ?></span>
+							<span class="upload-title-failed"><?php echo JText::_('COM_EASYSOCIAL_UPLOAD_FAILED'); ?> <span class="upload-details-button" data-popbox data-popbox-type="upload" data-popbox-toggle="click" data-popbox-id="fd" data-popbox-position="top" data-popbox-component="es">(<?php echo JText::_('COM_EASYSOCIAL_UPLOAD_SEE_DETAILS'); ?>)</span></span>
+							<span class="upload-title-done"><?php echo JText::_('COM_EASYSOCIAL_UPLOAD_DONE'); ?></span>
+						</div>
+
+						<div class="upload-filename">[%= file.name %]</div>
+
+						<div class="upload-progress progress progress-striped active">
+							<div class="upload-progress-bar bar progress-bar-info" style="width: 0%"><span class="upload-percentage"></span></div>
+						</div>
+
+						<div class="upload-filesize"><span class="upload-filesize-total"></span> (<span class="upload-filesize-left"></span> <?php echo JText::_('COM_EASYSOCIAL_UPLOAD_LEFT'); ?>)</div>
+
+						<div class="upload-remove-button"><i class="fa fa-remove"></i></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

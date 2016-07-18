@@ -1,0 +1,40 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasyBlog} {
+
+    *,
+    *:before,
+    *:after {
+        .box-sizing(border-box);
+    }
+
+    &.eb-mod {
+        @import "icons-light"    
+    }
+
+    @import "foundry/helper";
+
+    @import "bootstrap3/grid";
+    @import "bootstrap3/component-animations"; // for categories toggle 
+
+
+    @import "modules/variables";
+    @import "modules/colors";
+    @import "modules/default";
+
+
+
+    @import "layout/composer/launcher";
+    @import "layout/composer/blocks";
+    @import "layout/loader";
+}
+
+[dir="rtl"] {
+    @import "modules/default-rtl";
+}

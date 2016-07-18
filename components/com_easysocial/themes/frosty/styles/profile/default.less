@@ -1,0 +1,390 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+/*------------------------------------*\
+	$profile - profile.less
+\*------------------------------------*/
+
+// Blocks aka modules in html apply rely on few classes
+
+
+.friendsAction {
+	position: relative;
+
+	// Default active state of the drop down to be hidden by default.
+	// .pulldown{
+	// 	display: none;
+	// }
+
+	// &.showRequestForm {
+	// 	.pulldown {
+	// 		display: inline-block;
+	// 	}
+	// }
+}
+
+// User's profile
+// .userProfile{
+// 	h2 {
+// 		margin-bottom: 0;
+// 		word-break: break-all;
+// 		position: static; // prevent right side button unclickable
+// 		color: #333;
+// 		a {
+// 			color: #333;
+// 		}
+// 	}
+
+// 	.user-meta{
+// 		margin-bottom: 8px;
+// 		font-size: 11px;
+// 		a {
+// 			color: #666;
+// 		}
+// 	}
+// }
+//Profile
+&.view-profile {
+
+	&[class^="layout-edit"],
+	&[class*=" layout-edit"] {
+		.control-label {
+			font-size: 11px;
+		}
+	}
+
+	//about
+	&.layout-about {
+		.es-cover-wrap {
+			.es-cover-avatar {
+				margin: 10px;
+				.es-avatar {
+					width: 110px;
+					height: 110px;
+					img {
+						width: 110px;
+						height: 110px;
+					}
+				}
+			}
+			.es-avatar-flyout {
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				.btn {
+					width: auto;
+				}
+			}
+		}//cover-wrap
+
+
+		.step-content{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+
+	}
+
+
+	&.layout-edit{
+
+		.es-sidebar{
+			width: 190px;
+		}
+
+		.form-profile,
+		.form-social{
+			margin: 0 20px;
+			min-height : 450px;
+		}
+		.form-profile {
+			font-size: 11px;
+		}
+		.form-social{
+			.yesno-list {
+				> li {
+					div.pull-left{
+						max-width: 320px;
+					}
+				}
+			}
+		}
+
+		.step-content{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+
+		// Shouldn't enforce this
+		// .step-content:first-child{
+		// 	display: block;
+		// }
+
+		//avatar
+		.avatar-preview {
+			display: block;
+			width: 128px;
+			height: 128px;
+			position: relative;
+			background: #f5f5f5;
+			border-radius: 3px;
+			img {
+				position: absolute;
+			}
+			.loading-indicator {
+				position: absolute;
+				left: 50%;
+				margin-left: -25px;
+				top: 20%;
+			}
+		}
+		// .avatar-upload-field {
+		// 	height: 30px;
+		// }
+		.es-avatar-list {
+			> li {
+				.es-avatar {
+					border: 4px solid white;
+					border-radius: 8px;
+				}
+				img {
+					border: none;
+					width: 58px;
+					height: 58px;
+				}
+				&:hover {
+					.es-avatar {
+						border: 4px solid #ccc;
+					}
+				}
+				&.active {
+					.es-avatar {
+						border: 4px solid #5B93CE;
+					}
+				}
+			}
+		}
+
+		.form-actions {
+			margin-left: 1px;
+		}
+	}
+
+	// Edit privacy page.
+	&.layout-editPrivacy{
+
+		.privacy-contents{
+			display: none;
+			margin-left: 20px;
+			position: relative;
+		}
+
+		.privacy-contents:first-child{
+			display: block;
+		}
+
+		.privacy-custom-menu {
+			position: absolute;
+			padding: 10px;
+
+			// Set a minimum width for the custom menu
+			min-width: 350px;
+		}
+	}
+
+	.form-notifications,
+	.form-privacy {
+		min-height: 300px;
+	}
+
+
+	// User's information
+	.es-header-info{
+		font-size: 11px;
+		padding-bottom: 10px;
+	}
+
+	.es-widget {
+		.fd-nav{
+			> li {
+				> a{
+					font-size: 11px;
+
+					> i {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+	.dropdown-friends{
+		width: 200px;
+		font-size: 11px;
+
+		li {
+
+			i{
+				color: #666;
+			}
+			>hr{
+				margin: 0 0 10px 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.es-app-wrapper{
+		padding: 10px;
+	}
+
+	.es-container{
+		// border-top: 1px solid #f4f4f4;
+	}
+
+	//tab box
+	.tab-box {
+		.tab-content {
+			padding: 0px 18px 0 0;
+			.es-content {
+				padding-top: 10px;
+			}
+		}
+	}
+
+	//form
+
+	.controls {
+		&.data {
+			.help-block {
+				margin-top: 5px;
+			}
+		}
+
+	}
+
+	//form-horizontal @ 2cols
+	.form-horizontal {
+		margin: 0;
+		padding-bottom: 10px;
+		//left
+		.control-label {
+			// width: 100px;
+			text-align: left;
+		}
+		//right
+		.controls {
+			// margin-left: 120px;
+			// margin-right: 40px;
+		}
+	}
+
+
+}//view-profile
+
+//profile data
+.profile-data-box {
+	margin-bottom: 10px;
+	padding: 0 15px;
+
+	.profile-data-title {
+		background: #f5f5f5;
+		padding: 10px;
+		font-size: 12px;
+		margin-bottom: 16px;
+	}
+
+	.profile-data-table {
+		// margin-left: 28px;
+		width: 100%;
+		// line-height: 28px;
+		margin-bottom: 30px;
+		th,td {
+			vertical-align: top;
+			padding: 0;
+			border: none;
+		}
+		td {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			position: relative;
+			.es-privacy {
+				// position: absolute;
+				top: -1px;
+				right: 2px;
+			}
+		}
+		.profile-data-label { //left col
+			width: 120px;
+			padding-left: 30px;
+			text-align: left;
+			color: #999;
+		}
+		.profile-data-info { //right col
+			position: relative;
+			padding-left: 20px;
+			.data-relationship-display[data-relationship-display-confirm] {
+				.data-relationship-display-info {
+					padding: 0;
+				}
+				[data-relationship-display-target-name] {
+					margin-top: 6px;
+				}
+			}
+		}
+		.profile-data-list { //ul
+			list-style: none;
+			line-height: 26px;
+			> li {
+				margin-bottom: 8px;
+				.data-desp {
+					display: block;
+					color: #888;
+					margin: 4px 0;
+				}
+			}
+		}
+	}
+}
+
+.es-user-banned {
+	border-radius: 3px;
+
+	b {
+		display: block;
+		font-size: 110%;
+		margin: 0 0 3px;
+	}
+}
+
+// Responsive
+&.w480 {
+	&.view-profile {
+		.form-horizontal {
+			.input-xlarge {
+				width: 100%;
+			}
+			.control-label {
+				float: none;
+				width: 100%;
+			}
+			.controls {
+				margin-left: 0;
+				margin-right: 10px;
+			}
+		}
+
+		&.layout-edit {
+			.form-profile,
+			.form-social {
+				margin: 0;
+			}
+		}
+	}
+}

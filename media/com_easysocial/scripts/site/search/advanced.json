@@ -1,0 +1,14 @@
+[
+    {
+        "script": [
+            "site/search/advanced.criteria"
+        ],
+        "view": [
+            "site/loading/small"
+        ],
+        "language": [
+            "COM_EASYSOCIAL_STREAM_LOAD_PREVIOUS_STREAM_ITEMS"
+        ],
+        "adapter": "EasySocial"
+    }
+]

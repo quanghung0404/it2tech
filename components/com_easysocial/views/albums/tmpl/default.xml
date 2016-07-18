@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EASYSOCIAL_ALBUMS_LAYOUT_DEFAULT">
+		<message>
+			<![CDATA[COM_EASYSOCIAL_ALBUMS_LAYOUT_DEFAULT_DESC]]>
+		</message>
+		<view>albums</view>
+	</layout>
+
+	<fields name="request">
+		<fieldset name="request" addfieldpath="/administrator/components/com_easysocial/models/fields">
+			<field name="userid" type="easysocial_user" label="COM_EASYSOCIAL_ALBUMS_SELECT_USER" description="COM_EASYSOCIAL_ALBUMS_SELECT_USER_DESC" />
+		</fieldset>
+	</fields>
+
+</metadata>

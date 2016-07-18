@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Image Wall Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description>
+		<![CDATA[Displays a list of blog posts represented as an image stream in a module.]]>
+	</description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easyblogimagewall.ini</language>
+	</languages>
+	<files>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_easyblogimagewall">mod_easyblogimagewall.php</filename>
+		<filename>mod_easyblogimagewall.xml</filename>
+		<filename>styles.css</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+
+				<field name="count" type="text" default="5" label="MOD_EASYBLOGIMAGEWALL_COMMENT_COUNT" description="MOD_EASYBLOGIMAGEWALL_COMMENT_COUNT_DESC" />
+
+				<field name="catid" type="text" default="" label="MOD_EASYBLOGIMAGEWALL_CATEGORY_ID" description="MOD_EASYBLOGIMAGEWALL_CATEGORY_ID_DESC" />
+
+				<field name="columns" type="text" default="1" label="MOD_EASYBLOGIMAGEWALL_COLUMN" description="MOD_EASYBLOGIMAGEWALL_COLUMN_DESC" />
+
+				<field name="sorting" type="list" label="MOD_EASYBLOGIMAGEWALL_SORTING" default="latest" description="MOD_EASYBLOGIMAGEWALL_SORTING_DESC">
+					<option value="latest">MOD_EASYBLOGIMAGEWALL_SORT_CREATION_DATE</option>
+					<option value="alphabet">MOD_EASYBLOGIMAGEWALL_SORT_ALPHABITICALLY</option>
+					<option value="popular">MOD_EASYBLOGIMAGEWALL_SORT_POPULARITY</option>
+				</field>
+
+				<field name="ordering" type="list" label="MOD_EASYBLOGIMAGEWALL_ORDERING" default="desc" description="MOD_EASYBLOGIMAGEWALL_ORDERING_DESC">
+					<option value="asc">MOD_EASYBLOGIMAGEWALL_ORDER_ASCENDING</option>
+					<option value="desc">MOD_EASYBLOGIMAGEWALL_ORDER_DESCENDING</option>
+				</field>
+
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>
+

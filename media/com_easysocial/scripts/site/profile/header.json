@@ -1,0 +1,10 @@
+[
+    {
+        "script": [
+            "site/profile/friends",
+            "site/profile/subscriptions",
+            "site/conversations/composer"
+        ],
+        "adapter": "EasySocial"
+    }
+]

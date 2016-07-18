@@ -1,0 +1,294 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+.app-tasks {
+    // Hide all label blocks
+    .milestone-labels {
+        display: none !important;
+    }
+
+    .milestone-item-view {
+        font-size: @baseFontSize;
+
+        h3 {
+            margin-top: 0;
+        }
+
+        &.is-due {
+            .label-due {
+                display: inline-block !important;
+            }
+        }
+        &.is-completed {
+            .label-completed {
+                display: inline-block !important;
+            }
+
+            .mark-uncomplete {
+                display: block;
+            }
+
+            .mark-completed {
+                display: none;
+            }
+        }
+
+        .mark-completed {
+            display: block;
+        }
+
+        .mark-uncomplete {
+            display: none;
+        }
+
+        .milestone-content {
+            border-right: 1px dotted @esBorder;
+
+            >hr {
+                margin-top: 5px;
+            }
+        }
+        .milestone-desc {
+            margin-top: 10px;
+        }
+
+        .nav-tabs {
+            margin-top: 30px;
+            a {
+                font-size: @baseFontSize;
+            }
+        }
+        .milestone-tasks {
+            margin-top: 20px;
+            hr {
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+
+            .tasks-list {
+                &.completed-list {
+                    >li {
+                        label {
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+                >li {
+                    padding: 2px 0;
+
+                    &.task-form {
+                        margin-top: 10px;
+
+                        .form-meta {
+                            margin-top: 10px;
+                            >div {
+                                +div {
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .task-meta {
+                        margin-left: 41px;
+                    }
+                    .owner-avatar {
+                        max-width: 16px;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 5px;
+                    }
+
+                    .task-created {
+                        font-size: @fontSizeSmall;
+                        color: #666;
+                    }
+                    label {
+                        font-size: @baseFontSize;
+                        font-weight: normal;
+                    }
+
+                    + li {
+                        border-top: 1px dotted @esBorder;
+                        padding-top: 5px;
+                    }
+
+                    .task-meta {
+                        color: @esColor;
+
+                        >ul {
+                            li {
+                                display: inline-block;
+                                padding-right: 5px;
+
+                                +li {
+                                    border-left: 1px dotted @esBorder;
+                                    padding-left: 10px;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .milestone-chart {
+            .legend-title {
+                margin: 20px 0 10px 0;
+                font-size: 12px;
+                font-weight: 700;
+            }
+
+            .legend-items {
+                >div {
+                    >span {
+                        width: 30px;
+                        height: 15px;
+                        display: inline-block;
+                        margin-right: 5px;
+                    }
+
+                    +div {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            .legend-incomplete {
+                >span {
+                    background: #BE1F23;
+                }
+            }
+            .legend-completed {
+                >span {
+                    background: #2b94c5;
+                }
+            }
+        }
+
+        .milestone-meta {
+            > ul {
+                li {
+                    color: @esColor;
+                    font-size: @baseFontSize;
+                    padding: 0 0 5px 0;
+
+                    + li {
+                        padding: 5px 0;
+                        border-top: 1px dotted @esBorder;
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+
+    .milestone-browser {
+
+        // .empty
+        // {
+        //     padding: 40px 60px;
+        //     text-align: center;
+        //     background: #f4f4f4;
+        //     color: #666;
+        //     border: 1px solid @esBorder;
+        //     font-weight: 700;
+        //     >i
+        //     {
+        //         color: #666;
+        //         margin-bottom: 20px;
+        //         display: block;
+        //         font-size: 48px;
+        //     }
+        //     >span
+        //     {
+        //         display: block;
+        //         margin-bottom: 20px;
+        //     }
+        // }
+
+        .milestone-list {
+            .milestone-item {
+                &.is-due {
+                    .label-due {
+                        display: inline-block !important;
+                    }
+                }
+                &.is-completed {
+                    .label-completed {
+                        display: inline-block !important;
+                    }
+                }
+
+                .milestone-title {
+                    h4 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        height: 20px;
+                        line-height: 20px;
+
+                        >.label {
+                            font-size: @baseFontSize;
+                            height: 20px;
+                            line-height: 20px;
+                            display: inline-block;
+                            padding: 0 4px;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+                .milestone-desc {
+                    font-size: @baseFontSize;
+                }
+                .milestone-meta {
+                    border-top: 1px dotted @esBorder;
+                    border-bottom: 1px dotted @esBorder;
+                    padding: 5px;
+                    >ul {
+                        font-size: @baseFontSize;
+                        color: @esColor;
+
+                        li {
+                            margin-right: 5px;
+                            display: inline-block;
+
+                            +li {
+                                border-left: 1px dotted @esBorder;
+                                padding-left: 5px;
+                            }
+                        }
+                    }
+                }
+
+                + .milestone-item {
+                    margin-top: 35px;
+                }
+            }
+        }
+    }
+
+}
+
+
+&.w480 {
+    .create-task {
+        .datepicker-wrap {
+            margin-top: 15px;
+        }
+    }
+
+}
+&.w320 {
+    .milestone-tasks {
+        .datepicker-wrap {
+            margin-top: 15px;
+        }
+        .form-meta > div + div {
+            padding-left: 15px !important;
+        }
+    }
+}

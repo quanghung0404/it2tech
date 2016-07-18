@@ -174,11 +174,68 @@ jQuery(function($){
 			}).on('shown.bs.popover', function(){
 				$(context.selector).trigger('change', [true]);
 			});
+
+			$('input.hasClickPopover').popover({
+				trigger: 'click', 
+				placement: 'top', 
+				html: 1,
+				noTitle: false,
+				title: function() {
+					return COM_JMAP_CRONJOB_GENERATED_SITEMAP_FILE;
+				},
+				content: function() {
+					var queryString = $(this).val();
+					 // Split into key/value pairs
+				    var queries = queryString.split("&");
+				    var params = {};
+
+				    // Convert the array of strings into an object
+				    for ( i = 0, l = queries.length; i < l; i++ ) {
+				        temp = queries[i].split('=');
+				        params[temp[0]] = temp[1];
+				    }
+				    
+				    // Build the file name
+				    var sitemapFrontendFilename = jmap_splittingStatus && params.format != 'videos' ? 'sitemapindex_' : 'sitemap_';
+			    	sitemapFrontendFilename += params.format;
+			    	
+				    if(params.hasOwnProperty('lang')) {
+				    	sitemapFrontendFilename += '_' + params.lang;
+				    }
+				    if(params.hasOwnProperty('dataset')) {
+				    	sitemapFrontendFilename += '_dataset' + params.dataset;
+				    }
+				    if(params.hasOwnProperty('Itemid')) {
+				    	sitemapFrontendFilename += '_menuid' + params.Itemid;
+				    }
+				    sitemapFrontendFilename += '.xml';
+				    
+					var concatenatePingXmlFormat = 	"<a data-role='pinger' class='pinger glyphicon glyphicon-flash' href='http://www.google.com/webmasters/tools/ping?sitemap=" + encodeURIComponent(jmap_livesite + '/' + sitemapFrontendFilename) + "'>" + COM_JMAP_PING_GOOGLE + "</a>" +
+		 											"<a data-role='pinger' class='pinger glyphicon glyphicon-flash' href='http://www.bing.com/webmaster/ping.aspx?siteMap=" + encodeURIComponent(jmap_livesite + '/' + sitemapFrontendFilename) + "'>" + COM_JMAP_PING_BING + "</a>" +
+ 													"<a data-role='pinger' class='pinger glyphicon glyphicon-flash' href='http://blogs.yandex.ru/pings/?status=success&url=" + encodeURIComponent(jmap_livesite + '/' + sitemapFrontendFilename) + "'>" + COM_JMAP_PING_YANDEX + "</a>" +
+													"<a data-role='pinger' data-type='rpc' class='pinger glyphicon glyphicon-flash' href='http://ping.baidu.com/ping/RPC2?" + encodeURIComponent(jmap_livesite + '/' + sitemapFrontendFilename) + "'>" + COM_JMAP_PING_BAIDU + "</a>";
+				    
+					return '<input type="text" class="popover-content" value="' + jmap_livesite + '/' + sitemapFrontendFilename + '"/>' +
+						   '<label class="glyphicon glyphicon-flash hasClickPopover hasTooltip" title="' + COM_JMAP_PING_SITEMAP_CRONJOB + '" data-content="' + concatenatePingXmlFormat + '"></label>' +
+						   '<label class="glyphicon glyphicon-pencil hasTooltip" title="' + COM_JMAP_ROBOTS_SITEMAP_ENTRY_CRONJOB + '" data-role="saveentity"></label>';
+				}
+			}).on('shown.bs.popover', function(event){
+				$('#xmlsitemap_export label.hasTooltip').tooltip({trigger:'hover', placement:'top'});
 				
+				// Enables bootstrap popover
+				$('#xmlsitemap_export label.hasClickPopover').popover({
+					trigger: 'click', 
+					placement: 'left', 
+					html: 1,
+					container: '#xmlsitemap_export',
+					noTitle: true
+				});
+			});
+
 			// Ensure closing it when click on other DOM elements
 			$(document).on('click', 'body', function(jqEvent){
-				if(!$(jqEvent.target).hasClass('hasClickPopover')) {
-					$('label.hasClickPopover').popover('hide');
+				if(!$(jqEvent.target).hasClass('hasClickPopover') && !$(jqEvent.target).hasClass('popover-content')) {
+					$('label.hasClickPopover, input.hasClickPopover, li.hasClickPopover').popover('hide');
 				}
 			});
 			
@@ -264,7 +321,7 @@ jQuery(function($){
 			});
 			
 			// Label to manage saveEntity on sitemap model
-			$('label[data-role=saveentity]').on('click', function(){
+			$(document).on('click', 'label[data-role=saveentity]', function() {
 				// Trigger JS app processing to create root sitemap file
 				var ajaxTargetLink = $(this).prevAll('input').val();
 				// Start model ajax saveEntity
@@ -479,6 +536,8 @@ jQuery(function($){
 						        '</div>';
 			// Inject elements into content body
 			$('body').append(modalDialog);
+			// Remove fancybox overlay if added cronjob link
+			$('div.fancybox-overlay').fadeOut();
 			
 			var modalOptions = {
 					backdrop:'static'
@@ -520,6 +579,8 @@ jQuery(function($){
 			$('#progressModal1').on('hidden.bs.modal',function(){
 				$('.modal-backdrop').remove();
 				$(this).remove();
+				// Recover fancybox overlay if added cronjob link
+				$('div.fancybox-overlay').fadeIn();
 			});
 		},
 		
@@ -645,7 +706,7 @@ jQuery(function($){
 										'<h4 class="alert-heading">Message</h4>' +
 										'<p>' + COM_JMAP_ROBOTS_ENTRY_ADDED + '</p>' +
 									'</div>';
-			
+
         	// Retrieve values
 			var robotsRule = $('#robots_rule').val();
 			var robotsEntry = $('#robots_entry').val();
@@ -883,6 +944,8 @@ jQuery(function($){
 						        '</div>';
 			// Inject elements into content body
 			$('body').append(modalDialog);
+			// Remove fancybox overlay if added cronjob link
+			$('div.fancybox-overlay').fadeOut();
 			
 			var modalOptions = {
 					backdrop : 'static',
@@ -937,6 +1000,8 @@ jQuery(function($){
 			$('#pingingModal').on('hidden.bs.modal',function(){
 				$('.modal-backdrop').remove();
 				$(this).remove();
+				// Recover fancybox overlay if added cronjob link
+				$('div.fancybox-overlay').fadeIn();
 			});
 			
 			// Live event binding for close button AKA stop process

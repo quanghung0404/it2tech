@@ -1,0 +1,114 @@
+/*------------------------------------*\
+    $elements.less
+\*------------------------------------*/
+font-family: Helvetica,Arial,sans-serif;
+font-size: 12px;
+color: #555;
+background-color: #fff;
+
+&.eb-admin {
+	margin: 0 -20px;
+}
+// height: 0;
+
+.dropdown_ {
+	> a {
+		.no-focus-outline();
+	}
+}
+
+
+.panel-title {
+	font-size: 16px;
+	line-height: 26px;
+	font-weight: normal;
+	margin: 0 0 0px;
+	padding: 0;
+	color:@title-color;
+
+}
+
+.privacy-custom-menu {
+	position: absolute;
+	padding: 10px;
+
+	// Set a minimum width for the custom menu
+	min-width: 350px;
+}
+
+.priority-1 {
+	color: @priority1;
+}
+.priority-2 {
+	color: @priority2;
+}
+.priority-3 {
+	color: @priority3;
+}
+.priority-4 {
+	color: @priority4;
+}
+
+
+
+/* = FILTER BAR
+--------------------------------------------------------------- */
+
+.filter-bar
+{
+	padding: 10px;
+
+	.form-group
+	{
+		display: inline-block;
+		.clearfix();
+
+		+.form-group
+		{
+			margin-left: 20px;
+		}
+
+		> strong,
+		> div
+		{
+			float: left;
+		}
+
+		> strong
+		{
+			color: #888;
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 30px;
+			margin-right: 5px;
+		}
+
+		.input-group
+		{
+			max-width: 320px;
+		}
+	}
+}
+
+&.eb-window
+{
+	background: none !important;
+	margin: 0 25px !important;
+
+	.filter-bar
+	{
+		margin-top: 0;
+
+		.form-group
+		{
+			display: inline-block;
+			margin-bottom: 0;
+			vertical-align: top;
+		}
+
+		.input-group
+		{
+			max-width: 220px;
+		}
+	}
+}

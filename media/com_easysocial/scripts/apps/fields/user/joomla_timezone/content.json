@@ -1,0 +1,11 @@
+[
+    {
+        "library": [
+            "chosen"
+        ],
+        "language": [
+            "PLG_FIELDS_JOOMLA_TIMEZONE_VALIDATION_SELECT_TIMEZONE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

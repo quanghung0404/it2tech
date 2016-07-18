@@ -1,0 +1,142 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-dashboard,
+.appCanvas
+{
+	.es-filterbar
+	{
+		padding-bottom: 10px;
+		.btn
+		{
+			font-size: @fontSizeSmall;
+			padding: 4px 8px;
+		}
+	}
+
+	.app-contents
+	{
+		padding: 10px;
+
+		p
+		{
+			&.app-info
+			{
+				margin: 15px 0;
+				font-size: @baseFontSize;
+				padding: 0 0 8px;
+			}
+		}
+
+
+		&.is-empty
+		{
+
+			.app-contents-data
+			{
+				display: none;
+			}
+		}
+
+		.empty
+		{
+			color: #666;
+			border: 1px dashed #d7d7d7;
+			padding: 30px 90px;
+			text-align: center;
+
+			>i
+			{
+				color: #666;
+				font-size: 28px;
+				margin-bottom: 20px;
+				display: block;
+			}
+		}
+	}
+
+	.app-feeds
+	{
+		.feeds-list
+		{
+			>li
+			{
+				line-height: 24px;
+				margin-bottom: 10px;
+				i
+				{
+					color: #666;
+				}
+				.feed-time
+				{
+					font-size: @baseFontSize;
+					color: #666;
+					float: right;
+				}
+				+ li
+				{
+					border-top: 1px dotted #d7d7d7;
+					padding-top: 10px;
+				}
+			}
+		}
+
+
+		/**
+		 * Profile
+		 */
+		#es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading {
+			background-color: #546075;
+			color: #fff;
+			padding: 8px;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+		}
+
+		#es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a,
+		#es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a:hover{
+			color: #fff;
+		}
+
+		#es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a.view-all,
+		#es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a.view-all:hover{
+			text-decoration: underline;
+		}
+
+		#es-wrap .app-user-feeds-wrapper.profile .feeds-list > li + li {
+			margin-top: 40px;
+		}
+
+		#es-wrap .app-user-feeds-wrapper.profile .feeds-list > li > ul > li + li{
+			margin-top: 15px;
+			border-top: 1px dotted #666;
+		}
+
+		#es-wrap .app-user-feeds-wrapper.profile .feed-item .feed-item-meta{
+			margin-bottom: 10px;
+		}
+	}
+}
+.app-contents-title { // h5
+	margin: 0;
+}
+.app-contents-list-bordered {
+	
+	.alert { // override alert elements
+		margin: 0;
+	}
+
+	> li {
+		padding: 10px 0;
+		border-bottom: 1px solid @esBorder;
+	}
+
+	+ .app-contents-title {
+		margin-top: 25px;
+	}
+}

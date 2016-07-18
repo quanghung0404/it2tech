@@ -1,0 +1,209 @@
+.es-album-form {
+	margin-top: 15px;
+	margin-right: 130px; // For cover field
+	position: relative;
+}
+
+.es-album-form-fields {
+	border: 1px solid @esAlbumFormBorder;
+	border-radius: 3px;
+	min-height: 120px;
+	background: @esAlbumFormBackground;
+
+	&.core-album {
+		background: @esAlbumCoreAlbumBackground;
+	}
+}
+
+.es-album-title-field {
+	display: block;
+	width: 100%;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    height: 33px !important;
+    padding: 4px 40px 4px 6px !important;
+    border: none !important;
+    border-bottom: 1px dotted @esAlbumFormBorder !important;
+    .box-shadow(~"none !important");
+    border-radius: 3px 3px 0px 0px !important;
+    margin: 0 !important;
+
+    &[readonly] {
+    	background: @esAlbumCoreAlbumBackground;
+    }
+}
+
+.es-album-caption-field {
+	display: block;
+	width: 100%;
+	background: @esAlbumFormBackground;
+	border: none !important;
+	.box-shadow(~"none !important");
+	margin: 0 !important;
+	resize: none;
+	height: 61px;
+
+    &[readonly] {
+    	background: @esAlbumCoreAlbumBackground;
+    }
+}
+
+.es-album-cover-field {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	top: 0;
+	right: -130px;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: #eee;
+	.box-shadow(0px 2px 2px rgba(0,0,0,0.5) inset);
+	border-radius: 3px;
+
+	> i {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -16px;
+		margin-top: -16px;
+		font-size: 32px;
+		color: rgba(70, 70, 70, 0.6);
+		text-shadow: 0 1px 1px #FFFFFF, 0 0 0 rgba(0, 0, 0, 0.5);
+		display: none;
+	}
+
+	&.no-cover {
+		.box-shadow(0px 2px 2px rgba(0,0,0,0.1) inset);
+		border: 1px solid #ccc;
+		> i {
+			display: block;
+		}
+	}
+}
+
+.es-album-meta-field {
+	position: relative;
+	padding: 0 140px 8px 6px;
+
+	.es-album-date {
+		position: absolute;
+		top: 0;
+		right: 8px;
+		padding-left: 6px;
+		border-left: none;
+
+		> i {
+			position: relative;
+	    	top: -2px;
+		}
+
+		> span {
+			max-width: 120px;
+			.text-overflow();
+		}
+
+		.dropdown-menu {
+			left: auto;
+			right: 0;
+		}
+	}
+
+	.es-album-location {
+		width: 100%;
+
+		> i {
+			position: absolute;
+		}
+
+		> span {
+			padding-left: 15px;
+			width: 100%;
+			.text-overflow();
+		}
+	}
+}
+
+.es-album-privacy {
+    margin-right: 5px;
+    margin-top: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+.es-album-location-form,
+.es-photo-location-form { // temporary quick fix
+
+	padding: 5px;
+
+	.es-location-textbox {
+        border: 1px solid @esBorder;
+
+        background: #fff none repeat scroll 0 0;
+        border-radius: @borderRadius;
+        display: block;
+        height: 32px;
+        padding: 0;
+        width: 100%;
+
+        input {
+            width: 360px;    
+
+            border: 0 none !important;
+            height: 30px !important;
+            padding-left: 4px !important;
+        }
+		
+	}
+    .es-location-buttons {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        width: auto;
+        .btn {
+            border-radius: 0 @borderRadius @borderRadius 0;
+            font-size: @baseFontSize;
+            width: auto;
+            height: 32px;
+            line-height: 20px;
+            display: inline-block;
+            // border-top: 0;
+            // border-right: 0;
+        }
+    }
+
+    .es-location-map { // override to display none by default
+        display: none;
+    }
+
+    .es-locations {
+        &.has-suggested {
+            .es-location-textbox {
+                border-radius: @borderRadius @borderRadius 0 0;
+            }
+            .es-location-suggestions {
+                border-radius: 0;
+                border-top: none;
+            }
+            .es-location-map {
+                display: block;
+            }
+        }
+    }
+}
+
+&.w480 {
+    .es-album-form {
+        margin-top: 145px;
+        margin-right: 0px; // For cover field
+        .es-album-cover-field {
+            top: -130px;
+            left: 0;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<!-- duplicate php @ /profiles/form.fields.editor.page.php -->
+<div id="formStep_[%= uid %]" class="custom-fields tab-pane" data-fields-editor-page data-fields-editor-page-[%= uid %] data-id=[%= uid %]>
+
+	<div class="fields-editor-page-info-action widget" data-fields-editor-page-header>
+		<div class="wbody wbody-padding">
+			<h3>
+				<span data-fields-editor-page-title><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_PARAMS_CORE_TITLE_DEFAULT' ); ?></span>
+				<a href="javascript:void(0);" class="pull-right btn btn-sm btn-es-danger" data-fields-editor-page-delete><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_DELETE_PAGE' ); ?></a>
+				<a href="javascript:void(0);" class="pull-right btn btn-sm btn-es mr-5" data-fields-editor-page-edit><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_EDIT_PAGE' ); ?></a>
+			</h3>
+			<hr />
+			<span data-fields-editor-page-description><?php echo JText::_( 'COM_EASYSOCIAL_PROFILES_FORM_FIELDS_PARAMS_CORE_DESCRIPTION_DEFAULT' ); ?></span>
+		</div>
+	</div>
+
+	<div class="widget">
+		<div class="wbody wbody-padding">
+		<fieldset data-fields-editor-page-items data-fields-editor-page-items-[%= uid %] class="fields-editor-page-items">
+		</fieldset>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Form Album Layout (ADD NEW ALBUM and its SONGS)">
+		<message>
+			Displays the form to add new Album
+		</message>
+	</layout>
+	<state>
+		<name>Form Album Layout</name>
+		<description>Form Album Layout</description>
+		
+		<params>
+		</params>
+	</state>
+</metadata>

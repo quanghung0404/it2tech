@@ -2,12 +2,12 @@
 <extension version="3.0" type="plugin" group="content" method="upgrade">
 	<name>Content - JSitemap Pingomatic</name>
 	<author>Joomla! Extensions Store</author>
-	<creationDate>March 2016</creationDate>
-	<copyright>Copyright (C) 2015 - Joomla! Extensions Store. All Rights Reserved.</copyright>
+	<creationDate>June 2016</creationDate>
+	<copyright>Copyright (C) 2016 - Joomla! Extensions Store. All Rights Reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>info@storejextensions.org</authorEmail>
 	<authorUrl>http://storejextensions.org</authorUrl>
-	<version>3.9</version>
+	<version>4.0</version>
 	<description>JSitemap Pingomatic plugin</description>
 	
 	<files>

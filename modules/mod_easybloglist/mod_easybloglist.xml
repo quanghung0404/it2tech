@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Posts List</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[This module displays a select list for user to quickly browse a blog post.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easybloglist.ini</language>
+	</languages>
+	<files>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_easybloglist">mod_easybloglist.php</filename>
+		<filename>mod_easybloglist.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_easyblog/elements/fields">
+				<field name="count" type="text" default="5" label="MOD_EASYBLOGLIST_TOTAL_POSTS" description="MOD_EASYBLOGLIST_TOTAL_POSTS_DESC" />
+
+				<field name="catid" type="text" default="" label="MOD_EASYBLOGLIST_CATEGORY_ID" description="MOD_EASYBLOGLIST_CATEGORY_ID_DESC" />
+
+				<field name="sorting" type="list" label="MOD_EASYBLOGLIST_SORT" default="latest" description="MOD_EASYBLOGLIST_SORT_DESC">
+					<option value="latest">MOD_EASYBLOGLIST_CREATION_DATE</option>
+					<option value="alphabet">MOD_EASYBLOGLIST_ALPHABITICALLY</option>
+					<option value="popular">MOD_EASYBLOGLIST_POPULARITY</option>
+				</field>
+
+				<field name="ordering" type="list" label="MOD_EASYBLOGLIST_ORDER" default="desc" description="MOD_EASYBLOGLIST_ORDER_DESC">
+					<option value="asc">MOD_EASYBLOGLIST_ASC</option>
+					<option value="desc">MOD_EASYBLOGLIST_DESC</option>
+				</field>
+
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

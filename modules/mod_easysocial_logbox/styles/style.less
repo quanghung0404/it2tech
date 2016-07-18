@@ -1,0 +1,46 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+	// EasySocial Logbox Modules
+	&.mod-es-logbox {
+
+		// Custom elements
+		// h3 {
+		// 	font-size: 22px;
+		// 	line-height: 30px;
+		// 	margin: 8px 0;
+		// }
+		// hr{
+		//   margin: @baseLineHeight 0;
+		//   border: 0;
+		//   border-top: 1px solid @hrBorder;
+		//   border-bottom: 1px solid @white;
+		// }
+
+		// .text-error          { color: @errorText; }
+		// a.text-error:hover   { color: darken(@errorText, 10%); }
+
+		// Vertical line
+		.vertical-line {
+			position: relative;
+			&:before {
+				content: '';
+				display: block;
+				width: 1px;
+				position: absolute;
+				background-color: rgba(0, 0, 0, 0.1);
+				// left: 50%;
+				top: 0px;
+				bottom: 0;
+			}
+		}
+
+	}
+
+}

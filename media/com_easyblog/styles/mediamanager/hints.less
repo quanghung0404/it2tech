@@ -1,0 +1,86 @@
+.eb-mm-hints {
+	padding: 15px;
+	font-size: 12px;
+
+	> div {
+		display: none;
+	}
+
+	&.show-loading {
+		.hint-loading {
+			display: block;
+		}
+	}
+
+	&.show-error {
+		.hint-error {
+			display: block;
+		}
+	}
+
+	&.show-flickr {
+		.hint-flickr {
+			display: block;
+		}
+	}
+
+	&.show-dropbox {
+		.hint-dropbox {
+			display: block;
+		}
+	}
+
+	.hint-brand {
+		display: table;
+		width: 100%;
+		margin: 0 0 15px;
+
+		> i,
+		> b {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 16px;
+		}
+
+		> i {
+			color: #888;
+			font-size: 22px;
+			width: 1px;
+			text-align: center;
+			padding-right: 10px;
+		}
+	}
+}
+
+.eb-mm-hint {
+	.fill-area();
+}
+
+.eb-mm-hint.hint-upload {
+
+	button {
+		margin-top: @eb-composer-gutter / 3;
+	}
+}
+
+.eb-mm-hint.hint-empty {
+}
+
+.eb-mm {
+
+	// EMPTY STATE HINT
+	.hint-empty {
+		display: none;
+	}
+
+	.is-empty .hint-empty {
+
+	}
+}
+
+.eb-mm-move-dialog {
+
+	.eb-composer-sidebar-body {
+		padding: 15px;
+	}
+}

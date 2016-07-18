@@ -1,0 +1,11 @@
+[
+    {
+        "language": [
+            "COM_EASYSOCIAL_CANCEL_BUTTON",
+            "COM_EASYSOCIAL_CLOSE_BUTTON",
+            "COM_EASYSOCIAL_REPORTS_VIEW_REPORTS_DIALOG_TITLE",
+            "COM_EASYSOCIAL_REPORTS_ACTIONS_DIALOG_TITLE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

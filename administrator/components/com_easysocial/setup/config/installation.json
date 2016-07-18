@@ -1,0 +1,32 @@
+[
+	{
+		"index"		: 1,
+		"icon"		: "jar-imac",
+		"title"		: "COM_EASYSOCIAL_INSTALLATION_TECHNICAL_REQUIREMENTS",
+		"template"	: "requirements"
+	},
+	{
+		"index"		: 2,
+		"icon"		: "jar-folder_blue",
+		"title"		: "COM_EASYSOCIAL_INSTALLATION_PERMISSIONS",
+		"template"	: "permissions"
+	},
+	{
+		"index"		: 3,
+		"icon"		: "jar-cloud",
+		"title"		: "COM_EASYSOCIAL_INSTALLATION_METHOD",
+		"template"	: "source"
+	},
+	{
+		"index"		: 4,
+		"icon"		: "jar-cloud_down",
+		"title"		: "COM_EASYSOCIAL_INSTALLATION_EXTRACTING_AND_INSTALLING",
+		"template"	: "installing"
+	},
+	{
+		"index"		: 5,
+		"icon"		: "jar-console_command",
+		"title"		: "COM_EASYSOCIAL_INSTALLATION_MAINTENANCE",
+		"template"	: "maintenance"
+	}
+]

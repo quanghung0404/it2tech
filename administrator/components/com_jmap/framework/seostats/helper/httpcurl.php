@@ -40,7 +40,7 @@ class JMapSeostatsHelperHttpcurl {
 		curl_setopt_array ( $ch, array (
 				CURLOPT_USERAGENT => $ua,
 				CURLOPT_RETURNTRANSFER => 1,
-				CURLOPT_CONNECTTIMEOUT => 30,
+				CURLOPT_CONNECTTIMEOUT => 15,
 				CURLOPT_MAXREDIRS => 2,
 				CURLOPT_SSL_VERIFYPEER => 0 
 		) );

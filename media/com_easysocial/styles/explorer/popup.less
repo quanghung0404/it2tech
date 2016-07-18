@@ -1,0 +1,75 @@
+&.es-explorer-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	// background: rgba(0,0,0,0.3);
+	display: none;
+
+	z-index: 9999;
+	.box-sizing(border-box);
+	padding: 30px;
+
+	&.active {
+		display: block !important;
+	}
+
+	&.is-loading {
+	}
+
+	> .fd-loading {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+	}
+
+	.fd-explorer {
+		height: 100%;
+
+		.insert-button,
+		.close-button {
+			display: block;
+		}
+	}
+
+	.fd-explorer-content {
+		height: 100%;
+	}
+}
+
+div.fd-loading {
+	// Reset fd-loading styling
+	background: none;
+	min-width: none;
+	min-height: none;
+	display: block;
+	padding: 0;
+
+	// Horizontally center loading image & text
+	text-align: center;
+
+	// When showing loading image without text,
+	// it should be accurately centered.
+	text-indent: -8px;
+
+	// Exact replica of .fd-loading
+	span {
+		background: url("@{global_uri}/images/loading.gif") left center no-repeat;
+		min-height: 16px;
+		min-width: 16px;
+		margin-left: -16px;
+		vertical-align: bottom;
+		display: inline-block;
+		padding: 0 0 0 16px;
+		text-indent: 8px;
+	}
+}
+
+.es-popup-viewport {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #eee;
+	.box-shadow(0 3px 12px rgba(0, 0, 0, 0.5));
+}

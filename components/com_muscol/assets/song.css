@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* CSS Document */
+
+/** 
+ * @version		1.0.1
+ * @package		muscol
+ * @copyright	2009 JoomlaMusicSolutions.com
+ * @license		GPLv2
+ */
+
+
+/********************************/
+
+tr.tr_song_link:hover{
+background-color:#fffeee;
+}
+a.song_link{
+width:100%;
+display:block;
+}
+a.song_link:hover{
+color:#FF0000;
+}
+
+/*********************************/
+
+.player{
+	margin-top:5px;
+	/*border:1px solid #CCC;*/
+}
+.imatge_gran{
+max-width:643px;
+border:1px solid #CCCCCC;
+}
+.div_imatge_gran{
+text-align:center;
+padding-top:5px;
+padding-bottom:5px;
+}
+h2.artista_disc{
+font-weight:normal;
+padding:0px;
+font-size:22px;
+}
+h2.artista_disc img{
+max-height:40px;
+}
+.artista_disc a{
+/*color:#999999;*/
+}
+.artista_disc a:link{
+/*color:#999999;*/
+}
+.artista_disc a:hover{
+/*color:#666666;*/
+}
+
+.first_col{
+	width:430px;
+}
+.second_col{
+	padding-left:15px;
+}
+
+
+h1.album_disc{
+font-weight:normal;
+padding:0px;
+font-size:24px;
+}
+h1.album_disc img{
+max-height:50px;
+}
+.subtitle_disc{
+color:#999999;
+}
+.nom_song{
+text-align:left;
+padding-left:10px;
+color:#999999;
+}
+.num_song{
+width:20px;
+text-align:right;
+color:#CCCCCC;
+}
+.time_song{
+text-align:right; 
+padding-left:20px;
+color:#CCCCCC;
+}
+.time_song_total{
+text-align:right; 
+padding-left:20px;
+color:#999999;
+}
+.disc_label{
+border-bottom:1px solid #006699; color:#006699;
+margin-bottom:3px;
+padding-bottom:3px;
+}
+.year_disc{
+font-size:16px;
+line-height:30px;
+color:#999999;
+}
+.date_disc{
+font-size:18px;
+color:#999999;
+padding-left:20px;
+}
+.date_disc img{
+vertical-align:bottom;
+padding-bottom:4px;
+border:none;
+}
+.year_disc img{
+padding-bottom:2px;
+border:none;
+}
+.year_disc a,.year_disc a:link,.year_disc a:visited{
+color:#999999;
+}
+.year_disc a:hover{
+color:#666666;
+}
+.taula_next_album{
+	width:100%;
+	-moz-border-radius:4px;
+	padding:5px;
+	background-color:#f9f9f9;
+	border:1px solid #dfdfdf;
+}
+.taula_next_album a img{
+vertical-align:middle;
+border:1px solid #cccccc;
+}
+.taula_next_album a:hover img{
+vertical-align:middle;
+border:1px solid #000000;
+
+}
+.prev_album{
+text-align:left;
+width:33%;
+}
+td.prev_album a:hover{
+/*color:#FF0000;
+background-color:#fffeee;*/
+}
+.next_album{
+text-align:right;
+width:33%;
+}
+td.next_album a:hover{
+/*color:#FF0000;
+background-color:#fffeee;*/
+}
+.next_album_type{
+width:33%;
+text-align:center;
+color:#CCCCCC;
+}
+.no_songs{
+padding:5px;
+color:#999999;
+}
+
+/********************* DETAILS ************************/
+
+.disc_details{
+	margin-bottom:10px;
+}
+
+table.details{
+	border-bottom:1px solid #eeeeee;
+	border-right:1px solid #eeeeee;
+	font-size:12px;
+}
+table.details table td{
+	border-top:1px solid #eeeeee;
+}
+td.label_detailed_album{
+	/*background-color:#eeeeee;*/
+	padding-left:1px;
+	width:90px;
+	color:#999;
+}
+.value_detailed_album{
+	/*width:50%;*/
+	padding-left:1px;
+}
+.review{
+	padding-bottom:10px;
+}
+.songwriters{
+	padding-bottom:10px;
+}
+
+.review h3 {
+	border-bottom:1px solid #D3D3D3;
+	color:#466A02;
+	font-size:16px;
+	font-weight:normal;
+	height:auto;
+	letter-spacing:normal;
+	line-height:100%;
+	margin:0 0 5px;
+	padding:0;
+	text-indent:0;
+}
+
+.lyrics{
+	//background:url(images/back_lyrics.gif);
+}
+
+.disc_details h3 {
+	border-bottom:1px solid #D3D3D3;
+	color:#466A02;
+	font-size:16px;
+	font-weight:normal;
+	height:auto;
+	letter-spacing:normal;
+	line-height:100%;
+	margin:0 0 5px;
+	padding:0;
+	text-indent:0;
+}
+.num_ratings{
+	font-size:12px;
+	color:#999999;
+}
+.muscol_edit{
+	text-align:right;
+	margin-bottom:4px;
+}

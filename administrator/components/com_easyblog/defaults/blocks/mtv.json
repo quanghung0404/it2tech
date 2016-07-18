@@ -1,0 +1,9 @@
+{
+	"group": "embeddables",
+	"element": "mtv",
+	"title": "MTV",
+	"description": "Allows you to embed a MTV video",
+	"keywords": "video, mtv, music, media",
+	"published": 1,
+    "ordering": 36
+}

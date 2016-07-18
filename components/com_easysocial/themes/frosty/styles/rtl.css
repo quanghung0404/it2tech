@@ -1,0 +1,89 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+/* Quick fix RTL. Not part of ATS! */
+/* Php checking if RTL format load this file */
+/* e.g.: <link rel="stylesheet" href="components/com_easysocial/themes/wireframe/styles/rtl.css" type="text/css" />*/
+@import url(../../wireframe/styles/rtl.css);
+
+/*frosty toolbar*/
+body div#fd.es .es-toolbar .es-toolbar-avatar,
+body div#fd.es .es-toolbar .nav-collapse > .fd-nav,
+body div#fd.es .es-frosty .es-profile-header-action-nav > li,
+body div#fd.es .es-toolbar .es-toolbar-wrap > .fd-nav {
+    float: right;
+}
+
+body div#fd.es .es-toolbar .fd-navbar-search {
+    float: left;
+}
+
+body div#fd.es .es-toolbar.has-sides .navbar-inner {
+    margin-left: 0;
+    margin-right: 60px;
+}
+
+body div#fd.es .es-toolbar .fd-navbar-search .fa-search {
+    left: auto;
+    right: 16px;
+}
+body div#fd.es .es-toolbar .fd-navbar-search .search-query {
+    padding: 0 36px 0 14px;
+}
+
+body div#fd.es.w600 .es-toolbar .navbar-inner {
+    margin: 0;
+}
+body div#fd.es.w600 .es-toolbar .nav-collapse > .fd-nav {
+    left: 10px;
+    right: auto;
+}
+
+/*profile header*/
+body div#fd.es .es-frosty .es-profile-header-avatar {
+    right: 0;
+    left: auto;
+}
+body div#fd.es .es-frosty .es-profile-header-body {
+    padding: 10px 140px 0 0;
+}
+body div#fd.es .es-frosty .es-profile-header-info {
+    margin-left: 0;
+    margin-right: 10px;
+}
+body div#fd.es .es-frosty .es-profile-header-stat {
+    left: 10px;
+    right: auto;
+}
+body div#fd.es .es-frosty .es-profile-header-footer {
+    padding: 0 140px 0 0;
+}
+body div#fd.es .es-frosty .es-profile-header-action-nav > li .btn {
+    border-left: 1px solid #d7d7d7;
+    border-right: none;
+}
+body div#fd.es.w480 .es-frosty .es-profile-header-body {
+    padding: 0 60px 0 0;
+}
+
+body div#fd.es.w480 .es-profile-header-avatar .es-online-status {
+    left: auto;
+    right: 48px;
+}
+
+body div#fd.es.w480 .es-frosty .es-profile-header-avatar {
+    width: 60px;
+    right: 0;
+}
+
+body div#fd.es .es-category-header .category-graph {
+    border-left: none;
+    margin-left: 0;
+
+    border-right: 1px dotted #d7d7d7;
+    margin-right: 5px;
+}

@@ -1,0 +1,13 @@
+[
+	{
+		"title"			: "COM_EASYSOCIAL_ACCESS_STREAM_ALLOW_HIDING_SINGLE_STREAM_ITEM",
+		"description"	: "COM_EASYSOCIAL_ACCESS_STREAM_ALLOW_HIDING_SINGLE_STREAM_ITEM_TIPS",
+		"name"			: "stream.hide"
+	},
+	{
+		"title"			: "COM_EASYSOCIAL_ACCESS_STREAM_ALLOW_DELETE_SINGLE_STREAM_ITEM",
+		"description"	: "COM_EASYSOCIAL_ACCESS_STREAM_ALLOW_DELETE_SINGLE_STREAM_ITEM_TIPS",
+		"name"			: "stream.delete",
+		"default"		: false
+	}
+]

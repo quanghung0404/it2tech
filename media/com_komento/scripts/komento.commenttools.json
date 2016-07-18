@@ -1,0 +1,19 @@
+[
+    {
+        "script": [
+            "komento.commentlist",
+            "komento.common",
+            "komento.language"
+        ],
+        "library": [
+            "dialog"
+        ],
+        "stylesheet": [
+            "dialog/default"
+        ],
+        "view": [
+            "notifications/new.comment"
+        ],
+        "adapter": "Komento"
+    }
+]

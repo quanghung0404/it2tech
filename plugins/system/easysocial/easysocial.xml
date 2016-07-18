@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system">
+	<name>System - EasySocial</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>05/11/2013</creationDate>
+	<copyright>Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[PLG_SYSTEM_EASYSOCIAL_XML_DESCRIPTION]]></description>
+	<files>
+		<filename plugin="easysocial">easysocial.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_easysocial.ini</language>
+		<language tag="en-GB">en-GB.plg_system_easysocial.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+				<field name="redirection" type="radio" class="btn-group btn-group-yesno" default="1" label="PLG_SYSTEM_EASYSOCIAL_ENABLE_REGISTRATION_REDIRECTION" description="PLG_SYSTEM_EASYSOCIAL_ENABLE_REGISTRATION_REDIRECTION_DESC">
+					<option value="1">JYes</option>
+					<option value="0">JNo</option>
+				</field>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

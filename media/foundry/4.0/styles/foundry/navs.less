@@ -1,0 +1,106 @@
+/*------------------------------------*\
+    $Nav - navs.less
+\*------------------------------------*/
+
+// TODO: clean up all the styling
+
+///**
+// * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+// * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+// * e.g.:
+// *
+//   <ul class="fd-nav">
+//      <li><a href=#>Home</a></li>
+//      <li><a href=#>About</a></li>
+//      <li><a href=#>Portfolio</a></li>
+//      <li><a href=#>Contact</a></li>
+//   </ul>
+// *
+// */
+.fd-nav,
+.fd-nav > li {
+    .fd-reset-list();
+}
+.fd-nav {
+    > li,
+    > li > a {
+        display: inline-block;
+}
+
+///**
+// * `.fd-nav-stacked` extends `.fd-nav` and throws the list into vertical mode, e.g.:
+// *
+//   <ul class="fd-nav fd-nav-stacked">
+//       <li><a href=#>Home</a></li>
+//       <li><a href=#>About</a></li>
+//       <li><a href=#>Portfolio</a></li>
+//       <li><a href=#>Contact</a></li>
+//   </ul>
+// *
+// */
+    &.fd-nav-stacked {
+        > li {
+            display: list-item;
+            .clearfix();
+            > a {
+                display: block;
+            }
+        }
+    }
+}//fd-nav
+
+
+// Right aligned menus need alt position
+// .navbar .pull-right > li > .dropdown-menu,
+.fd-nav > li > .dropdown-menu.pull-right {
+  left: auto;
+  right: 0;
+  &:before {
+    left: auto;
+    right: 12px;
+  }
+  &:after {
+    left: auto;
+    right: 13px;
+  }
+  .dropdown-menu {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: -1px;
+    border-radius: 6px 0 6px 6px;
+  }
+}
+
+
+// Filter
+// ----------------
+.fd-nav-filter {
+    position: relative;
+    > li {
+        // background: #ddd;
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 3px 10px;
+            font-weight: bold;
+            &:hover {
+                background: none;
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+        &.active {
+            a {
+                color: @gray;
+            }
+        }
+        &.divider-vertical {
+            border-left: 1px solid lighten(@grayLight, 4%);
+            border-right: 1px solid white;
+            height: 16px;
+            position: relative;
+            top: 4px;
+        }
+    }
+}

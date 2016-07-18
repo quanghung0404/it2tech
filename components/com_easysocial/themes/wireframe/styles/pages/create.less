@@ -1,0 +1,73 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+.es-create-category-select {
+    .btn-group {
+        width: 100%;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    .btn-wrap {
+        width: 33%;
+        padding: 0 10px;
+        display: block;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        line-height: 24px;
+        font-size: 18px;
+        text-shadow: none;
+        min-height: 180px;
+        .text-overflow();
+        overflow: hidden;
+        span {
+
+        }
+        &:hover{
+        }
+        img{
+            color: #B4B7C2;
+            display: block;
+            margin: 20px auto 10px;
+            width: 64px;
+            height: 64px;
+        }
+        &.active {
+            background: #69A0D6;
+            color: #fff;
+            i {
+                color: #fff;
+            }
+        }
+    }
+    .es-description {
+        height: 50px;
+        line-height: 16px;
+        overflow: hidden;
+        white-space: normal;
+    }
+}
+
+&.w480 {
+    .es-create-category-select {
+        .btn-wrap {
+            width: 49%;
+        }
+    }
+}
+&.w320 {
+    .es-create-category-select {
+        .btn-wrap {
+            width: 100%;
+        }
+    }
+}

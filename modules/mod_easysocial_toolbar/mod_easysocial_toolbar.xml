@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="site" method="upgrade">
+	<name>EasySocial Toolbar</name>
+	<author>StackIdeas</author>
+	<creationDate>10th May 2016</creationDate>
+	<copyright>Copyright (C) 2009 - 2013 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>1.4.9</version>
+	<description><![CDATA[MOD_EASYSOCIAL_TOOLBAR_DESC]]></description>
+	<files>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename module="mod_easysocial_toolbar">mod_easysocial_toolbar.php</filename>
+		<filename>mod_easysocial_toolbar.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easysocial_toolbar.ini</language>
+		<language tag="en-GB">en-GB.mod_easysocial_toolbar.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="show_on_easysocial" type="radio" class="btn-group" default="0" label="MOD_EASYSOCIAL_TOOLBAR_DISPLAY_ON_EASYSOCIAL_PAGES" description="MOD_EASYSOCIAL_TOOLBAR_DISPLAY_ON_EASYSOCIAL_PAGES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_dashboard" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_SHOW_HOME_ICON" description="MOD_EASYSOCIAL_TOOLBAR_SHOW_HOME_ICON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_friends" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_SHOW_FRIENDS_ICON" description="MOD_EASYSOCIAL_TOOLBAR_SHOW_FRIENDS_ICON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_conversations" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_SHOW_CONVERSATIONS_ICON" description="MOD_EASYSOCIAL_TOOLBAR_SHOW_CONVERSATIONS_ICON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_notifications" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_SHOW_NOTIFICATIONS_ICON" description="MOD_EASYSOCIAL_TOOLBAR_SHOW_NOTIFICATIONS_ICON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_search" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_SHOW_SEARCH" description="MOD_EASYSOCIAL_TOOLBAR_SHOW_SEARCH_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_login" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_SHOW_LOGIN" description="MOD_EASYSOCIAL_TOOLBAR_SHOW_LOGIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_profile" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_SHOW_PROFILE" description="MOD_EASYSOCIAL_TOOLBAR_SHOW_PROFILE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="responsive" type="radio" class="btn-group" default="1" label="MOD_EASYSOCIAL_TOOLBAR_RESPONSIVE" description="MOD_EASYSOCIAL_TOOLBAR_RESPONSIVE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="module_popbox_position" type="list" default="bottom" label="MOD_EASYSOCIAL_TOOLBAR_POPBOX_POSITION" description="MOD_EASYSOCIAL_TOOLBAR_POPBOX_POSITION_DESC">
+					<option value="top">top</option>
+					<option value="top-left">top-left</option>
+					<option value="top-right">top-right</option>
+					<option value="bottom">bottom</option>
+					<option value="bottom-left">bottom-left</option>
+					<option value="bottom-right">bottom-right</option>
+					<option value="left">left</option>
+					<option value="left-top">left-top</option>
+					<option value="left-bottom">left-bottom</option>
+					<option value="right">right</option>
+					<option value="right-top">right-top</option>
+					<option value="right-bottom">right-bottom</option>
+				</field>
+				<field name="module_popbox_collision" type="list" default="none" label="MOD_EASYSOCIAL_TOOLBAR_POPBOX_COLLISION" description="MOD_EASYSOCIAL_TOOLBAR_POPBOX_COLLISION_DESC">
+					<option value="none">none</option>
+					<option value="flip">flip</option>
+					<option value="flip none">flip horizontal</option>
+					<option value="none flip">flip vertical</option>
+				</field>				
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

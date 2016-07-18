@@ -1,0 +1,75 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+@import "config";
+
+@{EasySocial} {
+    @import "buttons"; //Note: extended .btn custom buttons
+    @import "button-groups"; // Note: extened btn-group for ES
+
+    @import "stepbar"; // Note: extended .navbar
+
+    @import "forms-custom"; // Note: custom for ES
+    @import "sentence";
+    @import "dropdowns"; // Note: custom .dropdown-menu
+    // @import "alerts"; // Note: custom .alert
+    @import "tabs"; // Note: extended .nav-tabs
+    @import "login-box";
+    @import "list"; //Note: es-item-list es-item-grid
+    @import "privacy"; // Privacy dropdown menu
+    @import "loader"; // Loader
+    @import "reports"; // reports
+    @import "mentions";
+    @import "widget";
+    @import "explorer";
+    @import "empty";
+
+    @import "avatars";
+    @import "photo";
+    @import "cover";
+    @import "badges";
+
+    // Components: Misc
+    //@import "modals"; //modals styling for #es-wrap is different from #dialog
+    @import "es-dialog";
+    @import "progress-bars"; // Note: extended .progress custom progress bar
+
+    @import "flyout"; //inline popover
+
+
+    @import "chosen/default";
+    //@import "uniform/default"; // .radio conflict with bootstrap temporary turn off
+    @import "uploader";
+    @import "sharing";
+    @import "selection";
+    @import "popbox";
+    @import "ui/datepicker"; // customize for ES
+    //custom icons
+    @import "icons-sprites"; //32x32
+    @import "icons-32"; //32x32
+    // @import "icons-es";
+    @import "icons-emo"; //emoticons
+    // Foundry
+    @import "font-awesome/font-awesome";
+
+    //Javascript UI
+    @import "textboxlist";
+    @import "ui";
+    @import "popover-custom";
+    @import "location";
+    // @import "datetimepicker"
+
+    @import "markitup/default"; // foundry
+}
+
+@import "lightbox";
+@import "broadcast";
+
+
+@{Foundry} {
+    @import "datetimepicker/default";
+    @import "videojs/default";
+}

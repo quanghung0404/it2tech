@@ -1,0 +1,77 @@
+<?php
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<div class="es-story-link-item [% if (images.length > 0) { %]has-images[% } %]"
+     data-story-link-item>
+
+	<div class="es-story-link-images"
+	     data-story-link-images>
+		[% $.each(images, function(i, image){ %]
+			<img class="es-story-link-image [% if (i==0) { %]active[% } %]"
+				 data-story-link-image
+				 src="[%== image %]"/>
+		[% }); %]
+	</div>
+
+	<div class="es-story-link-col">
+		<h6 class="es-story-link-title"
+		    data-story-link-title
+		    data-default="[%== title || url %]"
+		    >[%== title || url %]</h6>
+
+		<div class="es-story-link-title-textbox">
+			<input type="text"
+				   class="es-story-link-title-textfield form-control input-sm"
+				   data-story-link-title-textfield
+				   placeholder="<?php echo JText::_('COM_EASYSOCIAL_STORY_ENTER_LINK_TITLE'); ?>"
+				   value="[%== title || url %]" />
+		</div>
+
+		<small class="es-story-link-url"><a href="[%== url %]" target="blank">[%= url %]</a></small>
+
+		<p class="es-story-link-description [% if (!desc) { %] no-description [% } %]"
+		   data-story-link-description>[%= desc || '<?php echo JText::_('COM_EASYSOCIAL_STORY_ENTER_LINK_DESCRIPTION'); ?>'%]</p>
+
+		<div class="es-story-link-description-textbox">
+			<textarea class="es-story-link-description-textfield form-control input-sm"
+			          data-story-link-description-textfield
+			          placeholder="<?php echo JText::_('COM_EASYSOCIAL_STORY_ENTER_LINK_DESCRIPTION'); ?>"
+			          >[%== desc %]</textarea>
+		</div>
+
+		[% if (images.length > 1) { %]
+			<div class="es-story-link-nav">
+				<div class="btn-group">
+					<button type="button" class="btn btn-es btn-sm" data-story-link-image-prev><i class="fa fa-caret-left"></i></button>
+					<button type="button" class="btn btn-es btn-sm" data-story-link-image-next><i class="fa fa-caret-right"></i></button>
+				</div>
+				<span class="es-story-link-image-count">
+					<span data-story-link-image-index>1</span><span>/</span><span data-story-link-image-total>[%= images.length %]</span>
+				</span>
+			</div>
+		[% } %]
+
+		[% if (images.length > 0) { %]
+			<div class="mt-5">
+				<label for="remove-thumbnail" class="fd-small">
+					<input id="remove-thumbnail" type="checkbox" class="remove-thumbnail es-story-link-remove-image" data-story-link-remove-image /> <?php echo JText::_('COM_EASYSOCIAL_STORY_LINK_DONT_SHOW_THUMBNAIL');?>
+				</label>
+			</div>
+		[% } %]
+
+		[% if( video ){ %]
+			<input type="hidden" name="videos_link" value="[%= video %]" data-story-link-video />
+		[% } %]
+	</div>
+
+	<div class="es-story-link-remove-button"
+		 data-story-link-remove-button>
+		 <i class="fa fa-remove"></i>
+	</div>
+</div>

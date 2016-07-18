@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Archive Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>29th April 2016</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.0.35</version>
+	<description><![CDATA[The module displays a list of archived months in years for blog posts created within EasyBlog.]]></description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_easyblogarchive.ini</language>
+	</languages>
+	<files>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename module="mod_easyblogarchive">mod_easyblogarchive.php</filename>
+		<filename>mod_easyblogarchive.xml</filename>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_easyblog/elements">
+			<fieldset name="basic">
+
+				<field name="filter" type="list" default="all" label="MOD_EASYBLOGARCHIVE_FILTER" description="MOD_EASYBLOGARCHIVE_FILTER_DESC">
+					<option value="all">MOD_EASYBLOGARCHIVE_NO_FILTER</option>
+					<option value="blogger">MOD_EASYBLOGARCHIVE_BLOGGER</option>
+					<option value="team">MOD_EASYBLOGARCHIVE_TEAM</option>
+				</field>
+
+				<field name="bloggerId" type="text" default="" label="MOD_EASYBLOGARCHIVE_BLOGGER_ID" description="MOD_EASYBLOGARCHIVE_BLOGGER_ID_DESC" />
+
+				<field name="teamId" type="text" default="" label="MOD_EASYBLOGARCHIVE_TEAM_ID" description="MOD_EASYBLOGARCHIVE_TEAM_ID_DESC"  />
+
+				<field name="count" type="text" default="0" label="MOD_EASYBLOGARCHIVE_COUNT" description="MOD_EASYBLOGARCHIVE_COUNT_DESC" />
+
+				<field name="showfuture" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGARCHIVE_SHOW_FUTURE_MONTHS" description="MOD_EASYBLOGARCHIVE_SHOW_FUTURE_MONTHS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showempty" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGARCHIVE_SHOW_EMPTY_MONTHS" description="MOD_EASYBLOGARCHIVE_SHOW_EMPTY_MONTHS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="showemptyyear" type="radio" class="btn-group" default="1" label="MOD_EASYBLOGARCHIVE_SHOW_EMPTY_YEARS" description="MOD_EASYBLOGARCHIVE_SHOW_EMPTY_YEARS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="collapse" type="radio" class="btn-group" default="0" label="MOD_EASYBLOGARCHIVE_COLLAPSE_MONTHS" description="MOD_EASYBLOGARCHIVE_COLLAPSE_MONTHS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="order" type="list" default="asc" label="MOD_EASYBLOGARCHIVE_MONTHS_ORDERING" description="MOD_EASYBLOGARCHIVE_MONTHS_ORDERING_DESC">
+					<option value="asc">Ascending</option>
+					<option value="desc">Descending</option>
+				</field>
+
+				<field name="catid" type="modal_multicategories" label="MOD_EASYBLOGARCHIVE_CATEGORY_ID" description="MOD_EASYBLOGARCHIVE_CATEGORY_ID_DESC" />
+				<field name="excatid" type="text" label="MOD_EASYBLOGARCHIVE_EXCLUDE_CATEGORY_ID" description="MOD_EASYBLOGARCHIVE_EXCLUDE_CATEGORY_ID_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

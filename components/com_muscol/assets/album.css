@@ -1,0 +1,448 @@
+@charset "utf-8";
+/* CSS Document */
+
+/** 
+ * @version		1.0.1
+ * @package		muscol
+ * @copyright	2009 JoomlaMusicSolutions.com
+ * @license		GPLv2
+ */
+
+/********************************/
+
+tr.tr_song_link{
+	/*background:url(images/back_song.png) repeat-x;*/
+}
+tr.tr_song_link0{
+	background-color:#eee;
+}
+tr.tr_song_link1{
+	
+}
+tr.tr_song_link td{
+	padding-top:3px;
+	padding-bottom:3px;
+}
+tr.tr_song_link:hover{
+	background-color:#CCC;
+}
+a.song_link{
+width:100%;
+display:block;
+}
+a.song_link:hover{
+/*color:#FF0000;*/
+}
+
+/*********************************/
+
+.rule_sep{
+height:5px;
+border-top:1px solid #999999;
+margin-left:200px;
+margin-right:200px;
+}
+.imatge_gran{
+
+width:430px;
+border:1px solid #CCCCCC;
+}
+.div_imatge_gran{
+text-align:left;
+padding-bottom:5px;
+}
+.first_col_content{
+	background-color:#FFF;
+}
+.album_rating{
+	padding-bottom:10px;
+}
+.first_col{
+	width:430px;
+	background:url(images/back_point.gif) 0px 5px;
+}
+.second_col{
+	padding-left:15px;
+}
+
+h2.artista_disc{
+
+font-weight:normal;
+padding:0px;
+font-size:22px;
+}
+h2.artista_disc img{
+max-height:40px;
+}
+.artista_disc a{
+/*color:#999999;*/
+}
+.artista_disc a:link{
+/*color:#999999;*/
+}
+.artista_disc a:hover{
+/*color:#666666;*/
+}
+h1.album_disc{
+
+font-weight:normal;
+padding:0px;
+font-size:24px;
+}
+h1.album_disc img{
+max-height:50px;
+}
+.subtitle_disc{
+color:#999999;
+}
+.nom_song{
+text-align:left;
+padding-left:10px;
+color:#666;
+/*width:253px;*/
+}
+.num_song{
+width:20px;
+text-align:right;
+color:#666;
+padding-top:2px;
+}
+.time_song{
+text-align:right; 
+padding-left:20px;
+color:#666;
+}
+.buttons_song{
+text-align:left; 
+padding-left:10px;
+color:#666;
+}
+.song_player{
+text-align:left; 
+padding-left:10px;
+color:#666;
+width:80px;
+}
+.time_song_total{
+text-align:right; 
+padding-left:20px;
+color:#666;
+}
+.disc_label{
+border-bottom:1px solid #006699; color:#006699;
+margin-bottom:3px;
+padding-bottom:3px;
+}
+.year_disc{
+/*font-family:"century gothic";*/
+font-size:16px;
+line-height:34px;
+color:#999999;
+}
+.date_disc{
+font-size:18px;
+color:#999999;
+padding-left:20px;
+}
+.date_disc img{
+vertical-align:bottom;
+padding-bottom:4px;
+border:none;
+}
+.year_disc img{
+
+border:none;
+}
+.year_disc a,.year_disc a:link,.year_disc a:visited{
+color:#999999;
+}
+.year_disc a:hover{
+color:#666666;
+}
+.taula_next_album{
+	width:100%;
+	-moz-border-radius:4px;
+	padding:5px;
+	background-color:#f9f9f9;
+	border:1px solid #dfdfdf;
+}
+.taula_next_album a img{
+vertical-align:middle;
+border:1px solid #cccccc;
+}
+.taula_next_album a:hover img{
+vertical-align:middle;
+border:1px solid #000000;
+
+}
+.prev_album{
+text-align:left;
+width:33%;
+}
+td.prev_album a:hover{
+/*color:#FF0000;
+background-color:#fffeee;*/
+}
+.next_album{
+text-align:right;
+width:33%;
+}
+td.next_album a:hover{
+/*color:#FF0000;
+background-color:#fffeee;*/
+}
+.next_album_type{
+width:33%;
+text-align:center;
+color:#CCCCCC;
+}
+.no_songs{
+padding:5px;
+color:#999999;
+}
+
+/********************* DETAILS ************************/
+
+.disc_details{
+	margin-bottom:10px;
+}
+
+table.details{
+	border-bottom:1px solid #eeeeee;
+	border-right:1px solid #eeeeee;
+	font-size:12px;
+}
+table.details table td{
+	border-top:1px solid #eeeeee;
+}
+td.label_detailed_album{
+	/*background-color:#eeeeee;*/
+	padding-left:1px;
+	width:30%;
+	color:#999;
+}
+.value_detailed_album{
+	/*width:50%;*/
+	padding-left:1px;
+	padding-right:1px;
+}
+
+/******************** grid view *********************/
+
+ul,li {
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+padding-left:0px;
+padding-right:0px;
+margin-left:0px;
+}
+
+ul.albums {
+display:inline-block;
+}
+
+ul.albums li {
+float:left;
+width:117px;
+margin:5px;
+display:block;
+}
+
+ul.albums img{
+border:1px solid #CCCCCC;
+
+}
+ul.albums li div{
+height:117px;
+display:table-cell;
+vertical-align:bottom;
+}
+ul.albums li a, ul.albums li a:visited {
+display:block;
+width:117px;
+}
+
+ul.albums li a:hover img{ border:1px solid #000; }
+ul.albums li a:hover span{ color:#000;}
+
+
+ul.albums .name {
+display:block;
+padding-top:5px;
+color:#666666;
+}
+ul.albums span {
+font-size:12px;
+line-height:16px;
+text-align:left;
+}
+
+div.cd{
+	height:117px;
+}
+div.dvd{
+	height:164px;
+}
+a.cd{
+	height:205px;
+}
+a.dvd{
+	height:230px;
+}
+
+ul.albums .year{
+color:#999999;
+font-size:10px;
+}
+ul.albums .year img{
+border:none;
+vertical-align:middle;
+padding-bottom:4px;
+}
+ul.albums a:hover .year img{
+border:none;
+}
+.nom_artist_song{
+	color:#999;
+	padding-left:10px;
+}
+.num_hits{
+	font-size:14px;
+	font-family:"Trebuchet MS",Verdana,serif;
+}
+.disc_details h3 {
+	border-bottom:1px solid #D3D3D3;
+	color:#466A02;
+	font-size:16px;
+	font-weight:normal;
+	height:auto;
+	letter-spacing:normal;
+	line-height:100%;
+	margin:0 0 5px;
+	padding:0;
+	text-indent:0;
+}
+.disc_data{
+	background:url(images/back_album_data.png) no-repeat;
+	padding:5px;
+	padding-right:15px;
+	margin-bottom:0px;
+}
+.disc_data_bottom{
+	background:url(images/back_album_data_bottom.png) no-repeat;
+	height:4px;
+	margin-bottom:5px;
+}
+.num_ratings{
+	font-size:12px;
+}
+
+.muscol_edit{
+	text-align:right;
+	margin-bottom:4px;
+}
+
+/* NEW in 2.4*/
+.table td.num_song, td.num_song{
+	text-align:center;
+}
+.play_button{
+	display:none;
+}
+
+tr.tr_song_link:hover .play_button, tr.info .play_button{
+	display:inline ;
+}
+
+tr.tr_song_link:hover .song_position, tr.info .song_position{
+	display:none;
+}
+
+.play_button:hover .icon-volume-up {
+background-position: -288px -72px;
+}
+
+.searchalbums select, .searchsongs select{
+	width:120px;
+}
+
+.div_imatge_gran{
+	position:relative;
+}
+.playbutton_div {
+	position:absolute;
+	width: 44px;
+	height: 44px;
+	top: 50%;
+	left: 50%;
+	background:none;
+}
+
+.play-lg {
+	display: none;
+	width: 44px;
+	height: 44px;
+	position:absolute;
+	left:-21px;
+	top:-21px;
+	
+	padding: 0;
+	background: url(images/playicons.png) ;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+.play-lg:hover{
+	background-position: -44px 0;
+}
+
+.pause-lg {
+	background-position: 0px -88px;
+}
+.pause-lg:hover {
+	background-position: -44px -88px;
+}
+
+.div_imatge_gran:hover .play-lg{display:block;
+}
+
+.nom_song span.year{
+	font-size: 12px;
+color: #999;
+}
+
+span.year img, .year_disc img{
+	vertical-align:text-top;
+}
+
+tr.info td {
+background-color: #d9edf7;
+}
+
+.image_song_list {
+margin-right: 5px;
+}
+.pull-left {
+float: left;
+}
+.img-rounded {
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+
+a.muscol_tags{
+	text-decoration: none !important;
+}
+
+a.muscol_tags:hover span{
+	background-color: #000;
+}

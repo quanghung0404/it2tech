@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.1" group="content" method="upgrade">
+	<name>Content - Widgetkit</name>
+    <version>2.7.4</version>
+    <description>A widget toolkit by YOOtheme.</description>
+    <creationDate>June 2016</creationDate>
+    <copyright>Copyright (C) YOOtheme GmbH</copyright>
+    <license>GNU General Public License v2 or later</license>
+    <author>YOOtheme</author>
+    <authorEmail>info@yootheme.com</authorEmail>
+    <authorUrl>http://yootheme.com</authorUrl>
+	<files>
+		<filename plugin="widgetkit">widgetkit.php</filename>
+    </files>
+</extension>

@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "dialog",
+            "markitup"
+        ],
+        "stylesheet": [
+            "dialog/default"
+        ],
+        "adapter": "Komento"
+    }
+]

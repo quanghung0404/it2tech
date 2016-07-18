@@ -1,0 +1,34 @@
+.eb-composer-form {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.eb-composer-body {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-right: @eb-composer-panel-size;
+
+    @media(max-width: 1000px) {
+        padding-right: 0;
+    }
+}
+
+// This is where all the alerts are shown
+.eb-composer-alerts {
+
+    .alert {
+        margin-bottom: @eb-composer-gutter / 2;
+    }
+}
+
+// This keeps all the strings, it is not visible.
+.eb-composer-messages {
+    display: none;
+}

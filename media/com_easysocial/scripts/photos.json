@@ -1,0 +1,9 @@
+[
+    {
+        "script": [
+            "photos/viewer",
+            "albums/browser"
+        ],
+        "adapter": "EasySocial"
+    }
+]

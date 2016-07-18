@@ -171,7 +171,7 @@
 				targetGenerationButton = this;
 				
 				// Grab targeted sitemap link
-				var tempTargetLink = $(this).parent().children('input[data-role=sitemap_links]').val() || $(this).parent().children('input[data-role=sitemap_links_sef]').attr('data-valuenosef');
+				var tempTargetLink = $(this).parent().children('#jmap_seo input[data-role=sitemap_links]').val() || $(this).parent().children('#jmap_seo input[data-role=sitemap_links_sef]').attr('data-valuenosef');
 				// Reset always sitemap params to merge dynamically
 				targetParsedSitemapLink = {
 						format:null,
@@ -204,7 +204,7 @@
 				// Live event binding for clear cache by ajax task
 				$(document).on('click.precaching', 'button[data-role=clearcache]', function(jqEvent) {
 					// Grab targeted sitemap link
-					var tempTargetLink = $(this).parent().children('input[data-role=sitemap_links]').val() || $(this).parent().children('input[data-role=sitemap_links_sef]').attr('data-valuenosef');
+					var tempTargetLink = $(this).parent().children('#jmap_seo input[data-role=sitemap_links]').val() || $(this).parent().children('#jmap_seo input[data-role=sitemap_links_sef]').attr('data-valuenosef');
 					// Reset always sitemap params to merge dynamically
 					targetParsedSitemapLink = {
 							format:null,
@@ -435,7 +435,7 @@
 						runProcessing();
 					} else {
 						// Last ajax call status = end to close </urlset>
-						if(processStatus == 'run') {
+						if(processStatus == 'run' || processStatus == 'start') {
 							showProgress(false, 100, 'striped', COM_JMAP_PRECACHING_PROCESS_FINALIZING);
 							processStatus = 'end';
 							
@@ -546,14 +546,14 @@
 		var setPrecachedStatusLabels = function() {
 			// Grab all links and build as array to post
 			var availableSitemapLinks = new Array();
-			if($('input[data-role=sitemap_links]').length) {
-				var availableSitemapLinksWrappedSet = $('input[data-role=sitemap_links]').slice(2, 8);
+			if($('#jmap_seo input[data-role=sitemap_links]').length) {
+				var availableSitemapLinksWrappedSet = $('#jmap_seo input[data-role=sitemap_links]').slice(1, 7);
 				$(availableSitemapLinksWrappedSet).each(function(index, value){
 					availableSitemapLinks[index] = $(value).val();
 				});
 			} else {
 				//SEF links mode detected
-				var availableSitemapLinksWrappedSet = $('input[data-role=sitemap_links_sef]').slice(2, 8);
+				var availableSitemapLinksWrappedSet = $('#jmap_seo input[data-role=sitemap_links_sef]').slice(1, 7);
 				$(availableSitemapLinksWrappedSet).each(function(index, value){
 					availableSitemapLinks[index] = $(value).attr('data-valuenosef');
 				});

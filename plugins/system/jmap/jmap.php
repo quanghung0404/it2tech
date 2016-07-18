@@ -92,7 +92,7 @@ class plgSystemJMap extends JPlugin {
 		}
 		
 		// Security safe 1 - If Joomla 3.4+ and JMAP internal link force always the lang url param using the cookie workaround
-		if( $app->input->get ( 'option' ) == 'com_jmap' && version_compare(JVERSION, '3.4', '>=') && $this->jmapConfig->get('advanced_multilanguage', 1)) {
+		if( $app->input->get ( 'option' ) == 'com_jmap' && version_compare(JVERSION, '3.4', '>=') && $this->jmapConfig->get('advanced_multilanguage', 0)) {
 			$lang = $app->input->get('lang');
 		
 			$sefs = JLanguageHelper::getLanguages('sef');
@@ -119,7 +119,7 @@ class plgSystemJMap extends JPlugin {
 					$uri = JUri::getInstance();
 					$path = $uri->getPath();
 					// Force the language SEF code in the path
-					$path = $lang . '/' . ltrim($path, '/');
+					$path = str_replace('/index.php', '/' . $lang . '/index.php', $path);
 					$uri->setPath($path);
 				}
 			}

@@ -1,0 +1,12 @@
+[
+    {
+        "library": [
+            "popbox",
+            "chosen"
+        ],
+        "language": [
+            "FIELDS_USER_DATETIME_LOCAL_TIMEZONE"
+        ],
+        "adapter": "EasySocial"
+    }
+]

@@ -112,7 +112,11 @@ class JMapModelAjaxserver extends JMapModel implements IAjaxserverModel {
 				'alexabacklinks' => JText::_ ( 'COM_JMAP_NA' ),
 				'alexapageloadtime' => JText::_ ( 'COM_JMAP_NA' ),
 				'googleindexedlinks' => JText::_ ( 'COM_JMAP_NA' ),
-				'alexagraph' => ''
+				'alexagraph' => '',
+				'semrushrank' => JText::_ ( 'COM_JMAP_NA' ),
+				'semrushkeywords' => JText::_ ( 'COM_JMAP_NA' ),
+				'semrushcompetitors' => JText::_ ( 'COM_JMAP_NA' ),
+				'semrushgraph' => ''
 		);
 		
 		try {
@@ -138,12 +142,22 @@ class JMapModelAjaxserver extends JMapModel implements IAjaxserverModel {
 				$pageRanksArray ['alexabacklinks'] = JMapSeostatsServicesAlexa::getBacklinkCount ();
 				$pageRanksArray ['alexapageloadtime'] = JMapSeostatsServicesAlexa::getPageLoadTime ();
 				$pageRanksArray ['alexagraph'] = JMapSeostatsServicesAlexa::getTrafficGraph (1, false, 800, 320, 12);
-				if ( function_exists ( 'mb_convert_encoding' )) {
-					$pageRanksArray ['googlerank'] = JMapSeostatsServicesGoogle::getPageRank ();
-				}
+				$pageRanksArray ['googlerank'] = JMapSeostatsServicesAlexa::getBounceRate ();
 				$pageRanksArray ['googleindexedlinks'] = JMapSeostatsServicesGoogle::getSiteindexTotal ();
 
-				// All completed succesfully
+				// SEMRush stats
+				$topLevelDomain = 'us';
+				$parsedUrl = explode('.', $url);
+				$topLevelDomainDetected = array_pop($parsedUrl);
+				if(in_array($topLevelDomainDetected, JMapSeostatsServicesSemrush::getDBs())) {
+					$topLevelDomain = $topLevelDomainDetected;
+				}
+				$pageRanksArray ['semrushrank'] = JMapSeostatsServicesSemrush::getDomainRank($url, $topLevelDomain);
+				$pageRanksArray ['semrushkeywords'] = JMapSeostatsServicesSemrush::getOrganicKeywords($url, $topLevelDomain);
+				$pageRanksArray ['semrushcompetitors'] = JMapSeostatsServicesSemrush::getCompetitors($url, $topLevelDomain);
+				$pageRanksArray ['semrushgraph'] = JMapSeostatsServicesSemrush::getDomainGraph(1, $url, $topLevelDomain);
+
+				// All completed successfully
 				$response->result = true;
 				$response->seostats = $pageRanksArray;
 			}

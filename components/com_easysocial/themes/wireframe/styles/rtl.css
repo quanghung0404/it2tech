@@ -1,0 +1,1084 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License http://stackideas.com/licensing.html
+* @author 		Stack Ideas Sdn Bhd
+**/
+
+/* Quick fix RTL. Not part of ATS! */
+/* Php checking if RTL format load this file */
+/* e.g.: <link rel="stylesheet" href="components/com_easysocial/themes/wireframe/styles/rtl.css" type="text/css" />*/
+
+/*utilities*/
+body div#fd,
+body div#fd .dropdown-menu,
+body div#fd.es .es-profile-header-action > div .btn,
+body div#fd.es .textboxlist-menu .textboxlist-menuItem,
+body div#fd.es.view-profile .form-horizontal .control-label,
+body div#fd.es.es-dialog .modal-body,
+body div#fd.es.popbox,
+body div#fd.es.popbox.popbox-toolbar .dropdown-menu-login .dropdown-menu-footer {
+    text-align: right !important;
+}
+body div#fd .modal-footer,
+body div#fd.es.es-dialog .modal-footer,
+body div#fd .form-horizontal .control-label {
+    text-align: left;
+}
+
+body div#fd.es .es-story-reset-button,
+body div#fd.es .es-story-actions,
+body div#fd.es.es-dialog .modal-header .close,
+body div#fd.es .es-story-location-buttons > * {
+    float: left;
+}
+body div#fd.es .es-story-meta-buttons,
+body div#fd.es .es-story-friends-textbox .textboxlist-textField,
+body div#fd.es .textboxlist-textField,
+body div#fd.es .es-comments-form .es-avatar,
+body div#fd.es .es-create-category-select .btn-wrap,
+body div#fd .nav-tabs > li,
+body div#fd.es .avatar-wrap,
+body div#fd.es.view-conversations .es-sidebar .es-avatar-wrap {
+    float: right;
+}
+
+body div#fd.es.popbox {
+    text-align: right !important;
+}
+
+body div#fd .pull-left {
+    float: right !important;
+}
+body div#fd .pull-right {
+    float: left !important;
+}
+
+body div#fd .media > .pull-left {
+    margin-right: 0;
+    margin-left: 10px;
+}
+body div#fd .media > .pull-right {
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+body div#fd .label {
+    display: inline-block;
+}
+
+body div#fd.fd-popover.bottom .arrow:after {
+    margin-right: -10px;
+    margin-left: 0;
+}
+body div#fd.es .pull-right > .dropdown-menu {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .pull-left > .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+body div#fd.es .dropdown-menu {
+    float: right;
+    left: auto;
+    right: 0;
+}
+body div#fd .list-inline > li:first-child {
+    padding-left: 5px;
+    padding-right: 0;
+}
+body div#fd .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle_),
+body div#fd .pagination > li:last-child > a, body div#fd .pagination > li:last-child > span {
+    border-radius: 0 4px 4px 0;
+}
+body div#fd .btn-group > .btn:last-child:not(:first-child), body div#fd .btn-group > .dropdown-toggle_:not(:first-child),
+body div#fd .pagination > li:first-child > a, body div#fd .pagination > li:first-child > span {
+    border-radius: 4px 0 0 4px;
+}
+body div#fd.es .avatar-wrap {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+body div#fd blockquote {
+    border-left: 0;
+    border-right: 5px solid #eeeeee;
+}
+/*helper*/
+body div#fd .mr-0{margin-left:0px !important}
+body div#fd .mr-5{margin-left:5px !important}
+body div#fd .mr-10{margin-left:10px !important}
+body div#fd .mr-15{margin-left:15px !important}
+body div#fd .mr-20{margin-left:20px !important}
+body div#fd .ml-0{margin-right:0px !important}
+body div#fd .ml-5{margin-right:5px !important}
+body div#fd .ml-10{margin-right:10px !important}
+body div#fd .ml-15{margin-right:15px !important}
+body div#fd .ml-20{margin-right:20px !important}
+
+body div#fd .pr-0{padding-left:0px !important}
+body div#fd .pr-5{padding-left:5px !important}
+body div#fd .pr-10{padding-left:10px !important}
+body div#fd .pr-15{padding-left:15px !important}
+body div#fd .pr-20{padding-left:20px !important}
+body div#fd .pl-0{padding-right:0px !important}
+body div#fd .pl-5{padding-right:5px !important}
+body div#fd .pl-10{padding-right:10px !important}
+body div#fd .pl-15{padding-right:15px !important}
+body div#fd .pl-20{padding-right:20px !important}
+
+/*grid*/
+
+body div#fd.es [class^="col-"] {
+    float: right;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+body div#fd .col-xs-offset-12 {
+    margin-right: 100%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-11 {
+    margin-right: 91.6667%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-10 {
+    margin-right: 83.3333%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-9 {
+    margin-right: 75%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-8 {
+    margin-right: 66.6667%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-7 {
+    margin-right: 58.3333%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-6 {
+    margin-right: 50%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-5 {
+    margin-right: 41.6667%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-4 {
+    margin-right: 33.3333%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-3 {
+    margin-right: 25%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-2 {
+    margin-right: 16.6667%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-1 {
+    margin-right: 8.33333%;
+    margin-left: 0;
+}
+body div#fd .col-xs-offset-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+body div#fd .col-sm-offset-12 {
+    margin-right: 100%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-11 {
+    margin-right: 91.6667%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-10 {
+    margin-right: 83.3333%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-9 {
+    margin-right: 75%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-8 {
+    margin-right: 66.6667%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-7 {
+    margin-right: 58.3333%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-6 {
+    margin-right: 50%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-5 {
+    margin-right: 41.6667%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-4 {
+    margin-right: 33.3333%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-3 {
+    margin-right: 25%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-2 {
+    margin-right: 16.6667%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-1 {
+    margin-right: 8.33333%;
+    margin-left: 0;
+}
+body div#fd .col-sm-offset-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+
+/*layout*/
+body div#fd.es .es-container .es-sidebar {
+    border-left: 1px solid #d7d7d7;
+    border-right: 0px;
+}
+body div#fd.es .es-container .es-content {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: -1px;
+
+}
+
+/*toolbar*/
+body div#fd.es .es-toolbar .nav-collapse > .fd-nav > li {
+    float: right;
+}
+body div#fd.es.popbox.popbox-toolbar .dropdown-menu-login .dropdown-menu-footer {
+    text-align: right;
+}
+
+/*widget*/
+body div#fd.es .es-widget .widget-list-grid > li {
+    float: right;
+    margin-right: 0;
+    margin-left: 11px;
+}
+body div#fd.es .es-widget .fd-nav .widget-filter.has-fonticon .filter-title {
+    margin-left: 0;
+    margin-right: 24px;
+}
+body div#fd.es .es-widget .es-widget-body {
+    padding: 6px 6px 6px 0;
+}
+body div#fd.es .es-widget .widget-list.widget-list-with-count > li {
+    padding-right: 0;
+    padding-left: 30px;
+}
+body div#fd.es .es-widget .es-widget-calendar thead > tr > th,
+body div#fd.es .es-widget .es-widget-calendar tbody > tr > td
+body div#fd.es .es-widget .es-widget-calendar tbody > tr > td {
+    padding: 3px;
+}
+body div#fd.es .es-widget .fd-nav > li.loading > a:before {
+    left:6px;
+    right: auto;
+}
+body div#fd.es .es-widget .fd-nav .data-dashboardfeeds-filter-edit {
+    left: 5px;
+    right: auto;
+}
+
+/*profile header*/
+body div#fd.es .es-profile-header-avatar {
+    left: auto;
+    right: 10px;
+}
+body div#fd.es .es-profile-header-body {
+    margin: 10px 205px 0 10px;
+}
+body div#fd.es .es-profile-header-meta span {
+    border-right: 0;
+    border-left: 1px dotted #d7d7d7;
+    margin-left: 10px;
+    padding-left: 10px;
+    margin-right: 0;
+    padding-right: 0;
+    float: right;
+}
+body div#fd.es .es-flyout .es-flyout-button > i {
+    margin-left: 4px;
+    margin-right: 0;
+}
+
+body div#fd.es .es-header-mini .es-header-mini-body {
+    margin-left: 0;
+    margin-right: 100px;
+}
+body div#fd.es.w480 .es-header-mini .es-header-mini-body {
+    margin-right: 0;
+}
+body div#fd.es .es-header-mini .es-header-mini-meta {
+    left: auto;
+    right: 0;
+}
+body div#fd.es .es-header-mini .es-header-mini-footer > div {
+    padding-right: 20px;
+    padding-left: 0;
+    line-height: 26px;
+}
+body div#fd.es .es-header-mini .btn-scroll {
+    right: auto;
+    left: 0;
+}
+body div#fd.es .es-header-mini .es-nav-apps {
+    float: left;
+}
+body div#fd.es .es-header-mini .es-header-mini-apps-action {
+    left: 0;
+    right: auto;
+    margin-right: 0;
+    margin-left: 24px;
+}
+body div#fd.es .es-header-mini .es-header-mini-avatar {
+    float: right;
+    left: auto;
+    right: 15px;
+}
+body div#fd.es .es-header-mini .btn-scroll .btn {
+    border: 1px solid rgba(0,0,0,.1);
+    border-left: none;
+}
+body div#fd.es .es-header-mini .btn-scroll .btn-right {
+    border-radius: 2px 0 0;
+}
+body div#fd.es .es-header-mini .btn-scroll .btn-left {
+    border-radius :0 0 0 2px;
+}
+body div#fd.es .es-header-mini .es-header-mini-cover b {
+    box-shadow: -200px -30px 100px #fff inset;
+}
+body div#fd.es.w480 .es-header-mini .es-header-mini-avatar {
+    right: auto;
+}
+body div#fd.es.w480 .es-header-mini .es-header-mini-footer > div {
+    padding-left: 0;
+    padding-right: 10px;
+}
+body div#fd.es.w480 .es-profile-header .es-profile-header-avatar {
+    right: auto;
+}
+body div#fd.es .es-profile-header-footer nav > span + span {
+    border-left: none;
+    border-right: 1px dotted #d7d7d7;
+    margin: 0 10px 0 0;
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+/*es-filter*/
+body div#fd.es .es-filter-nav > li {
+    margin-right: 0;
+    margin-left: 8px;
+}
+body div#fd.es .es-filter-nav > li + li {
+    border-left: 0;
+    padding-left: 0;
+    border-right: 1px dotted #d7d7d7;
+    padding-right: 8px;
+}
+/*story*/
+body div#fd.es .es-story-avatar {
+    left: auto;
+    right: 10px;
+}
+body div#fd.es .es-story.is-collapsed .es-story-body {
+    padding: 0 55px 0 0;
+}
+body div#fd.es .es-story.is-resizing .es-story-avatar {
+    left: auto;
+    right: -44px;
+}
+body div#fd.es .es-story-meta-button {
+    border-right: 0;
+    border-left: 1px solid #d7d7d7;
+}
+body div#fd.es .es-story-location-form,
+body div#fd.es .es-story-mood-form {
+    padding: 6px 10px 6px 34px;
+}
+body div#fd.es .es-story-mood-buttons {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .es-story .es-album-view .es-album-upload-button > span b,
+body div#fd.es .es-story .es-album-view .es-album-upload-button > span i {
+    left: auto;
+    right: -5px;
+}
+body div#fd.es .es-story .es-album-view.has-photos .es-album-upload-button {
+    float: right;
+    padding: 0 25px 0 10px;
+}
+body div#fd.es .es-story .es-album-view .es-photo-item {
+    float: right;
+}
+body div#fd.es .es-story-location-buttons {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .es-story-link-input {
+    padding: 4px 4px 4px 73px !important;
+}
+body div#fd.es .es-story-link-buttons {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .es-story-link-buttons .btn {
+    border-radius: 3px 0 0 3px;
+}
+
+body div#fd.es .es-story-link-item {
+    padding: 10px 10px 10px 30px;
+}
+body div#fd.es .es-story-link-remove-button {
+    right: auto;
+    left: 10px;
+}
+body div#fd.es .es-story-link-images {
+    float: right;
+    left: auto;
+    right: 10px;
+    margin-right: 0;
+    margin-left: 10px;
+}
+body div#fd.es .es-story-link-item.has-images .es-story-link-col {
+
+}
+body div#fd.es .es-story-link-item.has-images .es-story-link-col {
+    margin-left: 0;
+    margin-right: 120px;
+}
+/*stream*/
+body div#fd.es .es-streams {
+    padding: 10px 20px 0 0;
+}
+
+body div#fd.es .es-stream-meta .es-stream-title {
+    padding-right: 0;
+    padding-left: 60px;
+}
+body div#fd.es .stream-icon {
+    right: 0;
+    left: 10px;
+}
+
+body div#fd.es .es-stream-control {
+    right: auto;
+    left: 0;
+}
+body div#fd.es .es-action-feedback > li + li:before {
+    left: auto;
+    right: -9px;
+}
+body div#fd.es .es-stream-preview .stream-preview-image {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}
+body div#fd.es .es-story-panel-content .es-story-files-content .es-story-files-dropsite .es-story-files-upload > span i {
+    left: auto;
+    right: -5px;
+}
+
+body div#fd.es.view-activities .es-stream .es-stream-control {
+    right: 0;
+    left: auto;
+}
+body div#fd.es.view-activities .es-stream .es-privacy {
+    float: left;
+    left: 0;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+}
+body div#fd.es .stream-apps-content .stream-apps-meta li {
+    margin-right: 0;
+    margin-left: 8px;
+}
+body div#fd.es .stream-apps-content .stream-apps-meta li + li {
+    border-left: 0;
+    border-right: 1px dotted #d7d7d7;
+    padding-left: 0;
+    padding-right: 8px;
+}
+body div#fd.es .stream-filter .stream-filter-heading h3 {
+    margin: 10px 20px 0;
+}
+/*comment*/
+body div#fd.es .es-comments-form .es-form {
+    margin-left: 0;
+    margin-right: 40px;
+}
+
+body div#fd.es .es-comment-item-meta .es-comment-item-likecount:before {
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #d7d7d7;
+    border-top: 5px solid transparent;
+    /*right: 100%;*/
+    /*top: 2px;*/
+    /*border-color: transparent -moz-use-text-color transparent #d7d7d7*/
+
+    right: auto;
+    left: 100%;
+    border-left: 5px solid #d7d7d7;
+    border-right: 0;
+}
+body div#fd.es .es-comment-item-meta .es-comment-item-likecount:after {
+    border-left: 4px solid #fff;
+    border-right: 0;
+    right: auto;
+    left: 100%;
+}
+body div#fd.es .es-comment-item-meta .es-comment-item-likecount {
+    left: auto;
+    right: 4px;
+}
+
+body div#fd.es .es-comments-form .es-form-footer {
+    margin-left: 0;
+    margin-right: 40px;
+}
+
+body div#fd.es .es-comment-actions {
+    right: auto;
+    left: 5px;
+}
+body div#fd.es .es-comment-actions .es-comment-actions-toggle {
+    left: 0;
+    right: auto;
+}
+/*stream photo*/
+body div#fd.es .es-photo {
+    float: right;
+}
+body div#fd.es .es-photo u {
+    right: 0;
+    left: auto;
+}
+
+body div#fd.es .es-photos.pattern-tile.photos-2 .es-photo:nth-child(2) u,
+body div#fd.es .es-photos.pattern-tile.photos-3 .es-photo:nth-child(3) u,
+body div#fd.es .es-photos.pattern-tile.photos-4 .es-photo:nth-child(3) u,
+body div#fd.es .es-photos.pattern-tile.photos-4 .es-photo:nth-child(4) u {
+    margin-left: 0;
+    margin-right: 2px;
+}
+
+body div#fd.es .es-photo > a.fit-width b,
+body div#fd.es .es-photo > a.fit-height b,
+body div#fd.es .es-photos.pattern-tile.photos-1 .es-photo a.fit-small b,
+body div#fd.es .es-photos.pattern-tile.photos-1 .es-photo a.fit-width b,
+body div#fd.es .es-photos.pattern-tile.photos-1 .es-photo a.fit-height b,
+body div#fd.es .es-photos.pattern-tile.photos-1 .es-photo a.fit-both b {
+    text-align: right;
+}
+body div#fd.es .es-photo > a.fit-height img {
+    left: 0;
+}
+
+/*friend*/
+body div#fd.es.view-friends .es-item-list.friend-items .es-item-body > .btn-group,
+body div#fd.es.view-friends .es-item-grid.friend-items .es-item-body > .btn-group {
+    right: auto;
+    left: 10px;
+}
+
+body div#fd.es.view-friends .es-item-list.friend-items .es-item-body,
+body div#fd.es.view-friends .es-item-grid.friend-items .es-item-body {
+    margin-left: 0;
+    margin-right: 60px;
+}
+
+
+body div#fd.es .es-online-status {
+    left: 10px;
+    right: auto;
+}
+body div#fd.es .es-online-status.es-online-status-mini {
+    left: 5px;
+}
+
+/*widget*/
+body div#fd.es .es-widget .widget-list .es-count-no {
+    right: auto;
+    left: 10px;
+}
+
+/*list-media*/
+body div#fd.es .list-media .media-object {
+    margin: 0 0 0 15px;
+}
+
+body div#fd.es .es-notification-tool {
+    right: auto;
+    left: 0;
+}
+
+body div#fd.es .es-notifications:before {
+    right: 34px;
+    left: auto;
+}
+body div#fd.es .es-notifications .es-item-list {
+    margin: 0 60px 0 0;
+}
+body div#fd.es .es-notifications .es-item-list > li .es-notification:before {
+    right: -28px;
+    left: auto;
+}
+body div#fd.es .es-notifications .es-item-list > li .es-notification {
+    padding: 8px 12px 8px 30px;
+}
+
+body div#fd.es .es-notifications .es-item-list > li .es-notification .es-notice-action {
+    left: 15px;
+    right: auto;
+}
+body div#fd.es .es-notifications .es-item-list > li .es-notification .es-notice-content {
+    border-left: 0;
+    border-right: 2px solid #ddd;
+    padding-left: 0;
+    padding-right: 10px;
+}
+body div#fd.es .es-notifications .dropdown-arrow-topright {
+    left: -9px;
+    right: auto;
+}
+body div#fd.es .es-notifications .dropdown-arrow-topright:before {
+    left: 8px;
+    right: auto;
+}
+body div#fd.es .es-notifications .dropdown-arrow-topright:after {
+    left: 9px;
+    right: auto;
+}
+
+body div#fd.es.popbox-notifications .media .pull-left {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+body div#fd.es .es-item .es-item-body {
+    margin-left: 0;
+    margin-right: 50px;
+}
+
+
+body div#fd.es.popbox li > a {
+    padding-right: 0;
+    padding-left: 20px;
+}
+body div#fd.es.popbox.popbox-toolbar li > a {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+body div#fd.es .es-widget .es-widget-tab > li + li {
+    border-right: 1px solid #d7d7d7;
+    border-left: none;
+}
+
+/*albums*/
+body div#fd.es .es-media-item-menu {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .es-media-item-menu .btn .dropdown-menu {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .es-media-item-menu .btn .dropdown-menu:before {
+    right: auto;
+    left: 5px;
+}
+body div#fd.es .es-media-item-menu .btn .dropdown-menu:after {
+    right: auto;
+    left: 6px;
+}
+body div#fd.es .es-media-browser .es-content {
+    padding: 15px 15px 15px 0;
+}
+body div#fd.es .es-media-browser .es-media-new-button {
+    text-align: right;
+}
+body div#fd.es .es-media-browser .es-widget-head {
+    padding: 15px 0 15px 15px;
+}
+body div#fd.es .es-media-browser .es-widget-body {
+    padding: 15px 0 0 15px;
+}
+body div#fd.es .es-media-browser [data-album-list-item-group] {
+    margin-left: -15px;
+    margin-right: 0;
+}
+body div#fd.es .es-media-browser .es-media-new-button {
+    margin-left: 0;
+    margin-right: 5px;
+}
+body div#fd.es .es-media-browser .es-album-list-item-group-core + .es-media-sidebar-actions {
+    margin-right: 0;
+    padding-right: 0;
+
+    margin-left: -15px;
+    padding-left: 15px;
+}
+
+body div#fd.es .es-media-browser [data-album-list-item-group] > li > a > i {
+    float: right;
+    margin-right: 0;
+    margin-left: 6px;
+}
+body div#fd.es .es-media-browser [data-album-list-item-group] > li > a > b {
+    left: 10px;
+    right: auto;
+}
+body div#fd.es .es-album-cover b {
+    box-shadow: -200px -30px 100px white inset;
+}
+body div#fd.es .es-album-item .es-photo-item.layout-item {
+    float: right;
+}
+body div#fd.es .es-media-browser [data-album-list-item-group] > li.loading > a {
+    background-position: right center;
+}
+body div#fd.es .es-album-item .es-photo-item.layout-item .es-photo-menu-item {
+    right: auto;
+    left: 10px;
+}
+body div#fd.es .es-album-item.layout-row .es-photo-item {
+    float: right;
+    margin-right: 0;
+    margin-left: 2px;
+}
+body div#fd.es .es-albums-date {
+    padding-left: 0;
+    padding-right: 15px;
+    margin: 0 -15px 15px 0;
+}
+body div#fd.es .es-media-browser.layout-album .es-album-item.layout-row {
+    margin-right: 0;
+    margin-left: 15px;
+}
+body div#fd.es .es-albums-date {
+    /*float: none;*/
+}
+body div#fd.es .es-album-item.layout-row .es-media-stat {
+    text-align: left;
+}
+body div#fd.es .es-album-item.layout-row .es-media-stats {
+    float: left;
+}
+body div#fd.es .es-album-item .es-photo-item.layout-form {
+    float: right;
+}
+body div#fd.es .dropdown-arrow-topleft:before {
+    right: 20px;
+    left: auto;
+}
+body div#fd.es .dropdown-arrow-topleft:after {
+    right: 21px;
+    left: auto;
+}
+body div#fd.es .es-photo-meta-field {
+    padding: 0 6px 8px 140px;
+}
+body div#fd.es .es-photo-meta-field .es-photo-date {
+    left: 8px;
+    right: auto;
+}
+body div#fd.es .es-photo-meta-field .es-photo-location > span {
+    padding-left: 0;
+    padding-right: 15px;
+}
+body div#fd.es .es-location .es-location-buttons {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .es-location .es-location-buttons .btn {
+    border-radius: 3px 0 0 3px;
+}
+body div#fd.es.w480 .es-album-form .es-album-cover-field {
+    right: 0;
+    left: auto;
+}
+body div#fd.es .es-album-title-field {
+    padding: 4px 6px 4px 40px !important;
+}
+body div#fd.es .es-photo-title-field {
+    padding-right: 0 !important;
+    padding-left: 40px !important;
+}
+body div#fd.es .es-photo-privacy {
+    left: 0;
+    right: auto;
+    margin-right: 0;
+    margin-left: 5px;
+}
+/*forms*/
+body div#fd .radio input[type="radio"],
+body div#fd .radio-inline input[type="radio"],
+body div#fd .checkbox input[type="checkbox"],
+body div#fd .checkbox-inline input[type="checkbox"] {
+    float: right;
+    margin-right: -20px;
+    margin-left: 0;
+}
+body div#fd .radio-inline,
+body div#fd .checkbox-inline {
+    padding-left: 0;
+    padding-right: 20px;
+}
+body div#fd.es .data-relationship-display .data-relationship-display-actions {
+    right: auto;
+    left: 5px;
+}
+body div#fd .radio, body div#fd .checkbox {
+    padding-right: 20px;
+    padding-left: 0;
+}
+body div#fd .input-group .form-control:first-child,
+body div#fd .input-group-addon:first-child,
+body div#fd .input-group-btn:first-child > .btn,
+body div#fd .input-group-btn:first-child > .dropdown-toggle_,
+body div#fd .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle_),
+body div#fd .btn-group > .btn:last-child:not(:first-child),
+body div#fd .btn-group > .dropdown-toggle_:not(:first-child) {
+    /*border-bottom-right-radius: 3px;*/
+    /*border-top-right-radius: 3px;*/
+
+    border-radius: 0 3px 3px 0;
+}
+body div#fd .input-group .form-control:last-child,
+body div#fd .input-group-addon:last-child,
+body div#fd .input-group-btn:last-child > .btn,
+body div#fd .input-group-btn:last-child > .dropdown-toggle_,
+body div#fd .input-group-btn:first-child > .btn:not(:first-child),
+body div#fd .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle_) {
+    border-radius: 3px 0 0 3px;
+}
+
+body div#fd .input-group-btn:last-child > .btn {
+    margin-left: 0;
+    margin-right: -1px;
+}
+
+body div#fd.es .data-relationship-form-target .btn-delete {
+    left: 5px;
+    right: auto;
+}
+body div#fd.es .es-privacy .es-privacy-menu {
+    left: 0;
+    right: auto;
+}
+body div#fd.es .es-privacy .es-privacy-menu:before {
+    left: 10px;
+    right: auto;
+}
+body div#fd.es .es-privacy .es-privacy-menu:after {
+    left: 11px;
+    right: auto;
+}
+
+body div#fd.es .textboxlist {
+    padding: 4px 4px 0 0;
+}
+body div#fd.es .es-privacy .es-privacy-custom-form .btn {
+    float: left;
+}
+body div#fd.es .textboxlist-item {
+    float: right;
+    margin: 0 0 4px 4px;
+    padding: 0 4px 0 18px;
+}
+body div#fd.es .textboxlist-itemRemoveButton {
+    left: 0 !important;
+    right: auto;
+}
+body div#fd.es .textboxlist-itemRemoveButton > i {
+    margin: 4px 6px 0 0 !important;
+}
+
+body div#fd.es.mod-es-leaderboard .leader-rank {
+    float: left !important;
+}
+
+body div#fd.es.popbox.popbox-events-calendar-filter .list-media .media-object {
+    margin: 3px 0 0 10px;
+}
+
+body div#fd.es.popbox.popbox-profile .popbox-avatar {
+    left: auto;
+    right: 10px;
+}
+body div#fd.es.popbox.popbox-profile .profile-details {
+    padding: 20px 86px 5px 10px;
+}
+body div#fd.es.popbox.popbox-profile .popbox-info {
+    padding-left: 0;
+    padding-right: 85px;
+}
+body div#fd.es.popbox.popbox-profile .es-online-status {
+    right: 70px;
+    left: auto;
+}
+body div#fd.es.popbox.popbox-profile .popbox-item-info {
+    border-left: 0 !important;
+    border-right: 1px solid #f2f2f2 !important;
+}
+
+body div#fd.es .es-item-grid > li {
+    float: right;
+    margin-left: 1%;
+    margin-right: 0;
+}
+
+/* discussion */
+body div#fd.es .app-discussions .discussion-header .discussion-avatar,
+body div#fd.es .app-discussions .media .media-object {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}
+body div#fd.es .page-item .page-apps-container,
+body div#fd.es .page-item .app-contents-wrap {
+    padding: 10px 20px 0 0;
+}
+
+/* fd-explorer */
+body div#fd.es .fd-explorer-browser-action {
+    margin-left: 0;
+    margin-right: 140px;
+}
+body div#fd.es .fd-explorer-titlebar .fd-explorer-titlebar-side {
+    border-right: 0;
+    border-left: 1px solid #d7d7d7;
+}
+body div#fd.es .fd-explorer-titlebar .fd-explorer-titlebar-content {
+    left: auto;
+    right: 0;
+    padding: 5px 155px 5px 5px;
+}
+
+body div#fd.es .fd-explorer-sidebar {
+    border-left: 1px solid #d7d7d7;
+    border-right: 0;
+}
+body div#fd.es .fd-explorer-browser {
+    padding-left: 0;
+    padding-right: 150px;
+}
+body div#fd.es .fd-explorer-file .btn-file-remove {
+    left: 10px;
+    right: auto;
+}
+body div#fd.es.es-photo-popup .es-media-item-menu .btn-group {
+    float: left;
+}
+body div#fd.es .es-media-item-menu .btn-group + .btn-group {
+    margin-left: 8px;
+    margin-right: 0;
+}
+body div#fd.es .fd-explorer-folder .fd-folder-remove-button {
+    right: auto;
+    left: 6px;
+}
+
+/* timepicker */
+body div#fd.ui .ui-timepicker-div dl dt {
+    text-align: right;
+}
+
+body div#fd.es .es-app-filter.has-favicon .app-title {
+    margin-left: 0;
+    margin-right: 24px;
+}
+
+/*photo popup*/
+body div#fd.es.es-photo-popup .es-photo-close-button {
+    left: 0;
+    right: auto;
+}
+body div#fd.es.es-photo-popup .es-popup-handle {
+    padding-right: 0;
+    padding-left: 320px;
+}
+body div#fd.es.es-photo-popup .es-photo-footer {
+
+    left: -320px;
+    right: auto;
+
+}
+
+body div#fd.es .mentions-menu .mentions-menuItem {
+    text-align: right;
+}
+body div#fd.es.mentions-autocomplete .mentions-menu .mentions-menuItem > img {
+    float: right;
+    margin-right: 0;
+    margin-left: 6px;
+
+}
+
+body div#fd.es .app-members .member-item .desc,
+body div#fd.es .app-members .member-item h5 {
+    margin: 5px 50px 0 0;
+}
+body div#fd.es .app-news .group-news-items .group-news-meta ul li + li {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+
+    border-right: 1px dotted #d7d7d7;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+/*conversations*/
+body div#fd.es.view-conversations.layout-read ul.conversation-messages > li.message-item .message-user-name {
+    float: right;
+}
+body div#fd.es.view-conversations.layout-read ul.conversation-messages > li.message-item .message-time-wrap {
+    float: left;
+    margin-left: auto;
+    margin-right: 1px;
+}
+body div#fd.es.view-conversations.layout-read ul.conversation-messages > li.message-item .media-object {
+    float: right;
+    margin-left: 10px;
+    margin-right: auto;
+}
+body div#fd.es.view-conversations.layout-read ul.conversation-messages > li.message-item.message-right .media-object {
+    float: left;
+    margin-left: auto;
+    margin-right: 10px;
+}
+body div#fd.es.view-conversations.layout-read ul.conversation-messages > li.message-item.message-right .message-user-name {
+    float: left;
+    text-align: left;
+}
+body div#fd.es.view-conversations.layout-read ul.conversation-messages > li.message-item.message-right .message-time-wrap {
+    float: right;
+}
+body div#fd.es.view-conversations .es-content .conversation-actions {
+    right: 30px;
+    left: auto;
+}
+body div#fd.es.view-conversations .item-check {
+    margin-right: 0 !important;
+}

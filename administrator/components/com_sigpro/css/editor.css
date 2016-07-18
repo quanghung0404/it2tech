@@ -1,0 +1,11 @@
+.sigProEditorButton {
+	background: url(../../../../administrator/components/com_sigpro/images/xtd-sig-icon.png) 100% 0 no-repeat
+}
+.icon-sigProEditorButton {
+	background: url(../../../../administrator/components/com_sigpro/images/sigpro-icon.png) 0 0 no-repeat;
+	height: 16px !important;
+	width: 16px !important;
+	line-height: 16px !important;
+	position: relative;
+	top: 3px;
+}

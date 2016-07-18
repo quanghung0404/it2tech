@@ -1,0 +1,10 @@
+[
+    {
+        "language": [
+            "PLG_FIELDS_TEXTAREA_VALIDATION_INPUT_REQUIRED",
+            "PLG_FIELDS_TEXTAREA_VALIDATION_INPUT_TOO_SHORT",
+            "PLG_FIELDS_TEXTAREA_VALIDATION_INPUT_TOO_LONG"
+        ],
+        "adapter": "EasySocial"
+    }
+]

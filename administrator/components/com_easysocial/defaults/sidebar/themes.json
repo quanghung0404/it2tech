@@ -1,0 +1,29 @@
+{
+	"title"	: "COM_EASYSOCIAL_MENU_GROUP_THEMES",
+	"link"	: "index.php?option=com_easysocial&view=themes",
+	"access": "easysocial.access.themes",
+	"class"	: "fa-flask",
+	"view"	: "themes",
+	"active": "layout",
+	"childs":
+	[
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_THEMES_INSTALL",
+			"url"	:
+			{
+				"view"	: "themes",
+				"layout": "install"
+			},
+			"childs": []
+		},
+		{
+			"title"	: "COM_EASYSOCIAL_MENU_ITEM_THEMES_COMPILER",
+			"url"	:
+			{
+				"view"	: "themes",
+				"layout": "compiler"
+			},
+			"childs": []
+		}
+	]
+}

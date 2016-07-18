@@ -1,0 +1,112 @@
+div#fd.es .es-theme-compiler li.tab-divider {
+  font-weight: bold;
+  text-align: left !important;
+  padding: 5px 10px !important;
+  background-color: #DFE6EC !important;
+  background-image: linear-gradient(to bottom,#E4EAF0,#D8DFE7) !important;
+  background-repeat: repeat-x !important;
+  box-shadow: 0 1px 1px rgba(255,255,255,0.5) inset;
+  color: #333333;
+  border-top: none;
+}
+div#fd.es .es-theme-compiler .tab-box.tab-box-alt.tab-box-sidenav .nav-tabs .tab-item a {
+  padding: 5px 10px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div#fd.es .es-theme-compiler-status td {
+  vertical-align: top;
+}
+div#fd.es .es-theme-compiler-status small {
+  position: relative;
+  top: -2px;
+}
+div#fd.es .es-theme-compiler-status time {
+  font-size: 90%;
+}
+div#fd.es .es-theme-compiler-status strong {
+  font-size: 90%;
+}
+div#fd.es .es-theme-compiler-status .label {
+  text-transform: uppercase;
+  display: inline-block;
+  width: 60px;
+}
+div#fd.es .es-theme-compiler-status .is-ready .label {
+  background-color: #5cb85c;
+}
+div#fd.es .es-theme-compiler-status .is-ready .label[href]:hover,
+div#fd.es .es-theme-compiler-status .is-ready .label[href]:focus {
+  background-color: #449d44;
+}
+div#fd.es .es-theme-compiler-status .is-missing .label {
+  background-color: #d9534f;
+}
+div#fd.es .es-theme-compiler-status .is-missing .label[href]:hover,
+div#fd.es .es-theme-compiler-status .is-missing .label[href]:focus {
+  background-color: #c9302c;
+}
+div#fd.es .es-theme-compiler-status .is-modified .label {
+  background-color: #f0ad4e;
+}
+div#fd.es .es-theme-compiler-status .is-modified .label[href]:hover,
+div#fd.es .es-theme-compiler-status .is-modified .label[href]:focus {
+  background-color: #ec971f;
+}
+div#fd.es .es-theme-compiler-status .is-new .label {
+  background-color: #5bc0de;
+}
+div#fd.es .es-theme-compiler-status .is-new .label[href]:hover,
+div#fd.es .es-theme-compiler-status .is-new .label[href]:focus {
+  background-color: #31b0d5;
+}
+div#fd.es .es-theme-compiler-status .is-unknown .label {
+  background-color: #999999;
+}
+div#fd.es .es-theme-compiler-status .is-unknown .label[href]:hover,
+div#fd.es .es-theme-compiler-status .is-unknown .label[href]:focus {
+  background-color: #808080;
+}
+div#fd.es .es-theme-compiler-form header .label {
+  text-transform: uppercase;
+}
+div#fd.es .es-theme-compiler-form .progress {
+  height: 16px;
+}
+div#fd.es .es-theme-compiler-form .es-theme-compiler-progress {
+  display: none;
+  margin-top: -2px;
+  margin-bottom: 2px;
+}
+div#fd.es .es-theme-compiler-form.is-busy > header .es-theme-compiler-actions {
+  display: none;
+}
+div#fd.es .es-theme-compiler-form.is-busy > header .es-theme-compiler-progress {
+  display: block;
+}
+div#fd.es .es-theme-compiler-log {
+  border: 1px solid #DDDDDD;
+  border-collapse: separate !important;
+}
+div#fd.es .es-theme-compiler-log td {
+  border: none !important;
+  border-radius: none !important;
+}
+div#fd.es .es-theme-compiler-log tbody {
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 48px;
+  max-height: 160px;
+  width: 100%;
+  display: block;
+  background: #eee;
+}
+div#fd.es .es-theme-compiler-log tbody td {
+  border-right: 1px solid #fff !important;
+  border-bottom: 1px solid #fff !important;
+}
+div#fd.es .es-theme-compiler-log tbody td + td {
+  border-right: none !important;
+  width: 100%;
+}

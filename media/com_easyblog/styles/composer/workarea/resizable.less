@@ -1,0 +1,103 @@
+.ebd-workarea {
+
+    .ebd-block {
+
+        &.active {
+            > .ebd-block-viewport > .ui-resizable-handle {
+                display: block;
+                position: absolute !important;
+            }
+        }
+    }
+
+    &.is-sorting {
+
+        .ui-resizable-handle {
+            display: none !important;
+        }
+    }
+
+    @eb-block-resize-handle-width: 6px;
+    @eb-block-resize-handle-height: 6px;
+    @eb-block-resize-handle-bg: #fff;
+    @eb-block-resize-handle-border-color: #555;
+    @eb-block-resize-handle-size: 5px;
+
+    .ui-resizable-handle {
+        display: none;
+
+        > div {
+            position: absolute;
+            width: @eb-block-resize-handle-width;
+            height: @eb-block-resize-handle-height;
+            border: 1px solid @eb-block-resize-handle-border-color;
+            background: @eb-block-resize-handle-bg;
+        }
+    }
+
+    .ui-resizable-n {
+        > div {
+            bottom: 0;
+            left: 50%;
+            margin-left: @eb-block-resize-handle-width / -2;
+        }
+    }
+
+    .ui-resizable-s {
+
+        bottom: (@eb-block-resize-handle-size + @ebd-guide-padding) * -1;
+
+        > div {
+            top: 0;
+            left: 50%;
+            margin-left: @eb-block-resize-handle-width / -2;
+        }
+    }
+
+    .ui-resizable-e {
+
+        right: (@eb-block-resize-handle-size + @ebd-guide-padding) * -1;
+
+        > div {
+            top: 50%;
+            left: 0;
+            margin-top: @eb-block-resize-handle-height / -2;
+        }
+    }
+
+    .ui-resizable-w {
+
+        left: (@eb-block-resize-handle-size + @ebd-guide-padding + 1) * -1; // + 1 cosmetic
+
+        > div {
+            top: 50%;
+            right: 0;
+            margin-top: @eb-block-resize-handle-height / -2;
+        }
+    }
+
+    .ui-resizable-ne,
+    .ui-resizable-se,
+    .ui-resizable-nw,
+    .ui-resizable-sw {
+        > div {
+            top: 50%;
+            left: 50%;
+            margin-top: @eb-block-resize-handle-height / -2;
+            margin-left: @eb-block-resize-handle-width / -2;
+        }
+    }
+
+    .ui-resizable-sw {
+        left: (@eb-block-resize-handle-size + @ebd-guide-padding) * -1;
+        bottom: (@eb-block-resize-handle-size + @ebd-guide-padding) * -1;
+    }
+
+    .ui-resizable-se {
+        width: 9px;
+        height: 9px;
+        right: (@eb-block-resize-handle-size + @ebd-guide-padding) * -1;
+        bottom: (@eb-block-resize-handle-size + @ebd-guide-padding) * -1;
+        top: auto;
+    }
+}
