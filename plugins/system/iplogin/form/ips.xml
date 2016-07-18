@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+		<fieldset name="params"
+			label="IPL_IP_LOGIN"
+			description=""
+			addfieldpath="/plugins/system/iplogin/fields"
+			>
+			<field name="@note_ips" type="iplogin_desc" class="alert" label="IPL_IP_LOGIN_DESC" />
+			<field name="@note_current_ip" type="iplogin_currentip" label="IPL_CURRENT_IP" />
+
+			<field name="@block_ip1_a" type="nn_block" start="1" />
+			<field name="ip1_enabled" type="radio" class="btn-group" default="0" label="NN_ENABLE_IN" description="NN_ENABLE_IN_DESC">
+				<option value="0">JNONE</option>
+				<option value="1">NN_BOTH</option>
+				<option value="admin">NN_ADMIN</option>
+				<option value="site">NN_FRONTEND</option>
+			</field>
+			<field name="ip1_ip" type="text" label="IPL_IP" description="IPL_IP_DESC" placeholder="IPL_IP" />
+			<field name="ip1_key" type="iplogin_key" label="IPL_KEY" description="IPL_KEY_DESC" />
+			<field name="ip1_note" type="text" label="JFIELD_NOTE_LABEL" description="IPL_NOTE_DESC" />
+			<field name="@block_ip1_b" type="nn_block" end="1" />
+
+
+			<field name="@block_ip2_a" type="nn_block" start="1" />
+			<field name="ip2_enabled" type="radio" class="btn-group" default="0" label="NN_ENABLE_IN" description="NN_ENABLE_IN_DESC">
+				<option value="0">JNONE</option>
+				<option value="1">NN_BOTH</option>
+				<option value="admin">NN_ADMIN</option>
+				<option value="site">NN_FRONTEND</option>
+			</field>
+			<field name="ip2_ip" type="text" label="IPL_IP" description="IPL_IP_DESC" placeholder="IPL_IP" />
+			<field name="ip2_key" type="iplogin_key" label="IPL_KEY" description="IPL_KEY_DESC" />
+			<field name="ip2_note" type="text" label="JFIELD_NOTE_LABEL" description="IPL_NOTE_DESC" />
+			<field name="@block_ip2_b" type="nn_block" end="1" />
+
+			<field name="@block_ip3_a" type="nn_block" start="1" />
+			<field name="ip3_enabled" type="radio" class="btn-group" default="0" label="NN_ENABLE_IN" description="NN_ENABLE_IN_DESC">
+				<option value="0">JNONE</option>
+				<option value="1">NN_BOTH</option>
+				<option value="admin">NN_ADMIN</option>
+				<option value="site">NN_FRONTEND</option>
+			</field>
+			<field name="ip3_ip" type="text" label="IPL_IP" description="IPL_IP_DESC" placeholder="IPL_IP" />
+			<field name="ip3_key" type="iplogin_key" label="IPL_KEY" description="IPL_KEY_DESC" />
+			<field name="ip3_note" type="text" label="JFIELD_NOTE_LABEL" description="IPL_NOTE_DESC" />
+			<field name="@block_ip3_b" type="nn_block" end="1" />
+
+			<field name="@block_ip4_a" type="nn_block" start="1" />
+			<field name="ip4_enabled" type="radio" class="btn-group" default="0" label="NN_ENABLE_IN" description="NN_ENABLE_IN_DESC">
+				<option value="0">JNONE</option>
+				<option value="1">NN_BOTH</option>
+				<option value="admin">NN_ADMIN</option>
+				<option value="site">NN_FRONTEND</option>
+			</field>
+			<field name="ip4_ip" type="text" label="IPL_IP" description="IPL_IP_DESC" placeholder="IPL_IP" />
+			<field name="ip4_key" type="iplogin_key" label="IPL_KEY" description="IPL_KEY_DESC" />
+			<field name="ip4_note" type="text" label="JFIELD_NOTE_LABEL" description="IPL_NOTE_DESC" />
+			<field name="@block_ip4_b" type="nn_block" end="1" />
+
+			<field name="@block_ip5_a" type="nn_block" start="1" />
+			<field name="ip5_enabled" type="radio" class="btn-group" default="0" label="NN_ENABLE_IN" description="NN_ENABLE_IN_DESC">
+				<option value="0">JNONE</option>
+				<option value="1">NN_BOTH</option>
+				<option value="admin">NN_ADMIN</option>
+				<option value="site">NN_FRONTEND</option>
+			</field>
+			<field name="ip5_ip" type="text" label="IPL_IP" description="IPL_IP_DESC" placeholder="IPL_IP" />
+			<field name="ip5_key" type="iplogin_key" label="IPL_KEY" description="IPL_KEY_DESC" />
+			<field name="ip5_note" type="text" label="JFIELD_NOTE_LABEL" description="IPL_NOTE_DESC" />
+			<field name="@block_ip5_b" type="nn_block" end="1" />
+		</fieldset>
+	</fields>
+</form>

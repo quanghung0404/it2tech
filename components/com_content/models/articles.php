@@ -3,18 +3,18 @@
  * @package     Joomla.Site
  * @subpackage  com_content
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
+use Joomla\Registry\Registry;
+
 /**
  * This models supports retrieving lists of articles.
  *
- * @package     Joomla.Site
- * @subpackage  com_content
- * @since       1.6
+ * @since  1.6
  */
 class ContentModelArticles extends JModelList
 {
@@ -49,6 +49,7 @@ class ContentModelArticles extends JModelList
 				'publish_down', 'a.publish_down',
 				'images', 'a.images',
 				'urls', 'a.urls',
+				'filter_tag'
 			);
 		}
 
@@ -76,11 +77,14 @@ class ContentModelArticles extends JModelList
 		$app = JFactory::getApplication();
 
 		// List state information
-		$value = $app->input->get('limit', $app->getCfg('list_limit', 0), 'uint');
+		$value = $app->input->get('limit', $app->get('list_limit', 0), 'uint');
 		$this->setState('list.limit', $value);
 
 		$value = $app->input->get('limitstart', 0, 'uint');
 		$this->setState('list.start', $value);
+
+		$value = $app->input->get('filter_tag', 0, 'uint');
+		$this->setState('filter.tag', $value);
 
 		$orderCol = $app->input->get('filter_order', 'a.ordering');
 
@@ -144,7 +148,7 @@ class ContentModelArticles extends JModelList
 		$id .= ':' . serialize($this->getState('filter.published'));
 		$id .= ':' . $this->getState('filter.access');
 		$id .= ':' . $this->getState('filter.featured');
-		$id .= ':' . $this->getState('filter.article_id');
+		$id .= ':' . serialize($this->getState('filter.article_id'));
 		$id .= ':' . $this->getState('filter.article_id.include');
 		$id .= ':' . serialize($this->getState('filter.category_id'));
 		$id .= ':' . $this->getState('filter.category_id.include');
@@ -171,7 +175,7 @@ class ContentModelArticles extends JModelList
 	protected function getListQuery()
 	{
 		// Get the current user for authorisation checks
-		$user	= JFactory::getUser();
+		$user = JFactory::getUser();
 
 		// Create a new query object.
 		$db = $this->getDbo();
@@ -190,7 +194,7 @@ class ContentModelArticles extends JModelList
 					// Use created if publish_up is 0
 					'CASE WHEN a.publish_up = ' . $db->quote($db->getNullDate()) . ' THEN a.created ELSE a.publish_up END as publish_up,' .
 					'a.publish_down, a.images, a.urls, a.attribs, a.metadata, a.metakey, a.metadesc, a.access, ' .
-					'a.hits, a.xreference, a.featured,' . ' ' . $query->length('a.fulltext') . ' AS readmore'
+					'a.hits, a.xreference, a.featured, a.language, ' . ' ' . $query->length('a.fulltext') . ' AS readmore'
 			)
 		);
 
@@ -213,8 +217,22 @@ class ContentModelArticles extends JModelList
 
 		$query->from('#__content AS a');
 
-		// Join over the frontpage articles.
-		if ($this->context != 'com_content.featured')
+		$params = $this->getState('params');
+		$orderby_sec = $params->get('orderby_sec');
+
+		// Join over the frontpage articles if required.
+		if ($this->getState('filter.frontpage'))
+		{
+			if ($orderby_sec == 'front')
+			{
+				$query->join('INNER', '#__content_frontpage AS fp ON fp.content_id = a.id');
+			}
+			else
+			{
+				$query->where('a.featured = 1');
+			}
+		}
+		elseif ($orderby_sec == 'front')
 		{
 			$query->join('LEFT', '#__content_frontpage AS fp ON fp.content_id = a.id');
 		}
@@ -354,7 +372,7 @@ class ContentModelArticles extends JModelList
 				}
 
 				// Add the subquery to the main query
-				$query->where('(' . $categoryEquals . ' OR a.catid IN (' . $subQuery->__toString() . '))');
+				$query->where('(' . $categoryEquals . ' OR a.catid IN (' . (string) $subQuery . '))');
 			}
 			else
 			{
@@ -442,14 +460,14 @@ class ContentModelArticles extends JModelList
 		}
 
 		// Define null and now dates
-		$nullDate	= $db->quote($db->getNullDate());
-		$nowDate	= $db->quote(JFactory::getDate()->toSql());
+		$nullDate = $db->quote($db->getNullDate());
+		$nowDate  = $db->quote(JFactory::getDate()->toSql());
 
 		// Filter by start and end dates.
 		if ((!$user->authorise('core.edit.state', 'com_content')) && (!$user->authorise('core.edit', 'com_content')))
 		{
-			$query	->where('(a.publish_up = '.$nullDate.' OR a.publish_up <= '.$nowDate.')')
-				->where('(a.publish_down = '.$nullDate.' OR a.publish_down >= '.$nowDate.')');
+			$query->where('(a.publish_up = ' . $nullDate . ' OR a.publish_up <= ' . $nowDate . ')')
+				->where('(a.publish_down = ' . $nullDate . ' OR a.publish_down >= ' . $nowDate . ')');
 		}
 
 		// Filter by Date Range or Relative Date
@@ -481,8 +499,6 @@ class ContentModelArticles extends JModelList
 		}
 
 		// Process the filter for list views with user-entered filters
-		$params = $this->getState('params');
-
 		if ((is_object($params)) && ($params->get('filter_field') != 'hide') && ($filter = $this->getState('list.filter')))
 		{
 			// Clean filter variable
@@ -517,6 +533,19 @@ class ContentModelArticles extends JModelList
 			$query->where('a.language in (' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ')');
 		}
 
+		// Filter by a single tag.
+		$tagId = $this->getState('filter.tag');
+
+		if (!empty($tagId) && is_numeric($tagId))
+		{
+			$query->where($db->quoteName('tagmap.tag_id') . ' = ' . (int) $tagId)
+				->join(
+					'LEFT', $db->quoteName('#__contentitem_tag_map', 'tagmap')
+					. ' ON ' . $db->quoteName('tagmap.content_item_id') . ' = ' . $db->quoteName('a.id')
+					. ' AND ' . $db->quoteName('tagmap.type_alias') . ' = ' . $db->quote('com_content.article')
+				);
+		}
+
 		// Add the list ordering clause.
 		$query->order($this->getState('list.ordering', 'a.ordering') . ' ' . $this->getState('list.direction', 'ASC'));
 
@@ -547,7 +576,7 @@ class ContentModelArticles extends JModelList
 		// Convert the parameter fields into objects.
 		foreach ($items as &$item)
 		{
-			$articleParams = new JRegistry;
+			$articleParams = new Registry;
 			$articleParams->loadString($item->attribs);
 
 			// Unpack readmore and layout params
@@ -587,7 +616,7 @@ class ContentModelArticles extends JModelList
 				// Merge the selected article params
 				if (count($articleArray) > 0)
 				{
-					$articleParams = new JRegistry;
+					$articleParams = new Registry;
 					$articleParams->loadArray($articleArray);
 					$item->params->merge($articleParams);
 				}
@@ -659,8 +688,11 @@ class ContentModelArticles extends JModelList
 			}
 
 			// Get the tags
-			$item->tags = new JHelperTags;
-			$item->tags->getItemTags('com_content.article', $item->id);
+			if ($item->params->get('show_tags'))
+			{
+				$item->tags = new JHelperTags;
+				$item->tags->getItemTags('com_content.article', $item->id);
+			}
 		}
 
 		return $items;

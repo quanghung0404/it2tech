@@ -1,0 +1,98 @@
+/**
+ * @package         Tooltips
+ * @version         4.1.5PRO
+ * 
+ * @author          Peter van Westen <peter@nonumber.nl>
+ * @link            http://www.nonumber.nl
+ * @copyright       Copyright © 2016 NoNumber All Rights Reserved
+ * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+/*
+ * You can override this stylesheet by creating your own in:
+ * /templates/[YOUR TEMPLATE]/media/tooltips/css/style.min.css
+ */
+
+@import "../../nnframework/less/init.less";
+@import "bootstrap.less";
+
+/* TOOLTIP LINK STYLES */
+.nn_tooltips-link {
+	cursor: pointer;
+	display: inline-block !important;
+	&.isimg {
+		border-bottom: none;
+	}
+	&.nostyle {
+		border-bottom: none;
+		cursor: inherit;
+	}
+}
+
+/* TOOLTIP POPOVER STYLES */
+.nn_tooltips.popover {
+	width: auto;
+	max-width: 400px;
+	&.notitle .popover-title {
+		display: none;
+	}
+	&.nocontent {
+		.popover-title {
+			.border-radius(5px);
+			border-bottom: none;
+		}
+		.popover-content {
+			display: none;
+		}
+	}
+	&.isimg {
+		text-indent: 0;
+		max-width: none;
+		.popover-content {
+			padding: 4px;
+		}
+	}
+
+	.tipColor(@background, @text) {
+		h3.popover-title {
+			background-color: @background;
+			color: @text;
+		}
+	}
+
+	// Style: blue
+	&.blue,
+	&.primary {
+		.tipColor(#dbecf9, @btnPrimaryBackground);
+	}
+
+	// Style: info
+	&.info {
+		.tipColor(@infoBackground, @infoText);
+	}
+
+	// Style: green / success
+	&.green,
+	&.success {
+		.tipColor(@successBackground, @successText);
+	}
+
+	// Style: orange / warning
+	&.orange,
+	&.warning {
+		.tipColor(@warningBackground, @warningText);
+	}
+
+	// Style: red / danger
+	&.red,
+	&.danger,
+	&.error {
+		.tipColor(@errorBackground, @errorText);
+	}
+
+	// Style: grey / gray
+	&.grey,
+	&.gray {
+		.tipColor(@grayLighter, @grayLight);
+	}
+}

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+	<name>plg_system_modals</name>
+	<description>PLG_SYSTEM_MODALS_DESC</description>
+	<version>6.2.9PRO</version>
+	<creationDate>January 2016</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2016 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Modals">
+			http://download.nonumber.nl/updates.xml?e=modals&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="modals">modals.php</filename>
+		<filename>helper.php</filename>
+		<filename>modal.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>helpers</folder>
+		<folder>language</folder>
+	</files>
+
+	<media folder="media" destination="modals">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>less</folder>
+	</media>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_system_modals" />
+				<field name="@license" type="nn_license" extension="MODALS" />
+				<field name="@version" type="nn_version" extension="MODALS" />
+				<field name="@header" type="nn_header"
+					   label="MODALS"
+					   description="MODALS_DESC"
+					   url="https://www.nonumber.nl/modals" />
+			</fieldset>
+			<fieldset name="basic">
+				<field name="@block_styling_a" type="nn_block" start="1" label="NN_STYLING" />
+				<field name="load_stylesheet" type="radio" class="btn-group" default="1" label="NN_LOAD_STYLESHEET"
+					   description="NN_LOAD_STYLESHEET_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_load_stylesheet_a" type="nn_toggler" param="load_stylesheet" value="1" />
+				<field name="style" type="filelist" default="bootstrap"
+					   directory="media/modals/css" filter="^[^\.]+\.css$"
+					   stripext="true" hide_none="true" hide_default="true"
+					   label="MDL_STYLE" description="MDL_STYLE_DESC" />
+				<field name="@toggler_load_stylesheet_b" type="nn_toggler" />
+				<field name="@block_styling_b" type="nn_block" end="1" />
+
+				<field name="@block_autoconvert_a" type="nn_block" start="1" label="MDL_EXISTING_LINK" />
+
+				<field name="@block_classnames_a" type="nn_block" start="1" label="MDL_CLASSNAMES" />
+				<field name="autoconvert_classnames" type="radio" class="btn-group" default="1" label="MDL_AUTOCONVERT"
+					   description="MDL_AUTOCONVERT_CLASSNAMES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_autoconvert_a" type="nn_toggler" param="autoconvert_classnames" value="1" />
+				<field name="classnames" type="text" size="80" class="input-xlarge" default="modal"
+					   label="MDL_CLASSNAMES" description="MDL_CLASSNAMES_DESC" />
+				<field name="@toggler_autoconvert_b" type="nn_toggler" />
+				<field name="@block_classnames_b" type="nn_block" end="1" />
+
+				<field name="@block_external_a" type="nn_block" start="1" label="MDL_EXTERNAL_LINKS" />
+				<field name="external" type="radio" class="btn-group" default="0" label="MDL_AUTOCONVERT"
+					   description="MDL_EXTERNAL_LINKS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@block_external_b" type="nn_block" end="1" label="MDL_TARGET" />
+
+				<field name="@block_target_a" type="nn_block" start="1" label="MDL_TARGET" />
+				<field name="target" type="radio" class="btn-group" default="0" label="MDL_AUTOCONVERT"
+					   description="MDL_TARGET_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_target_a" type="nn_toggler" method="and" param="external|target" value="0|1" />
+				<field name="target_internal" type="radio" class="btn-group" default="1" label="MDL_INTERNAL_LINKS"
+					   description="MDL_INTERNAL_LINKS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="target_external" type="radio" class="btn-group" default="1" label="MDL_EXTERNAL_LINKS"
+					   description="MDL_EXTERNAL_LINKS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_target_b" type="nn_toggler" />
+				<field name="@block_target_b" type="nn_block" end="1" />
+
+				<field name="@block_filetypes_a" type="nn_block" start="1" label="MDL_FILETYPES" />
+				<field name="autoconvert_filetypes" type="radio" class="btn-group" default="0" label="MDL_AUTOCONVERT"
+					   description="MDL_AUTOCONVERT_FILETYPES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_autoconvert_filetypes_a" type="nn_toggler" param="autoconvert_filetypes"
+					   value="1" />
+				<field name="filetypes" type="text" size="80" class="input-xlarge" default="" label="MDL_FILETYPES"
+					   description="MDL_FILETYPES_DESC" />
+				<field name="@toggler_autoconvert_filetypes_b" type="nn_toggler" />
+				<field name="@block_filetypes_b" type="nn_block" end="1" />
+
+				<field name="@block_urls_a" type="nn_block" start="1" label="NN_URL_PARTS" />
+				<field name="autoconvert_urls" type="radio" class="btn-group" default="0" label="MDL_AUTOCONVERT"
+					   description="MDL_AUTOCONVERT_URLS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_autoconvert_urls_a" type="nn_toggler" param="autoconvert_urls" value="1" />
+				<field name="urls" type="nn_textareaplus" texttype="regex" default="" label="NN_URL_PARTS"
+					   description="NN_URL_PARTS_DESC" />
+				<field name="@text_urls" type="note" description="NN_URL_PARTS_DESC" />
+				<field name="urls_regex" type="radio" class="btn-group" default="0" label="NN_REGULAR_EXPRESSIONS"
+					   description="NN_REGULAR_EXPRESSIONS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_urls_regex_a" type="nn_toggler" param="urls_regex" value="1" />
+				<field name="@block_urls_regex" type="note" class="alert alert-danger"
+					   description="NN_URL_PARTS_REGEX" />
+				<field name="@toggler_urls_regex_b" type="nn_toggler" />
+				<field name="@toggler_autoconvert_urls_b" type="nn_toggler" />
+				<field name="@block_urls_b" type="nn_block" end="1" />
+
+				<field name="@block_autoconvert_b" type="nn_block" end="1" />
+
+				<field name="@block_autoconvert_images_a" type="nn_block" start="1" label="MDL_IMAGES" />
+				<field name="@block_classnames_images_a" type="nn_block" start="1" label="MDL_CLASSNAMES" />
+				<field name="autoconvert_classnames_images" type="radio" class="btn-group" default="1"
+					   label="MDL_AUTOCONVERT" description="MDL_AUTOCONVERT_CLASSNAMES_IMAGES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_autoconvert_images_a" type="nn_toggler" param="autoconvert_classnames_images"
+					   value="1" />
+				<field name="classnames_images" type="text" size="80" class="input-xlarge" default="modal"
+					   label="MDL_CLASSNAMES" description="MDL_CLASSNAMES_IMAGES_DESC" />
+				<field name="@toggler_autoconvert_images_b" type="nn_toggler" />
+				<field name="@block_classnames_images_b" type="nn_block" end="1" />
+				<field name="@block_autoconvert_images_b" type="nn_block" end="1" />
+
+			</fieldset>
+			<fieldset name="NN_DEFAULT_SETTINGS">
+				<field name="transition" type="list" default="elastic" label="MDL_TRANSITION"
+					   description="MDL_TRANSITION_DESC">
+					<option value="elastic">MDL_ELASTIC</option>
+					<option value="fade">MDL_FADE</option>
+					<option value="none">JNONE</option>
+				</field>
+				<field name="@toggler_transition_a" type="nn_toggler" param="transition" value="elastic,fade" />
+				<field name="speed" type="text" size="10" class="input-mini" default="300" label="MDL_SPEED"
+					   description="MDL_SPEED_DESC" />
+				<field name="@toggler_transition_b" type="nn_toggler" />
+				<field name="scalephotos" type="radio" class="btn-group" default="1" label="MDL_SCALE_PHOTOS"
+					   description="MDL_SCALE_PHOTOS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="returnfocus" type="radio" class="btn-group" default="1" label="MDL_RETURN_FOCUS"
+					   description="MDL_RETURN_FOCUS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="fastiframe" type="radio" class="btn-group" default="1" label="MDL_FAST_IFRAME"
+					   description="MDL_FAST_IFRAME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="opacity" type="text" size="10" class="input-mini" default="0.8" label="MDL_OPACITY"
+					   description="MDL_OPACITY_DESC" />
+				<field name="overlayclose" type="radio" class="btn-group" default="1" label="MDL_OVERLAY_CLOSE"
+					   description="MDL_OVERLAY_CLOSE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="closebutton" type="radio" class="btn-group" default="1" label="MDL_ENABLE_CLOSE_BUTTON"
+					   description="MDL_ENABLE_CLOSE_BUTTON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="esckey" type="radio" class="btn-group" default="1" label="MDL_ENABLE_ESC_KEY"
+					   description="MDL_ENABLE_ESC_KEY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="arrowkey" type="radio" class="btn-group" default="1" label="MDL_ENABLE_ARROW_KEYS"
+					   description="MDL_ENABLE_ARROW_KEYS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="@block_dimensions_a" type="nn_block" start="1" label="MDL_DIMENSIONS" />
+				<field name="width" type="text" size="10" class="input-mini" default="" label="NN_WIDTH"
+					   description="MDL_DIMENSION_DESC" />
+				<field name="height" type="text" size="10" class="input-mini" default="" label="NN_HEIGHT"
+					   description="MDL_DIMENSION_DESC" />
+				<field name="externalwidth" type="text" size="10" class="input-mini" default="95%"
+					   label="MDL_EXTERNAL_WIDTH" description="MDL_EXTERNAL_DIMENSION_DESC" />
+				<field name="externalheight" type="text" size="10" class="input-mini" default="95%"
+					   label="MDL_EXTERNAL_HEIGHT" description="MDL_EXTERNAL_DIMENSION_DESC" />
+				<field name="initialwidth" type="text" size="10" class="input-mini" default="600"
+					   label="MDL_INITIAL_WIDTH" description="MDL_INITIAL_DIMENSION_DESC" />
+				<field name="initialheight" type="text" size="10" class="input-mini" default="450"
+					   label="MDL_INITIAL_HEIGHT" description="MDL_INITIAL_DIMENSION_DESC" />
+				<field name="maxwidth" type="text" size="10" class="input-mini" default="95%" label="MDL_MAX_WIDTH"
+					   description="MDL_MAX_DIMENSION_DESC" />
+				<field name="maxheight" type="text" size="10" class="input-mini" default="95%" label="MDL_MAX_HEIGHT"
+					   description="MDL_MAX_DIMENSION_DESC" />
+				<field name="@block_dimensions_b" type="nn_block" end="1" />
+
+				<field name="@block_positioning_a" type="nn_block" start="1" label="MDL_POSITIONING" />
+				<field name="fixed" type="radio" class="btn-group" default="1" label="MDL_FIXED"
+					   description="MDL_FIXED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="reposition" type="radio" class="btn-group" default="1" label="MDL_REPOSITION"
+					   description="MDL_REPOSITION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="top" type="text" size="10" class="input-mini" default="" label="NN_TOP"
+					   description="MDL_POSITION_VERTICAL_DESC" />
+				<field name="bottom" type="text" size="10" class="input-mini" default="" label="NN_BOTTOM"
+					   description="MDL_POSITIONING_DESC" />
+				<field name="left" type="text" size="10" class="input-mini" default="" label="JGLOBAL_LEFT"
+					   description="MDL_POSITIONING_DESC" />
+				<field name="right" type="text" size="10" class="input-mini" default="" label="JGLOBAL_RIGHT"
+					   description="MDL_RIGHT_DESC" />
+				<field name="@block_positioning_b" type="nn_block" end="1" />
+
+				<field name="@block_slideshow_a" type="nn_block" start="1" label="MDL_GROUPS" />
+				<field name="preloading" type="radio" class="btn-group" default="1" label="MDL_PRELOADING"
+					   description="MDL_PRELOADING_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="loop" type="radio" class="btn-group" default="1" label="MDL_LOOP"
+					   description="MDL_LOOP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slideshow" type="radio" class="btn-group" default="0" label="MDL_SLIDESHOW"
+					   description="MDL_SLIDESHOW_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slideshowspeed" type="text" size="10" class="input-mini" default="2500"
+					   label="MDL_SLIDESHOW_SPEED" description="MDL_SLIDESHOW_SPEED_DESC" />
+				<field name="slideshowauto" type="radio" class="btn-group" default="1" label="MDL_SLIDESHOW_AUTO"
+					   description="MDL_SLIDESHOW_AUTO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@block_auto_gallery_a" type="nn_block" start="1" label="MDL_AUTO_GALLERY" />
+				<field name="gallery_showall" type="radio" class="btn-group" default="0" label="MDL_GALLERY_SHOW_ALL"
+					   description="MDL_GALLERY_SHOW_ALL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="gallery_thumb_suffix" type="text" size="10" class="input-mini" default="_t"
+					   label="MDL_GALLERY_THUMB_SUFFIX" description="MDL_GALLERY_THUMB_SUFFIX_DESC" />
+				<field name="gallery_thumb_width" type="text" size="10" class="input-mini" default=""
+					   label="MDL_GALLERY_THUMB_WIDTH" description="MDL_GALLERY_THUMB_DIMENSION_DESC" />
+				<field name="gallery_thumb_height" type="text" size="10" class="input-mini" default=""
+					   label="MDL_GALLERY_THUMB_HEIGHT" description="MDL_GALLERY_THUMB_DIMENSION_DESC" />
+				<field name="gallery_separator" type="text" size="10" class="input-mini" default=" "
+					   label="MDL_GALLERY_SEPARATOR" description="MDL_GALLERY_SEPARATOR_DESC" />
+				<field name="gallery_filter" type="text" size="40" class="input" default="\.(png|jpg|jpeg|gif|eps|bmp)"
+					   label="MDL_GALLERY_FILTER" description="MDL_GALLERY_FILTER_DESC" />
+				<field name="@block_auto_gallery_b" type="nn_block" end="1" />
+				<field name="@block_auto_group_a" type="nn_block" start="1" label="MDL_AUTO_GROUP" />
+				<field name="auto_group" type="radio" class="btn-group" default="0" label="MDL_AUTO_GROUP"
+					   description="MDL_AUTO_GROUP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_group_1a" type="nn_toggler" param="auto_group" value="1" />
+				<field name="auto_group_filter" type="text" size="40" class="input"
+					   default="\.(png|jpg|jpeg|gif|eps|bmp)" label="MDL_AUTO_GROUP_FILTER"
+					   description="MDL_AUTO_GROUP_FILTER_DESC" />
+				<field name="@toggler_group_1b" type="nn_toggler" />
+				<field name="@block_auto_group_b" type="nn_block" end="1" />
+				<field name="@block_slideshow_b" type="nn_block" end="1" />
+
+				<field name="@block_retinaimages_a" type="nn_block" start="1" label="MDL_RETINA_IMAGES" />
+				<field name="retinaimage" type="radio" class="btn-group" default="0" label="MDL_RETINA_IMAGE"
+					   description="MDL_RETINA_IMAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="retinaurl" type="radio" class="btn-group" default="0" label="MDL_RETINA_URL"
+					   description="MDL_RETINA_URL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_retinaurl_a" type="nn_toggler" param="retinaurl" value="1" />
+				<field name="retinasuffix" type="text" size="20" default="@2x.$1" label="MDL_RETINA_SUFFIX"
+					   description="MDL_RETINA_SUFFIX_DESC" />
+				<field name="@toggler_retinaurl_b" type="nn_toggler" />
+				<field name="@block_retinaimages_b" type="nn_block" end="1" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="@block_tag_a" type="nn_block" start="1" label="NN_TAG_SYNTAX" />
+				<field name="tag" type="text" size="20" default="modal" label="MDL_TAG" description="MDL_TAG_DESC" />
+				<field name="tag_content" type="text" size="20" default="modalcontent" label="MDL_CONTENT_TAG"
+					   description="MDL_CONTENT_TAG_DESC" />
+				<field name="tag_characters" type="list" default="{.}" class="input-small" label="NN_TAG_CHARACTERS"
+					   description="NN_TAG_CHARACTERS_DESC">
+					<option value="{.}">{...}</option>
+					<option value="[.]">[...]</option>
+					<option value="{{.}}">{{...}}</option>
+					<option value="[[.]]">[[...]]</option>
+					<option value="[:.:]">[:...:]</option>
+					<option value="[%.%]">[%...%]</option>
+				</field>
+				<field name="@block_tag_b" type="nn_block" end="1" />
+
+				<field name="tmpl" type="text" default="modal" label="MDL_SUB_TEMPLATE"
+					   description="MDL_SUB_TEMPLATE_DESC" />
+				<field name="iframe" type="radio" class="btn-group" default="0" label="MDL_IFRAME"
+					   description="MDL_IFRAME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_iframe_a" type="nn_toggler" param="iframe" value="0" />
+				<field name="load_head" type="radio" class="btn-group" default="0" label="MDL_LOAD_HEAD"
+					   description="MDL_LOAD_HEAD_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_iframe_b" type="nn_toggler" />
+				<field name="mediafiles" type="text" size="20" default="jpg,png,gif,eps,pdf" label="MDL_MEDIA_FILES"
+					   description="MDL_MEDIA_FILES_DESC" />
+				<field name="iframefiles" type="text" size="20" default="pdf" label="MDL_IFRAME_FILES"
+					   description="MDL_IFRAME_FILES_DESC" />
+				<field name="exclude_urls" type="textarea" cols="40" rows="5" default="" label="MDL_EXCLUDE_URLS"
+					   description="MDL_EXCLUDE_URLS_DESC" />
+				<field name="auto_titles" type="radio" class="btn-group" default="1" label="MDL_AUTO_TITLES"
+					   description="MDL_AUTO_TITLES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_auto_titles_a" type="nn_toggler" param="auto_titles" value="1" />
+				<field name="title_case" type="list" default="titlecase" label="MDL_CASE_TITLES"
+					   description="MDL_CASE_TITLES_DESC">
+					<option value="0">JNONE</option>
+					<option value="lowercase">MDL_LOWERCASE</option>
+					<option value="uppercase">MDL_UPPERCASE</option>
+					<option value="uppercasefirst">MDL_UPPERCASE_FIRST</option>
+					<option value="titlecase">MDL_TITLECASE</option>
+					<option value="titlecase_smart">MDL_TITLECASE_SMART</option>
+				</field>
+				<field name="@toggler_titlecase_smart_a" type="nn_toggler" param="title_case" value="titlecase_smart" />
+				<field name="lowercase_words" type="text" default="a,the,to,at,in,with,and,but,or"
+					   label="MDL_TITLECASE_LOWERCASE_WORDS" description="MDL_TITLECASE_LOWERCASE_WORDS_DESC" />
+				<field name="@toggler_titlecase_smart_b" type="nn_toggler" />
+				<field name="@toggler_auto_titles_b" type="nn_toggler" />
+				<field name="open_count_based_on" type="radio" class="btn-group" default="website"
+					   label="MDL_OPEN_COUNT_BASED_ON" description="MDL_OPEN_COUNT_BASED_ON_DESC">
+					<option value="website">MDL_WEBSITE_COOKIES</option>
+					<option value="page">MDL_PAGE_COOKIES</option>
+					<option value="session">MDL_WEBSITE_SESSION</option>
+				</field>
+				<field name="@toggler_open_count_based_on_a" type="nn_toggler" param="open_count_based_on"
+					   value="website,page" />
+				<field name="open_count_ttl" type="text" default="0" label="MDL_OPEN_COUNT_TTL"
+					   description="MDL_OPEN_COUNT_TTL_DESC" />
+				<field name="@toggler_open_count_based_on_b" type="nn_toggler" />
+				
+				<field name="@toggler_use_responsive_view_a" type="nn_toggler" param="load_stylesheet" value="0,1" />
+				<field name="disable_on_mobile" type="radio" class="btn-group" default="0" label="MDL_DISABLE_ON_MOBILE"
+					   description="MDL_DISABLE_ON_MOBILE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_disable_on_mobile_a" type="nn_toggler" param="disable_on_mobile" value="1" />
+				<field name="mobile_max_width" type="text" class="btn-group" default="767" label="MDL_MOBILE_MAX_WIDTH"
+					   description="MDL_MOBILE_MAX_WIDTH_DESC" />
+				<field name="@toggler_disable_on_mobile_b" type="nn_toggler" />
+				<field name="@toggler_use_responsive_view_b" type="nn_toggler" />
+				
+				<field name="disabled_components" type="nn_components" default="" multiple="1" admin="0"
+					   label="NN_DISABLE_ON_COMPONENTS" description="NN_DISABLE_ON_COMPONENTS_DESC" />
+				<field name="disable_components_remove" type="radio" class="btn-group" default="1"
+					   label="NN_REMOVE_IN_DISABLED_COMPONENTS" description="NN_REMOVE_IN_DISABLED_COMPONENTS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="enable_admin" type="radio" class="btn-group" default="0" label="NN_ENABLE_IN_ADMIN"
+					   description="NN_ENABLE_IN_ADMIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="add_redirect" type="radio" class="btn-group" default="1" label="MDL_ADD_REDIRECT"
+					   description="MDL_ADD_REDIRECT_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="load_jquery" type="radio" class="btn-group" default="1" label="NN_LOAD_JQUERY"
+					   description="NN_LOAD_JQUERY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_load_jquery_a" type="nn_toggler" param="load_jquery" value="0" />
+				<field name="@notice_load_jquery" type="note" class="alert alert-danger"
+					   description="NN_JQUERY_DISABLED,MODALS" />
+				<field name="@toggler_load_jquery_b" type="nn_toggler" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

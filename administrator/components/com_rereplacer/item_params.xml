@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/plugins/system/nnframework/fields">
+	<fieldset name="details">
+		<field name="published" type="radio" class="btn-group" default="1" label="JPUBLISHED" description="NN_PUBLISHED_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="name" type="text" class="span12" default="" label="JGLOBAL_TITLE" description="RR_NAME_DESC" />
+		<field name="description" type="nn_textareaplus" class="span12" height="160" default="" label="JGLOBAL_DESCRIPTION" description="RR_DESCRIPTION_DESC" />
+		<field name="category" type="nn_simplecategories" default="" table="rereplacer" label="JCATEGORY" description="JGLOBAL_CHOOSE_CATEGORY_DESC" />
+	</fieldset>
+
+	<fieldset name="search">
+		<field name="@toggler_search_regex_a" type="nn_toggler" param="regex" value="1" />
+		<field name="@block_search_regex" type="note" class="alert alert-notice" description="RR_REGULAR_EXPRESSIONS_ON_DESC" />
+		<field name="@toggler_search_regex_b" type="nn_toggler" />
+		<field name="@toggler_search_replace_a" type="nn_toggler" param="use_xml" value="0" />
+		<field name="search" type="nn_textareaplus" class="span12" height="120" resize="500" texttype="regex" default="" label="RR_SEARCH"
+			   description="RR_SEARCH_DESC" />
+		<field name="@toggler_search_replace_b" type="nn_toggler" />
+	</fieldset>
+
+	<fieldset name="replace">
+		<field name="@toggler_search_replace_a" type="nn_toggler" param="use_xml" value="0" />
+		<field name="replace" type="nn_textareaplus" class="span12" height="120" resize="500" texttype="regex" default="" label="RR_REPLACE"
+			   description="RR_REPLACE_DESC" />
+		<field name="@toggler_search_replace_b" type="nn_toggler" />
+		<field name="@toggler_replace_treat_as_php_a" type="nn_toggler" param="treat_as_php" value="1" />
+		<field name="@block_replace_regex" type="nn_note" class="alert alert-notice" description="RR_TREAT_AS_PHP_ON_DESC" />
+		<field name="@toggler_replace_treat_as_php_b" type="nn_toggler" />
+	</fieldset>
+
+	<fieldset name="xml">
+		<field name="@toggler_use_xml_a" type="nn_toggler" param="use_xml" value="1" />
+		<field name="xml" type="text" size="80" default="" label="RR_XML_FILE" description="RR_XML_FILE_DESC" />
+		<field name="@block_search_xml" type="note" class="alert alert-info" label="RR_USING_AN_XML_FILE" description="RR_USING_AN_XML_FILE_DESC" />
+		<field name="@toggler_use_xml_b" type="nn_toggler" />
+	</fieldset>
+
+	<fieldset name="options">
+		<field name="use_xml" type="radio" class="btn-group" default="0" label="RR_USE_XML_FILE" description="RR_USE_XML_FILE_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="regex" type="radio" class="btn-group" default="0" label="RR_REGULAR_EXPRESSIONS" description="RR_REGULAR_EXPRESSIONS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_1a" type="nn_toggler" param="regex" value="0" />
+		<field name="treat_as_list" type="radio" class="btn-group" default="0" label="RR_TREAT_AS_LIST" description="RR_TREAT_AS_LIST_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="word_search" type="radio" class="btn-group" default="0" label="RR_WORD_SEARCH" description="RR_WORD_SEARCH_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_1b" type="nn_toggler" />
+		<field name="@toggler_options_regex_2a" type="nn_toggler" param="regex" value="1" />
+		<field name="s_modifier" type="radio" class="btn-group" default="1" label="RR_USE_S_MODIFIER" description="RR_USE_S_MODIFIER_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_2b" type="nn_toggler" />
+		<field name="casesensitive" type="radio" class="btn-group" default="0" label="RR_CASE_SENSITIVE" description="RR_CASE_SENSITIVE_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="thorough" type="radio" class="btn-group" default="0" label="RR_THOROUGH" description="RR_THOROUGH_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_3a" type="nn_toggler" param="regex|treat_as_list" value="1|0" />
+		<field name="treat_as_php" type="radio" class="btn-group" default="0" label="RR_TREAT_AS_PHP" description="RR_TREAT_AS_PHP_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_3b" type="nn_toggler" />
+	</fieldset>
+
+	<fieldset name="areas">
+		<field name="area" type="nn_list" default="body" label="RR_ENABLE_IN_AREA" description="RR_ENABLE_IN_AREA_DESC">
+			<option value="articles">RR_AREA_CONTENT</option>
+			<option value="component">RR_AREA_COMPONENT</option>
+			<option value="head">RR_AREA_HEAD</option>
+			<option value="body">RR_AREA_BODY</option>
+			<option value="everywhere">RR_AREA_EVERYWHERE</option>
+		</field>
+		<field name="@toggler_areas_articles_a" type="nn_toggler" param="area" value="articles" />
+		<field name="@block_areas_articles" type="note" class="alert alert-info" description="RR_AREA_CONTENT_DESC" />
+		<field name="enable_in_title" type="radio" class="btn-group" default="1" label="RR_ENABLE_IN_TITLE" description="RR_ENABLE_IN_TITLE_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_areas_articles_b" type="nn_toggler" />
+		<field name="enable_in_feeds" type="radio" class="btn-group" default="1" label="RR_ENABLE_IN_FEEDS" description="RR_ENABLE_IN_FEEDS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="enable_in_admin" type="radio" class="btn-group" default="0" label="RR_ENABLE_IN_ADMIN" description="RR_ENABLE_IN_ADMIN_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="@toggler_areas_enable_in_admin_a" type="nn_toggler" param="enable_in_admin" value="1,2" />
+		<field name="@block_areas_enable_in_admin" type="note" class="alert alert-notice" description="RR_ENABLE_IN_ADMIN_ARE_YOU_SURE" />
+		<field name="@toggler_areas_enable_in_admin_b" type="nn_toggler" />
+
+		<field name="enable_in_edit_forms" type="radio" class="btn-group" default="0" label="RR_ENABLE_IN_EDIT_FORMS"
+			   description="RR_ENABLE_IN_EDIT_FORMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_enable_in_edit_forms_a" type="nn_toggler" param="enable_in_edit_forms" value="1" />
+		<field name="@block_enable_in_edit_forms" type="note" class="alert alert-danger" description="RR_ENABLE_IN_EDIT_FORMS_ARE_YOU_SURE" />
+		<field name="@toggler_enable_in_edit_forms_b" type="nn_toggler" />
+
+		<field name="between_start" type="text" size="80" default="" label="RR_ONLY_BETWEEN_START" description="RR_ONLY_BETWEEN_DESC" />
+		<field name="between_end" type="text" size="80" default="" label="RR_ONLY_BETWEEN_END" description="RR_ONLY_BETWEEN_DESC" />
+	</fieldset>
+
+	<fieldset name="tags">
+		<field name="enable_tags" type="radio" class="btn-group" default="1" label="RR_ENABLE_IN_TAGS" description="RR_ENABLE_IN_TAGS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="@toggler_areas_tags_a" type="nn_toggler" param="enable_tags" value="1,2" />
+		<field name="limit_tagselect" type="radio" class="btn-group" default="0" label="RR_LIMIT_TO_TAG_SELECTION" description="RR_LIMIT_TO_TAG_SELECTION_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_areas_tags_select_a" type="nn_toggler" param="limit_tagselect" value="1" />
+		<field name="tagselect" type="text" size="100" default="*[title,alt]_meta[content]" label="RR_TAG_SELECTION" description="RR_TAG_SELECTION_DESC" />
+		<field name="@toggler_areas_tags_select_b" type="nn_toggler" />
+		<field name="@toggler_areas_tags_b" type="nn_toggler" />
+	</fieldset>
+
+	<fieldset name="assignments">
+		<field name="match_method" type="radio" class="btn-group" default="and" label="NN_MATCHING_METHOD" description="NN_MATCHING_METHOD_DESC">
+			<option value="and">NN_AND</option>
+			<option value="or">NN_OR</option>
+		</field>
+		<field name="@toggler_match_1a" type="nn_toggler" param="match_method" value="and" />
+		<field name="@block_and" type="note" class="alert alert-info" description="NN_AND_DESC" />
+		<field name="@toggler_match_1b" type="nn_toggler" />
+		<field name="@toggler_match_2a" type="nn_toggler" param="match_method" value="or" />
+		<field name="@block_or" type="note" class="alert alert-info" description="NN_OR_DESC" />
+		<field name="@toggler_match_2b" type="nn_toggler" />
+
+		<field name="show_assignments" type="radio" class="btn-group" default="1" label="NN_SHOW_ASSIGNMENTS" description="NN_SHOW_ASSIGNMENTS_DESC">
+			<option value="1">NN_ALL</option>
+			<option value="2">NN_SELECTED</option>
+		</field>
+		<field name="@toggler_show_assignments_1a" type="nn_toggler" param="show_assignments" value="2" />
+		<field name="@block_show_assignments" type="note" class="alert alert-info" description="NN_SHOW_ASSIGNMENTS_SELECTED_DESC" />
+		<field name="@toggler_show_assignments_1b" type="nn_toggler" />
+
+		<field name="assignto_menuitems" type="nn_assignmentselection" label="NN_MENU_ITEMS" />
+		<field name="assignto_menuitems_selection" type="nn_menuitems" multiple="true" default="" label="NN_SELECTION" description="NN_MENU_ITEMS_DESC" />
+		<field name="assignto_menuitems_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_menuitems_inc_noitemid" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_INCLUDE_NO_ITEMID"
+			   description="NN_INCLUDE_NO_ITEMID_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@assignto_menuitems" type="nn_assignmentselection" />
+
+		<field name="assignto_homepage" type="nn_assignmentselection" label="NN_HOME_PAGE" />
+		<field name="@text_homepage" type="note" description="NN_HOME_PAGE_DESC" />
+		<field name="@assignto_homepage" type="nn_assignmentselection" />
+
+		<field name="@toggler_group_date_a" type="nn_toggler"
+			   param="show_assignments|assignto_date|assignto_seasons|assignto_months|assignto_days|assignto_time" value="1|1,2|1,2|1,2|1,2|1,2" />
+		<field name="@block_group_date_a" type="nn_block" start="1" label="NN_DATE_TIME" />
+
+		<field name="assignto_date" type="nn_assignmentselection" label="NN_DATE" />
+		<field name="assignto_date_publish_up" type="calendar" filter="user_utc" format="%Y-%m-%d %H:%M" default="0000-00-00 00:00" label="NN_START_PUBLISHING"
+			   description="NN_START_PUBLISHING_DESC" />
+		<field name="assignto_date_publish_down" type="calendar" filter="user_utc" format="%Y-%m-%d %H:%M" default="0000-00-00 00:00"
+			   label="NN_FINISH_PUBLISHING" description="NN_FINISH_PUBLISHING_DESC" />
+		<field name="assignto_date_recurring" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_DATE_RECURRING"
+			   description="NN_DATE_RECURRING_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@text_assignto_date_1" type="note" description="NN_DATE_TIME_DESC" />
+		<field name="@text_assignto_date_2" type="nn_datetime" format="Y-m-d H:i" label="NN_CURRENT_DATE" />
+		<field name="@assignto_date" type="nn_assignmentselection" />
+
+		<field name="assignto_seasons" type="nn_assignmentselection" label="NN_SEASONS" />
+		<field name="assignto_seasons_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_SEASONS_DESC">
+			<option value="winter">NN_WINTER</option>
+			<option value="spring">NN_SPRING</option>
+			<option value="summer">NN_SUMMER</option>
+			<option value="fall">NN_FALL</option>
+		</field>
+		<field name="assignto_seasons_hemisphere" type="radio" class="btn-group" default="northern" label="NN_HEMISPHERE" description="NN_HEMISPHERE_DESC">
+			<option value="northern">NN_NORTHERN</option>
+			<option value="southern">NN_SOUTHERN</option>
+			<option value="australia">NN_AUSTRALIA</option>
+		</field>
+		<field name="@assignto_seasons" type="nn_assignmentselection" />
+
+		<field name="assignto_months" type="nn_assignmentselection" label="NN_MONTHS" />
+		<field name="assignto_months_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_MONTHS_DESC">
+			<option value="1">JANUARY</option>
+			<option value="2">FEBRUARY</option>
+			<option value="3">MARCH</option>
+			<option value="4">APRIL</option>
+			<option value="5">MAY</option>
+			<option value="6">JUNE</option>
+			<option value="7">JULY</option>
+			<option value="8">AUGUST</option>
+			<option value="9">SEPTEMBER</option>
+			<option value="10">OCTOBER</option>
+			<option value="11">NOVEMBER</option>
+			<option value="12">DECEMBER</option>
+		</field>
+		<field name="@assignto_months" type="nn_assignmentselection" />
+
+		<field name="assignto_days" type="nn_assignmentselection" label="NN_DAYS" />
+		<field name="assignto_days_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_DAYS_DESC">
+			<option value="1">MONDAY</option>
+			<option value="2">TUESDAY</option>
+			<option value="3">WEDNESDAY</option>
+			<option value="4">THURSDAY</option>
+			<option value="5">FRIDAY</option>
+			<option value="6">SATURDAY</option>
+			<option value="7">SUNDAY</option>
+		</field>
+		<field name="@assignto_days" type="nn_assignmentselection" />
+
+		<field name="assignto_time" type="nn_assignmentselection" label="NN_TIME" />
+		<field name="assignto_time_publish_up" type="text" size="10" default="0:00" label="NN_START_PUBLISHING" description="NN_TIME_START_PUBLISHING_DESC" />
+		<field name="assignto_time_publish_down" type="text" size="10" default="0:00" label="NN_FINISH_PUBLISHING"
+			   description="NN_TIME_FINISH_PUBLISHING_DESC" />
+		<field name="@text_assignto_time_1" type="note" description="NN_DATE_TIME_DESC" />
+		<field name="@text_assignto_time_2" type="nn_datetime" format="Y-m-d H:i" label="NN_CURRENT_DATE" />
+		<field name="@assignto_time" type="nn_assignmentselection" />
+
+		<field name="@block_group_date_b" type="nn_block" end="1" />
+		<field name="@toggler_group_date_b" type="nn_toggler" />
+
+		<field name="@toggler_group_users_a" type="nn_toggler" param="show_assignments|assignto_usergrouplevels|assignto_users" value="1|1,2|1,2" />
+		<field name="@block_group_users_a" type="nn_block" start="1" label="NN_USERS" />
+		<field name="assignto_usergrouplevels" type="nn_assignmentselection" label="NN_USER_GROUP_LEVELS" />
+		<field name="assignto_usergrouplevels_selection" type="nn_grouplevel" multiple="true" notregistered="1" default="" label="NN_SELECTION"
+			   description="NN_USER_GROUPS_DESC" />
+		<field name="@assignto_usergrouplevels" type="nn_assignmentselection" />
+
+		<field name="assignto_users" type="nn_assignmentselection" label="NN_USERS" />
+		<field name="assignto_users_selection" type="nn_users" multiple="true" default="" label="NN_USER_IDS" description="NN_USER_IDS_DESC" />
+		<field name="@assignto_users" type="nn_assignmentselection" />
+
+		<field name="@block_group_users_b" type="nn_block" end="1" />
+		<field name="@toggler_group_users_b" type="nn_toggler" />
+
+		<field name="assignto_languages" type="nn_assignmentselection" label="NN_LANGUAGES" />
+		<field name="assignto_languages_selection" type="nn_languages" multiple="true" default="" label="NN_SELECTION" description="NN_LANGUAGES_DESC" />
+		<field name="@assignto_languages" type="nn_assignmentselection" />
+
+		<field name="assignto_ips" type="nn_assignmentselection" label="NN_IPS" />
+		<field name="assignto_ips_selection" type="nn_textareaplus" texttype="regex" default="" label="NN_IP_RANGES" description="NN_IP_RANGES_DESC" />
+		<field name="@text_ips" type="note" description="NN_IP_RANGES_DESC" />
+		<field name="@assignto_ips" type="nn_assignmentselection" />
+
+		<field name="@toggler_group_geo_a" type="nn_toggler"
+			   param="show_assignments|assignto_geocontinents|assignto_geocountries|assignto_georegions|assignto_geopostalcodes" value="1|1,2|1,2|1,2|1,2" />
+		<field name="@block_group_geo_a" type="nn_block" start="1" label="NN_GEO" />
+
+		<field name="@toggler_group_geo_1a" type="nn_toggler" param="assignto_geocontinents|assignto_geocountries|assignto_georegions|assignto_geopostalcodes"
+			   value="1,2|1,2|1,2|1,2" />
+		<field name="@text_group_geo_1" type="note" description="NN_GEO_DESC" />
+		<field name="@toggler_group_geo_no_geoip_library_1a" type="nn_toggler" param="has_geoip_library" value="1" />
+		<field name="@text_group_geo_2" type="nn_note" class="muted"
+			   description="NN_GEO_GEOIP_COPYRIGHT_DESC,&lt;a href=&quot;http://www.maxmind.com&quot; target=&quot;_blank&quot;&gt;http://www.maxmind.com&lt;/a&gt;" />
+		<field name="@toggler_group_geo_no_geoip_library_1b" type="nn_toggler" />
+		<field name="@toggler_group_geo_no_geoip_library_2a" type="nn_toggler" param="has_geoip_library" value="0" />
+		<field name="@text_group_geo_no_geoip_library" type="nn_note" class="alert alert-danger"
+			   description="NN_GEO_NO_GEOIP_LIBRARY,&lt;a href=&quot;https://www.nonumber.nl/geoip&quot; class=&quot;btn&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+		<field name="@toggler_group_geo_no_geoip_library_2b" type="nn_toggler" />
+		<field name="@toggler_group_geo_1b" type="nn_toggler" />
+
+		<field name="has_geoip_library" type="nn_isinstalled" extension="geoip" extension_type="library" />
+
+		<field name="assignto_geocontinents" type="nn_assignmentselection" label="NN_CONTINENTS" />
+		<field name="assignto_geocontinents_selection" type="nn_geo" group="continents" multiple="true" default="" label="NN_CONTINENTS"
+			   description="NN_CONTINENTS_DESC" />
+		<field name="@assignto_geocontinents" type="nn_assignmentselection" />
+
+		<field name="assignto_geocountries" type="nn_assignmentselection" label="NN_COUNTRIES" />
+		<field name="assignto_geocountries_selection" type="nn_geo" group="countries" multiple="true" default="" label="NN_COUNTRIES"
+			   description="NN_COUNTRIES_DESC" />
+		<field name="@assignto_geocountries" type="nn_assignmentselection" />
+
+		<field name="assignto_georegions" type="nn_assignmentselection" label="NN_REGIONS" />
+		<field name="assignto_georegions_selection" type="nn_geo" group="regions" multiple="true" default="" label="NN_REGIONS" description="NN_REGIONS_DESC" />
+		<field name="@assignto_georegions" type="nn_assignmentselection" />
+
+		<field name="assignto_geopostalcodes" type="nn_assignmentselection" label="NN_POSTALCODES" />
+		<field name="assignto_geopostalcodes_selection" type="nn_textareaplus" height="40" default="" label="NN_POSTALCODES" />
+		<field name="@text_geopostalcodes" type="nn_plaintext"
+			   description="NN_POSTALCODES_DESC,&lt;a href=&quot;http://dev.maxmind.com/geoip/geoip2/release-notes/&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+		<field name="@assignto_geopostalcodes" type="nn_assignmentselection" />
+
+		<field name="@block_group_geo_b" type="nn_block" end="1" />
+		<field name="@toggler_group_geo_b" type="nn_toggler" />
+
+		<field name="assignto_templates" type="nn_assignmentselection" label="NN_TEMPLATES" />
+		<field name="assignto_templates_selection" type="nn_templates" multiple="true" default="" label="NN_SELECTION" description="NN_TEMPLATES_DESC" />
+		<field name="@assignto_templates" type="nn_assignmentselection" />
+
+		<field name="assignto_urls" type="nn_assignmentselection" label="NN_URL" />
+		<field name="assignto_urls_selection" type="nn_textareaplus" texttype="regex" default="" label="NN_URL_PARTS" description="NN_URL_PARTS_DESC" />
+		<field name="@text_urls" type="note" description="NN_URL_PARTS_DESC" />
+		<field name="assignto_urls_regex" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_REGULAR_EXPRESSIONS"
+			   description="NN_REGULAR_EXPRESSIONS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_urls_regex_a" type="nn_toggler" param="assignto_urls_regex" value="1" />
+		<field name="@block_urls_regex" type="note" class="alert alert-danger" description="NN_URL_PARTS_REGEX" />
+		<field name="@toggler_urls_regex_b" type="nn_toggler" />
+		<field name="@assignto_urls" type="nn_assignmentselection" />
+
+		<field name="assignto_os" type="nn_assignmentselection" label="NN_OS" />
+		<field name="@text_os" type="note" description="NN_OS_DESC" />
+		<field name="assignto_os_selection" type="nn_agents" group="os" multiple="true" default="" label="NN_SELECTION" description="NN_OS_DESC" />
+		<field name="@assignto_os" type="nn_assignmentselection" />
+
+		<field name="assignto_browsers" type="nn_assignmentselection" label="NN_BROWSERS" />
+		<field name="@text_browsers" type="note" description="NN_BROWSERS_DESC" />
+		<field name="assignto_browsers_selection" type="nn_agents" group="browsers" multiple="true" default="" label="NN_BROWSERS"
+			   description="NN_BROWSERS_DESC" />
+		<field name="assignto_mobile_selection" type="nn_agents" group="mobile" multiple="true" default="" label="NN_MOBILE_BROWSERS"
+			   description="NN_BROWSERS_DESC" />
+		<field name="@assignto_browsers" type="nn_assignmentselection" />
+
+		<field name="assignto_components" type="nn_assignmentselection" label="NN_COMPONENTS" />
+		<field name="assignto_components_selection" type="nn_components" multiple="true" admin="0" show_content="1" default="" label="NN_SELECTION"
+			   description="NN_COMPONENTS_DESC" />
+		<field name="@assignto_components" type="nn_assignmentselection" />
+
+		<field name="assignto_tags" type="nn_assignmentselection" label="NN_TAGS" />
+		<field name="assignto_tags_selection" type="nn_tags" multiple="true" default="" label="NN_SELECTION" description="NN_TAGS_DESC" />
+		<field name="assignto_tags_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="@assignto_tags" type="nn_assignmentselection" />
+
+		<field name="@loadlanguage_content" type="nn_loadlanguage" extension="com_content.sys" />
+
+		<field name="@toggler_content_a" type="nn_toggler" param="show_assignments|assignto_contentpagetypes|assignto_cats|assignto_articles"
+			   value="1|1,2|1,2|1,2" />
+		<field name="@block_content_a" type="nn_block" start="1" label="NN_JCONTENT" />
+
+		<field name="assignto_contentpagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_contentpagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="archive">COM_CONTENT_ARCHIVE_VIEW_DEFAULT_TITLE</option>
+			<option value="article">COM_CONTENT_ARTICLE_VIEW_DEFAULT_TITLE</option>
+			<option value="categories">COM_CONTENT_CATEGORIES_VIEW_DEFAULT_TITLE</option>
+			<option value="categoryblog">COM_CONTENT_CATEGORY_VIEW_BLOG_TITLE</option>
+			<option value="category">COM_CONTENT_CATEGORY_VIEW_DEFAULT_TITLE</option>
+			<option value="featured">COM_CONTENT_FEATURED_VIEW_DEFAULT_TITLE</option>
+			<option value="form">COM_CONTENT_FORM_VIEW_DEFAULT_TITLE</option>
+		</field>
+		<field name="@assignto_contentpagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_cats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_cats_selection" type="nn_content" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_cats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_cats_inc" type="nn_checkbox" default="inc_cats,inc_arts" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_arts">NN_ARTICLES</option>
+			<option value="inc_others">NN_OTHERS</option>
+		</field>
+		<field name="@assignto_cats" type="nn_assignmentselection" />
+
+		<field name="assignto_articles" type="nn_assignmentselection" label="NN_ARTICLES" />
+		<field name="assignto_articles_selection" type="nn_content" group="items" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_ARTICLES_DESC" />
+		<field name="assignto_articles_content_keywords" type="nn_textareaplus" height="40" default="" label="NN_CONTENT_KEYWORDS"
+			   description="NN_CONTENT_KEYWORDS_DESC" />
+		<field name="assignto_articles_keywords" type="nn_textareaplus" height="40" default="" label="NN_META_KEYWORDS" description="NN_META_KEYWORDS_DESC" />
+		<field name="assignto_articles_authors" type="nn_users" multiple="true" default="" label="NN_ARTICLE_AUTHORS" description="NN_ARTICLE_AUTHORS_DESC" />
+		<field name="@assignto_articles" type="nn_assignmentselection" />
+
+		<field name="@block_content_b" type="nn_block" end="1" />
+		<field name="@toggler_content_b" type="nn_toggler" />
+
+
+		<field name="@toggler_has_easyblog_a" type="nn_toggler" param="has_easyblog" value="1" />
+		<field name="@loadlanguage_easyblog" type="nn_loadlanguage" extension="com_easyblog.sys" />
+
+		<field name="@toggler_easyblog_a" type="nn_toggler"
+			   param="show_assignments|assignto_easyblogpagetypes|assignto_easyblogcats|assignto_easyblogtags|assignto_easyblogitems"
+			   value="1|1,2|1,2|1,2|1,2" />
+		<field name="@block_easyblog_a" type="nn_block" start="1" label="COM_EASYBLOG" />
+
+		<field name="assignto_easyblogpagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_easyblogpagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="archive">COM_EASYBLOG_MENU_ARCHIVE_LAYOUT</option>
+			<option value="blogger">COM_EASYBLOG_MENU_BLOGGERS_LAYOUT</option>
+			<option value="categories">COM_EASYBLOG_MENU_CATEGORIES_LAYOUT</option>
+			<option value="dashboard">COM_EASYBLOG_MENU_DASHBOARD_LAYOUT</option>
+			<option value="entry">COM_EASYBLOG_MENU_ENTRY_LAYOUT</option>
+			<option value="featured">COM_EASYBLOG_MENU_FEATURED_LAYOUT</option>
+			<option value="latest">COM_EASYBLOG_MENU_FRONTPAGE_LAYOUT</option>
+			<option value="login">COM_EASYBLOG_MENU_LOGIN_LAYOUT</option>
+			<option value="myblog">COM_EASYBLOG_MENU_MYBLOG_LAYOUT</option>
+			<option value="subscription">COM_EASYBLOG_MENU_SUBSCRIPTION_LAYOUT</option>
+			<option value="tags">COM_EASYBLOG_MENU_TAGS_LAYOUT</option>
+			<option value="teamblog">COM_EASYBLOG_MENU_TEAMBLOG_LAYOUT</option>
+		</field>
+		<field name="@assignto_easyblogpagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_easyblogcats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_easyblogcats_selection" type="nn_easyblog" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_easyblogcats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_easyblogcats_inc" type="nn_checkbox" default="inc_cats,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_items">NN_ITEMS</option>
+		</field>
+		<field name="@assignto_easyblogcats" type="nn_assignmentselection" />
+
+		<field name="assignto_easyblogtags" type="nn_assignmentselection" label="NN_TAGS" />
+		<field name="assignto_easyblogtags_selection" type="nn_easyblog" group="tags" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_TAGS_DESC" />
+		<field name="assignto_easyblogtags_inc" type="nn_checkbox" default="inc_tags,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_tags">NN_TAGS</option>
+			<option value="inc_items">NN_ITEMS</option>
+		</field>
+		<field name="@assignto_easyblogtags" type="nn_assignmentselection" />
+
+		<field name="assignto_easyblogitems" type="nn_assignmentselection" label="NN_ITEMS" />
+		<field name="assignto_easyblogitems_selection" type="nn_easyblog" group="items" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_ITEMS_DESC" />
+		<field name="assignto_easyblogitems_authors" type="nn_users" multiple="true" default="" label="NN_ARTICLE_AUTHORS"
+			   description="NN_ARTICLE_AUTHORS_DESC" />
+		<field name="@assignto_easyblogitems" type="nn_assignmentselection" />
+
+		<field name="@block_easyblog_b" type="nn_block" end="1" />
+		<field name="@toggler_easyblog_b" type="nn_toggler" />
+		<field name="@toggler_has_easyblog_b" type="nn_toggler" />
+
+		<field name="@toggler_has_flexicontent_a" type="nn_toggler" param="has_flexicontent" value="1" />
+		<field name="@loadlanguage_flexicontent" type="nn_loadlanguage" extension="com_flexicontent.sys" />
+
+		<field name="@toggler_flexicontent_a" type="nn_toggler"
+			   param="show_assignments|assignto_flexicontentpagetypes|assignto_flexicontenttags|assignto_flexicontenttypes" value="1|1,2|1,2|1,2" />
+		<field name="@block_flexicontent_a" type="nn_block" start="1" label="COM_FLEXICONTENT" />
+
+		<field name="@toggler_flexicontent_1a" type="nn_toggler" param="assignto_flexicontentpagetypes|assignto_flexicontenttags|assignto_flexicontenttypes"
+			   value="1,2|1,2|1,2" />
+		<field name="@block_flexicontent_1a" type="nn_block" start="1" description="NN_USE_CONTENT_ASSIGNMENTS" />
+		<field name="@block_flexicontent_1b" type="nn_block" end="1" />
+		<field name="@toggler_flexicontent_1b" type="nn_toggler" />
+
+		<field name="@loadlanguage_search" type="nn_loadlanguage" extension="com_search.sys" />
+		<field name="assignto_flexicontentpagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_flexicontentpagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="author">FLEXICONTENT_AUTHOR</option>
+			<option value="category">FLEXICONTENT_CATEGORY</option>
+			<option value="myitems">FLEXICONTENT_MYITEMS</option>
+			<option value="favourites">FLEXICONTENT_FAVOURITES</option>
+			<option value="flexicontent">FLEXICONTENT_MAIN</option>
+			<option value="item">FLEXICONTENT_ITEM</option>
+			<option value="search">COM_SEARCH</option>
+			<option value="tags">FLEXICONTENT_TAGS</option>
+		</field>
+		<field name="@assignto_flexicontentpagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_flexicontenttags" type="nn_assignmentselection" label="NN_TAGS" />
+		<field name="assignto_flexicontenttags_selection" type="nn_flexicontent" group="tags" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_TAGS_DESC" />
+		<field name="assignto_flexicontenttags_inc" type="nn_checkbox" default="inc_tags,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_tags">NN_TAGS</option>
+			<option value="inc_items">NN_ITEMS</option>
+		</field>
+		<field name="@assignto_flexicontenttags" type="nn_assignmentselection" />
+
+		<field name="assignto_flexicontenttypes" type="nn_assignmentselection" label="NN_TYPES" />
+		<field name="assignto_flexicontenttypes_selection" type="nn_flexicontent" group="types" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_TYPES_DESC" />
+		<field name="@assignto_flexicontenttypes" type="nn_assignmentselection" />
+
+		<field name="@block_flexicontent_b" type="nn_block" end="1" />
+		<field name="@toggler_flexicontent_b" type="nn_toggler" />
+		<field name="@toggler_has_flexicontent_b" type="nn_toggler" />
+
+		<field name="@toggler_has_form2content_a" type="nn_toggler" param="has_form2content" value="1" />
+		<field name="@loadlanguage_form2content" type="nn_loadlanguage" extension="com_form2content.sys" />
+
+		<field name="@toggler_form2content_a" type="nn_toggler" param="show_assignments|assignto_form2contentprojects" value="1|1,2" />
+		<field name="@block_form2content_a" type="nn_block" start="1" label="COM_FORM2CONTENT" />
+
+		<field name="@toggler_form2content_1a" type="nn_toggler" param="assignto_form2contentprojects" value="1,2" />
+		<field name="@block_form2content_1a" type="nn_block" start="1" description="NN_USE_CONTENT_ASSIGNMENTS" />
+		<field name="@block_form2content_1b" type="nn_block" end="1" />
+		<field name="@toggler_form2content_1b" type="nn_toggler" />
+
+		<field name="assignto_form2contentprojects" type="nn_assignmentselection" label="NN_TYPES" />
+		<field name="assignto_form2contentprojects_selection" type="nn_form2content" group="projects" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_TYPES_DESC" />
+		<field name="@assignto_form2contentprojects" type="nn_assignmentselection" />
+
+		<field name="@block_form2content_b" type="nn_block" end="1" />
+		<field name="@toggler_form2content_b" type="nn_toggler" />
+		<field name="@toggler_has_form2content_b" type="nn_toggler" />
+
+		<field name="@toggler_has_k2_a" type="nn_toggler" param="has_k2" value="1" />
+		<field name="@loadlanguage_k2" type="nn_loadlanguage" extension="com_k2" />
+
+		<field name="@toggler_k2_a" type="nn_toggler" param="show_assignments|assignto_k2pagetypes|assignto_k2cats|assignto_k2tags|assignto_k2items"
+			   value="1|1,2|1,2|1,2|1,2" />
+		<field name="@block_k2_a" type="nn_block" start="1" label="COM_K2" />
+
+		<field name="assignto_k2pagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_k2pagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="item">K2_ITEM</option>
+			<option value="itemform">K2_ITEM_EDIT_FORM</option>
+			<option value="category">K2_CATEGORIES</option>
+			<option value="tag">K2_TAG</option>
+			<option value="user">K2_USER_PAGE_BLOG</option>
+			<option value="latest">K2_LATEST_ITEMS_FROM_ONE_OR_MORE_USERS_OR_CATEGORIES</option>
+		</field>
+		<field name="@assignto_k2pagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_k2cats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_k2cats_selection" type="nn_k2" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_k2cats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_k2cats_inc" type="nn_checkbox" default="inc_cats,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_items">NN_ITEMS</option>
+		</field>
+		<field name="@assignto_k2cats" type="nn_assignmentselection" />
+
+		<field name="assignto_k2tags" type="nn_assignmentselection" label="NN_TAGS" />
+		<field name="assignto_k2tags_selection" type="nn_k2" group="tags" multiple="true" default="" label="NN_SELECTION" description="NN_TAGS_DESC" />
+		<field name="assignto_k2tags_inc" type="nn_checkbox" default="inc_tags,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_tags">NN_TAGS</option>
+			<option value="inc_items">NN_ITEMS</option>
+		</field>
+		<field name="@assignto_k2tags" type="nn_assignmentselection" />
+
+		<field name="assignto_k2items" type="nn_assignmentselection" label="NN_ITEMS" />
+		<field name="assignto_k2items_selection" type="nn_k2" group="items" multiple="true" default="" label="NN_SELECTION" description="NN_ITEMS_DESC" />
+		<field name="assignto_k2items_content_keywords" type="nn_textareaplus" height="40" default="" label="NN_CONTENT_KEYWORDS"
+			   description="NN_CONTENT_KEYWORDS_DESC" />
+		<field name="assignto_k2items_meta_keywords" type="nn_textareaplus" height="40" default="" label="NN_META_KEYWORDS"
+			   description="NN_META_KEYWORDS_DESC" />
+		<field name="assignto_k2items_authors" type="nn_users" multiple="true" default="" label="NN_ARTICLE_AUTHORS" description="NN_ARTICLE_AUTHORS_DESC" />
+		<field name="@assignto_k2items" type="nn_assignmentselection" />
+
+		<field name="@block_k2_b" type="nn_block" end="1" />
+		<field name="@toggler_k2_b" type="nn_toggler" />
+		<field name="@toggler_has_k2_b" type="nn_toggler" />
+
+		<field name="@toggler_has_zoo_a" type="nn_toggler" param="has_zoo" value="1" />
+		<field name="@loadlanguage_zoo" type="nn_loadlanguage" extension="com_zoo.sys" />
+
+		<field name="@toggler_zoo_a" type="nn_toggler" param="show_assignments|assignto_zoopagetypes|assignto_zoocats|assignto_zooitems"
+			   value="1|1,2|1,2|1,2" />
+		<field name="@block_zoo_a" type="nn_block" start="1" label="COM_ZOO" />
+
+		<field name="assignto_zoopagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_zoopagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="category">CATEGORY</option>
+			<option value="item">ITEM</option>
+			<option value="frontpage">FRONTPAGE</option>
+			<option value="mysubmissions">MY SUBMISSIONS</option>
+			<option value="submissions">SUBMISSION</option>
+		</field>
+		<field name="@assignto_zoopagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_zoocats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_zoocats_selection" type="nn_zoo" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_zoocats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_zoocats_inc" type="nn_checkbox" default="inc_cats,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_items">NN_ITEMS</option>
+		</field>
+		<field name="@assignto_zoocats" type="nn_assignmentselection" />
+
+		<field name="assignto_zooitems" type="nn_assignmentselection" label="NN_ITEMS" />
+		<field name="assignto_zooitems_selection" type="nn_zoo" group="items" multiple="true" default="" label="NN_SELECTION" description="NN_ITEMS_DESC" />
+		<field name="assignto_zooitems_authors" type="nn_users" multiple="true" default="" label="NN_ARTICLE_AUTHORS" description="NN_ARTICLE_AUTHORS_DESC" />
+		<field name="@assignto_zooitems" type="nn_assignmentselection" />
+
+		<field name="@block_zoo_b" type="nn_block" end="1" />
+		<field name="@toggler_zoo_b" type="nn_toggler" />
+		<field name="@toggler_has_zoo_b" type="nn_toggler" />
+
+		<field name="@toggler_has_akeebasubs_a" type="nn_toggler" param="has_akeebasubs" value="1" />
+		<field name="@loadlanguage_akeebasubs" type="nn_loadlanguage" extension="com_akeebasubs.sys" />
+
+		<field name="@toggler_akeebasubs_a" type="nn_toggler" param="show_assignments|assignto_akeebasubspagetypes|assignto_akeebasubslevels"
+			   value="1|1,2|1,2" />
+		<field name="@block_akeebasubs_a" type="nn_block" start="1" label="AKEEBASUBS" />
+
+		<field name="assignto_akeebasubspagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_akeebasubspagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="level">COM_AKEEBASUBS_VIEW_LEVEL_DEFAULT_TITLE</option>
+			<option value="levels">COM_AKEEBASUBS_VIEW_LEVELS_AWESOME_TITLE</option>
+			<option value="levels">COM_AKEEBASUBS_VIEW_LEVELS_DEFAULT_TITLE</option>
+			<option value="subscriptions">COM_AKEEBASUBS_VIEW_SUBSCRIPTIONS_DEFAULT_TITLE</option>
+			<option value="userinfo">COM_AKEEBASUBS_VIEW_USERINFO_DEFAULT_TITLE</option>
+		</field>
+		<field name="@assignto_akeebasubspagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_akeebasubslevels" type="nn_assignmentselection" label="NN_LEVELS" />
+		<field name="assignto_akeebasubslevels_selection" type="nn_akeebasubs" group="levels" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_LEVELS_DESC" />
+		<field name="@assignto_akeebasubslevels" type="nn_assignmentselection" />
+
+		<field name="@block_akeebasubs_b" type="nn_block" end="1" />
+		<field name="@toggler_akeebasubs_b" type="nn_toggler" />
+		<field name="@toggler_has_akeebasubs_b" type="nn_toggler" />
+
+		<field name="@toggler_has_hikashop_a" type="nn_toggler" param="has_hikashop" value="1" />
+		<field name="@loadlanguage_hikashop" type="nn_loadlanguage" extension="com_hikashop.sys" />
+
+		<field name="@toggler_hikashop_a" type="nn_toggler" param="show_assignments|assignto_hikashoppagetypes|assignto_hikashopcats|assignto_hikashopproducts"
+			   value="1|1,2|1,2|1,2" />
+		<field name="@block_hikashop_a" type="nn_block" start="1" label="HikaShop" />
+
+		<field name="assignto_hikashoppagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_hikashoppagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="address">COM_HIKASHOP_ADDRESS_VIEW_DEFAULT_TITLE</option>
+			<option value="category">COM_HIKASHOP_CATEGORY_VIEW_DEFAULT_TITLE</option>
+			<option value="checkout">COM_CONTENT_FEATURED_VIEW_DEFAULT_TITLE</option>
+			<option value="order">COM_CONTENT_FORM_VIEW_DEFAULT_TITLE</option>
+			<option value="product_contact">COM_HIKASHOP_CONTACT_VIEW_DEFAULT_TITLE</option>
+			<option value="product">COM_HIKASHOP_PRODUCT_VIEW_DEFAULT_TITLE</option>
+			<option value="product_show">COM_HIKASHOP_PRODUCT_FORM_VIEW_DEFAULT_TITLE</option>
+			<option value="user_cpanel">COM_HIKASHOP_USER_PANEL_VIEW_DEFAULT_TITLE</option>
+			<option value="user">COM_HIKASHOP_USER_VIEW_DEFAULT_TITLE</option>
+		</field>
+		<field name="@assignto_hikashoppagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_hikashopcats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_hikashopcats_selection" type="nn_hikashop" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_hikashopcats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_hikashopcats_inc" type="nn_checkbox" default="inc_cats,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_items">NN_PRODUCTS</option>
+		</field>
+		<field name="@assignto_hikashopcats" type="nn_assignmentselection" />
+
+		<field name="assignto_hikashopproducts" type="nn_assignmentselection" label="NN_PRODUCTS" />
+		<field name="assignto_hikashopproducts_selection" type="nn_hikashop" group="products" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_ITEMS_DESC" />
+		<field name="@assignto_hikashopproducts" type="nn_assignmentselection" />
+
+		<field name="@block_hikashop_b" type="nn_block" end="1" />
+		<field name="@toggler_hikashop_b" type="nn_toggler" />
+		<field name="@toggler_has_hikashop_b" type="nn_toggler" />
+
+		<field name="@toggler_has_mijoshop_a" type="nn_toggler" param="has_mijoshop" value="1" />
+		<field name="@loadlanguage_mijoshop" type="nn_loadlanguage" extension="com_mijoshop.sys" />
+
+		<field name="@toggler_mijoshop_a" type="nn_toggler" param="show_assignments|assignto_mijoshoppagetypes|assignto_mijoshopcats|assignto_mijoshopproducts"
+			   value="1|1,2|1,2|1,2" />
+		<field name="@block_mijoshop_a" type="nn_block" start="1" label="COM_MIJOSHOP" />
+
+		<field name="assignto_mijoshoppagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_mijoshoppagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="account">COM_MIJOSHOP_ACCOUNT_VIEW_DEFAULT_TITLE</option>
+			<option value="admin">COM_MIJOSHOP_ADMIN_VIEW_DEFAULT_TITLE</option>
+			<option value="affiliates">COM_MIJOSHOP_AFFILIATES_VIEW_DEFAULT_TITLE</option>
+			<option value="bestseller">COM_MIJOSHOP_BESTSELLER_VIEW_DEFAULT_TITLE</option>
+			<option value="cart">COM_MIJOSHOP_CART_VIEW_DEFAULT_TITLE</option>
+			<option value="checkout">COM_MIJOSHOP_CHECKOUT_VIEW_DEFAULT_TITLE</option>
+			<option value="compare">COM_MIJOSHOP_COMPARE_VIEW_DEFAULT_TITLE</option>
+			<option value="contact">COM_MIJOSHOP_CONTACT_VIEW_DEFAULT_TITLE</option>
+			<option value="downloads">COM_MIJOSHOP_DOWNLOADS_VIEW_DEFAULT_TITLE</option>
+			<option value="home">COM_MIJOSHOP_HOME_VIEW_DEFAULT_TITLE</option>
+			<option value="latest">COM_MIJOSHOP_LATEST_VIEW_DEFAULT_TITLE</option>
+			<option value="login">COM_MIJOSHOP_LOGIN_VIEW_DEFAULT_TITLE</option>
+			<option value="manufacturers">COM_MIJOSHOP_MANUFACTURERS_VIEW_DEFAULT_TITLE</option>
+			<option value="newsletter">COM_MIJOSHOP_NEWSLETTER_VIEW_DEFAULT_TITLE</option>
+			<option value="orders">COM_MIJOSHOP_ORDERS_VIEW_DEFAULT_TITLE</option>
+			<option value="popular">COM_MIJOSHOP_POPULAR_VIEW_DEFAULT_TITLE</option>
+			<option value="registration">COM_MIJOSHOP_REGISTRATION_VIEW_DEFAULT_TITLE</option>
+			<option value="returns">COM_MIJOSHOP_RETURNS_VIEW_DEFAULT_TITLE</option>
+			<option value="search">COM_MIJOSHOP_SEARCH_VIEW_DEFAULT_TITLE</option>
+			<option value="sitemap">COM_MIJOSHOP_SITEMAP_VIEW_DEFAULT_TITLE</option>
+			<option value="specials">COM_MIJOSHOP_SPECIALS_VIEW_DEFAULT_TITLE</option>
+			<option value="voucher">COM_MIJOSHOP_VOUCHER_VIEW_DEFAULT_TITLE</option>
+			<option value="wishlist">COM_MIJOSHOP_WISHLIST_VIEW_DEFAULT_TITLE</option>
+		</field>
+		<field name="@assignto_mijoshoppagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_mijoshopcats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_mijoshopcats_selection" type="nn_mijoshop" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_mijoshopcats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_mijoshopcats_inc" type="nn_checkbox" default="inc_cats,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_items">NN_PRODUCTS</option>
+		</field>
+		<field name="@assignto_mijoshopcats" type="nn_assignmentselection" />
+
+		<field name="assignto_mijoshopproducts" type="nn_assignmentselection" label="NN_PRODUCTS" />
+		<field name="assignto_mijoshopproducts_selection" type="nn_mijoshop" group="products" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_ITEMS_DESC" />
+		<field name="@assignto_mijoshopproducts" type="nn_assignmentselection" />
+
+		<field name="@block_mijoshop_b" type="nn_block" end="1" />
+		<field name="@toggler_mijoshop_b" type="nn_toggler" />
+		<field name="@toggler_has_mijoshop_b" type="nn_toggler" />
+
+		<field name="@toggler_has_redshop_a" type="nn_toggler" param="has_redshop" value="1" />
+		<field name="@loadlanguage_redshop" type="nn_loadlanguage" extension="com_redshop.sys" />
+
+		<field name="@toggler_redshop_a" type="nn_toggler" param="show_assignments|assignto_redshoppagetypes|assignto_redshopcats|assignto_redshopproducts"
+			   value="1|1,2|1,2|1,2" />
+		<field name="@block_redshop_a" type="nn_block" start="1" label="COM_REDSHOP_REDSHOP" />
+
+		<field name="assignto_redshoppagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_redshoppagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="account">COM_REDSHOP_ACCOUNT_LAYOUT</option>
+			<option value="mywishlist">COM_REDSHOP_MYWISHLIST_LAYOUT</option>
+			<option value="cart">COM_REDSHOP_CART_LAYOUT</option>
+			<option value="catalog">COM_REDSHOP_CATALOG_LAYOUT</option>
+			<option value="catalog_sample">COM_REDSHOP_SAMPLE_LAYOUT</option>
+			<option value="category_categoryproduct">COM_REDSHOP_STANDARD_CATEGORY_LAYOUT_TO_SHOW_ALL_CATEGORY_PRODUCT</option>
+			<option value="category">COM_REDSHOP_STANDARD_CATEGORY_LAYOUT</option>
+			<option value="category_detail">COM_REDSHOP_STANDARD_CATEGORY_DETAIL_LAYOUT</option>
+			<option value="checkout">COM_REDSHOP_STANDARD_CHECKOUT_LAYOUT</option>
+			<option value="giftcard">COM_REDSHOP_STANDARD_GIFTCARD_LIST</option>
+			<option value="login">COM_REDSHOP_STANDARD_LOGIN_LAYOUT</option>
+			<option value="login_logout">COM_REDSHOP_STANDARD_LOGOUT_LAYOUT</option>
+			<option value="login_portal">COM_REDSHOP_STANDARD_PORTAL_LAYOUT</option>
+			<option value="login_portals">COM_REDSHOP_STANDARD_PORTAL_DETAIL_LAYOUT</option>
+			<option value="manufacturer">COM_REDSHOP_STANDARD_MANUFACTURERS_LAYOUT</option>
+			<option value="manufacturer_detail">COM_REDSHOP_STANDARD_MANUFACTURER_DETAIL_LAYOUT</option>
+			<option value="manufacturer_product">COM_REDSHOP_STANDARD_MANUFACTURER_PRODUCT_LAYOUT</option>
+			<option value="newsletter">COM_REDSHOP_STANDARD_NEWSLETTER_LAYOUT</option>
+			<option value="orders">COM_REDSHOP_STANDARD_ORDERS_LAYOUT</option>
+			<option value="ordertracker">COM_REDSHOP_STANDARD_ORDERS_TRACKER_LAYOUT</option>
+			<option value="password">COM_REDSHOP_STANDARD_PASSWORD_LAYOUT</option>
+			<option value="password_setpassword">COM_REDSHOP_STANDARD_SETPASSWORD_LAYOUT</option>
+			<option value="password_token">COM_REDSHOP_STANDARD_TOKEN_LAYOUT</option>
+			<option value="product">COM_REDSHOP_STANDARD_PRODUCT_LAYOUT</option>
+			<option value="product_downloadproduct">COM_REDSHOP_STANDARD_PRODUCT_DOWNLOAD_LAYOUT</option>
+			<option value="product_rating">COM_REDSHOP_STANDARD_PRODUCT_RATING_LAYOUT</option>
+			<option value="quotation">COM_REDSHOP_STANDARD_QUOTATION_LAYOUT</option>
+			<option value="reddesign">COM_REDSHOP_STANDARD_RED_DESIGN_LAYOUT</option>
+			<option value="registration">COM_REDSHOP_STANDARD_REGISTRATION_LAYOUT</option>
+			<option value="search">COM_REDSHOP_STANDARD_SERACH_LAYOUT</option>
+			<option value="search_newproduct">COM_REDSHOP_STANDARD_NEWEST_PRODUCT_SEARCH_LAYOUT</option>
+			<option value="search_productonsale">COM_REDSHOP_STANDARD_PRODUCT_ON_SALE_LAYOUT</option>
+			<option value="search_redfilter">COM_REDSHOP_STANDARD_RED_FILTER_LAYOUT</option>
+			<option value="wishlist">COM_REDSHOP_MYWISHLIST</option>
+			<option value="wishlist_viewwishlist">COM_REDSHOP_VIEWWISHLIST_LAYOUT_TO_VIEW_ALL_WISHLIST</option>
+		</field>
+		<field name="@assignto_redshoppagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_redshopcats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_redshopcats_selection" type="nn_redshop" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_redshopcats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_redshopcats_inc" type="nn_checkbox" default="inc_cats,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_items">NN_PRODUCTS</option>
+		</field>
+		<field name="@assignto_redshopcats" type="nn_assignmentselection" />
+
+		<field name="assignto_redshopproducts" type="nn_assignmentselection" label="NN_PRODUCTS" />
+		<field name="assignto_redshopproducts_selection" type="nn_redshop" group="products" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_ITEMS_DESC" />
+		<field name="@assignto_redshopproducts" type="nn_assignmentselection" />
+
+		<field name="@block_redshop_b" type="nn_block" end="1" />
+		<field name="@toggler_redshop_b" type="nn_toggler" />
+		<field name="@toggler_has_redshop_b" type="nn_toggler" />
+
+		<field name="@toggler_has_virtuemart_a" type="nn_toggler" param="has_virtuemart" value="1" />
+		<field name="@loadlanguage_virtuemart" type="nn_loadlanguage" extension="com_virtuemart.sys" />
+
+		<field name="@toggler_virtuemart_a" type="nn_toggler"
+			   param="show_assignments|assignto_virtuemartpagetypes|assignto_virtuemartcats|assignto_virtuemartproducts" value="1|1,2|1,2|1,2" />
+		<field name="@block_virtuemart_a" type="nn_block" start="1" label="COM_VIRTUEMART" />
+
+		<field name="assignto_virtuemartpagetypes" type="nn_assignmentselection" label="NN_PAGE_TYPES" />
+		<field name="assignto_virtuemartpagetypes_selection" type="nn_list" multiple="true" default="" label="NN_SELECTION" description="NN_PAGE_TYPES_DESC">
+			<option value="cart">COM_VIRTUEMART_CART_VIEW_DEFAULT_TITLE</option>
+			<option value="categories">COM_VIRTUEMART_CATEGORIES_VIEW_DEFAULT_TITLE</option>
+			<option value="category">COM_VIRTUEMART_CATEGORY_VIEW_DEFAULT_TITLE</option>
+			<option value="manufacturer">COM_VIRTUEMART_MANUFACTURER_VIEW_DEFAULT_TITLE</option>
+			<option value="manufacturer_details">COM_VIRTUEMART_MANUFACTURER_VIEW_DETAILS_TITLE</option>
+			<option value="orders">COM_VIRTUEMART_ORDERS_VIEW_DEFAULT_TITLE</option>
+			<option value="productdetails">COM_VIRTUEMART_PRODUCTDETAILS_VIEW_DEFAULT_TITLE</option>
+			<option value="user_edit">COM_VIRTUEMART_USER_VIEW_DEFAULT_TITLE</option>
+			<option value="user_editaddress">COM_VIRTUEMART_USER_EDITADDRESS_VIEW_DEFAULT_TITLE</option>
+			<option value="vendor_contact">COM_VIRTUEMART_VENDOR_VIEW_CONTACT_TITLE</option>
+			<option value="vendor">COM_VIRTUEMART_VENDOR_VIEW_DEFAULT_TITLE</option>
+			<option value="vendor_details">COM_VIRTUEMART_VENDOR_VIEW_DETAILS_TITLE</option>
+			<option value="vendor_tos">COM_VIRTUEMART_VENDOR_VIEW_TOS_TITLE</option>
+			<option value="virtuemart">COM_VIRTUEMART_VIRTUEMART_VIEW_DEFAULT_TITLE</option>
+		</field>
+		<field name="@assignto_virtuemartpagetypes" type="nn_assignmentselection" />
+
+		<field name="assignto_virtuemartcats" type="nn_assignmentselection" label="NN_CATEGORIES" />
+		<field name="assignto_virtuemartcats_selection" type="nn_virtuemart" group="categories" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_CATEGORIES_DESC" />
+		<field name="assignto_virtuemartcats_inc_children" type="radio" class="btn-group btn-group-yesno" default="0" label="NN_ALSO_ON_CHILD_ITEMS"
+			   description="NN_ALSO_ON_CHILD_ITEMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="assignto_virtuemartcats_inc" type="nn_checkbox" default="inc_cats,inc_items" label="NN_PAGE_TYPES" description="NN_PAGE_TYPES_DESC">
+			<option value="inc_cats">NN_CATEGORIES</option>
+			<option value="inc_items">NN_PRODUCTS</option>
+		</field>
+		<field name="@assignto_virtuemartcats" type="nn_assignmentselection" />
+
+		<field name="assignto_virtuemartproducts" type="nn_assignmentselection" label="NN_PRODUCTS" />
+		<field name="assignto_virtuemartproducts_selection" type="nn_virtuemart" group="products" multiple="true" default="" label="NN_SELECTION"
+			   description="NN_ITEMS_DESC" />
+		<field name="@assignto_virtuemartproducts" type="nn_assignmentselection" />
+
+		<field name="@block_virtuemart_b" type="nn_block" end="1" />
+		<field name="@toggler_virtuemart_b" type="nn_toggler" />
+		<field name="@toggler_has_virtuemart_b" type="nn_toggler" />
+
+		<field name="@toggler_has_cookieconfirm_a" type="nn_toggler" param="has_cookieconfirm" value="1" />
+		<field name="@loadlanguage_cookieconfirm" type="nn_loadlanguage" extension="com_cookieconfirm.sys" />
+
+		<field name="@toggler_cookieconfirm_a" type="nn_toggler" param="show_assignments|assignto_cookieconfirm" value="1|1,2" />
+		<field name="@block_cookieconfirm_a" type="nn_block" start="1" label="COM_COOKIECONFIRM" />
+		<field name="assignto_cookieconfirm" type="nn_assignmentselection" label="NN_COOKIECONFIRM_COOKIES" />
+		<field name="@text_cookieconfirm" type="note" description="NN_COOKIECONFIRM_COOKIES_DESC" />
+		<field name="@assignto_cookieconfirm" type="nn_assignmentselection" />
+		<field name="@block_cookieconfirm_b" type="nn_block" end="1" />
+		<field name="@toggler_cookieconfirm_b" type="nn_toggler" />
+		<field name="@toggler_has_cookieconfirm_b" type="nn_toggler" />
+
+		<field name="assignto_php" type="nn_assignmentselection" label="NN_PHP" />
+		<field name="assignto_php_selection" type="nn_textareaplus" texttype="regex" default="" label="NN_PHP" description="NN_PHP_DESC" />
+		<field name="@text_assignto_php" type="note" description="NN_PHP_DESC" />
+		<field name="@assignto_php" type="nn_assignmentselection" />
+
+		<field name="@block_else_a" type="nn_block" start="1" label="RR_ELSE" />
+		<field name="other_doreplace" type="radio" class="btn-group" default="0" label="RR_ELSE" description="RR_ELSE_DESC">
+			<option value="0">RR_DO_NOTHING</option>
+			<option value="1">RR_REPLACE_WITH_SOMETHING_ELSE</option>
+		</field>
+		<field name="@toggler_else_other_a" type="nn_toggler" param="other_doreplace" value="1" />
+		<field name="other_replace" type="nn_textareaplus" class="span12" height="120" texttype="regex" default="" label="RR_REPLACE"
+			   description="RR_REPLACE_DESC" />
+		<field name="@toggler_else_other_b" type="nn_toggler" />
+		<field name="@block_else_b" type="nn_block" end="1" />
+	</fieldset>
+</config>

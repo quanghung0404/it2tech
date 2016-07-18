@@ -3,7 +3,7 @@
  * @package     Joomla.Legacy
  * @subpackage  Table
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -12,8 +12,6 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Session table
  *
- * @package     Joomla.Legacy
- * @subpackage  Table
  * @since       11.1
  * @deprecated  13.3 (Platform) & 4.0 (CMS) -  Use SQL queries to interact with the session table.
  */
@@ -147,7 +145,7 @@ class JTableSession extends JTable
 	}
 
 	/**
-	 * Find out if a user has a one or more active sessions
+	 * Find out if a user has one or more active sessions
 	 *
 	 * @param   integer  $userid  The identifier of the user
 	 *

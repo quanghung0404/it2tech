@@ -1,0 +1,178 @@
+// Hipster Ipsum
+// Source: from https://gist.github.com/boogah/2e880e0f99823a84f61d
++1
+3 wolf moon
+8-bit
+90's
+American Apparel
+Austin
+Banksy
+Blue Bottle
+Brooklyn
+Bushwick
+Carles
+Cosby sweater
+DIY
+Echo Park
+Etsy
+Godard
+Helvetica
+High Life
+Intelligentsia
+Kickstarter
+Marfa
+McSweeney's
+Neutra
+Odd Future
+PBR
+PBR&B
+Pinterest
+Pitchfork
+Portland
+Schlitz
+Shoreditch
+Thundercats
+Tonx
+Truffaut
+Tumblr
+VHS
+Vice
+Wes Anderson
+Williamsburg
+XOXO
+YOLO
+actually
+aesthetic
+art party
+artisan
+asymmetrical
+authentic
+banh mi
+banjo
+beard
+before they sold out
+bespoke
+bicycle rights
+biodiesel
+bitters
+blog
+brunch
+butcher
+cardigan
+chambray
+chia
+chillwave
+church-key
+cliche
+cornhole
+craft beer
+cray
+cred
+crucifix
+deep v
+direct trade 
+disrupt
+distillery
+dreamcatcher
+drinking vinegar
+ennui
+ethical
+ethnic
+fanny pack
+fap
+farm-to-table
+fashion axe
+fingerstache
+fixie
+flannel
+flexitarian
+food truck
+forage
+four loko
+freegan
+gastropub
+gentrify
+gluten-free
+hashtag
+hella
+hoodie
+iPhone
+irony
+jean shorts
+kale chips
+keffiyeh
+keytar
+kitsch
+kogi
+leggings
+letterpress
+literally
+lo-fi
+locavore
+lomo
+master cleanse
+meggings
+meh
+messenger bag
+mixtape
+mlkshk
+mumblecore
+mustache
+narwhal
+next level
+normcore
+occupy
+organic
+paleo
+photo booth
+pickled
+plaid
+polaroid
+pop-up
+pork belly
+post-ironic
+pour-over
+pug
+put a bird on it
+quinoa
+raw denim
+readymade
+retro
+roof party
+salvia
+sartorial
+scenester
+seitan
+selfies
+selvage
+semiotics
+shabby chic
+single-origin coffee
+skateboard
+slow-carb
+small batch
+squid
+sriracha
+street art
+stumptown
+sustainable
+swag
+synth
+tattooed
+tofu
+tote bag
+tousled
+trust fund
+try-hard
+twee
+typewriter
+ugh
+umami
+vegan
+vinyl
+viral
+wayfarers
+whatever
+wolf
+you probably haven't heard of them
+yr

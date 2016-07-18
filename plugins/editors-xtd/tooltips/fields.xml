@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/plugins/system/nnframework/fields">
+	<fieldset name="params">
+		<field name="@block_tooltip_a" type="nn_block" start="1" />
+		<field name="tip_type" type="radio" class="btn-group" default="text" label="TT_TOOLTIP">
+			<option value="text">NN_TEXT</option>
+			<option value="image">NN_IMAGE</option>
+		</field>
+		<field name="@toggler_tip_type_text_a" type="nn_toggler" param="tooltip_tip_type" value="text" />
+		<field name="tip_title" type="text" class="input-xxlarge" label="JGLOBAL_TITLE" description="TT_TOOLTIP_TITLE_DESC" />
+		<field name="tip_text" type="textarea" class="input-xxlarge" required="required" label="NN_TEXT_HTML" description="TT_TOOLTIP_TEXT_DESC" />
+		<field name="@toggler_tip_type_text_b" type="nn_toggler" />
+		<field name="@toggler_tip_type_image_a" type="nn_toggler" param="tooltip_tip_type" value="image" />
+		<field name="tip_image" type="media" label="NN_IMAGE" required="required" description="TT_TOOLTIP_IMAGE_DESC" />
+		<field name="tip_image_attribs" type="text" class="input-xxlarge" label="NN_IMAGE_ATTRIBUTES" description="NN_IMAGE_ATTRIBUTES_DESC" />
+		<field name="@toggler_tip_type_image_b" type="nn_toggler" />
+		<field name="@block_tooltip_b" type="nn_block" end="1" />
+
+		<field name="@block_link_a" type="nn_block" start="1" />
+		<field name="link_type" type="radio" class="btn-group" default="text" label="TT_LINK">
+			<option value="text">NN_TEXT</option>
+			<option value="image">NN_IMAGE</option>
+		</field>
+		<field name="@toggler_link_type_text_a" type="nn_toggler" param="tooltip_link_type" value="text" />
+		<field name="link_text" type="textarea" class="input-xxlarge" label="NN_TEXT_HTML" description="TT_LINK_TEXT_DESC" />
+		<field name="@toggler_link_type_text_b" type="nn_toggler" />
+		<field name="@toggler_link_type_image_a" type="nn_toggler" param="tooltip_link_type" value="image" />
+		<field name="link_image" type="media" label="NN_IMAGE" description="TT_LINK_IMAGE_DESC" />
+		<field name="link_image_attribs" type="text" class="input-xxlarge" label="NN_IMAGE_ATTRIBUTES" description="NN_IMAGE_ATTRIBUTES_DESC" />
+		<field name="@toggler_link_type_image_b" type="nn_toggler" />
+		<field name="@block_link_b" type="nn_block" end="1" />
+
+		<field name="class" type="text" label="NN_CSS_CLASS" description="NN_CSS_CLASS_DESC" />
+		<field name="mode" type="radio" class="btn-group" default="" label="TT_MODE" description="TT_MODE_DESC">
+			<option value="">JDEFAULT</option>
+			<option value="hover">TT_HOVER</option>
+			<option value="sticky">TT_STICKY</option>
+			<option value="click">TT_CLICK</option>
+		</field>
+		<field name="position" type="radio" class="btn-group" default="" label="TT_POSITION" description="TT_POSITION_DESC">
+			<option value="">JDEFAULT</option>
+			<option value="left">JGLOBAL_LEFT</option>
+			<option value="right">JGLOBAL_RIGHT</option>
+			<option value="top">NN_TOP</option>
+			<option value="bottom">NN_BOTTOM</option>
+		</field>
+	</fieldset>
+</config>

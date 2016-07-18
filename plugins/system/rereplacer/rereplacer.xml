@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+	<name>plg_system_rereplacer</name>
+	<description>PLG_SYSTEM_REREPLACER_DESC</description>
+	<version>6.2.0PRO</version>
+	<creationDate>January 2016</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2016 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber ReReplacer">
+			http://download.nonumber.nl/updates.xml?e=rereplacer&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="rereplacer">rereplacer.php</filename>
+		<filename>helper.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>helpers</folder>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_system_rereplacer" />
+				<field name="@license" type="nn_license" extension="REREPLACER" />
+				<field name="@version" type="nn_version" extension="REREPLACER" />
+				<field name="@dependency" type="nn_dependency"
+					   label="RR_THE_COMPONENT"
+					   file="/administrator/components/com_rereplacer/rereplacer.php" />
+				<field name="@header" type="nn_header"
+					   label="REREPLACER"
+					   description="REREPLACER_DESC"
+					   url="https://www.nonumber.nl/rereplacer" />
+
+				<field name="@notice_settings" type="nn_plaintext"
+					   description="RR_SETTINGS,&lt;a href=&quot;index.php?option=com_rereplacer&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

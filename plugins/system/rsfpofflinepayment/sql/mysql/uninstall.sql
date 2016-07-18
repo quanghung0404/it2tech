@@ -1,0 +1,1 @@
+DELETE FROM #__rsform_component_type_fields WHERE ComponentTypeId = 499;

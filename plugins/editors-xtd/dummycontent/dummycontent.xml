@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="editors-xtd" method="upgrade">
+	<name>plg_editors-xtd_dummycontent</name>
+	<description>PLG_EDITORS-XTD_DUMMYCONTENT_DESC</description>
+	<version>2.1.2PRO</version>
+	<creationDate>November 2015</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Dummy Content">
+			http://download.nonumber.nl/updates.xml?e=dummycontent&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="dummycontent">dummycontent.php</filename>
+		<filename>popup.php</filename>
+		<filename>helper.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_editors-xtd_dummycontent" />
+				<field name="@license" type="nn_license" extension="DUMMY_CONTENT" />
+				<field name="@version" type="nn_version" extension="DUMMY_CONTENT" />
+				<field name="@dependency" type="nn_dependency"
+					label="DC_THE_SYSTEM_PLUGIN"
+					file="/plugins/system/dummycontent/dummycontent.php" />
+				<field name="@header" type="nn_header"
+					label="DUMMY_CONTENT"
+					description="DUMMY_CONTENT_DESC"
+					url="https://www.nonumber.nl/dummycontent" />
+
+				<field name="@notice_settings" type="nn_plaintext" description="DC_SETTINGS,&lt;a href=&quot;index.php?option=com_plugins&amp;filter_folder=system&amp;filter_search=dummy content&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

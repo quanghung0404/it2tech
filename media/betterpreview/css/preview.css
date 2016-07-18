@@ -1,0 +1,39 @@
+/**
+ * Stylesheet
+ *
+ * @package         Better Preview
+ * @version         4.1.2PRO
+ *
+ * @author          Peter van Westen <peter@nonumber.nl>
+ * @link            http://www.nonumber.nl
+ * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+div.betterpreview_message,
+div.betterpreview_error {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 7px 20px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background-color: #666666;
+  z-index: 2000;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  cursor: pointer;
+}
+div.betterpreview_message:before,
+div.betterpreview_error:before {
+  display: 'block';
+  content: 'x';
+  float: right;
+}
+div.betterpreview_error {
+  top: 32px;
+  background-color: #9d261d;
+}

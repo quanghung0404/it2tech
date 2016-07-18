@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="package" method="upgrade">
+	<packagename>RSForm! Pro Payment Plugins</packagename>
+	<name>RSForm! Pro Payment Plugins</name>
+	<author>RSJoomla!</author>
+	<creationDate>November 2012</creationDate>
+	<copyright>(C) 2007-2015 www.rsjoomla.com</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.51.4</version>
+	<scriptfile>script.php</scriptfile>
+	
+	<updateservers>
+        <server type="extension" priority="1" name="RSForm! Pro - Payment Package">https://www.rsjoomla.com/updates/com_rsform/Plugins/pkg_payment.xml</server>
+    </updateservers>
+	
+	<files folder="packages">
+		<file type="plugin" id="pkg_rsform_payment" group="system">plg_payment</file>
+		<file type="plugin" id="pkg_rsform_payment" group="system">plg_paypal</file>
+		<file type="plugin" id="pkg_rsform_payment" group="system">plg_offline</file>
+	</files>
+</extension>

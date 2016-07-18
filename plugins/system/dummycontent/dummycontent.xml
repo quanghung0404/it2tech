@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+    <name>plg_system_dummycontent</name>
+    <description>PLG_SYSTEM_DUMMYCONTENT_DESC</description>
+    <version>2.1.2PRO</version>
+    <creationDate>November 2015</creationDate>
+    <author>NoNumber (Peter van Westen)</author>
+    <authorEmail>peter@nonumber.nl</authorEmail>
+    <authorUrl>https://www.nonumber.nl</authorUrl>
+    <copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+    <scriptfile>script.install.php</scriptfile>
+
+    <updateservers>
+        <server type="extension" priority="1" name="NoNumber Dummy Content">
+            http://download.nonumber.nl/updates.xml?e=dummycontent&amp;pro=1&amp;type=.xml
+        </server>
+    </updateservers>
+
+    <files>
+        <filename plugin="dummycontent">dummycontent.php</filename>
+        <filename>helper.php</filename>
+        <filename>script.install.helper.php</filename>
+        <folder>helpers</folder>
+        <folder>language</folder>
+        <folder>wordlists</folder>
+    </files>
+
+    <config>
+        <fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+            <fieldset name="description">
+                <field name="@loadlanguage_mod_articles_category" type="nn_loadlanguage" extension="mod_articles_category" admin="0" />
+                <field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+                <field name="@loadlanguage" type="nn_loadlanguage" extension="plg_system_dummycontent" />
+                <field name="@license" type="nn_license" extension="DUMMY_CONTENT" />
+                <field name="@version" type="nn_version" extension="DUMMY_CONTENT" />
+                <field name="@header" type="nn_header"
+                       label="DUMMY_CONTENT"
+                       description="DUMMY_CONTENT_DESC"
+                       url="https://www.nonumber.nl/dummycontent" />
+            </fieldset>
+            <fieldset name="basic">
+                <field name="type" type="list" default="kitchenSink" label="DC_DEFAULT_TYPE" description="DC_DEFAULT_TYPE_DESC">
+                    <option value="kitchenSink">DC_KITCHENSINK</option>
+                    <option value="paragraphs">DC_PARAGRAPHS</option>
+                    <option value="sentences">DC_SENTENCES</option>
+                    <option value="words">DC_WORDS</option>
+                    <option value="list">DC_LIST</option>
+                </field>
+
+                <field name="@toggler_type_paragraphs_a" type="nn_toggler" param="type" value="paragraphs" />
+                <field name="paragraphs_count" type="list" default="5" class="input-mini" label="DC_DEFAULT_PARAGRAPHS_COUNT"
+                       description="DC_DEFAULT_PARAGRAPHS_COUNT_DESC">
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+                <field name="@toggler_wordlist_paragraphs_b" type="nn_toggler" />
+
+                <field name="@toggler_type_sentences_a" type="nn_toggler" param="type" value="sentences" />
+                <field name="sentences_count" type="text" default="10" class="input-mini" label="DC_DEFAULT_SENTENCES_COUNT"
+                       description="DC_DEFAULT_SENTENCES_COUNT_DESC" />
+                <field name="@toggler_wordlist_sentences_b" type="nn_toggler" />
+
+                <field name="@toggler_type_words_a" type="nn_toggler" param="type" value="words" />
+                <field name="words_count" type="text" default="200" class="input-mini" label="DC_DEFAULT_WORDS_COUNT"
+                       description="DC_DEFAULT_WORDS_COUNT_DESC" />
+                <field name="@toggler_wordlist_words_b" type="nn_toggler" />
+
+                <field name="@toggler_type_list_a" type="nn_toggler" param="type" value="list" />
+                <field name="list_count" type="list" default="0" label="DC_DEFAULT_LIST_ITEM_COUNT" description="DC_DEFAULT_LIST_ITEM_COUNT_DESC">
+                    <option value="0">NN_RANDOM</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+                <field name="list_type" type="list" default="" label="DC_DEFAULT_LIST_TYPE" description="DC_DEFAULT_LIST_TYPE_DESC">
+                    <option value="">NN_RANDOM</option>
+                    <option value="ol">DC_ORDERED</option>
+                    <option value="ul">DC_UNORDERED</option>
+                </field>
+                <field name="@toggler_type_list_b" type="nn_toggler" />
+
+                <field name="@block_wordlist_a" type="nn_block" start="1" />
+                <field name="wordlist" type="nn_filelist"
+                       folder="plugins/system/dummycontent/wordlists"
+                       language_prefix="DC_WORDLIST_"
+                       filter=".txt" hidedefault="1" hidenone="1"
+                       default="" label="DC_WORD_LIST" description="DC_WORD_LIST_DESC" />
+
+                <field name="@example_wordlist" type="note" label="DC_EXAMPLE" />
+
+                <field name="@toggler_wordlist_arabic_a" type="nn_toggler" param="wordlist" value="arabic" />
+                <field name="@example_wordlist_arabic" type="note"
+                       description="اكتوبر استولت الامم حدى حرب بتطويق النازية بفرض عام سنغافورة الإتفاقية تونس بفرض حتى. المعارك تم انذار والقرى وصل هو قررت وبلجيكا، يتم الصينية والكوري ثمّة حرب معركة الثالث، بالولايات ماذا ونستون. مرجع العظمى بحق عل وصل هتلر المجتمع السوفييتي، الهجوم جهة الإكتفاء ماذا يتم." />
+                <field name="@toggler_wordlist_arabic_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_bacon_a" type="nn_toggler" param="wordlist" value="bacon" />
+                <field name="@example_wordlist_bacon" type="note"
+                       description="Eu salami pig sirloin magna ball tip. Mollit cupidatat officia enim pork chop consectetur dolor landjaeger pig capicola laboris dolor beef. Cupidatat strip steak laboris turducken turducken frankfurter ea consectetur sausage doner adipisicing pig filet mignon doner cupidatat short ribs doner." />
+                <field name="@toggler_wordlist_bacon_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_baseball_a" type="nn_toggler" param="wordlist" value="baseball" />
+                <field name="@example_wordlist_baseball" type="note"
+                       description="Center field bandbox shift grounder count second baseman skipper; Loss designated hitter outside second base visitors strikeout fielder's choice gapper stadium walk off. Visitors count sabremetrics inning losses 1-2-3 flyout visitors loogy baseball card." />
+                <field name="@toggler_wordlist_baseball_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_bavaria_a" type="nn_toggler" param="wordlist" value="bavaria" />
+                <field name="@example_wordlist_bavaria" type="note"
+                       description="Eana Berg obandeln owe Schuabladdla waar Sodala; Luja Schuabladdla woar oba glei Ramasuri hetschapfah es Koa greaßt jedza liabs Gwiass! Jo Gaudi ganze Vergeltsgott wea Reiwadatschi aweng Leit woass pfiad moand noch bussal Ramasuri hogg Aasgem mas charivari." />
+                <field name="@toggler_wordlist_bavaria_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_beer_a" type="nn_toggler" param="wordlist" value="beer" />
+                <field name="@example_wordlist_beer" type="note"
+                       description="Units all-malt becher rest stout chiller aroma. Priming berliner ibu alpha sour units hand glass bitter black pitch finishing bock brewing. Mead lauter ipa back seidel racking hoppy filter acid yeast shelf." />
+                <field name="@toggler_wordlist_beer_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_bowie_a" type="nn_toggler" param="wordlist" value="bowie" />
+                <field name="@example_wordlist_bowie" type="note"
+                       description="Sue, the clinic called; the x-ray's fine. Come out of the garden, baby, you'll catch your death in the fog. Insanity laughs under pressure we're cracking." />
+                <field name="@toggler_wordlist_bowie_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_cheese_a" type="nn_toggler" param="wordlist" value="cheese" />
+                <field name="@example_wordlist_cheese" type="note"
+                       description="Mozzarella stilton the big cheese bocconcini cheesy smile fondue queso caerphilly babybel cheese and wine cauliflower paneer cheese and biscuits. Port-salut parmesan chalk and cheese caerphilly cut the cheese parmesan gouda. Goat macaroni cheesy feet airedale cheese strings blue fondue macaroni hard cheese st. agur caerphilly melted manchego." />
+                <field name="@toggler_wordlist_cheese_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_corporate_a" type="nn_toggler" param="wordlist" value="corporate" />
+                <field name="@example_wordlist_corporate" type="note"
+                       description="Synergistically deliver performance based methods of empowerment whereas distributed expertise Dynamically reinvent market-driven opportunities and ubiquitous interfaces Globally revolutionize global sources through interoperable services. Professionally cultivate one-to-one customer service with robust ideas Uniquely deploy cross-unit benefits with wireless testing procedures. Completely iterate covalent strategic theme areas via accurate e-markets Completely synthesize principle-centered information after ethical communities Objectively innovate empowered manufactured products whereas parallel platforms." />
+                <field name="@toggler_wordlist_corporate_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_cupcake_a" type="nn_toggler" param="wordlist" value="cupcake" />
+                <field name="@example_wordlist_cupcake" type="note"
+                       description="Pudding applicake macaroon halvah halvah brownie croissant dolor ice cream. Cheesecake wafer chocolate tootsie roll lollipop chocolate bar tootsie roll chocolate cake. Halvah brownie apple pie cupcake candy canes wafer applicake candy fruitcake." />
+                <field name="@toggler_wordlist_cupcake_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_cyrillic_a" type="nn_toggler" param="wordlist" value="cyrillic" />
+                <field name="@example_wordlist_cyrillic" type="note"
+                       description="Квюальизквюэ аэтырно эррэм конжюль окюррырэт дыфяниэбаж. Лудуз волютпат дёжкэрэ рыпримёквуы алёквюам факильизиж прима квюальизквюэ мэльиорэ Одео эож дыкоры. Эа молыжтйаы эрюдитя лорэм квуым ыпикурэи жкряпшэрит игнота иреуры Порро ийжквюы окюррырэт форынчйбюж амэт дйкит прё алььтыра модюж!" />
+                <field name="@toggler_wordlist_cyrillic_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_esperanto_a" type="nn_toggler" param="wordlist" value="esperanto" />
+                <field name="@example_wordlist_esperanto" type="note"
+                       description="Depost nv zo certa nenii frakcistreko greka eca fore voli vi. Et cit mia patro sanktoleo sor as halo frazparto ablativa ali tripunkto senobjekta. Piedpilko oz ti faka ologi ba anti ab ajn ve hemi mono perlabori mo devus." />
+                <field name="@toggler_wordlist_esperanto_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_fishier_a" type="nn_toggler" param="wordlist" value="fishier" />
+                <field name="@example_wordlist_fishier" type="note"
+                       description="Trout-perch Colorado squawfish paddlefish garpike spiny basslet creek chub orbicular velvetfish! Tarpon eel-goby rough sculpin splitfin white croaker bandfish! Rockling ronquil pikeblenny porbeagle shark lungfish whitebait electric eel." />
+                <field name="@toggler_wordlist_fishier_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_gangsta_a" type="nn_toggler" param="wordlist" value="gangsta" />
+                <field name="@example_wordlist_gangsta" type="note"
+                       description="Chung hizzle mamma praesent vitae prizzle boom risizzle mah gangsta aliquam curabitizzle phat lobortis shackalack. Sapizzle consectetizzle cursus fermentum home morbi lacizzle mofo crunk neque shackalack gravida dui brizzle ut. Cum away aliquizzle m lorem." />
+                <field name="@toggler_wordlist_gangsta_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_gibberish_a" type="nn_toggler" param="wordlist" value="gibberish" />
+                <field name="@example_wordlist_gibberish" type="note"
+                       description="Ostrich bounced had abandoned overdrew snickered facetiously breathless absolutely. Successful pending gawked bred llama grateful loyally salmon effective actively indelicate amidst abominably conservative stupid. Warthog courageously hedgehog warthog bent objective inescapable sloth excited mindfully cuffed felt inflexible." />
+                <field name="@toggler_wordlist_gibberish_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_greek_a" type="nn_toggler" param="wordlist" value="greek" />
+                <field name="@example_wordlist_greek" type="note"
+                       description="Ρεκυε ινερμις Μυτατ ομνες δωλορε δετρασθο ασυσαμ σεθερο ηομερω ραθιονιβυς Σοτιδιεκυε ιντελλεγεβαθ ωπωρθεαθ Δυο ινανι αμετ ρεσυσαβο. Ηαβεμυς σενσεριτ Δολορεμ λυδυς Δενικυε δισιθ Σεδ δισυντ Δυις Δολορ σολετ φολυπταθυμ οβλικυε συας Αφφερθ εξ αδωλεσενς σονεθ. Φολυμυς θαμκυαμ Φιξ νοβις ατ Μωλεστιαε πυτανθ σωνσεπθαμ σριψεριθ νε Λαβορες σονστιθυαμ πυθενθ δεσωρε ετ σωνσλυδαθυρκυε." />
+                <field name="@toggler_wordlist_greek_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_hebrew_a" type="nn_toggler" param="wordlist" value="hebrew" />
+                <field name="@example_wordlist_hebrew" type="note"
+                       description="ספרות מדעי לעתים קולנוע ליצירתה רב־לשוני אם כתב שדרות לציין אחר מועמדים ב קלאסיים מלא קסאם. חבריכם קבלו זכר העזרה בחירות סרבול בויקיפדיה ספורט מדעי קלאסיים. זכר העברית עמוד שמו הספרות העיר." />
+                <field name="@toggler_wordlist_hebrew_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_hindi_a" type="nn_toggler" param="wordlist" value="hindi" />
+                <field name="@example_wordlist_hindi" type="note"
+                       description="कीने आंतरजाल होगा बहुत सके। अनुकूल. वास्तविक अनुवादक होगा मुखय पढाए स्थिति संस्थान पुर्णता भारत लगती स्थिति जागरुक उनको संपादक द्वारा. करेसाथ शारिरिक विचारशिलता हैं। उदेशीत औषधिक ध्येय." />
+                <field name="@toggler_wordlist_hindi_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_hipster_a" type="nn_toggler" param="wordlist" value="hipster" />
+                <field name="@example_wordlist_hipster" type="note"
+                       description="Plaid direct trade  ennui kale chips kitsch cliche Wes Anderson drinking vinegar keffiyeh swag Tumblr craft beer. Deep v pickled Austin farm-to-table tattooed. High Life Intelligentsia Kickstarter bicycle rights fanny pack." />
+                <field name="@toggler_wordlist_hipster_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_interlingua_a" type="nn_toggler" param="wordlist" value="interlingua" />
+                <field name="@example_wordlist_interlingua" type="note"
+                       description="Avantiate anteriormente tu laborava tentation usos commun post esseva multo del scientific linguage membros vide facto esseva addresses. Qualcunque sed membros responder americas signo esseva toto tu tote summario independente specimen o terra international que flexione occidental principalmente. Al practic tempore laborava instituto periodicos auxiliary asia major traducite rapide initialmente sia tu ascoltar technic." />
+                <field name="@toggler_wordlist_interlingua_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_leetspeak_a" type="nn_toggler" param="wordlist" value="leetspeak" />
+                <field name="@example_wordlist_leetspeak" type="note"
+                       description="1nDeX3D 15 d1z 4v41|4b|3 3ng|335h Up 0p710n. D@t |23p|4c3d r1tez m4NY m0r3. 4pp33|2z0rz l@r9e L1kE M155In9 @$ 7h3 533 m0r3 d@ 0p710n 4cc355." />
+                <field name="@toggler_wordlist_leetspeak_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_lorem_a" type="nn_toggler" param="wordlist" value="lorem" />
+                <field name="@example_wordlist_lorem" type="note"
+                       description="Tincidunt sapien eros sit a id hac nostra taciti platea ipsum lacus imperdiet tempor pharetra aenean mauris duis ligula. At consectetur porta duis sit ipsum. Sociosqu nisl pharetra mattis sodales proin ut aliquam sagittis leo faucibus sem." />
+                <field name="@toggler_wordlist_lorem_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_luxembourgish_a" type="nn_toggler" param="wordlist" value="luxembourgish" />
+                <field name="@example_wordlist_luxembourgish" type="note"
+                       description="Zwé mä d'Vioule sin nozegon Dall derfir. Gutt heescht ké Margréitchen gutt hu keen hier laacht schléit gefällt; Deser d'Wise koum Freiesch brommt un Schiet dat éiweg rout." />
+                <field name="@toggler_wordlist_luxembourgish_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_pommy_a" type="nn_toggler" param="wordlist" value="pommy" />
+                <field name="@example_wordlist_pommy" type="note"
+                       description="Knee high to a grasshopper i'll be a monkey's uncle nigh because there was nothing on the gogglebox. Nonsense posh nosh one would be honoured to through the dales; Shakespeare some mothers do 'ave 'em." />
+                <field name="@toggler_wordlist_pommy_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_quenya_a" type="nn_toggler" param="wordlist" value="quenya" />
+                <field name="@example_wordlist_quenya" type="note"
+                       description="Úcarë foa lanwa yá lívë linwelë mac oar calta vëa orosta úrë hopassë telta. Valta lir ep at indómë Áva Ára pendë tellaurë caimasan har cer etelotya úrë minya sulier cú leuca. Nalanta ronyo calpa at wén calya canta racinë ambalë aha cenvéla aini lorna." />
+                <field name="@toggler_wordlist_quenya_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_slovio_a" type="nn_toggler" param="wordlist" value="slovio" />
+                <field name="@example_wordlist_slovio" type="note"
+                       description="Znajsx nesxto sam ozeros dolaris bulgarzem celuvajt polka jazikas. Sestra sxuflad filozofiaf jazika dobrju pisanie verijm om cxistju pisajut mlodic svadilju imenim. Mama domovijm mama lesis grod ludvozis vilkas pomocijsx hce rekas imame rocxis chcel." />
+                <field name="@toggler_wordlist_slovio_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_sona_a" type="nn_toggler" param="wordlist" value="sona" />
+                <field name="@example_wordlist_sona" type="note"
+                       description="Unaua supa uaci nuda te feyo udeba jokan urazo kodak zi pecin! Iro jenmo coni bosu ziri husu cokolat utila falio ceika izo kinyo. Apakan ena ine kun anitayo ni seni imi huzo adeya tonni umma goyo ilebi." />
+                <field name="@toggler_wordlist_sona_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_space_a" type="nn_toggler" param="wordlist" value="space" />
+                <field name="@example_wordlist_space" type="note"
+                       description="Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10. Curious that we spend more time congratulating people who have succeeded than encouraging people who have not! The dreams of yesterday are the hopes of today and the reality of tomorrow I believe every human has a finite number of heartbeats. I don't intend to waste any of mine." />
+                <field name="@toggler_wordlist_space_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_tokipona_a" type="nn_toggler" param="wordlist" value="tokipona" />
+                <field name="@example_wordlist_tokipona" type="note"
+                       description="Kin lete kalama selo toki ike suli poka mute ale nasa suwi sep ona nimi sona kule. Unpa ken vi suwi kute. Monsi mi nasa lawa loje cont sona mod weka mi ike kiwen monsi moli akesi pali." />
+                <field name="@toggler_wordlist_tokipona_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_volapuek_a" type="nn_toggler" param="wordlist" value="volapuek" />
+                <field name="@example_wordlist_volapuek" type="note"
+                       description="A scelerisque pulvinar massa nec ipsum donec duis dolor mauris egestas lectus ipsum massa. Fermentum tempus curae aliquet scelerisque pulvinar libero nulla tincidunt urna taciti eu vitae sem; Ipsum faucibus ornare viverra ac in curabitur congue curae quisque." />
+                <field name="@toggler_wordlist_volapuek_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_web20_a" type="nn_toggler" param="wordlist" value="web20" />
+                <field name="@example_wordlist_web20" type="note"
+                       description="Oovoo revver kosmix zanga etsy jibjab lala twitter joukuu zlio mozy squidoo; Unigo sococo hipmunk oovoo ning mog yoono vuvox! Elgg ideeli balihoo oooj mog sit prezi zoodles mozy dropio zinch." />
+                <field name="@toggler_wordlist_web20_b" type="nn_toggler" />
+
+                <field name="@toggler_wordlist_whatnothing_a" type="nn_toggler" param="wordlist" value="whatnothing" />
+                <field name="@example_wordlist_whatnothing" type="note"
+                       description="Nothing! Huh? What? NOTHING!!! Nothing! NOTHING!!! NOTHING!!! NOTHING!!! Erm... Nothing! Nothing! Erm... NOTHING!!! Nothing! What? What? Nothing! Nothing! NOTHING!!! Erm... Nothing! Nothing! Nothing! NOTHING!!! What? NOTHING!!! NOTHING!!! Huh? Erm... Nothing! Nothing! What? Huh? NOTHING!!! Huh?" />
+                <field name="@toggler_wordlist_whatnothing_b" type="nn_toggler" />
+
+                <field name="@block_wordlist_b" type="nn_block" end="1" />
+
+                
+                <field name="@block_diacritics_a" type="nn_block" start="1" />
+                <field name="diacritics" type="list" default="" label="DC_DIACRITICS" description="DC_DIACRITICS_DESC">
+                    <option value="">JNONE</option>
+                    <option value="czech">DC_DIACRITICS_CZECH</option>
+                    <option value="danish">DC_DIACRITICS_DANISH</option>
+                    <option value="dutch">DC_DIACRITICS_DUTCH</option>
+                    <option value="esperanto">DC_DIACRITICS_ESPERANTO</option>
+                    <option value="finnish">DC_DIACRITICS_FINNISH</option>
+                    <option value="french">DC_DIACRITICS_FRENCH</option>
+                    <option value="german">DC_DIACRITICS_GERMAN</option>
+                    <option value="hungarian">DC_DIACRITICS_HUNGARIAN</option>
+                    <option value="icelandic">DC_DIACRITICS_ICELANDIC</option>
+                    <option value="italian">DC_DIACRITICS_ITALIAN</option>
+                    <option value="maori">DC_DIACRITICS_MAORI</option>
+                    <option value="norwegian">DC_DIACRITICS_NORWEGIAN</option>
+                    <option value="polish">DC_DIACRITICS_POLISH</option>
+                    <option value="portuguese">DC_DIACRITICS_PORTUGUESE</option>
+                    <option value="romanian">DC_DIACRITICS_ROMANIAN</option>
+                    <option value="russian">DC_DIACRITICS_RUSSIAN</option>
+                    <option value="spanish">DC_DIACRITICS_SPANISH</option>
+                    <option value="swedish">DC_DIACRITICS_SWEDISH</option>
+                    <option value="turkish">DC_DIACRITICS_TURKISH</option>
+                    <option value="welsh">DC_DIACRITICS_WELSH</option>
+                </field>
+
+                <field name="@toggler_diacritics_czech_a" type="nn_toggler" param="diacritics" value="czech" />
+                <field name="@example_diacritics_czech" type="note"
+                       description="&#x00E1; &#x010D; &#x010F; &#x00E9; &#x011B; &#x00ED; &#x0148; &#x00F3; &#x0159; &#x0161; &#x0165; &#x00FA; &#x016F; &#x00FD; &#x017E; " />
+                <field name="@toggler_diacritics_czech_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_danish_a" type="nn_toggler" param="diacritics" value="danish" />
+                <field name="@example_diacritics_danish" type="note" description="&#x00E5; &#x00E6; &#x00E9; &#x00F8; " />
+                <field name="@toggler_diacritics_danish_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_dutch_a" type="nn_toggler" param="diacritics" value="dutch" />
+                <field name="@example_diacritics_dutch" type="note" description="&#x00E9; &#x00EB; &#x00EF; &#x00F3; &#x00F6; &#x00FC; " />
+                <field name="@toggler_diacritics_dutch_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_esperanto_a" type="nn_toggler" param="diacritics" value="esperanto" />
+                <field name="@example_diacritics_esperanto" type="note" description="&#x0109; &#x011D; &#x0125; &#x0135; &#x015D; &#x016D; " />
+                <field name="@toggler_diacritics_esperanto_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_finnish_a" type="nn_toggler" param="diacritics" value="finnish" />
+                <field name="@example_diacritics_finnish" type="note" description="&#x00E4; &#x00E5; &#x00F6; " />
+                <field name="@toggler_diacritics_finnish_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_french_a" type="nn_toggler" param="diacritics" value="french" />
+                <field name="@example_diacritics_french" type="note"
+                       description="&#x00E0; &#x00E2; &#x00E6; &#x00E7; &#x00E9; &#x00E8; &#x00EA; &#x00EB; &#x00EF; &#x00EE; &#x00F4; &#x0153; &#x00F9; &#x00FB; &#x00FC; &#x00FF; " />
+                <field name="@toggler_diacritics_french_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_german_a" type="nn_toggler" param="diacritics" value="german" />
+                <field name="@example_diacritics_german" type="note" description="&#x00E4; &#x00F6; &#x00FC; " />
+                <field name="@toggler_diacritics_german_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_hungarian_a" type="nn_toggler" param="diacritics" value="hungarian" />
+                <field name="@example_diacritics_hungarian" type="note"
+                       description="&#x00E1; &#x00E9; &#x00ED; &#x00F6; &#x00F3; &#x0151; &#x00FC; &#x00FA; &#x0171; " />
+                <field name="@toggler_diacritics_hungarian_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_icelandic_a" type="nn_toggler" param="diacritics" value="icelandic" />
+                <field name="@example_diacritics_icelandic" type="note"
+                       description="&#x00E1; &#x00E6; &#x00F0; &#x00E9; &#x00ED; &#x00F3; &#x00F6; &#x00FA; &#x00FD; " />
+                <field name="@toggler_diacritics_icelandic_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_italian_a" type="nn_toggler" param="diacritics" value="italian" />
+                <field name="@example_diacritics_italian" type="note" description="&#x00E0; &#x00E8; &#x00E9; &#x00EC; &#x00F2; &#x00F3; &#x00F9; " />
+                <field name="@toggler_diacritics_italian_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_maori_a" type="nn_toggler" param="diacritics" value="maori" />
+                <field name="@example_diacritics_maori" type="note" description="&#x0101; &#x0113; &#x012B; &#x014D; &#x016B; " />
+                <field name="@toggler_diacritics_maori_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_norwegian_a" type="nn_toggler" param="diacritics" value="norwegian" />
+                <field name="@example_diacritics_norwegian" type="note"
+                       description="&#x00E5; &#x00E6; &#x00E2; &#x00E9; &#x00E8; &#x00EA; &#x00F8; &#x00F3; &#x00F2; &#x00F4; " />
+                <field name="@toggler_diacritics_norwegian_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_polish_a" type="nn_toggler" param="diacritics" value="polish" />
+                <field name="@example_diacritics_polish" type="note"
+                       description="&#x0105; &#x0107; &#x0119; &#x0142; &#x0144; &#x00F3; &#x015B; &#x017A; &#x017C; " />
+                <field name="@toggler_diacritics_polish_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_portuguese_a" type="nn_toggler" param="diacritics" value="portuguese" />
+                <field name="@example_diacritics_portuguese" type="note"
+                       description="&#x00E3; &#x00E1; &#x00E2; &#x00E0; &#x00E7; &#x00E9; &#x00EA; &#x00ED; &#x00F5; &#x00F3; &#x00F4; &#x00FA; &#x00FC; " />
+                <field name="@toggler_diacritics_portuguese_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_romanian_a" type="nn_toggler" param="diacritics" value="romanian" />
+                <field name="@example_diacritics_romanian" type="note" description="&#x0103; &#x00E2; &#x00EE; &#x0219; &#x015F; &#x0163; &#x021B; " />
+                <field name="@toggler_diacritics_romanian_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_russian_a" type="nn_toggler" param="diacritics" value="russian" />
+                <field name="@example_diacritics_russian" type="note"
+                       description="&#x0430; &#x0431; &#x0432; &#x0433; &#x0434; &#x0435; &#x0451; &#x0436; &#x0437; &#x0438; &#x0439; &#x043A; &#x043B; &#x043C; &#x043D; &#x043E; &#x043F; &#x0440; &#x0441; &#x0442; &#x0443; &#x0444; &#x0445; &#x0446; &#x0447; &#x0448; &#x0449; &#x044B; &#x044D; &#x044E; &#x044F; " />
+                <field name="@toggler_diacritics_russian_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_spanish_a" type="nn_toggler" param="diacritics" value="spanish" />
+                <field name="@example_diacritics_spanish" type="note" description="&#x00E1; &#x00E9; &#x00ED; &#x00F1; &#x00F3; &#x00FA; &#x00FC; " />
+                <field name="@toggler_diacritics_spanish_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_swedish_a" type="nn_toggler" param="diacritics" value="swedish" />
+                <field name="@example_diacritics_swedish" type="note" description="&#x00E4; &#x00E5; &#x00E9; &#x00F6; " />
+                <field name="@toggler_diacritics_swedish_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_turkish_a" type="nn_toggler" param="diacritics" value="turkish" />
+                <field name="@example_diacritics_turkish" type="note" description="&#x00E7; &#x011F; &#x0131; &#x0130; &#x0131; &#x00F6; &#x015F; &#x00FC; " />
+                <field name="@toggler_diacritics_turkish_b" type="nn_toggler" />
+
+                <field name="@toggler_diacritics_welsh_a" type="nn_toggler" param="diacritics" value="welsh" />
+                <field name="@example_diacritics_welsh" type="note"
+                       description="&#x00E2; &#x00EA; &#x00EE; &#x00F4; &#x00FB; &#x0175; &#x0177; &#x00E4; &#x00EB; &#x00EF; &#x00F6; &#x00FC; &#x1E85; &#x00FF; &#x00E1; &#x00E9; &#x00ED; &#x00F3; &#x00FA; &#x1E83; &#x00FD; &#x00E0; &#x00E8; &#x00EC; &#x00F2; &#x00F9; &#x1E81; &#x1EF3; " />
+                <field name="@toggler_diacritics_welsh_b" type="nn_toggler" />
+
+                <field name="@block_diacritics_b" type="nn_block" end="1" />
+
+                <field name="@block_images_a" type="nn_block" start="1" label="DC_IMAGES" />
+                <field name="image_service" type="list" default="lorempixel" label="DC_IMAGE_SERVICE" description="DC_IMAGE_SERVICE_DESC">
+                    <option disabled="1">DC_PHOTOS_OPTION</option>
+                    <option value="lorempixel">LoremPixel.com</option>
+                    <option value="placeimg">PlaceIMG.com</option>
+                    <option value="placebeard">PlaceBeard.it</option>
+                    <!--option value="placebear">PlaceBear.com</option-->
+                    <option disabled="1">DC_PLACEHOLDERS_OPTION</option>
+                    <option value="dummyimage">DummyImage.com</option>
+                    <option value="fakeimg">FakeIMG.pl</option>
+                    <option value="placehold">PlaceHold.it</option>
+                    <option value="placeholdus">PlaceHold.us</option>
+                    <option value="placeskull">PlaceSkull.it</option>
+                </field>
+
+                <field name="@toggler_example_lorempixel_a" type="nn_toggler" param="image_service" value="lorempixel" />
+                <field name="@example_lorempixel" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="DC_IMG_RELOAD,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;http://lorempixel.com/200/100/abstract&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;http://lorempixel.com/g/200/100/people/My Text&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;&lt;br /&gt;" />
+                <field name="@toggler_example_lorempixel_b" type="nn_toggler" />
+                <field name="@toggler_example_placeimg_a" type="nn_toggler" param="image_service" value="placeimg" />
+                <field name="@example_placeimg" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="DC_IMG_RELOAD,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;https://placeimg.com/200/100&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;https://placeimg.com/200/100/people/sepia&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;&lt;br /&gt;" />
+                <field name="@toggler_example_placeimg_b" type="nn_toggler" />
+                <field name="@toggler_example_placebeard_a" type="nn_toggler" param="image_service" value="placebeard" />
+                <field name="@example_placebeard" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="DC_IMG_RELOAD,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;http://placebeard.it/200/100&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;http://placebeard.it/200/100/notag&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;&lt;br /&gt;" />
+                <field name="@toggler_example_placebeard_b" type="nn_toggler" />
+                <!--field name="@toggler_example_placebear_a" type="nn_toggler" param="image_service" value="placebear" />
+                <field name="@example_placebear" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC" default="&lt;img src=&quot;http://placebear.com/200/100&quot; /&gt;" />
+                <field name="@toggler_example_placebear_b" type="nn_toggler" /-->
+                <field name="@toggler_example_dummyimage_a" type="nn_toggler" param="image_service" value="dummyimage" />
+                <field name="@example_dummyimage" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="&lt;img src=&quot;http://dummyimage.com/200x100/cccccc/999999&quot; /&gt; &lt;img src=&quot;http://dummyimage.com/200x100/778fc7/ffffff&amp;text=My Text&quot; /&gt;" />
+                <field name="@toggler_example_dummyimage_b" type="nn_toggler" />
+                <field name="@toggler_example_fakeimg_a" type="nn_toggler" param="image_service" value="fakeimg" />
+                <field name="@example_fakeimg" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="&lt;img src=&quot;http://fakeimg.pl/200x100/cccccc/999999&quot; /&gt; &lt;img src=&quot;http://fakeimg.pl/200x100/778fc7,200/ffffff,0/?font=lobster&amp;text=My Text&quot; /&gt;" />
+                <field name="@toggler_example_fakeimg_b" type="nn_toggler" />
+                <field name="@toggler_example_placehold_a" type="nn_toggler" param="image_service" value="placehold" />
+                <field name="@example_placehold" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="&lt;img src=&quot;http://placehold.it/200x100/cccccc/999999&quot; /&gt; &lt;img src=&quot;http://placehold.it/200x100/778fc7/ffffff&amp;text=My Text&quot; /&gt;" />
+                <field name="@toggler_example_placehold_b" type="nn_toggler" />
+                <field name="@toggler_example_placeholdus_a" type="nn_toggler" param="image_service" value="placeholdus" />
+                <field name="@example_placeholdus" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="&lt;img src=&quot;http://placehold.us/200x100&quot; /&gt; &lt;img src=&quot;http://placehold.us/200x100&quot; /&gt;" />
+                <field name="@toggler_example_placeholdus_b" type="nn_toggler" />
+                <field name="@toggler_example_placeskull_a" type="nn_toggler" param="image_service" value="placeskull" />
+                <field name="@example_placeskull" type="nn_plaintext" label="DC_EXAMPLE" description="DC_EXAMPLE_IMAGE_DESC"
+                       default="DC_IMG_RELOAD,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;http://placeskull.com/200/100&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;,&lt;a href=&quot;javascript::// ,&quot;&gt;&lt;img src=&quot;http://placeskull.com/200/100/778fc7/21/1&quot; onclick=&quot;this.src=this.src + '?';&quot; /&gt;&lt;/a&gt;&lt;br /&gt;" />
+                <field name="@toggler_example_placeskull_b" type="nn_toggler" />
+
+                <field name="image_width" type="text" default="640" class="input-mini" label="NN_WIDTH" description="DC_DEFAULT_WIDTH_DESC" />
+                <field name="image_height" type="text" default="480" class="input-mini" label="NN_HEIGHT" description="DC_DEFAULT_HEIGHT_DESC" />
+
+                <field name="@toggler_image_show_dimensions_a" type="nn_toggler" param="image_service" value="placebeard,placeskull" />
+                <field name="image_show_dimensions" type="radio" class="btn-group btn-group-yesno" default="1" label="DC_SHOW_DIMENSIONS"
+                       description="DC_SHOW_DIMENSIONS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@toggler_image_show_dimensions_b" type="nn_toggler" />>
+
+                <field name="@toggler_image_color_scheme_a" type="nn_toggler" param="image_service" value="lorempixel,placebear" />
+                <field name="image_color_scheme" type="list" default="1" label="DC_COLOR_SCHEME" description="DC_COLOR_SCHEME_DESC">
+                    <option value="1">DC_COLOR</option>
+                    <option value="0">DC_GREYSCALE</option>
+                </field>
+                <field name="@toggler_image_color_scheme_b" type="nn_toggler" />
+
+                <field name="@toggler_image_color_scheme2_a" type="nn_toggler" param="image_service" value="placeimg" />
+                <field name="image_color_scheme2" type="list" default="color" label="DC_COLOR_SCHEME" description="DC_COLOR_SCHEME_DESC2">
+                    <option value="color">DC_COLOR</option>
+                    <option value="greyscale">DC_GREYSCALE</option>
+                    <option value="sepia">DC_SEPIA</option>
+                </field>
+                <field name="@toggler_image_color_scheme2_b" type="nn_toggler" />
+
+                <field name="@toggler_image_background_a" type="nn_toggler" param="image_service" value="dummyimage,fakeimg,placehold,placeskull" />
+                <field name="image_background_color_random" type="radio" class="btn-group btn-group-yesno" default="1" label="DC_BACKGROUND_COLOR_RANDOM"
+                       description="DC_BACKGROUND_COLOR_RANDOM_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@toggler_image_background_color_random_range_a" type="nn_toggler" param="image_background_color_random" value="1" />
+                <field name="image_background_color_random_start" type="text" default="100" class="input-mini" label="DC_BACKGROUND_COLOR_RANDOM_RANGE_START"
+                       description="DC_BACKGROUND_COLOR_RANDOM_RANGE_START_DESC" />
+                <field name="image_background_color_random_end" type="text" default="200" class="input-mini" label="DC_BACKGROUND_COLOR_RANDOM_RANGE_END"
+                       description="DC_BACKGROUND_COLOR_RANDOM_RANGE_END_DESC" />
+                <field name="@toggler_image_background_color_random_range_b" type="nn_toggler" />
+                <field name="@toggler_image_background_color_a" type="nn_toggler" param="image_background_color_random" value="0" />
+                <field name="image_background_color" type="color" default="#cccccc" label="DC_BACKGROUND_COLOR" description="DC_BACKGROUND_COLOR_DESC" />
+                <field name="@toggler_image_background_color_b" type="nn_toggler" />
+
+                <field name="@toggler_image_background_opacity_a" type="nn_toggler" param="image_service" value="fakeimg" />
+                <field name="image_background_opacity" type="text" default="90" class="input-mini" label="DC_BACKGROUND_OPACITY"
+                       description="DC_BACKGROUND_OPACITY_DESC" />
+                <field name="@toggler_image_background_opacity_b" type="nn_toggler" />
+                <field name="@toggler_image_background_b" type="nn_toggler" />
+
+                <field name="@toggler_image_foreground_a" type="nn_toggler" param="image_service" value="dummyimage,fakeimg,placehold" />
+                <field name="image_foreground_color" type="color" default="#ffffff" label="DC_FOREGROUND_COLOR" description="DC_FOREGROUND_COLOR_DESC" />
+
+                <field name="@toggler_image_foreground_opacity_a" type="nn_toggler" param="image_service" value="fakeimg" />
+                <field name="image_foreground_opacity" type="text" default="90" class="input-mini" label="DC_FOREGROUND_OPACITY"
+                       description="DC_FOREGROUND_OPACITY_DESC" />
+                <field name="@toggler_image_foreground_opacity_b" type="nn_toggler" />
+                <field name="@toggler_image_foreground_b" type="nn_toggler" />
+
+                <field name="@toggler_image_show_text_a" type="nn_toggler" param="image_service" value="lorempixel,placebeard,dummyimage,fakeimg,placehold" />
+                <field name="image_show_text" type="list" default="dimensions" label="DC_SHOW_TEXT" description="DC_SHOW_TEXT_DESC">
+                    <option value="none">JNONE</option>
+                    <option value="dimensions">DC_DIMENSIONS</option>
+                    <option value="custom">DC_CUSTOM_TEXT</option>
+                </field>
+                <field name="@toggler_image_text_a" type="nn_toggler" param="image_show_text" value="custom" />
+                <field name="image_text" type="text" default="" label="DC_CUSTOM_TEXT" description="DC_CUSTOM_TEXT_DESC" />
+                <field name="@toggler_image_text_b" type="nn_toggler" />
+                <field name="@toggler_image_show_text_b" type="nn_toggler" />
+
+                <field name="@toggler_image_font_a" type="nn_toggler" param="image_service" value="fakeimg" />
+                <field name="image_font" type="list" default="yanone" label="DC_FONT" description="DC_FONT_DESC">
+                    <option value="bebas">bebas</option>
+                    <option value="lobster">lobster</option>
+                    <option value="museo">museo</option>
+                    <option value="yanone">yanone</option>
+                </field>
+                <field name="@toggler_image_font_b" type="nn_toggler" />
+
+                <field name="@toggler_image_service_lorempixel_a" type="nn_toggler" param="image_service" value="lorempixel" />
+                <field name="image_category_lorempixel" type="list" default="abstract" label="JCATEGORY" description="DC_CATEGORY_DESC">
+                    <option value="none">JNONE</option>
+                    <option value="abstract">DC_CATEGORY_ABSCTRACT</option>
+                    <option value="animals">DC_CATEGORY_ANIMALS</option>
+                    <option value="business">DC_CATEGORY_BUSINESS</option>
+                    <option value="cats">DC_CATEGORY_CATS</option>
+                    <option value="city">DC_CATEGORY_CITY</option>
+                    <option value="fashion">DC_CATEGORY_FASHION</option>
+                    <option value="food">DC_CATEGORY_FOOD</option>
+                    <option value="nature">DC_CATEGORY_NATURE</option>
+                    <option value="nightlife">DC_CATEGORY_NIGHTLIFE</option>
+                    <option value="people">DC_CATEGORY_PEOPLE</option>
+                    <option value="sports">DC_CATEGORY_SPORTS</option>
+                    <option value="technics">DC_CATEGORY_TECHNICAL</option>
+                    <option value="transport">DC_CATEGORY_TRANSPORT</option>
+                </field>
+                <field name="@toggler_image_service_lorempixel_b" type="nn_toggler" />
+
+                <field name="@toggler_image_service_placeimg_a" type="nn_toggler" param="image_service" value="placeimg" />
+                <field name="image_category_placeimg" type="list" default="any" label="JCATEGORY" description="DC_CATEGORY_DESC">
+                    <option value="any">JNONE</option>
+                    <option value="animals">DC_CATEGORY_ANIMALS</option>
+                    <option value="arch">DC_CATEGORY_ARCHITECTURE</option>
+                    <option value="nature">DC_CATEGORY_NATURE</option>
+                    <option value="people">DC_CATEGORY_PEOPLE</option>
+                    <option value="tech">DC_CATEGORY_TECHNICAL</option>
+                </field>
+                <field name="@toggler_image_service_placeimg_b" type="nn_toggler" />
+
+                <field name="@block_images_b" type="nn_block" end="1" />
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field name="@block_tag_a" type="nn_block" start="1" label="NN_TAG_SYNTAX" />
+                <field name="tag" type="text" default="dummy" label="DC_TAG" description="DC_TAG_DESC" />
+                <field name="tag_characters" type="list" default="{.}" class="input-small" label="NN_TAG_CHARACTERS"
+                       description="NN_TAG_CHARACTERS_DESC">
+                    <option value="{.}">{...}</option>
+                    <option value="[.]">[...]</option>
+                    <option value="{{.}}">{{...}}</option>
+                    <option value="[[.]]">[[...]]</option>
+                    <option value="[:.:]">[:...:]</option>
+                    <option value="[%.%]">[%...%]</option>
+                </field>
+                <field name="@block_tag_b" type="nn_block" end="1" />
+                <field name="disabled_components" type="nn_components" default="" multiple="1" admin="0" label="NN_DISABLE_ON_COMPONENTS"
+                       description="NN_DISABLE_ON_COMPONENTS_DESC" />
+                <field name="disable_components_remove" type="radio" class="btn-group" default="1" label="NN_REMOVE_IN_DISABLED_COMPONENTS"
+                       description="NN_REMOVE_IN_DISABLED_COMPONENTS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="enable_admin" type="radio" class="btn-group" default="0" label="NN_ENABLE_IN_ADMIN" description="NN_ENABLE_IN_ADMIN_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="NN_SETTINGS_EDITOR_BUTTON">
+                <field name="button_text" type="text" default="Dummy Content" label="NN_BUTTON_TEXT" description="NN_BUTTON_TEXT_DESC" />
+                <field name="enable_frontend" type="radio" class="btn-group" default="1" label="NN_ENABLE_IN_FRONTEND" description="NN_ENABLE_IN_FRONTEND_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@block_tag_b" type="nn_block" end="1" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

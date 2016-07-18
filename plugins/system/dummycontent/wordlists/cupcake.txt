@@ -1,0 +1,72 @@
+// Cupcake Ipsum
+// Source: https://github.com/jjanssen/django-cupcake-ipsum
+amet
+apple pie
+applicake
+bear
+bear claw
+biscuit
+bonbon
+brownie
+cake
+candy
+candy canes
+caramel corn
+caramels
+carrot cake
+cheesecake
+chocolate
+chocolate bar
+chocolate cake
+chupa chups
+claw
+cookie
+cotton
+cotton candy
+croissant
+cupcake
+danish
+dessert
+dolor
+donut
+dragÃ©e
+faworki
+fruitcake
+gingerbread
+gummi bears
+gummies
+halvah
+ice cream
+icing
+ipsum
+jelly
+jelly beans
+jelly-o
+jujubes
+lemon drops
+liquorice
+lollipop
+macaroon
+marshmallow
+marzipan
+muffin
+oat
+oat cake
+pastry
+pie
+powder
+pudding
+roll
+sesame snaps
+sit
+soufflé
+sugar plum
+sweet
+sweet roll
+tart
+tiramisu
+toffee
+tootsie roll
+topping
+wafer
+wypas

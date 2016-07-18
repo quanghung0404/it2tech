@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="component" method="upgrade">
+	<name>com_rereplacer</name>
+	<description>COM_REREPLACER_DESC</description>
+	<version>6.2.0PRO</version>
+	<creationDate>January 2016</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2016 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber ReReplacer">
+			http://download.nonumber.nl/updates.xml?e=rereplacer&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<administration>
+		<menu img="../media/rereplacer/images/rereplacer.png">COM_REREPLACER</menu>
+
+		<files>
+			<filename>rereplacer.php</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>example.xml</filename>
+			<filename>item_params.xml</filename>
+			<filename>script.install.helper.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+	</administration>
+
+	<media folder="media" destination="rereplacer">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>less</folder>
+	</media>
+</extension>

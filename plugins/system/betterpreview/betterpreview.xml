@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+	<name>plg_system_betterpreview</name>
+	<description>PLG_SYSTEM_BETTERPREVIEW_DESC</description>
+	<version>4.1.2PRO</version>
+	<creationDate>December 2015</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Better Preview">
+			http://download.nonumber.nl/updates.xml?e=betterpreview&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="betterpreview">betterpreview.php</filename>
+		<filename>helper.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>helpers</folder>
+		<folder>language</folder>
+	</files>
+
+	<media folder="media" destination="betterpreview">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>less</folder>
+	</media>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_system_betterpreview" />
+				<field name="@license" type="nn_license" extension="BETTER_PREVIEW" />
+				<field name="@version" type="nn_version" extension="BETTER_PREVIEW" />
+				<field name="@dependency" type="nn_dependency"
+					   label="BP_THE_EDITOR_BUTTON"
+					   file="/plugins/editors-xtd/betterpreview/betterpreview.php" />
+				<field name="@header" type="nn_header"
+					   label="BETTER_PREVIEW"
+					   description="BETTER_PREVIEW_DESC"
+					   url="https://www.nonumber.nl/betterpreview" />
+			</fieldset>
+			<fieldset name="BP_SETTINGS_LINK">
+				<field name="display_title_link" type="radio" class="btn-group" default="1" label="BP_DISPLAY_TITLE_LINK"
+					   description="BP_DISPLAY_TITLE_LINK_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_status_link" type="radio" class="btn-group" default="1" label="BP_DISPLAY_STATUS_LINK"
+					   description="BP_DISPLAY_STATUS_LINK_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_display_status_link_a" type="nn_toggler" param="display_status_link" value="1" />
+				<field name="reverse_status_link" type="radio" class="btn-group" default="1" label="BP_REVESE_STATUS_LINK"
+					   description="BP_REVESE_STATUS_LINK_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_display_status_link_b" type="nn_toggler" />
+				<field name="@toggler_display_title_link_a" type="nn_toggler" param="display_title_link" value="1" />
+				<field name="show_link_type" type="radio" class="btn-group" default="1" label="BP_SHOW_LINK_TYPE" description="BP_SHOW_LINK_TYPE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field name="show_url_details" type="radio" class="btn-group" default="1" label="BP_SHOW_URL_DETAILS" description="BP_SHOW_URL_DETAILS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_display_title_link_b" type="nn_toggler" />
+			</fieldset>
+
+			<fieldset name="BP_SETTINGS_PREVIEW">
+				<field name="display_editor_button" type="radio" class="btn-group" default="1" label="NN_DISPLAY_EDITOR_BUTTON"
+					   description="NN_DISPLAY_EDITOR_BUTTON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="display_toolbar_button" type="radio" class="btn-group" default="1" label="NN_DISPLAY_TOOLBAR_BUTTON"
+					   description="NN_DISPLAY_TOOLBAR_BUTTON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="button_text" type="text" default="Preview" label="NN_BUTTON_TEXT" description="NN_BUTTON_TEXT_DESC" />
+				<field name="button_icon" type="radio" class="btn-group" default="betterpreview" label="NN_BUTTON_ICON" description="NN_BUTTON_ICON_DESC">
+					<option value="betterpreview">&lt;span class="icon-nonumber icon-betterpreview">&lt;/span></option>
+					<option value="search">&lt;span class="icon-search">&lt;/span></option>
+					<option value="eye">&lt;span class="icon-eye">&lt;/span></option>
+				</field>
+				<field name="button_primary" type="radio" default="1" class="btn-group" label="BP_BUTTON_PRIMARY" description="BP_BUTTON_PRIMARY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<!--field name="enable_frontend" type="radio" class="btn-group" default="1" label="NN_ENABLE_IN_FRONTEND" description="NN_ENABLE_IN_FRONTEND_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field-->
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="index_timeout" type="text" default="24" size="5" class="input-mini" label="BP_INDEX_TIMEOUT" description="BP_INDEX_TIMEOUT_DESC" />
+				<field name="@purgesefs" type="nn_ajax" url="index.php?bp_purgesefs=1" text="BP_PURGE" label="BP_PURGE_INDEX"
+					   description="BP_PURGE_INDEX_DESC" />
+				<field name="purge_component_cache" type="radio" default="1" class="btn-group" label="BP_PURGE_COMPONENT_CACHE"
+					   description="BP_PURGE_COMPONENT_CACHE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="list_layout" type="radio" default="blog" label="BP_OPEN_CATEGORIES_AS" description="BP_OPEN_CATEGORIES_AS_DESC">
+					<option value="blog">BP_BLOG</option>
+					<option value="default">NN_LIST</option>
+				</field>
+				<field name="@toggler_comp_a" type="nn_toggler" param="list_layout" value="default" />
+				<field name="@text_comp" type="nn_plaintext"
+					   description="&#60;&#99;&#101;&#110;&#116;&#101;&#114;&#62;&#60;&#105;&#109;&#103;&#32;&#115;&#114;&#99;&#61;&#34;&#46;&#46;&#47;&#109;&#101;&#100;&#105;&#97;&#47;&#98;&#101;&#116;&#116;&#101;&#114;&#112;&#114;&#101;&#118;&#105;&#101;&#119;&#47;&#105;&#109;&#97;&#103;&#101;&#115;&#47;&#112;&#114;&#101;&#118;&#105;&#101;&#119;&#46;&#103;&#105;&#102;&#34;&#32;&#47;&#62;&#60;&#47;&#99;&#101;&#110;&#116;&#101;&#114;&#62;" />
+				<field name="@toggler_comp_b" type="nn_toggler" />
+				<field name="use_home_menu_id" type="radio" class="btn-group" default="1" label="BP_USE_HOME_MENU_ID" description="BP_USE_HOME_MENU_ID_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

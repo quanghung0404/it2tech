@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_installer
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -35,17 +35,12 @@ defined('_JEXEC') or die;
 			<?php if (!$this->filterParams) : ?>
 				<li><?php echo JText::_('COM_INSTALLER_MSG_DATABASE_FILTER_ERROR'); ?>
 			<?php endif; ?>
-			<!-- HungNQ start https://github.com/joomla/joomla-cms/pull/3249/files -->
-			<?php // if (!(strncmp($this->schemaVersion, JVERSION, 5) === 0)) : ?>
+
 			<?php if ($this->schemaVersion != $this->changeSet->getSchema()) : ?>
-				<li>
-					<?php //echo JText::sprintf('COM_INSTALLER_MSG_DATABASE_SCHEMA_ERROR', $this->schemaVersion, JVERSION); ?>
-					<?php echo JText::sprintf('COM_INSTALLER_MSG_DATABASE_SCHEMA_ERROR', $this->schemaVersion, $this->changeSet->getSchema()); ?>
-				</li>
-			<!-- end https://github.com/joomla/joomla-cms/pull/3249/files -->
+				<li><?php echo JText::sprintf('COM_INSTALLER_MSG_DATABASE_SCHEMA_ERROR', $this->schemaVersion, $this->changeSet->getSchema()); ?></li>
 			<?php endif; ?>
 
-			<?php if (($this->updateVersion != JVERSION)) : ?>
+			<?php if (version_compare($this->updateVersion, JVERSION) != 0) : ?>
 				<li><?php echo JText::sprintf('COM_INSTALLER_MSG_DATABASE_UPDATEVERSION_ERROR', $this->updateVersion, JVERSION); ?></li>
 			<?php endif; ?>
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>System - RSForm! Pro PayPal</name>
+	<author>RSJoomla!</author>
+	<creationDate>November 2012</creationDate>
+	<copyright>(C) 2007-2015 www.rsjoomla.com</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.51.4</version>
+	<description><![CDATA[PLG_SYSTEM_RSFPPAYPAL_DESC]]></description>
+	<scriptfile>script.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/mysql/install.sql</file>
+		</sql>
+	</install>
+	<files>
+		<folder>sql</folder>
+		<filename plugin="rsfppaypal">rsfppaypal.php</filename>
+		<filename>index.html</filename> 
+	</files>
+	<languages folder="language/en-GB">
+		<language tag="en-GB">en-GB.plg_system_rsfppaypal.ini</language>
+		<language tag="en-GB">en-GB.plg_system_rsfppaypal.sys.ini</language>
+	</languages>
+</extension>

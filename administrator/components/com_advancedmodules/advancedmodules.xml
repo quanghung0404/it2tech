@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="component" method="upgrade">
+	<name>com_advancedmodules</name>
+	<description>COM_ADVANCEDMODULES_DESC</description>
+	<version>5.3.6PRO</version>
+	<creationDate>December 2015</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Advanced Module Manager">
+			http://download.nonumber.nl/updates.xml?e=advancedmodulemanager&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<administration>
+		<files>
+			<filename>advancedmodules.php</filename>
+			<filename>assignments.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>script.install.helper.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>layouts</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+	</administration>
+
+	<files folder="site">
+		<filename>advancedmodules.php</filename>
+		<filename>controller.php</filename>
+		<filename>empty.xml</filename>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>layouts</folder>
+		<folder>models</folder>
+		<folder>tables</folder>
+		<folder>views</folder>
+	</files>
+</extension>

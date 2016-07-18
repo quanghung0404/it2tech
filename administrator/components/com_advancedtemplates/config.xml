@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/plugins/system/nnframework/fields">
+	<fieldset name="templates" label="ATP_DEFAULT_SETTINGS">
+		<field name="@loadlanguage" type="nn_loadlanguage" extension="com_templates" />
+		<field name="heading_title" type="list" default="0" label="ATP_HEADING_TITLE" description="ATP_HEADING_TITLE_DESC">
+			<option value="0">ATP_ADVANCED_TEMPLATE_MANAGER</option>
+			<option value="1">COM_TEMPLATES_MANAGER</option>
+		</field>
+		<field name="show_thumbs" type="radio" class="btn-group btn-group-yesno" default="0" label="ATP_SHOW_THUMBS" description="ATP_SHOW_THUMBS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_color" type="radio" class="btn-group btn-group-yesno" default="1" label="ATP_SHOW_COLOR" description="ATP_SHOW_COLOR_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_default_a" type="nn_toggler" param="show_color" value="1" />
+		<field name="main_colors" type="textarea" rows="4" default="none,#049cdb,#46a546,#9d261d,#ffc40d,#f89406,#c3325f,#7a43b6,#ffffff,#999999,#555555,#000000" label="ATP_COLORS" description="ATP_COLORS_DESC" />
+		<field name="@toggler_default_b" type="nn_toggler" />
+		<field name="show_note" type="list" default="2" label="ATP_SHOW_NOTE" description="ATP_SHOW_NOTE_DESC">
+			<option value="0">JNO</option>
+			<option value="1">NN_TOOLTIP</option>
+			<option value="2">ATP_NAME_COLUMN</option>
+			<option value="3">ATP_EXTRA_COLUMN</option>
+		</field>
+		<field name="show_switch" type="radio" class="btn-group btn-group-yesno" default="0" label="ATP_SHOW_SWITCH" description="ATP_SHOW_SWITCH_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_update_notification" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_SHOW_UPDATE_NOTIFICATION" description="NN_SHOW_UPDATE_NOTIFICATION_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_copyright" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_SHOW_COPYRIGHT" description="NN_SHOW_COPYRIGHT_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="default" label="ATP_ADVANCED_SETTINGS">
+		<field
+			name="upload_limit" type="text"
+			label="COM_TEMPLATES_CONFIG_UPLOAD_LABEL"
+			description="COM_TEMPLATES_CONFIG_UPLOAD_DESC"
+			default="2"
+			extension="com_templates"
+			/>
+
+		<field
+			name="warning" type="note"
+			label="COM_TEMPLATES_CONFIG_SUPPORTED_LABEL"
+			description="COM_TEMPLATES_CONFIG_SUPPORTED_DESC"
+			default="zip"
+			extension="com_templates"
+			/>
+
+		<field
+			name="image_formats" type="text"
+			label="COM_TEMPLATES_CONFIG_IMAGE_LABEL"
+			description="COM_TEMPLATES_CONFIG_IMAGE_DESC"
+			default="gif,bmp,jpg,jpeg"
+			extension="com_templates"
+			/>
+
+		<field
+			name="source_formats" type="text"
+			label="COM_TEMPLATES_CONFIG_SOURCE_LABEL"
+			description="COM_TEMPLATES_CONFIG_SOURCE_DESC"
+			default="txt,less,ini,xml,js,php,css"
+			extension="com_templates"
+			/>
+
+		<field
+			name="font_formats" type="text"
+			label="COM_TEMPLATES_CONFIG_FONT_LABEL"
+			description="COM_TEMPLATES_CONFIG_FONT_DESC"
+			default="woff,ttf,otf"
+			extension="com_templates"
+			/>
+
+		<field
+			name="compressed_formats" type="hidden"
+			default="zip"
+			extension="com_templates"
+			/>
+	</fieldset>
+
+	<fieldset name="extra" label="NN_SHOW_ASSIGNMENTS">
+		<field name="@show_assignto_menuitems" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_MENU_ITEMS" description="JOPTION_REQUIRED">
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_homepage" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_HOME_PAGE" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_date" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_DATE_TIME" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_usergrouplevels" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_USER_GROUP_LEVELS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_users" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_USERS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_languages" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_LANGUAGES" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_ips" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_IPS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_geo" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_GEO" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_templates" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_TEMPLATES" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_urls" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_URL" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_os" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_OS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_browsers" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_BROWSERS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_components" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_COMPONENTS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_tags" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_TAGS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_content" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_JCONTENT" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_assignto_easyblog" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_EASYBLOG" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_flexicontent" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_FLEXICONTENT" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_form2content" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_FORM2CONTENT" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_k2" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_K2" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_zoo" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_ZOO" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_akeebasubs" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_AKEEBASUBS" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_hikashop" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_HIKASHOP" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_mijoshop" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_MIJOSHOP" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_redshop" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_REDSHOP" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_virtuemart" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_VIRTUEMART" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_cookieconfirm" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_COOKIECONFIRM" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="show_assignto_php" type="radio" class="btn-group btn-group-yesno" default="1" label="NN_PHP" description="ATP_SHOW_PUBLISHING_OPTION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="notice_permissions" label="JCONFIG_PERMISSIONS_LABEL">
+		<field name="@notice_rules" type="note" class="alert alert-info" description="ATP_USE_CORE_RULES" />
+	</fieldset>
+</config>

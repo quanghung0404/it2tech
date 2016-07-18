@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+	<name>plg_system_whatnothing</name>
+	<description>PLG_SYSTEM_WHAT_NOTHING_DESC</description>
+	<version>10.0.3PRO</version>
+	<creationDate>December 2015</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber What? Nothing!">
+			http://download.nonumber.nl/updates.xml?e=whatnothing&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="whatnothing">whatnothing.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<media folder="media" destination="whatnothing">
+		<folder>images</folder>
+	</media>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_system_whatnothing" />
+				<field name="@license" type="nn_license" extension="WHAT_NOTHING" />
+				<field name="@version" type="nn_version" extension="WHAT_NOTHING" />
+				<field name="@header" type="nn_header"
+					   label="WHAT_NOTHING"
+					   description="WHAT_NOTHING_DESC"
+					   url="https://www.nonumber.nl/whatnothing" />
+			</fieldset>
+			<fieldset name="basic">
+				<field name="@do_nothing" type="radio" class="btn-group" default="1" label="WN_DO_NOTHING" description="WN_DO_NOTHING_DESC">
+					<option value="1">JYES</option>
+				</field>
+				<field name="@toggler_do_1a" type="nn_toggler" param="@do_something" value="0" />
+				<field name="@do_something" type="radio" class="btn-group" default="0" label="WN_DO_SOMETHING" description="WN_DO_SOMETHING_DESC">
+					<option value="0">JNO</option>
+					<option value="">JYES</option>
+				</field>
+				<field name="@toggler_do_1b" type="nn_toggler" />
+				<field name="@toggler_do_2a" type="nn_toggler" param="@do_something" value="" />
+				<field name="@do_something2" type="radio" class="btn-group" default="0" label="WN_DO_SOMETHING" description="WN_DO_SOMETHING_DESC">
+					<option value="0">JNO</option>
+				</field>
+				<field name="@block_do_2" type="nn_plaintext"
+					   description="&#60;&#105;&#109;&#103;&#32;&#104;&#101;&#105;&#103;&#104;&#116;&#61;&#34;&#53;&#48;&#34;&#32;&#98;&#111;&#114;&#100;&#101;&#114;&#61;&#34;&#48;&#34;&#32;&#119;&#105;&#100;&#116;&#104;&#61;&#34;&#53;&#48;&#34;&#32;&#97;&#108;&#116;&#61;&#34;&#78;&#79;&#33;&#34;&#32;&#115;&#114;&#99;&#61;&#34;&#46;&#46;&#47;&#109;&#101;&#100;&#105;&#97;&#47;&#119;&#104;&#97;&#116;&#45;&#110;&#111;&#116;&#104;&#105;&#110;&#103;&#47;&#105;&#109;&#97;&#103;&#101;&#115;&#47;&#110;&#111;&#46;&#103;&#105;&#102;&#34;&#32;&#47;&#62;" />
+				<field name="@toggler_do_2b" type="nn_toggler" />
+				<field name="@nothing" type="list" default="1" label="WN_DO_THAT_TIMES" description="WN_DO_THAT_TIMES_DESC">
+					<option value="-137">-137</option>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="7">7</option>
+					<option value="15">15</option>
+					<option value="22">22</option>
+					<option value="28">28</option>
+					<option value="45">45</option>
+					<option value="59">59</option>
+					<option value="61">61</option>
+					<option value="63">63</option>
+					<option value="78">78</option>
+					<option value="83">83</option>
+					<option value="99">99</option>
+				</field>
+				<field name="@toggler_nothing_a" type="nn_toggler" param="@nothing" value="&#48;" />
+				<field name="@block_nothing" type="nn_plaintext"
+					   description="&#60;&#105;&#109;&#103;&#32;&#104;&#101;&#105;&#103;&#104;&#116;&#61;&#34;&#50;&#48;&#48;&#34;&#32;&#98;&#111;&#114;&#100;&#101;&#114;&#61;&#34;&#48;&#34;&#32;&#119;&#105;&#100;&#116;&#104;&#61;&#34;&#49;&#52;&#52;&#34;&#32;&#97;&#108;&#116;&#61;&#34;&#87;&#104;&#97;&#116;&#63;&#34;&#32;&#115;&#114;&#99;&#61;&#34;&#46;&#46;&#47;&#109;&#101;&#100;&#105;&#97;&#47;&#119;&#104;&#97;&#116;&#45;&#110;&#111;&#116;&#104;&#105;&#110;&#103;&#47;&#105;&#109;&#97;&#103;&#101;&#115;&#47;&#110;&#111;&#116;&#104;&#105;&#110;&#103;&#46;&#103;&#105;&#102;&#34;&#32;&#47;&#62;" />
+				<field name="@toggler_nothing_b" type="nn_toggler" />
+				<field name="@question" type="text" default="" label="WN_QUESTION" description="WN_QUESTION_DESC" />
+				<field name="@toggler_question_a" type="nn_toggler" param="@question" value="&#87;&#104;&#97;&#116;&#63;" />
+				<field name="@plaintext_question" type="nn_plaintext" nostyle="1" default="&#78;&#111;&#116;&#104;&#105;&#110;&#103;&#33;" label="WN_ANSWER" />
+				<field name="@toggler_question_b" type="nn_toggler" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="@performance" type="radio" class="btn-group" default="1" label="WN_PERFORMANCE" description="WN_PERFORMANCE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="@shield" type="radio" class="btn-group" default="1" label="WN_SHIELD" description="WN_SHIELD_DESC">
+					<option value="0">JNO</option>
+					<option value="1">WN_PROBABLY</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

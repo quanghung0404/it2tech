@@ -3,18 +3,18 @@
  * @package     Joomla.Administrator
  * @subpackage  com_categories
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
+use Joomla\Registry\Registry;
+
 /**
  * The Category Controller
  *
- * @package     Joomla.Administrator
- * @subpackage  com_categories
- * @since       1.6
+ * @since  1.6
  */
 class CategoriesControllerCategory extends JControllerForm
 {
@@ -29,10 +29,10 @@ class CategoriesControllerCategory extends JControllerForm
 	/**
 	 * Constructor.
 	 *
-	 * @param  array   $config  An optional associative array of configuration settings.
+	 * @param   array  $config  An optional associative array of configuration settings.
 	 *
 	 * @since  1.6
-	 * @see    JController
+	 * @see    JControllerLegacy
 	 */
 	public function __construct($config = array())
 	{
@@ -75,7 +75,6 @@ class CategoriesControllerCategory extends JControllerForm
 	{
 		$recordId = (int) isset($data[$key]) ? $data[$key] : 0;
 		$user = JFactory::getUser();
-		$userId = $user->get('id');
 
 		// Check general edit permission first.
 		if ($user->authorise('core.edit', $this->extension))
@@ -110,7 +109,7 @@ class CategoriesControllerCategory extends JControllerForm
 			}
 
 			// If the owner matches 'me' then do the test.
-			if ($ownerId == $userId)
+			if ($ownerId == $user->id)
 			{
 				return true;
 			}
@@ -133,6 +132,7 @@ class CategoriesControllerCategory extends JControllerForm
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
 		// Set the model
+		/** @var CategoriesModelCategory $model */
 		$model = $this->getModel('Category');
 
 		// Preset the redirect
@@ -190,18 +190,16 @@ class CategoriesControllerCategory extends JControllerForm
 
 		if (isset($item->params) && is_array($item->params))
 		{
-			$registry = new JRegistry;
+			$registry = new Registry;
 			$registry->loadArray($item->params);
 			$item->params = (string) $registry;
 		}
 
 		if (isset($item->metadata) && is_array($item->metadata))
 		{
-			$registry = new JRegistry;
+			$registry = new Registry;
 			$registry->loadArray($item->metadata);
 			$item->metadata = (string) $registry;
 		}
-
-		return;
 	}
 }

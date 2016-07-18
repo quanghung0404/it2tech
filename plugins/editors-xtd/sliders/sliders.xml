@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="editors-xtd" method="upgrade">
+	<name>plg_editors-xtd_sliders</name>
+	<description>PLG_EDITORS-XTD_SLIDERS_DESC</description>
+	<version>5.1.11PRO</version>
+	<creationDate>January 2016</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2016 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Sliders">
+			http://download.nonumber.nl/updates.xml?e=sliders&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="sliders">sliders.php</filename>
+		<filename>fields.xml</filename>
+		<filename>helper.php</filename>
+		<filename>popup.php</filename>
+		<filename>popup.tmpl.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_editors-xtd_sliders" />
+				<field name="@license" type="nn_license" extension="SLIDERS" />
+				<field name="@version" type="nn_version" extension="SLIDERS" />
+				<field name="@dependency" type="nn_dependency"
+					   label="SLD_THE_SYSTEM_PLUGIN"
+					   file="/plugins/system/sliders/sliders.php" />
+				<field name="@header" type="nn_header"
+					   label="SLIDERS"
+					   description="SLIDERS_DESC"
+					   url="https://www.nonumber.nl/sliders" />
+
+				<field name="@notice_settings" type="nn_plaintext"
+					   description="SLD_SETTINGS,&lt;a href=&quot;index.php?option=com_plugins&amp;filter_folder=system&amp;filter_search=sliders&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

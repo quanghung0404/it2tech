@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="editors-xtd" method="upgrade">
+	<name>plg_editors-xtd_snippets</name>
+	<description>PLG_EDITORS-XTD_SNIPPETS_DESC</description>
+	<version>4.1.4PRO</version>
+	<creationDate>December 2015</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Snippets">
+			http://download.nonumber.nl/updates.xml?e=snippets&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="snippets">snippets.php</filename>
+		<filename>helper.php</filename>
+		<filename>popup.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_editors-xtd_snippets" />
+				<field name="@license" type="nn_license" extension="SNIPPETS" />
+				<field name="@version" type="nn_version" extension="SNIPPETS" />
+				<field name="@dependency1" type="nn_dependency"
+					   label="SNP_THE_COMPONENT"
+					   file="/administrator/components/com_snippets/snippets.php" />
+				<field name="@dependency2" type="nn_dependency"
+					   label="SNP_THE_SYSTEM_PLUGIN"
+					   file="/plugins/system/snippets/snippets.php" />
+				<field name="@header" type="nn_header"
+					   label="SNIPPETS"
+					   description="SNIPPETS_DESC"
+					   url="https://www.nonumber.nl/snippets" />
+
+				<field name="@notice_settings" type="nn_plaintext"
+					   description="SNP_SETTINGS,&lt;a href=&quot;index.php?option=com_snippets&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

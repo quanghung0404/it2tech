@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/plugins/system/nnframework/fields">
+	<fieldset name="details">
+		<field name="published" type="radio" class="btn-group" default="1" label="JPUBLISHED" description="NN_PUBLISHED_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="name" type="text" size="100" default="" label="JGLOBAL_TITLE" description="SNP_NAME_DESC" />
+		<field name="alias" type="text" size="100" default="" label="SNP_SNIPPET_ID" description="SNP_SNIPPET_ID_DESC" />
+		<field name="description" type="nn_textareaplus" width="400" height="80" default="" label="JGLOBAL_DESCRIPTION" description="SNP_DESCRIPTION_DESC" />
+
+		<field name="button_enable" type="radio" class="btn-group" default="1" label="SNP_SHOW_IN_EDITOR_BUTTON" description="SNP_SHOW_IN_EDITOR_BUTTON_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">SNP_ONLY_IN_ADMIN</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="-content">
+		<field name="content" type="nn_editor" />
+	</fieldset>
+</config>

@@ -3,18 +3,16 @@
  * @package     Joomla.Legacy
  * @subpackage  View
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('_JEXEC') or die;
+defined('JPATH_PLATFORM') or die;
 
 /**
  * Base feed View class for a category
  *
- * @package     Joomla.Legacy
- * @subpackage  View
- * @since       3.2
+ * @since  3.2
  */
 class JViewCategoryfeed extends JViewLegacy
 {
@@ -23,7 +21,7 @@ class JViewCategoryfeed extends JViewLegacy
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
-	 * @return  mixed  A string if successful, otherwise a Error object.
+	 * @return  mixed  A string if successful, otherwise an Error object.
 	 *
 	 * @since   3.2
 	 */
@@ -57,7 +55,7 @@ class JViewCategoryfeed extends JViewLegacy
 		$app->input->set('limit', $app->get('feed_limit'));
 		$siteEmail        = $app->get('mailfrom');
 		$fromName         = $app->get('fromname');
-		$feedEmail        = $app->get('feed_email', 'author');
+		$feedEmail        = $app->get('feed_email', 'none');
 		$document->editor = $fromName;
 
 		if ($feedEmail != 'none')

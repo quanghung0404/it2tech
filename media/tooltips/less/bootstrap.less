@@ -1,0 +1,153 @@
+// Default Bootstrap styling for popovers
+
+.nn_tooltips.popover {
+  //
+  // Component animations
+  // --------------------------------------------------
+  &.fade {
+    opacity: 0;
+    .transition(opacity .15s linear);
+    &.in {
+      opacity: 1;
+    }
+  }
+
+  //
+  // Popovers
+  // --------------------------------------------------
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: @zindexPopover;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  text-align: left; // Reset given new insertion method
+  background-color: @popoverBackground;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .2);
+  .border-radius(6px);
+  .box-shadow(0 5px 10px rgba(0,0,0,.2));
+
+  // Overrides for proper insertion
+  white-space: normal;
+
+  &.top { margin-bottom: 10px; margin-top: -6px; }
+  &.right { margin-left: 10px; }
+  &.bottom { margin-top: 13px; }
+  &.left { margin-right: 10px; margin-left: -10px; }
+
+  .popover-title {
+    margin: 0; // reset heading margin
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    background-color: @popoverTitleBackground;
+    border-bottom: 1px solid darken(@popoverTitleBackground, 5%);
+    .border-radius(5px 5px 0 0);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .popover-content {
+    padding: 9px 14px;
+  }
+
+  // Arrows
+  .arrow,
+  .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+  .arrow {
+    border-width: @popoverArrowOuterWidth;
+  }
+  .arrow:after {
+    border-width: @popoverArrowWidth;
+    content: "";
+  }
+
+  &.top .arrow {
+    left: 50%;
+    margin-left: -@popoverArrowOuterWidth;
+    border-bottom-width: 0;
+    border-top-color: #999; // IE8 fallback
+    border-top-color: @popoverArrowOuterColor;
+    bottom: -@popoverArrowOuterWidth;
+    &:after {
+      bottom: 1px;
+      margin-left: -@popoverArrowWidth;
+      border-bottom-width: 0;
+      border-top-color: @popoverArrowColor;
+    }
+  }
+  &.right .arrow {
+    top: 50%;
+    left: -@popoverArrowOuterWidth;
+    margin-top: -@popoverArrowOuterWidth;
+    border-left-width: 0;
+    border-right-color: #999; // IE8 fallback
+    border-right-color: @popoverArrowOuterColor;
+    &:after {
+      left: 1px;
+      bottom: -@popoverArrowWidth;
+      border-left-width: 0;
+      border-right-color: @popoverArrowColor;
+    }
+  }
+  &.bottom .arrow {
+    left: 50%;
+    margin-left: -@popoverArrowOuterWidth;
+    border-top-width: 0;
+    border-bottom-color: #999; // IE8 fallback
+    border-bottom-color: @popoverArrowOuterColor;
+    top: -@popoverArrowOuterWidth;
+    &:after {
+      top: 1px;
+      margin-left: -@popoverArrowWidth;
+      border-top-width: 0;
+      border-bottom-color: @popoverArrowColor;
+    }
+  }
+  &.left .arrow {
+    top: 50%;
+    right: -@popoverArrowOuterWidth;
+    margin-top: -@popoverArrowOuterWidth;
+    border-right-width: 0;
+    border-left-color: #999; // IE8 fallback
+    border-left-color: @popoverArrowOuterColor;
+    &:after {
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: @popoverArrowColor;
+      bottom: -@popoverArrowWidth;
+    }
+  }
+}
+// Fixes for older Bootstrap versions:
+body {
+  > .nn_tooltips.popover .arrow:after {
+    z-index: 0;
+  }
+  > .nn_tooltips.popover.top .arrow:after,
+  > .nn_tooltips.popover.bottom .arrow:after {
+    left: 0;
+    margin-left: -(@popoverArrowOuterWidth - 1);
+  }
+  > .nn_tooltips.popover.left .arrow:after {
+    bottom: -(@popoverArrowOuterWidth - 1);
+  }
+  > .nn_tooltips.popover.right .arrow:after {
+    bottom: -(@popoverArrowOuterWidth - 1);
+  }
+}

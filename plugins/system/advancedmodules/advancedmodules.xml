@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+	<name>plg_system_advancedmodules</name>
+	<description>PLG_SYSTEM_ADVANCEDMODULES_DESC</description>
+	<version>5.3.6PRO</version>
+	<creationDate>December 2015</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Advanced Module Manager">
+			http://download.nonumber.nl/updates.xml?e=advancedmodulemanager&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="advancedmodules">advancedmodules.php</filename>
+		<filename>helper.php</filename>
+		<filename>advancedmodulehelper.php</filename>
+		<filename>advancedmodulehelper_legacy.php</filename>
+		<filename>helper.php</filename>
+		<filename>modulehelper_legacy.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_system_advancedmodules" />
+				<field name="@license" type="nn_license" extension="ADVANCED_MODULE_MANAGER" />
+				<field name="@version" type="nn_version" extension="ADVANCED_MODULE_MANAGER" />
+				<field name="@dependency" type="nn_dependency"
+					   label="AMM_THE_COMPONENT"
+					   file="/administrator/components/com_advancedmodules/advancedmodules.php" />
+				<field name="@header" type="nn_header"
+					   label="ADVANCED_MODULE_MANAGER"
+					   description="ADVANCED_MODULE_MANAGER_DESC"
+					   url="https://www.nonumber.nl/advancedmodulemanager" />
+
+				<field name="@notice_settings" type="nn_plaintext"
+					   description="AMM_SETTINGS,&lt;a href=&quot;index.php?option=com_advancedmodules&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

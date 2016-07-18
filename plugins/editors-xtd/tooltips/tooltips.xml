@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="editors-xtd" method="upgrade">
+	<name>plg_editors-xtd_tooltips</name>
+	<description>PLG_EDITORS-XTD_TOOLTIPS_DESC</description>
+	<version>4.1.5PRO</version>
+	<creationDate>January 2016</creationDate>
+	<author>NoNumber (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>https://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2016 NoNumber All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers>
+		<server type="extension" priority="1" name="NoNumber Tooltips">
+			http://download.nonumber.nl/updates.xml?e=tooltips&amp;pro=1&amp;type=.xml
+		</server>
+	</updateservers>
+
+	<files>
+		<filename plugin="tooltips">tooltips.php</filename>
+		<filename>fields.xml</filename>
+		<filename>helper.php</filename>
+		<filename>popup.php</filename>
+		<filename>popup.tmpl.php</filename>
+		<filename>script.install.helper.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+			<fieldset name="description">
+				<field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+				<field name="@loadlanguage" type="nn_loadlanguage" extension="plg_editors-xtd_tooltips" />
+				<field name="@license" type="nn_license" extension="TOOLTIPS" />
+				<field name="@version" type="nn_version" extension="TOOLTIPS" />
+				<field name="@dependency" type="nn_dependency"
+					   label="TT_THE_SYSTEM_PLUGIN"
+					   file="/plugins/system/tooltips/tooltips.php" />
+				<field name="@header" type="nn_header"
+					   label="TOOLTIPS"
+					   description="TOOLTIPS_DESC"
+					   url="https://www.nonumber.nl/tooltips" />
+
+				<field name="@notice_settings" type="nn_plaintext"
+					   description="TT_SETTINGS,&lt;a href=&quot;index.php?option=com_plugins&amp;filter_folder=system&amp;filter_search=tooltips&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

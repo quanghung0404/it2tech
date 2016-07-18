@@ -1,0 +1,56 @@
+.feedback-container {
+    position: fixed;
+}
+
+.feedback-container a {
+    padding: 10px;
+    display: block;
+}
+
+.feedback-container.feedback-position-left {
+    top: 50%;
+    left: 0;
+    -ms-transform: rotate(90deg) translate(-50%,-100%);
+    -webkit-transform: rotate(90deg) translate(-50%,-100%);
+    -moz-transform: rotate(90deg) translate(-50%,-100%);
+    -o-transform: rotate(90deg) translate(-50%,-100%);
+    transform: rotate(90deg) translate(-50%,-100%);
+    -ms-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+}
+
+.feedback-container.feedback-position-right {
+    top: 50%;
+    right: 0;
+    -ms-transform: rotate(-90deg) translate(50%,-100%);
+    -webkit-transform: rotate(-90deg) translate(50%,-100%);
+    -moz-transform: rotate(-90deg) translate(50%,-100%);
+    -o-transform: rotate(-90deg) translate(50%,-100%);
+    transform: rotate(-90deg) translate(50%,-100%);
+    -ms-transform-origin: right top;
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    transform-origin: right top;
+}
+
+.feedback-container.feedback-position-top,
+.feedback-container.feedback-position-bottom {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.feedback-container.feedback-position-top {
+    top: 0;
+}
+
+.feedback-container.feedback-position-bottom {
+    bottom: 0;
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+    <name>plg_system_componentsanywhere</name>
+    <description>PLG_SYSTEM_COMPONENTSANYWHERE_DESC</description>
+    <version>2.2.5PRO</version>
+    <creationDate>November 2015</creationDate>
+    <author>NoNumber (Peter van Westen)</author>
+    <authorEmail>peter@nonumber.nl</authorEmail>
+    <authorUrl>https://www.nonumber.nl</authorUrl>
+    <copyright>Copyright © 2015 NoNumber All Rights Reserved</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+    <scriptfile>script.install.php</scriptfile>
+
+    <updateservers>
+        <server type="extension" priority="1" name="NoNumber Components Anywhere">
+            http://download.nonumber.nl/updates.xml?e=componentsanywhere&amp;pro=1&amp;type=.xml
+        </server>
+    </updateservers>
+
+    <files>
+        <filename plugin="componentsanywhere">componentsanywhere.php</filename>
+        <filename>helper.php</filename>
+        <filename>script.install.helper.php</filename>
+        <folder>language</folder>
+    </files>
+
+    <config>
+        <fields name="params" addfieldpath="/plugins/system/nnframework/fields">
+            <fieldset name="description">
+                <field name="@loadlanguage_nnframework" type="nn_loadlanguage" extension="plg_system_nnframework" />
+                <field name="@loadlanguage" type="nn_loadlanguage" extension="plg_system_componentsanywhere" />
+                <field name="@license" type="nn_license" extension="COMPONENTS_ANYWHERE" />
+                <field name="@version" type="nn_version" extension="COMPONENTS_ANYWHERE" />
+                <field name="@header" type="nn_header"
+                       label="COMPONENTS_ANYWHERE"
+                       description="COMPONENTS_ANYWHERE_DESC"
+                       url="https://www.nonumber.nl/componentsanywhere" />
+            </fieldset>
+            <fieldset name="basic">
+                <field name="@block_behavior_a" type="nn_block" start="1" label="NN_BEHAVIOR" />
+                <field name="place_comments" type="radio" class="btn-group" default="1" label="NN_PLACE_HTML_COMMENTS"
+                       description="NN_PLACE_HTML_COMMENTS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="force_remove_tmpl" type="radio" class="btn-group" default="0" label="CA_FORCE_REMOVE_TMPL" description="CA_FORCE_REMOVE_TMPL_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="force_itemid" type="radio" class="btn-group" default="0" label="CA_FORCE_ITEMID" description="CA_FORCE_ITEMID_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="keepurls" type="radio" class="btn-group" default="0" label="CA_KEEP_URLS" description="CA_KEEP_URLS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="caching" type="radio" class="btn-group" default="1" label="CA_CACHING" description="CA_CACHING_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="timeout" type="text" default="5" size="5" class="input-mini" label="CA_TIMEOUT" description="CA_TIMEOUT_DESC" />
+                <field name="@block_behavior_b" type="nn_block" end="1" />
+            </fieldset>
+
+            <fieldset name="NN_SETTINGS_SECURITY">
+                <field name="@block_articles_a" type="nn_block" start="1" label="NN_ARTICLES" description="CA_ARTICLES_DESC" />
+                <field name="articles_enable" type="radio" class="btn-group" default="1" label="NN_ENABLE_IN_ARTICLES" description="CA_ENABLE_IN_ARTICLES_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@toggler_articles_enable_a" type="nn_toggler" param="articles_enable" value="1" />
+                <field name="articles_security_level" type="nn_grouplevel" multiple="1" show_all="1" default="-1" label="CA_SECURITY_LEVEL"
+                       description="CA_SECURITY_LEVEL_DESC" />
+                <field name="@toggler_articles_enable_b" type="nn_toggler" />
+                <field name="@block_articles_b" type="nn_block" end="1" />
+
+                <field name="@block_components_a" type="nn_block" start="1" label="NN_COMPONENTS" description="CA_COMPONENTS_DESC" />
+                <field name="components_enable" type="radio" class="btn-group" default="1" label="NN_ENABLE_IN_COMPONENTS"
+                       description="CA_ENABLE_IN_COMPONENTS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@toggler_components_enable_a" type="nn_toggler" param="components_enable" value="1" />
+                <field name="components" type="nn_components" default="" multiple="1" admin="0" label="NN_DISABLE_ON_COMPONENTS"
+                       description="CA_DISABLE_ON_COMPONENTS_DESC" />
+                <field name="disable_components_remove" type="radio" class="btn-group" default="1" label="NN_REMOVE_IN_DISABLED_COMPONENTS"
+                       description="NN_REMOVE_IN_DISABLED_COMPONENTS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@toggler_components_enable_b" type="nn_toggler" />
+                <field name="@block_components_b" type="nn_block" end="1" />
+
+                <field name="@block_otherareas_a" type="nn_block" start="1" label="NN_OTHER_AREAS" description="CA_OTHER_AREAS_DESC" />
+                <field name="other_enable" type="radio" class="btn-group" default="1" label="NN_ENABLE_OTHER_AREAS" description="CA_ENABLE_OTHER_AREAS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@block_otherareas_b" type="nn_block" end="1" />
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field name="@block_tag_a" type="nn_block" start="1" label="NN_TAG_SYNTAX" />
+                <field name="component_tag" type="text" default="component" label="CA_COMPONENT_TAG" description="CA_TAG_DESC" />
+                <field name="tag_characters" type="list" default="{.}" class="input-small" label="NN_TAG_CHARACTERS"
+                       description="NN_TAG_CHARACTERS_DESC">
+                    <option value="{.}">{...}</option>
+                    <option value="[.]">[...]</option>
+                    <option value="{{.}}">{{...}}</option>
+                    <option value="[[.]]">[[...]]</option>
+                    <option value="[:.:]">[:...:]</option>
+                    <option value="[%.%]">[%...%]</option>
+                </field>
+                <field name="@block_tag_b" type="nn_block" end="1" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

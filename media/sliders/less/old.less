@@ -1,0 +1,150 @@
+/**
+ * @package         Sliders
+ * @version         5.1.11PRO
+ * 
+ * @author          Peter van Westen <peter@nonumber.nl>
+ * @link            http://www.nonumber.nl
+ * @copyright       Copyright © 2016 NoNumber All Rights Reserved
+ * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+/*
+ * You can override this stylesheet by creating your own in:
+ * /templates/[YOUR TEMPLATE]/css/sliders/old.min.css
+ */
+@import "../../nnframework/less/init.less";
+@import "bootstrap.less";
+
+.nn_sliders.oldschool {
+	> .accordion-group {
+		&.panel,
+		&.active,
+		&.blue,
+		&.primary,
+		&.info,
+		&.green,
+		&.success,
+		&.orange,
+		&.warning,
+		&.red,
+		&.danger,
+		&.error,
+		&.grey,
+		&.gray {
+			border: 1px solid @btnBorder !important;
+			.border-radius(10px);
+			overflow: hidden;
+		}
+
+		span.nn_sliders-title-inactive {
+			display: inherit;
+		}
+		span.nn_sliders-title-active {
+			display: none;
+		}
+		&.active {
+			span.nn_sliders-title-inactive {
+				display: none;
+			}
+			span.nn_sliders-title-active {
+				display: inherit;
+			}
+		}
+
+		// Handles
+		> .accordion-heading {
+			> a,
+			> a:link,
+			> a:visited,
+			> a:active,
+			> a:hover {
+				color: #666666;
+				outline: 0;
+				text-decoration: none;
+				padding: 5px 10px 0 10px;
+				height: 20px;
+				_height: 25px;
+				font-size: 14px;
+				line-height: 1em !important;
+				font-weight: bold;
+				white-space: nowrap;
+				text-decoration: none !important;
+				#gradient > .vertical(@white, @white);
+			}
+		}
+	}
+
+	.nn_sliders-scroll {
+		position: relative;
+		visibility: hidden;
+		padding: 0;
+	}
+	.nn_sliders-title {
+		display: none;
+	}
+
+	// Classes: Normal state + Hover state
+	.sliderColor(@name, @color) {
+		&.@{name} {
+			> .accordion-heading {
+				// Normal state
+				> a {
+					#gradient > .vertical(lighten(@color, 40%), lighten(@color, 30%));
+					// Hover state
+					&:hover {
+						#gradient > .vertical(lighten(@color, 30%), lighten(@color, 15%));
+					}
+				}
+			}
+			// Active state
+			&.active > .accordion-heading {
+				> a,
+				> a:hover {
+					#gradient > .vertical(lighten(@color, 15%), lighten(@color, 0%));
+				}
+			}
+		}
+	}
+
+	> .accordion-group {
+		@bgcolor: @btnPrimaryBackground;
+		> .accordion-heading {
+			// Hover state
+			> a:hover {
+				color: @grayDark;
+				#gradient > .vertical(lighten(@bgcolor, 30%), lighten(@bgcolor, 20%));
+			}
+		}
+		// Active state
+		&.active > .accordion-heading {
+			> a,
+			> a:hover {
+				color: @white;
+				#gradient > .vertical(lighten(@bgcolor, 15%), lighten(@bgcolor, 0%));
+			}
+		}
+
+		// Style: blue
+		.sliderColor(~'blue', @btnPrimaryBackground);
+		.sliderColor(~'primary', @btnPrimaryBackground);
+
+		// Style: info
+		.sliderColor(~'info', @btnInfoBackgroundHighlight);
+
+		// Style: green / success
+		.sliderColor(~'green', @btnSuccessBackgroundHighlight);
+		.sliderColor(~'success', @btnSuccessBackgroundHighlight);
+
+		// Style: orange / warning
+		.sliderColor(~'orange', @btnWarningBackgroundHighlight);
+		.sliderColor(~'warning', @btnWarningBackgroundHighlight);
+
+		// Style: red / danger
+		.sliderColor(~'red', @btnDangerBackgroundHighlight);
+		.sliderColor(~'danger', @btnDangerBackgroundHighlight);
+		.sliderColor(~'error', @btnDangerBackgroundHighlight);
+
+		// Style: grey / gray
+		.sliderColor(~'grey', #777777);
+		.sliderColor(~'gray', #777777);
+	}
+}

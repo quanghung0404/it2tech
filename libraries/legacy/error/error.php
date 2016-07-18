@@ -3,19 +3,37 @@
  * @package     Joomla.Legacy
  * @subpackage  Error
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
 defined('JPATH_PLATFORM') or die;
 
-// Error Definition: Illegal Options
+/**
+ * Error Definition: Illegal Options
+ *
+ * @var    integer
+ * @since  11.1
+ * @deprecated  12.1 (Platform) & 4.0 (CMS)
+ */
 const JERROR_ILLEGAL_OPTIONS = 1;
 
-// Error Definition: Callback does not exist
+/**
+ * Error Definition: Callback does not exist
+ *
+ * @var    integer
+ * @since  11.1
+ * @deprecated  12.1 (Platform) & 4.0 (CMS)
+ */
 const JERROR_CALLBACK_NOT_CALLABLE = 2;
 
-// Error Definition: Illegal Handler
+/**
+ * Error Definition: Illegal Handler
+ *
+ * @var    integer
+ * @since  11.1
+ * @deprecated  12.1 (Platform) & 4.0 (CMS)
+ */
 const JERROR_ILLEGAL_MODE = 3;
 
 /**
@@ -28,8 +46,6 @@ const JERROR_ILLEGAL_MODE = 3;
  * - Sebastian Mordziol	<argh@php-tools.net>
  * - Stephan Schmidt		<scst@php-tools.net>
  *
- * @package     Joomla.Legacy
- * @subpackage  Error
  * @since       11.1
  * @deprecated  12.1 (Platform) & 4.0 (CMS) - Use PHP Exception
  */
@@ -42,6 +58,7 @@ abstract class JError
 	 *                  is present to allow an easy transition into exception handling for code written against the
 	 *                  existing JError API in Joomla.
 	 * @since  11.1
+	 * @deprecated  12.1 (Platform) & 4.0 (CMS)
 	 */
 	public static $legacy = false;
 
@@ -50,13 +67,16 @@ abstract class JError
 	 *
 	 * @var    array
 	 * @since  11.1
+	 * @deprecated  12.1 (Platform) & 4.0 (CMS)
 	 */
 	protected static $levels = array(E_NOTICE => 'Notice', E_WARNING => 'Warning', E_ERROR => 'Error');
 
 	/**
 	 * Array of message handlers
+	 *
 	 * @var    array
 	 * @since  11.1
+	 * @deprecated  12.1 (Platform) & 4.0 (CMS)
 	 */
 	protected static $handlers = array(
 		E_NOTICE => array('mode' => 'ignore'),
@@ -67,8 +87,9 @@ abstract class JError
 	/**
 	 * Array containing the error stack
 	 *
-	 * @var    array
+	 * @var    JException[]
 	 * @since  11.1
+	 * @deprecated  12.1 (Platform) & 4.0 (CMS)
 	 */
 	protected static $stack = array();
 
@@ -94,7 +115,7 @@ abstract class JError
 	 *
 	 * @param   boolean  $unset  True to remove the error from the stack.
 	 *
-	 * @return  mixed  Last exception object in the error stack or boolean false if none exist
+	 * @return  JException|boolean  Last JException object in the error stack or boolean false if none exist
 	 *
 	 * @deprecated  12.1
 	 * @since   11.1
@@ -116,13 +137,14 @@ abstract class JError
 		{
 			$error = &self::$stack[0];
 		}
+
 		return $error;
 	}
 
 	/**
 	 * Method for retrieving the exception stack
 	 *
-	 * @return  array  Chronological array of errors that have been stored during script execution
+	 * @return  JException[]  Chronological array of errors that have been stored during script execution
 	 *
 	 * @deprecated  12.1
 	 * @since   11.1
@@ -164,7 +186,7 @@ abstract class JError
 	 *                               like a database DSN).
 	 * @param   boolean  $backtrace  Add a stack backtrace to the exception.
 	 *
-	 * @return  mixed    The JException object
+	 * @return  JException
 	 *
 	 * @since       11.1
 	 * @deprecated  12.1  Use PHP Exception
@@ -176,15 +198,16 @@ abstract class JError
 
 		// Build error object
 		$exception = new JException($msg, $code, $level, $info, $backtrace);
+
 		return self::throwError($exception);
 	}
 
 	/**
 	 * Throw an error
 	 *
-	 * @param   object  &$exception  An exception to throw.
+	 * @param   JException  &$exception  An exception to throw.
 	 *
-	 * @return  reference
+	 * @return  JException  A reference to the handled JException object
 	 *
 	 * @deprecated  12.1  Use PHP Exception
 	 * @see     JException
@@ -212,6 +235,7 @@ abstract class JError
 		$handler = self::getErrorHandling($level);
 
 		$function = 'handle' . ucfirst($handler['mode']);
+
 		if (is_callable(array('JError', $function)))
 		{
 			$reference = call_user_func_array(array('JError', $function), array(&$exception, (isset($handler['options'])) ? $handler['options'] : array()));
@@ -240,7 +264,7 @@ abstract class JError
 	 *                         developer-relevant information that the user should
 	 *                         never see, like a database DSN).
 	 *
-	 * @return  object  $error  The configured JError object
+	 * @return  JException  $error  The thrown JException object
 	 *
 	 * @deprecated   12.1       Use PHP Exception
 	 * @see        JError::raise()
@@ -254,8 +278,7 @@ abstract class JError
 	}
 
 	/**
-	 * Wrapper method for the {@link raise()} method with predefined error level of E_WARNING and
-	 * backtrace set to false.
+	 * Wrapper method for the {@link raise()} method with predefined error level of E_WARNING and backtrace set to false.
 	 *
 	 * @param   string  $code  The application-internal error code for this error
 	 * @param   string  $msg   The error message, which may also be shown the user if need be.
@@ -263,7 +286,7 @@ abstract class JError
 	 *                         developer-relevant information that
 	 *                         the user should never see, like a database DSN).
 	 *
-	 * @return  object  The configured JError object
+	 * @return  JException  $error  The thrown JException object
 	 *
 	 * @deprecated  12.1  Use PHP Exception
 	 * @see        JError::raise()
@@ -277,8 +300,7 @@ abstract class JError
 	}
 
 	/**
-	 * Wrapper method for the {@link raise()} method with predefined error
-	 * level of E_NOTICE and backtrace set to false.
+	 * Wrapper method for the {@link raise()} method with predefined error level of E_NOTICE and backtrace set to false.
 	 *
 	 * @param   string  $code  The application-internal error code for this error
 	 * @param   string  $msg   The error message, which may also be shown the user if need be.
@@ -286,7 +308,7 @@ abstract class JError
 	 *                         developer-relevant information that the user
 	 *                         should never see, like a database DSN).
 	 *
-	 * @return  object   The configured JError object
+	 * @return  JException  $error  The thrown JException object
 	 *
 	 * @deprecated       12.1   Use PHP Exception
 	 * @see     raise()
@@ -339,7 +361,7 @@ abstract class JError
 	 * @param   string   $mode     The mode to use for the error handling.
 	 * @param   mixed    $options  Optional: Any options needed for the given mode.
 	 *
-	 * @return  mixed  True on success or a JException object if failed.
+	 * @return  boolean|JException  True on success or a JException object if failed.
 	 *
 	 * @deprecated  12.1  Use PHP Exception
 	 * @since   11.1
@@ -375,6 +397,7 @@ abstract class JError
 				if (!is_callable($options))
 				{
 					$tmp = array('GLOBAL');
+
 					if (is_array($options))
 					{
 						$tmp[0] = $options[0];
@@ -396,6 +419,7 @@ abstract class JError
 
 			// Save settings
 			self::$handlers[$eLevel] = array('mode' => $mode);
+
 			if ($options != null)
 			{
 				self::$handlers[$eLevel]['options'] = $options;
@@ -475,7 +499,7 @@ abstract class JError
 	 *
 	 * @param   integer  $level  Error level to translate
 	 *
-	 * @return  mixed  Human readable error level name or boolean false if it doesn't exist
+	 * @return  string|boolean  Human readable error level name or boolean false if it doesn't exist
 	 *
 	 * @deprecated  12.1
 	 * @since   11.1
@@ -497,10 +521,10 @@ abstract class JError
 	 * Ignore error handler
 	 * - Ignores the error
 	 *
-	 * @param   object  &$error   Exception object to handle
-	 * @param   array   $options  Handler options
+	 * @param   JException  &$error   Exception object to handle
+	 * @param   array       $options  Handler options
 	 *
-	 * @return  object   The exception object
+	 * @return  JException   The exception object
 	 *
 	 * @deprecated  12.1
 	 * @see     JError::raise()
@@ -517,10 +541,10 @@ abstract class JError
 	 * Echo error handler
 	 * - Echos the error message to output
 	 *
-	 * @param   object  &$error   Exception object to handle
-	 * @param   array   $options  Handler options
+	 * @param   JException  &$error   Exception object to handle
+	 * @param   array       $options  Handler options
 	 *
-	 * @return  object  The exception object
+	 * @return  JException  The exception object
 	 *
 	 * @deprecated  12.1
 	 * @see         JError::raise()
@@ -533,10 +557,11 @@ abstract class JError
 		$level_human = self::translateErrorLevel($error->get('level'));
 
 		// If system debug is set, then output some more information.
-		if (defined('JDEBUG'))
+		if (JDEBUG)
 		{
 			$backtrace = $error->getTrace();
 			$trace = '';
+
 			for ($i = count($backtrace) - 1; $i >= 0; $i--)
 			{
 				if (isset($backtrace[$i]['class']))
@@ -560,7 +585,7 @@ abstract class JError
 			// Output as html
 			echo "<br /><b>jos-$level_human</b>: "
 				. $error->get('message') . "<br />\n"
-				. (defined('JDEBUG') ? nl2br($trace) : '');
+				. (JDEBUG ? nl2br($trace) : '');
 		}
 		else
 		{
@@ -568,7 +593,8 @@ abstract class JError
 			if (defined('STDERR'))
 			{
 				fwrite(STDERR, "J$level_human: " . $error->get('message') . "\n");
-				if (defined('JDEBUG'))
+
+				if (JDEBUG)
 				{
 					fwrite(STDERR, $trace);
 				}
@@ -576,7 +602,8 @@ abstract class JError
 			else
 			{
 				echo "J$level_human: " . $error->get('message') . "\n";
-				if (defined('JDEBUG'))
+
+				if (JDEBUG)
 				{
 					echo $trace;
 				}
@@ -590,10 +617,10 @@ abstract class JError
 	 * Verbose error handler
 	 * - Echos the error message to output as well as related info
 	 *
-	 * @param   object  &$error   Exception object to handle
-	 * @param   array   $options  Handler options
+	 * @param   JException  &$error   Exception object to handle
+	 * @param   array       $options  Handler options
 	 *
-	 * @return  object  The exception object
+	 * @return  JException  The exception object
 	 *
 	 * @deprecated  12.1
 	 * @see         JError::raise()
@@ -622,11 +649,11 @@ abstract class JError
 		{
 			// Output as simple text
 			echo "J$level_human: " . $error->get('message') . "\n";
+
 			if ($info != null)
 			{
 				echo "\t" . $info . "\n";
 			}
-
 		}
 
 		return $error;
@@ -636,10 +663,10 @@ abstract class JError
 	 * Die error handler
 	 * - Echos the error message to output and then dies
 	 *
-	 * @param   object  &$error   Exception object to handle
-	 * @param   array   $options  Handler options
+	 * @param   JException  &$error   Exception object to handle
+	 * @param   array       $options  Handler options
 	 *
-	 * @return  object  The exception object
+	 * @return  void  Calls die()
 	 *
 	 * @deprecated  12.1
 	 * @see         JError::raise()
@@ -677,10 +704,10 @@ abstract class JError
 	 * Message error handler
 	 * Enqueues the error message into the system queue
 	 *
-	 * @param   object  &$error   Exception object to handle
-	 * @param   array   $options  Handler options
+	 * @param   JException  &$error   Exception object to handle
+	 * @param   array       $options  Handler options
 	 *
-	 * @return  object  The exception object
+	 * @return  JException  The exception object
 	 *
 	 * @deprecated  12.1
 	 * @see         JError::raise()
@@ -701,10 +728,10 @@ abstract class JError
 	 * Log error handler
 	 * Logs the error message to a system log file
 	 *
-	 * @param   object  &$error   Exception object to handle
-	 * @param   array   $options  Handler options
+	 * @param   JException  &$error   Exception object to handle
+	 * @param   array       $options  Handler options
 	 *
-	 * @return  object  The exception object
+	 * @return  JException  The exception object
 	 *
 	 * @deprecated  12.1
 	 * @see         JError::raise()
@@ -738,10 +765,10 @@ abstract class JError
 	 * Callback error handler
 	 * - Send the error object to a callback method for error handling
 	 *
-	 * @param   object  &$error   Exception object to handle
-	 * @param   array   $options  Handler options
+	 * @param   JException  &$error   Exception object to handle
+	 * @param   array       $options  Handler options
 	 *
-	 * @return  object  The exception object
+	 * @return  JException  The exception object
 	 *
 	 * @deprecated  12.1
 	 * @see         JError::raise()
@@ -757,7 +784,7 @@ abstract class JError
 	/**
 	 * Display a custom error page and exit gracefully
 	 *
-	 * @param   object  &$error  Exception object
+	 * @param   JException  &$error  Exception object
 	 *
 	 * @return  void
 	 *
@@ -766,51 +793,9 @@ abstract class JError
 	 */
 	public static function customErrorPage(&$error)
 	{
-		JLog::add('JError::customErrorPage() is deprecated.', JLog::WARNING, 'deprecated');
+		JLog::add('JError::customErrorPage() is deprecated, use JErrorPage::render() instead.', JLog::WARNING, 'deprecated');
 
-		$app = JFactory::getApplication();
-		$document = JDocument::getInstance('error');
-		if ($document)
-		{
-			$config = JFactory::getConfig();
-
-			// Get the current template from the application
-			$template = $app->getTemplate();
-
-			// Push the error object into the document
-			$document->setError($error);
-
-			// If site is offline and it's a 404 error, just go to index (to see offline message, instead of 404)
-			if ($error->getCode() == '404' && JFactory::getConfig()->get('offline') == 1)
-			{
-				JFactory::getApplication()->redirect('index.php');
-			}
-
-			@ob_end_clean();
-			$document->setTitle(JText::_('Error') . ': ' . $error->getCode());
-			$data = $document->render(false, array('template' => $template, 'directory' => JPATH_THEMES, 'debug' => $config->get('debug')));
-
-			// Failsafe to get the error displayed.
-			if (empty($data))
-			{
-				self::handleEcho($error, array());
-			}
-			else
-			{
-				// Do not allow cache
-				$app->allowCache(false);
-
-				$app->setBody($data);
-				echo $app->toString();
-			}
-		}
-		else
-		{
-			// Just echo the error since there is no document
-			// This is a common use case for Command Line Interface applications.
-			self::handleEcho($error, array());
-		}
-		$app->close(0);
+		JErrorPage::render($error);
 	}
 
 	/**
@@ -836,7 +821,7 @@ abstract class JError
 	/**
 	 * Render the backtrace
 	 *
-	 * @param   integer  $error  The error
+	 * @param   Exception  $error  The error
 	 *
 	 * @return  string  Contents of the backtrace
 	 *

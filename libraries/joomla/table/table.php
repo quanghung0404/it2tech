@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Table
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -16,13 +16,10 @@ jimport('joomla.filesystem.path');
  *
  * Parent class to all tables.
  *
- * @package     Joomla.Platform
- * @subpackage  Table
- * @link        http://docs.joomla.org/JTable
- * @since       11.1
- * @tutorial	Joomla.Platform/jtable.cls
+ * @since  11.1
+ * @tutorial  Joomla.Platform/jtable.cls
  */
-abstract class JTable extends JObject implements JObservableInterface
+abstract class JTable extends JObject implements JObservableInterface, JTableInterface
 {
 	/**
 	 * Include paths for searching for JTable classes.
@@ -103,6 +100,21 @@ abstract class JTable extends JObject implements JObservableInterface
 	 * @since  3.1.2
 	 */
 	protected $_observers;
+
+	/**
+	 * Array with alias for "special" columns such as ordering, hits etc etc
+	 *
+	 * @var    array
+	 */
+	protected $_columnAlias = array();
+
+	/**
+	 * An array of key names to be json encoded in the bind function
+	 *
+	 * @var    array
+	 * @since  3.3
+	 */
+	protected $_jsonEncode = array();
 
 	/**
 	 * Object constructor to set table and key fields.  In most cases this will
@@ -240,17 +252,16 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Static method to get an instance of a JTable class if it can be found in
-	 * the table include paths.  To add include paths for searching for JTable
-	 * classes see JTable::addIncludePath().
+	 * Static method to get an instance of a JTable class if it can be found in the table include paths.
+	 *
+	 * To add include paths for searching for JTable classes see JTable::addIncludePath().
 	 *
 	 * @param   string  $type    The type (name) of the JTable class to get an instance of.
 	 * @param   string  $prefix  An optional prefix for the table class name.
 	 * @param   array   $config  An optional array of configuration values for the JTable object.
 	 *
-	 * @return  mixed    A JTable object if found or boolean false if one could not be found.
+	 * @return  JTable|boolean   A JTable object if found or boolean false on failure.
 	 *
-	 * @link    http://docs.joomla.org/JTable/getInstance
 	 * @since   11.1
 	 */
 	public static function getInstance($type, $prefix = 'JTable', $config = array())
@@ -263,22 +274,21 @@ abstract class JTable extends JObject implements JObservableInterface
 		if (!class_exists($tableClass))
 		{
 			// Search for the class file in the JTable include paths.
-			$path = JPath::find(self::addIncludePath(), strtolower($type) . '.php');
+			jimport('joomla.filesystem.path');
 
-			if ($path)
+			$paths = self::addIncludePath();
+			$pathIndex = 0;
+
+			while (!class_exists($tableClass) && $pathIndex < count($paths))
 			{
-				// Import the class file.
-				include_once $path;
-
-				// If we were unable to load the proper class, raise a warning and return false.
-				if (!class_exists($tableClass))
+				if ($tryThis = JPath::find($paths[$pathIndex++], strtolower($type) . '.php'))
 				{
-					JLog::add(JText::sprintf('JLIB_DATABASE_ERROR_CLASS_NOT_FOUND_IN_FILE', $tableClass), JLog::WARNING, 'jerror');
-
-					return false;
+					// Import the class file.
+					include_once $tryThis;
 				}
 			}
-			else
+
+			if (!class_exists($tableClass))
 			{
 				// If we were unable to find the class file in the JTable include paths, raise a warning and return false.
 				JLog::add(JText::sprintf('JLIB_DATABASE_ERROR_NOT_SUPPORTED_FILE_NOT_FOUND', $type), JLog::WARNING, 'jerror');
@@ -296,13 +306,11 @@ abstract class JTable extends JObject implements JObservableInterface
 
 	/**
 	 * Add a filesystem path where JTable should search for table class files.
-	 * You may either pass a string or an array of paths.
 	 *
-	 * @param   mixed  $path  A filesystem path or array of filesystem paths to add.
+	 * @param   array|string  $path  A filesystem path or array of filesystem paths to add.
 	 *
 	 * @return  array  An array of filesystem paths to find JTable classes in.
 	 *
-	 * @link    http://docs.joomla.org/JTable/addIncludePath
 	 * @since   11.1
 	 */
 	public static function addIncludePath($path = null)
@@ -358,15 +366,14 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to return the title to use for the asset table.  In
-	 * tracking the assets a title is kept for each asset so that there is some
-	 * context available in a unified access manager.  Usually this would just
-	 * return $this->title or $this->name or whatever is being used for the
-	 * primary name of the row. If this method is not overridden, the asset name is used.
+	 * Method to return the title to use for the asset table.
+	 *
+	 * In tracking the assets a title is kept for each asset so that there is some context available in a unified access manager.
+	 * Usually this would just return $this->title or $this->name or whatever is being used for the primary name of the row.
+	 * If this method is not overridden, the asset name is used.
 	 *
 	 * @return  string  The string to use as the title in the asset table.
 	 *
-	 * @link    http://docs.joomla.org/JTable/getAssetTitle
 	 * @since   11.1
 	 */
 	protected function _getAssetTitle()
@@ -376,10 +383,9 @@ abstract class JTable extends JObject implements JObservableInterface
 
 	/**
 	 * Method to get the parent asset under which to register this one.
-	 * By default, all assets are registered to the ROOT node with ID,
-	 * which will default to 1 if none exists.
-	 * The extended class can define a table and id to lookup.  If the
-	 * asset does not exist it will be created.
+	 *
+	 * By default, all assets are registered to the ROOT node with ID, which will default to 1 if none exists.
+	 * An extended class can define a table and ID to lookup.  If the asset does not exist it will be created.
 	 *
 	 * @param   JTable   $table  A JTable object for the asset parent.
 	 * @param   integer  $id     Id to look up
@@ -430,7 +436,7 @@ abstract class JTable extends JObject implements JObservableInterface
 
 			$pk = (object) $pk;
 
-			foreach ($this->_tbl_keys AS $k)
+			foreach ($this->_tbl_keys as $k)
 			{
 				$query->where($this->_db->quoteName($k) . ' = ' . $this->_db->quote($pk->$k));
 			}
@@ -443,8 +449,6 @@ abstract class JTable extends JObject implements JObservableInterface
 	 * @return  string  The name of the database table being modeled.
 	 *
 	 * @since   11.1
-	 *
-	 * @link    http://docs.joomla.org/JTable/getTableName
 	 */
 	public function getTableName()
 	{
@@ -458,7 +462,6 @@ abstract class JTable extends JObject implements JObservableInterface
 	 *
 	 * @return  mixed  Array of primary key field names or string containing the first primary key field.
 	 *
-	 * @link    http://docs.joomla.org/JTable/getKeyName
 	 * @since   11.1
 	 */
 	public function getKeyName($multiple = false)
@@ -486,7 +489,6 @@ abstract class JTable extends JObject implements JObservableInterface
 	 *
 	 * @return  JDatabaseDriver  The internal database driver object.
 	 *
-	 * @link    http://docs.joomla.org/JTable/getDBO
 	 * @since   11.1
 	 */
 	public function getDbo()
@@ -501,10 +503,9 @@ abstract class JTable extends JObject implements JObservableInterface
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/setDBO
 	 * @since   11.1
 	 */
-	public function setDBO($db)
+	public function setDbo($db)
 	{
 		$this->_db = $db;
 
@@ -551,7 +552,6 @@ abstract class JTable extends JObject implements JObservableInterface
 	 *
 	 * @return  void
 	 *
-	 * @link    http://docs.joomla.org/JTable/reset
 	 * @since   11.1
 	 */
 	public function reset()
@@ -575,17 +575,28 @@ abstract class JTable extends JObject implements JObservableInterface
 	 * method only binds properties that are publicly accessible and optionally
 	 * takes an array of properties to ignore when binding.
 	 *
-	 * @param   mixed  $src     An associative array or object to bind to the JTable instance.
-	 * @param   mixed  $ignore  An optional array or space separated list of properties to ignore while binding.
+	 * @param   array|object  $src     An associative array or object to bind to the JTable instance.
+	 * @param   array|string  $ignore  An optional array or space separated list of properties to ignore while binding.
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/bind
 	 * @since   11.1
 	 * @throws  InvalidArgumentException
 	 */
 	public function bind($src, $ignore = array())
 	{
+		// JSON encode any fields required
+		if (!empty($this->_jsonEncode))
+		{
+			foreach ($this->_jsonEncode as $field)
+			{
+				if (isset($src[$field]) && is_array($src[$field]))
+				{
+					$src[$field] = json_encode($src[$field]);
+				}
+			}
+		}
+
 		// If the source value is not an array or object return false.
 		if (!is_object($src) && !is_array($src))
 		{
@@ -621,16 +632,14 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to load a row from the database by primary key and bind the fields
-	 * to the JTable instance properties.
+	 * Method to load a row from the database by primary key and bind the fields to the JTable instance properties.
 	 *
-	 * @param   mixed    $keys   An optional primary key value to load the row by, or an array of fields to match.  If not
-	 *                           set the instance property value is used.
+	 * @param   mixed    $keys   An optional primary key value to load the row by, or an array of fields to match.
+	 *                           If not set the instance property value is used.
 	 * @param   boolean  $reset  True to reset the default values before loading the new row.
 	 *
 	 * @return  boolean  True if successful. False if row not found.
 	 *
-	 * @link    http://docs.joomla.org/JTable/load
 	 * @since   11.1
 	 * @throws  InvalidArgumentException
 	 * @throws  RuntimeException
@@ -670,6 +679,7 @@ abstract class JTable extends JObject implements JObservableInterface
 				{
 					throw new InvalidArgumentException('Table has multiple primary keys specified, only one primary key value provided.');
 				}
+
 				$keys = array($this->getKeyName() => $keys);
 			}
 			else
@@ -722,14 +732,12 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to perform sanity checks on the JTable instance properties to ensure
-	 * they are safe to store in the database.  Child classes should override this
-	 * method to make sure the data they are storing in the database is safe and
-	 * as expected before storage.
+	 * Method to perform sanity checks on the JTable instance properties to ensure they are safe to store in the database.
+	 *
+	 * Child classes should override this method to make sure the data they are storing in the database is safe and as expected before storage.
 	 *
 	 * @return  boolean  True if the instance is sane and able to be stored in the database.
 	 *
-	 * @link    http://docs.joomla.org/JTable/check
 	 * @since   11.1
 	 */
 	public function check()
@@ -739,20 +747,20 @@ abstract class JTable extends JObject implements JObservableInterface
 
 	/**
 	 * Method to store a row in the database from the JTable instance properties.
-	 * If a primary key value is set the row with that primary key value will be
-	 * updated with the instance property values.  If no primary key value is set
-	 * a new row will be inserted into the database with the properties from the
-	 * JTable instance.
+	 *
+	 * If a primary key value is set the row with that primary key value will be updated with the instance property values.
+	 * If no primary key value is set a new row will be inserted into the database with the properties from the JTable instance.
 	 *
 	 * @param   boolean  $updateNulls  True to update fields even if they are null.
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/store
 	 * @since   11.1
 	 */
 	public function store($updateNulls = false)
 	{
+		$result = true;
+
 		$k = $this->_tbl_keys;
 
 		// Implement JObservableInterface: Pre-processing by observers
@@ -774,11 +782,11 @@ abstract class JTable extends JObject implements JObservableInterface
 		// If a primary key exists update the object, otherwise insert it.
 		if ($this->hasPrimaryKey())
 		{
-			$result = $this->_db->updateObject($this->_tbl, $this, $this->_tbl_keys, $updateNulls);
+			$this->_db->updateObject($this->_tbl, $this, $this->_tbl_keys, $updateNulls);
 		}
 		else
 		{
-			$result = $this->_db->insertObject($this->_tbl, $this, $this->_tbl_keys[0]);
+			$this->_db->insertObject($this->_tbl, $this, $this->_tbl_keys[0]);
 		}
 
 		// If the table is not set to track assets return true.
@@ -860,21 +868,18 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to provide a shortcut to binding, checking and storing a JTable
-	 * instance to the database table.  The method will check a row in once the
-	 * data has been stored and if an ordering filter is present will attempt to
-	 * reorder the table rows based on the filter.  The ordering filter is an instance
-	 * property name.  The rows that will be reordered are those whose value matches
-	 * the JTable instance for the property specified.
+	 * Method to provide a shortcut to binding, checking and storing a JTable instance to the database table.
 	 *
-	 * @param   mixed   $src             An associative array or object to bind to the JTable instance.
-	 * @param   string  $orderingFilter  Filter for the order updating
-	 * @param   mixed   $ignore          An optional array or space separated list of properties
-	 *                                   to ignore while binding.
+	 * The method will check a row in once the data has been stored and if an ordering filter is present will attempt to reorder
+	 * the table rows based on the filter.  The ordering filter is an instance property name.  The rows that will be reordered
+	 * are those whose value matches the JTable instance for the property specified.
+	 *
+	 * @param   array|object  $src             An associative array or object to bind to the JTable instance.
+	 * @param   string        $orderingFilter  Filter for the order updating
+	 * @param   array|string  $ignore          An optional array or space separated list of properties to ignore while binding.
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/save
 	 * @since   11.1
 	 */
 	public function save($src, $orderingFilter = '', $ignore = '')
@@ -923,7 +928,6 @@ abstract class JTable extends JObject implements JObservableInterface
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/delete
 	 * @since   11.1
 	 * @throws  UnexpectedValueException
 	 */
@@ -951,6 +955,7 @@ abstract class JTable extends JObject implements JObservableInterface
 			{
 				throw new UnexpectedValueException('Null primary key not allowed.');
 			}
+
 			$this->$key = $pk[$key];
 		}
 
@@ -992,27 +997,27 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to check a row out if the necessary properties/fields exist.  To
-	 * prevent race conditions while editing rows in a database, a row can be
-	 * checked out if the fields 'checked_out' and 'checked_out_time' are available.
-	 * While a row is checked out, any attempt to store the row by a user other
-	 * than the one who checked the row out should be held until the row is checked
-	 * in again.
+	 * Method to check a row out if the necessary properties/fields exist.
+	 *
+	 * To prevent race conditions while editing rows in a database, a row can be checked out if the fields 'checked_out' and 'checked_out_time'
+	 * are available. While a row is checked out, any attempt to store the row by a user other than the one who checked the row out should be
+	 * held until the row is checked in again.
 	 *
 	 * @param   integer  $userId  The Id of the user checking out the row.
-	 * @param   mixed    $pk      An optional primary key value to check out.  If not set
-	 *                            the instance property value is used.
+	 * @param   mixed    $pk      An optional primary key value to check out.  If not set the instance property value is used.
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/checkOut
 	 * @since   11.1
 	 * @throws  UnexpectedValueException
 	 */
 	public function checkOut($userId, $pk = null)
 	{
+		$checkedOutField = $this->getColumnAlias('checked_out');
+		$checkedOutTimeField = $this->getColumnAlias('checked_out_time');
+
 		// If there is no checked_out or checked_out_time field, just return true.
-		if (!property_exists($this, 'checked_out') || !property_exists($this, 'checked_out_time'))
+		if (!property_exists($this, $checkedOutField) || !property_exists($this, $checkedOutTimeField))
 		{
 			return true;
 		}
@@ -1047,35 +1052,38 @@ abstract class JTable extends JObject implements JObservableInterface
 		// Check the row out by primary key.
 		$query = $this->_db->getQuery(true)
 			->update($this->_tbl)
-			->set($this->_db->quoteName('checked_out') . ' = ' . (int) $userId)
-			->set($this->_db->quoteName('checked_out_time') . ' = ' . $this->_db->quote($time));
+			->set($this->_db->quoteName($checkedOutField) . ' = ' . (int) $userId)
+			->set($this->_db->quoteName($checkedOutTimeField) . ' = ' . $this->_db->quote($time));
 		$this->appendPrimaryKeys($query, $pk);
 		$this->_db->setQuery($query);
 		$this->_db->execute();
 
 		// Set table values in the object.
-		$this->checked_out      = (int) $userId;
-		$this->checked_out_time = $time;
+		$this->$checkedOutField      = (int) $userId;
+		$this->$checkedOutTimeField = $time;
 
 		return true;
 	}
 
 	/**
-	 * Method to check a row in if the necessary properties/fields exist.  Checking
-	 * a row in will allow other users the ability to edit the row.
+	 * Method to check a row in if the necessary properties/fields exist.
+	 *
+	 * Checking a row in will allow other users the ability to edit the row.
 	 *
 	 * @param   mixed  $pk  An optional primary key value to check out.  If not set the instance property value is used.
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/checkIn
 	 * @since   11.1
 	 * @throws  UnexpectedValueException
 	 */
 	public function checkIn($pk = null)
 	{
+		$checkedOutField = $this->getColumnAlias('checked_out');
+		$checkedOutTimeField = $this->getColumnAlias('checked_out_time');
+
 		// If there is no checked_out or checked_out_time field, just return true.
-		if (!property_exists($this, 'checked_out') || !property_exists($this, 'checked_out_time'))
+		if (!property_exists($this, $checkedOutField) || !property_exists($this, $checkedOutTimeField))
 		{
 			return true;
 		}
@@ -1107,8 +1115,8 @@ abstract class JTable extends JObject implements JObservableInterface
 		// Check the row in by primary key.
 		$query = $this->_db->getQuery(true)
 			->update($this->_tbl)
-			->set($this->_db->quoteName('checked_out') . ' = 0')
-			->set($this->_db->quoteName('checked_out_time') . ' = ' . $this->_db->quote($this->_db->getNullDate()));
+			->set($this->_db->quoteName($checkedOutField) . ' = 0')
+			->set($this->_db->quoteName($checkedOutTimeField) . ' = ' . $this->_db->quote($this->_db->getNullDate()));
 		$this->appendPrimaryKeys($query, $pk);
 		$this->_db->setQuery($query);
 
@@ -1116,8 +1124,8 @@ abstract class JTable extends JObject implements JObservableInterface
 		$this->_db->execute();
 
 		// Set table values in the object.
-		$this->checked_out      = 0;
-		$this->checked_out_time = '';
+		$this->$checkedOutField      = 0;
+		$this->$checkedOutTimeField = '';
 
 		return true;
 	}
@@ -1170,14 +1178,15 @@ abstract class JTable extends JObject implements JObservableInterface
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/hit
 	 * @since   11.1
 	 * @throws  UnexpectedValueException
 	 */
 	public function hit($pk = null)
 	{
+		$hitsField = $this->getColumnAlias('hits');
+
 		// If there is no hits field, just return true.
-		if (!property_exists($this, 'hits'))
+		if (!property_exists($this, $hitsField))
 		{
 			return true;
 		}
@@ -1209,7 +1218,7 @@ abstract class JTable extends JObject implements JObservableInterface
 		// Check the row in by primary key.
 		$query = $this->_db->getQuery(true)
 			->update($this->_tbl)
-			->set($this->_db->quoteName('hits') . ' = (' . $this->_db->quoteName('hits') . ' + 1)');
+			->set($this->_db->quoteName($hitsField) . ' = (' . $this->_db->quoteName($hitsField) . ' + 1)');
 		$this->appendPrimaryKeys($query, $pk);
 		$this->_db->setQuery($query);
 		$this->_db->execute();
@@ -1221,18 +1230,15 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to determine if a row is checked out and therefore uneditable by
-	 * a user. If the row is checked out by the same user, then it is considered
-	 * not checked out -- as the user can still edit it.
+	 * Method to determine if a row is checked out and therefore uneditable by a user.
 	 *
-	 * @param   integer  $with     The userid to preform the match with, if an item is checked
-	 *                             out by this user the function will return false.
-	 * @param   integer  $against  The userid to perform the match against when the function
-	 *                             is used as a static function.
+	 * If the row is checked out by the same user, then it is considered not checked out -- as the user can still edit it.
+	 *
+	 * @param   integer  $with     The user ID to preform the match with, if an item is checked out by this user the function will return false.
+	 * @param   integer  $against  The user ID to perform the match against when the function is used as a static function.
 	 *
 	 * @return  boolean  True if checked out.
 	 *
-	 * @link    http://docs.joomla.org/JTable/isCheckedOut
 	 * @since   11.1
 	 */
 	public function isCheckedOut($with = 0, $against = null)
@@ -1240,7 +1246,8 @@ abstract class JTable extends JObject implements JObservableInterface
 		// Handle the non-static case.
 		if (isset($this) && ($this instanceof JTable) && is_null($against))
 		{
-			$against = $this->get('checked_out');
+			$checkedOutField = $this->getColumnAlias('checked_out');
+			$against = $this->get($checkedOutField);
 		}
 
 		// The item is not checked out or is checked out by the same user.
@@ -1263,13 +1270,13 @@ abstract class JTable extends JObject implements JObservableInterface
 
 	/**
 	 * Method to get the next ordering value for a group of rows defined by an SQL WHERE clause.
+	 *
 	 * This is useful for placing a new item last in a group of items in the table.
 	 *
 	 * @param   string  $where  WHERE clause to use for selecting the MAX(ordering) for the table.
 	 *
-	 * @return  mixed  Boolean false an failure or the next ordering value as an integer.
+	 * @return  integer  The next ordering value.
 	 *
-	 * @link    http://docs.joomla.org/JTable/getNextOrder
 	 * @since   11.1
 	 * @throws  UnexpectedValueException
 	 */
@@ -1324,14 +1331,12 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to compact the ordering values of rows in a group of rows
-	 * defined by an SQL WHERE clause.
+	 * Method to compact the ordering values of rows in a group of rows defined by an SQL WHERE clause.
 	 *
 	 * @param   string  $where  WHERE clause to use for limiting the selection of rows to compact the ordering values.
 	 *
 	 * @return  mixed  Boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/reorder
 	 * @since   11.1
 	 * @throws  UnexpectedValueException
 	 */
@@ -1386,15 +1391,14 @@ abstract class JTable extends JObject implements JObservableInterface
 
 	/**
 	 * Method to move a row in the ordering sequence of a group of rows defined by an SQL WHERE clause.
+	 *
 	 * Negative numbers move the row up in the sequence and positive numbers move it down.
 	 *
 	 * @param   integer  $delta  The direction and magnitude to move the row in the ordering sequence.
-	 * @param   string   $where  WHERE clause to use for limiting the selection of rows to compact the
-	 *                           ordering values.
+	 * @param   string   $where  WHERE clause to use for limiting the selection of rows to compact the ordering values.
 	 *
-	 * @return  mixed    Boolean  True on success.
+	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/move
 	 * @since   11.1
 	 * @throws  UnexpectedValueException
 	 */
@@ -1480,27 +1484,32 @@ abstract class JTable extends JObject implements JObservableInterface
 	}
 
 	/**
-	 * Method to set the publishing state for a row or list of rows in the database
-	 * table.  The method respects checked out rows by other users and will attempt
-	 * to checkin rows that it can after adjustments are made.
+	 * Method to set the publishing state for a row or list of rows in the database table.
 	 *
-	 * @param   mixed    $pks     An optional array of primary key values to update.
-	 *                            If not set the instance property value is used.
+	 * The method respects checked out rows by other users and will attempt to checkin rows that it can after adjustments are made.
+	 *
+	 * @param   mixed    $pks     An optional array of primary key values to update. If not set the instance property value is used.
 	 * @param   integer  $state   The publishing state. eg. [0 = unpublished, 1 = published]
-	 * @param   integer  $userId  The user id of the user performing the operation.
+	 * @param   integer  $userId  The user ID of the user performing the operation.
 	 *
 	 * @return  boolean  True on success; false if $pks is empty.
 	 *
-	 * @link    http://docs.joomla.org/JTable/publish
 	 * @since   11.1
 	 */
 	public function publish($pks = null, $state = 1, $userId = 0)
 	{
-		$k = $this->_tbl_keys;
+		// Sanitize input
+		$userId = (int) $userId;
+		$state  = (int) $state;
 
 		if (!is_null($pks))
 		{
-			foreach ($pks AS $key => $pk)
+			if (!is_array($pks))
+			{
+				$pks = array($pks);
+			}
+
+			foreach ($pks as $key => $pk)
 			{
 				if (!is_array($pk))
 				{
@@ -1508,9 +1517,6 @@ abstract class JTable extends JObject implements JObservableInterface
 				}
 			}
 		}
-
-		$userId = (int) $userId;
-		$state  = (int) $state;
 
 		// If there are no primary keys set check to see if the instance key is set.
 		if (empty($pks))
@@ -1521,11 +1527,13 @@ abstract class JTable extends JObject implements JObservableInterface
 			{
 				if ($this->$key)
 				{
-					$pk[$this->$key] = $this->$key;
+					$pk[$key] = $this->$key;
 				}
 				// We don't have a full primary key - return false
 				else
 				{
+					$this->setError(JText::_('JLIB_DATABASE_ERROR_NO_ROWS_SELECTED'));
+
 					return false;
 				}
 			}
@@ -1533,17 +1541,27 @@ abstract class JTable extends JObject implements JObservableInterface
 			$pks = array($pk);
 		}
 
-		foreach ($pks AS $pk)
+		$publishedField = $this->getColumnAlias('published');
+		$checkedOutField = $this->getColumnAlias('checked_out');
+
+		foreach ($pks as $pk)
 		{
 			// Update the publishing state for rows with the given primary keys.
 			$query = $this->_db->getQuery(true)
 				->update($this->_tbl)
-				->set('published = ' . (int) $state);
+				->set($this->_db->quoteName($publishedField) . ' = ' . (int) $state);
+
+			// If publishing, set published date/time if not previously set
+			if ($state && property_exists($this, 'publish_up') && (int) $this->publish_up == 0)
+			{
+				$nowDate = $this->_db->quote(JFactory::getDate()->toSql());
+				$query->set($this->_db->quoteName($this->getColumnAlias('publish_up')) . ' = ' . $nowDate);
+			}
 
 			// Determine if there is checkin support for the table.
 			if (property_exists($this, 'checked_out') || property_exists($this, 'checked_out_time'))
 			{
-				$query->where('(checked_out = 0 OR checked_out = ' . (int) $userId . ')');
+				$query->where('(' . $this->_db->quoteName($checkedOutField) . ' = 0 OR ' . $this->_db->quoteName($checkedOutField) . ' = ' . (int) $userId . ')');
 				$checkin = true;
 			}
 			else
@@ -1555,7 +1573,17 @@ abstract class JTable extends JObject implements JObservableInterface
 			$this->appendPrimaryKeys($query, $pk);
 
 			$this->_db->setQuery($query);
-			$this->_db->execute();
+
+			try
+			{
+				$this->_db->execute();
+			}
+			catch (RuntimeException $e)
+			{
+				$this->setError($e->getMessage());
+
+				return false;
+			}
 
 			// If checkin is supported and all rows were adjusted, check them in.
 			if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
@@ -1563,6 +1591,7 @@ abstract class JTable extends JObject implements JObservableInterface
 				$this->checkin($pk);
 			}
 
+			// If the JTable instance value is in the list of primary keys that were set, set the instance.
 			$ours = true;
 
 			foreach ($this->_tbl_keys AS $key)
@@ -1575,7 +1604,7 @@ abstract class JTable extends JObject implements JObservableInterface
 
 			if ($ours)
 			{
-				$this->published = $state;
+				$this->$publishedField = $state;
 			}
 		}
 
@@ -1598,6 +1627,55 @@ abstract class JTable extends JObject implements JObservableInterface
 		$this->_locked = true;
 
 		return true;
+	}
+
+	/**
+	 * Method to return the real name of a "special" column such as ordering, hits, published
+	 * etc etc. In this way you are free to follow your db naming convention and use the
+	 * built in Joomla functions.
+	 *
+	 * @param   string  $column  Name of the "special" column (ie ordering, hits)
+	 *
+	 * @return  string  The string that identify the special
+	 *
+	 * @since   3.4
+	 */
+	public function getColumnAlias($column)
+	{
+		// Get the column data if set
+		if (isset($this->_columnAlias[$column]))
+		{
+			$return = $this->_columnAlias[$column];
+		}
+		else
+		{
+			$return = $column;
+		}
+
+		// Sanitize the name
+		$return = preg_replace('#[^A-Z0-9_]#i', '', $return);
+
+		return $return;
+	}
+
+	/**
+	 * Method to register a column alias for a "special" column.
+	 *
+	 * @param   string  $column       The "special" column (ie ordering)
+	 * @param   string  $columnAlias  The real column name (ie foo_ordering)
+	 *
+	 * @return  void
+	 *
+	 * @since   3.4
+	 */
+	public function setColumnAlias($column, $columnAlias)
+	{
+		// Santize the column name alias
+		$column = strtolower($column);
+		$column = preg_replace('#[^A-Z0-9_]#i', '', $column);
+
+		// Set the column alias internally
+		$this->_columnAlias[$column] = $columnAlias;
 	}
 
 	/**

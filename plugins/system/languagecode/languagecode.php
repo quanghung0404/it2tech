@@ -3,7 +3,7 @@
  * @package     Joomla.Plugin
  * @subpackage  System.languagecode
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -12,9 +12,7 @@ defined('_JEXEC') or die;
 /**
  * Language Code plugin class.
  *
- * @package     Joomla.Plugin
- * @subpackage  Content.languagecode
- * @since       2.5
+ * @since  2.5
  */
 class PlgSystemLanguagecode extends JPlugin
 {
@@ -57,30 +55,50 @@ class PlgSystemLanguagecode extends JPlugin
 			else
 			{
 				$patterns = array();
-				$replace = array();
+				$replace  = array();
 			}
 
 			// Replace codes in <link hreflang="" /> attributes.
 			preg_match_all(chr(1) . '(<link.*\s+hreflang=")([0-9a-z\-]*)(".*\s+rel="alternate".*/>)' . chr(1) . 'i', $body, $matches);
+
 			foreach ($matches[2] as $match)
 			{
 				$new_code = $this->params->get(strtolower($match));
+
 				if ($new_code)
 				{
 					$patterns[] = chr(1) . '(<link.*\s+hreflang=")(' . $match . ')(".*\s+rel="alternate".*/>)' . chr(1) . 'i';
 					$replace[] = '${1}' . $new_code . '${3}';
 				}
 			}
+
 			preg_match_all(chr(1) . '(<link.*\s+rel="alternate".*\s+hreflang=")([0-9A-Za-z\-]*)(".*/>)' . chr(1) . 'i', $body, $matches);
+
 			foreach ($matches[2] as $match)
 			{
 				$new_code = $this->params->get(strtolower($match));
+
 				if ($new_code)
 				{
 					$patterns[] = chr(1) . '(<link.*\s+rel="alternate".*\s+hreflang=")(' . $match . ')(".*/>)' . chr(1) . 'i';
 					$replace[] = '${1}' . $new_code . '${3}';
 				}
 			}
+
+			// Replace codes in itemprop content
+			preg_match_all(chr(1) . '(<meta.*\s+itemprop="inLanguage".*\s+content=")([0-9A-Za-z\-]*)(".*/>)' . chr(1) . 'i', $body, $matches);
+
+			foreach ($matches[2] as $match)
+			{
+				$new_code = $this->params->get(strtolower($match));
+
+				if ($new_code)
+				{
+					$patterns[] = chr(1) . '(<meta.*\s+itemprop="inLanguage".*\s+content=")(' . $match . ')(".*/>)' . chr(1) . 'i';
+					$replace[] = '${1}' . $new_code . '${3}';
+				}
+			}
+
 			$app->setBody(preg_replace($patterns, $replace, $body));
 		}
 	}
@@ -89,7 +107,7 @@ class PlgSystemLanguagecode extends JPlugin
 	 * Prepare form.
 	 *
 	 * @param   JForm  $form  The form to be altered.
-	 * @param   array  $data  The associated data for the form.
+	 * @param   mixed  $data  The associated data for the form.
 	 *
 	 * @return  boolean
 	 *
@@ -101,6 +119,7 @@ class PlgSystemLanguagecode extends JPlugin
 		if (!($form instanceof JForm))
 		{
 			$this->_subject->setError('JERROR_NOT_A_FORM');
+
 			return false;
 		}
 
@@ -125,7 +144,7 @@ class PlgSystemLanguagecode extends JPlugin
 								description="PLG_SYSTEM_LANGUAGECODE_FIELDSET_DESC"
 							>
 								<field
-									name="'.strtolower($tag).'"
+									name="' . strtolower($tag) . '"
 									type="text"
 									description="' . htmlspecialchars(JText::sprintf('PLG_SYSTEM_LANGUAGECODE_FIELD_DESC', $language['name']), ENT_COMPAT, 'UTF-8') . '"
 									translate_description="false"

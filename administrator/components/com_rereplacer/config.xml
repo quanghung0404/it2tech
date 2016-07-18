@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/plugins/system/nnframework/fields">
+	<fieldset name="options" label="JOPTIONS">
+		<field name="@loadlanguage" type="nn_loadlanguage" extension="com_rereplacer" />
+		<field name="show_fields" type="radio" class="btn-group" default="0" label="RR_SHOW_SEARCH_AND_REPLACE_FIELDS"
+			   description="RR_SHOW_SEARCH_AND_REPLACE_FIELDS_DESC">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+		<field name="contact_table" type="text" default="contact_details" label="RR_CONTACT_TABLE" description="RR_CONTACT_TABLE_DESC" />
+		<field name="show_update_notification" type="radio" class="btn-group" default="1" label="NN_SHOW_UPDATE_NOTIFICATION"
+			   description="NN_SHOW_UPDATE_NOTIFICATION_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="show_copyright" type="radio" class="btn-group" default="1" label="NN_SHOW_COPYRIGHT" description="NN_SHOW_COPYRIGHT_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" class="inputbox" filter="rules" validate="rules"
+			   component="com_rereplacer" section="component" />
+	</fieldset>
+</config>

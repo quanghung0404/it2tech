@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Table
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -12,16 +12,12 @@ defined('JPATH_PLATFORM') or die;
 /**
  * Table class supporting modified pre-order tree traversal behavior.
  *
- * @package     Joomla.Platform
- * @subpackage  Table
- * @link        http://docs.joomla.org/JTableNested
- * @since       11.1
+ * @since  11.1
  */
 class JTableNested extends JTable
 {
 	/**
-	 * Object property holding the primary key of the parent node.  Provides
-	 * adjacency list data for nodes.
+	 * Object property holding the primary key of the parent node.  Provides adjacency list data for nodes.
 	 *
 	 * @var    integer
 	 * @since  11.1
@@ -37,8 +33,7 @@ class JTableNested extends JTable
 	public $level;
 
 	/**
-	 * Object property holding the left value of the node for managing its
-	 * placement in the nested sets tree.
+	 * Object property holding the left value of the node for managing its placement in the nested sets tree.
 	 *
 	 * @var    integer
 	 * @since  11.1
@@ -46,8 +41,7 @@ class JTableNested extends JTable
 	public $lft;
 
 	/**
-	 * Object property holding the right value of the node for managing its
-	 * placement in the nested sets tree.
+	 * Object property holding the right value of the node for managing its placement in the nested sets tree.
 	 *
 	 * @var    integer
 	 * @since  11.1
@@ -55,8 +49,7 @@ class JTableNested extends JTable
 	public $rgt;
 
 	/**
-	 * Object property holding the alias of this node used to constuct the
-	 * full text path, forward-slash delimited.
+	 * Object property holding the alias of this node used to constuct the full text path, forward-slash delimited.
 	 *
 	 * @var    string
 	 * @since  11.1
@@ -65,6 +58,7 @@ class JTableNested extends JTable
 
 	/**
 	 * Object property to hold the location type to use when storing the row.
+	 *
 	 * Possible values are: ['before', 'after', 'first-child', 'last-child'].
 	 *
 	 * @var    string
@@ -73,9 +67,9 @@ class JTableNested extends JTable
 	protected $_location;
 
 	/**
-	 * Object property to hold the primary key of the location reference node to
-	 * use when storing the row.  A combination of location type and reference
-	 * node describes where to store the current node in the tree.
+	 * Object property to hold the primary key of the location reference node to use when storing the row.
+	 *
+	 * A combination of location type and reference node describes where to store the current node in the tree.
 	 *
 	 * @var    integer
 	 * @since  11.1
@@ -97,6 +91,14 @@ class JTableNested extends JTable
 	 * @since  11.1
 	 */
 	protected $_debug = 0;
+
+	/**
+	 * Cache for the root ID
+	 *
+	 * @var    integer
+	 * @since  3.3
+	 */
+	protected static $root_id = 0;
 
 	/**
 	 * Sets the debug level on or off
@@ -235,7 +237,6 @@ class JTableNested extends JTable
 	 *
 	 * @return  mixed    Boolean true on success.
 	 *
-	 * @link    http://docs.joomla.org/JTable/move
 	 * @since   11.1
 	 */
 	public function move($delta, $where = '')
@@ -288,7 +289,6 @@ class JTableNested extends JTable
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTableNested/moveByReference
 	 * @since   11.1
 	 * @throws  RuntimeException on database error.
 	 */
@@ -532,7 +532,7 @@ class JTableNested extends JTable
 		if ($this->_trackAssets)
 		{
 			$name = $this->_getAssetName();
-			$asset = JTable::getInstance('Asset');
+			$asset = JTable::getInstance('Asset', 'JTable', array('dbo' => $this->getDbo()));
 
 			// Lock the table for writing.
 			if (!$asset->_lock())
@@ -551,6 +551,7 @@ class JTableNested extends JTable
 
 					return false;
 				}
+
 				$asset->_unlock();
 			}
 			else
@@ -656,9 +657,6 @@ class JTableNested extends JTable
 	 * @return  boolean  True if all checks pass.
 	 *
 	 * @since   11.1
-	 * @throws  Exception
-	 * @throws  RuntimeException on database error.
-	 * @throws  UnexpectedValueException
 	 */
 	public function check()
 	{
@@ -690,13 +688,6 @@ class JTableNested extends JTable
 
 			return false;
 		}
-		// @codeCoverageIgnoreStart
-		catch (Exception $e)
-		{
-			// Database error - rethrow.
-			throw $e;
-		}
-		// @codeCoverageIgnoreEnd
 
 		return true;
 	}
@@ -708,7 +699,6 @@ class JTableNested extends JTable
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTableNested/store
 	 * @since   11.1
 	 */
 	public function store($updateNulls = false)
@@ -900,9 +890,8 @@ class JTableNested extends JTable
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTableNested/publish
 	 * @since   11.1
-	 * @throws UnexpectedValueException
+	 * @throws  UnexpectedValueException
 	 */
 	public function publish($pks = null, $state = 1, $userId = 0)
 	{
@@ -1202,6 +1191,11 @@ class JTableNested extends JTable
 	 */
 	public function getRootId()
 	{
+		if ((int) self::$root_id > 0)
+		{
+			return self::$root_id;
+		}
+
 		// Get the root item.
 		$k = $this->_tbl_key;
 
@@ -1215,7 +1209,9 @@ class JTableNested extends JTable
 
 		if (count($result) == 1)
 		{
-			return $result[0];
+			self::$root_id = $result[0];
+
+			return self::$root_id;
 		}
 
 		// Test for a unique record with lft = 0
@@ -1228,7 +1224,9 @@ class JTableNested extends JTable
 
 		if (count($result) == 1)
 		{
-			return $result[0];
+			self::$root_id = $result[0];
+
+			return self::$root_id;
 		}
 
 		$fields = $this->getFields();
@@ -1245,12 +1243,15 @@ class JTableNested extends JTable
 
 			if (count($result) == 1)
 			{
-				return $result[0];
+				self::$root_id = $result[0];
+
+				return self::$root_id;
 			}
 		}
 
 		$e = new UnexpectedValueException(sprintf('%s::getRootId', get_class($this)));
 		$this->setError($e);
+		self::$root_id = false;
 
 		return false;
 	}
@@ -1265,7 +1266,6 @@ class JTableNested extends JTable
 	 *
 	 * @return  integer  1 + value of root rgt on success, false on failure
 	 *
-	 * @link    http://docs.joomla.org/JTableNested/rebuild
 	 * @since   11.1
 	 * @throws  RuntimeException on database error.
 	 */
@@ -1302,6 +1302,7 @@ class JTableNested extends JTable
 			{
 				$query->order('parent_id, lft');
 			}
+
 			$this->_cache['rebuild.sql'] = (string) $query;
 		}
 
@@ -1348,14 +1349,12 @@ class JTableNested extends JTable
 	}
 
 	/**
-	 * Method to rebuild the node's path field from the alias values of the
-	 * nodes from the current node to the root node of the tree.
+	 * Method to rebuild the node's path field from the alias values of the nodes from the current node to the root node of the tree.
 	 *
 	 * @param   integer  $pk  Primary key of the node for which to get the path.
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @link    http://docs.joomla.org/JTableNested/rebuildPath
 	 * @since   11.1
 	 */
 	public function rebuildPath($pk = null)
@@ -1659,8 +1658,10 @@ class JTableNested extends JTable
 			{
 				$buffer .= sprintf("\n| %4s | %4s | %4s | %4s |", $row[0], $row[1], $row[2], $row[3]);
 			}
+
 			$buffer .= $sep;
 		}
+
 		echo $buffer;
 	}
 

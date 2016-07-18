@@ -1,0 +1,425 @@
+// Pommy Ipsum
+// Source: from http://www.pommyipsum.com & http://pastebin.com/YHXr105a
+'pezzy little
+macca
+and
+squirrel
+hedgehog
+a reet bobbydazzler
+jolly good
+rivetting stuff
+down the village green
+through the dales
+the lakes
+you 'avin a laugh
+is she 'avin a laugh
+curry sauce
+gravy cheese and chips
+the chippy
+we'll be 'avin less of that
+bit of alright
+man and his whippet
+who brought loaf
+by 'eck love
+oo ecky thump
+could murder a pint
+ee bah gum
+ey up chuck
+Southeners
+Northeners
+up North
+down South
+some mothers do 'ave 'em
+doing my head in
+it's cracking flags
+drizzle
+god save the queen
+Kate and Will
+scones
+clotted cream
+good old fashioned knees up
+10 pence mix
+sweets
+slappers
+yorkshire mixture
+proper
+that's ace
+any road, best be off
+off t'shop
+off t'pub
+how's your father
+narky
+two weeks on't trot
+a week on Sunday
+nowt
+naff
+pants
+Queen Elizabeth
+corgi
+owt
+sod's law
+spend a penny
+squiffy
+wellies
+flip flops
+barmy
+it's the bees knees
+it's the dogs bollocks
+a bottle of plonk
+tosser
+damn
+give you a bell
+blimey
+gutted
+chuffed
+I could reet fancy a
+I'd reet fancy a
+they can sod off
+lost the plot
+every fortnight
+yorkshire pudding
+plum pudding
+black pudding
+Victoria sponge cake
+twiglets
+pork scratchings
+guiness
+bloody mary
+pork dripping
+cup of tea
+crumpets
+a cuppa
+fancy a cuppa
+make a brew
+stew and dumps
+shepherd's pie
+cottage pie
+brown sauce
+big light
+it's spitting
+sorted it
+have a kip
+know your onions
+a bit wonky
+a tad
+a tenner
+a fiver
+skive
+a right toff
+punter
+scouser
+Geordie
+cockney
+quid
+loo
+nicked
+nutter
+knackered
+gobsmacked
+chap
+alright duck
+bugger
+bog roll
+Bob's your uncle
+throw a spanner in the works
+absobloodylootely
+nosh
+one off
+bloody shambles
+a right corker
+the dog's dinner
+on the pull
+ever so lovely
+blummin'
+easy peasy
+see a man about a dog
+up the duff
+well fit
+ponce
+don't get your knickers in a twist
+on't goggle box
+bangers and mash
+chips
+toad in the whole
+roast beef
+beefeater
+Prince Charles
+daft cow
+completely starkers
+smeg
+smeg head
+darling
+bits 'n bobs
+anorak
+utter shambles
+ever so
+I'm off to Bedfordshire
+her Majesty's pleasure
+horses for courses
+apple and pears
+trouble and strife
+meat and two veg
+pot noodle
+marmite
+fish and chips
+a cracking
+grub's up
+ask your mother if
+chav
+pigeons in Trafalgar Square
+bowler hat
+snotty nosed brat
+mince pies
+morris dancers
+real ale
+scrumpy
+it's just not cricket
+put me soaps back on
+curtain twitching
+working class
+upper class
+middle class
+bargain Betty
+bull dog
+goggledegook
+Essex girls
+brainbox
+and thus
+baffled
+rambunctious
+double dutch
+stupendous
+flabbergasted
+ridicule
+numbskull
+accordingly
+unhand me sir
+a comely wench
+off with her head
+challenge you to a duel
+the black death
+cotton on
+knee high to a grasshopper i'll be a monkey's uncle
+gosh
+golly gosh
+for sooth
+grab a jumper
+up at the crack of dawn
+pompous
+houlligan
+oopsy-daisies
+devonshire cream tea
+jellied eels
+picalilly
+biscuits
+shortbread
+teacakes
+bread and butter pudding
+nigh
+scatterbrained
+therewith
+come hither
+lad
+lass
+doolally
+what a load of cobblers
+'ar kid
+atrocious
+dignified
+superb
+supper
+get away with ya
+farewell
+I bid you good day
+jolly
+chaps
+golly
+crisps
+getting on my wick
+marvelous
+leisurely
+indeed
+'tis
+gallivanting around
+Shakespeare
+fake tan
+black cab
+splendid
+bag egg's old boy
+stiff upper lip
+terribly
+cheerio
+full English breakast
+fried toast
+conkers
+have a bash
+you mean it ain't me noggin'
+it's me peepers
+Union Jack
+sausage roll
+Big Ben
+and we all like figgy pudding
+red telephone box
+cobbles
+driving a mini
+treacle
+spam fritters
+cornish pasty
+ey up
+on a stag do
+blighty
+absolute twoddle
+rubbish
+air one's dirty linen
+one would like
+one feels that
+one would be honoured to
+argy-bargy
+stop arsing around
+had a barney with the inlaws
+bent as a nine bob note
+on his bill
+on his tod
+cor blimey'
+bloke
+bobby
+on the beat
+bog off
+bogroll
+copped a bollocking
+at the boozer
+bottled it
+bovver boots
+bossy britches
+got a lot of brass
+ended up brown bread
+knows bugger all about nowt
+eton mess
+have a butcher's at this
+chav
+cheesed off
+chippy
+well chuffed
+ear hole
+lug hole
+clock round the earhole
+codswallop
+collywobbles
+conked him one on the nose
+copper
+pulled a right corker
+completely crackers
+bit of a div
+doing my nut in
+what a doddle
+hadn't done it in donkey's years
+done up like a kipper
+doofer
+not some sort of dosshouse
+ey up duck
+chinwag
+earwig
+pulled out the eating irons
+got his end away
+sweet fanny adams
+flog
+flog a dead horse
+fancied a flutter
+fork out
+the fuzz
+round our gaff
+have a gander
+alright geezer
+a diamond geezer
+could be a bit of a git
+gob
+gobsmacked
+flabbergasted
+because there was nothing on the gogglebox
+in the goolies
+what a load of guff
+ridiculous
+nonsense
+half-inch it
+hard cheese old boy
+old chap
+old girl
+chin up
+tally-ho
+tip-top
+rather
+jolly hockey sticks
+spiffing
+tallywhacker
+in the jacksy
+bit of a Jack the lad
+jammy git
+a total jessie
+a right royal knees up
+laughing gear
+down the local
+manky
+lost her marbles
+complete mare
+taking the mick
+a bit miffed
+muck about
+what a mug
+munta
+mush
+naff
+naff off
+narky
+it's nicked
+nose rag
+posh nosh
+numpty
+nuthouse
+football
+odds and sods
+off the hook
+the old bill
+throw a paddy
+pennyboy
+penny-dreadful
+pikey
+in a pickle
+pie-eyed
+made a pig's ear of it
+pillock
+porky-pies
+queer as a clockwork orange
+rumpy pumpy
+scally
+scarper
+scrubber
+scrote
+see a man about a dog
+slap-head
+sling one's hook
+tad
+warts and all
+whizz
+willy
+wind up
+absolute
+wedding tackle balderdash
+The Doctor
+Dalek
+Amelia Pond
+River Song
+fish fingers and custard
+Weeping Angels
+Sonic Screwdriver
+brilliant
+wibbly-wobbly timey-wimey stuff
+bow ties are cool
+Bad Wolf
+Time Lord
+Sherlock
+Doctor Who
+Dr. Watson
+Moriarty
+221B Baker Street
+Elementary my dear Watson
+The Hounds of Baskerville'
