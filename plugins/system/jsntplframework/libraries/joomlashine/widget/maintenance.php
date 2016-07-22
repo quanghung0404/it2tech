@@ -48,7 +48,6 @@ class JSNTplWidgetMaintenance extends JSNTplWidgetBase
 		$q->from('#__template_styles');
 		$q->where('template = ' . $q->quote($tpl), 'AND');
 		$q->where('id = ' . (int) $sid);
-
 		try
 		{
 			$db->setQuery($q);
@@ -56,6 +55,27 @@ class JSNTplWidgetMaintenance extends JSNTplWidgetBase
 			if ( ! ($params = $db->loadResult()))
 			{
 				throw new Exception($db->getErrorMsg());
+			}
+			
+			$joomlaVersion = new JVersion;
+			
+			if (version_compare($joomlaVersion->getShortVersion(), '3.0', '>='))
+			{
+				// Get all megamenu items
+				$query	= $db->getQuery(true);
+				$query->select('style_id, language_code, menu_type, params, created, modified');
+				$query->from('#__jsn_tplframework_megamenu');
+				$query->where('style_id = ' . (int) $sid);
+				$db->setQuery($query);
+				
+				$megamenuItems = $db->loadObjectList();
+				
+				if ($megamenuItems)
+				{
+					$params = json_decode($params);
+					$params->megamenuItems = json_encode($megamenuItems);
+					$params = json_encode($params);
+				}
 			}
 		}
 		catch (Exception $e)
@@ -107,7 +127,20 @@ class JSNTplWidgetMaintenance extends JSNTplWidgetBase
 		{
 			throw new Exception(JText::_('JSN_TPLFW_MAINTENANCE_RESTORE_PARAMS_INVALID_BACKUP'));
 		}
-
+		
+		$joomlaVersion = new JVersion;
+		if (version_compare($joomlaVersion->getShortVersion(), '3.0', '>='))
+		{
+			$datas = json_decode($params);
+			$megamenuItems = array();
+			if (isset($datas->megamenuItems))
+			{
+				$megamenuItems = json_decode($datas->megamenuItems);
+				unset($datas->megamenuItems);
+				$params = json_encode($datas);
+			}
+		}
+		
 		// Get template and style ID
 		$app = JFactory::getApplication();
 		$tpl = $app->input->getCmd('template');
@@ -130,6 +163,23 @@ class JSNTplWidgetMaintenance extends JSNTplWidgetBase
 			if ( ! call_user_func(array($db, method_exists($db, 'execute') ? 'execute' : 'query')))
 			{
 				throw new Exception($db->getErrorMsg());
+			}
+			
+			if (count($megamenuItems) && version_compare($joomlaVersion->getShortVersion(), '3.0', '>='))
+			{
+				// Delete all megamenu item by style id.
+				$query = $db->getQuery(true);
+				$conditions = array(
+					$db->quoteName('style_id') . ' = ' . (int) $sid,
+				);		
+				$query->delete($db->quoteName('#__jsn_tplframework_megamenu'));
+				$query->where($conditions);
+				$db->setQuery($query);
+				$db->execute();			
+				foreach ($megamenuItems as $megamenu)
+				{
+					$db->insertObject('#__jsn_tplframework_megamenu', $megamenu);
+				}
 			}
 		}
 		catch (Exception $e)

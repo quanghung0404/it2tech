@@ -19,7 +19,7 @@ define('JSN_PATH_TPLFRAMEWORK', dirname(__FILE__));
 define('JSN_PATH_TPLFRAMEWORK_LIBRARIES', JSN_PATH_TPLFRAMEWORK . '/libraries/joomlashine');
 
 define('JSN_TPLFRAMEWORK_ID', 'tpl_framework');
-define('JSN_TPLFRAMEWORK_VERSION', '2.1.6');
+define('JSN_TPLFRAMEWORK_VERSION', '3.1.3');
 
 define('JSN_TPLFRAMEWORK_CHECK_UPDATE_PERIOD', 86400);
 
@@ -27,3 +27,7 @@ define('JSN_TPLFRAMEWORK_CHECK_UPDATE_PERIOD', 86400);
 define('JSN_TPLFRAMEWORK_LIGHTCART_URL', 'http://www.joomlashine.com/index.php?option=com_lightcart');
 define('JSN_TPLFRAMEWORK_VERSIONING_URL', 'http://www.joomlashine.com/versioning/product_version.php');
 define('JSN_TPLFRAMEWORK_UPGRADE_DETAILS', 'http://www.joomlashine.com/versioning/product_upgrade.php');
+
+define('JSN_PATH_TPLFRAMEWORK_MEGAMENU_LIBRARIES', JSN_PATH_TPLFRAMEWORK . '/libraries/joomlashine/megamenu');
+
+define('JSN_TPLFRAMEWORK_MEGAMENU_SHORTCODES', 'jsn_tpl_mm_row|jsn_tpl_mm_column|jsn_tpl_mm_module|jsn_tpl_mm_submenu|jsn_tpl_mm_moduleposition');

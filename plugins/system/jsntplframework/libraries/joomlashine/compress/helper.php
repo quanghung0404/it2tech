@@ -53,7 +53,7 @@ abstract class JSNTplCompressHelper
 			}
 		}
 
-		if (strpos($file, '://') !== false && JURI::isInternal($file))
+		if (strpos($file, '://') !== false && self::isInternal($file))
 		{
 			$path = parse_url($file, PHP_URL_PATH);
 
@@ -141,5 +141,26 @@ abstract class JSNTplCompressHelper
 		$combine = $string . JFile::read($filename);
 
 		return JFile::write($filename, $combine);
+	}
+
+	/**
+	 * Checks if the supplied URL is internal
+	 *
+	 * @param   string  $url  The URL to check.
+	 *
+	 * @return  boolean  True if Internal.
+	 */
+	public static function isInternal($url)
+	{
+		$uri = JUri::getInstance($url);
+		$base = $uri->toString(array('scheme', 'host', 'port', 'path'));
+		$host = $uri->toString(array('scheme', 'host', 'port'));
+
+		if (stripos($base, JUri::base()) !== 0 && !empty($host))
+		{
+			return false;
+		}
+
+		return true;
 	}
 }

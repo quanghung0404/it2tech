@@ -27,6 +27,8 @@ jimport('joomla.filesystem.file');
  */
 class JSNTplUtils
 {
+	private $_device = '';
+	
 	/**
 	 * Return class instance
 	 *
@@ -40,12 +42,20 @@ class JSNTplUtils
 
 		return $instance;
 	}
+	
+	public function __construct()
+	{
+		$this->_device = $this->detectDevice();
+	}
+	
 	/**
 	 * Get and store template attributes
 	 *
 	 */
 	public function getTemplateAttributes($attrs_array, $template_prefix, $pageclass) {
 		$template_attrs = null;
+		$app = JFactory::getApplication();
+		$get = $app->input->getArray($_GET);
 		if(count($attrs_array)) {
 			foreach ($attrs_array as $attr_name => $attr_values) {
 				$t_attr = null;
@@ -61,7 +71,7 @@ class JSNTplUtils
 						}
 					}
 				}
-				if( isset( $_GET['jsn_setpreset'] ) && $_GET['jsn_setpreset'] == 'default' ) {
+				if( isset( $get['jsn_setpreset'] ) && $get['jsn_setpreset'] == 'default' ) {
 					setcookie($template_prefix.$attr_name, '', time() - 3600, '/');
 				} else {
 					// Apply template settings from cookies
@@ -70,9 +80,9 @@ class JSNTplUtils
 					}
 
 					// Apply template settings from permanent request parameters
-					if (isset($_GET['jsn_set'.$attr_name])) {
-						setcookie($template_prefix.$attr_name, trim($_GET['jsn_set'.$attr_name]), time() + 3600, '/');
-						$t_attr = trim($_GET['jsn_set'.$attr_name]);
+					if (isset($get['jsn_set'.$attr_name])) {
+						setcookie($template_prefix.$attr_name, trim($get['jsn_set'.$attr_name]), time() + 3600, '/');
+						$t_attr = trim($get['jsn_set'.$attr_name]);
 					}
 				}
 
@@ -154,28 +164,116 @@ class JSNTplUtils
 	 */
 	public function countModules($position)
 	{
-		// Get Joomla document object
-		$document = JFactory::getDocument();
-
-		if (method_exists($document, 'countModules'))
+		// Get all modules assigned to this position
+		$modules = JModuleHelper::getModules($position);
+		$numMods = count($modules);
+ 
+		// Check if user is using what device
+		if ($this->_device != '')
 		{
-			return $document->countModules($position);
+			$device = $this->_device;
 		}
+		else
+		{
+			$device = $this->detectDevice();
+		}
+		// Count modules
 
-		return 0;
+		foreach ($modules as $module)
+		{
+			$params = (object) (is_string($module->params) ? json_decode($module->params) : $module->params);
+
+			if ( ! isset($params->moduleclass_sfx))
+			{
+				continue;
+			}
+
+			if (trim((string) $params->moduleclass_sfx) != '')
+			{	
+				if ($device == "tablet")
+				{
+					if (strpos($params->moduleclass_sfx, 'display-tablet') !== false 
+						|| strpos($params->moduleclass_sfx, 'display-mobile') !== false)
+					{
+						continue;
+					}
+					elseif (strpos($params->moduleclass_sfx, 'display-desktop') !== false
+							|| strpos($params->moduleclass_sfx, 'display-smartphone') !== false)
+					{
+						$numMods--;
+					}	
+					else
+					{
+						continue;
+					}		
+				}	
+				elseif ($device == "mobile")
+				{
+					if (strpos($params->moduleclass_sfx, 'display-smartphone') !== false
+						|| strpos($params->moduleclass_sfx, 'display-mobile') !== false)
+					{
+						continue;
+					}
+					elseif (strpos($params->moduleclass_sfx, 'display-desktop') !== false
+							|| strpos($params->moduleclass_sfx, 'display-tablet') !== false)
+					{
+						$numMods--;
+					}
+					else
+					{
+						continue;
+					}		
+				}
+				elseif ($device == "computer")
+				{
+					
+					if (strpos($params->moduleclass_sfx, 'display-desktop') !== false)
+					{
+						continue;
+					}
+					elseif (strpos($params->moduleclass_sfx, 'display-desktop') === false 
+							&& strpos($params->moduleclass_sfx, 'display-smartphone') === false
+							&& strpos($params->moduleclass_sfx, 'display-tablet') === false
+							&& strpos($params->moduleclass_sfx, 'display-mobile') === false)
+					{
+						continue;
+					}
+					else
+					{
+						$numMods--;
+					}	
+				}
+				else
+				{
+					
+					continue;
+				}	
+			}
+		}
+		return $numMods;
 	}
 
 	/**
 	 * Return the number of module positions count
 	 *
+	 * @return  int
 	 */
-	public function countPositions($t, $positions) {
-		$positionCount = 0;
-		for($i=0;$i < count($positions); $i++){
-			if ($t->countModules($positions[$i])) $positionCount++;
+	public function countPositions()
+	{
+		$numPositions = 0;
+		$positions    = func_get_args();
+
+		foreach ($positions as $position)
+		{
+			if ($this->countModules($position))
+			{
+				$numPositions++;
+			}
 		}
-		return $positionCount;
+
+		return $numPositions;
 	}
+
 	/**
 	 * Get template positions
 	 *
@@ -304,13 +402,26 @@ class JSNTplUtils
 		}
 		return $newstr;
 	}
+
+	/**
+	 * Detect whether user is using a mobile device or desktop computer.
+	 *
+	 * @return  boolean
+	 */
+	public function checkMobile()
+	{
+		$usrAgent = isset($_SERVER['HTTP_USER_AGENT']) ? strtolower($_SERVER['HTTP_USER_AGENT']) : '';		
+		$mobiles  = '/midp|240x320|blackberry|netfront|nokia|panasonic|portalmmm|sharp|sie-|sonyericsson|symbian|windows ce|benq|mda|mot-|opera mini|philips|pocket pc|sagem|samsung|sda|sgh-|vodafone|xda|palm|iphone|ipod|android|ipad/';
+		return preg_match($mobiles, $usrAgent);
+	}
+
 	/**
 	 * Get mobile device
 	 *
 	 */
 	public function getMobileDevice()
 	{
-		$user_agent = $_SERVER['HTTP_USER_AGENT'];
+		$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
 
 		$mobileDeviceName = null;
 		switch( true )
@@ -508,7 +619,9 @@ class JSNTplUtils
 					"mozilla", "seamonkey", "konqueror", "netscape",
 					"gecko", "navigator", "mosaic", "lynx", "amaya",
 					"omniweb", "avant", "camino", "flock", "aol");
-		$agent = strtolower($agent ? $agent : $_SERVER['HTTP_USER_AGENT']);
+		
+		$agent = strtolower($agent ? $agent : isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '');
+		
 		foreach($known as $value)
 		{
 			if (preg_match("#($value)[/ ]?([0-9.]*)#", $agent, $matches))
@@ -518,6 +631,7 @@ class JSNTplUtils
 				break;
 			}
 		}
+		
 		return $browser;
 	}
 	/**
@@ -682,7 +796,7 @@ class JSNTplUtils
 	{
 		return $this->checkExt('com_hikashop', 'mod_hikashop');
 	}
-	
+
 	/**
 	 * Check if current page is rendered by Redshop component and/or has any Redshop module assigned to.
 	 *
@@ -692,6 +806,81 @@ class JSNTplUtils
 		return $this->checkExt('com_redshop', 'mod_redshop');
 	}
 
+	/**
+	 * Check if current page is rendered by Easysocial component and/or has any Easysocial module assigned to.
+	 *
+	 */
+	public function checkEasysocial()
+	{
+		return $this->checkExt('com_easysocial', 'mod_easysocial');
+	}
+	/**
+	 * Check if current page is rendered by Mijoshop component and/or has any Mijoshop module assigned to.
+	 *
+	 */
+	public function checkMijoshop()
+	{
+		return $this->checkExt('com_mijoshop', 'mod_mijoshop');
+	}
+	/**
+	 * Check if current page is rendered by DJ Extension component and/or has any DJ Extension module assigned to.
+	 *
+	 */
+	public function checkDJ()
+	{
+		return $this->checkExt('com_dj', 'mod_dj');
+	}
+	/**
+	 * Check if current page is rendered by Advanced Portfolio Pro component and/or has any Advanced Portfolio Pro module assigned to.
+	 *
+	 */
+	public function checkAdvportfoliopro()
+	{
+		return $this->checkExt('com_advportfoliopro', 'mod_advportfoliopro');
+	}
+	/**
+	 * Check if current page is rendered by J2Store component and/or has any J2Store module assigned to.
+	 *
+	 */
+	public function checkJ2Store()
+	{
+		return ($this->checkExt('com_content', 'mod_j2store') OR $this->checkExt('com_j2store', 'mod_jomsearch_'));
+	}
+	/**
+	 * Check if current page is rendered by VikRestaurants component and/or has any VikRestaurants module assigned to.
+	 *
+	 */
+	public function VikRestaurants()
+	{
+		return $this->checkExt('com_vikrestaurants', 'mod_vikrestaurants');
+	}
+	/**
+	 * Check if current page is rendered by jGive component and/or has any jGive module assigned.
+	 *
+	 */
+	public function checkjGive()
+	{
+		return $this->checkExt('com_jgive', 'mod_jgive');
+	}
+	
+	/**
+	 * Check if current page is rendered by PayCart component.
+	 *
+	 */
+	public function checkPayCart()
+	{
+		return $this->checkExt('com_paycart');
+	}
+
+	/**
+	 * Check if current page is rendered by JoomProfile component.
+	 *
+	 */
+	public function checkJoomProfile()
+	{
+		return $this->checkExt('com_joomprofile');
+	}
+	
 	public function getJoomlaVersion($glue = false)
 	{
 		$objVersion = new JVersion();
@@ -942,5 +1131,54 @@ class JSNTplUtils
 		}
 
 		return $frontIndexPath;
+	}
+	
+	/**
+	 * Detect device type (mobile, tablet, computer)
+	 * 
+	 * @return string
+	 */
+	public function detectDevice()
+	{
+		// Import Mobile Detect client library
+		class_exists('Mobile_Detect') OR require_once JSN_PATH_TPLFRAMEWORK . '/libraries/3rd-party/MobileDetect/Mobile_Detect.php';
+		
+		$detect = new Mobile_Detect;
+		$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'mobile') : 'computer');
+		
+		return $deviceType;
+	}
+
+	/**
+	 * Check if SH404Sef is installed or not.
+	 *
+	 * @return  boolean
+	 */
+	public function checkSH404SEF()
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->clear();
+		$query->select('COUNT(*)');
+		$query->from('#__extensions');
+		$query->where('type = ' . $db->quote('component') . ' AND element = ' . $db->quote('com_sh404sef'));
+		$db->setQuery($query);
+		return (int) $db->loadResult();
+	}
+	
+	/**
+	 * Check if Plg JSNTplBrand is installed or not
+	 * @return number
+	 */
+	public function checkPlgJSNBrand()
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->clear();
+		$query->select('enabled');
+		$query->from('#__extensions');
+		$query->where('type = ' . $db->quote('plugin') . ' AND element = ' . $db->quote('jsnbrand') . ' AND folder = ' . $db->quote('system'));
+		$db->setQuery($query);
+		return (int) $db->loadResult();		
 	}
 }

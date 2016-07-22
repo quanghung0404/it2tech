@@ -10,10 +10,13 @@
 			<field name="logoFile" type="jsnmedia" class="input-xxlarge" label="JSN_TPLFW_LOGO_FILE" description="JSN_TPLFW_LOGO_FILE_DESC" />
 
 			<field name="mobileLogo" type="jsnmedia" class="input-xxlarge" label="JSN_TPLFW_MOBILE_LOGO" description="JSN_TPLFW_MOBILE_LOGO_DESC" />
+			
+			<field name="favicon" type="jsnmedia" class="input-xxlarge" label="JSN_TPLFW_LOGO_FAVICON" description="JSN_TPLFW_LOGO_FAVICON_DESC" />
 
 			<field name="logoLink" type="text" class="input-xxlarge" label="JSN_TPLFW_LOGO_LINK" description="JSN_TPLFW_LOGO_LINK_DESC" />
 
 			<field name="logoSlogan" type="text" class="input-xxlarge" label="JSN_TPLFW_LOGO_SLOGAN" description="JSN_TPLFW_LOGO_SLOGAN_DESC" />
+			
 		</fieldset>
 
 		<fieldset name="jsn-layout" icon="icon-checkbox-partial" twoColumns="true" label="JSN_TPLFW_LAYOUT_SETTINGS">
@@ -66,7 +69,31 @@
 				</field>
 			</fieldset>
 		</fieldset>
+		
+		<fieldset name="jsn-cookie" icon="icon-shield" label="JSN_TPLFW_COOKIE_LAW" pro="true">
+		
+			<field name="cookieEnableCookieConsent" type="jsnradio" inline="yes" default="0" label="JSN_TPLFW_COOKIE_LAW_ENALBE_COOKIE_CONSENT" description="JSN_TPLFW_COOKIE_LAW_ENALBE_COOKIE_CONSENT_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="cookieBannerPlacement" type="list" label="JSN_TPLFW_COOKIE_LAW_BANNER_PLACEMENT" default="floating" description="JSN_TPLFW_COOKIE_LAW_BANNER_PLACEMENT_DESC">
+				<option value="top">JSN_TPLFW_COOKIE_LAW_BANNER_PLACEMENT_TOP</option>
+				<option value="bottom">JSN_TPLFW_COOKIE_LAW_BANNER_PLACEMENT_BOTTOM</option>
+				<option value="floating">JSN_TPLFW_COOKIE_LAW_BANNER_PLACEMENT_FLOATING</option>
+			</field>
 
+			<field name="cookieStyle" type="list" label="JSN_TPLFW_COOKIE_LAW_STYLE" default="dark" description="JSN_TPLFW_COOKIE_LAW_STYLE_DESC">
+				<option value="dark">JSN_TPLFW_COOKIE_LAW_STYLE_DARK</option>
+				<option value="light">JSN_TPLFW_COOKIE_LAW_STYLE_LIGHT</option>
+			</field>
+			
+			<field name="cookieMessage" type="textarea" rows="3" class="input-xxlarge" label="JSN_TPLFW_COOKIE_LAW_MESSAGE" hint="This website uses cookies to ensure you get the best experience on our website" description="JSN_TPLFW_COOKIE_LAW_MESSAGE_DESC" />
+			<field name="cookieDismiss" type="text" class="input-xxlarge" label="JSN_TPLFW_COOKIE_LAW_DISSMISS" hint="Got it!" description="JSN_TPLFW_COOKIE_LAW_DISSMISS_DESC" />
+			<field name="cookieLearnMore" type="text" class="input-xxlarge" label="JSN_TPLFW_COOKIE_LAW_LEARN_MORE" hint="More info" description="JSN_TPLFW_COOKIE_LAW_LEARN_MORE_DESC" />
+			<field name="cookieLink" type="text" class="input-xxlarge" label="JSN_TPLFW_COOKIE_LAW_LINK" hint="http://www.your-site-url/your-cookie-policy-link" description="JSN_TPLFW_COOKIE_LAW_LINK_DESC" />
+																		
+		</fieldset>
 		<fieldset name="jsn-style" icon="icon-wand" twoColumns="true" label="JSN_TPLFW_COLOR_STYLE_SETTINGS" pro="true">
 			<fieldset name="jsn-style-general" column="left" label="JSN_TPLFW_SECTION_COLOR">
 				<field name="templateColor" type="list" label="JSN_TPLFW_STYLE_TEMPLATE_COLOR" description="JSN_TPLFW_STYLE_TEMPLATE_COLOR_DESC">
@@ -94,11 +121,27 @@
 				<field name="mainMenuWidth" type="jsntext" dataType="number" default="200" suffix="px" class="input-mini" label="JSN_TPLFW_MENU_MAINMENU_WIDTH" description="JSN_TPLFW_MENU_MAINMENU_WIDTH_DESC" validate="positive-number" />
 
 				<field name="sideMenuWidth" type="jsntext" dataType="number" default="200" suffix="px" class="input-mini" label="JSN_TPLFW_MENU_SIDEMENU_WIDTH" description="JSN_TPLFW_MENU_SIDEMENU_WIDTH_DESC" validate="positive-number" />
-
+				
 				<field name="menuSticky" type="jsncheckbox" label="JSN_TPLFW_ENABLE_STICKY_MENU" description="JSN_TPLFW_ENABLE_STICKY_MENU_DESC">
 					<option value="mobile" default="checked">JSN_TPLFW_ENABLE_STICKY_MENU_ON_MOBILE</option>
 					<option value="desktop">JSN_TPLFW_ENABLE_STICKY_MENU_ON_DESKTOP</option>
 				</field>
+				
+				<field name="mobileMenuEffect" type="jsnmobilemenueffect" size="5" default="default" label="JSN_TPLFW_MOBILE_MENU_EFFECT" description="JSN_TPLFW_MOBILE_MENU_EFFECT_DESC">
+					<option value="default">JSN_TPLFW_MOBILE_MENU_EFFECT_DEFAULT</option>
+					<option value="push-left">JSN_TPLFW_MOBILE_MENU_EFFECT_PUSH_LEFT</option>
+					<option value="push-right">JSN_TPLFW_MOBILE_MENU_EFFECT_PUSH_RIGHT</option>
+					<option value="slide-left">JSN_TPLFW_MOBILE_MENU_EFFECT_SLIDE_LEFT</option>
+					<option value="slide-right">JSN_TPLFW_MOBILE_MENU_EFFECT_SLIDE_RIGHT</option>
+				</field>
+
+				<field name="mobileMenuIconType" type="jsnmobilemenuicontype" default="icon" label="JSN_TPLFW_MOBILE_MENU_ICON_TYPE" description="JSN_TPLFW_MOBILE_MENU_ICON_TYPE_DESC">
+					<option value="icon">JSN_TPLFW_MOBILE_MENU_OPTION_ICON</option>
+					<option value="text">JSN_TPLFW_MOBILE_MENU_OPTION_TEXT</option>
+				</field>
+				
+				<field name="mobileMenuIconTypeText" type="text" class="input-large" label="JSN_TPLFW_MOBILE_MENU_TEXT" description="JSN_TPLFW_MOBILE_MENU_TEXT_DESC" />
+				
 			</fieldset>
 
 			<fieldset name="jsn-site-tools" column="right" label="JSN_TPLFW_SECTION_SITETOOLS">
@@ -150,7 +193,9 @@
 					<option name="yahoo" placeholder="ymsgr:sendim?your_user_name" value="">JSN_TPLFW_SOCIAL_NETWORK_INTEGRATION_YAHOO</option>
 					<option name="skype" placeholder="skype:your_user_name?call" value="">JSN_TPLFW_SOCIAL_NETWORK_INTEGRATION_SKYPE</option>
 					<option name="rss" placeholder="http://your_joomla_site_url/index.php?format=feed&amp;type=rss" value="">JSN_TPLFW_SOCIAL_NETWORK_INTEGRATION_RSS</option>
+					<option name="instagram" placeholder="http://instagram.com/your_user_name" value="">JSN_TPLFW_SOCIAL_NETWORK_INTEGRATION_INSTAGRAM</option>
 				</field>
+				<field name="metaTag" type="textarea" rows="5" class="jsn-input-xlarge-fluid" label="JSN_TPLFW_SEO_META_TAG_OUTPUT" description="JSN_TPLFW_SEO_META_TAG_OUTPUT_DESC" />
 			</fieldset>
 
 			<fieldset name="jsn-compression" column="left" label="JSN_TPLFW_SECTION_COMPRESSION">
@@ -182,12 +227,30 @@
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
-
+				 
 				<field name="scriptMovement" default="0" type="jsnradio" inline="yes" label="JSN_TPLFW_SYSTEM_SCRIPT_MOVEMENT" description="JSN_TPLFW_SYSTEM_SCRIPT_MOVEMENT_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
 			</fieldset>
 		</fieldset>
+		<fieldset name="jsn-megamenu" icon="icon-tree" label="JSN_TPLFW_MEGAMENU" pro="true" joomlaVersion="3.0">
+			<field name="enableMegamenu" default="0" type="jsnradio" inline="yes" label="JSN_TPLFW_ENABLE_MEGAMENU" description="JSN_TPLFW_ENABLE_MEGAMENU_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="showMegamenuItemDescription" default="1" type="jsnradio" inline="yes" label="JSN_TPLFW_MEGAMENU_SHOW_MENU_ITEM_DESCRIPTION" description="JSN_TPLFW_MEGAMENU_SHOW_MENU_ITEM_DESCRIPTION_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="showMegamenuItemIcon" default="1" type="jsnradio" inline="yes" label="JSN_TPLFW_MEGAMENU_SHOW_MENU_ITEM_ICON" description="JSN_TPLFW_MEGAMENU_SHOW_MENU_ITEM_ICON_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>			
+			<field name="language" type="jsnlanguage" label="JSN_TPLFW_MEGAMENU_LANGUAGE" description="JSN_TPLFW_MEGAMENU_LANGUAGE_DESC" />					
+			<field name="menuType" type="jsnmegamenutype" label="JSN_TPLFW_MEGAMENU_MENU" description="JSN_TPLFW_MEGAMENU_MENU_DESC" />
+			
+			<field name="megaMenu" type="jsnmegamenu" label="" description="" />
+		</fieldset>			
 	</fields>
 </form>

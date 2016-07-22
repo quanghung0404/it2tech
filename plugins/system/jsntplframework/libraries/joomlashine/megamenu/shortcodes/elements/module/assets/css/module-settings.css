@@ -1,0 +1,83 @@
+/**
+ * @version     $Id$
+ * @package     JSNExtension
+ * @subpackage  JSNTPLFramework
+ * @author      JoomlaShine Team <support@joomlashine.com>
+ * @copyright   Copyright (C) 2015 JoomlaShine.com. All Rights Reserved.
+ * @license     GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Websites: http://www.joomlashine.com
+ * Technical Support:  Feedback - http://www.joomlashine.com/contact-us/get-support.html
+ */
+ 
+#jsn-tpl-mm-element-module-content div.jsn-item-type {
+	
+	float: left;
+    height: 90px;
+    padding: 10px;
+    min-width: 270px;
+    width: 23% !important;
+}
+
+#jsn-tpl-mm-element-module-content div.jsn-item-type div.jsn-tpl-mm-element-module-item-btn {
+    height: 65px;
+    padding: 12px;
+    width: 94.7%;
+    background: #fff;
+    border-color: #ccc;
+    text-align: left !important;
+}
+#jsn-tpl-mm-element-module-content div.jsn-item-type div.jsn-tpl-mm-element-module-item-btn span {
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 14px;
+    color: #333333;
+}
+#jsn-tpl-mm-element-module-content div.jsn-item-type div.jsn-tpl-mm-element-module-item-btn p {
+    height: 65px;
+    text-align: left !important;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+}
+
+#jsn-tpl-mm-element-module-content {
+	display: inline-block;
+	width: 100%;
+}
+
+.jsn-tpl-mm-element-module-load-more {
+	/*display: block;
+	overflow-y: scroll;
+	height: 380px; */
+	width: 98%;
+}
+#jsn-tpl-mm-element-module-content div.jsn-tpl-mm-element-module-item div.jsn-tpl-mm-element-module-item-btn:hover,
+#jsn-tpl-mm-element-module-content div.jsn-tpl-mm-element-module-item div.jsn-tpl-mm-element-module-item-btn:active {
+	background-color: #ebebeb;
+    border-color: #adadad;
+}
+#jsn-tpl-mm-element-module-content div.jsn-item-type div.jsn-tpl-mm-element-module-item-btn.active {
+	background-color: #ebebeb;
+    border-color: #adadad;
+}
+#jsn-mm-element-module .jsn-tpl-mm-element-module-title,
+#jsn-tpl-mm-element-module-name { 
+	margin-left: 10px;
+}
+#jsn-tpl-mm-element-module-input-search {
+	margin-right: 5px;
+	float: right;
+}
+#jsn-tpl-mm-element-module-btn-group-container {
+	float: right;
+	margin-right: 32px;
+}
+#jsn-tpl-mm-element-module-btn-group-container .jsn-tpl-mm-element-module-btn-reset {
+	float: right;
+}
+#jsn-tpl-mm-element-module-content div.no-module {
+	margin: 10px auto;
+	width: 50%;
+	text-align: center;
+}

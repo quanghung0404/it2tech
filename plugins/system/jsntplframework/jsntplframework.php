@@ -52,6 +52,7 @@ class PlgSystemJSNTPLFramework extends JPlugin
 	 *
 	 * @return  void
 	 */
+
 	public function onAfterInitialise ()
 	{
 		$app = JFactory::getApplication();
@@ -64,8 +65,8 @@ class PlgSystemJSNTPLFramework extends JPlugin
 			// Register extension uninstall process hook
 			$app->registerEvent('onExtensionAfterUninstall', 'PlgSystemJSNTPLFramework');
 
-			// Stop system execution if a widget action is dispatched
-			if (JSNTplWidget::dispatch() === true)
+			// Stop system execution if a widget action is dispatched, and Fix conflict with MijoAnalytics component
+			if ($app->input->getCmd('option') != 'com_mijoanalytics' && JSNTplWidget::dispatch() === true)
 			{
 				exit();
 			}
@@ -128,7 +129,19 @@ class PlgSystemJSNTPLFramework extends JPlugin
 			}
 
 			// Store template framework parameters
+			
 			self::$_tplfwParams = & $this->params;
+			
+			// Check remove Orphan megamenu Item
+			if ($this->option == 'com_templates' && ((string) $this->view == '' || (string) $this->view == 'styles'))
+			{
+				$JVersion = new JVersion;
+				
+				if (version_compare($JVersion->getShortVersion(), '3.0', '>='))
+				{
+					JSNTplHelper::deleteOrphanMegamenuItems();
+				}					
+			}
 		}
 	}
 
@@ -143,6 +156,10 @@ class PlgSystemJSNTPLFramework extends JPlugin
 
 		if ($app->isSite() AND JSNTplTemplateRecognization::detect())
 		{
+			//Load JSNTPLFramework Class
+			include_once dirname(__FILE__) . '/includes/core/jsntplframework.php';
+			JSNTPLFramework::initial();
+
 			// Check if 'System - Cache' plugin is enabled
 			if (JPluginHelper::isEnabled('system', 'cache'))
 			{
@@ -225,6 +242,32 @@ class PlgSystemJSNTPLFramework extends JPlugin
 	}
 
 	/**
+	 * Handle onAfterDispatch event to load template override.
+	 *
+	 * @return  void
+	 */
+	public function onAfterDispatch()
+	{
+		$app = JFactory::getApplication();
+		$doc = JFactory::getDocument();
+
+		if ($app->isSite() AND $doc->getType() == 'html' AND JSNTplTemplateRecognization::detect())
+		{
+			if ($app->input->getInt('jsntpl_position', 0) && $app->input->getInt('tp', 0))
+			{
+				$config 	= JFactory::getConfig();
+				$secret 	= $config->get('secret');
+
+				if (md5($secret) == $app->input->getCmd('secret_key', ''))
+				{
+					JSNTplTemplatePositionrender::renderEmptyComponent();
+					JSNTplTemplatePositionrender::renderEmptyModule();
+				}
+			}
+		}
+	}
+
+	/**
 	 * Implement onBeforeRender event to register all needed asset files
 	 *
 	 * @return  void
@@ -235,100 +278,30 @@ class PlgSystemJSNTPLFramework extends JPlugin
 		{
 			self::$_templateAdmin->registerAssets();
 		}
-	}
 
-	/**
-	 * Render template admin UI
-	 *
-	 * @return  void
-	 */
-	public static function onAfterRender ()
-	{
-		// Make sure our event handler is the last one executed
-		if ( ! defined('JSN_TPLFW_LAST_EXECUTION'))
-		{
-			return;
-		}
-
-		// Get Joomla application object
 		$app = JFactory::getApplication();
 
-		if ($app->isAdmin())
+		if ($app->isSite() && JSNTplTemplateRecognization::detect())
 		{
-			// Alter body tag
-			$html = JResponse::getBody();
+			//Add meta tag
+			self::addMetaTag();
 
-			if (preg_match('/<body[^>]*>/i', $html, $match) AND strpos($match[0], 'jsn-master tmpl-' . $app->getTemplate()) === false)
-			{
-				if (strpos($match[0], 'class=') === false)
-				{
-					$match[1] = substr($match[0], 0, -1) . ' class=" jsn-master tmpl-' . $app->getTemplate() . ' ">';
-				}
-				else
-				{
-					$match[1] = str_replace('class="', 'class=" jsn-master tmpl-' . $app->getTemplate() . ' ', $match[0]);
-				}
-
-				$html = str_replace($match[0], $match[1], $html);
-			}
-
-			JResponse::setBody($html);
-
-			// Initialize template admin
-			if (isset(self::$_templateAdmin) AND self::$_templateAdmin instanceOf JSNTplTemplateAdmin)
-			{
-				self::$_templateAdmin->render();
-
-				// Clean-up Chosen calls if running on Joomla 3.1
-				$JVersion = new JVersion;
-
-				if (version_compare($JVersion->getShortVersion(), '3.1', '>='))
-				{
-					$html = JResponse::getBody();
-
-					if (preg_match('#[\r\n][\s\t]+<link rel="stylesheet" href="[^"]*/media/jui/css/chosen\.css" type="text/css" />#', $html, $match))
-					{
-						$html = str_replace($match[0], '', $html);
-					}
-
-					if (preg_match('#[\r\n][\s\t]+<script src="[^"]*/media/jui/js/chosen\.jquery\.min\.js" type="text/javascript"></script>#', $html, $match))
-					{
-						$html = str_replace($match[0], '', $html);
-					}
-
-					if (preg_match('#[\r\n][\s\t]+jQuery\(document\)\.ready\(function \(\)\{[\r\n][\s\t]+jQuery\(\'select\'\)\.chosen\(\{[^\}]+\}\);[\r\n][\s\t]+\}\);#', $html, $match))
-					{
-						$html = str_replace($match[0], '', $html);
-					}
-
-					JResponse::setBody($html);
-				}
-
-				// Clean-up HTML5 fall-back script if running on Joomla 3.2
-				if (version_compare($JVersion->getShortVersion(), '3.2', '>='))
-				{
-					$html = JResponse::getBody();
-
-					if (preg_match('#[\r\n][\s\t]+<script src="[^"]*/media/system/js/html5fallback(-uncompressed)?\.js" type="text/javascript"></script>#', $html, $match))
-					{
-						$html = str_replace($match[0], '', $html);
-					}
-
-					JResponse::setBody($html);
-				}
-			}
-
-			// Execute update checker
-			self::checkUpdate();
+			//Load cookie law
+			JSNTplTemplateCookielaw::loadCookie();
 		}
-		elseif (JSNTplTemplateRecognization::detect())
-		{
-			$document	= JFactory::getDocument();
-			$config		= JFactory::getConfig();
-			$html = JResponse::getBody();
 
-			// Optimize script tags position
-			self::moveScriptTags($html);
+
+	}
+
+	public function onBeforeCompileHead()
+	{
+
+		$app 		= JFactory::getApplication();
+		$config  	= JFactory::getConfig();
+
+		if ($app->isSite() && JSNTplTemplateRecognization::detect())
+		{
+			$document = JFactory::getDocument();
 
 			if (isset($document->helper) && $document->helper instanceOf JSNTplTemplateHelper && $document->compression > 0)
 			{
@@ -347,18 +320,175 @@ class PlgSystemJSNTPLFramework extends JPlugin
 					// Start compress CSS
 					if ($document->compression == 1 OR $document->compression == 2)
 					{
-						$html = preg_replace_callback('/(<link([^>]+)rel=["|\']stylesheet["|\']([^>]*)>\s*)+/i', array('JSNTplCompressCss', 'compress'), $html);
+						$styleSheets = array();
+
+						$compressedStyleSheets = JSNTplCompressCss::compress($document->_styleSheets);
+
+						foreach ($compressedStyleSheets as $compressedStyleSheet)
+						{
+							$stylesheets[$compressedStyleSheet['file']] = array(
+									'mime' => 'text/css',
+									'media' => ($compressedStyleSheet['media'] == '' ? NULL : $compressedStyleSheet['media']),
+									'attribs' => array()
+							);
+						}
+
+						$document->_styleSheets = $stylesheets;
 					}
 
 					// Start compress JS
-					if ($document->compression == 1 OR $document->compression == 3)
+ 					if ($document->compression == 1 OR $document->compression == 3)
+ 					{
+ 						$scripts = array();
+ 						$compressedScripts = JSNTplCompressJs::compress($document->_scripts);
+
+ 						foreach ($compressedScripts as $compressedScript)
+ 						{
+ 							$scripts[$compressedScript] = array(
+ 									'mime' => 'text/javascript',
+									'defer' => false,
+									'async' => false
+ 							);
+ 						}
+
+ 						$document->_scripts = $scripts;
+ 					}
+
+				}
+			}
+		}
+	}
+	/**
+	 * Render template admin UI
+	 *
+	 * @return  void
+	 */
+	public static function onAfterRender ()
+	{
+		// Make sure our event handler is the last one executed
+		if ( ! defined('JSN_TPLFW_LAST_EXECUTION'))
+		{
+			return;
+		}
+
+		// Get Joomla application object
+		$app = JFactory::getApplication();
+
+		// Detect method to use for getting and setting response body
+		if (version_compare(JVERSION, '3.2.0', 'ge'))
+		{
+			$get = array($app, 'getBody');
+			$set = array($app, 'setBody');
+		}
+		else
+		{
+			$get = array('JResponse', 'getBody');
+			$set = array('JResponse', 'setBody');
+		}
+
+		if ($app->isAdmin())
+		{
+			// Alter body tag
+			$html = call_user_func($get);
+
+			if (preg_match('/<body[^>]*>/i', $html, $match) AND strpos($match[0], 'jsn-master tmpl-' . $app->getTemplate()) === false)
+			{
+				if (strpos($match[0], 'class=') === false)
+				{
+					$match[1] = substr($match[0], 0, -1) . ' class=" jsn-master tmpl-' . $app->getTemplate() . ' ">';
+				}
+				else
+				{
+					$match[1] = str_replace('class="', 'class=" jsn-master tmpl-' . $app->getTemplate() . ' ', $match[0]);
+				}
+
+				$html = str_replace($match[0], $match[1], $html);
+			}
+
+			call_user_func($set, $html);
+
+			// Initialize template admin
+			if (isset(self::$_templateAdmin) AND self::$_templateAdmin instanceOf JSNTplTemplateAdmin)
+			{
+				self::$_templateAdmin->render();
+
+				// Clean-up Chosen calls if running on Joomla 3.1
+				$JVersion = new JVersion;
+
+				if (version_compare($JVersion->getShortVersion(), '3.1', '>='))
+				{
+					$html = call_user_func($get);
+
+					if (preg_match('#[\r\n][\s\t]+<link rel="stylesheet" href="[^"]*/media/jui/css/chosen\.css" type="text/css" />#', $html, $match))
 					{
-						$html = preg_replace_callback('/(<script([^>]+)src=["|\']([^"|\']+)["|\']([^>]*)>\s*<\/script>\s*)+/i', array('JSNTplCompressJs', 'compress'), $html);
+						$html = str_replace($match[0], '', $html);
 					}
+
+					if (preg_match('#[\r\n][\s\t]+<script src="[^"]*/media/jui/js/chosen\.jquery\.min\.js" type="text/javascript"></script>#', $html, $match))
+					{
+						$html = str_replace($match[0], '', $html);
+					}
+
+					if (preg_match('#[\r\n][\s\t]+jQuery\(document\)\.ready\(function \(\)\{[\r\n][\s\t]+jQuery\(\'select\'\)\.chosen\(\{[^\}]+\}\);[\r\n][\s\t]+\}\);#', $html, $match))
+					{
+						$html = str_replace($match[0], '', $html);
+					}
+
+					call_user_func($set, $html);
+				}
+
+				// Clean-up HTML5 fall-back script if running on Joomla 3.2
+				if (version_compare($JVersion->getShortVersion(), '3.2', '>='))
+				{
+					$html = call_user_func($get);
+
+					if (preg_match('#[\r\n][\s\t]+<script src="[^"]*/media/system/js/html5fallback(-uncompressed)?\.js" type="text/javascript"></script>#', $html, $match))
+					{
+						$html = str_replace($match[0], '', $html);
+					}
+
+					call_user_func($set, $html);
 				}
 			}
 
-			JResponse::setBody($html);
+			// Execute update checker
+			self::checkUpdate();
+		}
+		elseif (JSNTplTemplateRecognization::detect())
+		{
+			//replace Favicon
+			if ($app->isSite())
+			{
+				self::replaceFavicon();
+			}
+
+			$document = JFactory::getDocument();
+			$config   = JFactory::getConfig();
+			$html     = call_user_func($get);
+
+			// Optimize script tags position
+			self::moveScriptTags($html);
+
+			// Fix compatibility with K2 editor's extra fields
+			if ($app->input->getCmd('option') == 'com_k2' && $app->input->getCmd('view') == 'item' && $app->input->getCmd('task') == 'edit')
+			{
+				$html = str_replace(
+					'</body>',
+					'<script type="text/javascript">(function($) { $(document).ready(function() { $("select#catid").trigger("change"); }); })(jQuery);</script></body>',
+					$html
+				);
+			}
+
+			// Fix compatibility with MailChimp's mc-validate.js script
+			if (preg_match('#<script\s.*src="[^"]+/downloads.mailchimp.com/js/mc-validate.js"></script>#', $html, $match)) {
+				$replace = '<script type="text/javascript">!window.jQuery || (window.JSNTPLFW_jQuery_backup = window.jQuery);</script>'
+					. $match[0]
+					. '<script type="text/javascript">!window.JSNTPLFW_jQuery_backup || (window.jQuery = window.JSNTPLFW_jQuery_backup); delete window.JSNTPLFW_jQuery_backup;</script>';
+
+				$html = str_replace($match[0], $replace, $html);
+			}
+
+			call_user_func($set, $html);
 		}
 	}
 
@@ -372,17 +502,18 @@ class PlgSystemJSNTPLFramework extends JPlugin
 	 */
 	public function onExtensionAfterSave ($task, $data)
 	{
-		$app = JFactory::getApplication();
-
+		$app  = JFactory::getApplication();
+		$post = $app->input->get('jsn', '', 'RAW');
+		
 		if ($task != 'com_templates.style')
 		{
 			return;
 		}
 
 		// Get options for JoomlaShine template
-		$options = isset($_POST['jsn']) ? $_POST['jsn'] : array();
+		$options = isset($post) ? $post : array();
 
-		if (@count($options))
+		if ($options != '' && @count($options))
 		{
 			// Auto strip slashes if magic_quote_gpc is on
 			if (get_magic_quotes_runtime() OR get_magic_quotes_gpc())
@@ -399,7 +530,7 @@ class PlgSystemJSNTPLFramework extends JPlugin
 			// Check if compression parameters have been changed
 			if
 			(
-				$app->getUserState('jsn.template.maxCompressionSize') != $data->params['maxCompressionSize']
+				@$app->getUserState('jsn.template.maxCompressionSize') != $data->params['maxCompressionSize']
 				OR
 				$app->getUserState('jsn.template.cacheDirectory') != $data->params['cacheDirectory']
 			)
@@ -429,6 +560,17 @@ class PlgSystemJSNTPLFramework extends JPlugin
 					JFile::delete(JPATH_ROOT . "/templates/{$data->template}/css/styles/custom.css");
 				}
 			}
+
+			if ($data->params != '' && is_array(json_decode($data->params, true)));
+			{
+				$tmpParams = json_decode($data->params, true);
+
+				if (isset($tmpParams['megamenu']))
+				{
+					$options ['megamenu'] = $tmpParams['megamenu'];
+				}
+			}
+
 
 			// Store template style params
 			$data->params = json_encode($options);
@@ -761,6 +903,175 @@ class PlgSystemJSNTPLFramework extends JPlugin
 
 		// Restore request variable
 		JFactory::getApplication()->input->set('template', $backup);
+	}
+
+	/**
+	 * Implement event onJSNTPLRenderModule to include the module chrome provide by JSN TemplateFrameWork
+	 *
+	 * @param   object  &$module  A module object.
+	 * @param   array   $attribs  An array of attributes for the module
+	 *
+	 * @return  void
+	 */
+	public function onJSNTPLRenderModule(&$module, $attribs)
+	{
+		static $module_chrome_loaded;
+
+		if ( ! isset( $module_chrome_loaded ) )
+		{
+			// Get application
+			$app = JFactory::getApplication();
+
+			if ($app->isSite() && JSNTplTemplateRecognization::detect())
+			{
+				// Load module chrome
+				$path = JSN_PATH_TPLFRAMEWORK . '/html/modules.php';
+
+				if (@file_exists($path))
+				{
+					// Read module chrome function name from definition file
+					if (preg_match_all('/function\s+(modChrome_[a-z0-9_]+)/i', file_get_contents($path), $matches, PREG_SET_ORDER))
+					{
+						$module_chrome_loaded = false;
+
+						// Make sure module chrome is loaded only 1 time
+						foreach ($matches as $match)
+						{
+							if (function_exists($match[1]))
+							{
+								$module_chrome_loaded = true;
+
+								break;
+							}
+						}
+
+						// Include module chrome definition file
+						if ( ! $module_chrome_loaded)
+						{
+							include_once $path;
+						}
+					}
+				}
+			}
+
+			$module_chrome_loaded = true;
+		}
+	}
+
+	/**
+	 * Implement event onJSNTPLGetModuleLayoutPath to return the layout which override by JSN TemplateFrameWork
+	 *
+	 * @param   string $module  The name of the module
+	 * @param   string $layout  The name of the module layout.
+	 *
+	 * @return  $path on true/false
+	 */
+	public function onJSNTPLGetModuleLayoutPath($module, $layout)
+	{
+		$app = JFactory::getApplication();
+		if ($app->isSite() && JSNTplTemplateRecognization::detect())
+		{
+			$JSNTPLfPath = JSN_PATH_TPLFRAMEWORK . '/html/' . $module . '/' . $layout . '.php';
+			if (@file_exists($JSNTPLfPath))
+			{
+				return $JSNTPLfPath;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Method to add a meta tag into <head> tag.
+	 *
+	 * @return  void
+	 */
+	public static function addMetaTag()
+	{
+		$document = JFactory::getDocument();
+
+		// Only site pages that are html docs
+		if ($document->getType() !== 'html') return false;
+
+		// Prepare template parameters
+		$templateParams = isset($document->params) ? $document->params : null;
+
+		if (empty($templateParams))
+		{
+			$templateParams = JFactory::getApplication()->getTemplate(true);
+			$templateParams = $templateParams->params;
+		}
+
+		$metaTag = (string) $templateParams->get('metaTag');
+
+		if (!empty($metaTag))
+		{
+			$document->setMetaData('generator', $metaTag);
+		}
+
+	}
+
+	/**
+	 * Method to replace favicon.
+	 *
+	 * @return  void
+	 */
+	public static function replaceFavicon()
+	{
+		$document = JFactory::getDocument();
+
+		// Only site pages that are html docs
+		if ($document->getType() !== 'html') return false;
+
+		// Prepare template parameters
+		$templateParams = isset($document->params) ? $document->params : null;
+
+		if (empty($templateParams))
+		{
+			$templateParams = JFactory::getApplication()->getTemplate(true);
+			$templateParams = $templateParams->params;
+		}
+
+		$favicon = (string) $templateParams->get('favicon');
+
+		if (!empty($favicon))
+		{
+			$app 	= JFactory::getApplication();
+
+			// Detect method to use for getting and setting response body
+			if (version_compare(JVERSION, '3.2.0', 'ge'))
+			{
+				$get = array($app, 'getBody');
+				$set = array($app, 'setBody');
+			}
+			else
+			{
+				$get = array('JResponse', 'getBody');
+				$set = array('JResponse', 'setBody');
+			}
+
+			$buffer = call_user_func($get);
+
+			$favicon = JURI::root(true) . '/' . $favicon;
+
+			$link = '<link href="' . $favicon . '" rel="shortcut icon" type="image/vnd.microsoft.icon" />';
+
+			//preg_match('#(<link href="[^"]+" rel="shortcut icon" type="image/vnd.microsoft.icon" />)#i', $buffer, $matches);
+
+			preg_match('/<link href=.* rel="shortcut icon" type=.*\/>/', $buffer, $matches);
+
+			if (count($matches))
+			{
+ 				$buffer = str_replace($matches[0], $link, $buffer);
+ 				call_user_func($set, $buffer);
+			}
+			else
+			{
+				$buffer = str_replace("</head>","\t$link\n</head>", $buffer);
+				call_user_func($set, $buffer);
+			}
+		}
+
 	}
 }
 

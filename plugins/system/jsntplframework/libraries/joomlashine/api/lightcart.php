@@ -31,7 +31,7 @@ abstract class JSNTplApiLightcart
 	 *
 	 * @return  array
 	 */
-	public static function getProductDetails ($category, $id)
+	public static function getProductDetails($category, $id)
 	{
 		try
 		{
@@ -46,21 +46,25 @@ abstract class JSNTplApiLightcart
 		$responseContent	= trim($response['body']);
 		$responseObject		= json_decode($responseContent);
 
-		if ($responseObject == null) {
+		if ($responseObject == null)
+		{
 			throw new Exception($responseContent);
 		}
 
 		$productDetails = null;
 
 		// Loop to each item to find product details
-		foreach ($responseObject->items as $item) {
-			if ($item->identified_name == $id) {
+		foreach ($responseObject->items as $item)
+		{
+			if ( isset( $item->identified_name ) && $item->identified_name == $id )
+			{
 				$productDetails = $item;
 				break;
 			}
 		}
 
-		if (empty($productDetails)) {
+		if (empty($productDetails))
+		{
 			throw new Exception(JText::_('JSN_TPLFW_INVALID_PRODUCT_ID'));
 		}
 
@@ -76,31 +80,29 @@ abstract class JSNTplApiLightcart
 	 *
 	 * @return  array
 	 */
-	public static function getOrderedEditions ($id, $username, $password)
+	public static function getOrderedEditions($id, $username, $password)
 	{
-		$joomlaVersion = JSNTplHelper::getJoomlaVersion();
+		$joomlaVersion = JSNTplHelper::getJoomlaVersion(2);
 
 		// Send request to joomlashine server to checking customer information
-		$options = array(
-			'RequestMethod' => 'POST',
-
-			'PostValues' => array(
-				'controller'		=> 'remoteconnectauthentication',
-				'task'				=> 'authenticate',
-				'tmpl'				=> 'component',
-				'identified_name'	=> $id,
-				'joomla_version'	=> $joomlaVersion,
-				'username'			=> $username,
-				'password'			=> $password,
-				'upgrade'			=> 'no',
-				'custom'			=> '1',
-				'language'			=> JFactory::getLanguage()->getTag()
-			)
+		$query = array(
+			'controller=remoteconnectauthentication',
+			'task=authenticate',
+			'tmpl=component',
+			'identified_name=' . $id,
+			'joomla_version=' . $joomlaVersion,
+			'username=' . urlencode($username),
+			'password=' . urlencode($password),
+			'upgrade=no',
+			'custom=1',
+			'language=' . JFactory::getLanguage()->getTag()
 		);
+
+		$link = JSN_TPLFRAMEWORK_LIGHTCART_URL . '&' . implode('&', $query);
 
 		try
 		{
-			$response = JSNTplHttpRequest::get(JSN_TPLFRAMEWORK_LIGHTCART_URL, '', true, $options);
+			$response = JSNTplHttpRequest::get($link, '', true);
 		}
 		catch (Exception $e)
 		{
@@ -111,7 +113,8 @@ abstract class JSNTplApiLightcart
 		$responseContent	= trim($response['body']);
 		$responseObject		= json_decode($responseContent);
 
-		if ($responseObject === null) {
+		if ($responseObject === null)
+		{
 			throw new Exception($responseContent);
 		}
 
@@ -126,37 +129,40 @@ abstract class JSNTplApiLightcart
 	 * @param   string  $edition   Product edition to download
 	 * @param   string  $username  Customer username
 	 * @param   string  $password  Customer password
+	 * @param   string  $savePath  Path to save downloaded package
 	 *
 	 * @return  string
 	 */
-	public static function downloadPackage ($id, $edition = null, $username = null, $password = null, $savePath = null)
+	public static function downloadPackage($id, $edition = null, $username = null, $password = null, $savePath = null)
 	{
 		$joomlaVersion = JSNTplHelper::getJoomlaVersion(2);
 
 		// Send request to joomlashine server to checking customer information
-		$postData = array(
-			'controller'		=> 'remoteconnectauthentication',
-			'task'				=> 'authenticate',
-			'tmpl'				=> 'component',
-			'identified_name'	=> $id,
-			'joomla_version'	=> $joomlaVersion,
-			'upgrade'			=> 'yes',
-			'custom'			=> '1',
-			'language'			=> JFactory::getLanguage()->getTag()
+		$query = array(
+			'controller=remoteconnectauthentication',
+			'task=authenticate',
+			'tmpl=component',
+			'identified_name=' . $id,
+			'joomla_version=' . $joomlaVersion,
+			'upgrade=yes',
+			'custom=1',
+			'language=' . JFactory::getLanguage()->getTag()
 		);
 
-		if (!empty($edition)) {
-			$postData['edition'] = $edition;
+		if (!empty($edition))
+		{
+			$query[] = 'edition=' . $edition;
 		}
 
-		if (!empty($username) && !empty($password)) {
-			$postData['username'] = $username;
-			$postData['password'] = $password;
+		if (!empty($username) && !empty($password))
+		{
+			$query[] = 'username=' . urlencode($username);
+			$query[] = 'password=' . urlencode($password);
 		}
 
 		$config			= JFactory::getConfig();
 		$tmpPath		= empty($savePath) && !is_dir($savePath) ? $config->get('tmp_path') : $savePath;
-		$downloadUrl	= JSN_TPLFRAMEWORK_LIGHTCART_URL . '&' . http_build_query($postData, null, '&');
+		$downloadUrl	= JSN_TPLFRAMEWORK_LIGHTCART_URL . '&' . implode('&', $query);
 		$filePath		= $tmpPath . '/jsn-' . $id . '.zip';
 
 		try

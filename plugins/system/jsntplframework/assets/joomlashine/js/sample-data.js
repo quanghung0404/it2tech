@@ -189,7 +189,7 @@
 		 */
 		function loadInstallScreen ()
 		{
-			$.getJSON('index.php?widget=sample&action=install&template=' + self.params.template, function (response) {
+			$.getJSON('index.php?widget=sample&action=install&template=' + self.params.template + '&' + self.params.token + '=1', function (response) {
 				self.panel.html(response.data);
 
 				var	btnInstall = self.panel.find('#btn-confirm-install'),
@@ -209,7 +209,7 @@
 				self.inProgress(downloadStatusEl);
 
 				// Send request to download sample data package
-				$.getJSON('index.php?widget=sample&action=download-package&template=' + self.params.template, function (packageResponse) {
+				$.getJSON('index.php?widget=sample&action=download-package&template=' + self.params.template + '&' + self.params.token + '=1', function (packageResponse) {
 					// Unset in progress state
 					self.inProgress(downloadStatusEl, true);
 
@@ -273,7 +273,7 @@
 			// Set loading state
 			self.panel.addClass('jsn-loading');
 
-			$.getJSON('index.php?widget=sample&action=confirm&template=' + self.params.template, function (response) {
+			$.getJSON('index.php?widget=sample&action=confirm&template=' + self.params.template + '&' + self.params.token + '=1', function (response) {
 				self.panel.html(response.data);
 				self.panel.removeClass('jsn-loading');
 
@@ -335,7 +335,7 @@
 			// Set in progress state
 			self.inProgress(statusEl);
 
-			$.getJSON('index.php?widget=sample&action=install-data&template=' + self.params.template + '&styleId=' + self.params.styleId, function (response) {
+			$.getJSON('index.php?widget=sample&action=install-data&template=' + self.params.template + '&styleId=' + self.params.styleId + '&' + self.params.token + '=1', function (response) {
 				// Unset in progress state
 				self.inProgress(statusEl, true);
 
@@ -369,18 +369,50 @@
 
 				if (response.data != null && response.data.attention !== undefined && response.data.attention.length > 0) {
 					var	attentionEl = self.panel.find('#jsn-attention'),
-						attentionListEl = attentionEl.find('ul'),
-						dummyEl = self.panel.find('#jsn-attension-dummy');
+						attentionListEl = attentionEl.find('ul').not('.warning-msg'),
+						dummyEl = self.panel.find('#jsn-attention-dummy'),
+						warningEl = self.panel.find('.jsn-attention-warning');
 
 					attentionEl.removeClass('hide');
 
 					$(response.data.attention).each(function (index, info) {
-						var	el = dummyEl.clone();
+						
+						if (info.supported !== undefined)
+						{					
+							warningEl.find('ul.warning-msg').append('<li>' + info.message + '</li>');
+							warningEl.removeClass('hide');
+						}
+						else
+						{
+							var	el = dummyEl.clone();
 
-						el.find('strong').text(info.name);
-						el.find('a').attr('href', info.url);
-						el.attr('id', 'jsn-' + info.id).removeClass('hide');
-						el.appendTo(attentionListEl);
+							if (info.message) {
+								var title = el.find('strong').clone(), link = el.find('a').clone();
+
+								el.html(' - ' + info.message).prepend(title).append(link);
+							}
+
+							if (info.url) {
+								el.find('a').attr('href', info.url);
+							} else {
+								el.find('a').remove();
+							}
+
+							if (info.missing) {
+								el.append('<ul><li>' + info.missing.join('</li><li>') + '</li></ul>')
+							}
+
+							el.find('strong').text(info.name);
+							if (info.version && info.version != '')
+							{
+								el.find('span').text(info.version);
+							}
+							
+							attentionEl.find('.jsn-attention-error').removeClass('hide');
+							el.attr('id', 'jsn-' + info.id).removeClass('hide');
+							el.appendTo(attentionListEl);
+						}
+						
 					});
 				}
 
@@ -406,7 +438,7 @@
 
 			// Error occured, show error message and Finish button
 			installDataEl.addClass('jsn-error');
-			statusEl.text(response.data).addClass('alert alert-error');
+			statusEl.html(response.data).addClass('alert alert-error');
 
 			// Show toolbar
 			self.panel.find('.jsn-toolbar').removeClass('hide');
@@ -462,7 +494,7 @@
 						.removeClass('hide')
 						.addClass('jsn-loading');
 
-					manualInstallForm.attr('action', 'index.php?widget=sample&action=upload-install&template=' + self.params.template + '&styleId=' + self.params.styleId);
+					manualInstallForm.attr('action', 'index.php?widget=sample&action=upload-install&template=' + self.params.template + '&styleId=' + self.params.styleId + '&' + self.params.token + '=1');
 					manualInstallForm.submit();
 
 					self.panel.dialog('option', 'buttons', {});
@@ -496,44 +528,56 @@
 			// Set in progress state
 			self.inProgress(extensionEl.find('span.jsn-status'));
 
-			$.getJSON('index.php?widget=sample&action=install-extension&id=' + extensionId + '&template=' + self.params.template + '&tool_redirect=0', function (response) {
-				// Unset in progress state
-				self.inProgress(extensionEl.find('span.jsn-status'), true);
+			$.ajax({
+				url: 'index.php?widget=sample&action=install-extension&id=' + extensionId + '&template=' + self.params.template + '&tool_redirect=0' + '&' + self.params.token + '=1',
+				complete: function (response) {
+					// Parse response data
+					var _response;
 
-				extensionEl.removeClass('jsn-loading').addClass('jsn-' + response.type);
+					if (_response = response.responseText.match(/\{"type":[^,]+,"data":[^\}]+\}/)) {
+						response = $.parseJSON(_response[0]);
+					} else {
+						response = {type: 'error', data: response.responseText};
+					}
 
-				if (response.type == 'error') {
-					var
-					extensionStatusEl = extensionEl.find('> .jsn-status'),
-					extensionContainerEl = extensionStatusEl.closest('ul');
+					// Unset in progress state
+					self.inProgress(extensionEl.find('span.jsn-status'), true);
 
-					extensionStatusEl
-						.addClass('alert')
-						.text(response.data);
+					extensionEl.removeClass('jsn-loading').addClass('jsn-' + response.type);
 
-					// Current extension is root element
-					if (extensionContainerEl.attr('id') == 'jsn-root-extensions') {
+					if (response.type == 'error') {
 						var
-						childExtensionsEl = extensionStatusEl.closest('li').find('li.jsn-pending');
-						markSkipped(childExtensionsEl);
+						extensionStatusEl = extensionEl.find('> .jsn-status'),
+						extensionContainerEl = extensionStatusEl.closest('ul');
+
+						extensionStatusEl
+							.addClass('alert')
+							.text(response.data);
+
+						// Current extension is root element
+						if (extensionContainerEl.attr('id') == 'jsn-root-extensions') {
+							var
+							childExtensionsEl = extensionStatusEl.closest('li').find('li.jsn-pending');
+							markSkipped(childExtensionsEl);
+						}
+						else {
+							var
+							parentExtensionEl = extensionContainerEl.closest('li');
+							markSkipped(parentExtensionEl.find('li.jsn-pending'));
+						}
+
+						removeErrorExtension(extensionEl);
+						return;
+					}
+
+					var
+					nextExtension = self.panel.find('#jsn-list-extensions li.jsn-pending:eq(0)');
+					if (nextExtension.size() > 0) {
+						installExtensions();
 					}
 					else {
-						var
-						parentExtensionEl = extensionContainerEl.closest('li');
-						markSkipped(parentExtensionEl.find('li.jsn-pending'));
+						installSampleData();
 					}
-
-					removeErrorExtension(extensionEl);
-					return;
-				}
-
-				var
-				nextExtension = self.panel.find('#jsn-list-extensions li.jsn-pending:eq(0)');
-				if (nextExtension.size() > 0) {
-					installExtensions();
-				}
-				else {
-					installSampleData();
 				}
 			});
 		};
@@ -565,7 +609,7 @@
 				.addClass('jsn-failed');
 
 			// Make a request to clean up install failed extension data
-			$.getJSON('index.php?widget=sample&action=clean-up&id=' + id + '&template=' + self.params.template, function (response) {
+			$.getJSON('index.php?widget=sample&action=clean-up&id=' + id + '&template=' + self.params.template + '&' + self.params.token + '=1', function (response) {
 				cleanUpEl
 					.removeClass('jsn-loading')
 					.addClass('jsn-success');

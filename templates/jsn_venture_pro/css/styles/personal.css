@@ -1,0 +1,51 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+body {
+	font-family: Georgia, "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 90%;
+}
+#jsn-menu ul.menu-mainmenu > li > a span.jsn-menutitle,
+#jsn-gotoplink,
+.page-header,
+.subheading-category,
+.componentheading,
+.contentheading,
+#jsn-menu .jsn-modulecontainer[class*="display-"] h3.jsn-moduletitle,
+div.jsn-modulecontainer ul.menu-mainmenu > li > a > span:before {
+	font-family: 'Pacifico', sans-serif;
+}
+#jsn-menu .jsn-modulecontainer[class*="display-"] h3.jsn-moduletitle {
+	text-transform: capitalize;
+}
+body.jsn-textstyle-personal .jsn-moduletitle,
+body.jsn-textstyle-personal ul.menu-mainmenu > li > a {
+	font-weight: normal;
+	text-transform: none;
+}
+div.jsn-modulecontainer ul.menu-mainmenu.menu-richmenu li a span.jsn-menudescription {
+	font-size: 0.8em;
+}
+#jsn-menu .jsn-modulecontainer[class*="display-"][class*="icon-"].richmenu.iconmenu h3.jsn-moduletitle {
+	padding-bottom: 28px;
+}
+body.jsn-textstyle-personal .contentheading,
+body.jsn-textstyle-personal .componentheading,
+body.jsn-textstyle-personal .subheading {
+	text-transform: none;
+}
+body.jsn-textstyle-personal div.jsn-modulecontainer ul.menu-mainmenu > li > a > span:before {
+	font-size: 0.8em;
+}
+body.jsn-textstyle-personal div.jsn-modulecontainer ul.menu-mainmenu > li > a > span:before,
+body.jsn-textstyle-personal div.jsn-modulecontainer ul.menu-mainmenu > li > a > span {
+	line-height: 1.5em;
+	height: 1.5em;
+}
+body.jsn-textstyle-personal div.jsn-modulecontainer ul.menu-mainmenu li > a > span {
+    line-height: 20px;
+}

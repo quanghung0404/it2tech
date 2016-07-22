@@ -97,17 +97,18 @@ class JSNTplTemplateAdmin
 	protected $templateEdition;
 
 	/**
-	 * Retrieve initialized instance of template
-	 * admin object
+	 * Retrieve initialized instance of template admin object
 	 *
-	 * @param   JForm    $context  Current context of template admin
+	 * @param   JForm  $context  Current context of template admin.
 	 *
 	 * @return  JSNTplTemplateAdmin
 	 */
 	public static function getInstance (JForm $context)
 	{
 		if (self::$_instance == null || !(self::$_instance instanceOf JSNTplTemplateAdmin))
+		{
 			self::$_instance = new JSNTplTemplateAdmin($context);
+		}
 
 		return self::$_instance;
 	}
@@ -119,35 +120,54 @@ class JSNTplTemplateAdmin
 	 */
 	public function registerAssets ()
 	{
-		// Specified asset files for joomla 2.5
+		// Load required asset files for Joomla 2.5
 		if (version_compare($this->version->getShortVersion(), '3.0', '<'))
 		{
-			$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/bootstrap/css/bootstrap.min.css');
 			$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery/jquery-1.8.2.js');
+
+			$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/bootstrap/css/bootstrap.min.css');
 			$this->doc->addScript($this->baseAssetUrl . '/3rd-party/bootstrap/js/bootstrap.min.js');
 		}
-		// Manual load jQuery on Joomla 3.2
+
+		// Load required asset files for Joomla from 3.2
 		elseif (version_compare($this->version->getShortVersion(), '3.2', '>='))
 		{
 			$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery/jquery-1.8.2.js');
+
+			$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/bootstrap/css/bootstrap.min.css');
+			$this->doc->addScript($this->baseAssetUrl . '/3rd-party/bootstrap/js/bootstrap.min.js');
 		}
 
-		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/jquery-ui/css/ui-bootstrap/jquery-ui-1.9.0.custom.css');
+		//$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/jquery-ui/css/ui-bootstrap/jquery-ui-1.9.0.custom.css');
+		//$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-ui/js/jquery-ui-1.9.1.custom.min.js');
+		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/jquery-ui/css/ui-bootstrap-1.10.0/jquery-ui-1.10.0.custom.css');
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-ui/js/jquery-ui-1.10.4.custom.min.js');
+
 		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/jquery-dynatree/skin/ui.dynatree.css');
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-dynatree/jquery.dynatree.min.js');
+
 		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/jquery-tipsy/tipsy.css');
-		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/font-icomoon/css/icomoon.css');
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-tipsy/jquery.tipsy.js');
+
 		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/chosen/chosen.min.css');
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/chosen/chosen.jquery.min.js');
+
+		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/bxslider/jquery.bxslider.css');
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/bxslider/jquery.bxslider.min.js');
+
+		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/colorbox/colorbox.css');
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/colorbox/jquery.colorbox-min.js');
+
+		$this->doc->addStyleSheet($this->baseAssetUrl . '/3rd-party/font-icomoon/css/icomoon.css');
+
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-layout/jquery.layout.min.js');
+		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-ck/jquery.ck.js');
 
 		$this->doc->addStyleSheet($this->baseAssetUrl . '/joomlashine/css/jsn-gui.css');
 		$this->doc->addStyleSheet($this->baseAssetUrl . '/joomlashine/css/jsn-admin.css');
 		$this->doc->addStyleSheet($this->baseAssetUrl . '/joomlashine/css/jsn-fonticomoon.css');
 
-		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-ui/js/jquery-ui-1.9.1.custom.min.js');
-		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-dynatree/jquery.dynatree.min.js');
-		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-layout/jquery.layout.min.js');
-		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-ck/jquery.ck.js');
-		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/jquery-tipsy/jquery.tipsy.js');
-		$this->doc->addScript($this->baseAssetUrl . '/3rd-party/chosen/chosen.jquery.min.js');
+
 
 		$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/media.js');
 		$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/sample-data.js');
@@ -161,12 +181,28 @@ class JSNTplTemplateAdmin
 		$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/social-integration.js');
 		$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/validate.js');
 		$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/width-type.js');
+		$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/modal.js');
 
 		$templateEdition = JSNTplHelper::getTemplateEdition($this->data->template);
-		$templateName = JText::_($this->data->template);
+		$jversion = new JVersion();
 
-		$this->doc->addScriptDeclaration("
-			!function ($) {
+		if (version_compare($jversion->getShortVersion(), "3.0", ">="))
+		{
+			$this->doc->addStyleSheet($this->baseAssetUrl . '/joomlashine/css/jsn-megamenu-backend.css');
+			$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/megamenu/handle-settings.js');
+			$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/megamenu/handle.js');
+			$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/megamenu/layout.js');
+			$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/megamenu/megamenu.js');
+			$this->doc->addScript($this->baseAssetUrl . '/joomlashine/js/megamenu/placeholder.js');
+		}
+
+
+
+		$templateName = JText::_($this->data->template);
+		$token = JSession::getFormToken();
+
+		$this->doc->addScriptDeclaration(
+			"!function ($) {
 				\"use strict\";
 
 				$(function () {
@@ -174,11 +210,12 @@ class JSNTplTemplateAdmin
 						template: '{$this->data->template}',
 						templateName: '{$templateName}',
 						edition: '{$templateEdition}',
-						styleId : '{$this->data->id}'
+						styleId : '{$this->data->id}',
+						token: '{$token}'
 					});
 				});
-			}(jQuery);
-		");
+			}(jQuery);"
+		);
 	}
 
 	/**
@@ -203,8 +240,10 @@ class JSNTplTemplateAdmin
 			$this->adminForm->setValue($key, 'jsn', $value);
 		}
 
-		// Store current compression parameters
+		// Get Joomla application object
 		$app = JFactory::getApplication();
+
+		// Store current compression parameters
 		$app->setUserState('jsn.template.maxCompressionSize',	$params['maxCompressionSize']);
 		$app->setUserState('jsn.template.cacheDirectory',		$params['cacheDirectory']);
 
@@ -213,15 +252,36 @@ class JSNTplTemplateAdmin
 		include JSN_PATH_TPLFRAMEWORK_LIBRARIES . '/template/tmpl/default.php';
 		$body = ob_get_clean();
 
+		// Detect method to use for getting and setting response body
+		if (version_compare(JVERSION, '3.2.0', 'ge'))
+		{
+			$get = array($app, 'getBody');
+			$set = array($app, 'setBody');
+		}
+		else
+		{
+			$get = array('JResponse', 'getBody');
+			$set = array('JResponse', 'setBody');
+		}
+
 		// Parse current response body
-		list($head, $tmp) = preg_split('/<form[^>]+name="adminForm"[^>]*>/', JResponse::getBody(), 2);
+		list($head, $tmp) = preg_split('/<form[^>]+name="adminForm"[^>]*>/', call_user_func($get), 2);
 		list($tmp, $foot) = explode('</form>', $tmp, 2);
 
 		// Replace current response body
-		JResponse::setBody($head . $body . $foot);
+		call_user_func($set, $head . $body . $foot);
 	}
 
-	private function _addNodes ($nodes, $parentNode, $context)
+	/**
+	 * Add nodes to SimpleXMLElement object.
+	 *
+	 * @param   SimpleXMLElement  $nodes       Nodes to add.
+	 * @param   SimpleXMLElement  $parentNode  Parent node to add nodes to.
+	 * @param   array             $context     Nodes context.
+	 *
+	 * @return  void
+	 */
+	private function _addNodes($nodes, $parentNode, $context)
 	{
 		foreach ($nodes as $node)
 		{
@@ -229,36 +289,47 @@ class JSNTplTemplateAdmin
 			$nodeName = (string) $node['name'];
 			$nodeText = trim((string) $node);
 
-			if (isset($context['remove'][$nodeName])) {
+			if (isset($context['remove'][$nodeName]))
+			{
 				continue;
 			}
 
-			if ($nodeType == 'field' && isset($context['replace'][$nodeName])) {
+			if ($nodeType == 'field' && isset($context['replace'][$nodeName]))
+			{
 				$newNode = $parentNode->addChild($nodeType, trim((string) $context['replace'][$nodeName]));
-				foreach ($context['replace'][$nodeName]->attributes() as $key => $value) {
+
+				foreach ($context['replace'][$nodeName]->attributes() as $key => $value)
+				{
 					$newNode->addAttribute($key, $value);
 				}
 
 				$this->_addNodes($context['replace'][$nodeName]->children(), $newNode, $context);
+
 				continue;
 			}
 
 			$newNode = $parentNode->addChild($nodeType, $nodeText);
-			foreach ($node->attributes() as $key => $value) {
+
+			foreach ($node->attributes() as $key => $value)
+			{
 				$newNode->addAttribute($key, $value);
 			}
 
-			if (isset($context['replace'][$nodeName])) {
+			if (isset($context['replace'][$nodeName]))
+			{
 				$this->_addNodes($context['replace'][$nodeName]->children(), $newNode, $context);
 			}
-			elseif (isset($context['prepend'][$nodeName])) {
+			elseif (isset($context['prepend'][$nodeName]))
+			{
 				$this->_addNodes($context['prepend'][$nodeName]->children(), $newNode, $context);
 				$this->_addNodes($node->children(), $newNode, $context);
 			}
-			else {
+			else
+			{
 				$this->_addNodes($node->children(), $newNode, $context);
 
-				if (isset($context['append'][$nodeName])) {
+				if (isset($context['append'][$nodeName]))
+				{
 					$this->_addNodes($context['append'][$nodeName]->children(), $newNode, $context);
 				}
 			}
@@ -369,37 +440,48 @@ class JSNTplTemplateAdmin
 	/**
 	 * Constructor for template admin
 	 *
-	 * @param   JForm    $context  Current context of template admin
+	 * @param   JForm  $context  Current context of template admin.
 	 */
-	private function __construct (JForm $context)
+	private function __construct(JForm $context)
 	{
-		$request				= JFactory::getApplication()->input;
-		$templateModel			= class_exists('JModelLegacy') ? JModelLegacy::getInstance('Style', 'TemplatesModel') : JModel::getInstance('Style', 'TemplatesModel');
-		$this->baseUrl			= JUri::root(true);
-		$this->baseAssetUrl		= $this->baseUrl . '/plugins/system/jsntplframework/assets';
-		$this->context			= $context;
-		$this->data				= $templateModel->getItem($request->getInt('id'));
-		$this->version			= new JVersion();
-		$this->doc				= JFactory::getDocument();
-		$this->helper			= JSNTplTemplateHelper::getInstance($this->data->template);
-		$this->templateXml		= JSNTplHelper::getManifest($this->data->template);
+		if (class_exists('JModelLegacy'))
+		{
+			$templateModel = JModelLegacy::getInstance('Style', 'TemplatesModel');
+		}
+		else
+		{
+			$templateModel = JModel::getInstance('Style', 'TemplatesModel');
+		}
+
+		$request            = JFactory::getApplication()->input;
+		$this->baseUrl      = JUri::root(true);
+		$this->baseAssetUrl = $this->baseUrl . '/plugins/system/jsntplframework/assets';
+		$this->context      = $context;
+		$this->data         = $templateModel->getItem($request->getInt('id'));
+		$this->version      = new JVersion;
+		$this->doc          = JFactory::getDocument();
+		$this->helper       = JSNTplTemplateHelper::getInstance($this->data->template);
+		$this->templateXml  = JSNTplHelper::getManifest($this->data->template);
 
 		// Retrieve template form instance
-		$this->templateForm		= JForm::getInstance('com_templates.style', 'style', array('control' => 'jform', 'load_data' => true));
-		$this->templateEdition	= JSNTplTemplateEdition::getInstance($this->data);
+		$this->templateForm    = JForm::getInstance('com_templates.style', 'style', array('control' => 'jform', 'load_data' => true));
+		$this->templateEdition = JSNTplTemplateEdition::getInstance($this->data);
 
 		// Load cache engine
-		$this->cache			= JFactory::getCache('plg_system_jsntplframework');
+		$this->cache = JFactory::getCache('plg_system_jsntplframework');
 
+		// Load language
 		$language = JFactory::getLanguage();
+
 		$language->load('tpl_' . $this->data->template, JPATH_ROOT);
 	}
 
 	/**
 	 * Disable object cloneable for template admin
 	 *
-	 * @return void
+	 * @return  void
 	 */
-	private function __clone ()
-	{}
+	private function __clone()
+	{
+	}
 }

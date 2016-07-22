@@ -32,6 +32,7 @@ class JSNTplTemplateHelper
 		'logoLink'		=> 'index.php',
 		'logoSlogan'	=> '',
 		'logoColored'	=> false,
+		'favicon'		=> '',
 
 		// Layout settings
 		'templateWidth'		=> array('type' => 'fixed', 'fixed' => 960, 'float' => 90, 'responsive' => array('mobile', 'wide')),
@@ -52,6 +53,7 @@ class JSNTplTemplateHelper
 		'menuSticky'			=> array('mobile' => true, 'desktop' => false),
 		'sitetoolStyle'			=> 'menu',
 		'sitetoolsColors'		=> '{"list":["blue","red","green","violet","orange","grey"],"colors":["blue","red","green","violet","orange","grey"]}',
+		'mobileMenuEffect' 		=> '',
 
 		// SEO & System settings
 		'gotoTop'				=> true,
@@ -66,7 +68,28 @@ class JSNTplTemplateHelper
 		'compressionExclude'	=> '',
 		'cacheDirectory'		=> 'cache/',
 		'useSqueezeBox'			=> false,
-		'scriptMovement'		=> false
+		'scriptMovement'		=> false,
+		'metaTag'	=> '',
+
+		//Cookie Law
+		'cookieEnableCookieConsent' => 0,
+		'cookieBannerPlacement' 	=> 'floating',
+		'cookieStyle' 				=> 'dark',
+		'cookieMessage' 			=> '',
+		'cookieDismiss' 			=> '',
+		'cookieLearnMore' 			=> '',
+		'cookieLink' 				=> '',
+
+		//Megamenu
+		'enableMegamenu'				=> 0,
+		'showMegamenuItemDescription' 	=> 1,
+		'showMegamenuItemIcon' 			=> 1,
+		'menuType'						=> '',
+		'megamenu'						=> '',
+
+		//Mobile menu Icon Type
+		'mobileMenuIconType' => 'icon',
+		'mobileMenuIconTypeText' => '',
 	);
 
 	private $_overrideAttributes = array(
@@ -222,23 +245,16 @@ class JSNTplTemplateHelper
 	}
 
 	/**
-	 * Calculate the number of modules in positions
+	 * Calculate the number of modules in positions.
 	 *
-	 * @param   array  $positions  Positions to get number of modules
 	 * @return  int
 	 */
-	public function countPositions ()
+	public function countPositions()
 	{
-		$this->_document	= JFactory::getDocument();
-		$positionCount		= 0;
+		$utils = JSNTplUtils::getInstance();
+		$args  = func_get_args();
 
-		foreach (func_get_args() as $position) {
-			if ($this->_document->countModules($position)) {
-				$positionCount++;
-			}
-		}
-
-		return $positionCount;
+		return call_user_func_array(array($utils, 'countPositions'), $args);
 	}
 
 	/**
@@ -460,6 +476,8 @@ class JSNTplTemplateHelper
 		// Process column width
 		if (strcasecmp(get_class($this->_document), 'JDocumentHTML') == 0)
 		{
+			$utils = JSNTplUtils::getInstance();
+
 			foreach (array('promoColumns', 'mainColumns', 'contentColumns', 'userColumns') AS $row)
 			{
 				$visible = count($params[$row]);
@@ -472,9 +490,9 @@ class JSNTplTemplateHelper
 					$realId = preg_replace('/^\d+:/', '', $id);
 
 					// Detect the visibility of this column
-					if ( ! in_array($realId, array('content', 'component')) AND ! $this->_document->countModules($realId))
+					if ( ! in_array($realId, array('content', 'component')) AND ! $utils->countModules($realId))
 					{
-						$visible -= 1;
+						$visible--;
 						$spacing += intval(str_replace('span', '', $class));
 						$columns[$id] = 0;
 					}
@@ -669,7 +687,33 @@ class JSNTplTemplateHelper
 		$params['socialIcons'] = $socialIcons;
 
 		// Backward compatible: set templateStyle parameter as it still be used in component output only template file
-		$params['templateStyle'] = $params['fontStyle']['style'];
+		if(isset($params['fontStyle']['style']))
+		{
+			$params['templateStyle'] = $params['fontStyle']['style'];
+		}
+		else
+		{
+			$params['templateStyle'] = $params['fontStyle'];
+		}
+
+		// Prepare custom font value
+		if (isset($params['fontStyle']['custom']))
+		{
+			foreach ($params['fontStyle']['custom'] as $section => $values)
+			{
+				// Prepare custom font family value
+				if (isset($values['family']))
+				{
+					$params['fontStyle']['custom'][$section]['family'] = str_replace("\'", "'", $values['family']);
+				}
+
+				// Prepare custom secondary font value
+				if (isset($values['secondary']))
+				{
+					$params['fontStyle']['custom'][$section]['secondary'] = str_replace("\'", "'", $values['secondary']);
+				}
+			}
+		}
 
 		// Binding parameters to document object
 		$this->_document->params = new JRegistry();
@@ -703,7 +747,14 @@ class JSNTplTemplateHelper
 		// Generate body class
 		$bodyClass = array();
 
-		$bodyClass[] = "jsn-textstyle-{$this->_document->fontStyle['style']}";
+		if (isset($this->_document->fontStyle['style']))
+		{
+			$bodyClass[] = "jsn-textstyle-{$this->_document->fontStyle['style']}";
+		}
+		else
+		{
+			$bodyClass[] = "jsn-textstyle-{$this->_document->fontStyle}";
+		}
 		$bodyClass[] = "jsn-color-{$this->_document->templateColor}";
 		$bodyClass[] = "jsn-direction-{$this->_document->direction}";
 
@@ -869,11 +920,20 @@ class JSNTplTemplateHelper
 			// Load customization styles
 			$this->_document->addStylesheet($this->_document->templateUrl . '/css/colors/' . $this->_document->templateColor . '.css');
 
-			if (is_readable(JPATH_ROOT . '/templates/' . basename($this->_document->templateUrl) . '/css/styles/' . $this->_document->fontStyle['style'] . '.css'))
+			if (isset($this->_document->fontStyle['style']))
 			{
-				$this->_document->addStylesheet($this->_document->templateUrl . '/css/styles/' . $this->_document->fontStyle['style'] . '.css');
+				if (is_readable(JPATH_ROOT . '/templates/' . basename($this->_document->templateUrl) . '/css/styles/' . $this->_document->fontStyle['style'] . '.css'))
+				{
+					$this->_document->addStylesheet($this->_document->templateUrl . '/css/styles/' . $this->_document->fontStyle['style'] . '.css');
+				}
 			}
-
+			else
+			{
+				if (is_readable(JPATH_ROOT . '/templates/' . basename($this->_document->templateUrl) . '/css/styles/' . $this->_document->fontStyle . '.css'))
+				{
+					$this->_document->addStylesheet($this->_document->templateUrl . '/css/styles/' . $this->_document->fontStyle . '.css');
+				}
+			}
 			// Auto icon link stylesheet
 			if ($this->_document->autoIconLink)
 			{
@@ -889,19 +949,13 @@ class JSNTplTemplateHelper
 			// Enable mobile support
 			if ($this->_document->mobileSupport)
 			{
-				$this->_document->addCustomTag('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />');
+				$this->_document->addCustomTag('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />');
 			}
 
 			// IE7 Specific stylesheet
 			if ($this->_document->isIE7)
 			{
 				$this->_document->addStylesheet($this->_document->rootUrl . '/css/jsn_fixie7.css');
-			}
-
-			// Squeezebox stylesheet
-			if ($this->_document->useSqueezeBox)
-			{
-				$this->_document->addStylesheet($this->_document->rootUrl . '/media/system/css/modal.css');
 			}
 
 			// Process template width
@@ -973,12 +1027,6 @@ class JSNTplTemplateHelper
 			$this->_document->addScript($this->_document->rootUrl . '/plugins/system/jsntplframework/assets/joomlashine/js/utils.js');
 			$this->_document->addScript($this->_document->templateUrl . '/js/jsn_template.js');
 
-			// Load javascript file for squeezebox
-			if ($this->_document->useSqueezeBox)
-			{
-				$this->_document->addScript($this->_document->rootUrl . '/media/system/js/modal.js');
-			}
-
 			// Custom template JS declarations
 			$mobileEnabled = 0;
 			$enabledLayout = '[]';
@@ -1001,6 +1049,8 @@ class JSNTplTemplateHelper
 				? ($this->_document->menuSticky['desktop'] ? 1 : 0)
 				: 0;
 
+			$mobileMenuEffect = $this->_document->mobileMenuEffect;
+
 			$this->_document->addScriptDeclaration('
 				JSNTemplate.initTemplate({
 					templatePrefix			: "' . $this->_document->template . '_",
@@ -1010,22 +1060,21 @@ class JSNTplTemplateHelper
 					enableMobile			: ' . ((isset($this->_document->mobileView) AND ! $this->_document->mobileView) ? 0 : $mobileEnabled) . ',
 					enableMobileMenuSticky	: ' . $enableMobileMenuSticky .',
 					enableDesktopMenuSticky	: ' . $enableDesktopMenuSticky .',
-					responsiveLayout		: ' . $enabledLayout . '
+					responsiveLayout		: ' . $enabledLayout . ',
+					mobileMenuEffect		: "' . $mobileMenuEffect . '"
 				});
 			');
 
-			// load Squeezebox
-			if ($this->_document->useSqueezeBox)
+			// Always add class `jsn-desktop-on-mobile` to document body for free template
+			if (strcasecmp($this->_template->edition, 'FREE') == 0)
 			{
 				$this->_document->addScriptDeclaration('
-					window.addEvent("domready", function() {
-						SqueezeBox.initialize({});
-						SqueezeBox.assign($$("a.modal"), {
-							parse: "rel"
-						});
-					});
+					window.addEvent("domready", JSNUtils.setDesktopOnMobile);
 				');
 			}
+
+			// Load Squeezebox
+			JHTML::_('behavior.modal', 'a.modal');
 
 			// Load custom js files from the parameter
 			foreach (preg_split('/[\r\n]+/', $this->_document->cssFiles) AS $file)
@@ -1231,5 +1280,73 @@ class JSNTplTemplateHelper
 		}
 
 		return $this->isJoomla3;
+	}
+
+	public static function W3CValid(&$tagName, &$attrs)
+	{
+		$tagName = strtolower(trim($tagName));
+
+		switch ($tagName)
+		{
+			case 'img':
+				if ( ! array_key_exists('alt', $attrs))
+				{
+					$attrs += array('alt' => '');
+				}
+				break;
+
+			case 'a':
+				if ( ! array_key_exists('title', $attrs))
+				{
+					$attrs += array('title' => '');
+				}
+				break;
+
+			case 'link':
+				if ( ! array_key_exists('rel', $attrs))
+				{
+					$attrs += array('rel' => 'stylesheet');
+				}
+				break;
+		}
+	}
+
+	/**
+	 * Open HTML tag and add attributes.
+	 *
+	 * @param   string  $tagName  Tag name
+	 * @param   array   $attrs    Attributes
+	 *
+	 * @return  string
+	 */
+	public static function openTag($tagName, $attrs = array())
+	{
+		self::W3CValid($tagName, $attrs);
+
+		$openTag = '<' . $tagName . ' ';
+
+		if (count($attrs))
+		{
+			foreach ($attrs AS $key => $val)
+			{
+				$openTag .= $key . '="' . $val . '" ';
+			}
+		}
+
+		return $openTag . '>';
+	}
+
+	/**
+	 * Close HTML tag.
+	 *
+	 * @param   string  $tagName  Tag name
+	 *
+	 * @return  string
+	 */
+	public static function closeTag($tagName)
+	{
+		$tagName = strtolower(trim($tagName));
+
+		return '</' . $tagName . '>';
 	}
 }

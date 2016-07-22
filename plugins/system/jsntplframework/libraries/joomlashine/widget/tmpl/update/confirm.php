@@ -11,7 +11,6 @@
 	<?php if ($authenticate == true): ?>
 	<h2><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_AUTH_ENTER_CUSTOMER_INFO') ?></h2>
 	<p><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_AUTH_ENTER_CUSTOMER_INFO_DESC') ?></p>
-
 	<label for="username"><?php echo JText::_('JSN_TPLFW_USERNAME') ?>:</label>
 	<input type="text" name="username" />
 

@@ -13,17 +13,28 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+$token 			= JSession::getFormToken();
+
 ?>
 <div class="span6">
+	<?php if ($replaceGettingStartedContent) { ?>
+	<?php echo $replacedGettingStartedContent; ?>
+	<?php } else {?>
 	<h2 class="jsn-section-header"><?php echo JText::_('JSN_TPLFW_GETTING_START_TITLE') ?></h2>
 
 	<h3><?php echo JText::_('JSN_TPLFW_GETTING_START_SAMPLE_DATA') ?></h3>
+	<?php if ((string) $this->templateXml->sampleData != 'no') { ?>
 	<?php echo JText::_('JSN_TPLFW_GETTING_START_SAMPLE_DATA_DESC') ?>
+	<?php } else { ?>
+	<?php echo JText::_('JSN_TPLFW_GETTING_START_SAMPLE_DATA_ONE_OPTION_DESC') ?>
+	<?php } ?>
 	<ul>
+		<?php if ((string) $this->templateXml->sampleData != 'no') { ?>
 		<li>
 			<a href="javascript:void(0)" id="install-sample-data" class="btn btn-small"><b><?php echo JText::_('JSN_TPLFW_GETTING_START_INSTALL_SAMPLE_DATA') ?></b></a>
 			<p><?php echo JText::_('JSN_TPLFW_GETTING_START_INSTALL_SAMPLE_DATA_DESC') ?></p>
 		</li>
+		<?php } ?>
 		<li>
 			<a href="javascript:void(0)" id="get-quickstart-package" class="btn btn-small"><b><?php echo JText::_('JSN_TPLFW_GETTING_START_GET_PACKAGE') ?></b></a>
 			<p><?php echo JText::_('JSN_TPLFW_GETTING_START_GET_PACKAGE_DESC') ?></p>
@@ -46,6 +57,7 @@ defined('_JEXEC') or die('Restricted access');
 			<p><?php echo JText::_('JSN_TPLFW_GETTING_START_DOCUMENT_READ_DESC') ?></p>
 		</li>
 	</ul>
+	<?php } ?>
 </div>
 
 <div class="span6">
@@ -55,6 +67,7 @@ defined('_JEXEC') or die('Restricted access');
 				<a href="<?php echo $templateLink ?>" target="_blank">
 					<?php echo JText::_($template->name) ?> <?php echo $edition ?>
 				</a>
+				<?php if ($showUpgradeButton) { ?>
 				<?php if ($nextEdition == 'STANDARD'): ?>
 				<a class="btn pull-right jsn-upgrade-link" href="javascript:void()">
 					<span class="label label-important">PRO</span><?php echo JText::_('JSN_TPLFW_UPGRADE') ?>
@@ -64,6 +77,7 @@ defined('_JEXEC') or die('Restricted access');
 					<?php echo JText::_('JSN_TPLFW_UPGRADE_TO_PRO')." ".$nextEdition ?>
 				</a>
 				<?php endif ?>
+				<?php } ?>
 			</h2>
 			<div class="jsn-product-intro jsn-section-content">
 				<div class="jsn-product-thumbnail">
@@ -73,12 +87,13 @@ defined('_JEXEC') or die('Restricted access');
 				</div>
 				<div class="jsn-product-details">
 					<dl>
+					<?php if ($showCopyrightContent) { ?>
 						<dt><?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_COPYRIGHT') ?></dt>
-						<dd>
+						<dd>	
 							<?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_COPYRIGHT_TEXT') ?> -
 							<a target="_blank" title="JoomlaShine.com" href="http://www.joomlashine.com">JoomlaShine.com</a>
 						</dd>
-
+						<?php } ?>
 						<dt><?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_INTEGRITY') ?></dt>
 						<dd id="jsn-integrity">
 							<span class="jsn-integrity-check">
@@ -87,7 +102,7 @@ defined('_JEXEC') or die('Restricted access');
 							<span class="jsn-integrity-changed hide">
 								Some files have been modified.
 								<a class="btn btn-mini" href="javascript:void(0);">See details</a>
-								<a class="btn btn-mini" href="<?php echo JRoute::_('index.php?widget=integrity&action=download&template=' . $this->data->template); ?>">Download</a>
+								<a class="btn btn-mini" href="<?php echo JRoute::_('index.php?widget=integrity&action=download&template=' . $this->data->template . '&' . $token . '=1'); ?>">Download</a>
 							</span>
 							<span class="jsn-integrity-notchange hide">
 								No files modification found. <a class="btn btn-mini" href="#check-integrity">Check again</a>
@@ -102,26 +117,30 @@ defined('_JEXEC') or die('Restricted access');
 							<div data-target="framework" class="jsn-framework-version jsn-version-checking">
 								<strong class="jsn-current-version">Framework:</strong> <?php echo JSN_TPLFRAMEWORK_VERSION ?> -
 								<span class="jsn-status"><?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_CHECK_UPDATE') ?></span>
-								<a class="jsn-update-link btn btn-mini" data-target="framework" href="javascript:void(0)">
+								<a class="jsn-update-link btn btn-mini btn-danger" data-target="framework" href="javascript:void(0)">
 									<?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_UPDATE_TO') ?>
 									<span class="jsn-new-version"></span>
 								</a>
-								<a class="hide" href="http://www.joomlashine.com/joomla-products/changelog.html" target="_blank">
+								<?php if ($showChangelog) { ?>
+								<a class="hide" style="color: #08c;" href="http://www.joomlashine.com/joomla-products/changelog.html" target="_blank">
 									<?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_WHAT_NEW_IN') ?>
-									<span class="jsn-new-version"></span>
+									<span class="jsn-new-version"></span> &raquo;
 								</a>
+								<?php } ?>
 							</div>
 							<div data-target="template" class="jsn-template-version jsn-version-checking">
 								<strong class="jsn-current-version">Template:</strong> <?php echo $version; ?> -
 								<span class="jsn-status"><?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_CHECK_UPDATE') ?></span>
-								<a class="jsn-update-link btn btn-mini" data-target="template" href="javascript:void(0)">
+								<a class="jsn-update-link btn btn-mini btn-danger" data-target="template" href="javascript:void(0)">
 									<?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_UPDATE_TO') ?>
 									<span class="jsn-new-version"></span>
 								</a>
-								<a class="hide" href="http://www.joomlashine.com/joomla-products/changelog.html" target="_blank">
+								<?php if ($showChangelog) { ?>
+								<a class="hide" style="color: #08c;" href="http://www.joomlashine.com/joomla-products/changelog.html" target="_blank">
 									<?php echo JText::_('JSN_TPLFW_TEMPLATE_DETAILS_WHAT_NEW_IN') ?>
-									<span class="jsn-new-version"></span>
+									<span class="jsn-new-version"></span> &raquo;
 								</a>
+								<?php } ?>
 								<?php if ( ! JSNTplVersion::isCompatible($this->data->template, $version)) : ?>
 								<div class="alert hide">
 									<?php echo JText::_('JSN_TPLFW_TEMPLATE_OUT_OF_DATE_NOTICE'); ?>
@@ -133,7 +152,7 @@ defined('_JEXEC') or die('Restricted access');
 				</div>
 				<div class="clearbreak"></div>
 			</div>
-			<div class="jsn-product-cta jsn-bgpattern pattern-sidebar">
+			<!-- div class="jsn-product-cta jsn-bgpattern pattern-sidebar">
 				<div class="pull-left">
 					<ul class="jsn-list-horizontal">
 						<li><a id="jsn-about-promotion-modal" class="btn" href="http://www.joomlashine.com/<?php echo $nextEdition == 'STANDARD' ? 'free' : 'pro'; ?>-joomla-templates-promo.html"><i class="icon-briefcase"></i>&nbsp;See other products</a></li>
@@ -154,7 +173,7 @@ defined('_JEXEC') or die('Restricted access');
 					</ul>
 				</div>
 				<div class="clearbreak"></div>
-			</div>
+			</div -->
 		</div>
 	</div>
 </div>
@@ -170,7 +189,7 @@ if (is_file($backupFile)):
 		<span class="label label-important"><?php echo JText::_('JSN_TPLFW_IMPORTANT_INFORMATION') ?></span>
 		<p>
 			<?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_INSTALL_DOWNLOAD_BACKUP') ?>
-			<a href="<?php echo JRoute::_('index.php?widget=integrity&action=download&type=update&template=' . $this->data->template) ?>" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_DOWNLOAD_MODIFIED_FILES'); ?></a>
+			<a href="<?php echo JRoute::_('index.php?widget=integrity&action=download&type=update&template=' . $this->data->template  . '&' . $token . '=1')?>" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_DOWNLOAD_MODIFIED_FILES'); ?></a>
 		</p>
 	</div>
 </div>

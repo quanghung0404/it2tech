@@ -236,26 +236,33 @@ abstract class JSNTplHelper
 	 */
 	public static function findInstalledExtensions ()
 	{
-		$registry = JRegistry::getInstance('JSNTplFramework');
-		$installedExtensions = $registry->get('extension.installed', array());
+		$registry = JRegistry::getInstance( 'JSNTplFramework' );
+		$installedExtensions = $registry->get( 'extensions.installed', array() );
 
 		if (empty($installedExtensions))
 		{
 			$db	= JFactory::getDbo();
-			$q	= $db->getQuery(true);
+			$q	= $db->getQuery( true );
 
-			$q->select('element, manifest_cache');
-			$q->from('#__extensions');
-			$q->where('type IN ("component", "plugin", "module")');
+			$q->select( 'type, element, folder, manifest_cache' );
+			$q->from( '#__extensions' );
+			$q->where( 'type IN ("component", "plugin", "module")' );
 
-			$db->setQuery($q);
+			$db->setQuery( $q );
 
-			foreach ($db->loadObjectList() AS $extension)
+			foreach ( $db->loadObjectList() AS $extension )
 			{
-				$installedExtensions[$extension->element] = json_decode($extension->manifest_cache);
+				if ( 'plugin' == $extension->type )
+				{
+					$installedExtensions["plugin-{$extension->folder}"][ $extension->element ] = json_decode( $extension->manifest_cache );
+				}
+				else
+				{
+					$installedExtensions[ $extension->type ][ $extension->element ] = json_decode( $extension->manifest_cache );
+				}
 			}
 
-			$registry->set('extension.installed', $installedExtensions);
+			$registry->set( 'extensions.installed', $installedExtensions );
 		}
 
 		return $installedExtensions;
@@ -290,16 +297,58 @@ abstract class JSNTplHelper
 	}
 
 	/**
-	 * Return TRUE when extension with name=$name is installed
+	 * Check if an extension is installed.
 	 *
-	 * @param   string   $name  The name of extension
+	 * @param   string  $name  The name of extension.
+	 * @param   string  $type  Either 'component', 'module' or 'plugin'.
 	 *
 	 * @return  boolean
 	 */
-	public static function isInstalledExtension ($name)
+	public static function isInstalledExtension( $name, $type = 'component' )
 	{
 		$installedExtensions = self::findInstalledExtensions();
-		return isset($installedExtensions[$name]);
+
+		// Check if plugin folder is not included in type?
+		if ( 'plugin' == $type )
+		{
+			foreach ( $installedExtensions as $_type => $exts )
+			{
+				if ( 0 === strpos( $_type, 'plugin' ) && isset( $installedExtensions[ $_type ][ $name ] ) )
+				{
+					return true;
+				}
+			}
+		}
+
+		// Check if extension of the specified type is installed?
+		if ( isset( $installedExtensions[ $type ] ) && isset( $installedExtensions[ $type ][ $name ] ) )
+		{
+			// Make sure extension exists in file system also.
+			if ( 'component' == $type )
+			{
+				return (
+					@is_dir( JPATH_ADMINISTRATOR . '/components/' . $name )
+					&&
+					@is_dir( JPATH_ROOT . '/components/' . $name )
+				);
+			}
+			elseif ( 'module' == $type )
+			{
+				return (
+					@is_dir( JPATH_ADMINISTRATOR . '/modules/' . $name )
+					||
+					@is_dir( JPATH_ROOT . '/modules/' . $name )
+				);
+			}
+			elseif ( 0 === strpos( $type, 'plugin-' ) )
+			{
+				@list( $folder, $name ) = explode( '-', $name, 2 );
+
+				return @is_dir( JPATH_ROOT . '/plugins/' . $folder . '/' . $name );
+			}
+		}
+
+		return false;
 	}
 
 	/**
@@ -627,5 +676,146 @@ abstract class JSNTplHelper
 		}
 
 		return false;
+	}
+	
+	public static function deleteOrphanMegamenuItems()
+	{
+		$app = JFactory::getApplication();
+		if (!$app->isAdmin())
+		{
+			return false;
+		}
+		
+		$user = JFactory::getUser();
+		if (!$user->authorise('core.admin'))
+		{
+			return false;
+		}
+		
+		$checkMegamenuTableExits = JSNTplHelper::checkMegamenuTable();
+		if (!$checkMegamenuTableExits)
+		{
+			return false;
+		}
+		
+		$db = JFactory::getDbo();
+		$query	= $db->getQuery(true);
+		$query->select('id');
+		$query->from($db->quoteName('#__template_styles'));
+		$db->setQuery($query);
+		$templateIDs = $db->loadColumn();
+		
+		if (!count($templateIDs)) return false;
+		
+		$q	= $db->getQuery(true);
+		$q->select('style_id');
+		$q->from($db->quoteName('#__jsn_tplframework_megamenu'));
+		$db->setQuery($q);
+		$styleIDs = $db->loadColumn();
+		
+		if (!count($styleIDs)) return false;
+		
+		//get style ids not in template ids
+		$check = array_diff($styleIDs,$templateIDs);
+
+		if (count($check))
+		{			
+			$commaSeparated = implode(",", $check);
+			
+			if ($commaSeparated != '')
+			{
+				$query = $db->getQuery(true);
+				
+				$conditions = array(
+						$db->quoteName('style_id') . ' IN (' . $commaSeparated . ")"
+				);
+			
+				$query->delete($db->quoteName('#__jsn_tplframework_megamenu'));
+				$query->where($conditions);
+				$db->setQuery($query);
+				
+				try
+				{
+					$result = $db->execute();
+				}
+				catch (Exception $e)
+				{
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
+	/**
+	 * Check megamenu table whether exited, or not.
+	 *
+	 * @return boolean
+	 */	
+	public static function checkMegamenuTable()
+	{
+		$db 			= JFactory::getDbo();
+		$megamenuTable 	= $db->getPrefix() . 'jsn_tplframework_megamenu';
+		$tables 		= $db->getTableList();
+		
+		if (in_array($megamenuTable, $tables))
+		{ 
+			return true;
+		}
+		else 
+		{
+			return self::createMegamenuTable();
+		}
+	}
+	
+	/**
+	 * Execute sql file to create Megamenu table
+	 *
+	 * @return boolean
+	 */
+	public static function createMegamenuTable()
+	{
+		$db 		= JFactory::getDbo();
+		$sqlfile 	= JPATH_ROOT . '/plugins/system/jsntplframework/database/mysql/updates/3.1.0.sql';
+		
+		if (!file_exists($sqlfile))
+		{
+			return false;
+		}		
+		
+		$buffer = file_get_contents($sqlfile);
+
+		if ($buffer === false)
+		{
+			return false;
+		}
+			
+		// Create an array of queries from the sql file
+		$queries = JDatabaseDriver::splitSql($buffer);
+			
+		if (count($queries) == 0)
+		{
+			// No queries to process
+			return false;
+		}
+		
+		// Process each query in the $queries array (split out of sql file).
+		foreach ($queries as $query)
+		{
+			$query = trim($query);
+				
+			if ($query != '' && $query{0} != '#')
+			{
+				$db->setQuery($query);
+					
+				if (!$db->execute())
+				{
+					return false;
+				}
+			}
+		}
+		
+		return true;
 	}
 }

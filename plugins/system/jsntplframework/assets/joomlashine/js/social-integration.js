@@ -23,7 +23,7 @@
 		this.lang = this.params.language;
 
 		// Initialize functionality
-		$(document).ready($.proxy(this.init, this));
+		$(document).ready($.proxy(this.init(), this));
 	};
 
 	$.JSNSocialIntegration.prototype = {

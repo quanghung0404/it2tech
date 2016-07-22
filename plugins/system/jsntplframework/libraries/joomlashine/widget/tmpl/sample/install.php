@@ -37,19 +37,37 @@
 
 <div id="jsn-success-message" class="hide">
 	<h3><?php echo JText::_('JSN_TPLFW_SAMPLE_DATA_STEP_INSTALL_SUCCESS') ?></h3>
-	<p><?php echo JText::sprintf('JSN_TPLFW_SAMPLE_DATA_STEP_INSTALL_SUCCESS_DESC', $template['realName']) ?></p>
+	<p>
+		<?php echo JText::sprintf('JSN_TPLFW_SAMPLE_DATA_STEP_INSTALL_SUCCESS_DESC', $template['realName']) ?>
+		<?php 
+		if ($template['name'] == 'jsn_time_pro' || $template['name'] == 'jsn_time_free')
+		{
+			echo '<strong>' . JText::_('JSN_TIME_CUSTOM_NOTIFICATION') . '</strong>';
+		}
+		?>	
+	</p>
 
-	<div id="jsn-attention" class="alert alert-error hide">
+	<div id="jsn-attention" class="hide">
 		<h4><?php echo JText::_('JSN_TPLFW_SAMPLE_DATA_STEP_ATTENTION') ?></h4>
-		<p><?php echo JText::_('JSN_TPLFW_SAMPLE_DATA_STEP_ATTENTION_DESC') ?></p>
-
-		<ul>
-			<li id="jsn-attension-dummy" class="hide">
-				<strong></strong> -
-				<?php echo JText::_('JSN_TPLFW_SAMPLE_DATA_STEP_ATTENTION_EXTENSION') ?>
-				<a href="" target="_blank" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_GET_IT_NOW') ?></a>
-			</li>
-		</ul>
+		<div class="jsn-attention-warning alert alert-warning hide"> 
+			<p><?php echo JText::_('JSN_TPLFW_SAMPLE_DATA_WARNING_DESC') ?></p>
+			<ul class="warning-msg">
+			</ul>
+		</div>
+		<div class="jsn-attention-error alert alert-error hide"> 
+			
+			<p><?php echo JText::_('JSN_TPLFW_SAMPLE_DATA_STEP_ATTENTION_DESC') ?></p>
+	
+			<ul>
+				<li id="jsn-attention-dummy" class="hide">
+					<strong></strong> -
+					<?php echo JText::_('JSN_TPLFW_SAMPLE_DATA_STEP_ATTENTION_EXTENSION') ?>
+					<span></span>
+					<a href="" target="_blank" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_GET_IT_NOW') ?></a>
+				</li>
+			</ul>
+		</div>
+		
 	</div>
 </div>
 

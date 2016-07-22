@@ -1,0 +1,87 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+/* ========== SOCIAL - ICON ========== */
+#jsn-social-icons ul {
+	float: right;
+	margin: 0;
+}
+#jsn-social-icons ul li {
+	float: left;
+	list-style: none;
+	margin: 0;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+#jsn-social-icons ul li a {
+	display: block;
+	position: relative;
+	outline: none;
+	text-indent: -999em;
+	background-image: url(../images/icons/icons-social-large.png);
+	background-image: url(../images/icons/icons-social-small.png)\9;
+	background-repeat: no-repeat;
+	background-size: auto 20px;
+	width: 16px;
+	height: 16px;
+	padding: 12px;
+}
+#jsn-social-icons ul li:hover {
+	background-color: rgba(0,0,0,0.8);
+	background-color: #000\9;
+	transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+/* ========== ICONS POSITION ========== */
+#jsn-social-icons ul li.facebook a {
+	background-position: 10px center;
+}
+#jsn-social-icons ul li.twitter a {
+	background-position: -40px center;
+}
+#jsn-social-icons ul li.youtube a {
+	background-position: -90px center;
+}
+#jsn-social-icons ul li.googleplus a {
+	background-position: -140px center;
+}
+#jsn-social-icons ul li.pinterest a {
+	background-position: -190px center;
+}
+#jsn-social-icons ul li.myspace a {
+	background-position: -240px center;
+}
+#jsn-social-icons ul li.flickr a {
+	background-position: -290px center;
+}
+#jsn-social-icons ul li.dribble a {
+	background-position: -340px center;
+}
+#jsn-social-icons ul li.stumbleupon a {
+	background-position: -390px center;
+}
+#jsn-social-icons ul li.yahoo a {
+	background-position: -440px center;
+}
+#jsn-social-icons ul li.skype a {
+	background-position: -490px center;
+}
+#jsn-social-icons ul li.rss a {
+	background-position: -540px center;
+}
+#jsn-social-icons ul li.linkedin a {
+	background-position: -588px center;
+}
+/* ========== RTL LAYOUT ========== */
+body.jsn-direction-rtl #jsn-social-icons ul {
+    float: left;
+}
+/*body.jsn-direction-rtl #jsn-social-icons ul li a {
+	text-indent: 999em;
+}*/

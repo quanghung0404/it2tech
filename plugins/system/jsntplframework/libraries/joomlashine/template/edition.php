@@ -188,7 +188,7 @@ class JSNTplTemplateEdition
 
 			foreach ($json['items'] AS $item)
 			{
-				if ($templateId == $item['identified_name'])
+				if ( isset( $item['identified_name'] ) && $templateId == $item['identified_name'] )
 				{
 					if (isset($item['editions']) AND is_array($item['editions']))
 					{

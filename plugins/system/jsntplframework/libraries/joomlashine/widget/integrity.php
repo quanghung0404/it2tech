@@ -35,6 +35,7 @@ class JSNTplWidgetIntegrity extends JSNTplWidgetBase
 	 */
 	public function checkAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$modifiedFiles		= JSNTplHelper::getModifiedFiles($this->template['name']);
 		$hasModification	= count($modifiedFiles['add']) + count($modifiedFiles['delete']) + count($modifiedFiles['edit']);
 

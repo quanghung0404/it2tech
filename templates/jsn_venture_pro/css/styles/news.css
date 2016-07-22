@@ -1,0 +1,35 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+
+body {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#jsn-menu ul.menu-mainmenu > li > a span.jsn-menutitle,
+#jsn-gotoplink,
+.page-header,
+.subheading-category,
+.componentheading,
+.contentheading {
+	font-family: "Roboto Slab", "Palatino Linotype", Palatino, serif;
+	font-weight: normal;
+}
+body.jsn-textstyle-news h3.jsn-moduletitle {
+	font-size: 1.25em;
+}
+body.jsn-textstyle-news div.jsn-modulecontainer ul.menu-mainmenu > li > a > span:before {
+	line-height: 1.2em;
+}
+body.jsn-textstyle-news div.jsn-modulecontainer ul.menu-mainmenu > li > a {
+	line-height: 1.1em;	
+}

@@ -25,9 +25,9 @@ jQuery.noConflict();
 		this.updateButton = $('.jsn-update-link');
 		this.upgradeButton = $('.jsn-upgrade-link');
 		this.getQuickstartButton = $('#get-quickstart-package');
-		this.seeMoreButton = $('a#jsn-about-promotion-modal');
+		/*this.seeMoreButton = $('a#jsn-about-promotion-modal');
 		this.seeMorePanel = $('<iframe/>', { 'id': 'jsn-see-more-products', 'scrolling': 'no', 'width': 640, 'height': 510 });
-		this.seeMorePanel.appendTo(this.body);
+		this.seeMorePanel.appendTo(this.body);*/
 		this.checkIntegrity = $('span.jsn-integrity-check a, span.jsn-integrity-notchange a');
 		this.seeModifiedFiles = $('span.jsn-integrity-changed > a:first-child');
 
@@ -55,7 +55,7 @@ jQuery.noConflict();
 			$.initTemplateUpgrade(this.upgradeButton, this.params);
 			$.initDownloadQuickstartPackage(this.getQuickstartButton, this.params);
 
-			this.seeMorePanel
+			/*this.seeMorePanel
 				.dialog({
 					autoOpen: false,
 					resizable: false,
@@ -76,7 +76,7 @@ jQuery.noConflict();
 							self.seeMorePanel.dialog('close');
 						}
 					}
-				});
+				});*/
 
 			// Initialize file modification dialog
 			this.integrityDetails
@@ -101,7 +101,8 @@ jQuery.noConflict();
 			// Initialize image selector
 			this.mediaButton.imageSelector({
 				basePath: '/images',
-				template: this.params.template
+				template: this.params.template,
+				token: this.params.token
 			});
 
 			// Initialize sortable for color list
@@ -152,7 +153,7 @@ jQuery.noConflict();
 
 				// Request server to check for directory permission
 				$.getJSON(
-					'index.php?widget=media&action=verifyFolder&folder=' + $target.prev().attr('value') + '&template=' + self.params.template,
+					'index.php?widget=media&action=verifyFolder&folder=' + $target.prev().attr('value') + '&template=' + self.params.template + '&' + self.params.token + '=1',
 					function(response) {
 						if (response.type == 'success') {
 							// Switch status
@@ -214,7 +215,7 @@ jQuery.noConflict();
 
 			this.toggleButton.on('click', $.proxy(this.updateGroupSelection, this));
 			this.checkAllGroup.on('change', $.proxy(this.updateMenuSelection, this));
-			this.seeMoreButton.on('click', $.proxy(this.openSeeMoreProducts, this));
+			//this.seeMoreButton.on('click', $.proxy(this.openSeeMoreProducts, this));
 
 			this.seeModifiedFiles.on('click', $.proxy(function () {
 				this.integrityDetails.dialog('open');
@@ -260,7 +261,7 @@ jQuery.noConflict();
 			integrityContainer.find('>:not(span.jsn-integrity-status)').addClass('hide');
 			integrityStatus.removeClass('hide');
 
-			$.getJSON('index.php?widget=integrity&action=check&template=' + this.params.template, function (response) {
+			$.getJSON('index.php?widget=integrity&action=check&template=' + this.params.template + '&' + this.params.token + '=1', function (response) {
 				integrityStatus.addClass('hide');
 				integrityContainer
 					.find(response.data.hasModification == true ? 'span.jsn-integrity-changed' : 'span.jsn-integrity-notchange')
@@ -292,11 +293,11 @@ jQuery.noConflict();
 			});
 		},
 
-		openSeeMoreProducts: function (e) {
+		/*openSeeMoreProducts: function (e) {
 			e.preventDefault();
 			this.seeMorePanel.attr('src', e.currentTarget.href);
 			this.seeMorePanel.dialog('open');
-		},
+		},*/
 
 		navTabsShown: function (e) {
 			$.cookie('jsn-active-tab', $(e.target).parent().index());

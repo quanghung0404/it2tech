@@ -25,6 +25,11 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 {
 	private $_templateVersionData;
 
+	public function checkUpdateAjaxAction ()
+	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
+		$this->checkUpdateAction();
+	}
 	/**
 	 * Checking template version for auto update
 	 *
@@ -83,6 +88,7 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 	 */
 	public function confirmAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$target = $this->request->getString('target');
 
 		if ($target == 'framework')
@@ -100,25 +106,65 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 			return;
 		}
 
+		// Check if user account was stored before
+		$db = JFactory::getDbo();
+
+		$q = $db->getQuery(true);
+
+		$q->select('params');
+		$q->from('#__extensions');
+		$q->where('`type` = ' . $q->quote('template'));
+		$q->where('`element` = ' . $q->quote($this->template['name']));
+
+		$db->setQuery($q);
+
+		$account = json_decode($db->loadResult());
+		$account = ($account && isset($account->username) && isset($account->password)) ? $account : false;
+
 		// Process posted back data that sent from client
-		if ($this->request->getMethod() == 'POST')
+		if ($account || $this->request->getMethod() == 'POST')
 		{
 			// Checking customer information
 			$input = JFactory::getApplication()->input;
-			$username = $input->getString('username', '');
-			$password = $input->getString('password', '');
+			$username = $this->request->getMethod() == 'POST' ? $input->getString('username', '') : $account->username;
+			$password = $this->request->getMethod() == 'POST' ? $input->getString('password', '') : $account->password;
 
 			// Try retrieve ordered editions to check customer information
 			try
 			{
 				JSNTplApiLightcart::getOrderedEditions($this->template['id'], $username, $password);
+
+				// Store user account for later reference
+				if ($this->request->getMethod() == 'POST')
+				{
+					$q = $db->getQuery(true);
+
+					$q->update('#__extensions');
+					$q->set("`params` = '" . json_encode(array('username' => $input->getString('username'), 'password' => $input->getString('password'))) . "'");
+					$q->where('`type` = ' . $q->quote('template'));
+					$q->where('`element` = ' . $q->quote($this->template['name']));
+
+					$db->setQuery($q);
+
+					if (method_exists($db, 'execute'))
+					{
+						$db->execute();
+					}
+					else
+					{
+						$db->query();
+					}
+				}
+
+				return;
 			}
 			catch (Exception $e)
 			{
-				throw $e;
+				if ($this->request->getMethod() == 'POST')
+				{
+					throw $e;
+				}
 			}
-
-			return;
 		}
 
 		// Retrieve version data
@@ -177,6 +223,7 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 	 */
 	public function installAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$target = $this->request->getString('target');
 		if ($target == 'framework') {
 			$this->render('framework_install', array(
@@ -196,6 +243,7 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 	 */
 	public function downloadAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		// Process posted back data that sent from client
 		if ($this->request->getMethod() == 'POST')
 		{
@@ -203,6 +251,29 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 			$input = JFactory::getApplication()->input;
 			$username = $input->getString('username', '');
 			$password = $input->getString('password', '');
+
+			if (empty($username) && empty($password))
+			{
+				// Check if user account was stored before
+				$db = JFactory::getDbo();
+
+				$q = $db->getQuery(true);
+
+				$q->select('params');
+				$q->from('#__extensions');
+				$q->where('`type` = ' . $q->quote('template'));
+				$q->where('`element` = ' . $q->quote($this->template['name']));
+
+				$db->setQuery($q);
+
+				$account = json_decode($db->loadResult());
+
+				if ($account && isset($account->username) && isset($account->password))
+				{
+					$username = $account->username;
+					$password = $account->password;
+				}
+			}
 
 			// Load template xml file
 			$edition = strtoupper(trim($this->template['edition']));
@@ -234,6 +305,7 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 	 */
 	public function checkBeforeUpdateAction()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$packageFile = JFactory::getConfig()->get('tmp_path') . '/jsn-' . $this->template['id'] . '.zip';
 
 		// Check if downloaded template package existen
@@ -264,6 +336,7 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 	 */
 	public function installPackageAction ()
 	{
+		//JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		// Initialize variables
 		$joomlaConfig	= JFactory::getConfig();
 		$packageFile	= $joomlaConfig->get('tmp_path') . '/jsn-' . $this->template['id'] . '.zip';
@@ -411,6 +484,7 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 
 	public function downloadFrameworkAction()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		if (!JSNTplHelper::isDisabledFunction('set_time_limit')) {
 			set_time_limit(0);
 		}
@@ -428,6 +502,7 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 
 	public function installFrameworkAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$packageFile = JFactory::getConfig()->get('tmp_path') . '/jsn-tpl_framework.zip';
 
 		// Checking downloaded template package
@@ -471,9 +546,10 @@ class JSNTplWidgetUpdate extends JSNTplWidgetBase
 		// Backup modified files
 		$integrity = new JSNTplWidgetIntegrity;
 		$integrity->backupAction();
-
+		$token = JSession::getFormToken();
+		
 		// Set response
-		$this->setResponse('index.php?widget=integrity&action=download&type=update&template=' . $this->template['name']);
+		$this->setResponse('index.php?widget=integrity&action=download&type=update&template=' . $this->template['name'] . '&' . $token . '=1');
 	}
 
 	private function _cleanCache()

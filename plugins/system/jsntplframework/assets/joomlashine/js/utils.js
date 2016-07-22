@@ -43,16 +43,32 @@ var JSNUtils = {
 		return null;
 	},
 
+	isIE: function(version) {
+		if (version == 'mobile') {
+			return (navigator.userAgent.match(/IEMobile\/([0-9]+\.[0-9]+);/) != null);
+		}
+
+		return (navigator.appVersion.indexOf('MSIE ' + version + '.') > -1);
+	},
+
 	isIE7: function() {
-		return (navigator.appVersion.indexOf("MSIE 7.")!=-1);
+		return JSNUtils.isIE(7);
+	},
+
+	setDesktopOnMobile: function() {
+		if (JSNUtils.checkMobile()) {
+			document.body.addClass('jsn-desktop-on-mobile');
+		}
 	},
 
 	isDesktopViewOnMobile: function (params) {
-		if (params && params.responsiveLayout) {
-			if (JSNUtils.checkSmartphone() || JSNUtils.checkTablet()) {
-				if (!params.responsiveLayout.contains('mobile')) {
+		if (params) {
+			if (JSNUtils.checkMobile()) {
+				if (!params.responsiveLayout.length || !params.responsiveLayout.contains('mobile')) {
 					document.body.addClass('jsn-desktop-on-mobile');
-				} else if (!params.enableMobile) {
+				}
+
+				if (!params.enableMobile) {
 					JSNUtils.initMenuForDesktopView(true);
 				}
 			}
@@ -75,22 +91,45 @@ var JSNUtils = {
 
 	// Initialize scrolling effect for in-page anchor links
 	initScrollToContent: function(stickyMenus) {
-		if (typeof Fx != 'undefined' && typeof Fx.Scroll != 'undefined') {
+		if (window.jQuery) {
+			jQuery(window).load(function() {
+				jQuery('.jsn-menu-toggle + ul li.jsn-scroll > a').each(function(i, link) {
+					jQuery(link).click(function(event) {
+						event.preventDefault();
+
+						var target = jQuery(jQuery(this).attr('href')), menu = jQuery('#jsn-menu');
+
+						if (target.length) {
+							var pos = target.offset();
+
+							if (stickyMenus && menu) {
+								if (stickyMenus.mobile == '1' && JSNUtils.checkMobile() && menu.hasClass('jsn-menu-sticky')) {
+									pos.top -= menu.outerHeight() + menu.find('ul.menu-mainmenu').outerHeight();
+								} else if (stickyMenus.desktop == '1' && (!JSNUtils.checkMobile() || document.body.hasClass('jsn-desktop-on-mobile'))) {
+									pos.top -= menu.outerHeight();
+								}
+							}
+
+							jQuery('html,body').animate({scrollTop: pos.top, scrollLeft: pos.left}, 500);
+						}
+					});
+				});
+			});
+		} else if (typeof Fx != 'undefined' && typeof Fx.Scroll != 'undefined') {
 			window.addEvent('load', function() {
 				document.getElements('.jsn-menu-toggle + ul li.jsn-scroll > a').each(function(link) {
 					link.addEvent('click', function(event) {
 						event.preventDefault();
 
-						var	target = document.getElement(this.getAttribute('href')),
-							menu = document.id('jsn-menu');
+						var target = document.getElement(this.getAttribute('href')), menu = document.id('jsn-menu');
 
 						if (target) {
 							var pos = target.getPosition();
 
 							if (stickyMenus && menu) {
-								if (stickyMenus.mobile == '1' && (JSNUtils.checkSmartphone() || JSNUtils.checkTablet()) && menu.hasClass('jsn-menu-sticky')) {
+								if (stickyMenus.mobile == '1' && JSNUtils.checkMobile() && menu.hasClass('jsn-menu-sticky')) {
 									pos.y -= menu.getSize().y + menu.getElement('ul.menu-mainmenu').getSize().y;
-								} else if (stickyMenus.desktop == '1' && ((!JSNUtils.checkSmartphone() && !JSNUtils.checkTablet()) || document.body.hasClass('jsn-desktop-on-mobile'))) {
+								} else if (stickyMenus.desktop == '1' && (!JSNUtils.checkMobile() || document.body.hasClass('jsn-desktop-on-mobile'))) {
 									pos.y -= menu.getSize().y;
 								}
 							}
@@ -103,7 +142,7 @@ var JSNUtils = {
 		}
 
 		// Handle switch in-page link state
-		window.addEvent('load', function(direction) {
+		window.addEvent('load', function() {
 			var anchors = document.getElements('ul.menu-mainmenu li a[href^="#"]'), targets = [], lastScrollTop,
 
 			// Define function to activate a menu item
@@ -126,29 +165,46 @@ var JSNUtils = {
 
 			// Handle window scroll event
 			window.addEvent('scroll', function() {
-				var windowHeight = window.getSize().y, scrollTop = window.getScroll().y, topMost = targets[0].getPosition().y, diff;
+				var windowHeight = window.getSize().y, scrollHeight = window.getScrollSize().y, scrollTop = window.getScroll().y, diff;
 
-				// Get last scroll top for detecting scrolling direction
-				lastScrollTop = lastScrollTop || 0;
+				if (scrollTop == 0) {
+					// To top, look for top-most element
+					var top_most = 0, diff = targets[0].getPosition().y;
 
-				for (var i = 0; i < targets.length; i++) {
-					// Treat scrolling down by default
-					diff = targets[i].getPosition().y - scrollTop;
+					for (var i = 1; i < targets.length; i++) {
+						if (targets[i].getPosition().y < diff) {
+							top_most = i;
+							diff = targets[i].getPosition().y;
+						}
+					}
 
-					if ((topMost >= 0 || diff >= topMost) && diff < (windowHeight / 5)) {
-						activate(i);
-					} else if ((direction === 'up' || lastScrollTop > scrollTop) && (i + 1) < targets.length) {
-						// Scrolling up
-						diff = targets[i + 1].getPosition().y - (scrollTop + windowHeight);
+					activate(top_most);
+				} else if (scrollHeight - scrollTop == windowHeight) {
+					// To bottom, look for bottom-most element
+					var bottom_most = targets.length - 1, diff = targets[targets.length - 1].getPosition().y;
 
-						if ((topMost >= 0 || diff >= topMost) && diff < (windowHeight / 5)) {
+					for (var i = 0; i < targets.length - 1; i++) {
+						if (targets[i].getPosition().y > diff) {
+							bottom_most = i;
+							diff = targets[i].getPosition().y;
+						}
+					}
+
+					activate(bottom_most);
+				} else {
+					// Scrolling either up or down
+					for (var i = 0; i < targets.length; i++) {
+						diff = targets[i].getPosition().y - scrollTop;
+
+						if (diff < 0) {
+							diff = 0 - diff;
+						}
+
+						if (diff < (windowHeight / 5)) {
 							activate(i);
 						}
 					}
 				}
-
-				// Store last scroll top
-				lastScrollTop = scrollTop;
 
 				return true;
 			}).fireEvent('scroll');
@@ -186,9 +242,15 @@ var JSNUtils = {
 		];
 
 		for (var i = 0; i < mobiles.length; i++) {
-			if (uagent.indexOf(mobiles[i]) != -1) {
+			if (uagent.indexOf(mobiles[i]) > -1) {
 				isMobile = true;
 			}
+		}
+
+		if (isMobile) {
+			JSNUtils.isAppleDevice = /ipod|ipad|iphone/.test(uagent);
+			JSNUtils.isWindowPhone = /windows phone/.test(uagent);
+			JSNUtils.isAndroidDevice = /android/.test(uagent);
 		}
 
 		return isMobile;
@@ -511,37 +573,96 @@ var JSNUtils = {
 		resizeHandler();
 	},
 
-	setMobileMenu: function(menuClass)
+	setMobileMenu: function(menuClass, effect)
 	{
 		if (JSNUtils.mobileMenuInitialized) {
 			return;
 		}
 
+		var mobileEffect = '';
+		
+		if (typeof effect !== 'undefined' && effect != 'default')
+		{
+			mobileEffect = effect;
+		}
+		
 		var toggle = function() {
 			this.toggleClass("active");
 			this.getNext("ul").toggleClass("jsn-menu-mobile");
+			
+			if (mobileEffect != '' && this.getProperty('id') == 'jsn-menu-toggle-parent')
+			{
+				var splitMobleEffectStr = mobileEffect.split("-");
+				this.getNext("ul").toggleClass("jsn-menu-mobile-" + splitMobleEffectStr[0]);				
+				this.getNext("ul").toggleClass("jsn-menu-mobile-" + mobileEffect);
+				document.getElements("body").toggleClass("jsn-menu-mobile-" + mobileEffect);
+				this.getNext("ul").removeAttribute('style');
+				if (mobileEffect == 'push-left' || mobileEffect == 'push-right')
+				{
+					window.fireEvent('toggle-advanced-mobile-menu');
+				}
+			}
 
 			document.getElements("." + menuClass + " .jsn-menu-toggle").each(function (item) {
-				var a = item.getPrevious(),
-					size = a.getSize();
-
-				item.setStyle('height', size.y);
+				
+				if (item.get('id') != 'jsn-menu-toggle-parent')
+				{
+					var a = item.getPrevious(),
+						size = a.getSize();
+	
+					item.setStyle('height', size.y);
+				}
 			});
-
-			window.fireEvent('toggle-mobile-menu');
+				
+			if (mobileEffect != 'push-left' && mobileEffect != 'push-right')
+			{	
+				window.fireEvent('toggle-mobile-menu');
+			}
 		};
 
+		if (document.getElements("ul.menu-mainmenu .jsn-menu-mobile-control").length)
+		{	
+			// Setup toggle for close trigger			
+			document.getElements("ul." + menuClass + " .jsn-menu-mobile-control .close-menu").addEvent('click', function() {
+				document.getElements("ul." + menuClass).each(function (item) {
+					if (item.get('id') != 'jsn-tpl-megamenu')
+					{
+						item.getPrevious(".jsn-menu-toggle").fireEvent('click');
+						//if (mobileEffect == 'push-left' || mobileEffect == 'push-right')
+//						{
+//							window.fireEvent('toggle-advanced-mobile-menu');
+//						}
+					}	
+				});
+				
+			});
+		}
+		
 		// Setup toggle for main trigger
 		document.getElements("ul." + menuClass).getPrevious(".jsn-menu-toggle").each(function(e) {
 			e && e.addEvent('click', toggle);
+			
 		});
 
 		// Setup toggle for children triggers
 		document.getElements("ul." + menuClass + " .jsn-menu-toggle").addEvent('click', toggle);
 
+		if (mobileEffect != '')
+		{
+			var splitMobleEffectStr = mobileEffect.split("-");
+			document.getElements("ul.menu-mainmenu").addClass("jsn-menu-mobile-" + splitMobleEffectStr[1]);
+		}
+		
 		window.addEvent('resize', function () {
-			if (window.getSize().x > 960) {
+			if (window.getSize().x > 1024 && JSNUtils.getScreenType() == 'desktop') {
 				document.getElements('ul.jsn-menu-mobile').removeClass('jsn-menu-mobile');
+				if (mobileEffect != '')
+				{
+					var splitMobleEffectStr = mobileEffect.split("-");
+					document.getElements("body").removeClass("jsn-menu-mobile-" + mobileEffect);
+					document.getElements("ul.jsn-menu-mobile-" + splitMobleEffectStr[0]).removeClass("jsn-menu-mobile-" + splitMobleEffectStr[0]);
+					document.getElements("ul.jsn-menu-mobile-" + mobileEffect).removeClass("jsn-menu-mobile-" + mobileEffect);
+				}
 			}
 		});
 
@@ -596,7 +717,9 @@ var JSNUtils = {
 			isSticked = false,
 			touchStartOffset = {},
 			isFixedSupport = JSNUtils.isFixedSupport(),
-			lastScrollTop = 0;
+			lastScrollTop = 0,
+			menuOriginalWidth = menuSize.width;
+		
 
 		menuPlacehoder.setStyles({
 			height: menuSize.height,
@@ -617,6 +740,7 @@ var JSNUtils = {
 				}
 
 				restorePoint = parent.getPosition().y;
+				
 			}
 
 			if (window.getScroll().y < restorePoint) {
@@ -645,7 +769,24 @@ var JSNUtils = {
 
 			return menuWidth;
 		};
-
+		
+		var makeAdvancedMenuStick = function ()
+		{		
+			if (menu.hasClass('jsn-mobile-menu-sticky'))
+			{	
+				menuSize = menu.getCoordinates();
+				menuLeft = menuSize.left;
+				menu.setStyles({
+					'left' : menuLeft,
+					'width' : menuOriginalWidth,
+					'position' : 'fixed',
+					'top' : 0 ,
+					'z-index' : 9999999
+				});	
+				updatePosition.longMenuFixed = false;
+			}
+		}
+		
 		var fx = new Fx.Morph(menu, { transition: Fx.Transitions.Expo.easeOut });
 			fx.addEvent('complete', resetMenuPosition);
 
@@ -796,15 +937,19 @@ var JSNUtils = {
 					if (isSticked == true) {
 						menuSize = menuPlacehoder.getCoordinates();
 						menu.setStyle('width', getMenuWidth());
+						menuOriginalWidth = menuSize.width;
 					}
 					else {
 						menuSize = menu.getCoordinates();
 					}
 				}, 100);
+				
 			});
 	
 			window.addEvent('orientationchange', updatePosition);
 			window.addEvent('toggle-mobile-menu', updatePosition);
+			window.addEvent('toggle-advanced-mobile-menu', makeAdvancedMenuStick);
+			
 		});
 	},
 
@@ -1211,11 +1356,11 @@ var JSNUtils = {
 			marginFrom = "margin-right";
 		}
 
-		if (jquery) {
-			var element = $j('#jsn-gotoplink');
+		if (jquery || window.jQuery) {
+			var element = jQuery('#jsn-gotoplink');
 			if (!element.length) return;
 			element.hide();
-			($j(window).scrollTop() >= min) ? element.fadeIn() : element.fadeOut();
+			(jQuery(window).scrollTop() >= min) ? element.fadeIn() : element.fadeOut();
 		} else if (typeof(MooTools) != 'undefined') {
 			var element = document.id('jsn-gotoplink');
 			if (!element) return;
@@ -1240,22 +1385,17 @@ var JSNUtils = {
 
 	isFixedSupport: function () {
 		var userAgent = window.navigator.userAgent + '',
-			isAppleDevice = /ipod|ipad|iphone/.test(userAgent.toLowerCase()),
-			isWindowPhone = /Windows Phone/.test(userAgent),
-			isAndroid = /Android/.test(userAgent),
-			isSupported = true;
+			isNexusS = /Nexus S/.test(userAgent),
+			isSupported = !isNexusS;
 
-		if (isAppleDevice || isWindowPhone || isAndroid) {
-			var pattern = /AppleWebKit\/([0-9]+\.[0-9]+)\s+/;
-
-			if (isWindowPhone)
-				pattern = /IEMobile\/([0-9]+\.[0-9]+);/;
+		if (isSupported && (JSNUtils.isAppleDevice || JSNUtils.isAndroidDevice || JSNUtils.isWindowPhone)) {
+			var pattern = JSNUtils.isWindowPhone ? /IEMobile\/([0-9]+\.[0-9]+);/ : /AppleWebKit\/([0-9]+\.[0-9]+)\s+/;
 
 			if (pattern.test(userAgent)) {
 				var result = pattern.exec(userAgent);
 				var version = result[1];
 
-				isSupported = ((isAppleDevice || isAndroid) && JSNUtils.versionCompare(version, '534.1', '>='));
+				isSupported = ((JSNUtils.isAppleDevice || JSNUtils.isAndroidDevice) && JSNUtils.versionCompare(version, '534.1', '>='));
 			}
 		}
 
@@ -1341,33 +1481,36 @@ var JSNUtils = {
 
 	setSmoothScroll: function(jquery)
 	{
-		var objBrowser = JSNUtils.getBrowserInfo();
+		// Detect mobile device
+		JSNUtils.checkMobile();
 
-		// Setup smooth go to top link
-		if (jquery) {
-			$j('#jsn-gotoplink').click(function(e) {
-				e.preventDefault();
-				var gotoplinkOffset = $j('#top').offset().top;
-				$j('html,body').animate({scrollTop: gotoplinkOffset}, 500);
-				return false;
-			});
-		} else if (typeof Fx != 'undefined' && typeof Fx.SmoothScroll != 'undefined') {
-			new Fx.SmoothScroll({
-				duration: 300,
-				links: '#jsn-gotoplink'		// Target to only the gotop link
-			}, window);
+		// Setup smooth scroll to top when go to top link is clicked
+		if (!JSNUtils.isWindowPhone || !JSNUtils.isIE('mobile')) {
+			if (jquery || window.jQuery) {
+				jQuery('#jsn-gotoplink').click(function(e) {
+					e.preventDefault();
+					var gotoplinkOffset = jQuery('#top').offset().top;
+					jQuery('html,body').animate({scrollTop: gotoplinkOffset}, 500);
+					return false;
+				});
+			} else if (typeof Fx != 'undefined' && typeof Fx.SmoothScroll != 'undefined') {
+				new Fx.SmoothScroll({
+					duration: 300,
+					links: '#jsn-gotoplink',
+				}, window);
+			}
 		}
 	},
 
 	setFadeScroll: function(jquery)
 	{
 		var min = 200;
-		if (jquery) {
-			var element = $j('#jsn-gotoplink');
+		if (jquery || window.jQuery) {
+			var element = jQuery('#jsn-gotoplink');
 			if(element == null) return false;
 
-			$j(window).scroll(function () {
-				($j(window).scrollTop() >= min) ? element.fadeIn() : element.fadeOut();
+			jQuery(window).scroll(function () {
+				(jQuery(window).scrollTop() >= min) ? element.fadeIn() : element.fadeOut();
 			});
 		} else if (typeof(MooTools) != 'undefined') {
 			var element = document.id('jsn-gotoplink');

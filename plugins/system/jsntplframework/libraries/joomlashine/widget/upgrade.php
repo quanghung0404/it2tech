@@ -34,6 +34,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 	 */
 	public function introAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		// Get upgrade details from JoomlaShine server
 		$response = null;
 
@@ -85,6 +86,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 	 */
 	public function loginAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$this->render('login', array('template' => $this->template));
 	}
 
@@ -98,6 +100,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 		// Process posted back data that sent from client
 		if ($this->request->getMethod() == 'POST')
 		{
+			JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 			$username = $this->request->getString('username', '');
 			$password = $this->request->getString('password', '');
 
@@ -141,6 +144,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 	 */
 	public function upgradeAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$edition = $this->request->getString('edition');
 
 		if ( ! in_array($edition, array('PRO STANDARD', 'PRO UNLIMITED')))
@@ -164,6 +168,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 	 */
 	public function replaceAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		// Update template's manifest file
 		$content = JFile::read(JPATH_ROOT . "/templates/{$this->template['name']}/templateDetails.xml");
 		$content = preg_replace('#<edition>(PRO )?STANDARD</edition>#i', '<edition>PRO UNLIMITED</edition>', $content);
@@ -184,6 +189,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 	 */
 	public function downloadPackageAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		JSNTplHelper::isDisabledFunction('set_time_limit') OR set_time_limit(0);
 
 		try
@@ -210,6 +216,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 	 */
 	public function installAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		JSNTplHelper::isDisabledFunction('set_time_limit') OR set_time_limit(0);
 
 		$config = JFactory::getConfig();
@@ -313,6 +320,7 @@ class JSNTplWidgetUpgrade extends JSNTplWidgetBase
 	 */
 	public function migrateAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$from	= $this->request->getInt('from');
 		$to		= $this->request->getInt('to');
 

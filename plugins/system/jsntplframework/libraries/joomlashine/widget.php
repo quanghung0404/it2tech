@@ -36,7 +36,8 @@ abstract class JSNTplWidget
 		// Execute widget action if needed
 		$action  = $app->input->getCmd('action', null);
 		$widget  = $app->input->getCmd('widget', null);
-
+		$rformat = $app->input->getCmd('rformat', 'json');
+		
 		if (empty($widget) OR empty($action))
 		{
 			return false;
@@ -75,12 +76,20 @@ abstract class JSNTplWidget
 			}
 
 			// Send action result to client
-			echo json_encode(
-				array(
-					'type' => 'success',
-					'data' => $widgetObject->getResponse()
-				)
-			);
+			if ($rformat == 'raw')
+			{
+				echo $widgetObject->getResponse();
+			}
+			else
+			{
+				echo json_encode(
+						array(
+								'type' => 'success',
+								'data' => $widgetObject->getResponse()
+						)
+				);				
+			}	
+			
 		}
 		catch (Exception $e)
 		{

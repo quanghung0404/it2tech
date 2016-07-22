@@ -18,7 +18,7 @@
 		}, params);
 
 		// Initialize functionality
-		$(document).ready($.proxy(this.init, this));
+		$(document).ready($.proxy(this.init(), this));
 	};
 
 	$.JSNTplMaintenance.prototype = {
@@ -32,6 +32,7 @@
 
 			// Setup backup button
 			btnBackup.click(function(event, saved) {
+				event.preventDefault();
 				if (status.val() == 'no' && !saved) {
 					// Validate form elements
 					if (!document.formvalidator.isValid(form[0])) {

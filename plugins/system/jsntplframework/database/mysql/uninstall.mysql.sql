@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS `#__jsn_tplframework_megamenu`;

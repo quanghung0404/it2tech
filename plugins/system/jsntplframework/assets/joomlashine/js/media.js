@@ -54,7 +54,7 @@
 					isFolder	: true,
 					isLazy		: true
 				}],
-				debugLevel: 0,
+				debugLevel: -1,
 				onLazyRead: loadNode,
 				onQueryExpand: queryExpandNode,
 				onActivate: activateNode
@@ -82,10 +82,11 @@
 		{
 			var
 			path = node.data.data.path,
-			template = self.params.template;
+			template = self.params.template,
+			token = self.params.token;
 
 			node.appendAjax({
-				url: 'index.php?widget=media&action=folders&path=' + path + '&template=' + template + '&rand=' + Math.random()
+				url: 'index.php?widget=media&action=folders&path=' + path + '&template=' + template + '&rand=' + Math.random() + '&' + token + '=1'
 			});
 		};
 
@@ -189,33 +190,42 @@
 		 */
 		function loadPath (path, selectedId)
 		{
-			$.getJSON('index.php?widget=media&action=files&path=' + path + '&template=' + self.params.template + '&rand=' + Math.random(), function (response) {
+			$.getJSON('index.php?widget=media&action=files&path=' + path + '&template=' + self.params.template + '&rand=' + Math.random() + '&' + self.params.token + '=1', function (response) {
 				self.loadedFiles = response.data;
 				
 				// Clear all existing items
 				self.panel.empty();
 				self.activeItem = undefined;
 
+				var len = self.loadedFiles.length;
+				
+				if (len < 0)
+				{
+					return;
+				}	
+				
 				// Generate items from loaded data
-				self.loadedFiles.each(function (file) {
+				for (var i = 0; i < len; i++) 
+				{
+					var file = self.loadedFiles[i];
 					var
 					isActive	= selectedId !== undefined && selectedId == file.data['id'],
 					className	= isActive ? 'jsn-image-file thumbnail active' : 'jsn-image-file thumbnail',
 					element		= $('<a />',    { 'class': className, 'href': 'javascript:void(0)', 'id': file.data['id'] }),
 					thumb		= $('<span />', { 'class': 'jsn-image-thumb' }),
-					imgUrl		= file.data.thumbnail != false ? file.data.thumbnail : 'index.php?widget=media&action=thumbnail&file=' + file.data.url + '&template=' + self.params.template;
+					imgUrl		= file.data.thumbnail != false ? file.data.thumbnail : 'index.php?widget=media&action=thumbnail&file=' + file.data.url + '&template=' + self.params.template + '&' + self.params.token + '=1';
 
 					if (isActive) {
 						self.activeItem = element;
 					}
-
+					
 					thumb.append($('<img />', { 'src': imgUrl, 'alt': file.title }));
 
 					element
 						.data('jsn-file-data', file)
 						.append(thumb)
-						.appendTo(self.panel);
-				});
+						.appendTo(self.panel);					
+				}
 			});
 		};
 
@@ -315,13 +325,15 @@
 			self.tree = new JSNFolderTree({
 				basePath: self.params.basePath,
 				renderTo: self.pnlFolders,
-				template: self.params.template
+				template: self.params.template,
+				token: self.params.token,
 			});
 
 			self.imageList = new JSNImageList({
 				renderTo: self.pnlFileItems,
 				startPath: '/',
-				template: self.params.template
+				template: self.params.template,
+				token: self.params.token,
 			});
 
 			// Create jQuery wrapped tree object
@@ -487,7 +499,7 @@
 
 			if (file.val() != '') {
 				form
-					.attr('action', 'index.php?widget=media&action=upload&template=' + self.params.template + '&path=' + self.tree.getActivePath())
+					.attr('action', 'index.php?widget=media&action=upload&template=' + self.params.template + '&path=' + self.tree.getActivePath() + '&' + self.params.token + '=1')
 					.submit()
 					.append($('<span />', { 'class': 'jsn-loading' }));
 				el

@@ -1,0 +1,17 @@
+/**
+ * @version     $Id$
+ * @package     JSNExtension
+ * @subpackage  JSNTPLFramework
+ * @author      JoomlaShine Team <support@joomlashine.com>
+ * @copyright   Copyright (C) 2015 JoomlaShine.com. All Rights Reserved.
+ * @license     GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Websites: http://www.joomlashine.com
+ * Technical Support:  Feedback - http://www.joomlashine.com/contact-us/get-support.html
+ */
+ 
+#jsn-tpl-mm-element-module-list-container .jsn-tpl-mm-element-module-position-wrapper {
+ 	margin-top: 10px;
+ 	border: 1px solid #ccc;
+ 	min-height: 250px;
+}

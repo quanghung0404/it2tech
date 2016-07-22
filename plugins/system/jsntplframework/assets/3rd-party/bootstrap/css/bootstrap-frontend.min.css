@@ -173,3 +173,9 @@ a:hover,a:focus{color:#005580;text-decoration:underline;}
 .jsn-direction-rtl .row-fluid [class*="span"].offset-12 {
 	margin-right: -100%;
 }
+#modules-form .radio.btn-group input[type="radio"] {
+    display: block !important;
+}
+fieldset .control-label label{
+	display: block !important;
+}

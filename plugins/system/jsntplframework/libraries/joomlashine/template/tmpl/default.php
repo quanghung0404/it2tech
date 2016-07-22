@@ -14,6 +14,8 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
+$utils = JSNTplUtils::getInstance();
+
 // Get all fieldset in XML
 $fieldSets = $adminFormXml->fields->fieldset;
 
@@ -46,10 +48,120 @@ $nextEdition = str_replace('PRO ', '', $this->templateEdition->getNextEdition())
 
 // Get installed template version
 $version = JSNTplHelper::getTemplateVersion($this->data->template);
+
+// Get list of JoomlaShine template for cross promotion
+$promotion = $nextEdition == 'STANDARD' ? true : false;
+
+if ($promotion)
+{
+	$config = JFactory::getConfig();
+	$cache  = $config->get('tmp_path') . '/jsn_templates.json';
+
+	if ( ! @is_file($cache) || ! @is_readable($cache) || time() - filemtime($cache) > 86400)
+	{
+		try
+		{
+			$jsn_templates = JSNTplHttpRequest::get(
+				'http://demo.joomlashine.com/products-intro/assets/json/showlist-templates-' . ($nextEdition == 'STANDARD' ? 'free' : 'pro') . '.json',
+				$cache
+			);
+
+			$jsn_templates = $jsn_templates['body'];
+		}
+		catch (Exception $e)
+		{
+			// Disable cross promotion
+			$promotion = false;
+		}
+	}
+	else
+	{
+		$jsn_templates = JFile::read($cache);
+	}
+
+	if ($jsn_templates = json_decode($jsn_templates))
+	{
+		$jsn_templates = $jsn_templates->showlist->images->image;
+	}
+	else
+	{
+		$promotion = false;
+	}
+}
+
+$jversion = new JVersion();
+$megamenu = (string) $this->templateXml->megamenu;
+
+// Migrate megamenu data
+if ($megamenu == 'yes')
+{
+	if (version_compare($jversion->getShortVersion(), '3.0', ">="))
+	{
+		include_once JSN_PATH_TPLFRAMEWORK_MEGAMENU_LIBRARIES . '/helpers/megamenu.php';
+		JSNTplMMHelperMegamenu::migrate();
+	}
+}
+
+$plgTplBrand 	= $utils->checkPlgJSNBrand();
+
+$showUpgradeButton				= 1;
+$showChangelog					= 1;
+
+$showThumbnailLink 				= 1;
+$showCopyrightContent 			= 1;
+
+$replaceFooterContent			= 0;
+$replaceGettingStartedContent 	= 0;
+$replacedGettingStartedContent 	= '';
+$replacedFooterContent			= '';
+
+
+if ($plgTplBrand)
+{
+	$dispatcher 		= JEventDispatcher::getInstance();
+	$rload 				= JPluginHelper::importPlugin('system', 'jsnbrand');
+	
+	if ($rload === true)
+	{	
+		$showUpgradeButton 					= $dispatcher->trigger('showTplUpgradeButton');
+		$showUpgradeButton					= (int) $showUpgradeButton[0];
+	
+		$showChangelog 						= $dispatcher->trigger('showTplChangelog');
+		$showChangelog						= (int) $showChangelog[0];
+	
+		$showThumbnailLink 					= $dispatcher->trigger('showTplThumbnailLink');		
+		$showThumbnailLink					= (int) $showThumbnailLink[0];
+		
+		$showCopyrightContent 				= $dispatcher->trigger('showTplCopyrightContent');
+		$showCopyrightContent				= (int) $showCopyrightContent[0];
+
+		
+		$replaceFooterContent 				= $dispatcher->trigger('replaceTplFooterContent');
+		$replaceFooterContent				= (int) $replaceFooterContent[0];
+	
+		$replacedFooterContent				= $dispatcher->trigger('getTplFooterContent');
+		$replacedFooterContent				= (string) $replacedFooterContent[0];
+		
+		$replaceGettingStartedContent 		= $dispatcher->trigger('replaceTplGettingStartedContent');
+		$replaceGettingStartedContent		= (int) $replaceGettingStartedContent[0];
+	
+		$replacedGettingStartedContent		= $dispatcher->trigger('getTplGettingStartedContent');
+		$replacedGettingStartedContent		= (string) $replacedGettingStartedContent[0];
+	}
+}
+
+if (!$showThumbnailLink)
+{
+	$templateLink = '#';
+}
 ?>
 <div class="jsn-master"><div id="jsn-template-config" class="jsn-bootstrap <?php echo $wrapperClass ?> <?php echo $editionClass ?>">
 	<form action="" method="POST" name="adminForm" id="style-form">
 		<input type="hidden" name="task" />
+		<input type="hidden" id="jsn-tpl-style-id" value="<?php echo JFactory::getApplication()->input->getInt('id', 0); ?>" />
+		<input type="hidden" id="jsn-tpl-edition" value="<?php echo strtolower(trim($edition)); ?>" />
+		<input type="hidden" id="jsn-tpl-name" value="<?php echo strtolower(trim($this->data->template)); ?>" />
+		<input type="hidden" id="jsn-tpl-token" value="<?php echo JSession::getFormToken(); ?>" />
 		<input type="hidden" name="customized" value="<?php echo @count($this->data->params) ? 'yes' : 'no'; ?>" />
 		<?php echo JHtml::_('form.token'); ?>
 
@@ -67,7 +179,7 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 			<div class="clearfix"></div>
 		</div>
 
-		<div id="jsn-template-config-tabs" class="form-horizontal">
+		<div id="jsn-template-config-tabs" class="jsn-hide form-horizontal">
 			<ul id="jsn-main-nav">
 				<li>
 					<a href="#getting-started">
@@ -76,6 +188,31 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 					</a>
 				</li>
 				<?php foreach ($fieldSets as $fieldSet): ?>
+				
+				<?php 
+					$valid = false;
+					if (isset($fieldSet['joomlaVersion']))
+					{
+						if (version_compare($jversion->getShortVersion(), (string) $fieldSet['joomlaVersion'], ">="))
+						{
+							$valid = true;
+						}
+					}
+					else
+					{
+						$valid = true;
+					}
+					
+				?>
+					<?php if ($valid) : ?>
+					
+					<?php 
+						if ((string) $fieldSet['name'] == 'jsn-megamenu' && $megamenu != 'yes')
+						{
+							continue;	
+						}
+						
+					?>
 					<?php $class = isset($fieldSet['pro']) && $fieldSet['pro'] == 'true' ? 'jsn-pro-tab' : '' ?>
 					<li class="<?php echo $class ?>">
 						<a href="#<?php echo $fieldSet['name'] ?>">
@@ -89,6 +226,7 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 							<?php endif ?>
 						</a>
 					</li>
+					<?php endif ?>
 				<?php endforeach ?>
 				<li><a href="#menu-assignment"><i class="icon-checkbox"></i> <?php echo JText::_('JSN_TPLFW_MENU_ASSIGNMENT') ?></a></li>
 			</ul>
@@ -109,11 +247,36 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 			</div>
 
 			<?php foreach ($fieldSets as $xmlFieldSet): ?>
+			
+				<?php 
+					$valid = false;
+					if (isset($xmlFieldSet['joomlaVersion']))
+					{
+						if (version_compare($jversion->getShortVersion(), (string) $xmlFieldSet['joomlaVersion'], ">="))
+						{
+							$valid = true;
+						}
+					}
+					else
+					{
+						$valid = true;
+					}
+				?>
+				<?php if ($valid) : ?>
+				<?php 
+					if ((string) $xmlFieldSet['name'] == 'jsn-megamenu' && $megamenu != 'yes')
+					{
+						continue;	
+					}
+						
+				?>
 				<div id="<?php echo $xmlFieldSet['name'] ?>">
 					<?php if (isset($xmlFieldSet['pro']) && $xmlFieldSet['pro'] == 'true' && $this->templateEdition->getEdition() == 'FREE'): ?>
 					<div class="jsn-section-pro alert alert-block">
 						<p class="pull-left"><?php echo JText::_('JSN_TPLFW_FEATURES_AVAILABLE_IN_PRO') ?></p>
+						<?php if ($showUpgradeButton) {?>
 						<a href="javascript:void(0)" class="jsn-upgrade-link btn pull-right"><?php echo JText::_('JSN_TPLFW_UPGRADE_NOW') ?></a>
+						<?php } ?>
 						<div class="clearfix"></div>
 					</div>
 					<?php endif ?>
@@ -169,6 +332,7 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 						<?php endforeach ?>
 					<?php endif ?>
 				</div>
+				<?php endif ?>
 			<?php endforeach ?>
 
 			<div id="menu-assignment">
@@ -176,6 +340,93 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 			</div>
 		</div>
 	</form>
+
+	<?php if ($promotion) : ?>
+	<div id="see-other-products">
+		<h2 class="jsn-section-header">
+			<?php echo JText::_('JSN_TPLFW_SEE_OTHER_PRODUCTS') ?>
+			<ul class="jsn-list-horizontal pull-right">
+				<li>
+					<a
+						class="jsn-icon24 jsn-icon-social jsn-icon-facebook"
+						href="http://www.facebook.com/joomlashine"
+						title="<?php echo JText::_('JSN_TPLFW_CONNECT_WITH_US_ON_FACEBOOK') ?>"
+						target="_blank">
+					</a>
+				</li>
+				<li>
+					<a
+						class="jsn-icon24 jsn-icon-social jsn-icon-twitter"
+						href="http://www.twitter.com/joomlashine"
+						title="<?php echo JText::_('JSN_TPLFW_FOLLOW_US_ON_TWITTER') ?>"
+						target="_blank">
+					</a>
+				</li>
+				<li>
+					<a
+						class="jsn-icon24 jsn-icon-social jsn-icon-youtube"
+						href="http://www.youtube.com/joomlashine"
+						title="<?php echo JText::_('JSN_TPLFW_WATCH_US_ON_YOUTUBE') ?>"
+						target="_blank">
+					</a>
+				</li>
+			</ul>
+		</h2>
+		<div class="clearbreak"></div>
+		<div class="bxslider">
+			<?php foreach ($jsn_templates as $item) :
+				$download = 'javascript:void(0)';
+				$title    = 'Joomla Templates by JoomlaShine.com';
+
+				if (preg_match('#/jsn-([a-z0-9]+)\.#i', $item->image, $m))
+				{
+					$download = 'http://www.joomlashine.com/joomla-templates/jsn-' . $m[1] . '-download.html';
+					$title    = 'JSN ' . ucfirst($m[1]);
+				} ?>
+			<a <?php echo 'href="http://demo.joomlashine.com/products-intro/' . $item->image . '" title="' . $title . '" data-demo="' . $item->link . '" data-download="' . $download . '" rel="cross-promo"'; ?>>
+				<img src="http://demo.joomlashine.com/products-intro/<?php echo $item->thumbnail; ?>" />
+			</a>
+			<?php endforeach; ?>
+		</div>
+		<input type="hidden" name="visited" value="" />
+		<script type="text/javascript">
+			(function($) {
+				$(document).ready(function() {
+					var promotion = $('.bxslider'); slicesPerView = parseInt(promotion.innerWidth() / 250);
+
+					promotion.bxSlider({
+						hideControlOnEnd: true,
+						adaptiveHeight: true,
+						pager: false,
+						slideWidth: 250,
+						slideMargin: 10,
+						minSlides: slicesPerView,
+						maxSlides: slicesPerView,
+					});
+
+					$('.bxslider > a').colorbox({
+						rel: 'cross-promo',
+						onComplete: function(event) {
+							// Set title
+							$('#colorbox #cboxCurrent').html($(event.el).attr('title'));
+
+							// Set buttons
+							$('#colorbox #cboxTitle').html(
+								'<div class="jsn-master"><div class="jsn-bootstrap">'
+								+
+								'<a href="' + $(event.el).attr('data-demo') + '" class="btn btn-primary" target="_blank"><?php echo JText::_('JSN_TPLFW_DEMO'); ?></a>'
+								+
+								'<a href="' + $(event.el).attr('data-download') + '" class="btn btn-success" target="_blank"><?php echo JText::_('JSN_TPLFW_DOWNLOAD'); ?></a>'
+								+
+								'</div></div>'
+							);
+						},
+					});
+				});
+			})(jQuery);
+		</script>
+	</div>
+	<?php endif; ?>
 
 	<div class="modal hide" id="jsn_pro_edition_only_modal">
 		<div class="modal-body">
@@ -195,6 +446,9 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 
 <div class="jsn-master">
 	<div class="jsn-page-footer jsn-bootstrap" id="jsn-footer">
+		<?php if ($replaceFooterContent) { ?>
+		<?php echo $replacedFooterContent; ?>
+		<?php } else { ?>
 		<div class="pull-left">
 			<ul class="jsn-footer-menu">
 				<li class="first">
@@ -238,10 +492,16 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 					<a href="http://www.joomlashine.com/joomla-extensions/jsn-mobilize.html" target="_blank" title="JSN Mobilize - Painless mobile site creator">
 						<i class="jsn-icon32 jsn-icon-products jsn-icon-mobilize"></i>
 					</a>
+					<a href="http://www.joomlashine.com/joomla-extensions/jsn-pagebuilder.html" target="_blank" title="JSN PageBuilder - Easiest way to build Joomla pages">
+						<i class="jsn-icon32 jsn-icon-products jsn-icon-pagebuilder"></i>
+					</a>
+					<a href="http://www.joomlashine.com/joomla-extensions/jsn-easyslider.html" target="_blank" title="JSN EasySlider - Multipurpose content slider with super user-friendly interface">
+						<i class="jsn-icon32 jsn-icon-products jsn-icon-easyslider"></i>
+					</a>										
 				</li>
 			</ul>
 		</div>
-
+		<?php } ?>
 		<div class="clearbreak"></div>
 	</div>
 </div>
@@ -254,6 +514,24 @@ $version = JSNTplHelper::getTemplateVersion($this->data->template);
 
 <script type="text/javascript">
 	(function($) {
+
+		$(document).ready(function() {
+            $(".jsn-modal-overlay,.jsn-modal-indicator").remove();
+            $("body").append($("<div/>", {
+                "class":"jsn-modal-overlay",
+                "style":"z-index: 1000; display: inline;"
+            })).append($("<div/>", {
+                "class":"jsn-modal-indicator",
+                "style":"display:block"
+            })).addClass("jsn-loading-page");
+
+            $(".jsn-modal-overlay,.jsn-modal-indicator").delay(1200).queue(function () {
+              	$(this).remove();
+                $("#jsn-template-config-tabs").removeClass("jsn-hide");
+            });
+                
+		});
+		
 		// Setup tabs
 		$('#jsn-template-config-tabs').tabs();
 

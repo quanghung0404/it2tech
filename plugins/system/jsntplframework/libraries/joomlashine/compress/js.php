@@ -35,7 +35,7 @@ abstract class JSNTplCompressJs
 	 *
 	 * @return  void
 	 */
-	public static function compress ($htmlMarkup)
+	public static function compress ($scripts)
 	{
 		static $compressedFiles;
 
@@ -66,21 +66,14 @@ abstract class JSNTplCompressJs
 		$leaveAlone[] = 'tinymce.min.js';
 
 		// Parse script tags
-		foreach (explode('>', $htmlMarkup[0]) as $line)
+		foreach ($scripts as $key => $line)
 		{
-			$attributes = JSNTplCompressHelper::parseAttributes($line);
-
 			// Set default group
 			$attributes['group'] = 'default';
-
-			// Skip if not have attibute src
-			if ( ! isset($attributes['src']))
-			{
-				continue;
-			}
+			$attributes['src'] = $key;
 
 			// Add to result list if this is external file
-			if ( ! ($isInternal = JUri::isInternal($attributes['src'])) OR strpos($attributes['src'], '//') === 0)
+			if ( ! ($isInternal = JSNTplCompressHelper::isInternal($attributes['src'])) OR strpos($attributes['src'], '//') === 0)
 			{
 				// Add collected files to compress list
 				if ( ! empty($groupFiles))
@@ -107,7 +100,7 @@ abstract class JSNTplCompressJs
 				$path = JSNTplCompressHelper::getFilePath(substr($attributes['src'], 0, $questionPos));
 
 				// Check if this is a dynamic generation content
-				if ( ! $isDynamic AND JUri::isInternal($attributes['src']))
+				if ( ! $isDynamic AND JSNTplCompressHelper::isInternal($attributes['src']))
 				{
 					$isDynamic = ! is_file($path);
 				}
@@ -171,7 +164,7 @@ abstract class JSNTplCompressJs
 			}
 
 			// Add file to the group
-			$groupFiles[$groupIndex][] = $src;
+			$groupFiles[$groupIndex][] = preg_match('/^reserve\|(.+)$/', $groupType) ? $attributes['src'] : $src;
 		}
 
 		// Add collected files to result list
@@ -185,6 +178,7 @@ abstract class JSNTplCompressJs
 
 		// Initial compress result
 		$compressResult = array();
+		$fileCompressed = array();
 
 		// Get template details
 		$templateName = JFactory::getApplication()->getTemplate();
@@ -208,13 +202,15 @@ abstract class JSNTplCompressJs
 		}
 
 		// Loop to each compress element to compress file
+		$modifiedFlag = false;
+
 		foreach ($compress AS $group)
 		{
 			// Ignore compress when group is a external file
 			if (isset($group['src']))
 			{
 				$compressResult[] = sprintf('<script src="%s" type="text/javascript"></script>', $group['src']);
-
+				$fileCompressed[] = $group['src'];
 				continue;
 			}
 
@@ -222,7 +218,7 @@ abstract class JSNTplCompressJs
 			if (isset($group['group']) AND preg_match('/^reserve\|(.+)$/', $group['group']))
 			{
 				$compressResult[] = sprintf('<script src="%s" type="text/javascript"></script>', $group['files'][0]);
-
+				$fileCompressed[] = $group['files'][0];
 				continue;
 			}
 
@@ -235,11 +231,16 @@ abstract class JSNTplCompressJs
 			foreach ($group['files'] AS $file)
 			{
 				$path = JSNTplCompressHelper::getFilePath($file);
-				$lastModified = (is_file($path) && filemtime($path) > $lastModified) ? filemtime($path) : $lastModified;
+				$lastModified = (is_file($path) && @filemtime($path) > $lastModified) ? @filemtime($path) : $lastModified;
+			}
+
+			if (@filemtime($compressPath . $compressFile) < $lastModified)
+			{
+				$modifiedFlag = true;
 			}
 
 			// Compress group when expired
-			if ( ! is_file($compressPath . $compressFile) OR filemtime($compressPath . $compressFile) < $lastModified)
+			if ( ! is_file($compressPath . $compressFile) OR @filemtime($compressPath . $compressFile) < $lastModified)
 			{
 				// Preset compression buffer
 				$buffer = '';
@@ -343,12 +344,14 @@ abstract class JSNTplCompressJs
 				foreach ($splittedFiles AS $file)
 				{
 					$compressResult[] = sprintf('<script src="%s" type="text/javascript"></script>', $file);
+					$fileCompressed[] = $file;
 				}
 			}
 
 			// Add compressed file to the compress result list
 			$compressUrl = str_replace(str_replace('\\', '/', JPATH_ROOT), JUri::root(true), str_replace('\\', '/', $compressPath)) . $compressFile;
 			$compressResult[] = sprintf('<script src="%s" type="text/javascript"></script>', $prefix . $compressUrl);
+			$fileCompressed[] = $prefix . $compressUrl;
 		}
 
 		// Verify if stylesheets associated with this page has been changed
@@ -396,7 +399,7 @@ abstract class JSNTplCompressJs
 								}
 							}
 
-							if ($removable)
+							if ($removable && !$modifiedFlag)
 							{
 								JFile::delete($file);
 							}
@@ -448,6 +451,6 @@ abstract class JSNTplCompressJs
 			}
 		}
 
-		return implode("\r\n", $compressResult);
+		return $fileCompressed;
 	}
 }

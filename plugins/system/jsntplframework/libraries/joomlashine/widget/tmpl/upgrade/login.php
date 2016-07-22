@@ -1,7 +1,6 @@
 <div id="jsn-upgrade-login">
 	<h2><?php echo JText::_('JSN_TPLFW_AUTO_UPGRADE_LOGIN_TITLE') ?></h2>
 	<p><?php echo JText::_('JSN_TPLFW_AUTO_UPGRADE_LOGIN_DESC') ?></p>
-
 	<form id="jsn-upgrade-login">
 		<div class="form-inline">
 			<label for="username"><?php echo JText::_('JSN_TPLFW_USERNAME') ?>:</label>

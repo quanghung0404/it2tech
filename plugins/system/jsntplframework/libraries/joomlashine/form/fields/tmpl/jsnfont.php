@@ -100,7 +100,7 @@ foreach ($this->options AS $style => $data) :
 				<label for="<?php echo "{$this->id}_{$style}_{$section}_family"; ?>" rel="tipsy" original-title="<?php echo JText::_('JSN_TPLFW_FONT_FAMILY_DESC'); ?>"><?php echo JText::_('JSN_TPLFW_FONT_FAMILY'); ?></label>
 			</div>
 			<div class="controls">
-				<select class="jsn-font-select-box jsn-list-standard-font-family" id="<?php echo "{$this->id}_{$style}_{$section}_family"; ?>" name="<?php echo $this->name ?>[<?php echo $style; ?>][<?php echo $section; ?>][family]">
+				<select class="jsn-font-select-box jsn-list-standard-font-family" id="<?php echo "{$this->id}_{$style}_{$section}_family"; ?>" name="<?php echo $this->name ?>[<?php echo $style; ?>][<?php echo $section; ?>][family]" autocomplete="off">
 					<?php foreach ($this->standard AS $family) : $shorten = trim(substr($family, 0, strpos($family, ',')), "'"); ?>
 					<option class="jsn-list-item-standard-font-family-<?php echo str_replace(' ', '-', strtolower($shorten)); ?>" value="<?php echo $family; ?>"<?php echo @$this->value[$style][$section]['family'] == $family ? ' selected' : ''; ?>>
 						<?php echo $shorten; ?>
@@ -118,7 +118,7 @@ foreach ($this->options AS $style => $data) :
 				<label for="<?php echo "{$this->id}_{$style}_{$section}_primary"; ?>" rel="tipsy" original-title="<?php echo JText::_('JSN_TPLFW_FONT_PRIMARY_DESC'); ?>"><?php echo JText::_('JSN_TPLFW_FONT_PRIMARY'); ?></label>
 			</div>
 			<div class="controls">
-				<select class="jsn-font-select-box jsn-list-google-font-face" data-placeholder="<?php echo JText::_('JSN_TPLFW_FONT_PRIMARY_SELECT'); ?>" id="<?php echo "{$this->id}_{$style}_{$section}_primary"; ?>" name="<?php echo $this->name ?>[<?php echo $style; ?>][<?php echo $section; ?>][primary]">
+				<select class="jsn-font-select-box jsn-list-google-font-face" data-placeholder="<?php echo JText::_('JSN_TPLFW_FONT_PRIMARY_SELECT'); ?>" id="<?php echo "{$this->id}_{$style}_{$section}_primary"; ?>" name="<?php echo $this->name ?>[<?php echo $style; ?>][<?php echo $section; ?>][primary]" autocomplete="off">
 					<?php foreach ($this->google AS $face) : ?>
 					<option class="jsn-list-item-google-font-face-<?php echo str_replace(' ', '-', strtolower($face)); ?>" value="<?php echo $face; ?>"<?php echo @$this->value[$style][$section]['primary'] == $face ? ' selected' : ''; ?>>
 						<?php echo $face; ?>
@@ -133,7 +133,7 @@ foreach ($this->options AS $style => $data) :
 				<label for="<?php echo "{$this->id}_{$style}_{$section}_secondary"; ?>" rel="tipsy" original-title="<?php echo JText::_('JSN_TPLFW_FONT_SECONDARY_DESC'); ?>"><?php echo JText::_('JSN_TPLFW_FONT_SECONDARY'); ?></label>
 			</div>
 			<div class="controls">
-				<select class="jsn-font-select-box jsn-list-standard-font-family" id="<?php echo "{$this->id}_{$style}_{$section}_secondary"; ?>" name="<?php echo $this->name ?>[<?php echo $style; ?>][<?php echo $section; ?>][secondary]">
+				<select class="jsn-font-select-box jsn-list-standard-font-family" id="<?php echo "{$this->id}_{$style}_{$section}_secondary"; ?>" name="<?php echo $this->name ?>[<?php echo $style; ?>][<?php echo $section; ?>][secondary]" autocomplete="off">
 					<?php foreach ($this->standard AS $family) : $shorten = trim(substr($family, 0, strpos($family, ',')), "'"); ?>
 					<option class="jsn-list-item-standard-font-family-<?php echo str_replace(' ', '-', strtolower($shorten)); ?>" value="<?php echo $family; ?>"<?php echo @$this->value[$style][$section]['secondary'] == $family ? ' selected' : ''; ?>>
 						<?php echo $shorten; ?>

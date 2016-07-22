@@ -53,7 +53,7 @@
 			// Create close button in panel footer
 			self.panel.addClass('jsn-loading').dialog('option', 'buttons', {Close: function() { self.panel.dialog('close'); }});
 
-			$.getJSON('index.php?widget=upgrade&action=intro&template=' + self.params.template, function (response) {
+			$.getJSON('index.php?widget=upgrade&action=intro&template=' + self.params.template + '&' + self.params.token + '=1', function (response) {
 				self.panel.removeClass('jsn-loading').html(response.data);
 				self.panel
 					.find('#btn-start-upgrade')
@@ -74,7 +74,7 @@
 			// Remove close button in panel footer
 			self.panel.dialog('option', 'buttons', null);
 
-			$.getJSON('index.php?widget=upgrade&action=login&template=' + self.params.template, function (response) {
+			$.getJSON('index.php?widget=upgrade&action=login&template=' + self.params.template + '&' + self.params.token + '=1', function (response) {
 				self.panel.html(response.data);
 
 				// Setup cancel button
@@ -132,7 +132,7 @@
 				.attr('disabled', 'disabled');
 
 			$.ajax({
-				url: 'index.php?widget=upgrade&action=load-editions&template=' + self.params.template,
+				url: 'index.php?widget=upgrade&action=load-editions&template=' + self.params.template + '&' + self.params.token + '=1',
 				type: 'POST',
 				dataType: 'JSON',
 				data: {
@@ -192,7 +192,7 @@
 
 		function replacementUpgrade (edition)
 		{
-			$.getJSON('index.php?widget=upgrade&action=upgrade&template=' + self.params.template + '&edition=' + edition, function (response) {
+			$.getJSON('index.php?widget=upgrade&action=upgrade&template=' + self.params.template + '&edition=' + edition + '&' + self.params.token + '=1', function (response) {
 				self.panel.html(response.data);
 
 				var
@@ -200,7 +200,7 @@
 				liReplace = self.panel.find('#jsn-upgrade-replace');
 				liReplace.removeClass('hide');
 				
-				$.getJSON('index.php?widget=upgrade&action=replace&template=' + self.params.template + '&edition=' + edition, function (response) {
+				$.getJSON('index.php?widget=upgrade&action=replace&template=' + self.params.template + '&edition=' + edition + '&' + self.params.token + '=1', function (response) {
 					liReplace
 						.removeClass('jsn-loading')
 						.addClass('jsn-success');
@@ -219,7 +219,7 @@
 		{
 			self.panel.dialog('option', 'buttons', {});
 
-			$.getJSON('index.php?widget=upgrade&action=upgrade&template=' + self.params.template + '&edition=' + edition, function (response) {
+			$.getJSON('index.php?widget=upgrade&action=upgrade&template=' + self.params.template + '&edition=' + edition + '&' + self.params.token + '=1', function (response) {
 				self.panel.html(response.data);
 
 				var
@@ -229,7 +229,7 @@
 				downloadTask.removeClass('hide');
 
 				$.ajax({
-					url: 'index.php?widget=upgrade&action=download-package&template=' + self.params.template,
+					url: 'index.php?widget=upgrade&action=download-package&template=' + self.params.template + '&' + self.params.token + '=1',
 					type: 'POST',
 					data: {
 						edition: edition,
@@ -243,7 +243,8 @@
 
 						if (downloadResponse.type == 'error') {
 							downloadStatus.text(downloadResponse.data);
-							return;
+
+							return finishUpgrade(false);
 						}
 
 						installUpgrade();
@@ -266,13 +267,14 @@
 
 			installTask.removeClass('hide');
 
-			$.getJSON('index.php?widget=upgrade&action=install&template=' + self.params.template, function (response) {
+			$.getJSON('index.php?widget=upgrade&action=install&template=' + self.params.template + '&' + self.params.token + '=1', function (response) {
 				installTask.removeClass('jsn-loading');
 				installTask.addClass('jsn-' + response.type);
 
 				if (response.type == 'error') {
 					installStatus.text(response.data);
-					return;
+
+					return finishUpgrade(false);
 				}
 
 				migrateSettings(self.params.styleId, response.data.styleId);
@@ -294,7 +296,7 @@
 			migrateTask.removeClass('hide');
 
 			$.ajax({
-				url: 'index.php?widget=upgrade&action=migrate&template=' + self.params.template,
+				url: 'index.php?widget=upgrade&action=migrate&template=' + self.params.template + '&' + self.params.token + '=1',
 				type: 'POST',
 				data: {
 					from: from,
@@ -307,7 +309,8 @@
 
 					if (response.type == 'error') {
 						migrateStatus.text(response.data);
-						return;
+
+						return finishUpgrade(false);
 					}
 
 					finishUpgrade(to);
@@ -317,24 +320,25 @@
 
 		function finishUpgrade (styleId)
 		{
-			var
-			btnFinish = self.panel.find('#jsn-upgrade-finish');
-			btnFinish.removeAttr('disabled');
+			var btnFinish = self.panel.find('#jsn-upgrade-finish').removeAttr('disabled');
 
-			if (styleId !== undefined) {
+			if (styleId === false) {
+				btnFinish.on('click', function () {
+					self.panel.dialog('close');
+				});
+
+				return;
+			} else if (styleId !== undefined) {
 				btnFinish.on('click', function () {
 					window.location = 'index.php?option=com_templates&task=style.edit&id=' + styleId;
 				});
-			}
-			else {
+			} else {
 				btnFinish.on('click', function () {
 					window.location.reload();
 				});
 			}
 
-			self.panel
-				.find('#jsn-upgrade-success')
-				.removeClass('hide');
+			self.panel.find('#jsn-upgrade-success').removeClass('hide');
 		}
 
 		init();

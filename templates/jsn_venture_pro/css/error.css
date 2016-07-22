@@ -1,0 +1,333 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+/* ============================== DEFAULT HTML ============================== */
+/* =============== DEFAULT HTML - GENERAL STYLES =============== */
+html, body {
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+body.jsn-color-blue {
+	background: #3e8bd4;
+}
+body.jsn-color-pink {
+	background: #d04982;
+}
+body.jsn-color-red {
+	background: #ec4f35;
+}
+body.jsn-color-grey {
+	background: #eee;
+}
+body.jsn-color-purple {
+	background: #b267be;
+}
+body.jsn-color-cyan {
+	background: #29ab9d;
+}
+/* =============== DEFAULT HTML - TEXT STYLES =============== */
+p, pre, blockquote, form, dl, ul, ol, fieldset, address {
+	margin: 0.35em 0 0.8em 0;
+	padding: 0;
+}
+fieldset {
+	padding: .5em;
+}
+small {
+	font-size: .85em;
+}
+sup {
+	font-size: .8em;
+	position: relative;
+	bottom: 0.3em;
+	vertical-align: baseline;
+}
+sup em {
+	color: red;
+}
+acronym, abbr {
+	border-bottom: 1px dashed;
+	letter-spacing: 1px;
+	cursor: help;
+}
+hr {
+	height: 1px;
+	border: none;
+	margin: 0.75em 0;
+	background-color: #999;
+}
+/* =============== DEFAULT HTML - HEADING STYLES =============== */
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.8em 0 0.3em 0;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+/* =============== DEFAULT HTML - LINK STYLES =============== */
+a {
+	text-decoration: none;
+	outline: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+a img {
+	border: none;
+}
+/* =============== DEFAULT HTML - LIST STYLES =============== */
+ul li {
+	margin: 0.3em 0 0.3em 1.6em;
+	padding: 0;
+}
+ol li {
+	margin: 0.3em 0 0.3em 2em;
+	padding: 0;
+}
+/* =============== DEFAULT HTML - IMAGES STYLES =============== */
+img {
+	border: none;
+}
+/* ============================== LAYOUT ============================== */
+/* =============== LAYOUT - GENERAL LAYOUT =============== */
+.clearafter:after {
+	clear: both;
+	display: block;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+.clearbreak {
+	clear: both;
+}
+/* =============== LAYOUT - OVERALL PAGE =============== */
+#jsn-page {
+	color: #000;
+	width: 750px;
+	margin: 100px auto;
+	background-color: #fff;
+}
+/* =============== LAYOUT - HEADER AREA =============== */
+#jsn-header {
+	position: relative;
+	overflow: hidden;
+	background-color: #000;
+}
+#jsn-logo a {
+	line-height: 100%;
+	display: inline-block;
+	padding: 20px;
+}
+#jsn-logo img {
+	margin: 25px;
+}
+/* =============== LAYOUT - CONTENT AREA =============== */
+#jsn-error-heading {
+	float: left;
+	width: 265px;
+}
+#jsn-error-heading h1 {
+	margin: 20px 0 0 20px;
+	font-size: 7em;
+	line-height: 1em;
+	font-weight: normal;
+	text-align: center;
+}
+#jsn-error-heading h1 .heading-medium,
+#jsn-error-heading h1 .heading-small {
+	display: block;
+}
+#jsn-error-heading h1 .heading-medium {
+	font-size: 0.67em;
+	line-height: 1.05em;
+	margin-bottom: 15px;
+}
+#jsn-error-heading h1 .heading-small {
+	color: #666;
+	font-size: 38px;
+	line-height: 1.4em;
+}
+#jsn-error-content {
+	float: left;
+	width: 483px;
+}
+#jsn-error-content_inner {
+	padding: 0 0 0 30px;
+	margin: 30px;
+	border-left: 1px solid #999;
+}
+#jsn-error-content h3 {
+	margin: 0;
+	padding-left: 3px;
+	font-weight: normal;
+}
+#jsn-error-content #mod-search-searchword {
+	padding: 15px 10px;
+	font-size: 0.8em;
+	color: #666;
+	width: 65%;
+	border: 1px solid #999;
+}
+#jsn-error-content ul {
+	margin: 10px 0 15px 0;
+}
+#jsn-error-content ul li {
+	font-size: 15px;
+	line-height: 1.55em;
+	margin: 0 0 0 1.5em;
+}
+#jsn-error-content .link-button {
+	color: #333;
+	cursor: pointer;
+	font-size: 0.8em;
+	padding: 15px 20px;
+	border: 1px solid #999;
+	background: #fff;
+	-moz-transition: 0.3s ease-out;
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+}
+#jsn-error-content .link-button:hover {
+	background: #eee;
+}
+#jsn-error-content #search-form {
+	margin: 10px 0;
+} 
+#jsn-error-content #link-goback {
+	margin: 7px;
+}
+.link-action {
+	font-size: 14px;
+	padding: 1px 2px;
+	font-weight: bold;
+	text-decoration: none;
+	-moz-transition: 0.3s ease-out;
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+}
+.link-action:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+/* ============================== TEMPLATE COLOR ============================== */
+/* =============== TEMPLATE COLOR - BLUE STYLES =============== */
+.jsn-color-blue h1,
+.jsn-color-blue .link-action {
+	color: #3e8bd4;
+}
+.jsn-color-blue .link-action {
+	border-bottom: 1px solid #3e8bd4;
+}
+.jsn-color-blue .link-action:hover {
+	color: #fff;
+	background: #3e8bd4;
+}
+/* =============== TEMPLATE COLOR - RED STYLES =============== */
+.jsn-color-red h1,
+.jsn-color-red .link-action {
+	color: #ec4f35;
+}
+.jsn-color-red .link-action {
+	border-bottom: 1px solid #ec4f35;
+}
+.jsn-color-red .link-action:hover {
+	color: #fff;
+	background: #ec4f35;
+}
+/* =============== TEMPLATE COLOR - GREY STYLES =============== */
+.jsn-color-grey h1,
+.jsn-color-grey .link-action {
+	color: #000;
+}
+.jsn-color-grey .link-action {
+	border-bottom: 1px solid #000;
+}
+.jsn-color-grey .link-action:hover {
+	color: #fff;
+	background: #000;
+}
+/* =============== TEMPLATE COLOR - PURPLE STYLES =============== */
+.jsn-color-purple h1,
+.jsn-color-purple .link-action {
+	color: #b267be;
+}
+.jsn-color-purple .link-action {
+	border-bottom: 1px solid #b267be;
+}
+.jsn-color-purple .link-action:hover {
+	color: #fff;
+	background: #b267be;
+}
+/* =============== TEMPLATE COLOR - PINK STYLES =============== */
+.jsn-color-pink h1,
+.jsn-color-pink .link-action {
+	color: #d04982;
+}
+.jsn-color-pink .link-action {
+	border-bottom: 1px solid #d04982;
+}
+.jsn-color-pink .link-action:hover {
+	color: #fff;
+	background: #d04982;
+}
+/* =============== TEMPLATE COLOR - CYAN STYLES =============== */
+.jsn-color-cyan h1,
+.jsn-color-cyan .link-action {
+	color: #29ab9d;
+}
+.jsn-color-cyan .link-action {
+	border-bottom: 1px solid #29ab9d;
+}
+.jsn-color-cyan .link-action:hover {
+	color: #fff;
+	background: #29ab9d;
+}
+@media only screen and (max-width: 960px),
+(max-device-width: 960px) {
+	#jsn-page {
+		width: auto;
+	}
+	#jsn-error-content_inner {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 960px),
+(min-device-width: 768px) and (max-device-width: 960px) {
+	#jsn-page {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	#jsn-error-heading {
+		width: 35%;
+	}
+	#jsn-error-content {
+		width: 64%;
+	}
+}
+@media only screen and (max-width : 767px),
+(max-device-width: 767px) {
+	#jsn-page {
+		margin-top: 0;
+	}
+	#jsn-error-heading,
+	#jsn-error-content {
+		width: 100%;
+		float: none;
+	}
+	#jsn-error-heading img {
+		margin-top: 50px;
+	}
+}
+@media only screen and (max-width : 480px) and (orientation: portrait),
+(max-device-width: 480px) and (orientation: portrait) {
+	#jsn-page #jsn-error-content #mod-search-searchword {
+		width: auto;
+	}
+}

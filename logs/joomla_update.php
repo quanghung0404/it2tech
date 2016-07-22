@@ -59,3 +59,10 @@
 2016-07-18T14:00:51+00:00	INFO ::1	update	Deleting removed files and folders.
 2016-07-18T14:06:08+00:00	INFO ::1	update	Cleaning up after installation.
 2016-07-18T14:06:08+00:00	INFO ::1	update	Update to version 3.6.0 is complete.
+2016-07-18T16:01:12+00:00	INFO ::1	update	Update started by user Super User (117). Old version is 3.6.0.
+2016-07-18T16:01:12+00:00	INFO ::1	update	File Joomla_3.6.0-Stable-Update_Package.zip successfully downloaded.
+2016-07-18T16:01:14+00:00	INFO ::1	update	Starting installation of new version.
+2016-07-18T16:02:30+00:00	INFO ::1	update	Finalising installation.
+2016-07-18T16:02:31+00:00	INFO ::1	update	Deleting removed files and folders.
+2016-07-18T16:02:46+00:00	INFO ::1	update	Cleaning up after installation.
+2016-07-18T16:02:46+00:00	INFO ::1	update	Update to version 3.6.0 is complete.

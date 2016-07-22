@@ -240,6 +240,18 @@ class JFormFieldJSNFont extends JSNTplFormField
 				{
 					$this->value[$style][$section] = $this->default[$style][$section];
 				}
+
+				// Prepare font family value
+				if (isset($this->value[$style][$section]['family']))
+				{
+					$this->value[$style][$section]['family'] = str_replace("\'", "'", $this->value[$style][$section]['family']);
+				}
+
+				// Prepare secondary font value
+				if (isset($this->value[$style][$section]['secondary']))
+				{
+					$this->value[$style][$section]['secondary'] = str_replace("\'", "'", $this->value[$style][$section]['secondary']);
+				}
 			}
 
 			if ( ! isset($this->value[$style]['size']) AND isset($this->default[$style]['size']))

@@ -18,7 +18,7 @@
 		}, params);
 
 		// Initialize functionality
-		$(document).ready($.proxy(this.init, this));
+		$(document).ready($.proxy(this.init(), this));
 	};
 
 	$.JSNWidthType.prototype = {

@@ -76,6 +76,7 @@ class JSNTplWidgetMedia extends JSNTplWidgetBase
 
 	public function thumbnailAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		try
 		{
 			require_once JSN_PATH_TPLFRAMEWORK . '/libraries/3rd-party/PhpThumb/ThumbLib.inc.php';
@@ -118,6 +119,7 @@ class JSNTplWidgetMedia extends JSNTplWidgetBase
 	 */
 	public function uploadAction()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		if ($this->request->getMethod() != 'POST')
 		{
 			return;
@@ -173,6 +175,8 @@ class JSNTplWidgetMedia extends JSNTplWidgetBase
 	 */
 	public function verifyFolderAction()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
+		
 		// Import necessary Joomla libraries
 		jimport('joomla.filesystem.folder');
 		jimport('joomla.filesystem.path');
@@ -234,6 +238,7 @@ class JSNTplWidgetMedia extends JSNTplWidgetBase
 	 */
 	private function _fetchFolders ($path)
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
 		$folders = array();
 		$children = glob($path . '/*', GLOB_ONLYDIR);
 
@@ -267,11 +272,18 @@ class JSNTplWidgetMedia extends JSNTplWidgetBase
 	 */
 	private function _fetchFiles ($path)
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
+		
 		$files = array();
 		$rootPath = realpath(JPATH_ROOT);
 		$fileList = array();
 
-		foreach (array('jpg', 'jpeg', 'png', 'gif', 'JPG', 'JPEG', 'PNG', 'GIF') AS $ext)
+		if ($rootPath  === false)
+		{
+			$rootPath = JPATH_ROOT;
+		}
+		
+		foreach (array('jpg', 'jpeg', 'png', 'gif', 'ico', 'JPG', 'JPEG', 'PNG', 'GIF', 'ICO') AS $ext)
 		{
 			$tmp = glob("{$path}/*.{$ext}");
 

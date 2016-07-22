@@ -103,6 +103,12 @@ class JSNTplTemplateRecognization
 		$name = ucfirst($name);
 		$edition = strtoupper(trim($edition, '_'));
 
+		$rcontent = JFile::read(JPATH_ROOT . "/templates/{$template}/template.defines.php");
+		
+		if (!preg_match( '/JoomlaShine_Template_Name.*\'(.*)\'/', $rcontent )
+				&& !preg_match( '/JoomlaShine_Template_Edition.*\'(.*)\'/', $rcontent ) 
+				&& !preg_match( '/JoomlaShine_Template_Version.*\'(.*)\'/', $rcontent ))
+		{
 		// Generate template information
 		$content = "<?php
 /**
@@ -126,7 +132,8 @@ defined('_JEXEC') or die('Restricted index access');
 
 		// Write to file
 		JFile::write(JPATH_ROOT . "/templates/{$template}/template.defines.php", $content);
-
+		}
+		
 		// Store necessary template information
 		self::$templateDetails[$template] = (object) array(
 			'name' => $name,

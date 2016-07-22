@@ -1,0 +1,696 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+/* =============== GENERAL =============== */
+#jsn-page .button {
+	border: none;
+	color: #fff;
+	background-position: 10% -2089px;
+	padding: 10px 20px 10px 35px;
+}
+body.jsn-color-grey #jsn-page .button,
+body.jsn-color-yellow #jsn-page .button {
+	color: #333;
+}
+body.jsn-color-light #jsn-page .button {
+	background-color: #d3d9de;
+}
+body.jsn-color-light #jsn-page .button:hover {
+	background-color: #efefef;
+}
+body.jsn-color-dark #jsn-page .button {
+	background-color: #4b5a69;
+}
+body.jsn-color-dark #jsn-page .button:hover {
+	background-color: #535353;
+}
+body.jsn-color-green #jsn-page .button {
+	background-color: #3bbc5c;
+}
+body.jsn-color-green #jsn-page .button:hover {
+	background-color: #73a112;
+}
+body.jsn-color-orange #jsn-page .button {
+	background-color: #f77e2d;
+}
+body.jsn-color-orange #jsn-page .button:hover {
+	background-color: #f59c4d;
+}
+body.jsn-color-blue #jsn-page .button {
+	background-color: #3780b3;
+}
+body.jsn-color-blue #jsn-page .button:hover {
+	background-color: #5b94ce;
+}
+body.jsn-color-pink #jsn-page .button {
+	background-color: #ca0554;
+}
+body.jsn-color-pink #jsn-page .button:hover {
+	background-color: #e71c6d;
+}
+body.jsn-color-red #jsn-page .button {
+	background-color: #e65538;
+}
+body.jsn-color-red #jsn-page .button:hover{
+	background-color: #f26b5a;
+}
+body.jsn-color-yellow #jsn-page .button {
+	background-color: #ffc333;
+}
+body.jsn-color-yellow #jsn-page .button:hover{
+	background-color: #ffdd3e;
+}
+body.jsn-color-brown #jsn-page .button {
+	background-color: #8a501d;
+}
+body.jsn-color-brown #jsn-page .button:hover {
+	background-color: #9c683a;
+}
+body.jsn-color-cyan #jsn-page .button {
+	background-color: #2f9fb3;
+}
+body.jsn-color-cyan #jsn-page .button:hover {
+	background-color: #5ab5c5;
+}
+/* =============== CALENDARTHEME =============== */
+.ui-widget {
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    font-weight: 300;
+}
+#jsn-page .ui-datepicker {
+    background: none !important;
+    font-size: 14px;
+    padding: 0px;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	text-align: center;
+}
+.ui-datepicker th,
+.ui-datepicker .ui-datepicker-title {
+    font-weight: 300 !important;
+    color: #fff;
+    font-family: "Open Sans";
+}
+.ui-datepicker .ui-datepicker-title {
+	font-size: 0.9em;
+    font-weight: 400 !important;
+}
+.ui-datepicker-header.ui-widget-header .ui-icon {
+    background-image: url("../../images/icons/icons-uni-white.png");
+	background-repeat: no-repeat;
+}
+.ui-widget-header .ui-icon-circle-triangle-w {
+    background-position: center -2201px;
+}
+.ui-widget-header .ui-icon-circle-triangle-e {
+    background-position: center -2101px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	margin-top: 0 !important;
+}
+#jsn-page [id*="ohanah-module-calendar-date-"] .ui-datepicker a.ui-datepicker-next.ui-state-hover,
+#jsn-page [id*="ohanah-module-calendar-date-"] .ui-datepicker a.ui-datepicker-prev.ui-state-hover {
+	background: transparent !important;
+	border: none;
+	cursor: pointer;
+}
+#jsn-page [id*="ohanah-module-calendar-date-"] .ui-datepicker .ui-datepicker-prev,
+#jsn-page [id*="ohanah-module-calendar-date-"] .ui-datepicker .ui-datepicker-next {
+    top: 2px;
+}
+#jsn-page [id*="ohanah-module-calendar-date-"] .ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+#jsn-page [id*="ohanah-module-calendar-date-"] .ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker th {
+    text-align: left !important;
+    font-size: 13px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	padding: 8px 5px !important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background: #fff !important;
+	border: none !important;
+}
+.ui-datepicker-calendar .ui-state-active,
+.ui-datepicker-calendar .ui-widget-content .ui-state-active,
+.ui-datepicker-calendar .ui-widget-header .ui-state-active {
+	background: transparent !important;
+	color: #fff !important;
+}
+.ui-datepicker-calendar .ui-state-highlight,
+.ui-datepicker-calendar .ui-widget-content .ui-state-highlight,
+.ui-datepicker-calendar .ui-widget-header .ui-state-highlight {
+	border: none !important;
+}
+#jsn-page [id*="ohanah-module-calendar-date-"] a.ui-state-hover,
+#jsn-page [id*="ohanah-module-calendar-date-"] .markedDay a.ui-state-default {
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+}
+.ui-widget-header {
+    background: #4B5A69;
+    border-color: #6B7987;
+    color: #FFFFFF;
+    padding: 10px 0 !important;
+   	font-weight: normal;
+}
+.ui-widget-content {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.fc-view.fc-view-month .ui-widget-content {
+	background: #fff !important;
+}
+.fc-view.fc-view-month .ui-widget-content.ui-state-highlight,
+.fc-view.fc-agenda .ui-state-highlight,
+.fc-view.fc-agenda .ui-widget-content .ui-state-highlight,
+.fc-view.fc-agenda .ui-widget-header .ui-state-highlight {
+	background: #2DA099 !important;
+	color: #fff;
+}
+.fc-grid .fc-day-number {
+    text-align: center;
+    vertical-align: middle;
+}
+/* =============== SCREEN =============== */
+.ohanah,
+.jsn-layout-calendar .ohanah:not([class*="event"]) {
+	background: transparent;
+	padding: 0;
+}
+.ohanah:not([class*="event"]) {
+	padding: 0 0 0 100px;
+	background-image: url(../../images/backgrounds/dot-ver.png);
+	background-repeat: repeat-y;
+	background-position: 42px 85px;
+	margin-top: 10px;
+}
+.ohanah[class*="box-"] li {
+	list-style: none;
+    margin: 0; 
+}
+.ohanah[class*="box-"] li a {
+	color: #fff;
+	display: block;
+	padding: 15px 0 15px 24px;
+	background-image: url("../../images/icons/icons-base.png");
+	background-position: left -749px;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid #ddd\9;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+.ohanah.module.box-white li a,
+.ohanah.module.box-yellow li a,
+.ohanah.module.box-blank li a,
+.ohanah.module.box-grey li a {
+	color: #000;
+    background-position: left -328px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.ohanah.module.box-grey a,
+.ohanah.module.box-yellow a,
+.ohanah.module.box-white a,
+.ohanah.module.box-blank a {
+	color: #000;
+}
+.ohanah[class*="box-"] li a:hover {
+	transform: scale(1.1,1.1);
+	-moz-transform: scale(1.1,1.1);
+	-webkit-transform: scale(1.1,1.1);
+}
+.ohanah h3 {
+    font-size: 14px;
+}
+.moduletable > h3 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 2.5em;
+    margin: 5px 0 20px;
+    padding: 0 0 15px;
+    text-transform: uppercase;	
+}
+.ohanah h3,
+.ohanah h3 span,
+.ohanah.module.box-yellow h3,
+.ohanah.module.box-yellow h3 span,
+.ohanah.module.box-grey h3,
+.ohanah.module.box-grey h3 span {
+	color: #000;
+}
+.ohanah.module h3,
+.ohanah.module h3 span {
+    color: #fff;
+}
+.ohanah .event_detail_title h2 {
+	font-size: 2em;
+	padding-bottom: 15px;
+	padding-top: 10px;
+	text-transform: uppercase;
+	line-height: 25px;
+	border-top: 1px solid;
+}
+.ohanah.module .event_detail_title h2 {
+	font-size: 1.1em;
+	line-height: 1.1em;
+}
+.ohanah.module .event_detail_title h2 a {
+	color: #fff;
+}
+.ohanah .event_detail_location h3,
+.ohanah .event_detail_time h3 {
+	line-height: 20px;
+}
+.ohanah .event-photos {
+	border: none;
+	height: auto;
+	width: 100%;
+	min-height: 150px;
+	max-height: 600px;
+	float: none;
+	margin: 10px 0 20px;
+}
+.ohanah .event-photos img {
+	max-width: 100%;
+}
+.ohanah hr {
+	border: none;
+	height: 1px;
+	background-image: url(../../images/backgrounds/dot-hoz.png);
+	background-repeat: repeat-x;
+}
+.ohanah .ohanah-event-venue-link {
+	font-weight: 300;
+}
+.ohanah .location_icon,
+.ohanah .date_icon,
+.ohanah.module.box-yellow .location_icon,
+.ohanah.module.box-grey .location_icon,
+.ohanah.module.box-yellow .date_icon,
+.ohanah.module.box-grey .date_icon {
+	background-image: url("../../images/icons/icons-uni.png");
+	background-repeat: no-repeat;
+	height: 19px;
+}
+.ohanah.module .location_icon,
+.ohanah.module .date_icon,
+#jsn-page .ohanah .button {
+	background-image: url("../../images/icons/icons-uni-white.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+#jsn-page #filterFooter .button {
+	background-image: none;
+	padding: 10px 20px;
+}
+#jsn-page .ohanah.module[class*="box-"] .button,
+#jsn-page .ohanah.module[class*="box-"] .button:hover {
+	background-color: transparent;
+}
+#jsn-page .ohanah.module[class*="box-"] .button {
+    background-position: 0 -2090px;
+    padding: 10px 20px 10px 25px;
+}
+.ohanah .date_icon {
+    background-position: 0 -99px;
+    display: inline-block;
+    float: none;
+    margin-right: 5px;
+    vertical-align: text-top;
+}
+.ohanah .location_icon {
+	background-position: 0 -2599px;	
+}
+.ohanah.module .save_to_cal a{
+	font-size: 10px;
+}
+.save_to_cal {
+	padding: 0 5px;
+}
+.ohanah .event-spacer {
+	padding: 10px 0;
+}
+.ohanah.module .event-spacer {
+	padding: 5px 0;
+}
+#event-container-info {
+	padding-bottom: 10px;
+}
+#event-container-info span {
+	display: inline-block;
+}
+.ohanah[class*="module"] {
+	padding: 0;
+	background: transparent;
+	margin: 0;
+}
+.ohanah.module #event-container-info .ohanah-registration-link {
+	float: left !important;
+	padding: 0 !important;
+}
+.ohanah.module #event-container-info .ohanah-registration-link .button {
+	background-color: transparent;
+    color: #fff;
+    padding-left: 0;
+    padding-right: 0;
+}
+.ohanah.module.box-yellow #event-container-info .ohanah-registration-link .button,
+.ohanah.module.box-grey #event-container-info .ohanah-registration-link .button {
+	color: #000;
+}
+.ohanah.module .event_detail_container {
+	overflow: hidden;
+	border-top: 1px solid rgba(255,255,255,0.4);
+	padding: 5px 0 15px;
+}
+.ohanah.module.box-yellow .event_detail_container,
+.ohanah.module.box-grey .event_detail_container {
+	border-top: 1px solid rgba(0,0,0,0.8);
+}
+.ohanah.module .event_detail_container:first-child {
+	border-top: none;
+}
+.ohanah .event_date_flyer_container {
+	border-radius: none;
+	-moz-border-radius: none;
+	-webkit-border-radius: none;
+ 	margin: 0 15px 0 -100px;
+	padding: 0;
+	border: none;
+	width: 85px;
+}
+.ohanah .event_date {
+    background: #4B5A69;
+    border-radius: 100%;
+    font-family: inherit;
+    height: 75px;
+    padding: 5px;
+    width: 75px;
+}
+.ohanah-registration-link {
+	clear: both;
+	float: none !important;
+	display: block;
+	padding: 10px 0 0 !important;
+}
+.atvenue:before {
+	content: "";
+}
+.ohanah-social-buttons-wrapper > div {
+	float: left;
+	margin-left: 10px;
+}
+.ohanah-social-buttons-wrapper div:first-child {
+	margin-left: 0;
+}
+.ohanah-event-ticket-info {
+	float: right;
+	display: inline-block;
+}
+.ohanah-event-ticket-info .ohanah-event-ticket-cost {
+	background-color: #E65538;
+	color: #fff;
+	padding: 5px 10px;
+	display: inline-block;
+}
+.ohanah-event-places-left {
+	margin: 0 15px;
+	line-height: 40px;
+}
+.ohanah.module .ohanah-event-ticket-info {
+	float: none;
+	margin-bottom: 10px;
+}
+.ohanah.module .ohanah-event-places-left {
+	margin: 0 15px;
+	line-height: 30px;
+	float: right;
+}
+.ohanah .event_detail_time {
+    display: inline-block;
+}
+.ohanah.module .event_detail_time {
+    display: block;
+}
+/* =============== PAGINATION =============== */
+#filterFooter {
+	padding: 0;
+	font-size:1.2em;
+	font-weight:normal;
+	text-align:left;
+	display: inline-block;
+	background-color: #f5f8f9;
+}
+#filterFooter a,
+#filterFooter span {
+    padding: 0 10px;
+    font-weight: 300;
+    display: inline-block;
+}
+/* =============== FULCALENDAR =============== */
+.fc-event-inner {
+    padding: 5px;
+    width: 92%;
+}
+body.jsn-color-cyan .fc-event {
+	background-color: #2DA099;
+}
+body.jsn-color-blue .fc-event {
+	background-color: #2DA099;
+}
+body.jsn-color-red .fc-event {
+	background-color: #2DA099;
+}
+body.jsn-color-purple .fc-event {
+	background-color: #2DA099;
+}
+body.jsn-color-pink .fc-event {
+	background-color: #2DA099;
+}
+body.jsn-color-grey .fc-event {
+	background-color: #2DA099;
+}
+a.fc-event:hover {
+	color: #fff;
+}
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start,
+.fc-ltr .fc-event-hori.fc-event-start,
+.fc-rtl .fc-event-hori.fc-event-end {
+	border-radius: 0;
+	border: none;
+}
+.fc-agenda .fc-agenda-axis {
+	text-align: center;
+}
+.ui-state-default .ui-icon {
+    background-image: url("../../images/icons/icons-uni.png");
+    background-repeat: no-repeat;
+    height: 19px;
+}
+.ui-icon-circle-triangle-w {
+    background-position: 0 -2200px;
+}
+.ui-icon-circle-triangle-e {
+    background-position: 0 -2100px;
+}
+/* =============== FILTER MODULE =============== */
+.ohanah.module input, .ohanah.module textarea, .ohanah.module select {
+    background: transparent;
+    border: medium none;
+    color: #FFFFFF;
+    padding: 0;
+	font-family: 'Open Sans',Arial,Helvetica,sans-serif !important;
+}
+.ohanah .button input {
+	background: none;
+	border: none;
+	color: #fff;
+}
+#jsn-page .ohanah.module input.text {
+	border-radius: 0;
+	background: #fff !important;
+	border-color: rgba(0,0,0,0.1) !important;
+	color: #000;
+	margin-top: 12px;
+}
+.ohanah.module .dropdown.size1 select,
+.ohanah.module .dropdown.size2 select,
+.ohanah.module .dropdown.size5 select,
+.ohanah.module .dropdown.size3 select,
+.ohanah.module .dropdown.size4 select {
+	font-weight: normal !important;
+	color: #000 !important;
+	font-size: 12px !important;
+	padding: 0px 5px 7px 8px !important;
+}
+#jsn-page .ohanah.module .dropdown.size1,
+#jsn-page .ohanah.module .dropdown.size2,
+#jsn-page .ohanah.module .dropdown.size3,
+#jsn-page .ohanah.module .dropdown.size4,
+#jsn-page .ohanah.module .dropdown.size5 {
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	border: 1px solid rgba(0,0,0,0.1) !important;
+	background: url("../../images/icons/icon-downarrow-white.png") no-repeat scroll 93% center;
+	padding-right: 5px;
+}
+.panelContent .dropdown.size1 select, 
+.panelContent .dropdown.size2 select,  
+.panelContent .dropdown.size3 select, 
+.panelContent .dropdown.size4 select,
+.panelContent .dropdown.size5 select{
+	padding: 0px 5px 5px 8px;
+}
+.ohanah.module .dropdownWrapper {
+	background: transparent !important;
+	margin-top: 10px !important;
+}
+.ohanah.module input.text {
+	width: 90% !important;
+}
+/* =============== MAP AND EVENT =============== */
+.ohanah #map img {
+    max-width: none;
+}
+.ohanah.module .event-photos {
+    width: 100%;
+    float: none;
+    display: block;
+    margin: 2px 0 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 0;
+    min-height: 80px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+@media only screen and (max-width: 480px), (max-device-width: 480px) {
+	.panelContent table {
+		width: 100%;
+	}
+	.panelContent input.text {
+		width: auto !important;
+	}
+	.panelContent .dropdown[class*="size"] {
+		width: 150px !important;
+	}
+	.panelContent .dropdown[class*="size"] select {
+		width: 100% !important;
+	}
+	#calendar .fc-header td {
+	    white-space: normal;
+		display: inline;
+	}
+	#calendar .fc-header td.fc-header-center {
+		display: block;
+	}
+	.fc-header-title h2 {
+		font-size: 1.5em;
+	}
+	.ohanah #event_main_map_wrapper div#event_main_map{
+		width: 250px !important;
+	}
+}
+@media only screen and (min-width: 480px) and (max-width: 768px), (min-device-width: 480px) and (max-device-width: 768px){
+	.ohanah #event_main_map_wrapper div#event_main_map{
+		width: 330px !important;
+	}
+}
+/* =============== RTL Language =============== */
+body.jsn-direction-rtl .ohanah {
+	background: transparent;
+    padding: 0;
+}
+body.jsn-direction-rtl .ohanah:not([class*="event"]) {
+	background-image: url("../../images/backgrounds/dot-ver.png");
+    background-repeat: repeat-y;
+	background-position: 95% 85px;
+    padding: 0 100px 0 0;
+}
+body.jsn-direction-rtl .ohanah[class*="module"] {
+    background: transparent;
+    padding: 0;
+}
+body.jsn-direction-rtl .ohanah .event_date_flyer_container {
+    float: right;
+    margin: 0 -100px 0 15px;
+}
+body.jsn-direction-rtl .ohanah .date_icon,
+body.jsn-direction-rtl .ohanah .location_icon {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}
+body.jsn-direction-rtl .ohanah .date_icon {
+    background-position: right -99px;
+}
+body.jsn-direction-rtl .ohanah .location_icon {
+    background-position: right -2599px;
+}
+body.jsn-direction-rtl .ohanah[class*="box-"] li a {
+    background-position: right -749px;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 24px;
+}
+body.jsn-direction-rtl #jsn-page .ohanah.module[class*="box-"] .button {
+    background-position: right -2090px;
+    padding: 10px 25px 10px 20px;
+}
+body.jsn-direction-rtl .ohanah.module .dropdown.size1 select,
+body.jsn-direction-rtl .ohanah.module .dropdown.size2 select,
+body.jsn-direction-rtl .ohanah.module .dropdown.size5 select,
+body.jsn-direction-rtl .ohanah.module .dropdown.size3 select,
+body.jsn-direction-rtl .ohanah.module .dropdown.size4 select {
+	text-align: right;
+}
+body.jsn-direction-rtl #jsn-page .ohanah.module .dropdown.size1,
+body.jsn-direction-rtl #jsn-page .ohanah.module .dropdown.size2,
+body.jsn-direction-rtl #jsn-page .ohanah.module .dropdown.size3,
+body.jsn-direction-rtl #jsn-page .ohanah.module .dropdown.size4,
+body.jsn-direction-rtl #jsn-page .ohanah.module .dropdown.size5 {
+    background: url("../../images/icons/icon-downarrow-white.png") no-repeat scroll 8% center;
+    padding-left: 5px;
+    padding-right: 0;
+}
+body.jsn-direction-rtl .ohanah-social-buttons-wrapper > div {
+	float: right;
+	margin-right: 10px;
+	margin-left: 0;
+}
+body.jsn-direction-rtl .ohanah-social-buttons-wrapper div:first-child {
+	margin-right: 0;
+	margin-left: 0;
+}
+body.jsn-direction-rtl .ohanah-event-ticket-info {
+	float: left;
+}
+body.jsn-direction-rtl .ohanah.module .ohanah-event-places-left {
+	float: left
+}
+body.jsn-direction-rtl div[class*="hanah-filter-"] {
+	float: right;
+}
+body.jsn-direction-rtl .ohanah-filter-text,
+body.jsn-direction-rtl .ohanah-filter-button {
+	float: right !important;
+}
+.ohanah-filter-button input{
+	color: #222 !important;
+	margin-top: 20px;
+}
+body.jsn-direction-rtl .ohanah-filter-category .dropdownWrapper {
+	float: right !important;
+	margin-right: 0 !important;
+}

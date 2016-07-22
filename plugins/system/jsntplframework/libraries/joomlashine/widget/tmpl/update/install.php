@@ -1,3 +1,4 @@
+<?php $token = JSession::getFormToken(); ?>
 <p><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_INSTALLATION_DESC') ?></p>
 
 <form id="jsn-update-install" action="index.php?widget=update&action=load-package">
@@ -11,7 +12,7 @@
 			<span class="jsn-status"></span>
 			<p id="jsn-download-backup-of-modified-files" class="hide">
 				<?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_FOUND_MODIFIED_FILE_BEING_UPDATED'); ?>
-				<a href="<?php echo JRoute::_('index.php?widget=integrity&action=download&type=update&template=' . $template['name']) ?>" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_DOWNLOAD_MODIFIED_FILES'); ?></a>
+				<a href="<?php echo JRoute::_('index.php?widget=integrity&action=download&type=update&template=' . $template['name'] . '&' . $token . '=1') ?>" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_DOWNLOAD_MODIFIED_FILES'); ?></a>
 			</p>
 		</li>
 		<li id="jsn-download-framework" class="jsn-loading hide">
@@ -36,7 +37,7 @@
 			<span class="label label-important"><?php echo JText::_('JSN_TPLFW_IMPORTANT_INFORMATION') ?></span>
 			<p>
 				<?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_INSTALL_DOWNLOAD_BACKUP') ?>
-				<a href="<?php echo JRoute::_('index.php?widget=integrity&action=download&type=update&template=' . $template['name']) ?>" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_DOWNLOAD_MODIFIED_FILES'); ?></a>
+				<a href="<?php echo JRoute::_('index.php?widget=integrity&action=download&type=update&template=' . $template['name'] . '&' . $token . '=1') ?>" class="btn btn-mini"><?php echo JText::_('JSN_TPLFW_AUTO_UPDATE_DOWNLOAD_MODIFIED_FILES'); ?></a>
 			</p>
 		</div>
 	</div>

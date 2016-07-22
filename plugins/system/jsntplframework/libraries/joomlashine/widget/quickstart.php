@@ -31,6 +31,8 @@ class JSNTplWidgetQuickstart extends JSNTplWidgetBase
 	 */
 	public function loginAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
+		
 		// Retrieve version data
 		try
 		{
@@ -100,6 +102,8 @@ class JSNTplWidgetQuickstart extends JSNTplWidgetBase
 	 */
 	public function authAction ()
 	{
+		JSession::checkToken( 'get' ) or die( 'Invalid Token' );
+		
 		// Process posted back data that sent from client
 		if ($this->request->getMethod() == 'POST')
 		{

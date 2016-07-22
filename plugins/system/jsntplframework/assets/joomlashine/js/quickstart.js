@@ -67,7 +67,7 @@
 			// Set loading state
 			self.panel.addClass('jsn-loading');
 
-			$.getJSON('index.php?widget=quickstart&action=login&template=' + self.params.template, function (response) {
+			$.getJSON('index.php?widget=quickstart&action=login&template=' + self.params.template + '&' + self.params.token + '=1', function (response) {
 				if (response.data != null && response.data.auth !== undefined && response.data.auth == false) {
 					download(response.data);
 					return;
@@ -115,7 +115,7 @@
 
 			// Send request to checking username and password
 			$.ajax({
-				url: 'index.php?widget=quickstart&action=auth&template=' + self.params.template,
+				url: 'index.php?widget=quickstart&action=auth&template=' + self.params.template + '&' + self.params.token + '=1',
 				type: 'POST',
 				dataType: 'JSON',
 				data: {
@@ -145,7 +145,7 @@
 			var
 			downloadUrl = "http://www.joomlashine.com/index.php?option=com_lightcart&controller=remoteconnectauthentication";
 			downloadUrl+= "&task=authenticate&tmpl=component&identified_name=" + data.id;
-			downloadUrl+= "&edition=" + data.edition + "&joomla_version=" + data.joomlaVersion;
+			downloadUrl+= "&edition=" + data.edition + "&joomla_version=" + data.joomlaVersion + '&' + self.params.token + '=1';
 
 			if (data.username !== undefined && data.password != undefined)
 				downloadUrl+= "&username=" + data.username + "&password=" + data.password;

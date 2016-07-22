@@ -182,11 +182,14 @@ class JSNTplTemplateHelper
 	 */
 	public function countPositions ()
 	{
-		$this->_document	= JFactory::getDocument();
-		$positionCount		= 0;
+		$this->_document = JFactory::getDocument();
+		$positions       = func_get_args();
+		$positionCount   = 0;
 
-		foreach (func_get_args() as $position) {
-			if ($this->_document->countModules($position)) {
+		foreach ($positions as $position)
+		{
+			if ($this->_document->countModules($position))
+			{
 				$positionCount++;
 			}
 		}

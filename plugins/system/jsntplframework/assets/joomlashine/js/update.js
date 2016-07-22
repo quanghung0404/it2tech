@@ -61,7 +61,7 @@
 
 		self.checkVersionUpdate = function() {
 			// Send ajax request to receive update information
-			$.getJSON('index.php?widget=update&action=check-update&template=' + self.params.template, function(result) {
+			$.getJSON('index.php?widget=update&action=check-update-ajax&template=' + self.params.template + '&' + self.params.token + '=1', function(result) {
 				var container = $('#jsn-version-info > div');
 
 				container.each(function() {
@@ -96,7 +96,11 @@
 			// Set loading state
 			self.panel.html('').addClass('jsn-loading');
 
-			$.getJSON('index.php?widget=update&action=confirm&template=' + self.params.template + '&target=' + self.target, function(response) {
+			$.getJSON('index.php?widget=update&action=confirm&template=' + self.params.template + '&target=' + self.target + '&' + self.params.token + '=1', function(response) {
+				if (response.data == null) {
+					self.loadInstallScreen();
+				}
+
 				self.panel.html(response.data);
 				self.panel.removeClass('jsn-loading');
 
@@ -151,7 +155,7 @@
 
 						// Send request to checking customer information
 						$.ajax({
-							url: 'index.php?widget=update&action=confirm&template=' + self.params.template,
+							url: 'index.php?widget=update&action=confirm&template=' + self.params.template + '&' + self.params.token + '=1',
 							type: 'POST',
 							dataType: 'JSON',
 							data: {
@@ -179,7 +183,7 @@
 		self.loadInstallScreen = function() {
 			self.panel.dialog('option', 'buttons', {});
 
-			$.getJSON('index.php?widget=update&action=install&template=' + self.params.template + '&target=' + self.target, function(response) {
+			$.getJSON('index.php?widget=update&action=install&template=' + self.params.template + '&target=' + self.target + '&' + self.params.token + '=1', function(response) {
 				self.panel.html(response.data);
 
 				if (self.target == 'framework') {
@@ -201,7 +205,7 @@
 			// Set in progress message
 			self.inProgress(downloadStatus);
 
-			$.getJSON('index.php?widget=update&action=download-framework&template=' + self.params.template, function(response) {
+			$.getJSON('index.php?widget=update&action=download-framework&template=' + self.params.template + '&' + self.params.token + '=1', function(response) {
 				// Unset in progress message
 				self.inProgress(downloadStatus, true);
 
@@ -212,7 +216,7 @@
 					// Set in progress message
 					self.inProgress(installStatus);
 
-					$.getJSON('index.php?widget=update&action=install-framework&template=' + self.params.template, function(result) {
+					$.getJSON('index.php?widget=update&action=install-framework&template=' + self.params.template + '&' + self.params.token + '=1', function(result) {
 						// Unset in progress message
 						self.inProgress(installStatus, true);
 
@@ -246,7 +250,7 @@
 			self.inProgress(spanStatus);
 
 			$.ajax({
-				url: 'index.php?widget=update&action=download&template=' + self.params.template,
+				url: 'index.php?widget=update&action=download&template=' + self.params.template + '&' + self.params.token + '=1',
 				type: 'POST',
 				dataType: 'JSON',
 				data: loginData,
@@ -279,7 +283,7 @@
 			// Set in progress message
 			self.inProgress(spanStatus);
 
-			$.getJSON('index.php?widget=update&action=checkBeforeUpdate&template=' + self.params.template, function(response) {
+			$.getJSON('index.php?widget=update&action=checkBeforeUpdate&template=' + self.params.template + '&' + self.params.token + '=1', function(response) {
 				// Unset in progress message
 				self.inProgress(spanStatus, true);
 
@@ -338,7 +342,7 @@
 				self.inProgress(downloadStatus);
 
 				// Update template framework
-				$.getJSON('index.php?widget=update&action=download-framework&template=' + self.params.template, function(response) {
+				$.getJSON('index.php?widget=update&action=download-framework&template=' + self.params.template + '&' + self.params.token + '=1', function(response) {
 					// Unset in progress message
 					self.inProgress(downloadStatus, true);
 
@@ -349,7 +353,7 @@
 						// Set in progress message
 						self.inProgress(installStatus);
 
-						$.getJSON('index.php?widget=update&action=install-framework&template=' + self.params.template, function(result) {
+						$.getJSON('index.php?widget=update&action=install-framework&template=' + self.params.template + '&' + self.params.token + '=1', function(result) {
 							// Unset in progress message
 							self.inProgress(installStatus, true);
 
@@ -390,7 +394,7 @@
 			self.inProgress(spanStatus);
 
 			// Send request to install template update
-			$.getJSON('index.php?widget=update&action=install-package&template=' + self.params.template, function(response) {
+			$.getJSON('index.php?widget=update&action=install-package&template=' + self.params.template + '&' + self.params.token + '=1', function(response) {
 				// Unset in progress message
 				self.inProgress(spanStatus, true);
 

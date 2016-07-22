@@ -1,0 +1,72 @@
+/**
+ * @version    $Id$
+ * @package    WR MegaMenu
+ * @author     WooRockets Team <support@woorockets.com>
+ * @copyright  Copyright (C) 2014 WooRockets.com All Rights Reserved.
+ * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Websites: http://www.woorockets.com
+ * Technical Support:  Feedback - http://www.woorockets.com
+ */
+
+@font-face {
+	font-family: 'jsn-mm-layout-font';
+	src:url('../fonts/jsn-mm-layout-font.eot?ukxywo');
+	src:url('../fonts/jsn-mm-layout-font.eot?#iefixukxywo') format('embedded-opentype'),
+		url('../fonts/jsn-mm-layout-font.woff?ukxywo') format('woff'),
+		url('../fonts/jsn-mm-layout-font.ttf?ukxywo') format('truetype'),
+		url('../fonts/jsn-mm-layout-font.svg?ukxywo#jsn-mm-layout-font') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="jsn-mm-layout-"], [class*=" jsn-mm-layout-"] {
+	font-family: 'jsn-mm-layout-font';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.jsn-bootstrap3 .jsn-mm-layout-2-2-2-2-2-2:before {
+	content: "\e600";
+}
+.jsn-bootstrap3 .jsn-mm-layout-3-3-3-3:before {
+	content: "\e601";
+}
+.jsn-bootstrap3 .jsn-mm-layout-3-3-6:before {
+	content: "\e602";
+}
+.jsn-bootstrap3 .jsn-mm-layout-3-6-3:before {
+	content: "\e603";
+}
+.jsn-bootstrap3 .jsn-mm-layout-3-9:before {
+	content: "\e604";
+}
+.jsn-bootstrap3 .jsn-mm-layout-4-4-4:before {
+	content: "\e605";
+}
+.jsn-bootstrap3 .jsn-mm-layout-4-8:before {
+	content: "\e606";
+}
+.jsn-bootstrap3 .jsn-mm-layout-6-3-3:before {
+	content: "\e607";
+}
+.jsn-bootstrap3 .jsn-mm-layout-6-6:before {
+	content: "\e608";
+}
+.jsn-bootstrap3 .jsn-mm-layout-8-4:before {
+	content: "\e609";
+}
+.jsn-bootstrap3 .jsn-mm-layout-9-3:before {
+	content: "\e60a";
+}
+.jsn-bootstrap3 .jsn-mm-layout-12:before {
+	content: "\e60b";
+}
