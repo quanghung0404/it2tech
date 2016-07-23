@@ -1,0 +1,171 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+/* ============================== DEFAULT HTML ============================== */
+a {
+	color: #86b522;
+}
+
+/* ============================== LAYOUT ============================== */
+/* =============== LAYOUT - OVERALL PAGE =============== */
+#jsn-usermodules3 {
+  background-color: #82c250;
+}
+/* ============================== TYPOGRAPHY ============================== */
+/* =============== TYPOGRAPHY - LINK STYLES =============== */
+/* ----- ACTION LINK ----- */
+.link-action {
+	border-bottom: 1px solid #86b522;
+}
+.link-action:hover {
+	background-color: #86b522;
+}
+/* =============== TYPOGRAPHY - TABLE STYLES =============== */
+/* ----- COLOR HEADER TABLE ----- */
+table.style-colorheader thead th {
+	background-color: #86b522;
+  border-right: 1px solid #6F951E;
+  border-bottom: none;
+}
+/* ----- COLOR STRIPES TABLE ----- */
+table.style-colorstripes td,
+table.style-colorstripes th {
+	border-bottom: 1px solid #2C6700;
+	border-right: 1px groove #54C401;
+}
+table.style-colorstripes td:last-child,
+table.style-colorstripes th:last-child {
+	border-right: none;
+}
+table.style-colorstripes thead th {
+	background-color: #86b522;
+}
+table.style-colorstripes thead th.highlight {
+	background-color: #255401;
+}
+table.style-colorstripes tbody tr {
+	background-color: #86b522;
+	border-right: none;
+}
+table.style-colorstripes tbody .highlight {
+	background-color: #E8F4D7;
+}
+table.style-colorstripes tbody tr.odd {
+	background-color: #2C6700;
+}
+table.style-colorstripes tbody tr.odd .highlight {
+	background-color: #D6EDB6;
+}
+table.style-colorstripes tbody tr:hover th,
+table.style-colorstripes tbody tr:hover td {
+	background-color: #729A1D;
+}
+table.style-colorstripes tbody tr:hover .highlight {
+	background-color: #CCE9A5;
+}
+table.style-colorstripes tbody td,
+table.style-colorstripes tbody th {
+	border-left: none;
+	border-right: 1px solid #285B01;
+}
+table.style-colorstripes tbody td:last-child,
+table.style-colorstripes tbody th:last-child {
+	border-right: none;
+}
+table.style-colorstripes tfoot th,
+table.style-colorstripes tfoot td {
+	background-color: #255401;
+}
+.sectiontableheader {
+	background-color: #5f9936;
+}
+/* ----- GREY STRIPES TABLE ----- */
+table.style-greystripes thead th.highlight {
+	background-color: #86b522;
+}
+/* ============================== MENU ============================== */
+/* =============== MENU - MAIN MENU =============== */
+/* ----- HOVER STATE, ACTIVE STATE ----- */
+div.jsn-modulecontainer ul.menu-mainmenu ul li:hover > a,
+div.jsn-modulecontainer ul.menu-mainmenu > li.active > a,
+div.jsn-modulecontainer ul.menu-mainmenu li.current > a,
+div.jsn-modulecontainer ul.menu-mainmenu ul li.current > a {
+	color: #86b522;
+}
+/*--- Sticky ---*/
+#jsn-header.jsn-menu-sticky div.jsn-modulecontainer ul.menu-mainmenu > li:hover > a,
+#jsn-header.jsn-menu-sticky div.jsn-modulecontainer ul.menu-mainmenu > li > a:hover,
+#jsn-header.jsn-menu-sticky div.jsn-modulecontainer ul.menu-mainmenu > li.active > a {
+	color: #fff;
+}
+
+/* ----- ACTIVE STATE ----- */
+#jsn-header.jsn-menu-sticky div.jsn-modulecontainer ul.menu-mainmenu > li.active > a {
+	color: #fff;
+}
+/* ============================== JOOMLA! DEFAULT EXTENSIONS ============================== */
+/* =============== JOOMLA! EXTENSIONS - MOD_SEARCH =============== */
+#jsn-pos-top div.search input#mod_search_searchword {
+	border: 1px solid #477328;
+}
+/* =============== JOOMLA! EXTENSIONS - COM_CONTENT =============== */
+/* ----- SECTION / CATEGORY BLOG LAYOUT ----- */
+/* PAGE PAGINATION */
+ul.jsn-pagination li.navigation-page span {
+	background-color: #86b522;
+}
+
+
+/* =============== Custom Homepage =============== */
+
+#jsn-footer a:hover, #jsn-footer ul.menu-divmenu li a:hover,
+div.jsn-modulecontainer ul.menu-sidemenu ul li:hover > a,
+div.jsn-modulecontainer ul.menu-sidemenu ul li.active > a,
+.jsn-2st-homepage .join-us h2 strong,
+#events .info span.number, #events h1 span, #events i,
+.jsn-joomla-30 .layout-col-dona.layout-white-bg .articlelist-item:hover .articlelist-item-content .title + div + div a:hover,
+.box-services .grid-col i, .jsn-pagebuilder.btn-more-link .pb-element-button a.btn:hover,
+div.jsn-modulecontainer ul.menu-sidemenu > li.active > a,
+.testi-item .jsn-bootstrap3 a, .testi-item.jsn-bootstrap3 a
+ {
+	color: #86b522;
+}
+.jsn-2st-homepage .link-button.button-red,
+.jsn-2st-homepage .link-button.button-red:hover,
+.jsn-title-over-line h3:after,
+.jsn-joomla-30 .carousel.pb-testimonial ol.carousel-indicators li.active,
+#demo-categories .grid-col:hover .icon:after,
+.jsn-bootstrap3.jsn-pagebuilder.pb-element-tab .tabbable .nav-tabs li.active a,
+.box-services .grid-col:hover, .jsn-pagebuilder.btn-more-link .pb-element-button a.btn,
+.gallery-module .pb-element-image a:before,
+.charity-gallery .pb-element-image a:before,
+.testi-item .carousel.pb-testimonial ol.carousel-indicators li.active,
+#jsn-master .jsn-bootstrap3.pb-element-progressbar .progress-bar, #jsn-usermodules3,
+div.jsn-modulecontainer ul.menu-mainmenu > li.jsn-menu-button > a {
+  background: #86b522;
+}
+.jsn-joomla-30 .layout-col-dona.layout-white-bg .pb-articlelist-wrapper .articlelist-item:hover,
+.jsn-joomla-30 .layout-col-dona.layout-white-bg .articlelist-item:hover .articlelist-item-content .title + div + div a:hover,
+.jsn-pagebuilder.btn-more-link .pb-element-button a.btn,
+#demo-main-features div.grid-layout div.grid-col div.grid-col_inner:hover, .jsn-our-customers .jsn-author {
+	border-color: #86b522;
+}
+.jsn-es-item.text-item .item-container.txt-color{
+	color: #86b522 !important;
+}
+h2.jsn-title-line:before,
+.jsn-bootstrap3.jsn-pagebuilder.pb-element-tab .tabbable .nav-tabs{
+	border-bottom-color: #86b522;
+}
+.jsn-joomla-30 .jsn-pagebuilder .pb-element-button a.btn.btn-danger {
+  background: #86b522;
+  border-color: #86b522;
+}
+.health-testimonial{
+	background: #86b522 !important;
+}
+#demo-image-gallery .grid-col .grid-col_inner .gallery-item:hover a:before {
+  background: rgba(134, 181, 34, .7);
+}

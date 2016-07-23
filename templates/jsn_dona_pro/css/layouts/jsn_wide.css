@@ -1,0 +1,46 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+/************************************************************************************
+ desktop layout (larger than 1200): common settings for wide desktop screen
+*************************************************************************************/
+@media only screen and (min-width: 1200px) {
+	#jsn-pos-topbar,
+	#jsn-topheader-inner,
+	#jsn-header-inner,
+	#jsn-promo-inner,
+	#jsn-promo-full-inner,
+	#jsn-pos-content-top,
+	#jsn-pos-content-top-over,
+	#jsn-pos-content-top-below,
+	#jsn-content_inner,
+	#jsn-content-bottom-over-inner,
+	#jsn-content-bottom-inner,
+	#jsn-content-bottom-below-inner,
+	#jsn-content-bottom-under-inner,
+	#jsn-usermodules3-inner,
+	#jsn-footer-inner{
+		width: 1140px;
+	}
+	#jsn-maincontent.order3,
+	#jsn-content.jsn-hasleft:not([class="jsn-hasright"]) #jsn-maincontent.order2,
+	#jsn-content.jsn-hasright:not([class="jsn-hasleft"]) #jsn-maincontent.order2 {
+		padding-right: 20px;
+	}
+	#jsn-maincontent.span12[class*="order"],
+	#jsn-content.jsn-hasleft.jsn-hasright #jsn-maincontent.order2 {
+		padding: 0;
+	}
+	#jsn-maincontent.span12 #jsn-centercol.span12 {
+		padding: 0;
+	}
+	#jsn-content.jsn-hasinnerleft:not([class="jsn-hasinnerright"]) #jsn-maincontent.span12 #jsn-centercol {
+		padding-right: 20px;
+	}
+	#jsn-content.jsn-hasinnerright:not([class="jsn-hasinnerleft"]) #jsn-maincontent.span12 #jsn-centercol {
+		padding-left: 20px;
+	}
+
+}

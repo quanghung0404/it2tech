@@ -1,0 +1,831 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+/* ============================== DEFAULT HTML ============================== */
+/* =============== DEFAULT HTML - GENERAL STYLES =============== */
+body {
+	position: relative;
+	overflow-x: hidden;
+}
+/* =============== DEFAULT HTML - TEXT STYLES =============== */
+pre {
+	border-left: none;
+	border-right: 5px solid #404040;
+}
+blockquote {
+	padding-left: 0;
+	padding-right: 55px;
+	background: url(../images/icons/icon-text-blockquote-rtl.png) no-repeat top right;
+}
+/* =============== DEFAULT HTML - LIST STYLES =============== */
+ul li {
+	margin-right: 1.6em;
+	margin-left: 0;
+}
+ol li {
+	margin-right: 2em;
+	margin-left: 0;
+}
+/* ============================== LAYOUT ============================== */
+#jsn-page {
+	text-align: right;
+}
+.pull-left {
+	float: right !important;
+}
+.pull-right {
+	float: left !important;
+}
+/* =============== LAYOUT - HEADER AREA =============== */
+#jsn-pos-top div.jsn-modulecontainer {
+	float: left;
+	margin-left: 0;
+	margin-right: 10px;
+}
+/* =============== LAYOUT - MENU AREA =============== */
+#jsn-pos-toolbar {
+	float: left;
+}
+#jsn-pos-toolbar div.jsn-modulecontainer {
+	float: left;
+	margin-right: 10px;
+	margin-left: 0;
+}
+#jsn-menu div.jsn-modulecontainer {
+	float: right;
+}
+#jsn-menu #jsn-pos-mainmenu div.display-dropdown.jsn-modulecontainer .jsn-modulecontent {
+	right: 0;
+	left: auto;
+}
+#jsn-menu div.display-dropdown.jsn-modulecontainer .jsn-modulecontent {
+	left: 0;
+	right: auto;
+}
+#jsn-menu #jsn-pos-mainmenu .jsn-modulecontainer.display-dropdown .jsn-modulecontainer_inner h3 {
+	border-left: 1px solid #404040;
+}
+#jsn-menu #jsn-pos-mainmenu .jsn-modulecontainer.display-dropdown .jsn-modulecontainer_inner h3 > span {
+	border-left: 1px solid #000000;
+}
+#jsn-menu #jsn-pos-toolbar div.jsn-modulecontainer {
+	float: right;
+	margin-right: 10px;
+	margin-left: auto;
+}
+/* =============== MENU - TOOLBAR POSITION =============== */
+#jsn-pos-toolbar div.jsn-modulecontainer ul.menu-mainmenu ul {
+	left: 0;
+	right: auto;
+}
+#jsn-pos-toolbar div.jsn-modulecontainer ul.menu-mainmenu ul li.parent > a {
+    background-image: url("../images/icons/icon-arrow-white.png");
+    background-position: 98% center;
+    padding-left: 12px;
+    padding-right: 16px;
+}
+#jsn-pos-toolbar div.jsn-modulecontainer ul.menu-mainmenu ul li a {
+    border-left: 1px solid #162C40;
+    text-align: left;
+}
+/* =============== LAYOUT - PROMO AREA =============== */
+body.jsn-direction-rtl .box_skitter .next_button,
+body.jsn-direction-rtl .box_skitter .prev_button {
+    text-indent: 9999em !important;
+}
+/* =============== LAYOUT - CONTENT AREA =============== */
+#jsn-content {
+	direction: ltr;
+}
+#jsn-leftsidecontent_inner,
+#jsn-rightsidecontent_inner,
+#jsn-pos-innerleft_inner,
+#jsn-centercol_inner,
+#jsn-pos-innerright_inner {
+	direction: rtl;
+}
+.breadcrumb a {
+	padding: 0 0 0 15px;
+	background: url("../images/icons/icon-arrow-black-rtl.png") 5% center no-repeat;
+}
+.breadcrumb li span + span {
+	padding-right: 0;
+}
+.breadcrumb li {
+	float: right\9;
+}
+.breadcrumb {
+	overflow: hidden\9;
+}
+/* =============== LAYOUT - FOOTER AREA =============== */
+#jsn-pos-bottom {
+	text-align: left;
+}
+#jsn-footer #jsn-brand {
+	text-align: left;
+}
+/* ============================== TYPOGRAPHY ============================== */
+/* =============== TYPOGRAPHY - CONTENT COLUMMNS =============== */
+div.grid-layout div.grid-col div.grid-col_inner {
+	margin-right: 0;
+	margin-left: 10px;
+}
+div.grid-layout div.grid-lastcol div.grid-col_inner {
+	margin-left: 0;
+}
+/* =============== TYPOGRAPHY - TEXT STYLES =============== */
+.text-dropcap p:first-child:first-letter,
+p.text-dropcap:first-child:first-letter {
+	float: right;
+	float: none\0/;
+}
+.text-tip,
+.text-info,
+.text-alert,
+.text-audio,
+.text-video,
+.text-comment,
+.text-download,
+.text-attachment {
+	padding-left: 1em;
+	padding-right: 5em;
+	background-position: right center;
+	display: inline-block;
+}
+/* =============== TYPOGRAPHY - LINK STYLES =============== */
+/* ----- ICON LINK ----- */
+.link-icon {
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 22px;
+}
+/* ----- EXTENDED LINK ----- */
+.link-icon-ext {
+	padding-right: 0;
+	padding-left: 20px;
+}
+.link-icon-ext.jsn-icon-ext-aim {
+	background-position: left 0;
+}
+.link-icon-ext.jsn-icon-ext-archive {
+	background-position: left -86px;
+}
+.link-icon-ext.jsn-icon-ext-mobile {
+	background-position: left -172px;
+}
+.link-icon-ext.jsn-icon-ext-css {
+	background-position: left -258px;
+}
+.link-icon-ext.jsn-icon-ext-application {
+	background-position: left -344px;
+}
+.link-icon-ext.jsn-icon-ext-doc {
+	background-position: left -430px;
+}
+.link-icon-ext.jsn-icon-ext-feed {
+	background-position: left -516px;
+}
+.link-icon-ext.jsn-icon-ext-movie {
+	background-position: left -602px;
+}
+.link-icon-ext.jsn-icon-ext-flash {
+	background-position: left -688px;
+}
+.link-icon-ext.jsn-icon-ext-calendar {
+	background-position: left -774px;
+}
+.link-icon-ext.jsn-icon-ext-mail {
+	background-position: left -860px;
+}
+.link-icon-ext.jsn-icon-ext-quicktime {
+	background-position: left -946px;
+}
+.link-icon-ext.jsn-icon-ext-msn {
+	background-position: left -1032px;
+}
+.link-icon-ext.jsn-icon-ext-music {
+	background-position: left -1118px;
+}
+.link-icon-ext.jsn-icon-ext-pdf {
+	background-position: left -1204px;
+}
+.link-icon-ext.jsn-icon-ext-powerpoint {
+	background-position: left -1290px;
+}
+.link-icon-ext.jsn-icon-ext-skype {
+	background-position: left -1376px;
+}
+.link-icon-ext.jsn-icon-ext-torrent {
+	background-position: left -1462px;
+}
+.link-icon-ext.jsn-icon-ext-font {
+	background-position: left -1548px;
+}
+.link-icon-ext.jsn-icon-ext-text {
+	background-position: left -1634px;
+}
+.link-icon-ext.jsn-icon-ext-vcard {
+	background-position: left -1720px;
+}
+.link-icon-ext.jsn-icon-ext-windowsmedia {
+	background-position: left -1806px;
+}
+.link-icon-ext.jsn-icon-ext-xls {
+	background-position: left -1892px;
+}
+.link-icon-ext.jsn-icon-ext-yahoo {
+	background-position: left -1978px;
+}
+/* =============== TYPOGRAPHY - TABLE STYLES =============== */
+table.table-style th,
+table.table-style td,
+table.table-style tbody th,
+table.table-style tbody td {
+	text-align: right;
+}
+table.table-style tfoot td {
+	text-align: left;
+}
+/* =============== TYPOGRAPHY - LIST STYLES =============== */
+/* ----- ARROW LIST ----- */
+ul.list-arrow li {
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 16px;
+}
+ul.list-arrow li:after {
+	left: auto;
+	right: 2px;
+}
+ul.list-arrow.arrow-red li:after {
+	border-right-color: #AE0000;
+	border-left: 0.34em solid transparent;
+}
+ul.list-arrow.arrow-blue li:after {
+	border-right-color: #0060BF;
+	border-left: 0.34em solid transparent;
+}
+ul.list-arrow.arrow-green li:after {
+	border-right-color: #3AA655;
+	border-left: 0.34em solid transparent;
+}
+ul.list-arrow.arrow-red li:after {
+	border-left-color: #AE0000\0/;
+	border-right: 0.34em solid transparent\0/;
+}
+ul.list-arrow.arrow-blue li:after {
+	border-left-color: #0060BF\0/;
+	border-right: 0.34em solid transparent\0/;
+}
+ul.list-arrow.arrow-green li:after {
+	border-left-color: #3AA655\0/;
+	border-right: 0.34em solid transparent\0/;
+}
+/* ----- ICON LIST ----- */
+ul.list-icon li {
+	padding-left: 0;
+	padding-right: 20px;
+}
+ul.list-icon li .jsn-listbullet {
+	left: auto;
+	right: 0;
+}
+/* ----- BULLET NUMBER LIST ----- */
+ul.list-number-bullet li,
+ul.list-number-digit li {
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 36px;
+}
+ul.list-number-bullet li span.jsn-listbullet,
+ul.list-number-digit li span.jsn-listbullet {
+	left: auto;
+	right: 0;
+}
+/* ----- DIGIT NUMBER LIST ----- */
+ul.list-number-digit li {
+	padding-left: 0;
+	padding-right: 42px;
+}
+ul.list-number-digit li span.jsn-listbullet {
+	text-align: left;
+}
+/* ============================== MENU ============================== */
+/* =============== MENU - MAIN MENU =============== */
+/* ----- GENERAL ----- */
+div.jsn-modulecontainer ul.menu-mainmenu {
+	direction: rtl;
+}
+div.jsn-modulecontainer ul.menu-mainmenu li {
+	float: right;
+}
+div.jsn-modulecontainer ul.menu-mainmenu ul ul {
+	margin-left: 0;
+	margin-right: 199px;
+}
+/* ----- PARENT ITEMS / ADD ARROW TO ITEMS HAVE SUBLEVEL ----- */
+div.jsn-modulecontainer ul.menu-mainmenu ul li.parent > a {
+	padding-right: 10px;
+	padding-left: 16px;
+	background-position: 4% center;
+	background-image: url(../images/icons/icon-arrow-black-rtl.png);
+	background-repeat: no-repeat;
+}
+/* ========= MENU - FLIPBACK ========= */
+div.jsn-modulecontainer ul.menu-mainmenu li.jsn-submenu-flipback > ul {
+	left: 0;
+	right: auto;
+}
+div.jsn-modulecontainer ul.menu-mainmenu li.jsn-submenu-flipback a,
+div.jsn-modulecontainer ul.menu-mainmenu li.jsn-submenu-flipback ul li a {
+	text-align: left;
+}
+div.jsn-modulecontainer ul.menu-mainmenu li.jsn-submenu-flipback ul li.parent > a {
+    background-image: url("../images/icons/icon-arrow-black.png");
+    background-position: 98% center;
+}
+div.jsn-modulecontainer ul.menu-mainmenu li.jsn-submenu-flipback ul ul {
+    margin-right: 0;
+    left: 199px;
+    right: auto;
+}
+/* =============== MENU - MAIN MENU ICONS =============== */
+.menu-iconmenu li[class*="icon-"] > a > span,
+.menu-iconmenu li[class*="jsn-icon-"] > a > span {
+	padding-left: 0;
+	padding-right: 24px;
+}
+/* =============== MENU - TREE MENU =============== */
+/* ----- GENERAL ----- */
+ul.menu-treemenu li > a > span {
+	padding-left: 0;
+	padding-right: 25px;
+	background-position: right -343px;
+}
+/* ----- ICON MENU STYLE ----- */
+div.jsn-modulecontainer ul.menu-treemenu.menu-iconmenu > li > a {
+	padding-left: 0;
+	padding-right: 3px;
+}
+/* ---------- 1st LEVEL ---------- */
+div.jsn-modulecontainer ul.menu-treemenu ul li a {
+	padding-left: 18px;
+	padding-right: 25px;
+}
+div.jsn-modulecontainer ul.menu-treemenu ul ul li a {
+	padding-left: 18px;
+	padding-right: 40px;
+}
+div.jsn-modulecontainer ul.menu-treemenu ul ul ul li a {
+	padding-left: 18px;
+	padding-right: 55px;
+}
+div.jsn-modulecontainer ul.menu-treemenu ul ul ul ul li a {
+	padding-left: 18px;
+	padding-right: 70px;
+}
+div.jsn-modulecontainer ul.menu-treemenu ul ul ul ul ul li a {
+	padding-left: 18px;
+	padding-right: 85px;
+}
+/* =============== MENU - DIV MENU =============== */
+ul.menu-divmenu {
+	float: none;
+}
+ul.menu-divmenu li {
+	float: right;
+}
+ul.menu-divmenu li.first {
+	border-right-width: 0;
+	padding-right: 0;
+	padding-left: 0.8em;
+}
+ul.menu-divmenu li.last {
+	border-right-width: 1px;
+}
+/* =============== MENU - SIDE MENU =============== */
+/* ----- GENERAL ----- */
+div.jsn-modulecontainer ul.menu-sidemenu {
+	direction: ltr;
+}
+div.jsn-modulecontainer ul.menu-sidemenu li {
+	direction: rtl;
+}
+div.jsn-modulecontainer ul.menu-sidemenu li:hover > ul {
+	right: 0;
+	right: -1px\0/;
+}
+div.jsn-modulecontainer ul.menu-iconmenu li i[class*="fa-"], div.jsn-modulecontainer ul.menu-iconmenu > li > a > span {
+  float: right;
+  margin: 0 0 0 5px;
+}
+ul.menu-sidemenu > li.parent > a {
+	padding-right: 16px;
+	background-image: url(../images/icons/icon-arrow-black-rtl.png);
+	background-position: 2% center;
+	background-repeat: no-repeat;
+}
+ul.menu-sidemenu > li > a > span {
+	padding-left: 0;
+	padding-right: 5px;
+}
+/* ---------- 1st LEVEL ---------- */
+div.jsn-modulecontainer ul.menu-sidemenu ul li a span {
+	padding-right: 0;
+	background: none;
+}
+/* ----- PARENT ITEMS / ADD ARROW TO ITEMS HAVE SUBLEVEL ----- */
+/* 1st LEVEL */
+div.jsn-modulecontainer ul.menu-sidemenu > li.parent > a {
+	background: url(../images/icons/icon-arrow-black-rtl.png) 4% center no-repeat;
+}
+div.jsn-modulecontainer ul.menu-sidemenu ul li.parent > a {
+	background-image: url(../images/icons/icon-arrow-black-rtl.png);
+	background-position: 5% center;
+	background-repeat: no-repeat;
+}
+/* 1st LEVEL BOX GREY */
+div.box-grey ul.menu-sidemenu > li.parent > a {
+	background-position: 0 -338px;
+}
+/* ----- ICON MENU STYLE ----- */
+div.jsn-modulecontainer ul.menu-sidemenu.menu-iconmenu > li.parent > a {
+}
+/* ============================== MOBILE TOOLS ============================== */
+#jsn-headerright #jsn-desktopswitch,
+#jsn-mobileswitch {
+	float: left;
+	margin-left: -10px;
+}
+#jsn-desktopswitch{
+	float: left;
+	margin-left: 0px;
+}
+#jsn-desktopswitch ul li {
+	float: right;
+}
+#jsn-desktopswitch ul li a span {
+	padding-left: 0;
+	padding-right: 22px;
+}
+#jsn-desktopswitch #jsn-mobileswitcher span {
+	background-position: right -172px;
+}
+body.jsn-mobile #jsn-desktopswitch #jsn-desktopswitcher span {
+	background-position: right -86px;
+}
+body.jsn-mobile #jsn-desktopswitch #jsn-menujump span {
+	background-position: right 0;
+}
+/* ============================== SITE TOOLS ============================== */
+/* =============== SITE TOOLS - GENERAL PRESENTATION =============== */
+#jsn-sitetoolspanel {
+	margin-right: 0;
+	margin: 0 0 0 8px;
+	left: 0;
+	right: auto;
+}
+ul#jsn-sitetools-menu ul li, ul#jsn-sitetools-inline ul li{
+	padding: 0 9px;
+}
+ul#jsn-sitetools-menu li ul {
+	left: 0px;
+	right: auto;
+}
+ul#jsn-sitetools-menu li:hover ul {
+	left: 32px;
+}
+/* ----- DROP DOWN ----- */
+ul#jsn-sitetools-menu {
+	direction: ltr;
+}
+/* ============================== MODULE STYLES ============================== */
+/* =============== MODULE STYLES - MODULE ICONS =============== */
+div[class*="icon-"] h3.jsn-moduletitle span.jsn-moduleicon,
+div[class*="jsn-icon-"] h3.jsn-moduletitle span.jsn-moduleicon {
+	padding-left: 0;
+	padding-right: 22px;
+}
+/* ============================== JOOMLA! DEFAULT EXTENSIONS ============================== */
+/* =============== JOOMLA! EXTENSIONS - COM_CONTENT =============== */
+/* ----- ARTICLE TOOLBAR ----- */
+#article-index {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+.article-info {
+	float: right;
+}
+.jsn-article-toolbar .pull-right > .dropdown-menu {
+	left: 0;
+	right: auto;
+}
+/* ----- ARTICLE INFO ----- */
+.author,
+.createdate,
+.publishdate {
+	padding-right: 20px;
+	padding-left: 0;
+}
+.author {
+	background-position: right 0;
+}
+.createdate,
+.publishdate {
+	background-position: right -86px;
+}
+.modifydate {
+	text-align: left;
+}
+/* ----- 3 BUTTON PDF, PRINT, EMAIL CONTAINER ----- */
+ul.jsn-article-tools li {
+	margin-left: 0;
+	margin-right: 10px;
+}
+/* ----- SUBMIT AN ARTICLE ----- */
+.formelm .fltlft,
+.formelm label,
+.formelm .button2-left {
+	float: right;
+}
+/* ----- TABLE OF CONTENT ----- */
+table.contenttoc {
+	margin-left: 0;
+	margin-right: 1em;
+	float: left;
+}
+/* ----- CATEGORY LIST LAYOUT ----- */
+/* TABLE FILTER */
+.jsn-infofilter {
+	text-align: left;
+}
+.jsn-titlefilter {
+	float: right;
+}
+.archived-article-list .jsn-infofilter {
+	text-align: right;
+}
+/* =============== JOOMLA! EXTENSIONS - COM_SEARCH =============== */
+div.com-search #searchForm .search-phrase {
+	margin-left: 0;
+	margin-right: 95px;
+}
+div.com-search #searchForm .search-range input,
+div.com-search #searchForm .search-phrase input {
+	margin-left: 0;
+	margin-right: 5px;
+}
+div.com-search #searchForm [class*="search-"] label,
+div.com-search #searchForm .search-field-title {
+	text-align: right;
+	padding-right: 0;
+	padding-left: 3px;
+}
+/* =============== JOOMLA! EXTENSIONS - COM_USER =============== */
+div.reset .jsn-formRow-lable,
+div.com-user .jsn-formRow-lable,
+div.com-user #com-form-login label {
+	float: right;
+}
+/* =============== JOOMLA! EXTENSIONS - COM_CONTACT =============== */
+div.com-contact .jsn-contact-image {
+	float: left;
+	margin: 10px 0 0 5px;
+}
+div.com-contact .jicons-icons {
+	float: right;
+	margin-left: 5px;
+}
+/* =============== JOOMLA! EXTENSIONS - SYSTEM MESSAGES =============== */
+/* ----- SYSTEM STANDARD MESSAGES ----- */
+#system-message dd.message ul {
+	padding-left: 0;
+	padding-right: 40px;
+	background-position: 98% center;
+}
+#system-message ul li {
+	margin-right: 0;
+}
+/* ----- SYSTEM ERROR MESSAGES ----- */
+#system-message dd.error ul {
+	background-position: 98% center;
+}
+/* ----- SYSTEM NOTICE MESSAGES ----- */
+#system-message dd.notice ul {
+	background-position: 98% center;
+}
+/* =============== JOOMLA! EXTENSIONS - COM_USER =============== */
+/* ----- REGISTER FORM ----- */
+.registration .form-horizontal .control-label {
+	text-align: right;
+	float: right;
+}
+form#login-form .icon-arrow-right {
+	background-position: -433px -72px;
+	float: none;
+}
+/* =============== JOOMLA! EXTENSIONS - MOD_BREADCRUMB =============== */
+span.breadcrumbs a,
+span.breadcrumbs span {
+	float: right;
+	padding-right: 8px;
+	padding-left: 18px;
+	background: url(../images/icons/icon-arrow-black-rtl.png) left center no-repeat;
+}
+.breadcrumb li.active:first-child span.divider {
+	padding: 0 0 0 5px;
+}
+span.breadcrumbs a.first {
+    padding-right: 0;
+    padding-left: 18px;
+}
+.jsn-joomla-30 #jsn-pos-breadcrumbs {
+	padding: 5px 0 5px 15px;
+}
+/* =============== JOOMLA! EXTENSIONS - MODULE SEARCH =============== */
+#jsn-pos-top div.search {
+	float: left;
+}
+#jsn-pos-top div.search input#mod_search_searchword {
+	padding-left: 0;
+	padding-right: 25px;
+	background-position: 98% -170px;
+}
+/* =============== JOOMLA! EXTENSIONS - MOD_STATISTICS =============== */
+dl.stats-module dt {
+    float: right;
+}
+/* ============================== MISC ============================== */
+/* =============== GENERAL ICON ASSIGNMENT =============== */
+
+.link-icon[class*="jsn-icon-"],
+.link-button.button-light .link-icon[class*="jsn-icon-"],
+.menu-iconmenu [class*="jsn-icon-"] > a > span,
+.list-icon[class*="jsn-icon-"] li .jsn-listbullet,
+[class*="jsn-icon-"] h3.jsn-moduletitle span.jsn-moduleicon {
+	padding: 0 28px 0 0;
+}
+.link-icon.jsn-icon-article,
+.menu-iconmenu .jsn-icon-article > a > span,
+.list-icon.jsn-icon-article li .jsn-listbullet,
+.jsn-icon-article h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right 0;
+}
+.link-icon.jsn-icon-calendar,
+.menu-iconmenu .jsn-icon-calendar > a > span,
+.list-icon.jsn-icon-calendar li .jsn-listbullet,
+.jsn-icon-calendar h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -97px;
+}
+.link-icon.jsn-icon-cart,
+.menu-iconmenu .jsn-icon-cart > a > span,
+.list-icon.jsn-icon-cart li .jsn-listbullet,
+.jsn-icon-cart h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -197px;
+}
+.link-icon.jsn-icon-comment,
+.menu-iconmenu .jsn-icon-comment > a > span,
+.list-icon.jsn-icon-comment li .jsn-listbullet,
+.jsn-icon-comment h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -297px;
+}
+.link-icon.jsn-icon-display,
+.menu-iconmenu .jsn-icon-display > a > span,
+.list-icon.jsn-icon-display li .jsn-listbullet,
+.jsn-icon-display h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -397px;
+}
+.link-icon.jsn-icon-download,
+.menu-iconmenu .jsn-icon-download > a > span,
+.list-icon.jsn-icon-download li .jsn-listbullet,
+.jsn-icon-download h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -497px;
+}
+.link-icon.jsn-icon-folder,
+.menu-iconmenu .jsn-icon-folder > a > span,
+.list-icon.jsn-icon-folder li .jsn-listbullet,
+.jsn-icon-folder h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -597px;
+}
+.link-icon.jsn-icon-help,
+.menu-iconmenu .jsn-icon-help > a > span,
+.list-icon.jsn-icon-help li .jsn-listbullet,
+.jsn-icon-help h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1397px;
+}
+.link-icon.jsn-icon-home,
+.menu-iconmenu .jsn-icon-home > a > span,
+.list-icon.jsn-icon-home li .jsn-listbullet,
+.jsn-icon-home h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -697px;
+}
+.link-icon.jsn-icon-image,
+.menu-iconmenu .jsn-icon-image > a > span,
+.list-icon.jsn-icon-image li .jsn-listbullet,
+.jsn-icon-image h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -797px;
+}
+.link-icon.jsn-icon-info,
+.menu-iconmenu .jsn-icon-info > a > span,
+.list-icon.jsn-icon-info li .jsn-listbullet,
+.jsn-icon-info h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -897px;
+}
+.link-icon.jsn-icon-mail,
+.menu-iconmenu .jsn-icon-mail > a > span,
+.list-icon.jsn-icon-mail li .jsn-listbullet,
+.jsn-icon-mail h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -997px;
+}
+.link-icon.jsn-icon-rss,
+.menu-iconmenu .jsn-icon-rss > a > span,
+.list-icon.jsn-icon-rss li .jsn-listbullet,
+.jsn-icon-rss h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1097px;
+}
+.link-icon.jsn-icon-search,
+.menu-iconmenu .jsn-icon-search > a > span,
+.list-icon.jsn-icon-search li .jsn-listbullet,
+.jsn-icon-search h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1197px;
+}
+.link-icon.jsn-icon-selection,
+.menu-iconmenu .jsn-icon-selection > a > span,
+.list-icon.jsn-icon-selection li .jsn-listbullet,
+.jsn-icon-selection h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1297px;
+}
+.link-icon.jsn-icon-settings,
+.menu-iconmenu .jsn-icon-settings > a > span,
+.list-icon.jsn-icon-settings li .jsn-listbullet,
+.jsn-icon-settings h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1897px;
+}
+.link-icon.jsn-icon-star,
+.menu-iconmenu .jsn-icon-star > a > span,
+.list-icon.jsn-icon-star li .jsn-listbullet,
+.jsn-icon-star h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -497px;
+}
+.link-icon.jsn-icon-statistics,
+.menu-iconmenu .jsn-icon-statistics > a > span,
+.list-icon.jsn-icon-statistics li .jsn-listbullet,
+.jsn-icon-statistics h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1497px;
+}
+.link-icon.jsn-icon-ok,
+.menu-iconmenu .jsn-icon-ok > a > span,
+.list-icon.jsn-icon-ok li .jsn-listbullet,
+.jsn-icon-ok h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1597px;
+}
+.link-icon.jsn-icon-cancel,
+.menu-iconmenu .jsn-icon-cancel > a > span,
+.list-icon.jsn-icon-cancel li .jsn-listbullet,
+.jsn-icon-cancel h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1697px;
+}
+.menu-iconmenu .jsn-icon-user > a > span,
+.list-icon.jsn-icon-user li .jsn-listbullet,
+.jsn-icon-user h3.jsn-moduletitle span.jsn-moduleicon {
+	background-position: right -1797px;
+}
+/* ---------- OVERRIDE ----------- */
+.form-search .radio input[type="radio"],
+.form-search .checkbox input[type="checkbox"],
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+	float: right;
+	margin-left: 3px;
+	margin-right: auto;
+}
+.nav-tabs > li,
+.nav-pills > li {
+	float: none;
+}
+
+
+/*--- dona ---*/
+
+ul.menu-ftmenu li {
+  padding: 0 8px 0 0 !important;
+}
+.menu-ftmenu li:before {
+  left: auto;
+  right: 0;
+  margin: 0 0 0 2px;
+}
+.jsn-page-info > .pull-left {
+  margin: 0 0 0 25px;
+}
+#jsn-pos-footer{
+	float: right;
+}
+#jsn-pos-bottom{
+	margin: 0 2.564102564102564% 0 0;
+}
+div.jsn-modulecontainer ul.menu-mainmenu > li.parent > a .jsn-menutitle:after{
+	margin: 0 7px 0 0;
+}

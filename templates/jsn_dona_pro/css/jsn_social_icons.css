@@ -1,0 +1,119 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+/* ========== SOCIAL - ICON ========== */
+#jsn-social-icons > h3{
+	margin: 0;
+	color: #fff;
+	font-size: 1em;
+	padding-bottom: 10px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+#jsn-social-icons ul {
+	margin: 0;
+}
+#jsn-social-icons ul li {
+	float: left; 
+	list-style: none;
+	margin: 0 0 0 0;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+#jsn-social-icons ul li a {
+	display: block;
+	position: relative;
+	outline: none;
+	text-align: left;
+}
+#jsn-social-icons ul a:before {
+	font-size: 16px;
+	margin-right: 10px;
+	color: #86b522;
+}
+body.jsn-color-red #jsn-social-icons ul a:before {
+	color: #f0525b;
+}
+body.jsn-color-blue #jsn-social-icons ul a:before {
+	color: #29ABE2;
+}
+body.jsn-color-orange #jsn-social-icons ul a:before {
+	color: #f26522;
+}
+body.jsn-color-cyan #jsn-social-icons ul a:before {
+	color: #4ecdc4;
+}
+body.jsn-color-brown #jsn-social-icons ul a:before {
+	color: #ad8b66;
+}
+#jsn-social-icons ul .facebook a:before {
+    content: '\f09a';
+}
+#jsn-social-icons ul .twitter a:before {
+    content: '\f099';
+}
+#jsn-social-icons ul .youtube a:before {
+    content: '\f167';
+}
+#jsn-social-icons ul .googleplus a:before {
+    content: '\f0d5';
+}
+#jsn-social-icons ul .pinterest a:before {
+    content: '\f0d2';
+}
+#jsn-social-icons ul .myspace a:before {
+    content: '\f007';
+}
+#jsn-social-icons ul .flickr a:before {
+    content: '\f16e';
+}
+#jsn-social-icons ul .dribble a:before {
+    content: '\f17d';
+}
+#jsn-social-icons ul .stumbleupon a:before {
+    content: '\f1a4';
+}
+#jsn-social-icons ul .yahoo a:before {
+    content: '\f19e';
+}
+#jsn-social-icons ul .skype a:before {
+    content: '\f17e';
+}
+#jsn-social-icons ul .rss a:before {
+    content: '\f09e';
+}
+#jsn-social-icons ul .linkedin a:before {
+    content: '\f0e1';
+}
+#jsn-social-icons ul .instagram a:before {
+    content: '\f16d';
+}
+/* ========== RTL LAYOUT ========== */
+body.jsn-direction-rtl #jsn-social-icons ul li a span{
+    float: right;
+  	margin: 3px 0 0 10px;
+}
+body.jsn-direction-rtl #jsn-social-icons ul li a {
+ 	text-align: right;
+}
+@media only screen and (max-width: 480px), (max-device-width: 480px) {
+	#jsn-social-icons,
+	#jsn-social-icons ul,
+	#jsn-social-icons ul li {
+		float: none;
+	}
+	#jsn-social-icons ul {
+		text-align: center;
+	}
+	/*#jsn-social-icons ul li {
+		display: inline-block;
+		float: left;
+		width: 35%;
+		margin: 0 20px;
+	}*/
+}

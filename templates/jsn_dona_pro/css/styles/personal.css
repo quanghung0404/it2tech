@@ -1,0 +1,38 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#jsn-gotoplink,
+.page-header,
+.subheading-category,
+#jsn-menu a,
+#jsn-menu span,
+.componentheading,
+.contentheading {
+	font-family: Roboto, Georgia, serif;
+	font-weight: 400;
+}
+body.jsn-textstyle-personal ul.menu-mainmenu > li > a {
+	font-weight: bold;
+}
+body.jsn-textstyle-personal .jsn-moduletitle {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+body.jsn-textstyle-personal .contentheading,
+body.jsn-textstyle-personal .componentheading,
+body.jsn-textstyle-personal .subheading {
+	font-size: 1.6em;
+}

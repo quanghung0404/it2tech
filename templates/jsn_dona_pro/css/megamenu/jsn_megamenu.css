@@ -1,0 +1,155 @@
+/* ============================== MENU ============================== */
+/* =============== MENU - GENERAL =============== */
+/* ----- RICH MENU STYLE ----- */
+.jsn-menutitle,
+.jsn-menudescription {
+    display: block;
+}
+.jsn-menudescription {
+    color: #ccc;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+div.jsn-modulecontainer.jsn-megamenu ul.menu-mainmenu > li > a {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 11px 20px;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu {
+    position: inherit;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu:hover a{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid {
+    width: 100%;
+    padding: 15px;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    border: none;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul .sub-menu {
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul ul {
+    position: absolute;
+    left: 100%;
+    display: none;
+    width: 115%;
+}
+
+.jsn-direction-rtl .jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul ul {
+    left: -100%;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul li:hover > ul {
+    display: block;
+    z-index: 999;
+    border: 1px solid #e1e1e1;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul li {
+    display: block;
+    width: 100%;
+}
+.jsn-megamenu ul.menu-mainmenu li.megamenu ul li.jsn-menu-mobile-control {
+    display: none;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul li a {
+    border-left: none;
+    border-right: none;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid .module-title {
+    font-size: 13.5px;
+    text-shadow: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #363636;
+    margin: 0;
+    background-color: #e8e8e8;
+    padding: 12px 20px 8px;
+    display: block;
+    font-family: 'Poppins' !important;
+    clear: both;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu > ul {
+    display: none;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu:hover > ul{
+    display: block;
+}
+
+div.jsn-modulecontainer ul.menu-mainmenu. li.megamenu ul li a {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*  DESCRIPTION */
+
+div.jsn-modulecontainer ul.menu-mainmenu.jsn-hasDescription li a span.jsn-menudescription {
+    display: block;
+}
+
+/* ICON MEGAMENU*/
+div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon > li > a {
+    padding: 11px 20px;
+}
+div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon > li > a > span{
+    display: inline-block;
+}
+div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li a i[class*="fa-"] {
+    display: inline-block;
+    height: 18px;
+    line-height: 19px;
+    margin-right: 8px;
+    vertical-align: top;
+}
+body.jsn-direction-rtl div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li a i[class*="fa-"] {
+    margin-left: 8px;
+}
+div.jsn-megamenu ul.menu-mainmenu > li:last-child > a {
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    color: #fff !important;
+    padding: 8px 20px;
+}
+body.jsn-color-cyan div.jsn-megamenu ul.menu-mainmenu > li:last-child > a {
+    background-color: #4ECDD1;
+}
+body.jsn-color-red div.jsn-megamenu ul.menu-mainmenu > li:last-child > a {
+    background-color: #f9524f;
+}
+body.jsn-color-brown div.jsn-megamenu ul.menu-mainmenu > li:last-child > a {
+    background-color: #ad8b66;
+}
+body.jsn-color-green div.jsn-megamenu ul.menu-mainmenu > li:last-child > a {
+    background-color: #6ac212;
+}
+body.jsn-color-orange div.jsn-megamenu ul.menu-mainmenu > li:last-child > a {
+    background-color: #c25412;
+}
+body.jsn-color-blue div.jsn-megamenu ul.menu-mainmenu > li:last-child > a {
+    background-color: #29ABE2;
+}

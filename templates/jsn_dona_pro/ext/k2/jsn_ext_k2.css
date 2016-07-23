@@ -1,0 +1,1770 @@
+/**
+* @author    JoomlaShine.com http://www.joomlashine.com
+* @copyright Copyright (C) 2008 - 2011 JoomlaShine.com. All rights reserved.
+* @license   JoomlaShine.com Proprietary License
+*/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+.row-fluid .span12 {
+	margin-left: 0;
+}
+#k2Container {
+	padding: 0;
+	font-size: 13px;
+}
+#k2Container a {
+	color: #353535;
+}
+body.jsn-color-blue #k2Container a:hover {
+	color: #68A8AA;
+}
+body.jsn-color-purple #k2Container a:hover {
+	color: #65759B;
+}
+body.jsn-color-green #k2Container a:hover {
+	color: #68aa71;
+}
+body.jsn-color-brown #k2Container a:hover {
+	color: #786d5b;
+}
+body.jsn-color-red #k2Container a:hover {
+	color: #f45245;
+}
+body.jsn-color-yellow #k2Container a:hover {
+	color: #CA9639;
+}
+#k2Container ul li.odd,
+#k2Container ul li.even {
+	border: none;
+	background: none;
+}
+.latestItemsContainer {
+	border-bottom: 1px solid #e5e5e5;
+}
+.latestItemsContainer,
+.latestItemView {
+	margin: 0 0 30px;
+	padding: 0;
+}
+#k2Container div.tagItemView:last-child,
+.latestItemsContainer:last-child,
+.latestItemView:last-child {
+	margin: 0 0 0;
+}
+#k2Container div.itemRatingBlock {
+	padding: 0;
+	float: right;
+}
+#k2Container div.itemRatingBlock > span {
+	padding: 3px 5px 3px 0;
+}
+#k2Container div.userItemIsFeatured {
+	padding: 0;
+	margin: 0 0 50px;
+	background: none;
+}
+.userItemView {
+	margin: 0 0 50px;
+}
+#k2Container div.itemBody {
+	padding-bottom: 0;
+}
+#k2Container div.catItemBody,
+#k2Container div.latestItemIntroText,
+#k2Container div.catItemIntroText,
+#k2Container div.tagItemBody,
+#k2Container div.tagItemIntroText,
+#k2Container div.userItemBody,
+#k2Container div.userItemIntroText,
+#k2Container div.itemIntroText,
+#k2Container div.itemFullText {
+	padding: 0;
+	font-size: 13px;
+	font-weight: 400;
+	color: #3d3d3d;
+	line-height: 2;
+	font-style: initial;
+}
+#k2Container .items-row {
+	border-bottom: 1px solid #ededed;
+}
+#k2Container div.itemIntroText {
+	font-size: 13px;
+}
+#k2Container div.catItemBody {
+	padding: 0;
+}
+#k2Container h2.itemTitle,
+#k2Container h2.latestItemTitle,
+#k2Container h2.tagItemTitle,
+#k2Container h3.catItemTitle,
+#k2Container h3.userItemTitle {
+	font-size: 34px;
+	line-height: 1.2;
+	font-family: 'Lato',sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #282828;
+}
+#k2Container h3.catItemTitle{
+	font-size: 30px;
+	padding-top: 5px;
+
+}
+.jsn-color-blue #k2Container h3.catItemTitle:hover{
+	color: #68A8AA;
+}
+.jsn-color-purple #k2Container h3.catItemTitle:hover a{
+	color: #65759B;
+}
+.jsn-color-green #k2Container h3.catItemTitle:hover a{
+	color: #68aa71;
+}
+.jsn-color-brown #k2Container h3.catItemTitle:hover a{
+	color: #786d5b;
+}
+.jsn-color-red #k2Container h3.catItemTitle:hover a{
+	color: #f45245;
+}
+.jsn-color-yellow #k2Container h3.catItemTitle:hover a{
+	color: #CA9639;
+}
+
+#k2Container h2.itemTitle a,
+#k2Container h2.latestItemTitle a,
+#k2Container h2.tagItemTitle a,
+#k2Container h3.catItemTitle a,
+#k2Container h3.userItemTitle a {
+	color: #282828;
+}	
+#k2Container .jsn-article-toolbar {
+	float: left;
+	border: none;
+	width: 100%;
+	padding: 15px 0 5px;
+	margin: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	background-color: transparent;
+	padding: 0;
+}
+#k2Container div.itemToolbar,
+#k2Container div.catItemToolbar,
+#k2Container div.userItemToolbar {
+	margin: 10px 0 0;
+	float: right;
+	border: none;
+	background: none;
+	padding: 0;
+}
+#k2Container div.catItemToolbar div.k2FeedIcon,
+#k2Container div.userItemToolbar div.k2FeedIcon {
+	padding: 0;
+}
+div.k2FeedIcon a {
+	background: none;
+}
+div.k2FeedIcon a i {
+	display: none;
+}
+div.jsn-article-toolbar div.k2FeedIcon a i {
+	margin-right: 0;
+}
+div.k2FeedIcon a:hover {
+	background: none;
+	color: #595959;
+}
+#k2Container div.itemToolbar ul.jsn-article-tools {
+	margin: 0;
+	line-height: 16px;
+}
+#k2Container div.itemToolbar ul.jsn-article-tools li {
+	border: none;
+	margin-left: 8px;
+	font-size: 12px;
+	padding: 0;
+}
+#k2Container div.itemToolbar ul.jsn-article-tools li a {
+	float: none;
+	width: auto;
+	height: auto;
+	display: inline;
+	background: none;
+	font-size: 1em;
+	color: #595959;
+	position: inherit;
+}
+div.jsn-article-toolbar div.itemToolbar [class^="jsn-icon-"] {
+	margin-right: 0;
+}
+div.jsn-article-toolbar div.itemToolbar .jsn-icon-email {
+	margin-top: -1px;
+}
+div.itemToolbar ul li a span {
+	display: none;
+}
+#k2Container div.jsn-article-info .itemDateCreated {
+	color: #353535;
+	font-size: 12px;
+}
+div.latestItemCommentsLink,
+div.catItemCommentsLink,
+div.userItemCommentsLink {
+	margin: 0 0 0 20px;
+	border-right: none;
+	line-height: 16px;
+	display: inline-block;
+	color: #7d7d7d;
+	float: left;
+}
+div.catItemCommentsLink a {
+	line-height: 16px;
+}
+#k2Container div.itemContentFooter {
+	margin: 0;
+	padding: 10px 0;
+	text-align: left;
+	border-top: 1px solid #e6e6e6;
+	display: inline-block;
+	width: 100%;
+}
+#k2Container div.catItemContentFooter,
+#k2Container div.tagItemContentFooter,
+#k2Container div.userItemContentFooter,
+#k2Container div.latestItemReadMore {
+	margin: 15px 0 23px;
+	display: inline-block;
+	width: 100%;
+}
+#k2Container a.k2ReadMore {
+	font-size: 12px;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	padding: 10px 20px;
+	color: #fff;
+	background-color: #f26522;
+}
+a.k2ReadMore i.jsn-icon-link {
+	margin: 0 3px 0 0;
+}
+div.latestItemBody {
+	padding-bottom: 0;
+}
+#k2Container div.itemContentFooter a.itemCommentsLink {
+	padding: 4px 0;
+	display: block;
+}
+#k2Container div.itemContentFooter div.itemSocialSharing {
+	padding: 0;
+	float: left;
+}
+#k2Container div.itemContentFooter div.itemTwitterButton,
+#k2Container div.itemContentFooter div.itemFacebookButton,
+#k2Container div.itemContentFooter div.itemGooglePlusOneButton {
+	margin: 0;
+	float: left;
+}
+#k2Container div.itemContentFooter div.itemTwitterButton {
+	width: 90px;
+}
+#k2Container div.itemContentFooter div.itemFacebookButton {
+	width: 220px;
+}
+#k2Container div.itemContentFooter div.itemGooglePlusOneButton {
+	width: 40px;
+}
+#k2Container div.itemAttachmentsBlock {
+	padding: 8px;
+	border-bottom: none;
+	border-top: 1px solid #DDDDDD;
+}
+#k2Container div.itemLinks,
+#k2Container div.catItemLinks,
+#k2Container div.userItemLinks,
+#k2Container div.latestItemLinks {
+	margin: 0;
+	display: inline-block;
+	width: 100%;
+}
+div[class*="ItemLinks"] i.jsn-icon-tag,
+div[class*="itemLinks"] i.jsn-icon-tag {
+	font-size: 15px;
+	margin-right: 3px;
+	color: #333;
+}
+ul[class*="ItemTags"] li a,
+div.itemTagsBlock ul.itemTags li a, {
+    padding: 0 3px;
+    display: inline-block;
+}
+#k2Container div.itemLinks div.itemTagsBlock,
+#k2Container div.catItemLinks div.catItemTagsBlock,
+#k2Container div.userItemLinks div.userItemTagsBlock,
+#k2Container div.latestItemLinks div.latestItemTagsBlock {
+	padding: 5px 0;
+	margin: 10px 0;
+}
+#k2Container div.itemListCategory,
+#k2Container div.latestItemsCategory,
+#k2Container div.userBlock {
+  border: none;
+  background: #f1f2f3;
+  padding: 25px;
+  margin: 0 0 30px;
+}
+#k2Container div.itemLinks div.itemTagsBlock{
+	border-top: none;
+}
+div.latestItemTagsBlock {
+	padding: 5px 0;
+	border-bottom: none;
+	margin: 10px 0 15px;
+}
+div.latestItemTagsBlock ul.latestItemTags li a {
+  background-color: #F1F2F3;
+  padding: 2px 6px 4px;
+  font-size: 12px;
+}
+#k2Container div.itemLinks div.itemTagsBlock ul li a{
+	color: #555;
+	background: #f2f2f2;
+	display: inline-block;
+	padding: 2px 15px;
+	margin-left: 5px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+}
+#k2Container div.itemLinks div.itemTagsBlock ul li:hover a{
+	background: #ddd;
+}
+.itemListCategoriesBlock,
+div.userBlock {
+	margin-bottom: 30px;
+}
+#k2Container div.itemLinks div.itemCategory,
+#k2Container div.catItemLinks div.catItemCategory,
+#k2Container div.userItemLinks div.userItemCategory,
+#k2Container div.itemLinks div.itemHits {
+	padding: 0;
+	margin: 7px 0 5px;
+	border: none;
+	display: block;
+}
+#k2Container div.itemLinks div.itemAttachmentsBlock {
+	padding: 0;
+	margin: 8px;
+	border-bottom: none;
+}
+#k2Container div.itemNavigation {
+	background: none;
+	border-bottom: none;
+	padding: 0;
+}
+#k2Container div.itemNavigation span.itemNavigationTitle {
+	color: #555555;
+	font-weight: bold;
+}
+#k2Container div.itemAuthorLatest {
+	float: right;
+}
+div.itemRelated h3 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #333;
+}
+#k2Container div.itemAuthorLatest h5 {
+  color: #353535;
+  text-transform: uppercase;
+  line-height: 32px;
+  margin: 0;
+}
+#k2Container div.itemRelated {
+	float: left;
+	width: 49%;
+}
+#k2Container div.itemAuthorDetails h3.itemAuthorName {
+  margin-top: 0;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+#k2Container div.itemComments {
+  padding: 0 0 16px;
+  border: none;
+  background: none;
+  margin: 50px 0 20px;
+  border-bottom: 1px solid #ededed;
+}
+#k2Container div.itemComments h3.itemCommentsCounter{
+	font-size: 20px;
+	color: #353533;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+#k2Container div.itemComments div.itemCommentsForm form#comment-form{
+	background: #f8f8f8;
+	padding: 35px;
+  	padding-top: 5px;
+  	padding-bottom: 50px;
+}
+#k2Container div.itemHeader h2.itemTitle span {
+	color: #353535;
+ 	font-size: 34px;
+}
+div.k2CategoriesListBlock ul li a span.catTitle {
+	padding-right: 0;
+}
+div.k2CategoriesListBlock ul li a span.catCounter {
+	color: #999;
+}
+#k2Container div.itemHeader div.jsn-article-toolbar{
+	border: none;
+}
+#k2Container div.itemComments ul.itemCommentsList {
+	margin: 0 0 35px;
+}
+#k2Container div.itemComments ul.itemCommentsList li{
+	margin: 20px 0 0;
+}
+#k2Container div.itemComments ul.itemCommentsList li span.commentToolbar{
+	width: 48px;
+  	background: #c8c8c8;
+  	margin-left: 4px;
+  	padding-left: 14px;
+}
+body.jsn-color-blue #k2Container div.itemComments ul.itemCommentsList li span.commentToolbar:hover {
+	background: #68A8AA;
+}
+body.jsn-color-purple #k2Container div.itemComments ul.itemCommentsList li span.commentToolbar:hover {
+	background: #65759B;
+}
+body.jsn-color-green #k2Container div.itemComments ul.itemCommentsList li span.commentToolbar:hover {
+	background: #68aa71;
+}
+body.jsn-color-brown #k2Container div.itemComments ul.itemCommentsList li span.commentToolbar:hover {
+	background: #786d5b;
+}
+body.jsn-color-red #k2Container div.itemComments ul.itemCommentsList li span.commentToolbar:hover {
+	background: #f45245;
+}
+body.jsn-color-yellow #k2Container div.itemComments ul.itemCommentsList li span.commentToolbar:hover {
+	background: #CA9639;
+}
+#k2Container div.itemComments ul.itemCommentsList li span.commentToolbar a{
+	text-decoration: none;
+	color: #fff;
+}
+#k2Container div.itemComments ul.itemCommentsList .comment-avatar,
+#k2Container div.itemComments ul.itemCommentsList .itemCommentsWrapper {
+	position: relative;
+}
+#k2Container div.itemComments ul.itemCommentsList .comment-avatar {
+	display: inline-block;
+	float: left;
+}
+#k2Container div.itemComments ul.itemCommentsList .commentDate{
+	font-size: 11px;
+	font-weight: 400;
+}
+#k2Container div.itemComments ul.itemCommentsList .commentAuthorName {
+	color: #333;
+	padding: 0;
+	font-weight: 300;
+	font-size: 16px;
+}
+#k2Container div.itemComments ul.itemCommentsList .commentAuthorName a {
+	font-weight: 400;
+}
+div.itemComments ul.itemCommentsList li span.commentDate {
+	border-right: none;
+}
+#k2Container div.itemComments ul.itemCommentsList div.itemCommentsWrapper {
+	padding: 0px 15px 10px;
+	border-radius: 3px;
+	margin-left: 90px;
+	margin-top: -70px;
+}
+#k2Container div.itemComments ul.itemCommentsList li img {
+	text-align: center;
+	line-height: 16px;
+	width: 70px;
+	height: 70px;
+	margin: 0;
+	margin-top: 5px;
+	border:none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+#k2Container div.itemComments ul.itemCommentsList p.commentLink {
+	padding-top: 0;
+	margin-top: 0;
+}
+div.itemComments ul.itemCommentsList li span.commentLink a {
+	text-decoration: none;
+}
+div.itemComments ul.itemCommentsList li p {
+	margin: 0;
+	padding: 0;
+}
+div.itemComments ul.itemCommentsList li p.comment-text {
+	margin-top: 10px;
+}
+#k2Container div.itemComments div.itemCommentsForm h3 {
+	padding: 0;
+	margin: 10px 0 5px;
+	font-size: 2em;
+  	color: #353533;
+  	text-transform: uppercase;
+  	font-weight: 600;
+}
+#k2Container div.itemComments p.itemCommentsFormNotes {
+	border: none;
+}
+#k2Container div.itemComments .inputbox {
+	color: #7d7d7d;
+	padding: 10px 3px;
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	width: 100%;
+	border-radius: 3px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+body.jsn-color-blue #k2Container div.itemComments #submitCommentButton {
+	background: #68A8AA;
+}
+body.jsn-color-purple #k2Container div.itemComments #submitCommentButton {
+	background: #65759B;
+}
+body.jsn-color-green #k2Container div.itemComments #submitCommentButton {
+	background: #68aa71;
+}
+body.jsn-color-brown #k2Container div.itemComments #submitCommentButton {
+	background: #786d5b;
+}
+body.jsn-color-red #k2Container div.itemComments #submitCommentButton {
+	background: #f45245;
+}
+body.jsn-color-yellow #k2Container div.itemComments #submitCommentButton {
+	background: #CA9639;
+}
+#k2Container div.itemComments #submitCommentButton {
+	cursor: pointer;
+	text-shadow: none;
+	float: right;
+	color: #fff;
+	border: none;
+	padding: 10px 15px;
+	font-weight: 400;
+	font-size: 15px;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	-webkit-transition: all .3s ease-in-out;
+	   -moz-transition: all .3s ease-in-out;
+	    -ms-transition: all .3s ease-in-out;
+	     -o-transition: all .3s ease-in-out;
+	        transition: all .3s ease-in-out;
+}
+#k2Container div.itemNavigation{
+	margin: 50px 0 24px 0;
+}
+#k2Container div.itemComments #submitCommentButton:hover {
+	background: #222 !important;
+}
+div.itemCommentsForm form label.formComment,
+div.itemCommentsForm form label.formName,
+div.itemCommentsForm form label.formEmail,
+div.itemCommentsForm form label.formUrl {
+	margin-bottom: 10px;
+}
+#k2Container #itemListLinks {
+	margin: 0;
+}
+#k2Container #itemListLinks h3 {
+	margin-top: 0;
+}
+#k2Container #itemListLinks div.itemContainer a {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+#k2Container div.k2Pagination {
+	margin-top: 10px;
+}
+#k2Container div.itemBackToTop {
+	padding-bottom: 10px;
+}
+#k2Container div.itemBackToTop a {
+	text-decoration: none;
+}
+#k2Container div.itemBackToTop a:hover {
+	color: #fff;
+}
+div.genericItemHeader h2.genericItemTitle {
+	font-size: 1.5em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+div.k2FeedIcon {
+	float: right;
+	padding: 0;
+}
+div.itemBody img,
+div.userItemList img,
+div.catItemBody img,
+div.tagItemBody img,
+div.latestItemBody img {
+	max-width: 100%;
+	max-width: inherit\9;
+	border: none;
+	padding: 0;
+}
+div.k2Pagination ul li {
+	display: inline-block;
+	margin: 5px 1px;
+}
+*+html div.k2Pagination ul li {
+	display: inline;
+}
+div.latestItemsCategoryImage {
+	float: left;
+	margin-right: 15px;
+}
+.subCategoryContainer .subCategory {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+div.subCategoryContainer {
+	width: 100%;
+	float: left;
+	padding-bottom: 10px;
+}
+div.subCategoryContainer h5 {
+	margin-top: 0;
+}
+div.subCategory a.subCategoryImage img {
+	width: 50px;
+}
+div.subCategoryContainer p {
+	margin-bottom: 5px;
+}
+div#itemListLinks span.catItemImage {
+	float: left;
+	margin-right: 5px;
+}
+/*---- User ----*/
+div.userBlock h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 17px;
+  color: #282828;
+}
+div.userBlock div.userAdditionalInfo,
+div.itemAuthorBlock div.userAdditionalInfo {
+	margin: 0 0 8px;
+	float: left;
+}
+div.itemAuthorBlock div.itemAuthorDetails span.itemAuthorUrl {
+	border-right: none;
+	font-weight: 400;
+}
+div.itemAuthorBlock div.itemAuthorDetails p {
+	margin: 0;
+}
+/*---- List Article ----*/
+div.jsn-article-toolbar .jsn-article-info .author,
+div.jsn-article-toolbar .jsn-article-info .createdate {
+	margin: 0;
+	background: none;
+	padding-left: 0;
+	float: left;
+}
+div.catItemHeader span.catItemAuthor,
+div.itemHeader span.itemAuthor {
+	display: inline-block;
+	margin-right: 10px;
+}
+div.jsn-article-toolbar [class^="jsn-icon-"] {
+	float: left;
+	margin-right: 5px;
+}
+div.itemContainer {
+	margin: 25px 0 15px;
+	float: none;
+}
+div.itemContainer div.catItemView div.catItemHeader div.jsn-article-toolbar{
+	border: none;
+}
+span.itemImage,
+span.userItemImage,
+span.catItemImage,
+span.latestItemImage {
+	margin: 15px 0 10px;
+	width: 100%;
+	float: left;
+}
+div.catItemView {
+	padding: 0;
+}
+div.catItemHeader,
+div.itemHeader,
+div.tagItemHeader {
+  width: 90%;
+  float: right;
+}
+div.latestItemTagsBlock span {
+	font-weight: normal;
+	color: #999;
+	padding: 0 15px 0 0;
+	font-size: 13px;
+}
+div.catItemTagsBlock ul.catItemTags li{
+	color: #555;
+  	background: #f2f2f2;
+  	display: inline-block;
+  	padding: 4px 20px;
+  	margin-left: 6px;
+  	-webkit-border-radius: 1px;
+  	-moz-border-radius: 1px;
+  	border-radius: 1px;
+}
+.catItemImageBlock {
+	position: relative;
+}
+.catItemImageBlock .createdate,
+.itemView .createdate,
+.tagItemView .createdate {
+  text-align: center;
+  padding: 2px 11px 0;
+  border: 1px solid #e5e5e5;
+  float: left;
+}
+.createdate span {
+	display: block;
+	color: #282828;
+	text-transform: uppercase;
+}
+.createdate span.createdate-name {
+	font-size: 17px;
+}
+.createdate span.createdate-day {
+	padding: 0 5px 0;
+	font-size: 9px;
+	display: inline-block;
+}
+.createdate span.createdate-month {
+  padding: 0 0 5px;
+  display: inline-block;
+}
+.createdate span.createdate-year {
+	font-size: 16px;
+	padding: 0;
+}
+.jsn-article-toolbar i {
+	margin-right: 3px;
+}
+.jsn-article-toolbar a,
+.jsn-article-toolbar span {
+	font-size: 12px;
+}
+/*---- Detail Article ----*/
+.itemImageBlock > a,
+.catItemImage > a {
+	display: block;
+	width: 100%;
+}
+.itemImage, .itemImageBlock, .catItemImage {
+	display: block;
+	line-height: 0;
+	overflow: hidden;
+}
+.itemImageBlock img:hover,
+.catItemImage img:hover {
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+  opacity: 0.9;
+}
+#k2Container div.itemToolbar ul.jsn-article-tools li a {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline;
+    float: none;
+    font-size: 11px;
+    height: auto;
+    width: auto;
+}
+div.itemToolbar ul li a#fontIncrease {
+    margin: 0 0 0 2px;
+}
+div.itemToolbar ul li a#fontDecrease img {
+    background: url(font_decrease.png) 0 0 no-repeat;
+}
+div.itemToolbar ul li a#fontIncrease img {
+    background: url(font_increase.png) 0 0 no-repeat;
+}
+div.itemToolbar ul li a img {
+    vertical-align: middle;
+}
+#k2Container .itemRatingList,
+#k2Container .itemRatingList a:hover,
+#k2Container .itemRatingList .itemCurrentRating {
+    background-image: url(transparent_star.png);
+}
+div.itemImageBlock,
+div.catItemImageBlock {
+	padding: 0;
+	margin: 0;
+}
+span.itemImage img,
+span.catItemImage img {
+	width: 100% !important;
+	padding: 0;
+	border: none;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+.itemDateModified {
+	margin-top: 0;
+	float: right;
+	font-style: italic;
+}
+div.jsn-article-info {
+	color: #7d7d7d;
+	overflow: hidden;
+	padding: 10px 0;
+}
+div.jsn-article-info i[class*="jsn-icon"] {
+	margin-top: 0;
+	margin-right: 5px;
+}
+div.jsn-article-info .author,
+div.jsn-article-info .createdate {
+	line-height: 16px;
+}
+div.catItemHeader span.catItemDateCreated,
+span.latestItemDateCreated,
+div.tagItemHeader span.tagItemDateCreated,
+div.userItemHeader span.userItemDateCreated {
+	font-size: 12px;
+	color: #7d7d7d;
+}
+div.itemComment {
+	float: left;
+	padding: 3px 8px;
+}
+div.hitCount {
+	margin: 15px 0 5px;
+	width: 100%;
+	float: left;
+}
+div.itemNavigation a.itemPrevious,
+div.itemNavigation a.itemNext {
+	padding: 0 5px;
+}
+#k2Container .jsn-article-footer {
+	width: 100%;
+	margin: 20px 0 5px;
+	color: #7d7d7d;
+	font-size: 12px;
+}
+#k2Container .jsn-article-footer .itemHits {
+	float: left;
+}
+#k2Container .jsn-article-footer a.itemCommentsLink {
+	float: right;
+	padding-top: 3px;
+}
+#k2Container span.itemHits {
+	float: none;
+}
+div.itemAuthorBlock {
+	padding: 25px;
+	border: none;
+	background: #f1f2f3;
+	margin-bottom: 30px;
+}
+div.catItemCategory,
+div.latestItemCategory,
+div.userItemCategory,
+div.itemCategory,
+#k2Container div.tagItemLinks div.tagItemCategory {
+	padding: 0;
+	border-bottom: none;
+	float: left;
+	line-height: 16px;
+	margin-right: 20px;
+}
+#k2Container div.tagItemLinks div.tagItemCategory {
+	border-right: none;
+}
+div.itemAuthorBlock img.itemAuthorAvatar {
+    background: none repeat scroll 0 0 #fff;
+    border: none;
+    border-radius: 0;
+    display: block;
+    float: left;
+    margin: 0 15px 0 0;
+    padding: 10px;
+}
+div.itemToolbar {
+	padding: 0;
+}
+/*---- Featured Article ----*/
+div.itemHeader h2.itemTitle {
+	position: relative;
+}
+#k2Container div[class*="IsFeatured"] h3 a,
+h2.itemTitle span.featured {
+	position: relative;
+	display: block;
+}
+#k2Container div[class*="IsFeatured"] h3 a:after,
+h2.itemTitle span.featured:after {
+  content: 'Featured';
+  padding: 2px 8px 3px;
+  border-radius: 2px;
+  background: #CA1D04;
+  color: #fff;
+  font-size: 11px;
+  position: absolute;
+  bottom: auto;
+  top: 115px;
+  right: 10px;
+}
+body.jsn-textstyle-news #k2Container div[class*="IsFeatured"] h3 a:after,
+body.jsn-textstyle-news h2.itemTitle span.featured:after {
+	padding-top: 3px;
+}
+.k2Avatar img {
+	border: 1px solid #e6e6e6;
+	text-align: center;
+}
+/* ============================== LATEST ITEMS PAGE ============================== */
+div.latestItemList {
+	padding: 0 0 15px;
+	overflow: hidden;
+}
+div.latestItemsUser {
+    background: none;
+    border: 1px solid #e6e6e6;
+    clear: both;
+    margin: 0 0 20px;
+    padding: 15px;
+}
+div.latestItemsUser img,
+div.userBlock img,
+div.latestItemsCategoryImage img,
+div.itemListCategory img {
+	margin: 0 15px 0 0;
+	padding: 0;
+	border: none;
+
+}
+div.latestItemIntroText {
+	font-weight: 300;
+}
+div.latestItemsUser h2,
+div.latestItemsCategory h2  {
+	font-size: 20px;
+	margin: 0 0 5px;	
+}
+div.latestItemsUser h2 a,
+div.latestItemsCategory h2 a {
+	color: #7d7d7d;
+}
+div.userBlock div.userDescription,
+div.latestItemsUser p.latestItemsUserDescription,
+div.latestItemsCategory p.categoryDescription {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+div.latestItemsUser p.latestItemsUserAdditionalInfo {
+	padding: 0;
+	margin-top: 3px;
+}
+span.userURL,
+span.latestItemsUserURL {
+	font-weight: 300;
+	font-size: 12px;
+}
+/* ============================== TAG ITEMS PAGE ============================== */
+div.tagItemView {
+	border-bottom: none;
+	margin: 0 0 50px;
+	padding: 0;
+}
+/* ============================== MOD K2 CONTENT ============================== */
+div.k2ItemsBlock > ul {
+	margin: 0;
+	list-style-type: none;
+}
+div.k2ItemsBlock > ul > li {
+	margin: 0;
+	padding: 5px 0;
+	background: none;
+	border-bottom: 1px solid #e6e6e6;
+}
+div.k2ItemsBlock ul.jsn-module-footer li {
+	list-style: disc inside;
+	margin-left: 0;
+}
+div.k2ItemsBlock div.moduleItemTitle {
+	font-size: 1.2em;
+	margin: 10px 0;
+	text-transform: capitalize;
+}
+div.k2ItemsBlock .moduleItemAuthorAvatar img {
+	margin: 2px 5px 0 0;
+}
+div.k2ItemsBlock div.moduleItemAuthor,
+div.k2ItemsBlock div.itemDateCreated {
+	margin: 0;
+	font-size: 12px;
+}
+div.k2ItemsBlock ul li div.moduleItemIntrotext {
+	padding: 0;
+	clear: both;
+	line-height: 1.8;
+}
+div.k2ItemsBlock p.moduleItemCategory,
+div.k2ItemsBlock p.moduleAttachments {
+	margin: 0.35em 0;
+}
+div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage img {
+	max-width: 100%;
+	margin: 8px 0 0;
+	border: none;
+	float: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+div.k2ItemsBlock ul li a.moduleItemReadMore {
+	margin: 0;
+}
+/* =============== CUSTOM MODULE STYLE =============== */
+div[class*="solid-"] a {
+	color: #fff;
+}
+/* ============================== MOD K2 COMMENTS ============================== */
+div.k2LatestCommentsBlock > ul {
+	margin: 0;
+	list-style-type: none;
+}
+div.k2LatestCommentsBlock > ul > li {
+	margin: 0;
+	padding: 5px 0;
+	background: none;
+	border-bottom: none;
+}
+div.k2LatestCommentsBlock > ul > li:first-child {
+	border: none;
+}
+div.k2LatestCommentsBlock .lcAvatar img {
+	margin: 0 5px 0 0;
+	line-height: 16px;
+	padding: 0;
+	border: none;
+}
+div.k2LatestCommentsBlock p {
+	margin: 3px 0;
+	font-size: 12px;
+	color: #999;
+}
+div.k2LatestCommentsBlock div.k2FeedIcon {
+	padding: 0;
+	margin-top: 5px;
+	float: left;
+}
+div.k2LatestCommentsBlock div.k2FeedIcon a {
+	float: none;
+	width: auto;
+	height: auto;
+	background-position: left center;
+}
+div.k2LatestCommentsBlock div.k2FeedIcon a span {
+	display: inline-block;
+	margin-left: 5px;
+}
+div.k2ItemsBlock ul li span.moduleItemHits {
+	padding: 0 2px 0 0;
+	margin: 0 5px 0 0;
+	border-right: none;
+}
+div.k2ItemsBlock ul li a.moduleItemComments {
+	border-right: none;
+	margin: 0;
+	padding: 0;
+}
+div.jsn-modulecontainer div[id*="k2Module"] ul li i[class*="jsn-icon-"] {
+	display: inline-block;
+	margin-right: 3px;
+}
+/* =============== CUSTOM MODULE STYLE =============== */
+div[class*="richbox-"] div.k2LatestCommentsBlock .author,
+div[class*="richbox-"] div.k2LatestCommentsBlock .createdate,
+div.box-grey div.k2LatestCommentsBlock .author,
+div.box-grey div.k2LatestCommentsBlock .createdate {
+	color: #D4D4D4;
+}
+/* ============================== MOD K2 USERS ============================== */
+div.k2UsersBlock > ul {
+	margin: 0;
+	list-style-type: none;
+}
+div.k2UsersBlock > ul > li {
+	margin: 0;
+	padding: 5px 0;
+	background: none;
+}
+div.k2UsersBlock a.ubUserName,
+div.k2UsersBlock a.ubUserFeedIcon {
+}
+div.k2UsersBlock a.ubUserFeedIcon {
+	margin: 1px 0 0 4px;
+}
+div.k2AccountPage input {
+	margin: 3px;
+}
+.k2AccountPage table.admintable td.key,
+.k2AccountPage table.admintable td.paramlist_key {
+	padding-right: 5px;
+	background: none;
+	border: none;
+}
+div.k2AccountPage table tr td select,
+div.k2AccountPage table tr td input {
+	margin: 3px;
+}
+.button2-left {
+	margin-top: 5px;
+}
+div.k2UserBlock form {
+	text-align: center;
+}
+p#form-login-remember input.inputbox {
+	float: left;
+	margin-right: 10px;
+	line-height: 12px;
+}
+div.k2LoginBlock fieldset.input p#form-login-remember label {
+	float: left;
+	margin-top: 5px;
+}
+.itemRatingList {
+	margin: 0 !important;
+}
+div.tagItemImageBlock,
+div.userItemImageBlock,
+div.latestItemImageBlock {
+	float: none;
+}
+span.tagItemImage {
+	margin: 20px 0 15px;
+}
+span.tagItemImage img {
+	padding: 0;
+	border: none;
+}
+/* ============================== K2 LOGIN/REGISTER ============================== */
+.k2AccountPage th.k2ProfileHeading {
+	background: none;
+}
+div.k2AccountPage input.inputbox,
+div.k2AccountPage input#url {
+	width: 365px;
+}
+/* ============================== K2 CALENDAR ============================== */
+div.k2CalendarBlock {
+	height: inherit;
+}
+table.calendar {
+	width: 100%;
+	margin: 0;
+	border: 1px solid #e9e9e9;
+}
+table.calendar tr td,
+table.calendar tr td.calendarDateLinked,
+.jsn-joomla-30 table.calendar tr td,
+.jsn-joomla-30 table.calendar tr td.calendarDateLinked {
+	padding: 5px;
+	background-color: transparent;
+	border: 1px solid #ededed;
+}
+table.calendar tr td.calendarToday {
+  background: #f26522;
+}
+table.calendar tr td.calendarNavMonthPrev,
+table.calendar tr td.calendarNavMonthNext {
+	text-align: center;
+}
+table.calendar tr td.calendarDateLinked a,
+table.calendar tr td.calendarDateLinked a:hover {
+	padding: 0;
+}
+div.solid-2 table.calendar tr td.calendarNavMonthPrev,
+div.solid-2 table.calendar tr td.calendarCurrentMonth,
+div.solid-2 table.calendar tr td.calendarNavMonthNext,
+div.solid-2 table.calendar tr td.calendarDayName,
+div.solid-2 table.calendar tr td,
+div.solid-2 table.calendar tr td.calendarDateEmpty {
+	background: #222;
+	border: none;
+}
+table.calendar tr td.calendarDateLinked a {
+	background: inherit;
+}
+table.calendar tr td.calendarDate:hover{
+	background: #135cae;
+	color: #fff;
+}
+table.calendar tr td.calendarTodayLinked a:hover{
+	background: none;
+}
+/* ============================== K2 TAG CLOUD ============================== */
+div.k2TagCloudBlock a {
+padding: 3px 14px;
+  margin: 5px 5px;
+  border-radius: 1px;
+  color: #282828;
+  background: #f1f2f3;
+}
+div.k2TagCloudBlock a:hover {
+	padding: 0 8px;
+	color: #fff;
+}
+body.jsn-color-blue div.k2TagCloudBlock a:hover {
+	background: #68A8AA;
+}
+body.jsn-color-purple div.k2TagCloudBlock a:hover {
+	background: #65759B;
+}
+body.jsn-color-green div.k2TagCloudBlock a:hover {
+	background: #68aa71;
+}
+body.jsn-color-brown div.k2TagCloudBlock a:hover {
+	background: #786D5A;
+}
+body.jsn-color-red div.k2TagCloudBlock a:hover {
+	background: #ef0009;
+}
+body.jsn-color-yellow div.k2TagCloudBlock a:hover {
+	background: #ba8635;
+}
+div[class*="solid-"] div.k2TagCloudBlock a {
+	background: rgba(255,255,255,.1);
+	color: #fff;
+}
+div.solid-1 div.k2TagCloudBlock a:hover {
+	background: rgba(255,255,255,.4);
+}
+/* ============================== RTL LAYOUT ============================== */
+/* ----- General -----*/
+body.jsn-direction-rtl div.userItemCategory span,
+body.jsn-direction-rtl div.userItemTagsBlock span,
+body.jsn-direction-rtl div.catItemCategory span,
+body.jsn-direction-rtl div.catItemTagsBlock span,
+body.jsn-direction-rtl div.tagItemCategory span,
+body.jsn-direction-rtl div.tagItemTagsBlock span,
+body.jsn-direction-rtl div.latestItemCategory span,
+body.jsn-direction-rtl div.latestItemTagsBlock span,
+body.jsn-direction-rtl div.itemCategory span,
+body.jsn-direction-rtl div.itemItemTagsBlock span {
+	float: right;
+	padding: 0 0 0 4px;
+}
+body.jsn-direction-rtl #k2Container div.itemToolbar, 
+body.jsn-direction-rtl #k2Container div.catItemToolbar, 
+body.jsn-direction-rtl #k2Container div.userItemToolbar {
+	float: left;
+}
+body.jsn-direction-rtl div.jsn-article-info {
+}
+/* ----- UserPage -----*/
+body.jsn-direction-rtl div.userBlock div.userAdditionalInfo, 
+body.jsn-direction-rtl div.itemAuthorBlock div.userAdditionalInfo,
+body.jsn-direction-rtl div.userBlock img {
+	float: right;
+}
+body.jsn-direction-rtl div.userBlock img {
+	margin: 0 0 0 10px;
+}
+body.jsn-direction-rtl div.userItemCommentsLink,
+body.jsn-direction-rtl div.catItemCommentsLink {
+	border-right: none;
+	margin: 0 8px 0 0;
+	padding: 0 0 0 0;
+	float: right;
+}
+/* ----- Categories Page -----*/
+body.jsn-direction-rtl #k2Container #itemListLinks div.itemContainer a,
+body.jsn-direction-rtl div#itemListLinks span.catItemImage {
+	float: right;
+	margin-right: 0;
+}
+body.jsn-direction-rtl div.itemListCategory img {
+	float: right;
+	margin: 0 0 0 8px;
+}
+div.k2CategoriesListBlock ul li{
+	list-style-type: none;
+	margin: 0;
+}
+div.k2CategoriesListBlock ul li a{	
+	color: #353535;
+	padding: 10px 0;
+	line-height: 25px;
+	border-bottom: 1px solid #ededed;
+	display: block;
+}
+div[class*="solid-"] div.k2CategoriesListBlock ul li a,
+div[class*="richbox-"] div.k2CategoriesListBlock ul li a,
+div[class*="solid-"] div.k2LatestCommentsBlock ul li span.lcItemTitle,
+div[class*="richbox-"] div.k2LatestCommentsBlock ul li span.lcItemTitle,
+div[class*="solid-"] div.k2LatestCommentsBlock ul li a,
+div[class*="richbox-"] div.k2LatestCommentsBlock ul li a {
+	color: #fff;
+}
+div[class*="solid-"] div.k2LatestCommentsBlock ul li span.lcComment,
+div[class*="richbox-"] div.k2LatestCommentsBlock ul li span.lcComment,
+div[class*="solid-"] div.k2LatestCommentsBlock p,
+div[class*="richbox-"] div.k2LatestCommentsBlock p,
+div[class*="solid-"] div.k2CategoriesListBlock ul li a span.catCounter {
+	color: rgba(255,255,255,0.6);
+}
+div[class*="solid-"] div.k2LatestCommentsBlock ul li > a:not(.k2Avatar),
+div[class*="richbox-"] div.k2LatestCommentsBlock ul li > a:not(.k2Avatar),
+div[class*="solid-"] div.k2CategoriesListBlock ul li a,
+div[class*="richbox-"] div.k2CategoriesListBlock ul li a {
+	border-color: rgba(255,255,255,0.2);
+}
+body.jsn-color-blue div.k2CategoriesListBlock ul li a:hover {
+	color: #68A8AA;
+}
+body.jsn-color-purple div.k2CategoriesListBlock ul li a:hover {
+	color: #65759B;
+}
+body.jsn-color-green div.k2CategoriesListBlock ul li a:hover {
+	color: #68aa71;
+}
+body.jsn-color-brown div.k2CategoriesListBlock ul li a:hover {
+	color: #786d5b;
+}
+body.jsn-color-red div.k2CategoriesListBlock ul li a:hover {
+	color: #f45245;
+}
+body.jsn-color-yellow div.k2CategoriesListBlock ul li a:hover {
+	color: #CA9639;
+}
+/* ----- LatestItem Page -----*/
+body.jsn-direction-rtl div.latestItemsCategoryImage {
+	float: right;
+	margin-left: 8px;
+}
+body.jsn-direction-rtl div.latestItemsCategoryImage img {
+	margin-right: 0;
+}
+body.jsn-direction-rtl div.k2FeedIcon {
+	float: left;
+}
+/* ----- Item Page -----*/
+body.jsn-direction-rtl div.itemToolbar ul li {
+	border-left: none;
+	border-right: 1px solid #e6e6e6;
+	padding: 0 8px 0 4px;
+}
+body.jsn-direction-rtl #k2Container div.itemContentFooter div.itemTwitterButton,
+body.jsn-direction-rtl #k2Container div.itemContentFooter div.itemFacebookButton,
+body.jsn-direction-rtl #k2Container div.itemContentFooter div.itemGooglePlusOneButton {
+	float: right;
+	margin-left: 10px;
+}
+body.jsn-direction-rtl div.itemAuthorBlock img.itemAuthorAvatar {
+	float: right;
+	margin: 0 0 0 8px;
+}
+body.jsn-direction-rtl div.jsn-article-toolbar .jsn-article-info .author, 
+body.jsn-direction-rtl div.jsn-article-toolbar .jsn-article-info .createdate {
+	float: right;
+	padding-right: 0;
+}
+body.jsn-direction-rtl div.jsn-article-toolbar [class^="jsn-icon-"] {
+	float: right;
+	margin-left: 5px;
+	margin-right: 0;
+}
+body.jsn-direction-rtl div.catItemHeader span.catItemAuthor,
+body.jsn-direction-rtl div.itemHeader span.itemAuthor {
+	margin-right: 0;
+	margin-left: 10px;
+}
+body.jsn-direction-rtl #k2Container div[class*="IsFeatured"] h3 span sup, 
+body.jsn-direction-rtl h2.itemTitle span.featured:after {
+	right: auto;
+	left: -65px;
+}
+body.jsn-direction-rtl div[class*="ItemLinks"] i[class*="jsn-icon-"],
+body.jsn-direction-rtl div[class*="itemLinks"] i[class*="jsn-icon-"] {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+}
+/* ----- K2 Comments -----*/
+body.jsn-direction-rtl div.k2LatestCommentsBlock .lcAvatar img {
+	float: right;
+	margin: 0 0 0 5px;
+}
+div.k2LatestCommentsBlock ul li span.lcItemTitle {
+  font-weight: 500;
+  display: block;
+  color: #282828;
+}
+div.k2LatestCommentsBlock ul li span.lcComment {
+	color: #999;
+}
+div.k2LatestCommentsBlock ul li a{
+	color: #282828;
+}
+div.k2LatestCommentsBlock ul li a[rel="author"] {
+	font-size: 15px;
+	font-weight: 500;
+	 margin: 0 5px;
+}
+div.k2LatestCommentsBlock ul li > a:not(.k2Avatar) {
+	border: 1px solid #e5e5e5;
+	position: relative;
+	padding: 15px;
+	display: block;
+	margin-bottom: 15px;
+	font-style: italic;
+}
+div.k2LatestCommentsBlock ul li > a.k2Avatar {
+	display: inline-block;
+	float: left;
+}
+div.k2LatestCommentsBlock ul li > a:not(.k2Avatar):before,
+div.k2LatestCommentsBlock ul li > a:not(.k2Avatar):after {
+border-style: solid;
+  border-width: 9px 9px 0 9px;
+  border-color: #fff transparent transparent transparent;
+  bottom: -8px;
+  content: "";
+  display: block;
+  height: 0;
+  left: 15px;
+  position: absolute;
+  width: 0;
+}
+div.k2LatestCommentsBlock ul li a:not(.k2Avatar):before {
+  border-width: 9px 9px 0 9px;
+  border-color: #e5e5e5 transparent transparent transparent;
+  bottom: -9px;
+  left: 15px;
+}
+div[class*="solid-"] div.k2LatestCommentsBlock ul li a:not(.k2Avatar):before,
+div[class*="richbox-"] div.k2LatestCommentsBlock ul li a:not(.k2Avatar):before
+div[class*="solid-"] div.k2LatestCommentsBlock ul li > a:not(.k2Avatar):before,
+div[class*="solid-"] div.k2LatestCommentsBlock ul li > a:not(.k2Avatar):after,
+div[class*="richbox-"] div.k2LatestCommentsBlock ul li > a:not(.k2Avatar):before,
+div[class*="richbox-"] div.k2LatestCommentsBlock ul li > a:not(.k2Avatar):after {
+	border-color: rgba(255,255,255,0.2) transparent transparent transparent;
+}
+body.jsn-color-blue div.k2LatestCommentsBlock ul li span.lcComment:hover,
+body.jsn-color-blue div.k2LatestCommentsBlock ul li span.lcItemTitle:hover a,
+body.jsn-color-blue div.k2LatestCommentsBlock ul li span.lcItemCategory:hover a{
+	color: #68A8AA;
+}
+body.jsn-color-purple div.k2LatestCommentsBlock ul li span.lcComment:hover,
+body.jsn-color-purple div.k2LatestCommentsBlock ul li span.lcItemTitle:hover a,
+body.jsn-color-purple div.k2LatestCommentsBlock ul li span.lcItemCategory:hover a {
+	color: #65759B;
+}
+body.jsn-color-green div.k2LatestCommentsBlock ul li span.lcComment:hover,
+body.jsn-color-green div.k2LatestCommentsBlock ul li span.lcItemTitle:hover a,
+body.jsn-color-green div.k2LatestCommentsBlock ul li span.lcItemCategory:hover a{
+	color: #68aa71;
+}
+body.jsn-color-brown div.k2LatestCommentsBlock ul li span.lcComment:hover,
+body.jsn-color-brown div.k2LatestCommentsBlock ul li span.lcItemTitle:hover a,
+body.jsn-color-brown div.k2LatestCommentsBlock ul li span.lcItemCategory:hover a{
+	color: #786d5b;
+}
+body.jsn-color-red div.k2LatestCommentsBlock ul li span.lcComment:hover,
+body.jsn-color-red div.k2LatestCommentsBlock ul li span.lcItemTitle:hover a,
+body.jsn-color-red div.k2LatestCommentsBlock ul li span.lcItemCategory:hover a{
+	color: #f45245;
+}
+body.jsn-color-yellow div.k2LatestCommentsBlock ul li span.lcComment:hover,
+body.jsn-color-yellow div.k2LatestCommentsBlock ul li span.lcItemTitle:hover a,
+body.jsn-color-yellow div.k2LatestCommentsBlock ul li span.lcItemCategory:hover a{
+	color: #CA9639;
+}
+div.k2LatestCommentsBlock div.k2FeedIcon a{
+	color: #353535;
+}
+body.jsn-color-blue div.k2LatestCommentsBlock div.k2FeedIcon a:hover{
+	color: #68A8AA;
+}
+body.jsn-color-purple div.k2LatestCommentsBlock div.k2FeedIcon a:hover {
+	color: #65759B;
+}
+body.jsn-color-green div.k2LatestCommentsBlock div.k2FeedIcon a:hover{
+	color: #68aa71;
+}
+body.jsn-color-brown div.k2LatestCommentsBlock div.k2FeedIcon a:hover{
+	color: #786d5b;
+}
+body.jsn-color-red div.k2LatestCommentsBlock div.k2FeedIcon a:hover{
+	color: #f45245;
+}
+body.jsn-color-red div.k2LatestCommentsBlock div.k2FeedIcon a:hover{
+	color: #f45245;
+}
+body.jsn-color-yellow div.k2LatestCommentsBlock div.k2FeedIcon a:hover{
+	color: #CA9639;
+}
+/* ----- K2 Tool -----*/
+body.jsn-direction-rtl div.k2ItemsBlock .moduleItemAuthorAvatar img {
+	float: right;
+	margin: 5px 0 0 3px;
+}
+body.jsn-direction-rtl div.k2ItemsBlock ul li span.moduleItemHits {
+	margin: 0;
+	padding: 0;
+	border-right: none;
+}
+body.jsn-direction-rtl div.jsn-modulecontainer div[id*="k2Module"] ul li i[class*="jsn-icon-"] {
+	margin-right: 0;
+	margin-left: 3px;
+}
+body.jsn-direction-rtl div.k2ItemsBlock ul.jsn-module-footer li {
+	margin-right: 0;
+}
+/* ----- Featured -----*/
+body.jsn-direction-rtl #k2Container div.itemComments ul.itemCommentsList .commentDate, 
+body.jsn-direction-rtl #k2Container div.itemComments ul.itemCommentsList .commentAuthorName {
+	padding: 0 20px 0 0;
+}
+body.jsn-direction-rtl div.itemComments ul.itemCommentsList li img {
+	float: right;
+	margin-left: 5px;
+}
+body.jsn-direction-rtl #k2Container div.itemComments ul.itemCommentsList div.itemCommentsWrapper {
+	float: right;
+	margin-left: 0 !important;
+}
+body.jsn-direction-rtl #k2Container .jsn-article-footer a.itemCommentsLink,
+body.jsn-direction-rtl #k2Container div.itemRatingBlock {
+	float: left;
+}
+body.jsn-direction-rtl div.k2ItemsBlock ul li a.moduleItemReadMore {
+	float: left;
+}
+body.jsn-direction-rtl div.itemCategory span, 
+body.jsn-direction-rtl div.itemTagsBlock span, 
+body.jsn-direction-rtl #k2Container div.itemNavigation span.itemNavigationTitle {
+	float: right;
+	padding: 0 0 0 4px;
+}
+div.itemIsFeatured,
+div.catItemIsFeatured,
+div.userItemIsFeatured {
+	background: none;
+}
+body.jsn-direction-rtl .catItemImageBlock .createdate,
+body.jsn-direction-rtl .itemView .createdate,
+body.jsn-direction-rtl .tagItemView .createdate,
+body.jsn-direction-rtl div.catItemCategory,
+body.jsn-direction-rtl div.latestItemCategory,
+body.jsn-direction-rtl div.userItemCategory,
+body.jsn-direction-rtl div.itemCategory,
+body.jsn-direction-rtl #k2Container div.tagItemLinks div.tagItemCategory {
+	float: right;
+}
+body.jsn-direction-rtl div.catItemHeader,
+body.jsn-direction-rtl div.itemHeader,
+body.jsn-direction-rtl div.tagItemHeader {
+  float: left;
+}
+body.jsn-direction-rtl .jsn-article-toolbar i {
+  margin-right: auto;
+  margin-left: 3px;
+}
+body.jsn-direction-rtl div.catItemCategory,
+body.jsn-direction-rtl div.latestItemCategory,
+body.jsn-direction-rtl div.userItemCategory,
+body.jsn-direction-rtl div.itemCategory,
+body.jsn-direction-rtl #k2Container div.tagItemLinks div.tagItemCategory {
+	margin-left: 20px;
+	margin-right: 0;
+}
+body.jsn-direction-rtl #k2Container div.itemContentFooter div.itemSocialSharing {
+  float: right;
+}
+body.jsn-direction-rtl .itemRatingList a,
+body.jsn-direction-rtl .itemRatingList .itemCurrentRating {
+	text-indent: 999em;
+}
+body.jsn-direction-rtl #k2Container div[class*="IsFeatured"] h3 a:after,
+body.jsn-direction-rtl h2.itemTitle span.featured:after {
+	left: 0;
+	right: auto;
+}
+/* ============================== JOOMLA 3.0 ============================== */
+/* ------ JOOMLA 3X OVERRIDE BOOTSTRAP ------ */
+.jsn-joomla-30 fieldset.well {
+    margin: 10px 0 10px 20px;
+    padding: 20px;
+}
+div.k2LatestCommentsBlock div.k2FeedIcon a span.link-icon.icon-rss {
+	width: auto;
+}
+.jsn-joomla-30 input,
+.jsn-joomla-30 textarea {
+	width: auto;
+}
+.jsn-joomla-30 #k2ModuleBox205 .calendar tbody td {
+	padding: 2px;
+	border: 1px solid #f4f4f4;
+}
+.jsn-joomla-30 #k2Container div.itemComments input.inputbox {
+	height: 35px;
+	
+}
+.jsn-joomla-30 #k2Container div.itemComments .inputbox {
+	border-radius: 0;
+	box-shadow: none;
+}
+/* ============================== MOBILE LAYOUT ============================== */
+@media only screen and (max-width: 960px) {
+	body.jsn-mobile div.itemBody img,
+	body.jsn-mobile div.userItemList img,
+	body.jsn-mobile div.catItemBody img,
+	body.jsn-mobile div.tagItemBody img {
+		max-width: 100% !important;
+	}
+	body.jsn-mobile div.groupLeading div.itemBody img,
+	body.jsn-mobile div.groupLeading div.userItemList img,
+	body.jsn-mobile div.groupLeading div.catItemBody img,
+	body.jsn-mobile div.groupLeading div.tagItemBody img,
+	body.jsn-mobile div.groupLeading div.latestItemBody img,
+	body.jsn-mobile div.groupPrimary div.itemBody img,
+	body.jsn-mobile div.groupPrimary div.userItemList img,
+	body.jsn-mobile div.groupPrimary div.catItemBody img,
+	body.jsn-mobile div.groupPrimary div.tagItemBody img,
+	body.jsn-mobile div.groupPrimary div.latestItemBody img,
+	body.jsn-mobile div.groupSecondary div.itemBody img,
+	body.jsn-mobile div.groupSecondary div.userItemList img,
+	body.jsn-mobile div.groupSecondary div.catItemBody img,
+	body.jsn-mobile div.groupSecondary div.tagItemBody img,
+	body.jsn-mobile div.latestItemBody img {
+		max-width: 100% !important;
+	}
+}
+@media only screen and (max-width: 480px) {
+	body.jsn-mobile #k2Container.itemView {
+		margin-bottom: 0;
+		border-bottom: 1px solid #e6e6e6;
+	}
+	body.jsn-mobile #jsn-mainbody-content,
+	body.jsn-mobile #jsn-mainbody {
+		padding-bottom: 5px;
+	}
+	body.jsn-mobile #k2Container div.itemComments .inputbox {
+		width: 240px;
+	}
+	body.jsn-mobile .recaptchatable #recaptcha_image {
+		width: 160px !important;
+	}
+	body.jsn-mobile .recaptchatable .recaptcha_image_cell {
+		width: 160px !important;
+	}
+	body.jsn-mobile #recaptcha_table tbody tr td {
+		padding: 10px 4px !important;
+	}
+	body.jsn-mobile .recaptcha_input_area input#recaptcha_response_field {
+		width: 160px !important;
+	}	
+	body.jsn-mobile #k2Container div.itemContentFooter div.itemTwitterButton {
+		margin-bottom: 10px;
+	}
+	body.jsn-mobile div.itemContainer,
+	body.jsn-mobile div.latestItemsContainer {
+		width: 100% !important;
+	}
+	body.jsn-mobile div.k2AccountPage input.inputbox,
+	body.jsn-mobile div.k2AccountPage input#url {
+		width: 45%;
+	}
+	body.jsn-mobile #k2Container h2.itemTitle, 
+	body.jsn-mobile #k2Container h2.latestItemTitle, 
+	body.jsn-mobile #k2Container h2.tagItemTitle, 
+	body.jsn-mobile #k2Container h3.catItemTitle, 
+	body.jsn-mobile #k2Container h3.userItemTitle {
+		font-size: 1.5em;
+	}
+	body.jsn-mobile #k2Container div[class*="IsFeatured"] h3 span sup, 
+	body.jsn-mobile h2.itemTitle span.featured:after {
+		top: inherit;
+		right: inherit;
+	}
+	body.jsn-mobile .jsn-article-toolbar .itemToolbar .itemTextResizerTitle,
+	body.jsn-mobile .jsn-article-toolbar .itemToolbar #fontDecrease,
+	body.jsn-mobile .jsn-article-toolbar .itemToolbar #fontIncrease {
+		display: none;
+	}
+	body.jsn-mobile  #k2Container div[class*="IsFeatured"] h3 a,
+	body.jsn-mobile  h2.itemTitle span.featured {
+		display: inline-block;
+		width: 100%;
+	}
+	body.jsn-mobile  #k2Container div[class*="IsFeatured"] h3 a:after,
+	body.jsn-mobile  h2.itemTitle span.featured:after {
+		right: 0;
+		top: -15px;
+	}
+	div.catItemHeader, div.itemHeader, div.tagItemHeader {
+		width: 75%;
+	}
+}
+@media only screen and (max-width: 320px) {
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info .author,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info .createdate,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info div.itemCategory,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info div.catItemCategory,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info div.latestItemCategory,
+	body.jsn-mobile #k2Container .jsn-article-toolbar .jsn-article-info div.tagItemCategory,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info div.tagItemLinks,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info div.catItemCommentsLink,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info div.userItemCategory,
+	body.jsn-mobile .jsn-article-toolbar .jsn-article-info div.userItemCommentsLink {
+		display: inline-block;
+		float: none;
+		margin-left: 0;
+		margin-top: 5px;
+	}
+	body.jsn-mobile .jsn-article-toolbar div.latestItemCommentsLink,
+	body.jsn-mobile .jsn-article-toolbar div.catItemCommentsLink,
+	body.jsn-mobile .jsn-article-toolbar div.userItemCommentsLink {
+		margin-top: 5px;
+	}
+	body.jsn-mobile div.jsn-article-toolbar div.itemToolbar .jsn-icon-email {
+		margin-top: -4px;
+	}
+	body.jsn-mobile div.jsn-article-toolbar div.itemToolbar .jsn-icon-print {
+		margin-top: -2px;
+	}
+}
